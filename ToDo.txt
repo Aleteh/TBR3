@@ -50,3 +50,35 @@
 	> Everything
 
 - Map -
+	> Optimize base mesh
+	> Layout triggers for creep spawners
+	> Work on city features
+		> Buildings
+			> Main Castle
+			> Blacksmith (Weapons & Armor)
+			> Minor Items
+			> Greater Items
+			> Scrolls
+			> Potions
+			> Trinkets
+			> Artifacts
+			> Books
+			> Champion's Armory
+			> Arrow Tower
+			> Cannon Tower
+			> Spell Tower
+			> Bank Redesign
+		> Patroling NPCs
+		> Quest NPCs
+		> Crafting NPCs
+		> ?
+	> Create forward defense camp
+		> 2 Arrow Towers
+		> 2 Cannon Tower
+		> 2 Dosen patroling NPCs
+	> Create starter outpost
+		> Journeymans Store
+		> Quest NPC
+		> Patroling NPCs
+		> Fountain of Restoration
+	> Detail work
