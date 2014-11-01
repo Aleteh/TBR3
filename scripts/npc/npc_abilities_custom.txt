@@ -26,18 +26,48 @@
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCooldown"						"0"
 
-		"AbilitySpecial"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slot"					"1"
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"					"bank.lua"
-				"Function"						"DropItemInSlot"
-				"Slot"							"%slot"
+				"ScriptFile"	"bank.lua"
+				"Function"		"DropItemInSlot"
+				"Slot"			"%item_slot"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"item_slot"			"0" //starts at 0
+			}
+		}
+	}
+
+	"transfer_itemslot_1"
+	{
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCooldown"						"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"bank.lua"
+				"Function"		"TransferItemInSlot"
+				"Slot"			"%item_slot"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"item_slot"			"0" //starts at 0
 			}
 		}
 	}

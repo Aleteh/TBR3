@@ -528,4 +528,16 @@ function SpawnBank()
     hero = PlayerResource:GetSelectedHeroEntity(0)
     local bank = CreateUnitByName("npc_bank", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber() )
     bank:SetControllableByPlayer(hero:GetPlayerID(), true)
+    
+    -- add some test items to the bank
+    local newItem = CreateItem( "item_wraithblade", hero, hero )
+    bank:AddItem(newItem)
+    local newItem = CreateItem( "item_regal_helm_of_sparkling_crystal", hero, hero )
+    bank:AddItem(newItem)
+    local newItem = CreateItem( "item_mighty_chestguard_of_the_olympians", hero, hero )
+    bank:AddItem(newItem)
+    local newItem = CreateItem( "item_mighty_helm_of_the_olympians", hero, hero )
+    bank:AddItem(newItem)
+    local newItem = CreateItem( "item_biting_blade", hero, hero )
+    bank:AddItem(newItem)
 end
