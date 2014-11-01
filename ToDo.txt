@@ -1,0 +1,52 @@
+- General Mechanics -
+	Leveling: 		Spendable attribute points instead of skill levels.
+	Creep spawning: OnTouch/OnTouchEnd that spawn set creeps at random locations that patrol to random waypoints.
+	Max gold: 		Increase to 1 million.
+	Experience: 	Increase XP accordingly while in a Party.
+	Save/Load:		Provide a persisten RPG system that allows players to instantly load their current hero data, connected to their SteamID.
+	Bank: 			Extra 6 slots to store items, items are saved. Only accessible in the city. Will need a custom storage system.
+	Backpack:		Extra 6 slots that you can carry around, items are not saved. Could possibly reuse the default Stash, making it global.
+	Stats:			Custom Spell Power & Spell Healing. Every Heal & Damage spell is affected by it, 1:1 additively. Some spells use a custom multiplier of it.
+					INT = 15 mana, .01 MP per second, 3 Spell & Healing Power, Except for Warrior Classes (KC, Warlord, Barbarian and Assassin).
+					STR = 20 HP and 0.25 hp per second regeneration.
+					AGI = .2 armor, 1% IAS.
+	Warrior Mana:  	Barbarians - gain their mana whenever they attack, also gains mana when attacked. Degenerates over time.
+					Warlords   	- gain their mana whenever they attack. Regenerates slowly over time.
+					Assassin/KC: - does not gain mana with each attack but quickly regenerates his mana naturally. 
+	Skills:			Unlearneable normally, only through purchase/droppable Book system.
+	Professions:	Complete Flash UI needed.
+	Crating Mats: 	Custom resource.
+	City Attacks:	Configured similar to holdout waves. Difficulty based on Average Hero level.
+	Quests:			Will probably need a Flash UI, but the repeatable Kill-Quests can use the ingame system to start with.
+	Item Restrict:	Automatically drop items that are not allowed to be carried by the hero. Restrictions are Level & Class.
+	Item Sets:		Give bonuses when particular items are together in the player's inventory.
+	Duel:			PvP! Change to Multi-Team settings.
+	Divine Armor:	Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied.
+
+- Heroes -
+
+	> Ranger
+	> Temple Guardian
+	> Assassin
+	> Warlord
+	> Cleric
+	> Druid
+	> Spartan Warrior
+	> Warlock
+
+	> Khaos Champion
+		Improve ability effects and polish behavior
+
+	> Guardian of Nature
+		Improve ability effects and polish behavior
+
+	> Barbarian
+		Finish abilities
+
+- Items -
+	> 
+
+- Units -
+	> Everything
+
+- Map -
