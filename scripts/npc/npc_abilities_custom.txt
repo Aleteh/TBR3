@@ -3,6 +3,47 @@
 {
 	"Version"		"1"
 
+
+	// Basic Bank Spells
+	"drop_all_items"
+	{
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCooldown"						"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"bank.lua"
+				"Function"						"DropAllItems"
+			}
+		}
+	}
+
+	"drop_itemslot_1"
+	{
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCooldown"						"0"
+
+		"AbilitySpecial"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slot"					"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"bank.lua"
+				"Function"						"DropItemInSlot"
+				"Slot"							"%slot"
+			}
+		}
+	}
+
+
+
 	//=================================================================================================================
 	// stat_allocation
 	//=================================================================================================================
@@ -148,8 +189,9 @@
 
 	}
 
-
-		//=================================================================================================================
+//Barbarian
+//{
+	//=================================================================================================================
 	// Barbarian: Taunt
 	//=================================================================================================================
 	//Forces a target enemy unit to attack you and slows its attack speed by 35% for 8 seconds for 35 mana.
@@ -195,8 +237,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/barbarian/taunt.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/barbarian.lua"
+				"Function"			"taunt"
 			}
 			"ApplyModifier"
 			{
@@ -352,7 +394,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"abilities/barbarian/cleave.lua"
+						"ScriptFile"		"abilities/barbarian.lua"
 						"Function"			"barbarian_cleave"
 					}
 				}
@@ -403,8 +445,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/barbarian/mighty_leap.lua"
-				"Function"			"barbarian_leap"
+				"ScriptFile"		"abilities/barbarian.lua"
+				"Function"			"leap"
 				"Target"		"POINT"
 			}
 		}
@@ -443,12 +485,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/barbarian/bloodbath.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/barbarian.lua"
+				"Function"			"bloodbath"
 			}
 		}
 	}
 
+//}End Barbarian
+
+//Spartan Warrior
+//{
 	//=================================================================================================================
 	// Spartan Warrior: Dispatch
 	//=================================================================================================================
@@ -478,8 +524,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/spartanwarrior/dispatch.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/spartan.lua"
+				"Function"			"spartan_dispatch"
 			}
 		}
 	}
@@ -616,8 +662,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/spartanwarrior/throw_javelin.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/spartan.lua"
+				"Function"			"spartan_throw"
 			}
 		}
 	}
@@ -651,8 +697,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/spartanwarrior/charge.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/spartan.lua"
+				"Function"			"spartan_charge"
 			}
 		}
 	}
@@ -686,12 +732,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/spartanwarrior/phalanx.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/spartan.lua"
+				"Function"			"spartan_phalanx"
 			}
 		}
 	}
 
+//}End Spartan Warrior
+
+//Khaos Champion
+//{
 
 	//=================================================================================================================
 	// Khaos Champion: Grave Blind
@@ -889,8 +939,8 @@
 				{
 					"RunScript" //TODO
 					{
-						"ScriptFile"	"abilities/khaoschampion/shroud.lua"
-						"Function"	"shroudReflectDamage"
+						"ScriptFile"	"abilities/kc.lua"
+						"Function"	"shroud"
 					}
 				}
 			}
@@ -980,7 +1030,7 @@
 
 
 	//=================================================================================================================
-	// HKhaos Champion: Requim
+	// Khaos Champion: Requim
 	//=================================================================================================================
 	//Calls forth fallen souls to form a boundary around the Khaos Champion.
 	//Theses Souls do xxxx to anyone who physically attacks him during 60 seconds for xx mana.
@@ -1078,8 +1128,10 @@
 		}
 	}
 
+//}End Khaos Champion
 
-
+//Guardian of Nature
+//{
 	//=================================================================================================================
 	// Guardian of Nature: Roar
 	//=================================================================================================================
@@ -1654,7 +1706,10 @@
 		}
 	}
 
+//}End Guardian of Nature
 
+//Temple Guardian
+//{
 	//=================================================================================================================
 	// Temple Guardian: Gift of the Gods
 	//=================================================================================================================
@@ -1684,8 +1739,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/templeguardian/gift_of_the_gods.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/tg.lua"
+				"Function"			"gift_of_the_gods"
 			}
 		}
 	}
@@ -1720,8 +1775,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/templeguardian/mark_of_artemis.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/tg.lua"
+				"Function"			"mark_of_artemis"
 			}
 		}
 	}
@@ -1756,8 +1811,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/templeguardian/fire_of_apollo.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/tg.lua"
+				"Function"			"fire_of_apollo"
 			}
 		}
 	}
@@ -1792,8 +1847,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/templeguardian/hammer_of_zeus.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/tg.lua"
+				"Function"			"hammer_of_zeus"
 			}
 		}
 	}
@@ -1828,8 +1883,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/templeguardian/pray.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/tg.lua"
+				"Function"			"pray"
 			}
 		}
 	}
@@ -1864,14 +1919,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/templeguardian/hestias_touch.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/tg.lua"
+				"Function"			"hestias_touch"
 			}
 		}
 	}
 
-	
+//}End Temple Guardian
 
+//Warlord
+//{
 	//=================================================================================================================
 	// Warlord: Counter
 	//=================================================================================================================
@@ -1901,8 +1958,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlord/counter.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlord.lua"
+				"Function"			"counter"
 			}
 		}
 	}
@@ -1937,8 +1994,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlord/impale.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlord.lua"
+				"Function"			"impale"
 			}
 		}
 	}
@@ -1973,8 +2030,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlord/winds_of_war.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlord.lua"
+				"Function"			"winds_of_war"
 			}
 		}
 	}
@@ -2009,8 +2066,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlord/bum_rush.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlord.lua"
+				"Function"			"bum_rush"
 			}
 		}
 	}
@@ -2045,8 +2102,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlord/bleed.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlord.lua"
+				"Function"			"bleed"
 			}
 		}
 	}
@@ -2074,21 +2131,12 @@
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
-
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/warlord/critical_strike.lua"
-				"Function"			"barbarian_taunt"
-			}
-		}
 	}
 
-	
+//}End Warlord
 
+//Assassin
+//{
 	//=================================================================================================================
 	// Assassin: Walk the Shadows
 	//=================================================================================================================
@@ -2118,8 +2166,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/assassin/walk_the_shadows.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/assassin.lua"
+				"Function"			"walk_the_shadows"
 			}
 		}
 	}
@@ -2154,8 +2202,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/assassin/disable.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/assassin.lua"
+				"Function"			"disable"
 			}
 		}
 	}
@@ -2190,8 +2238,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/assassin/assassinate.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/assassin.lua"
+				"Function"			"assassinate"
 			}
 		}
 	}
@@ -2226,8 +2274,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/assassin/garrote.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/assassin.lua"
+				"Function"			"garrote"
 			}
 		}
 	}
@@ -2262,8 +2310,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/assassin/shadow_image.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/assassin.lua"
+				"Function"			"shadow_image"
 			}
 		}
 	}
@@ -2298,14 +2346,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/assassin/critical_strike.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/assassin.lua"
+				"Function"			"critical_strike"
 			}
 		}
 	}
 
+//}End Assassin
 
-
+//Ranger
+//{
 	//=================================================================================================================
 	// Ranger: Black Arrow
 	//=================================================================================================================
@@ -2335,8 +2385,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/ranger/black_arrow.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"black_arrow"
 			}
 		}
 	}
@@ -2371,8 +2421,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/ranger/stun_shot.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"stun_shot"
 			}
 		}
 	}
@@ -2407,8 +2457,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/ranger/puncture.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"puncture"
 			}
 		}
 	}
@@ -2443,8 +2493,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/ranger/star_dust.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"star_dust"
 			}
 		}
 	}
@@ -2479,8 +2529,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/ranger/soul_piercing_shot.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"soul_piercing_shot"
 			}
 		}
 	}
@@ -2515,14 +2565,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/ranger/prevailing_winds.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"prevailing_winds"
 			}
 		}
 	}
 
+//}End Ranger
 
-
+//Warlock
+//{
 	//=================================================================================================================
 	// Warlock: Torment
 	//=================================================================================================================
@@ -2552,8 +2604,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlock/torment.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlock.lua"
+				"Function"			"torment"
 			}
 		}
 	}
@@ -2588,8 +2640,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlock/soul_drain.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlock.lua"
+				"Function"			"soul_drain"
 			}
 		}
 	}
@@ -2623,8 +2675,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlock/deathwave.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlock.lua"
+				"Function"			"deathwave"
 			}
 		}
 	}
@@ -2659,8 +2711,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlock/vengeance.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlock.lua"
+				"Function"			"vengeance"
 			}
 		}
 	}
@@ -2694,12 +2746,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlock/blind.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/warlock.lua"
+				"Function"			"blind"
 			}
 		}
 	}
-	
+
+//}End Warlock
+
+//Cleric
+//{
 	//=================================================================================================================
 	// Cleric: Holy Light
 	//=================================================================================================================
@@ -2729,8 +2785,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/cleric/holy_light.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/cleric.lua"
+				"Function"			"holy_light"
 			}
 		}
 	}
@@ -2765,8 +2821,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/cleric/regen.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/cleric.lua"
+				"Function"			"regen"
 			}
 		}
 	}
@@ -2801,8 +2857,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/cleric/fire_of_heaven.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/cleric.lua"
+				"Function"			"fire_of_heaven"
 			}
 		}
 	}
@@ -2837,8 +2893,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/cleric/cleansing_flame.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/cleric.lua"
+				"Function"			"cleansing_flame"
 			}
 		}
 	}
@@ -2873,15 +2929,16 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/cleric/rebirth.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/cleric.lua"
+				"Function"			"rebirth"
 			}
 		}
 	}
 
+//}End Cleric
 
-	
-
+//Magician
+//{
 	//=================================================================================================================
 	// Magician: Frost Bolt
 	//=================================================================================================================
@@ -2911,8 +2968,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/magician/frost_bolt.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/magician.lua"
+				"Function"			"frost_bolt"
 			}
 		}
 	}
@@ -3061,8 +3118,10 @@
 		}
 	}
 
-	
+//}End Magician
 
+//Druid
+//{
 	//=================================================================================================================
 	// Druid: Rejuvenation
 	//=================================================================================================================
@@ -3092,8 +3151,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/druid/rejuvenation.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/druid.lua"
+				"Function"			"rejuvenation"
 			}
 		}
 	}
@@ -3127,8 +3186,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/druid/natures_wrath.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/druid.lua"
+				"Function"			"natures_wrath"
 			}
 		}
 	}
@@ -3163,8 +3222,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/druid/call_lightning.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/druid.lua"
+				"Function"			"call_lightning"
 			}
 		}
 	}
@@ -3198,8 +3257,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/druid/mind_blast.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/druid.lua"
+				"Function"			"mind_blast"
 			}
 		}
 	}
@@ -3234,9 +3293,11 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/druid/call_storm.lua"
-				"Function"			"barbarian_taunt"
+				"ScriptFile"		"abilities/druid.lua"
+				"Function"			"call_storm"
 			}
 		}
 	}
+//}End Druid
+
 }
