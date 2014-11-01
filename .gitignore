@@ -46,5 +46,6 @@ content/maps/theblackroad_test.vmap
 maps/theblackroad.vpk
 maps/theblackroad_test.vpk
 maps/test_env.vpk
+maps\test_env.vpk
 tools_asset_info.bin
 tools_thumbnail_cache.bin
