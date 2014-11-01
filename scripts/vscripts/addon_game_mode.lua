@@ -1,12 +1,24 @@
+-- Generated from template
+
+require('util')
 require('timers')
 require('physics')
 require('barebones')
 require('xp_table')
 
 function Precache( context )
-		print("Performing pre-load precache")
+	--[[
+		This function is used to precache resources/units/items/abilities that will be needed
+		for sure in your game and that cannot or should not be precached asynchronously or 
+		after the game loads.
+
+		See GameMode:PostLoadPrecache() in barebones.lua for more information
+		]]
+
+		print("[BAREBONES] Performing pre-load precache")
 
 		-- Particles can be precached individually or by folder
+		-- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed
 		PrecacheResource("particle", "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf", context)
 		PrecacheResource("particle_folder", "particles/test_particle", context)
 
@@ -25,6 +37,8 @@ function Precache( context )
 		PrecacheItemByNameSync("example_ability", context)
 		PrecacheItemByNameSync("item_example_item", context)
 
+		-- Entire heroes (sound effects/voice/models/particles) can be precached with PrecacheUnitByNameSync
+		-- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way
 		PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
 		PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 end
