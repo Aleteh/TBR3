@@ -1,4 +1,3 @@
-require('util')
 require('timers')
 require('physics')
 require('barebones')
