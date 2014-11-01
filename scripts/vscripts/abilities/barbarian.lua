@@ -1,4 +1,22 @@
-function barbarian_leap( event )
+function taunt( event )
+	event.target:SetForceAttackTarget(event.caster)
+	
+--[[
+	<BMD> you can issue an attack order
+	<BMD> and set MODIFIER_STATE_COMMAND_RESTRICTED via a modifier
+	<BMD> then remove it when the taunt it done]]
+
+	-- 8 second delayed, run once using gametime (respect pauses)
+  	Timers:CreateTimer({
+    endTime = 8,
+    callback = function()
+      event.target:SetForceAttackTarget(nil)
+    end
+  	})
+
+end
+
+function leap( event )
 	print("Starting Leap")
 	local point = event.target_points[1]
 	local unit = event.caster
@@ -10,37 +28,6 @@ function barbarian_leap( event )
 	--unit:SetNavCollisionType(PHYSICS_NAV_NOTHING)
 
 	-- check http://hastebin.com/anolahazet.coffee
-	--[[
-		<BMD> so you want a contsant xy velocity jump most likely
-<BMD> so instead of using distance to set the Velocity, you pick a leap speed
-<BMD> like 2000 or something
-<BMD> or whattever, make it scale with levels who cares
-<BMD> then you're going to calculate leap time by taking the distance / leap speed
-<BMD> and use that for your timers
-<Noya> that would make short leaps end faster, right
-<BMD> yes
-<BMD> then you decide if you want a constant gravity/curve
-<BMD> for the jumop
-<BMD> or a constant z height tehy always get to
-<Noya> like in this code? http://hastebin.com/anolahazet.coffee
-<BMD> for constant gravity, you just set a fixed -z acceleration
-<BMD> yeah, i remember helping someone with that
-<BMD> can't remember who for the life of me
-<Noya> Jiziason linked it to me
-<BMD> but that's a constant xy velocity jump
-<BMD> with constant gravity curve
-<BMD> so the farther away you jump, the higher you go
-<BMD> since gravity is the same
-<Jiziason> it's Lymbow's code
-<BMD> Lymbow, that's the guy
-<BMD> yeah i helped him put the rocketman jump stuff together
-<tet> who the fuck is that
-<Jiziason> lol
-<BMD> granted you need to remove the 30*
-<BMD> inb the gravity calculation
-<BMD> the old version of the physics lib had an issue in it where it forced you to set the acceleration in hammer units per second per frame
-<BMD> instead of hammer units per second squared
-	]]
 
 	local distance = VectorDistance(event.caster:GetAbsOrigin(), event.target_points[1])
 	print("Distance " .. distance)
