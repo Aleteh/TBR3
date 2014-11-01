@@ -1,0 +1,3242 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// stat_allocation
+	//=================================================================================================================
+	"stat_allocation"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityTextureName"					"stat_allocation"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+		"AbilityCastAnimation"					"ACT_DOTA_LOADOUT"
+		"AbilityCooldown"						"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"scripts/vscripts/stats.lua"
+				"Function"						"SwapAbilities"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// stat_allocation_cancel
+	//=================================================================================================================
+	"stat_allocation_cancel"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityTextureName"					"stat_allocation_cancel"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+		"AbilityCastAnimation"					"ACT_DOTA_LOADOUT"
+		"AbilityCooldown"						"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"scripts/vscripts/stats.lua"
+				"Function"						"SwapAbilities"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// stat_allocation_str
+	//=================================================================================================================
+	"stat_allocation_str"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityTextureName"					"stat_allocation_str"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+		"AbilityCastAnimation"					"ACT_DOTA_LOADOUT"
+		"AbilityCooldown"						"0.1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"scripts/vscripts/stats.lua"
+				"Function"						"IncreaseStat"
+				"Stat"							"str"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// stat_allocation_agi
+	//=================================================================================================================
+	"stat_allocation_agi"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityTextureName"					"stat_allocation_agi"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+		"AbilityCastAnimation"					"ACT_DOTA_LOADOUT"
+		"AbilityCooldown"						"0.1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"scripts/vscripts/stats.lua"
+				"Function"						"IncreaseStat"
+				"Stat"							"agi"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// stat_allocation_int
+	//=================================================================================================================
+	"stat_allocation_int"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityTextureName"					"stat_allocation_int"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+		"AbilityCastAnimation"					"ACT_DOTA_LOADOUT"
+		"AbilityCooldown"						"0.1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"scripts/vscripts/stats.lua"
+				"Function"						"IncreaseStat"
+				"Stat"							"int"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// stat_empty1
+	//=================================================================================================================
+	"stat_empty1"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+
+	}
+
+	//=================================================================================================================
+	// stat_empty2
+	//=================================================================================================================
+	"stat_empty2"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" 								"0"
+
+	}
+
+
+		//=================================================================================================================
+	// Barbarian: Taunt
+	//=================================================================================================================
+	//Forces a target enemy unit to attack you and slows its attack speed by 35% for 8 seconds for 35 mana.
+	//This skill cannot be improved. 10 seconds cooldown.
+
+	"barbarian_taunt"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_skill1"
+		"MaxLevel" "1"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"35"
+		"AbilityDuration"               "8"
+    	
+    	//"AbilityDamage"                 "0"
+
+    	"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackspeed_reduction"				"-25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/barbarian/taunt.lua"
+				"Function"			"barbarian_taunt"
+			}
+			"ApplyModifier"
+			{
+				"Target" 		"TARGET"
+				"ModifierName"	"modifier_barbarian_taunt"
+			}
+		}
+
+		"Modifiers"    				
+		{  							
+			"modifier_barbarian_taunt"  
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"Duration"					"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attackspeed_reduction"
+				}
+				
+			}
+		}
+	}
+
+	
+
+	//=================================================================================================================
+	// Barbarian: Rend Armor 
+	//=================================================================================================================
+	//Reduces a target enemy unit's armor by xx for xx mana. Lasts up to 30 seconds.
+	//Cooldown 1 second.
+
+	"barbarian_rend_armor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_skill2"
+		"MaxLevel" "7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"1 1 1 1 1 1 1 1"
+		"AbilityManaCost"				"10 16 23 31 40 51 62 75"
+		"AbilityDuration"               "30 30 30 30 30 30 30 30"
+    	
+    	//"AbilityDamage"                 "0"
+
+    	"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"	"-25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 		"TARGET"
+				"ModifierName"	"modifier_barbarian_rend_armor"
+			}
+		}
+
+		"Modifiers"    				
+		{  							
+			"modifier_barbarian_rend_armor"  
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"Duration"					"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
+				}
+				
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Barbarian: Cleave 
+	//=================================================================================================================
+	//Adds four times your Strength plus xxxx bonus damage to your next attack against a single target and causes three times your Strength plus xxxx damage to nearby enemy units for xx mana. 
+    //2,25 seconds cooldown. Can be autocast 
+	
+	"barbarian_cleave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_skill3"
+		"MaxLevel" "1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"50"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"2.25 2.25 2.25 2.25 2.25 2.25 2.25 2.25"
+		"AbilityManaCost"				"175 225 275"
+
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 200 350 560 840 1260 2000 3000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"100"
+			}
+		}
+
+    	"OnSpellStart"
+		{
+			"Damage"
+			{
+				"Type" 		"DAMAGE_TYPE_PHYSICAL"
+				"Damage" 	"%damage"
+				"Target" 	"TARGET"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"		"TARGET"
+					"Radius"		"%radius"
+					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/barbarian/cleave.lua"
+						"Function"			"barbarian_cleave"
+					}
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Barbarian: Mighty leap 
+	//=================================================================================================================
+	//You leap into the midst of the enemy with such ferocity that the ground shakes when you land.
+	//All enemy units in the area of effect suffer damage equal to double your Strength plus xxxx and are stunned for two seconds.
+	//In addition, xx mana is added to your mana pool.
+	//30 seconds cooldown. 
+    //225 AOE, 600 range, no mana cost.
+	
+	"barbarian_mighty_leap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_skill4"
+		"MaxLevel" "1"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"30 30 30 30 30 30 30 30"
+		"AbilityManaCost"				"0 0 0 0 0 0 0 0"
+		"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "50 100 175 280 420 630 1000 1500"
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
+    	}
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/barbarian/mighty_leap.lua"
+				"Function"			"barbarian_leap"
+				"Target"		"POINT"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Barbarian: Bloodbath
+	//=================================================================================================================
+	//Your axe sinks home in the enemy's flesh, drenching you in blood and dealing twice your Strength plus xxxx damage to a target enemy unit for xx mana.
+	//All damage dealt in this way will be added to your health. 
+	//12 seconds cooldown. 
+	
+	"barbarian_bloodbath"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/barbarian/bloodbath.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spartan Warrior: Dispatch
+	//=================================================================================================================
+	"spartanwarrior_dispatch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartan_warrior_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/spartanwarrior/dispatch.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Spartan Warrior: Valor
+	//=================================================================================================================
+	"spartanwarrior_valor"
+	{
+
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityTextureName"					"spartan_warrior_skill2"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_1"
+		"MaxLevel" 								"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"						"500"
+		"AbilityCastPoint"						"0.3 0.0 0.0 0.0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"1.0 22.0 22.0 22.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"1"
+
+		"precache"
+		{
+			//"particle"				"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"particle"		"particles/items_fx/healing_clarity.vpcf"
+			"particle"		"particles/items2_fx/tranquil_boots_healing_core.vpcf"
+			"particle"		"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion_wave.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				//"EffectName"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+				"EffectName"					"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion_wave.vpcf"
+				"EffectAttachType"				"follow_origin"
+				// "EffectRadius"					"2000"
+				// "EffectDurationScale"			"2"
+				// "EffectLifeDurationScale"		"1"
+				// "EffectColor" "255 0 0"
+				// "EffectColorA" "0 255 0"
+				// "EffectColorB" "0 0 255"
+				"Target"						"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"Target"
+				{
+					"Center"  					"CASTER"
+					"Radius" 					"%radius"
+					"Teams" 					"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"						"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"ModifierName"					"modifier_valor"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_valor"
+			{
+				"Duration"						"%duration"
+				"EffectName"					"particles/items2_fx/tranquil_boots_healing_core.vpcf"
+				"EffectAttachType"				"follow_origin"
+				//"EffectAttachType" "follow_overhead"
+				"Properties"
+				{
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
+				}
+
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"500"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"120"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"health_regen"					"20"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spartan Warrior: Throw Javelin
+	//=================================================================================================================
+	"spartanwarrior_throw_javelin"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartan_warrior_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/spartanwarrior/throw_javelin.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spartan Warrior: Charge
+	//=================================================================================================================
+	"spartanwarrior_charge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartan_warrior_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/spartanwarrior/charge.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spartan Warrior: Phalanx
+	//=================================================================================================================
+	"spartanwarrior_phalanx"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartan_warrior_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/spartanwarrior/phalanx.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Khaos Champion: Grave Blind
+	//=================================================================================================================
+	//Blinds the target to his grave stunning it for 3 seconds and dealing xxxx damage for xx mana.
+	//20 seconds cooldown. 450 Range
+	
+	"khaoschampion_grave_blind"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"skeleton_king_hellfire_blast"
+		"AbilityTextureName"			"khaos_champion_skill1"
+		"MaxLevel" "7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCooldown"				"20"
+		"AbilityDamage"					"100 225 425 770 2675 4875 9020"
+		"AbilityManaCost"				"7 13 19 25 31 37 43 49"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_stun_duration"	"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_slow"			"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_dot_duration"	"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_dot_damage"		"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_slow_duration"	"0"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Khaos Champion: Shadow Scythe
+	//=================================================================================================================
+	//The Khaos Champion hurls his scythe damaging nearby enemies.
+	//Each blade does xxxxx damage for xx mana.
+	//Cooldown 13 seconds. 750 AOE. 
+	
+	"khaoschampion_shadow_scythe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaos_champion_skill2"
+		"MaxLevel" "7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"13"	
+		"AbilityManaCost"				"0" //"10 14 19 26 35 48 55 68"
+    
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"75 125 280 630 1500 3200 7200 16200"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				"Target" "CASTER" //"TargetPoint" "POINT"
+				"EffectName" "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+				"EffectAttachType" "follow_origin"
+				"EffectRadius" 		"750"
+				"EffectDurationScale" "1"
+				"EffectLifeDurationScale" "1"
+				"EffectColorA" "25 225 100"
+				"EffectColorB" "25 225 100"
+
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"750"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage"
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Khaos Champion: Shroud
+	//=================================================================================================================
+	//The Khaos Champion is shrouded in darkness, providing him several adavantages in battle.
+	//His armor is increased by xx and all physical damage done to him is reduced by xx %.
+	//Also a small amount of the physical damage that is inflicted upon him is reflected to enemies nearby. 250 AOE.
+	
+	"khaoschampion_shroud"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaos_champion_skill3"
+		"MaxLevel" "7"
+
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
+	
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "250"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"armor_bonus"	"3 5 7 10 15 25 35 50"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_reduction"	"2.0 5.0 8.0 11.0 14.0 17.0 20.0 23.0"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"reflect_aoe"		"250"
+			}
+			// damage reflection?
+		}
+		"Modifiers"
+		{
+			"modifier_khaoschampion_shroud"
+			{
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+				"EffectName"		"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+					"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" 	"%damage_reduction"
+				}
+				"OnAttacked"
+				{
+					"RunScript" //TODO
+					{
+						"ScriptFile"	"abilities/khaoschampion/shroud.lua"
+						"Function"	"shroudReflectDamage"
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Khaos Champion: Terrorize
+	//=================================================================================================================
+	//Lowers nearby enemies Attack Speed by xx% and their Movement Speed by 25%. 400 AOE.
+	
+	"khaoschampion_terrorize"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaos_champion_skill4"
+		"MaxLevel" 			"7"
+		
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
+
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "400"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+	
+		"precache"
+		{
+			"particle"	"particles/items_fx/aura_endurance.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"move_speed_reduction"	"-20"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"attack_speed_reduction"	"-5.0 -8.0 -12.0 -15.0 -18.0 -21.0 -25.0 -30.0"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"Range"		"400"
+			}
+		}
+		"Modifiers"
+		{
+			"aura_khaoschampion_terrorize"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/items_fx/aura_endurance.vpcf"
+						"EffectAttachType" "follow_origin"
+						"EffectLifeDurationScale" "1"
+					}
+				}
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+				"Aura" 				"modifier_khaoschampion_terrorize"
+				"Aura_Radius" 		"%Range"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			}
+			"modifier_khaoschampion_terrorize"
+			{
+				"IsHidden"				"0"
+				"IsBuff"				"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%move_speed_reduction"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%attack_speed_reduction"
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// HKhaos Champion: Requim
+	//=================================================================================================================
+	//Calls forth fallen souls to form a boundary around the Khaos Champion.
+	//Theses Souls do xxxx to anyone who physically attacks him during 60 seconds for xx mana.
+	//Cooldown 1 second. 160 AOE.
+	
+	"khaoschampion_requim"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaos_champion_skill5"
+		"MaxLevel" "7"
+
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
+	
+		"AbilityCastPoint"    "0.0"
+		"AbilityCooldown"    	"1"
+		"AbilityManaCost"    "0" //"15 22 30 39 49 60 72 85"    	
+    	"AbilityDamage"      	"35 50 150 350 750 1250 1850 2500"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_attacker"	"35 50 150 350 750 1250 1850 2500"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"aoe"		"160"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"		"60"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/econ/courier/courier_trail_hw_2012/courier_trail_hw_2012_ghosts.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%aoe"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target" 			"TARGET"
+						"ModifierName"		"modifier_khaoschampion_requim"
+					}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_khaoschampion_requim"
+			{
+				"Duration"			"%duration"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"OnCreated"
+				{
+					"AttachEffect"
+	                {
+	                    "Target" "TARGET"
+	                    "EffectName"		"particles/econ/courier/courier_trail_hw_2012/courier_trail_hw_2012_ghosts.vpcf"
+	                    "EffectAttachType" "follow_overhead"
+	                }
+				} 
+				"OnAttackLanded"
+				{
+					"Damage"
+					{
+						"Target"		 "ATTACKER" //caster?
+						"Type"			 "DAMAGE_TYPE_PHYSICAL"
+						"Damage"		 "%damage_attacker"
+					}
+				}
+			}
+		}
+	}
+
+
+
+	//=================================================================================================================
+	// Guardian of Nature: Roar
+	//=================================================================================================================
+	"guardianofnature_roar"
+	//Increases the damage of nearby friendly units by xx% and armor by xx. Lasts 30 seconds. 500 AOE
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardian_of_nature_skill1"
+		"MaxLevel" "1"
+
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"		
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"40"
+    	
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_bonus"		"27.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_bonus"		"12"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"30"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+		}
+		
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_lone_druid/lone_druid_battle_cry_overhead.vpcf"
+			"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_battle_cry_buff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+		}
+
+		"OnSpellStart"
+		{		
+			"FireSound"
+			{
+				"EffectName"	"Hero_LoneDruid.BattleCry"
+				"Target"		"CASTER"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target" 			"TARGET"
+						"ModifierName"		"modifier_guardianofnature_roar"
+					}
+				}
+			}
+		}
+		"Modifiers"    				
+		{  							
+			"modifier_guardianofnature_roar"  
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName" 		"particles/units/heroes/hero_lone_druid/lone_druid_battle_cry_overhead.vpcf"
+						"EffectAttachType"	"follow_overhead"
+						"Target"			"TARGET"	
+					}
+					"AttachEffect"
+					{
+						"EffectName" 		"particles/units/heroes/hero_lone_druid/lone_druid_battle_cry_buff.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"	
+					}
+					
+				}
+				"Duration"					"%duration"
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%armor_bonus"
+				}	
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Guardian of Nature: Tremor
+	//=================================================================================================================
+	"guardianofnature_tremor"
+	//Gives the guardian a 15% chance to do slam the ground on an attack causing xxxx damage to all enemies within a 250 AOE. 
+	//Enemies outside that radius will suffer half damage.
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardian_of_nature_skill2"
+		"MaxLevel" 	"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chance"			"15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"full_radius"			"250"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"half_radius"			"500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"250"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"half_damage"			"125"
+			}
+		}
+		
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+			"particle" "particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"	 
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
+
+		"Modifiers"
+		{
+			"guardianofnature_tremor_passive"
+			{
+				"Passive"	 "1"
+				"IsHidden"	 "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" "100"  //"%chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" "guardianofnature_tremor_proc"
+								"Target"	   "CASTER"	
+							}
+							"AttachEffect"
+							{
+								"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+								"EffectAttachType"	"follow_origin"
+								"Target" 		"CASTER"
+							}						
+						}
+					}
+				}
+			}
+
+			"guardianofnature_tremor_proc"
+			{
+				"Duration"	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%damage"
+				}
+				
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Brewmaster.ThunderClap"
+						"Target"		"TARGET"
+					}
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"	 
+						"EffectAttachType"	 "attach_hitloc"
+						"Target"			 "TARGET"
+					}	
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%full_radius"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+						"Action"
+						{
+							"Damage"
+							{
+								"Type" 		"DAMAGE_TYPE_PHYSICAL"
+								"Damage" 	"%full_damage"
+								"Target" 	"TARGET"
+							}
+						}
+					}
+					"ActOnTargets"
+
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%half_radius"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+						"Action"
+						{
+							"Damage"
+							{
+								"Type" 		"DAMAGE_TYPE_PHYSICAL"
+								"Damage" 	"%half_damage"
+								"Target" 	"TARGET"
+							}
+						}
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"		"guardianofnature_tremor_proc"
+						"Target"			"CASTER"	
+					}
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Guardian of Nature: Earth Shock
+	//=================================================================================================================
+	"guardianofnature_earth_shock"
+	//The Guadian bashes the ground, causing a shockwave to come out dealing xxxxx damage to enemies cought in the shockwave for xxx mana.
+	// 150 AOE. 8 seconds cooldown. 700 range.
+	{
+		"BaseClass"             		"magnataur_shockwave"
+		"AbilityTextureName"			"guardian_of_nature_skill3"
+		"MaxLevel" "1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+		"AbilityDuration"				"0.6875"
+
+		"AbilityManaCost"				"50"
+
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shock_speed"			"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shock_width"			"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shock_distance"		"700"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shock_damage"			"125"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Guardian of Nature: Cataclysm
+	//=================================================================================================================
+	"guardianofnature_cataclysm"
+	//Causes the earth to buckle and spew forth rock and magma from targetted point. 
+	//Deals xxxxx initial damage and xxxx damage per second for 3 seconds for xxxx mana. 450 AOE, 800 range, 45 seconds cooldown
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardian_of_nature_skill4"
+		"MaxLevel" "1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AOERadius"     "%radius"
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"50"
+
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_over_time"		"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"450"
+			}
+		}
+		
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"	
+		}
+
+		"OnSpellStart"
+		{
+			"CreateThinker"
+	        {
+	            "ModifierName" "guardianofnature_cataclysm_fx"
+	            "Target" "POINT"
+	        }
+			"FireSound"
+			{
+				"Target"		"CASTER"
+				"EffectName"	"Hero_Leshrac.Split_Earth"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"POINT"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"	"POINT"
+							"Radius"	"%radius"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage"
+					}
+					"ApplyModifier"
+					{
+						"Target" 		"TARGET"
+						"ModifierName"	"modifier_guardianofnature_cataclysm"
+					}
+				}
+			}
+		}
+		"Modifiers"    				
+		{  							
+			"modifier_guardianofnature_cataclysm"  
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"Duration"					"%duration"
+				"ThinkInterval"				"1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_over_time"
+					}
+				}
+			}
+			"guardianofnature_cataclysm_fx"
+			{
+				"Duration" "2"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"	"TARGET"
+						"EffectAttachType" "follow_origin"
+						"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+						"ControlPoints"
+						{
+							"01"		"%radius 50 50"
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Guardian of Nature: Nature's Fury
+	//=================================================================================================================
+	"guardianofnature_natures_fury"
+	//Gives you a xx % chance on attack to stun for 2.5 seconds and cause an extra xxxx damage to all enemiey in a 350 radius.
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardian_of_nature_skill5"
+		"MaxLevel" "1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chance"			"3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"350"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2.5"
+			}
+		}
+		
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+			"particle" "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_egset.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+		}
+
+		"Modifiers"
+		{
+			"guardianofnature_natures_fury_passive"
+			{
+				"Passive"	 "1"
+				"IsHidden"	 "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" "100"  //"%chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" "guardianofnature_natures_fury_proc"
+								"Target"	   "CASTER"	
+							}
+							"AttachEffect"
+							{
+								"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+								"EffectAttachType"	"follow_origin"
+								"Target" 		"CASTER"
+							}							
+						}
+					}
+				}
+			}
+
+			"guardianofnature_natures_fury_proc"
+			{
+				"Duration"	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%damage"
+				}
+				
+				"OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"EffectName"		 "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_egset.vpcf"
+						"EffectAttachType"	 "attach_hitloc"
+						"Target"			 "TARGET"						
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_EarthShaker.EchoSlam"
+						"Target"		"CASTER"
+					}					
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%radius"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+						"Action"
+						{
+							"Damage"
+							{
+								"Type" 		"DAMAGE_TYPE_PHYSICAL"
+								"Damage" 	"%damage"
+								"Target" 	"TARGET"
+							}
+							"Stun"
+							{
+								"Target"	"TARGET"
+								"Duration"	"%stun_duration"
+							}
+						}
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"		"guardianofnature_natures_fury_proc"
+						"Target"			"CASTER"	
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Temple Guardian: Gift of the Gods
+	//=================================================================================================================
+	"templeguardian_gift_of_the_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"temple_guardian_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/templeguardian/gift_of_the_gods.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Temple Guardian: Mark of Artemis
+	//=================================================================================================================
+	"templeguardian_mark_of_artemis"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"temple_guardian_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/templeguardian/mark_of_artemis.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Temple Guardian: Fire of Apollo
+	//=================================================================================================================
+	"templeguardian_fire_of_apollo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"temple_guardian_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/templeguardian/fire_of_apollo.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Temple Guardian: Hammer of Zeus
+	//=================================================================================================================
+	"templeguardian_hammer_of_zeus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"temple_guardian_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/templeguardian/hammer_of_zeus.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Temple Guardian: Pray
+	//=================================================================================================================
+	"templeguardian_pray"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"temple_guardian_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/templeguardian/pray.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Temple Guardian: Hestia's Touch
+	//=================================================================================================================
+	"templeguardian_hestias_touch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"temple_guardian_skill6"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/templeguardian/hestias_touch.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	
+
+	//=================================================================================================================
+	// Warlord: Counter
+	//=================================================================================================================
+	"warlord_counter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlord/counter.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlord: Impale
+	//=================================================================================================================
+	"warlord_impale"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlord/impale.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlord: Winds of war
+	//=================================================================================================================
+	"warlord_winds_of_war"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlord/winds_of_war.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlord: Bum Rush
+	//=================================================================================================================
+	"warlord_bum_rush"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlord/bum_rush.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlord: Bleed
+	//=================================================================================================================
+	"warlord_bleed"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlord/bleed.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlord: Critical Strike
+	//=================================================================================================================
+	"warlord_critical_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_skill6"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlord/critical_strike.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	
+
+	//=================================================================================================================
+	// Assassin: Walk the Shadows
+	//=================================================================================================================
+	"assassin_walk_the_shadows"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/assassin/walk_the_shadows.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Assassin: Disable
+	//=================================================================================================================
+	"assassin_disable"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/assassin/disable.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Assassin: Assassinate
+	//=================================================================================================================
+	"assassin_assassinate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/assassin/assassinate.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Assassin: Garrote
+	//=================================================================================================================
+	"assassin_garrote"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/assassin/garrote.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Assassin: Shadow Image
+	//=================================================================================================================
+	"assassin_shadow_image"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/assassin/shadow_image.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Assassin: Critical Strike
+	//=================================================================================================================
+	"assassin_critical_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_skill6"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/assassin/critical_strike.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+
+	//=================================================================================================================
+	// Ranger: Black Arrow
+	//=================================================================================================================
+	"ranger_black_arrow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ranger/black_arrow.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ranger: Stun Shot
+	//=================================================================================================================
+	"ranger_stun_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ranger/stun_shot.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ranger: Puncture
+	//=================================================================================================================
+	"ranger_puncture"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ranger/puncture.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ranger: Star Dust
+	//=================================================================================================================
+	"ranger_star_dust"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ranger/star_dust.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ranger: Soul-Piercing Shot
+	//=================================================================================================================
+	"ranger_soul_piercing_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ranger/soul_piercing_shot.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ranger: Prevailing Winds
+	//=================================================================================================================
+	"ranger_prevailing_winds"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_skill6"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ranger/prevailing_winds.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+
+	//=================================================================================================================
+	// Warlock: Torment
+	//=================================================================================================================
+	"warlock_torment"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlock/torment.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlock: Soul Drain
+	//=================================================================================================================
+	"warlock_soul_drain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlock/soul_drain.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Warlock: Deathwave
+	//=================================================================================================================
+	"warlock_deathwave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlock/deathwave.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Warlock: Vengeance
+	//=================================================================================================================
+	"warlock_vengeance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlock/vengeance.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Warlock: Blind
+	//=================================================================================================================
+	"warlock_blind"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/warlock/blind.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Cleric: Holy Light
+	//=================================================================================================================
+	"cleric_holy_light"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/cleric/holy_light.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Cleric: Regen
+	//=================================================================================================================
+	"cleric_regen"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/cleric/regen.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Cleric: Fire of Heaven
+	//=================================================================================================================
+	"cleric_fire_of_heaven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/cleric/fire_of_heaven.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Cleric: Cleansing Flame
+	//=================================================================================================================
+	"cleric_cleansing_flame"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/cleric/cleansing_flame.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Cleric: Rebirth
+	//=================================================================================================================
+	"cleric_rebirth"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/cleric/rebirth.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	
+
+	//=================================================================================================================
+	// Magician: Frost Bolt
+	//=================================================================================================================
+	"magician_frost_bolt"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician/frost_bolt.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Magician: Flame Spire
+	//=================================================================================================================
+	"magician_flame_spire"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician/flame_spire.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Magician: Flash Point
+	//=================================================================================================================
+	"magician_flash_point"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician/flash_point.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Magician: Meteor Shower
+	//=================================================================================================================
+	"magician_meteor_shower"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician/meteor_shower.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Magician: Freezing Field
+	//=================================================================================================================
+	"magician_freezing_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician/freezing_field.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	
+
+	//=================================================================================================================
+	// Druid: Rejuvenation
+	//=================================================================================================================
+	"druid_rejuvenation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_skill1"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/druid/rejuvenation.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Druid: Nature's Wrath
+	//=================================================================================================================
+	"druid_natures_wrath"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_skill2"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/druid/natures_wrath.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Druid: Call Lightning
+	//=================================================================================================================
+	"druid_call_lightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_skill3"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/druid/call_lightning.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Druid: Mind Blast
+	//=================================================================================================================
+	"druid_mind_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_skill4"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/druid/mind_blast.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Druid: Call Storm
+	//=================================================================================================================
+	"druid_call_storm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_skill5"
+		"MaxLevel" "1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/druid/call_storm.lua"
+				"Function"			"barbarian_taunt"
+			}
+		}
+	}
+}

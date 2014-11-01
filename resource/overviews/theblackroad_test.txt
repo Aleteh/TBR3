@@ -1,0 +1,8 @@
+theblackroad_test
+{
+	material materials/overviews/theblackroad_test.vmat
+	pos_x -16384
+	pos_y 17080
+	scale 32.000
+}
+

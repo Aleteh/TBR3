@@ -1,0 +1,313 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{	
+	//=================================================================================================================
+	// HERO: Barbarian
+	//=================================================================================================================
+	"npc_dota_hero_beastmaster"
+	{
+		"override_hero"				"npc_dota_hero_beastmaster"
+		"AbilityLayout" "6"
+		"Ability1"					"barbarian_taunt"
+		"Ability2"					"barbarian_rend_armor"
+		"Ability3"					"barbarian_cleave"
+		"Ability4"					"barbarian_mighty_leap"
+		"Ability5"					"barbarian_bloodbath"
+		"Ability6"					"stat_allocation"
+		"Ability7"					"stat_allocation_str"
+		"Ability8"					"stat_allocation_agi"
+		"Ability9"					"stat_allocation_int"
+		"Ability10"					"stat_empty1"
+		"Ability11"					"stat_empty2"
+		"Ability12"					"stat_allocation_cancel"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "15" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "10" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Spartan Warrior
+	//=================================================================================================================
+	"npc_dota_hero_dragon_knight"
+	{
+		"override_hero"				"npc_dota_hero_dragon_knight"
+		"AbilityLayout" "6"
+		"Ability1"					"spartanwarrior_dispatch"
+		"Ability2"					"spartanwarrior_valor"
+		"Ability3"					"spartanwarrior_throw_javelin"
+		"Ability4"					"spartanwarrior_charge"
+		"Ability5"					"spartanwarrior_phalanx"
+		"Ability6"					"stat_allocation"
+		"Ability7"					"stat_allocation_str"
+		"Ability8"					"stat_allocation_agi"
+		"Ability9"					"stat_allocation_int"
+		"Ability10"					"stat_empty1"
+		"Ability11"					"stat_empty2"
+		"Ability12"					"stat_allocation_cancel"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "14" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "12" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Khaos Champion
+	//=================================================================================================================
+	"npc_dota_hero_skeleton_king"
+	{
+		"override_hero"				"npc_dota_hero_skeleton_king"
+		"AbilityLayout" "5"
+		"Ability1"					"khaoschampion_grave_blind"
+		"Ability2"					"khaoschampion_shadow_scythe"
+		"Ability3"					"khaoschampion_shroud"
+		"Ability4"					"khaoschampion_terrorize"
+		"Ability5"					"khaoschampion_requim"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "14" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "10" 		// Base intelligence
+        "AttributeIntelligenceGain"     "2"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Guardian of Nature
+	//=================================================================================================================
+	"npc_dota_hero_brewmaster"
+	{
+		"override_hero"				"npc_dota_hero_brewmaster"
+		"AbilityLayout" "5"
+		"Ability1"					"guardianofnature_roar"
+		"Ability2"					"guardianofnature_tremor"
+		"Ability3"					"guardianofnature_earth_shock"
+		"Ability4"					"guardianofnature_cataclysm"
+		"Ability5"					"guardianofnature_natures_fury"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "14" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "12" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Temple Guardian
+	//=================================================================================================================
+	"npc_dota_hero_sven"
+	{
+		"override_hero"				"npc_dota_hero_sven"
+		"AbilityLayout" "6"
+		"Ability1"					"templeguardian_gift_of_the_gods"
+		"Ability2"					"templeguardian_mark_of_artemis"
+		"Ability3"					"templeguardian_fire_of_apollo"
+		"Ability4"					"templeguardian_hammer_of_zeus"
+		"Ability5"					"templeguardian_pray"
+		"Ability6"					"templeguardian_hestias_touch"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "14" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "13" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "11" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Warlord
+	//=================================================================================================================
+	"npc_dota_hero_axe"
+	{
+		"override_hero"				"npc_dota_hero_axe"
+		"AbilityLayout" "6"
+		"Ability1"					"warlord_counter"
+		"Ability2"					"warlord_impale"
+		"Ability3"					"warlord_winds_of_war"
+		"Ability4"					"warlord_bum_rush"
+		"Ability5"					"warlord_bleed"
+		"Ability6"					"warlord_critical_strike"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"         "14" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "14" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Assassin
+	//=================================================================================================================
+	"npc_dota_hero_bounty_hunter"
+	{
+		"override_hero"				"npc_dota_hero_bounty_hunter"
+		"AbilityLayout" "6"
+		"Ability1"					"assassin_walk_the_shadows"
+		"Ability2"					"assassin_disable"
+		"Ability3"					"assassin_assassinate"
+		"Ability4"					"assassin_garrote"
+		"Ability5"					"assassin_shadow_image"
+		"Ability6"					"assassin_critical_strike"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"         "13" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "15" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Ranger
+	//=================================================================================================================
+	"npc_dota_hero_drow_ranger"
+	{
+		"override_hero"				"npc_dota_hero_drow_ranger"
+		"AbilityLayout" "6"
+		"Ability1"					"ranger_black_arrow"
+		"Ability2"					"ranger_stun_shot"
+		"Ability3"					"ranger_puncture"
+		"Ability4"					"ranger_star_dust"
+		"Ability5"					"ranger_soul_piercing_shot"
+		"Ability6"					"ranger_prevailing_winds"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"         "12" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "13" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "13" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Warlock
+	//=================================================================================================================
+	"npc_dota_hero_warlock"
+	{
+		"override_hero"				"npc_dota_hero_warlock"
+		"AbilityLayout" "5"
+		"Ability1"					"warlock_torment"
+		"Ability2"					"warlock_soul_drain"
+		"Ability3"					"warlock_deathwave"
+		"Ability4"					"warlock_vengeance"
+		"Ability5"					"warlock_blind"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_INTELLIGENCE"
+        "AttributeBaseStrength"         "13" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "14" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+		//=================================================================================================================
+	// HERO: Cleric
+	//=================================================================================================================
+	"npc_dota_hero_crystal_maiden" 
+	{
+		"override_hero"				"npc_dota_hero_crystal_maiden"
+		"AbilityLayout" "5" 
+		"Ability1"					"cleric_holy_light"
+		"Ability2"					"cleric_regen"
+		"Ability3"					"cleric_fire_of_heaven"
+		"Ability4"					"cleric_cleansing_flame"
+		"Ability5"					"cleric_rebirth"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_INTELLIGENCE"
+        "AttributeBaseStrength"         "10" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "16" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Magician
+	//=================================================================================================================
+	"npc_dota_hero_invoker"
+	{
+		"override_hero"				"npc_dota_hero_invoker"
+		"AbilityLayout" "5"
+		"Ability1"					"magician_frost_bolt"
+		"Ability2"					"magician_flame_spire"
+		"Ability3"					"magician_flash_point"
+		"Ability4"					"magician_meteor_shower"
+		"Ability5"					"magician_freezing_field"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_INTELLIGENCE"
+        "AttributeBaseStrength"         "10" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "16" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+	//=================================================================================================================
+	// HERO: Druid
+	//=================================================================================================================
+	"npc_dota_hero_lone_druid"
+	{
+		"override_hero"				"npc_dota_hero_lone_druid"
+		"AbilityLayout" "5"
+		"Ability1"					"druid_rejuvenation"
+		"Ability2"					"druid_natures_wrath"
+		"Ability3"					"druid_call_lightning"
+		"Ability4"					"druid_mind_blast"
+		"Ability5"					"druid_call_storm"
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_INTELLIGENCE"
+        "AttributeBaseStrength"         "12" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "15" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+	}
+
+
+
+}
