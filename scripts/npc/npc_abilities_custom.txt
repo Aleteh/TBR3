@@ -2176,30 +2176,83 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"assassin_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"6 8 11 14 18 22 26 30"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "25 150 300 600 1100 2000 3300 5000"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
     	// Special
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"			"25"
+    			}
+    		"02"
+    			{
+    			"var_type"				"FIELD_INTEGER"
+    			"bonus_movespeed"	"35"
+    			}
+    		"03"
+    			{
+    			"var_type"				"FIELD_INTEGER"
+    			"bonus_damage"	"150 300 525 840 1260 1900 3000 4500"
+    			}
+    		"04"
+    			{
+    			"var_type"				"FIELD_FLOAT"
+    			"stun_duration"	"3.25"
+    			}
+    		}
     	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/assassin.lua"
-				"Function"			"walk_the_shadows"
+				"Function"			"walk_the_shadows_cast"
 			}
 		}
+		"Modifiers"
+			{
+			"assassin_walk_the_shadows_buff"
+				{
+				"IsBuff"	"1"
+				"Duration"              "%duration"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%bonus_movespeed"
+					}
+				"States"
+					{
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				"OnAttackLanded"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/assassin.lua"
+						"Function"			"walk_the_shadows_attack"
+						}
+					"Stun"
+						{
+						"Target"	"TARGET"
+						"Duration"	"%stun_duration"
+						}
+					}
+				}
+			}
+		
 	}
 
 
@@ -2218,8 +2271,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"5"
 		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
     	
     	// Damage.
