@@ -16,7 +16,8 @@
 						> Having a controllable unit with inventory is possible.
 
 	Stats:			Custom Spell Power & Spell Healing. Every Heal & Damage spell is affected by it, 1:1 additively. Some spells use a custom multiplier of it.
-					INT = 15 mana, .01 MP per second, 3 Spell & Healing Power, Except for Warrior Classes (KC, Warlord, Barbarian and Assassin).
+	 				Assassin, Warlord, Barbarian and Khaos Champion doesn't benefit from spell power and healing power. Warrior Classes.
+					INT = 15 mana, .01 MP per second, 3 Spell & Healing Power.
 					STR = 20 HP and 0.25 hp per second regeneration.
 					AGI = .2 armor, 1% IAS.
 	Warrior Mana:  	Barbarians - gain their mana whenever they attack, also gains mana when attacked. Degenerates over time.
