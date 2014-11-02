@@ -45,8 +45,73 @@
 		"Effect" 						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
 
 
+		"OnEquiped"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"		"bonus_spell_power"
+				"Target"			"CASTER"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"		"bonus_healing_power"
+				"Target"			"CASTER"
+			}
+		}
+
 		"Modifiers"
 		{
+			"bonus_spell_power"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"GiveSpellPower"
+						"BonusPower"	"600" //should be an AbilitySpecial
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"RemoveSpellPower"
+						"BonusPower"	"600"
+					}
+				}
+			}
+
+			"bonus_healing_power"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"GiveHealingPower"
+						"BonusPower"	"600" //should be an AbilitySpecial
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"RemoveHealingPower"
+						"BonusPower"	"600"
+					}
+				}
+			}
+
 			"modifier_wraithblade"
 			{
 				"Passive"			"1"
