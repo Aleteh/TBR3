@@ -1,0 +1,4214 @@
+//////////////////////////////////////////////////////
+//           CUT AND PASTE FROM THIS LIST	    //
+//    THIS LIST HAS THE RIGHT ID's FOR ALL ITEMS    //
+//////////////////////////////////////////////////////
+"DOTAAbilities"
+{
+	"Version"	"1"
+
+
+
+"item_potion_of_lesser_healing"
+	{
+		"ID"                            "1011"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_lesser_mana"
+	{
+		"ID"                            "1012"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_ring_of_health"
+	{
+		"ID"                            "1013"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_lesser_regeneration"
+	{
+		"ID"                            "1014"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_bleed"
+	{
+		"ID"                            "1015"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_blind"
+	{
+		"ID"                            "1016"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_blood_bath"
+	{
+		"ID"                            "1017"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_freezing_field"
+	{
+		"ID"                            "1018"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_garrote"
+	{
+		"ID"                            "1019"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_hestias_touch"
+	{
+		"ID"                            "1020"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_natures_fury"
+	{
+		"ID"                            "1021"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_phalanx"
+	{
+		"ID"                            "1022"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_rebirth"
+	{
+		"ID"                            "1023"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_requiem"
+	{
+		"ID"                            "1024"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_roar"
+	{
+		"ID"                            "1025"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_star_dust"
+	{
+		"ID"                            "1026"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+"item_elixir_of_lesser_agility"
+	{
+		"ID"                            "1030"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_lesser_healing_power"
+	{
+		"ID"                            "1031"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_lesser_intelligence"
+	{
+		"ID"                            "1032"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_lesser_spell_power"
+	{
+		"ID"                            "1033"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_lesser_strength"
+	{
+		"ID"                            "1034"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+
+
+"item_scroll_of_speed"
+	{
+		"ID"                            "1039"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+"item_scroll_of_the_beast"
+	{
+		"ID"                            "1047"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_algore_charm"
+	{
+		"ID"                            "1048"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_ankh_of_reincarnation"
+	{
+		"ID"                            "1049"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+"item_draught_of_hermes"
+	{
+		"ID"                            "1052"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+"item_light_armor_plates"
+	{
+		"ID"                            "1054"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_light_dust_of_the_ether"
+	{
+		"ID"                            "1055"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_light_sharpening_stone"
+	{
+		"ID"                            "1056"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+"item_potion_of_healing"
+	{
+		"ID"                            "1060"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_mana"
+	{
+		"ID"                            "1061"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_regeneration"
+	{
+		"ID"                            "1062"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+"item_elixir_of_agility"
+	{
+		"ID"                            "1071"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_healing_power"
+	{
+		"ID"                            "1072"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_intelligence"
+	{
+		"ID"                            "1073"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_spell_power"
+	{
+		"ID"                            "1074"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_strength"
+	{
+		"ID"                            "1075"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+"item_green_power_crystal"
+	{
+		"ID"                            "1078"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+
+
+
+"item_scroll_of_regeneration"
+	{
+		"ID"                            "1086"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+	
+
+
+
+	
+
+	"item_draught_of_thorns"
+	{
+		"ID"                            "1092"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+"item_pendant_of_resilience"
+	{
+		"ID"                            "1099"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_greater_regeneration"
+	{
+		"ID"                            "1100"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+"item_useless_dagger"
+	{
+		"ID"                            "1106"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	"item_blood_ruby"
+	{
+		"ID"                            "1109"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_blunting_stone"
+	{
+		"ID"                            "1110"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+	
+
+
+	"item_draught_of_the_pheonix"
+	{
+		"ID"                            "1118"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+
+	
+
+	"item_lump_of_pure_adamantium"
+	{
+		"ID"                            "1127"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+"item_medium_armor_plates"
+	{
+		"ID"                            "1130"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_medium_dust_of_the_ether"
+	{
+		"ID"                            "1131"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_medium_sharpening_stone"
+	{
+		"ID"                            "1132"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+	
+
+
+
+"item_potion_of_greater_healing"
+	{
+		"ID"                            "1137"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_greater_mana"
+	{
+		"ID"                            "1138"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+
+
+
+
+
+
+
+	
+
+	
+
+	
+
+
+
+	
+
+
+
+	
+
+	
+"item_draught_of_aphrodite"
+	{
+		"ID"                            "1157"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_greater_agility"
+	{
+		"ID"                            "1158"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_greater_healing_power"
+	{
+		"ID"                            "1159"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_greater_intelligence"
+	{
+		"ID"                            "1160"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_greater_spell_power"
+	{
+		"ID"                            "1161"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_greater_strength"
+	{
+		"ID"                            "1162"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	"item_scroll_of_greater_regeneration"
+	{
+		"ID"                            "1182"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	"item_thick_dust_of_the_ether"
+	{
+		"ID"                            "1189"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_heavy_armor_plates"
+	{
+		"ID"                            "1191"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	"item_crackling_charm"
+	{
+		"ID"                            "1194"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	"item_athenian_cloak"
+	{
+		"ID"                            "1205"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	"item_full_healing_potion"
+	{
+		"ID"                            "1211"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_greater_draught_of_thorns"
+	{
+		"ID"                            "1212"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_heavy_sharpening_stone"
+	{
+		"ID"                            "1213"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	"item_spartan_roundshield"
+	{
+		"ID"                            "1217"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	"item_adamantium_shield"
+	{
+		"ID"                            "1221"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_armor_of_hera"
+	{
+		"ID"                            "1223"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_burning_heart_of_ladon"
+	{
+		"ID"                            "1226"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_chestguard_of_aphrodites_champion"
+	{
+		"ID"                            "1227"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_crown_of_liquid_darkness"
+	{
+		"ID"                            "1229"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_demonic_mask"
+	{
+		"ID"                            "1232"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_elixir_of_super_agility"
+	{
+		"ID"                            "1236"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_super_healing_power"
+	{
+		"ID"                            "1237"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_super_intelligence"
+	{
+		"ID"                            "1238"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_super_spell_power"
+	{
+		"ID"                            "1239"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_super_strength"
+	{
+		"ID"                            "1240"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	"item_hulking_armor_plates"
+	{
+		"ID"                            "1246"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_jeweled_ring"
+	{
+		"ID"                            "1249"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	"item_poison_blade"
+	{
+		"ID"                            "1254"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_scroll_of_super_regeneration"
+	{
+		"ID"                            "1256"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	"item_surprisingly_good_war_pick"
+	{
+		"ID"                            "1261"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_tome_of_stat_increase_2"
+	{
+		"ID"                            "1263"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_towering_shield"
+	{
+		"ID"                            "1264"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	"item_berzerker_helm"
+	{
+		"ID"                            "1268"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+	
+
+	"item_voodoo_suit"
+	{
+		"ID"                            "1271"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_bright_lance"
+	{
+		"ID"                            "1272"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_cataphract"
+	{
+		"ID"                            "1273"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_chalice_of_healing_power"
+	{
+		"ID"                            "1274"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_claw_charm"
+	{
+		"ID"                            "1275"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_dark_lance"
+	{
+		"ID"                            "1277"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gauntlets_of_spell_power"
+	{
+		"ID"                            "1278"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	"item_shifting_cloak"
+	{
+		"ID"                            "1289"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_tearing_claws"
+	{
+		"ID"                            "1293"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+	"item_maul_of_destruction"
+	{
+		"ID"                            "1300"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_mega_healing"
+	{
+		"ID"                            "1301"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_mega_mana"
+	{
+		"ID"                            "1302"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_potion_of_mega_regeneration"
+	{
+		"ID"                            "1303"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_stone_of_heaven"
+	{
+		"ID"                            "1304"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_precise_sharpening_stone"
+	{
+		"ID"                            "1306"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	"item_bow_of_artemis"
+	{
+		"ID"                            "1308"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+	"item_dark_wizards_dagger"
+	{
+		"ID"                            "1311"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+	
+
+	"item_draught_of_life"
+	{
+		"ID"                            "1312"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	
+
+	
+
+	
+
+	"item_shield_of_warding"
+	{
+		"ID"                            "1316"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_thunder_lance"
+	{
+		"ID"                            "1317"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_sparkling_dust_of_the_ether"
+	{
+		"ID"                            "1318"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_burning_hand_of_the_war_god"
+	{
+		"ID"                            "1319"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_draught_of_desruction"
+	{
+		"ID"                            "1320"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_draught_of_heaven"
+	{
+		"ID"                            "1321"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_mega_agility"
+	{
+		"ID"                            "1322"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_mega_healing_power"
+	{
+		"ID"                            "1323"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_mega_intelligence"
+	{
+		"ID"                            "1324"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_mega_spell_power"
+	{
+		"ID"                            "1325"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_elixir_of_mega_strength"
+	{
+		"ID"                            "1326"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_summoning_stone"
+	{
+		"ID"                            "1327"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_talisman_of_addiction"
+	{
+		"ID"                            "1328"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_warriors_talisman_of_addiction"
+	{
+		"ID"                            "1329"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_ring_of_the_frozen_citadel"
+	{
+		"ID"                            "1330"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_shimmering_lance"
+	{
+		"ID"                            "1331"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_the_winged_gods_blessed_boots"
+	{
+		"ID"                            "1332"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_armor_of_the_firstborn"
+	{
+		"ID"                            "1333"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gem_of_the_east"
+	{
+		"ID"                            "1334"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gem_of_the_west"
+	{
+		"ID"                            "1335"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_green_dragonscale_ring_of_addiction"
+	{
+		"ID"                            "1336"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_red_dragonscale_ring_of_addiction"
+	{
+		"ID"                            "1337"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_white_dragonscale_ring_of_addiction"
+	{
+		"ID"                            "1338"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_scepter_of_the_chosen_ones"
+	{
+		"ID"                            "1339"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_unyielding_breastplate_of_agility"
+	{
+		"ID"                            "1340"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_unyielding_breastplate_of_strength"
+	{
+		"ID"                            "1341"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_ares_blade_of_command"
+	{
+		"ID"                            "1342"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_biting_blade_of_agility"
+	{
+		"ID"                            "1343"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_biting_blade_of_strength"
+	{
+		"ID"                            "1344"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_deathchill_greatsword"
+	{
+		"ID"                            "1345"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gem_of_the_north"
+	{
+		"ID"                            "1346"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gem_of_the_south"
+	{
+		"ID"                            "1347"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_magefire_ring_of_intelligence"
+	{
+		"ID"                            "1348"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_book_of_skill_increase_-_level_7"
+	{
+		"ID"                            "1349"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_bright_silver_plates"
+	{
+		"ID"                            "1350"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_adamantium_lance"
+	{
+		"ID"                            "1351"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gift_of_hera"
+	{
+		"ID"                            "1352"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_hephaestus_thundering_axe"
+	{
+		"ID"                            "1353"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_adamantium_tower"
+	{
+		"ID"                            "1354"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_adamantium_helm"
+	{
+		"ID"                            "1355"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_soul_blade"
+	{
+		"ID"                            "1356"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_aphrodites_favor"
+	{
+		"ID"                            "1357"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_gemstone_of_the_olympians"
+	{
+		"ID"                            "1358"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_mighty_olympian_regalia"
+	{
+		"ID"                            "1359"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_sacred_olympian_regalia"
+	{
+		"ID"                            "1360"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_shining_olympian_regalia"
+	{
+		"ID"                            "1361"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_ares_bloodthirsty_spear"
+	{
+		"ID"                            "1362"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_blackfire_staff"
+	{
+		"ID"                            "1363"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_blackfire_staff"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_blazing_sword_of_helios"
+	{
+		"ID"                            "1364"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_immortal_armor_of_hephaestus"
+	{
+		"ID"                            "1365"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_plates_of_the_ancients"
+	{
+		"ID"                            "1366"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_plates_of_the_ancients"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_searing_flame_of_prometheus"
+	{
+		"ID"                            "1367"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_shadow_blade"
+	{
+		"ID"                            "1368"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_shadow_blade"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_sword_of_destruction"
+	{
+		"ID"                            "1369"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_sword_of_destruction"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_sword_of_the_high_commander"
+	{
+		"ID"                            "1370"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_sword_of_the_high_commander"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_talisman_of_serious_addiction"
+	{
+		"ID"                            "1371"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_talisman_of_serious_addiction"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_thundering_hammer_of_zeus"
+	{
+		"ID"                            "1372"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_tome_of_stat_increase_1"
+	{
+		"ID"                            "1373"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_towering_shield_of_athena"
+	{
+		"ID"                            "1374"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_unyielding_tower"
+	{
+		"ID"                            "1375"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_unyielding_tower"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+"item_warriors_talisman_of_serious_addiction"
+	{
+		"ID"                            "1376"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"		"item_warriors_talisman_of_serious_addiction"
+	//"ItemStockMax"			"2"
+	//"ItemStockInitial"		"2"
+	//"ItemStockTime"			"48.0"
+
+	"ItemQuality"			"component"
+	"ItemCost"                      "9000" 	
+	"ItemShopTags"			"caster"
+	"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+
+			"Modifiers"
+	{
+		"modifier_crystal_edged_ring"
+		{
+		"Passive"		"1"
+		"IsHidden"		"1"
+		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"bonus_stat"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 	"bonus_stat"
+		}	
+		}
+	}
+
+
+
+	
+}
+
+
+}
+}
