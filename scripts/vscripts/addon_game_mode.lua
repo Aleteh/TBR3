@@ -1,6 +1,6 @@
+require('tbr')
 require('timers')
 require('physics')
-require('barebones')
 require('xp_table')
 
 function Precache( context )

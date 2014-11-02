@@ -84,7 +84,7 @@ function GameMode:InitGameMode()
   ListenToGameEvent('last_hit', Dynamic_Wrap(GameMode, 'OnLastHit'), self)
   ListenToGameEvent('player_changename', Dynamic_Wrap(GameMode, 'OnPlayerChangedName'), self)
   ListenToGameEvent('npc_spawned', Dynamic_Wrap(GameMode, 'OnNPCSpawned'), self)
-  ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameMode, 'OnGameRulesStateChange'), self)  
+  ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameMode, 'OnGameRulesStateChange'), self)
 
   --[[ Possible Use
   ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameMode, 'OnPlayerLearnedAbility'), self)
@@ -108,8 +108,6 @@ function GameMode:InitGameMode()
   -- Initialized tables for tracking state
   self.vUserIds = {}
   self.vSteamIds = {}
-  self.vBots = {}
-  self.vBroadcasters = {}
 
   self.vPlayers = {}
   self.vRadiant = {}
@@ -442,11 +440,6 @@ function GameMode:OnConnectFull(keys)
   -- Update the Steam ID table
   self.vSteamIds[PlayerResource:GetSteamAccountID(playerID)] = ply
   
-  -- If the player is a broadcaster flag it in the Broadcasters table
-  if PlayerResource:IsBroadcaster(playerID) then
-    self.vBroadcasters[keys.userid] = 1
-    return
-  end
 end
 
 -- unnecessary (?)
