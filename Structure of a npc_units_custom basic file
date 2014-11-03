@@ -2,7 +2,7 @@ Structure of a npc_units_custom basic file
 
 	"npc_name"
 	{
-		"BaseClass"					"npc_dota_creature"	// All units will use this
+		"BaseClass"			"npc_dota_creature"	// All units will use this
 		"Level"						"1"
 		"Ability1"					""			// Ability 1-16, as many as needed
 		"Ability2"					""	
