@@ -1208,6 +1208,7 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"40"
+		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_4"
     	
     	"AbilitySpecial"
 		{
@@ -1456,7 +1457,7 @@
 	//The Guadian bashes the ground, causing a shockwave to come out dealing xxxxx damage to enemies cought in the shockwave for xxx mana.
 	// 150 AOE. 8 seconds cooldown. 700 range.
 	{
-		"BaseClass"             		"magnataur_shockwave"
+		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"guardian_of_nature_skill3"
 		"MaxLevel" "1"
 	
@@ -1464,6 +1465,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2" //doesnt work on non datadriven ability
 
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
@@ -1475,6 +1477,7 @@
 		"precache"
 		{
 			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave_glow.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
 		}
 		
@@ -1501,6 +1504,44 @@
 				"shock_damage"			"125"
 			}
 		}
+
+		"OnSpellStart"
+		{	
+			"FireSound"
+			{
+				"EffectName"			"Hero_Magnataur.ShockWave.Cast"
+				"Target"				"TARGET"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_Magnataur.ShockWave.Particle"
+				"Target"				"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/gon.lua"
+				"Function"				"earth_shock"
+				"Target"				"POINT"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"0"
+
+			"RunScript"
+		 	{
+			    "ScriptFile"	"damage.lua"
+			    "Function"		"DoDamage"
+			    "Damage"		"%shock_damage"
+		  	}
+
+			"FireSound"
+			{
+				"EffectName"			"Hero_Magnataur.ShockWave.Target"
+				"Target"				"TARGET"
+			}			
+		}
 	}
 
 
@@ -1519,11 +1560,12 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		"AOERadius"     "%radius"
 
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"45"
 		"AbilityManaCost"				"50"
 

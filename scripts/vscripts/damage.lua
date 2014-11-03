@@ -1,7 +1,7 @@
 --[[ In a single target spell
 	"RunScript"
  	{
-	    "ScriptFile"	"abilities.lua"
+	    "ScriptFile"	"damage.lua"
 	    "Function"		"DoDamage"
 	    "Damage"		"%dmg"
   	}
@@ -18,7 +18,6 @@ function DoDamage (event)
 		damage = damage + spellPower,
 		damage_type = DAMAGE_TYPE_MAGICAL
 		})
-    end
 end
 
 --[[ In an AoE target spell
@@ -33,8 +32,8 @@ end
 		}
 		"RunScript"
 	 	{
-		    "ScriptFile"	"abilities.lua"
-		    "Function"		"DoDamage"
+		    "ScriptFile"	"damage.lua"
+		    "Function"		"DoAoEDamage"
 		    "Target"		"TARGET"
 	  	}
   	}
