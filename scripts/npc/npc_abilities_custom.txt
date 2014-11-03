@@ -317,10 +317,10 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"1 1 1 1 1 1 1 1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"1"
 		"AbilityManaCost"				"10 16 23 31 40 51 62 75"
-		"AbilityDuration"               "30 30 30 30 30 30 30 30"
+		"AbilityDuration"               "30"
     	
     	//"AbilityDamage"                 "0"
 
@@ -359,7 +359,6 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
 				}
-				
 			}
 		}
 	}
@@ -370,7 +369,7 @@
 	//Adds four times your Strength plus xxxx bonus damage to your next attack against a single target and causes three times your Strength plus xxxx damage to nearby enemy units for xx mana. 
     //2,25 seconds cooldown. Can be autocast 
 	
-	"barbarian_cleave"
+	"barbarian_cleave" //TODO: Check if this damage added/cleaved can crit.
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -378,16 +377,16 @@
 		"AbilityTextureName"			"barbarian_skill3"
 		"MaxLevel" "1"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"50"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"2.25 2.25 2.25 2.25 2.25 2.25 2.25 2.25"
-		"AbilityManaCost"				"175 225 275"
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.5" //does this apply to BEHAVIOR_ATTACK?
+		"AbilityCooldown"				"2.25"
+		"AbilityManaCost"				"8 12 17 24 32 42 53 65"
 
     	"AbilitySpecial"
 		{
@@ -399,35 +398,21 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"100"
+				"radius"			"250"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_damage"		"75 150 265 400 600 900 1500 2250"
 			}
 		}
 
-    	"OnSpellStart"
+    	"OnSpellStart" //OnAttackLanded?
 		{
-			"Damage"
+			"RunScript"
 			{
-				"Type" 		"DAMAGE_TYPE_PHYSICAL"
-				"Damage" 	"%damage"
-				"Target" 	"TARGET"
-			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"		"TARGET"
-					"Radius"		"%radius"
-					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"Action"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"abilities/barbarian.lua"
-						"Function"			"barbarian_cleave"
-					}
-				}
+				"ScriptFile"		"abilities/barbarian.lua"
+				"Function"			"cleave"
 			}
 		}
 	}
@@ -497,13 +482,14 @@
 		"AbilityTextureName"			"barbarian_skill5"
 		"MaxLevel" "1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------

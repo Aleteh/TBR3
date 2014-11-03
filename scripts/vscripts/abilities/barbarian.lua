@@ -74,3 +74,66 @@ function leap( event )
 	end)
 
 end
+
+
+function cleave ( event )
+	local radius = event.ability:GetLevelSpecialValueFor("radius", (event.ability:GetLevel()-1))
+	local single_target_damage = event.ability:GetLevelSpecialValueFor("damage", (event.ability:GetLevel()-1))
+	local aoe_damage = event.ability:GetLevelSpecialValueFor("aoe_damage", (event.ability:GetLevel()-1))
+
+	-- Adds four times your Strength plus xxxx bonus damage to your next attack against a single target
+	local target = event.target
+		ApplyDamage({
+				victim = target,
+				attacker = event.caster,
+				damage = ( event.caster:GetStrength() * 4 ) + damage,
+				damage_type = DAMAGE_TYPE_PHYSICAL
+				})
+
+	-- causes three times your Strength plus xxxx damage to nearby enemy units for xx mana. 
+	-- Find enemies
+	enemies = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
+                      event.caster:GetAbsOrigin(),
+                      nil,
+                      radius,
+                      DOTA_UNIT_TARGET_TEAM_ENEMY,
+                      DOTA_UNIT_TARGET_ALL,
+                      DOTA_UNIT_TARGET_FLAG_NONE,
+                      FIND_ANY_ORDER,
+                      false)
+
+	-- Do damage in AoE
+	for _,enemy in pairs(enemies) do
+		if enemy ~= target then -- exclude the original target
+			ApplyDamage({
+				victim = enemy,
+				attacker = unit,
+				damage = ( event.caster:GetStrength() * 3 ) + aoe_damage,
+				damage_type = DAMAGE_TYPE_MAGICAL
+				})
+		end
+    end
+
+    --TODO: Add Cleave Particle effect
+
+end 
+
+
+
+function bloodbath ( event )
+	-- Dealing twice your Strength plus xxxx damage to a target enemy unit
+ 	local damage_done = ( event.caster:GetStrength() * 2 ) + event.ability:GetLevelSpecialValueFor("damage", (event.ability:GetLevel()-1))
+
+ 	ApplyDamage({
+				victim = event.target,
+				attacker = event.caster,
+				damage = damage_done,
+				damage_type = DAMAGE_TYPE_MAGICAL
+				})
+
+ 	-- All damage dealt in this way will be added to your health. 
+	event.caster:Heal(damage_done, event.ability) 
+
+	--TODO: Popup for Heal, Particle, Axe sound.
+
+end
