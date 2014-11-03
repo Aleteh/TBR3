@@ -1,4 +1,28 @@
-- General Mechanics -
+Suggested Priority List (to organize coding assignment)
+
+1. Complete all the hero abilities (Check and edit the Hero_ToDo for more details)
+	This includes particles and sounds! 
+
+2. Improve and finish all the items
+
+3. Work on the core mechanics related to the hero skill-leveling ability sytem.
+	Every level, each hero gains a certain amount of spendable stat points (more than 1 each level, and they get more points on later levels)
+	Stats points can be put in STR/AGI/INT individually (just STR/AGI for Warrior classes)
+	The heroes start with the rank 1 of their basic 3 spells.
+	Skills are unlearnable by normal means (like Invoker's spells), and have up to 8 ranks (with some exceptions).
+		Dota supports up to 7 skill levels to show in the UI, so each skill will be done as 7 ranks with a separate lvl 8 skill with MaxLevel 1.
+	Each skill that can be improved is leveled up with Skill Books (one for each level)
+		After using they let the user choose what skill to upgrade.
+		Books can be bought or dropped by some enemies.
+		
+4. Start the unit porting
+
+5. Expand on unit abilities and AI.
+
+
+========================================================
+
+- General Mechanics - (will look deeply into this later)
 	Leveling: 		Spendable attribute points instead of skill levels.
 	Creep spawning: OnTouch/OnTouchEnd that spawn set creeps at random locations that patrol to random waypoints.
 	Max gold: 		Increase to 1 million.
@@ -34,24 +58,7 @@
 	Divine Armor:	Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied.
 
 - Heroes -
-
-	> Ranger
-	> Temple Guardian
-	> Assassin
-	> Warlord
-	> Cleric
-	> Druid
-	> Spartan Warrior
-	> Warlock
-
-	> Khaos Champion
-		Improve ability effects and polish behavior
-
-	> Guardian of Nature
-		Improve ability effects and polish behavior
-
-	> Barbarian
-		Finish abilities
+	> Hero_ToDo
 
 - Items -
 	> 
@@ -59,7 +66,7 @@
 - Units -
 	> Everything
 
-- Map -
+- Map - (Make a Map_ToDo if you wish)
 	> Optimize base mesh
 	> Layout triggers for creep spawners
 	> Work on city features
