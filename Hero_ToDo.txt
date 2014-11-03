@@ -1,0 +1,43 @@
+- Heroes -
+Update your progress as you go, and write if you need a hand!
+
+	==Agility==
+	> Assassin
+		- Started (igo)
+
+	> Ranger
+		- Not Started
+	> Warlord
+		- Not Started
+
+	==Strength==
+	> Khaos Champion
+		- Almost finished (Noya)
+		- Improve ability effects and polish behavior
+		- Change scythe to TrackingProjectiles
+		- Add return damage on shroud
+
+	> Guardian of Nature
+		- Almost finished (N)
+		- Improve ability effects and polish behavior
+		- Add hero.spellPower behavior (need to redo how damage is applied)
+		- Change to proper 7 level system, use the correct %chance, finish.
+
+	> Barbarian
+		- Started (N)
+		- Continue abilities.
+
+	> Temple Guardian
+		- Not Started
+	> Spartan Warrior
+		- Not Started
+
+	==Intellect==	
+	> Cleric
+		- Not Started
+	> Druid
+		- Not Started
+	> Warlock
+		- Not Started
+	> Magician
+		- Not Started

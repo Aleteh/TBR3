@@ -1,4 +1,28 @@
-- General Mechanics -
+Suggested Priority List (to organize coding assignment)
+
+1. Complete all the hero abilities (Check and edit the Hero_ToDo for more details)
+	This includes particles and sounds! 
+
+2. Improve and finish all the items
+
+3. Work on the core mechanics related to the hero skill-leveling ability sytem.
+	Every level, each hero gains a certain amount of spendable stat points (more than 1 each level, and they get more points on later levels)
+	Stats points can be put in STR/AGI/INT individually (just STR/AGI for Warrior classes)
+	The heroes start with the rank 1 of their basic 3 spells.
+	Skills are unlearnable by normal means (like Invoker's spells), and have up to 8 ranks (with some exceptions).
+		Dota supports up to 7 skill levels to show in the UI, so each skill will be done as 7 ranks with a separate lvl 8 skill with MaxLevel 1.
+	Each skill that can be improved is leveled up with Skill Books (one for each level)
+		After using they let the user choose what skill to upgrade.
+		Books can be bought or dropped by some enemies.
+		
+4. Start the unit porting
+
+5. Expand on unit abilities and AI.
+
+
+========================================================
+
+- General Mechanics - (will look deeply into this later)
 	Leveling: 		Spendable attribute points instead of skill levels.
 	Creep spawning: OnTouch/OnTouchEnd that spawn set creeps at random locations that patrol to random waypoints.
 	Max gold: 		Increase to 1 million.
@@ -34,24 +58,7 @@
 	Divine Armor:	Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied.
 
 - Heroes -
-
-	> Ranger
-	> Temple Guardian
-	> Assassin
-	> Warlord
-	> Cleric
-	> Druid
-	> Spartan Warrior
-	> Warlock
-
-	> Khaos Champion
-		Improve ability effects and polish behavior
-
-	> Guardian of Nature
-		Improve ability effects and polish behavior
-
-	> Barbarian
-		Finish abilities
+	> Hero_ToDo
 
 - Items -
 	> 
@@ -59,7 +66,7 @@
 - Units -
 	> Everything
 
-- Map -
+- Map - (Make a Map_ToDo if you wish)
 	> Optimize base mesh
 	> Layout triggers for creep spawners
 	> Work on city features
@@ -92,3 +99,144 @@
 		> Patroling NPCs
 		> Fountain of Restoration
 	> Detail work
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WC3 codes:
+
+Assassin: E007
+	initial skills
+		Assassinate: A014
+		Walk in Shadows: A015
+		Crit: A0FT
+		Disable: A0BR
+	tome skills
+		Garrote: A017
+		Shadow Image: A0K6
+
+Ranger: H007
+	initial skills
+		Stun Shot: A03O
+		Soul-Piercing shot: A0FV
+		Black Arrow: A01M
+		Prevailing Winds: A0I7
+	tome skills
+		Puncture: A03J
+		Star Dust: A04G
+
+Warlord: O001
+	initial skills
+		Counter: A0KM
+		Critical: A0FT
+		Wind of War: A02B
+		Impale: A00G
+	tome skills
+		Bum Rush: A00J
+		Bleed: A04L
+
+Cleric: E001
+	initial skills
+		Fire of heaven: A00B
+		Holy Light: A00A
+		Regen: A009
+	tome skills
+		Cleansing Flame: A00D
+		Rebirth: A01T
+
+Druid: E008
+	initial skills
+		Rejuvenation: A01B
+		Nature's Wrath: A01J
+		Lightning Strike: A0JR
+	tome skills
+		Mind Blast: A01Q
+		Call Storm: A0K5
+
+
+Magician: H006
+	initial skills
+		Flash Point: A0K7
+		Frost Chain: A0KS
+		Flame Spire: A0BH
+	tome skills
+		Freezing Field: A0K4
+		Meteor Shower: A0C8
+
+Warlock: O00D
+	initial skills
+		Soul Drain (Warlock): A0I8
+		Death Wave: A0IO
+		Torment: A03D
+	tome skills
+		Blind: A047
+		Vengeance: A03E
+
+Barbarian: H004
+	initial skills
+		Mighty Stomp: A0JM
+		Cleave: A00C
+		Rend Armor: A005
+	tome skills
+		Taunt: A004
+		Blood Bath: A03U
+
+Nature Guardian:
+	initial skills
+		Roar: H01L
+		Tremor: A0II
+		Earth Shock: A0KE
+	tome skills
+		Cataclysm: A0HG
+		Nature's fury: A0KC
+
+Khaos Champion: E01K
+	initial skills
+		Shroud: A0KD
+		Shadow Scythe: A0IM
+		Grave Bind: A0IL
+	tome skills
+		Terrorize: AOae
+		Requiem: A0IC
+
+Spartan:
+	initial skills
+		Dispatch: A04K
+		Valor:  A00N
+		Throw Javelin: A0GQ
+	tome skills
+		Charge: A03G
+		Phalanx: A0CM
+
+Temple Guardian:
+	initial skills
+		Fire of Apollo: A05Y
+		Mark of Artemis: A05Z
+		Pray: A05U
+		Gift of the Gods: A05S
+	tome skills
+		Hammer of Zeus: A05X
+		Hestia's Touch: A065
+
+
+
+
+	
