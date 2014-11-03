@@ -49,3 +49,6 @@ tools_thumbnail_cache.bin
 tools_asset_info.bin
 maps/test_env.vpk
 maps/test_env.vpk
+
+# Compiled Particles
+*.vpcf_c
