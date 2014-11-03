@@ -11,13 +11,21 @@ function shroud_damage( event )
 	local attacker = EntIndexToHScript(event.unit.shroud_attacker)
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_slow_debuff.vpcf", PATTACH_ABSORIGIN, attacker)
 	local return_damage = damage_taken * 0.01 * event.ability:GetLevelSpecialValueFor("damage_return_percentage", (event.ability:GetLevel() - 1))
-	ApplyDamage({
+	local radius = event.ability:GetLevelSpecialValueFor("reflect_aoe", (event.ability:GetLevel() - 1))
+				
+	-- Find enemies
+    local enemies = FindUnitsInRadius( event.caster:GetTeam(), event.caster:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+ 
+    for _,enemy in pairs(enemies) do
+				ApplyDamage({
 							victim = attacker,
 							attacker = event.unit,
 							damage = return_damage,
 							damage_type = DAMAGE_TYPE_MAGICAL
 							}) 
-	print("Shroud did " .. return_damage .. " damage to "..event.unit.shroud_attacker)
+	end
+
+	print("Shroud did " .. return_damage .. " damage to ".. #enemies .. " enemies from an attack of " .. event.unit.shroud_attacker)
 	event.unit:RemoveModifierByName("shroud_helper")
 	event.unit.shroud_ini_hp = nil
 	--
