@@ -21,9 +21,530 @@
 	////// OLYMPIC RELICS ///////
 	/////////////////////////////
 
+	"item_ares_bloodthirsty_spear"
+	{
+		"ID"                            "1362"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ares_bloodthirsty_spear"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+
+	"item_blazing_sword_of_helios"
+	{
+		"ID"                            "1364"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_blazing_sword_of_helios"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_immortal_armor_of_hephaestus"
+	{
+		"ID"                            "1365"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_immortal_armor_of_hephaestus"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_searing_flame_of_prometheus"
+	{
+		"ID"                            "1367"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_searing_flame_of_prometheus"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_thundering_hammer_of_zeus"
+	{
+		"ID"                            "1372"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_thundering_hammer_of_zeus"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_towering_shield_of_athena"
+	{
+		"ID"                            "1374"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_towering_shield_of_athena"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
 	///////// RELICS ////////////
 	/////////////////////////////
 
+	"item_blackfire_staff"		// TODO Add  spell damage and healing by 25%. 
+	{
+		"ID"                            "1363"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_blackfire_staff"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_blackfire_Staff"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE" //make sure onattackstart doesn't happen twice
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"		"%dmg_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"all_stats"				"50"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"15"
+			}
+		}
+	}
+
+
+
+	"item_plates_of_the_ancients"
+	{
+		"ID"                            "1366"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_plates_of_the_ancients"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_plates_of_the_ancients"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE" //make sure onattackstart doesn't happen twice
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%armor_bonus"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 			"%all_stats"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"				"%mana_regen"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"75"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"all_stats"				"60"			
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"25"
+			}
+		}
+	}
+
+	"item_shadow_blade"
+	{
+		"ID"                            "1368"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_shadow_blade"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_shadow_blade"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE" //make sure onattackstart doesn't happen twice
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%agi_bonus"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" 		"%dmg_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%move_speed"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%evasion"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_bonus"				"150"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed"			"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"25"
+			}
+		}
+	}
+
+	"item_sword_of_destruction"
+	{
+		"ID"                            "1369"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_sword_of_destruction"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+
+		"Modifiers"
+		{
+			"modifier_sword_of_destruction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE" //make sure onattackstart doesn't happen twice
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 			"%stat_bonus"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
+				}
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance" "10"
+						"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" "sword_of_destruction_crit"
+								"Target"	   "CASTER"	
+							}	
+								
+						}
+					}
+				}
+			}
+			"sword_of_destruction_crit"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "400"
+				}
+				
+				"OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"EffectName"		 "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	 "follow_origin"
+						"Target"			 "TARGET"
+					}	
+					"RemoveModifier"
+					{
+						"ModifierName"		"sword_of_destruction_crit"
+						"Target"			"CASTER"	
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"100"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"200"
+			}
+		}
+	}
+
+	"item_sword_of_the_high_commander"
+	{
+		"ID"                            "1370"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_sword_of_the_high_commander"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Precache"
+		{
+			"Particle"					"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_aura_arcana.vpcf"
+		}
+		"Modifiers"
+		{
+			"modifier_sword_of_the_high_commander"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+				}
+			}
+			"modifier_sword_of_the_high_commander_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura" 					"sword_of_the_high_commander_aura"
+	    		"Aura_Radius" 			"500"
+	    		"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    		"Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+	    		"EffectName" 			"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_aura_arcana.vpcf"
+                "EffectAttachType" 		"follow_origin" 
+			}
+			"sword_of_the_high_commander_aura"
+	   		{
+	    	
+		    	"IsBuff" 				"1"
+		    	"IsPurgable" 			"0"
+		    	
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "20"
+		    	}
+		    }
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"100"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"30"
+			}
+		}
+	}
+
+
+	"item_unyielding_tower"
+	{
+		"ID"                            "1375"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_unyielding_tower"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"rare"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_unyielding_tower"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%evasion"
+				}
+				"OnAttacked"
+				{
+					"ApplyModifier"
+					{
+						"Target" 			"ATTACKER"
+						"ModifierName"		"modifier_unyielding_tower_slow"
+					}
+				}
+			}
+			"modifier_unyielding_tower_slow"
+			{
+				"Duration"				"6"
+				"IsDebuff"				"1"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-30"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-30"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"100"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"6000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"30"
+			}
+		}
+	}
 	///////// ARTIFACTS /////////
 	/////////////////////////////
 	"item_wraithblade"	// TODO Add 600 Spell power and Healing power
@@ -220,7 +741,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
 				}
@@ -270,7 +791,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
@@ -329,6 +850,7 @@
 		{
 			"Particle"					"particles/generic_gameplay/generic_stunned.vpcf"
 		}
+
 		"Modifiers"
 		{
 			"modifier_mighty_chestguard_of_the_olympians"
@@ -338,7 +860,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
@@ -426,7 +948,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
@@ -495,7 +1017,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
@@ -580,7 +1102,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
@@ -643,7 +1165,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
@@ -706,7 +1228,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
@@ -769,7 +1291,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -827,7 +1349,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -885,7 +1407,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -943,7 +1465,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
 				}
 			}
@@ -981,7 +1503,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi_bonus"
 				}
 			}
@@ -1019,7 +1541,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 				}
 			}
@@ -1057,7 +1579,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 				}
 			}
@@ -1115,7 +1637,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 				}
 			}
@@ -1153,7 +1675,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move_speed"
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%evasion"
@@ -1203,7 +1725,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -1260,7 +1782,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -1321,7 +1843,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 				}
 			}
@@ -1406,7 +1928,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%hp_regen"
@@ -1476,7 +1998,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
@@ -1507,7 +2029,7 @@
 				"Properties"
 				{	
 					"IsHidden"			"1"
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK"	"1000"
 				}
 			}
@@ -1528,6 +2050,1864 @@
 
 	
 	}
+
+
+	"item_shield_of_warding"
+	{
+		"ID"                            "1316"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_shield_of_warding"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+
+		"Precache"
+		{
+			"particle"					"particles/items_fx/aura_endurance.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_shield_of_warding"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+				}
+			}
+			"modifier_shield_of_warding_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura" 					"shield_of_warding_aura"
+	    		"Aura_Radius" 			"500"
+	    		"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    		"Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+	    		"EffectName" 			"particles/items_fx/aura_endurance.vpcf"
+                "EffectAttachType" 		"follow_origin" 
+			}
+			"shield_of_warding_aura"
+	   		{
+	    	
+		    	"IsBuff" 				"1"
+		    	"IsPurgable" 			"0"
+		    	
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "15"
+		    	}
+		    }
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"30"
+			}
+		}
+
+	
+	}
+
+
+	"item_thunder_lance"	// TODO Add Increases your Strength and Agility by 35 and damage by 75. Also grants you an 8% chance on attack to cause 1000 additional damage and stun the target for up to 2 seconds.
+	{
+		"ID"                            "1317"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+	"item_burning_hand_of_the_war_god"
+	{
+		"ID"                            "1319"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_burning_hand_of_the_war_god"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_burning_hand_of_the_war_god"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
+				}
+				"OnAttackLanded"
+				{
+					"LifeSteal"
+					{
+					"Target" 			"TARGET"
+					"LifestealPercent"	"5"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"35"
+			}
+		}
+
+	
+	}
+
+	"item_talisman_of_addiction"
+	{
+		"ID"                            "1328"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_talisman_of_addiction"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "100000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_talisman_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"60"
+			}
+		}
+
+	
+	}
+
+	"item_warriors_talisman_of_addiction"
+	{
+		"ID"                            "1329"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_warriors_talisman_of_addiction"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "100000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_warriors_talisman_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"2"
+			}
+		}
+
+	
+	}
+
+	"item_ring_of_the_frozen_citadel"
+	{
+		"ID"                            "1330"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_the_frozen_citadel"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+
+		"Precache"
+		{
+			"Particle"					"particles/generic_gameplay/generic_slowed_cold.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_ring_of_the_frozen_citadel"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%hp_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+				}
+				"OnAttacked"
+				{
+					"ApplyModifier"
+					{
+						"Target" 		"ATTACKER"
+						"ModifierName"	"modifier_ring_of_the_frozen_citadel_slow"
+					}
+				}
+			}
+			"modifier_ring_of_the_frozen_citadel_slow"	// TODO Add proper values
+			{
+				"Duration"				"6"
+				"IsDebuff"				"1"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-30"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-30"
+				}
+				"AttachEffect"
+				{
+					"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+					"Target"			"ATTACKER"
+					"EffectAttachType"	"follow_origin"
+				}
+				
+			}			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen"				"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"45"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"40"
+			}
+		}
+
+	
+	}
+
+	"item_shimmering_lance"
+	{
+		"ID"                            "1331"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_shimmering_lance"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Precache"
+		{
+			"Particle"					"particles/generic_gameplay/generic_slowed_cold.vpcf"
+		}
+		"Modifiers"
+		{
+			"modifier_shimmering_lance"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
+				}
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target" 		"TARGET"
+						"ModifierName"	"modifier_shimmering_lance_slow"
+					}
+					"Random"
+					{
+						"Chance"		 "10"
+						"OnSuccess"
+						{
+							"Damage"
+							{
+								"Target" "TARGET"
+								"Type"	 "DAMAGE_TYPE_MAGICAL"
+								"Damage" "300"
+							}
+						}
+					}
+				}
+			}
+			"modifier_shimmering_lance_slow"
+			{	
+				"Duration"				"8"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-25"
+				}
+				"AttachEffect"
+				{
+					"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+					"Target"			"ATTACKER"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"250"
+			}
+		}
+
+	
+	}
+
+	"item_the_winged_gods_blessed_boots"
+	{
+		"ID"                            "1332"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_the_winged_gods_blessed_boots"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_the_winged_gods_blessed_boots"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move_speed"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%evasion"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"25"
+			}
+		}
+	}
+
+	"item_armor_of_the_firstborn"
+	{
+		"ID"                            "1333"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"item_armor_of_the_firstborn"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"               "30"
+    	"AbilityManaCost"               "0"
+
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"Target" 				"CASTER"
+				"HealAmount"			"3000"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifiers_armor_of_the_firstborn"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%hp_regen"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen"				"35"
+			}
+		}
+	}
+
+	"item_green_dragonscale_ring_of_addiction"
+	{
+		"ID"                            "1336"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_green_dragonscale_ring_of_addiction"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_green_dragonscale_ring_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"25"
+			}
+		}
+	}
+
+	"item_red_dragonscale_ring_of_addiction"
+	{
+		"ID"                            "1337"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_red_dragonscale_ring_of_addiction"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_red_dragonscale_ring_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%agi_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_bonus"				"130"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_bonus"				"105"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"25"
+			}
+		}
+	}
+
+	"item_white_dragonscale_ring_of_addiction"
+	{
+		"ID"                            "1338"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_white_dragonscale_ring_of_addiction"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_white_dragonscale_ring_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"25"
+			}
+		}
+	}
+
+	"item_scepter_of_the_chosen_ones"		// TODO Add spell and healing power by 800
+	{
+		"ID"                            "1339"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_scepter_of_the_chosen_ones"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_scepter_of_the_chosen_ones"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"40"
+			}
+		}
+
+	
+	}
+
+
+	"item_unyielding_breastplate_of_agility"
+	{
+		"ID"                            "1340"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_unyielding_breastplate_of_agility"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_unyielding_breastplate_of_agility"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_bonus"				"130"
+			}
+		}
+
+	
+	}
+
+	"item_unyielding_breastplate_of_strength"
+	{
+		"ID"                            "1341"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_unyielding_breastplate_of_strength"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_unyielding_breastplate_of_strength"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_bonus"				"130"
+			}
+		}
+
+	
+	}
+
+	"item_ares_blade_of_command"
+	{
+		"ID"                            "1342"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ares_blade_of_command"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_ares_blade_of_command"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"
+				}
+				"OnAttackLanded"
+				{
+					"Heal"
+					{
+						"Target" 		"CASTER"
+						"HealAmount"	"35"
+					}
+				}
+			}
+			"modifier_ares_blade_of_command_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura" 					"ares_command_aura"
+	    		"Aura_Radius" 			"500"
+	    		"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    		"Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+	    		"EffectName" 			"particles/items_fx/aura_vlads.vpcf"
+                "EffectAttachType" 		"follow_origin" 
+			}
+			"ares_command_aura"
+	   		{
+	    	
+		    	"IsBuff" 				"1"
+		    	"IsPurgable" 			"0"
+		    	
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "15"
+		    	}
+		    }
+		}
+
+
+	
+	}
+
+	"item_biting_blade_of_agility"
+	{
+		"ID"                            "1343"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_biting_blade_of_agility"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_biting_blade_of_agility"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%str_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_bonus"				"130"
+			}
+		}
+
+	
+	}
+
+	"item_biting_blade_of_strength"
+	{
+		"ID"                            "1344"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_biting_blade_of_strength"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_biting_blade_of_strength"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_bonus"				"130"
+			}
+		}
+
+	
+	}
+
+	"item_deathchill_greatsword"	// TODO Make Lua script that applies 35% of your base damage as AoE damage around the target. Note that this does not include damage bonuses from items.
+	{
+		"ID"                            "1345"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_deathchill_greatsword"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_deathchill_greatsword"
+			{
+				"Passive" 				"1"
+				"IsHidden" 				"1"
+				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 	"%dmg_bonus"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
+				}
+				//"OnAttackLanded"
+				//{
+				//	"RunScript"			"items/deathchill_greatsword"
+				//}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dmg_bonus"			"150"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stat_bonus"		"50"
+			}
+		}
+	}
+
+	"item_magefire_ring_of_intelligence"		// TODO Add spell damage and healing by 1100. 
+	{
+		"ID"                            "1348"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_magefire_ring_of_intelligence"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_magefire_ring_of_intelligence"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"130"
+			}
+		}
+
+	
+	}
+
+	"item_bright_silver_plates"
+	{
+		"ID"                            "1350"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_bright_silver_plates"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifiers_bright_silver_plates"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"30"
+			}
+		}
+	}
+
+	"item_adamantium_lance"		// TODO Add With Adamantium Helm, Adamantium Tower: +50 armor, +100 attack damage.
+	{
+		"ID"                            "1351"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_adamantium_lance"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_adamantium_lance"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance" "10"
+						"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName" "adamantium_lance_crit"
+								"Target"	   "CASTER"	
+							}	
+								
+						}
+					}
+				}
+			}
+
+			"adamantium_lance_crit"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "300"
+				}
+				
+				"OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"EffectName"		 "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	 "follow_origin"
+						"Target"			 "TARGET"
+					}	
+					"RemoveModifier"
+					{
+						"ModifierName"		"wraithblade_crit"
+						"Target"			"CASTER"	
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"125"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"25"
+			}
+		}
+	}
+
+	"item_gift_of_hera"		// TODO Add healing done by your spells by 3000.
+	{
+		"ID"                            "1352"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_gift_of_hera"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_gift_of_hera"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"50"
+			}
+		}
+
+	
+	}
+
+	"item_hephaestus_thundering_axe"
+	{
+		"ID"                            "1353"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_placeholder"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_hephaestus_thundering_axe"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance" 					"8"
+						"OnSuccess"
+						{				
+							"Stun"
+							{
+								"Target"			"TARGET"
+								"Duration"			"2.5"
+							}
+							"Damage"
+							{
+								"Target"		 	"TARGET"
+								"Type"			 	"DAMAGE_TYPE_PHYSICAL"
+								"Damage"			"1500"
+							}
+							"FireSound"
+							{
+								"EffectName"		"Hero_Slardar.Slithereen_Crush"
+								"Target" 			"CASTER"
+							}
+							"FireEffect"
+							{
+								"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+								"EffectAttachType"	"follow_origin"
+								"Target"			"TARGET"
+							}			
+						}
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"100"
+			}
+		}
+
+	
+	}
+
+	"item_adamantium_tower"
+	{
+		"ID"                            "1354"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_adamantium_tower"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_adamantium_tower"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"50"
+			}
+		}
+
+	
+	}
+
+	"item_adamantium_helm"
+	{
+		"ID"                            "1355"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_adamantium_helm"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_adamantium_helm"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%armor_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_bonus"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"30"
+			}
+		}
+
+	
+	}
+
+	"item_soul_blade"		// TODO Adds damage equal to 3% of your current health to each of your attacks.
+	{
+		"ID"                            "1356"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_soul_blade"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+	"item_aphrodites_favor"
+	{
+		"ID"                            "1357"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_aphrodites_favor"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_bonus"				"100"
+			}
+		}
+	
+	}
+
+	"item_mighty_olympian_regalia"
+	{
+		"ID"                            "1359"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_mighty_olympian_regalia"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Precache"
+		{
+			"Soundfile"					"sounds/weapons/hero/zuus/arc_lightning.vsnd"
+			"Particle"					"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+			"Particle"					"particles/generic_gameplay/generic_stunned.vpcf"
+		}
+		"Modifiers"
+		{
+			"modifier_mighty_olympian_regalia"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
+				}
+				"OnAttacked"
+				{
+					"Random"
+					{
+						"Chance"					"10"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target" 			"ATTACKER"
+								"ModifierName"		"mighty_chestguard_of_the_olympians_stun"
+							}							
+						}
+					}
+				
+				}
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"	"10"
+						"OnSuccess"
+						{
+							"Damage"
+							{
+								"Target"		 "TARGET"
+								"Type"			 "DAMAGE_TYPE_MAGICAL"
+								"Damage"		 "400"
+							}
+							"FireEffect"
+							{
+								"EffectName"		"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+								"EffectAttachType" 	"follow_origin"
+								"Target" 			"TARGET"
+							}
+							"FireSound"
+							{
+								"EffectName"		"Hero_Zuus.ArcLightning.Cast"
+								"Target" 			"CASTER"
+							}
+						}
+					}
+				}
+			}
+			"mighty_chestguard_of_the_olympians_stun"
+			{
+				"Duration"				"3"
+				"FireEffect"
+				{
+					"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"ATTACKER"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}				
+			}
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"65"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_bonus"				"225"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"2000"
+			}
+		}
+	}
+
+	"item_sacred_olympian_regalia"	// TODO Add spell damage and healing by 1500. and Set Bonus: +400 Spell Healing, +400 Spell Damage
+	{
+		"ID"                            "1360"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_sacred_olympian_regalia"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
+				}
+				
+			}
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"115"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"60"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"1000"
+			}
+		}
+	}
+
+	"item_shining_olympian_regalia"		// TODO Add spell damage and healing by 1000.
+	{
+		"ID"                            "1361"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_ring_of_regeneration"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_shining_olympian_regalia"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
+				}
+				
+			}
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"1500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"50"
+			}
+		}
+	}
+
+	"item_talisman_of_serious_addiction"
+	{
+		"ID"                            "1371"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		"item_talisman_of_serious_addiction"
+		//"ItemStockMax"			"2"
+		//"ItemStockInitial"		"2"
+		//"ItemStockTime"			"48.0"
+
+		"ItemQuality"			"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"			"caster"
+		"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_talisman_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"25"
+			}
+		}
+
+	
+	}
+
+	
+
+
+	"item_warriors_talisman_of_serious_addiction"
+	{
+		"ID"                            "1376"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		"item_warriors_talisman_of_serious_addiction"
+		//"ItemStockMax"			"2"
+		//"ItemStockInitial"		"2"
+		//"ItemStockTime"			"48.0"
+
+		"ItemQuality"			"component"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"			"caster"
+		"ItemShareability"		"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+			"modifier_talisman_of_addiction"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_res"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stat_bonus"			"160"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_bonus"				"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_res"				"20"
+			}
+		}
+
+	
+	}
+
+
+
+	
 	/////// CLASS ITEMS /////////
 	/////////////////////////////
 
@@ -1574,7 +3954,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
@@ -1601,7 +3981,7 @@
 			{
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"250"
 				}
 			}
@@ -1654,7 +4034,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 				}
@@ -1693,7 +4073,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%mana_regen"	
 				}
 			}	
@@ -1862,7 +4242,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_regen"
@@ -1917,7 +4297,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
@@ -1967,7 +4347,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
 				}
@@ -2011,7 +4391,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
@@ -2083,7 +4463,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%agi_bonus"
@@ -2151,7 +4531,7 @@
 				"Attributes"				"1"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -2208,7 +4588,7 @@
 				"Attributes"				"1"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
@@ -2266,7 +4646,7 @@
 				"Attributes"				"1"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -2349,7 +4729,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
@@ -2464,7 +4844,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%stat_bonus"
@@ -2522,7 +4902,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
@@ -2573,7 +4953,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%stat_bonus"
@@ -2647,7 +5027,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
@@ -2715,7 +5095,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
@@ -2771,7 +5151,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%stat_bonus"
@@ -2823,7 +5203,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
@@ -2900,7 +5280,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
@@ -2982,7 +5362,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_res"
@@ -3032,7 +5412,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
@@ -3083,7 +5463,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
@@ -3155,7 +5535,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -3217,7 +5597,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
@@ -3273,7 +5653,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%mana_regen"
@@ -3323,7 +5703,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%mana_regen"
@@ -3408,7 +5788,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -3482,7 +5862,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
@@ -3539,7 +5919,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
@@ -3590,7 +5970,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%hp_regen"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
 				}
@@ -3656,7 +6036,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%mana_regen"
@@ -3711,7 +6091,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -3763,7 +6143,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%mana_regen"
 				}
@@ -3807,7 +6187,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
@@ -3880,7 +6260,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -3932,7 +6312,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -3982,7 +6362,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 				}
@@ -4026,7 +6406,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%mana_regen"
 				}
@@ -4088,7 +6468,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -4152,7 +6532,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -4204,7 +6584,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
@@ -4261,7 +6641,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -4325,7 +6705,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -4383,7 +6763,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -4435,7 +6815,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -4493,7 +6873,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_bonus"
@@ -5436,7 +7816,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
@@ -5488,7 +7868,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 				}
 			}
@@ -5526,7 +7906,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
 				}
@@ -5623,7 +8003,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 				}
@@ -5686,7 +8066,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
 				}
@@ -5775,7 +8155,7 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
 				}
@@ -5820,7 +8200,7 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"	"%mana_regen"
 				}
 			}
@@ -5859,7 +8239,7 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -5910,7 +8290,7 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
 				}
@@ -5955,7 +8335,7 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
@@ -6006,7 +8386,7 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
 				}
@@ -6208,7 +8588,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%stat_bonus"
@@ -6275,7 +8655,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
@@ -6327,7 +8707,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
@@ -6377,7 +8757,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move_speed"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
@@ -6433,7 +8813,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
@@ -6485,7 +8865,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
@@ -6585,12 +8965,12 @@
 		}
 	}
 
-	"item_armor_of_zues"
+	"item_armor_of_zeus"
 	{
 		"ID"                            "1204"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_armor_of_zues"
+		"AbilityTextureName"			"item_armor_of_zeus"
 		//"ItemStockMax"				"2"
 		//"ItemStockInitial"			"2"
 		//"ItemStockTime"				"48.0"
@@ -6608,7 +8988,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
@@ -6665,7 +9045,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
 				}
@@ -6752,7 +9132,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
@@ -6845,7 +9225,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
 				}
@@ -6914,7 +9294,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
@@ -6966,7 +9346,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
 				}
@@ -7010,7 +9390,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%stat_bonus"
@@ -7056,7 +9436,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%agi_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
@@ -7112,7 +9492,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
@@ -7163,7 +9543,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
 				}
@@ -7247,7 +9627,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
 				}
@@ -7291,7 +9671,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_bonus"
 					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
@@ -7366,7 +9746,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%hp_bonus"
 					"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK"	"%block"
@@ -7436,7 +9816,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"					"%hp_bonus"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%hp_regen"
@@ -9629,7 +12009,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 				}
@@ -9831,7 +12211,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%agi_bonus"
 				}
@@ -9948,7 +12328,7 @@
 		"ID"                            "1174"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_ring_of_regeneration"
+		"AbilityTextureName"			"item_cloak_of_the_chosen"
 		//"ItemStockMax"				"2"
 		//"ItemStockInitial"			"2"
 		//"ItemStockTime"				"48.0"
@@ -10206,7 +12586,7 @@
 		}
 	}
 
-	"item_robes_of_spell_power"		// TODO Add 300 spell power
+	"item_rod_of_spell_power"		// TODO Add 300 spell power
 	{
 		"ID"                            "1200"
 		"BaseClass"                     "item_datadriven"
@@ -10251,7 +12631,7 @@
 		"ID"                            "1270"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_ring_of_regeneration"
+		"AbilityTextureName"			"item_placeholder"
 		//"ItemStockMax"				"2"
 		//"ItemStockInitial"			"2"
 		//"ItemStockTime"				"48.0"
@@ -10269,7 +12649,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%hp_regen"
 				}
 			}
@@ -10311,12 +12691,36 @@
 	///////// CRAFTING /////////
 	/////////////////////////////
 
+	"item_gemstone_of_the_olympians"
+	{
+		"ID"                            "1358"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_placeholder"
+		//"ItemStockMax"				"2"
+		//"ItemStockInitial"			"2"
+		//"ItemStockTime"				"48.0"
+
+		"ItemQuality"					"common"
+		"ItemCost"                      "9000" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"Modifiers"
+		{
+
+		}
+
+
+	
+	}
+
+
 	"item_unfinished_gemstone_key"		// TODO Add icon
 	{
 		"ID"                            "1294"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_ring_of_regeneration"
+		"AbilityTextureName"			"item_placeholder"
 		//"ItemStockMax"				"2"
 		//"ItemStockInitial"			"2"
 		//"ItemStockTime"				"48.0"
@@ -10336,7 +12740,7 @@
 		"ID"                            "1282"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_gemstone_key"
+		"AbilityTextureName"			"item_placeholder"
 		//"ItemStockMax"				"2"
 		//"ItemStockInitial"			"2"
 		//"ItemStockTime"				"48.0"
