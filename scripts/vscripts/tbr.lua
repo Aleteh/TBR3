@@ -201,8 +201,18 @@ function GameMode:OnHeroInGame(hero)
 	hero:AddItem(item)
 
 	--Abilities
-	--local abil = hero:GetAbilityByIndex(1)
-	--hero:RemoveAbility(abil:GetAbilityName())
+	local abil1 = hero:GetAbilityByIndex(0)
+	local abil2 = hero:GetAbilityByIndex(1)
+	local abil3 = hero:GetAbilityByIndex(2)
+	local abil4 = hero:GetAbilityByIndex(3)
+	local abil5 = hero:GetAbilityByIndex(4)
+	local abil6 = hero:GetAbilityByIndex(5)
+	if abil1 ~= nil then abil1:SetLevel(1) end
+	if abil2 ~= nil then abil2:SetLevel(1) end
+	if abil3 ~= nil then abil3:SetLevel(1) end
+	if abil4 ~= nil then abil4:SetLevel(1) end
+	if abil5 ~= nil then abil5:SetLevel(1) end
+	if abil6 ~= nil then abil6:SetLevel(1) end
 	--hero:AddAbility("example_ability")	
 end
 
