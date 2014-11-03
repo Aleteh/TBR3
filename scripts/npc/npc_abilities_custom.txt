@@ -897,13 +897,27 @@
 				}
 				"Action"
 				{
-					"Damage"
+					"TrackingProjectile"
 					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%damage"
+						"Target"			"TARGET"
+						"Dodgeable"			"false"
+						"ProvidesVision"	"false"
+						"VisionRadius"		"0"
+						"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+						"MoveSpeed"			"550"
+						"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 					}
 				}
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%damage"
 			}
 		}
 	}
@@ -950,7 +964,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"reflect_aoe"		"250"
 			}
-			// damage reflection?
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"damage_return_percentage"	"2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.8"
+			}
 		}
 		"Modifiers"
 		{
@@ -967,10 +985,22 @@
 				}
 				"OnAttacked"
 				{
-					"RunScript" //TODO
+					"RunScript"
 					{
 						"ScriptFile"	"abilities/kc.lua"
 						"Function"	"shroud"
+					}
+				}
+			}
+			"shroud_helper"
+			{
+				"Duration"	"0.033"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kc.lua"
+						"Function"	"shroud_damage"
 					}
 				}
 			}
@@ -1002,7 +1032,7 @@
 	
 		"precache"
 		{
-			"particle"	"particles/items_fx/aura_endurance.vpcf"
+			"particle"	"particles/test_particle/channel_field_2.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -1032,9 +1062,11 @@
 					"AttachEffect"
 					{
 						"Target" "CASTER"
-						"EffectName"		"particles/items_fx/aura_endurance.vpcf"
+						"EffectName"		"particles/test_particle/channel_field_1.vpcf"
 						"EffectAttachType" "follow_origin"
 						"EffectLifeDurationScale" "1"
+						"EffectColorA"		"255 0 0"
+						"EffectColorB"		"255 0 0"
 					}
 				}
 				"Passive" 			"1"

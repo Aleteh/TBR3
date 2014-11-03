@@ -13,9 +13,10 @@ Update your progress as you go, and write if you need a hand!
 	==Strength==
 	> Khaos Champion
 		- Almost finished (Noya)
-		- Improve ability effects and polish behavior
-		- Change scythe to TrackingProjectiles
-		- Add return damage on shroud
+		- Improve ability effects and polish behavior -STARTED
+			- Make a custom aura particle for Terrorize
+		- Change scythe to TrackingProjectiles -DONE
+		- Add return damage on shroud -DONE
 
 	> Guardian of Nature
 		- Almost finished (N)
