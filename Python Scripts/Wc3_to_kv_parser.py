@@ -27,6 +27,18 @@ attacktypes['chaos'] = 'DOTA_COMBAT_CLASS_ATTACK_LIGHT'
 attacktypes['hero'] = 'DOTA_COMBAT_CLASS_ATTACK_HERO'
 attacktypes['magic'] = 'MAGIC_MAN'
 attacktypes['spells'] = 'ONLYSPELLS'
+
+#Movement Types: - ""
+#--------------
+movementtypes = {}
+movementtypes['foot'] = 'DOTA_UNIT_CAP_MOVE_GROUND'
+movementtypes['fly'] = 'DOTA_UNIT_CAP_MOVE_FLY'
+movementtypes['float'] = 'DOTA_UNIT_CAP_MOVE_GROUND'
+movementtypes['hover'] = 'DOTA_UNIT_CAP_MOVE_GROUND'
+movementtypes['_'] = 'DOTA_UNIT_CAP_MOVE_NONE'
+movementtypes[''] = 'DOTA_UNIT_CAP_MOVE_NONE'
+movementtypes['amph'] = 'DOTA_UNIT_CAP_MOVE_GROUND'
+movementtypes['horse'] = 'DOTA_UNIT_CAP_MOVE_GROUND'
 class wc3pars:
     def __init__(self, section):
         self.npc_name = ''
@@ -37,10 +49,18 @@ class wc3pars:
         self.level = 1
         if 'level' in section:
             self.level = section['level']
-        self.ability1 = ''
-        self.ability2 = ''
-        self.ability3 = ''
-        self.ability4 = ''
+
+        self.abilitycounter = 1
+        self.abilitylist = None
+        if 'abilList' in section:
+            if section['abilList'] is not '_':
+                self.abilitylist = section['abilList']
+                self.abilitylist = self.abilitylist.split(',')
+        self.heroabilitylist = None
+        if 'heroAbilList' in section:
+            if section['heroAbilList'] is not '':
+                self.heroabilitylist = section['heroAbilList']
+                self.heroabilitylist = self.heroabilitylist.split(',')
 
         self.combatclassdefend = 'DOTA_COMBAT_CLASS_DEFEND_BASIC'
         if 'defType' in section:
@@ -121,8 +141,9 @@ class wc3pars:
         self.movementcapabilities = None
         self.movementspeed = None
         if 'spd' in section:
-            self.movespeed = section['spd']
-            self.movementcapabilities = 'DOTA_UNIT_CAP_MOVE_GROUND'
+            self.movementspeed = section['spd']
+            if 'movetp' in section:
+                self.movementcapabilities = movementtypes[section['movetp']]
         self.movementturnrate = None
         if 'turnRate' in section:
             self.movementturnrate = section['turnRate']
@@ -145,17 +166,36 @@ class wc3pars:
         lines = []
         section = ''
         lines.append('\n')
-        lines.append(self.kline(self.npc_name))
+        lines.append(self.unitcomment(self.npc_name))
+        lines.append(self.kline(self.npc_name.replace(' ', '_')))
+        lines.append(self.kvcomment(' General'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(self.kvline('BaseClass', self.baseclass,None))
+        lines.append(self.kvline('Model', '', 'Needs model data'))
+        lines.append(self.kvline('ModelScale', '1', None))
         lines.append(self.kvline('Level', self.level, None))
-        lines.append(self.kvline('Ability1',self.ability1, None))
-        lines.append(self.kvline('Ability2',self.ability2, None))
-        lines.append(self.kvline('Ability3',self.ability3, None))
-        lines.append(self.kvline('Ability4',self.ability4, None))
+        lines.append(self.kvcomment(None))
         
+        lines.append(self.kvcomment(' Abilities'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
+        if self.abilitylist is not None:
+            for abil in self.abilitylist:
+                lines.append(self.kvline('Ability' + str(self.abilitycounter), '', 'Reference: ' + abil))
+                self.abilitycounter += 1
+        if self.heroabilitylist is not None:
+            for abil in self.heroabilitylist:
+                lines.append(self.kvline('Ability' + str(self.abilitycounter), '', 'Reference: ' + abil))
+                self.abilitycounter += 1
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Armor'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(self.kvline('ArmorPhysical', self.armorphys, None))
         lines.append(self.kvline('MagicalResistance', self.armormagic, None))
-        
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Attack'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(self.kvline('AttackCapabilities',self.attackcapabilities, None))
         lines.append(self.kvline('AttackDamageMin', self.attackdamagemin, None))
         lines.append(self.kvline('AttackDamageMax', self.attackdamagemax, None))
@@ -164,32 +204,52 @@ class wc3pars:
         lines.append(self.kvline('AttackAnimationPoint',self.attackanimationpoint, None))
         lines.append(self.kvline('AttackAcquisitionRange', self.attackacqurange, None))
         lines.append(self.kvline('AttackRange',self.attackrange, None))
-        
         lines.append(self.kvline('ProjectileModel', self.projectilemodel, 'Add projectile models'))
         lines.append(self.kvline('ProjectileSpeed', self.projectilespeed, None))
-        
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Bounty'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(self.kvline('BountyGoldMin', self.bountygoldmin, None))
         lines.append(self.kvline('BountyGoldMax', self.bountygoldmax, None))
-        
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Movement'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
+        lines.append(self.kvline('MovementCapabilities', self.movementcapabilities, None))
+        lines.append(self.kvline('MovementSpeed', self.movementspeed, None))
+        lines.append(self.kvline('MovementTurnRate', self.movementturnrate, None))
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Status'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(self.kvline('StatusHealth', self.statushealth, None))
         lines.append(self.kvline('StatusHealthRegen', self.statushealthregen, None))
         lines.append(self.kvline('StatusMana', self.statusmana, None))
         lines.append(self.kvline('StatsManaRegen', self.statusmanaregen, None))
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Vision'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
+        lines.append(self.kvline('VisionDaytimeRange', self.visiondaytimerange, None))
+        lines.append(self.kvline('VisionNighttimeRange', self.visionnighttimerange, None))
+        lines.append(self.kvcomment(None))
         
+        lines.append(self.kvcomment(' Team'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(self.kvline('TeamName', self.team, None))
         lines.append(self.kvline('CombatClassAttack', self.combatclassattack, None))
         lines.append(self.kvline('CombatClassDefened', self.combatclassdefend, None))
         lines.append(self.kvline('UnitRelationShipClass', self.unitrelationshipclass, None))
-        
-        lines.append(self.kvline('VisionDaytimeRange', self.visiondaytimerange, None))
-        lines.append(self.kvline('VisionNighttimeRange', self.visionnighttimerange, None))
-        
-        lines.append(self.kvline('MovementCapabilities', self.movementcapabilities, None))
-        lines.append(self.kvline('MovementSpeed', self.movementspeed, None))
-        lines.append(self.kvline('MovementTurnRate', self.movementturnrate, None))
+        lines.append(self.kvcomment(None))
+
         
         lines.append(self.kvline('BoundsHullName', self.boundshullname, None))
         lines.append(self.kvline('HealthBarOffset', self.healthbaroffset, None))
+        lines.append(self.kvcomment(None))
+
+        lines.append(self.kvcomment(' Creature Data'))
+        lines.append(self.kvcomment('----------------------------------------------------------------'))
         lines.append(endline)
         for line in lines:
             section += line
@@ -213,11 +273,23 @@ class wc3pars:
             line += '\n'
         return line
 
-    def kline(self, unit_name):
-        tip = ''
+    def kvcomment(self, comment):
+        line =  '\t\t'
+        if comment is not None:
+            line += '//' + comment
+        line += '\n'
+        return line
+
+    def unitcomment(self, comment):
+        line = '\t//=================================================================================\n'
+        line += '\t// Creature: ' + comment +'\n'
         if self.discription is not None:
-            tip = self.discription
-        line = '\t"'+ unit_name +'"\t//' + tip + '\n' '\t{\n'
+            line += '\t// Discription: ' + self.discription + '\n'
+        line += '\t//=================================================================================\n'
+        return line
+
+    def kline(self, unit_name):
+        line = '\t"'+ unit_name +'"\n' + '\t{\n'
         return line
         
 
