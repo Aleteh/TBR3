@@ -561,35 +561,58 @@
 	//=================================================================================================================
 	// Spartan Warrior: Dispatch
 	//=================================================================================================================
+	//Adds double your Strength plus xxxx damage to your next attack against a single target for xxx mana. 
+	//The target will also bleed for four times your Strength plus xxxx damage over 8 seconds. 
+	//This skill also receives bonuses from spell damage increases and the bleed effect will stack mutiple times on the same target. Cooldown 2,25 seconds.
 	"spartanwarrior_dispatch"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"spartan_warrior_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"2.25"
 		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "100 200 350 550 850 1250 2000 3000"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bleed_damage"					"200 400 700 1050 1700 2500 3750 5500"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"8"
+			}
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/spartan.lua"
-				"Function"			"spartan_dispatch"
+				"Function"			"dispatch"
 			}
+			"RunScript"
+		 	{
+			    "ScriptFile"	"damage.lua"
+			    "Function"		"DoDamage"
+			    "Damage"		"%bleed_damage"
+		  	}
+
 		}
 	}
 
@@ -597,6 +620,8 @@
 	//=================================================================================================================
 	// Spartan Warrior: Valor
 	//=================================================================================================================
+	//All nearby friendly units will regenerate xxx hit points per second and have their armor increased by xx for 2 minutes for xxx mana. 
+	//This skill also receives bonuses from spell healing increases. Cooldown 1 second. 500 AOE.
 	"spartanwarrior_valor"
 	{
 
@@ -628,6 +653,7 @@
 			"particle"		"particles/items_fx/healing_clarity.vpcf"
 			"particle"		"particles/items2_fx/tranquil_boots_healing_core.vpcf"
 			"particle"		"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion_wave.vpcf"
+			"particle"		"particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
 		}
 
 		"OnSpellStart"
@@ -643,6 +669,12 @@
 				// "EffectColor" "255 0 0"
 				// "EffectColorA" "0 255 0"
 				// "EffectColorB" "0 0 255"
+				"Target"						"CASTER"
+			}
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
+				"EffectAttachType"				"follow_origin"
 				"Target"						"CASTER"
 			}
 			"ApplyModifier"
@@ -699,25 +731,58 @@
 	//=================================================================================================================
 	// Spartan Warrior: Throw Javelin
 	//=================================================================================================================
-	"spartanwarrior_throw_javelin"
+	//You hurl a javelin at the enemy, causing double your Strength plus xxxx damage to all enemies in a line for xxx mana. 
+	//This skill also receives bonuses from spell damage increases. 6 Second cooldown, 250 AOE, range 700.
+	"spartanwarrior_throw_javelin"	// TODO: Find a better projectile (Huskar seemed to be tracking)
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"spartan_warrior_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" 	"7"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"35 70 120 195 295 440 650 900"
     	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+			"particle"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"throw_speed"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"throw_width"			"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"throw_distance"		"700"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"throw_damage"			"150 300 525 840 1260 1900 3000 4500"
+			}
+		}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -727,8 +792,27 @@
 			{
 				"ScriptFile"		"abilities/spartan.lua"
 				"Function"			"spartan_throw"
+				"Target"			"POINT"
 			}
 		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"0"
+
+			"RunScript"
+		 	{
+			    "ScriptFile"	"damage.lua"
+			    "Function"		"DoDamage"
+			    "Damage"		"%throw_damage"
+		  	}
+
+			"FireSound" // TODO: Find a proper sound
+			{
+				"EffectName"			"Hero_Magnataur.ShockWave.Target"
+				"Target"				"TARGET"
+			}			
+		}
+
 	}
 
 	//=================================================================================================================

@@ -31,7 +31,7 @@ Update your progress as you go, and write if you need a hand!
 	> Temple Guardian
 		- Not Started
 	> Spartan Warrior
-		- Not Started
+		- Started (N)
 
 	==Intellect==	
 	> Cleric
