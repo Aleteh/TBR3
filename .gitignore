@@ -52,3 +52,4 @@ maps/test_env.vpk
 
 # Compiled Particles
 *.vpcf_c
+*.vpk

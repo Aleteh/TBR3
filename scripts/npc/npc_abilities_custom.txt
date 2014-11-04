@@ -227,7 +227,7 @@
 	//Forces a target enemy unit to attack you and slows its attack speed by 35% for 8 seconds for 35 mana.
 	//This skill cannot be improved. 10 seconds cooldown.
 
-	"barbarian_taunt"
+	"barbarian_taunt"	//TODO: Test how does this interact with Enemy AI
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -289,6 +289,8 @@
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attackspeed_reduction"
 				}
+				"EffectName"	"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+				"EffectAttachType"	"follow_overhead"
 				
 			}
 		}
@@ -332,9 +334,9 @@
 				"duration"				"30"
 			}
 			"02"
-			{
+			{  
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"	"-25"
+				"armor_reduction"	"-15 -19 -23 -27 -31 -35 -40 -45"
 			}
 		}
 
@@ -359,6 +361,8 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
 				}
+				"EffectName"	"particles/items2_fx/medallion_of_courage.vpcf"
+				"EffectAttachType"	"follow_overhead"
 			}
 		}
 	}
@@ -369,24 +373,24 @@
 	//Adds four times your Strength plus xxxx bonus damage to your next attack against a single target and causes three times your Strength plus xxxx damage to nearby enemy units for xx mana. 
     //2,25 seconds cooldown. Can be autocast 
 	
-	"barbarian_cleave" //TODO: Check if this damage added/cleaved can crit.
-	{
+	"barbarian_cleave" //TODO: 	Check if this damage added/cleaved can crit. Maybe rewrite in a smarter way.
+	{					//		Particles
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"barbarian_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5" //does this apply to BEHAVIOR_ATTACK?
-		"AbilityCooldown"				"2.25"
+		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"8 12 17 24 32 42 53 65"
+		"AbilityCooldown"				"2.25" //just for the display
 
     	"AbilitySpecial"
 		{
@@ -405,16 +409,42 @@
 				"var_type"			"FIELD_INTEGER"
 				"aoe_damage"		"75 150 265 400 600 900 1500 2250"
 			}
-		}
-
-    	"OnSpellStart" //OnAttackLanded?
-		{
-			"RunScript"
+			"04"
 			{
-				"ScriptFile"		"abilities/barbarian.lua"
-				"Function"			"cleave"
+				"var_type"			"FIELD_INTEGER"
+				"cooldown"			"2.25"
 			}
 		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+		}
+
+		
+    	"Modifiers"
+		{ 
+			"modifier_barbarian_cleave"
+			{
+				"Passive"               "1"
+				"IsHidden"				"1"
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					//"ProjectileName"    ""
+					"CastAttack"		"1"
+				}
+				"OnOrbImpact"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/barbarian.lua"
+						"Function"			"cleave"
+					}
+
+				}
+			}
+		}	
 	}
 
 	//=================================================================================================================
@@ -426,13 +456,13 @@
 	//30 seconds cooldown. 
     //225 AOE, 600 range, no mana cost.
 	
-	"barbarian_mighty_leap"
+	"barbarian_mighty_leap"	//TODO: Sound
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"barbarian_skill4"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -440,10 +470,9 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"30 30 30 30 30 30 30 30"
-		"AbilityManaCost"				"0 0 0 0 0 0 0 0"
-		"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"0"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
@@ -474,13 +503,13 @@
 	//All damage dealt in this way will be added to your health. 
 	//12 seconds cooldown. 
 	
-	"barbarian_bloodbath"
+	"barbarian_bloodbath"	//TODO: Popup for Heal, Axe sound.
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"barbarian_skill5"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -490,6 +519,12 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+
+		"precache"
+		{
+			"particle"	"particles/items2_fx/soul_ring_blood.vpcf"
+			"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodbath.vpcf"
+		}
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
@@ -503,6 +538,18 @@
 			{
 				"ScriptFile"		"abilities/barbarian.lua"
 				"Function"			"bloodbath"
+			}
+			"AttachEffect"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"particles/items2_fx/soul_ring_blood.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"AttachEffect"
+			{
+				"Target"		"CASTER"
+				"EffectName"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodbath.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 		}
 	}

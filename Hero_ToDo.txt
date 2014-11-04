@@ -25,8 +25,8 @@ Update your progress as you go, and write if you need a hand!
 		- Change to proper 7 level system, use the correct %chance, finish.
 
 	> Barbarian
-		- Started (N)
-		- Continue abilities.
+		- Almost finished.
+		- Review tooltips, add some sounds.
 
 	> Temple Guardian
 		- Not Started

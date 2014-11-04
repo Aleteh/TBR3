@@ -9,19 +9,19 @@
 	"npc_dota_hero_beastmaster"
 	{
 		"override_hero"				"npc_dota_hero_beastmaster"
-		"AbilityLayout" "6"
+		"AbilityLayout" "5"
 		"Ability1"					"barbarian_taunt"
 		"Ability2"					"barbarian_rend_armor"
 		"Ability3"					"barbarian_cleave"
 		"Ability4"					"barbarian_mighty_leap"
 		"Ability5"					"barbarian_bloodbath"
-		"Ability6"					"stat_allocation"
-		"Ability7"					"stat_allocation_str"
-		"Ability8"					"stat_allocation_agi"
-		"Ability9"					"stat_allocation_int"
-		"Ability10"					"stat_empty1"
-		"Ability11"					"stat_empty2"
-		"Ability12"					"stat_allocation_cancel"
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
 
 		// Attributes
         //-------------------------------------------------------------------------------------------------------------
