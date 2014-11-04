@@ -40,19 +40,19 @@
 	"npc_dota_hero_dragon_knight"
 	{
 		"override_hero"				"npc_dota_hero_dragon_knight"
-		"AbilityLayout" "6"
+		"AbilityLayout" "5"
 		"Ability1"					"spartanwarrior_dispatch"
 		"Ability2"					"spartanwarrior_valor"
 		"Ability3"					"spartanwarrior_throw_javelin"
 		"Ability4"					"spartanwarrior_charge"
 		"Ability5"					"spartanwarrior_phalanx"
-		"Ability6"					"stat_allocation"
-		"Ability7"					"stat_allocation_str"
-		"Ability8"					"stat_allocation_agi"
-		"Ability9"					"stat_allocation_int"
-		"Ability10"					"stat_empty1"
-		"Ability11"					"stat_empty2"
-		"Ability12"					"stat_allocation_cancel"
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
 
 		// Attributes
         //-------------------------------------------------------------------------------------------------------------

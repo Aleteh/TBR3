@@ -2,6 +2,7 @@ require('tbr')
 require('timers')
 require('physics')
 require('xp_table')
+require('popups')
 
 function Precache( context )
 		print("Performing pre-load precache")

@@ -384,6 +384,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -418,7 +419,7 @@
 
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+			"particle"	"particles/econ/items/axe/axe_weapon_bloodchaser/axe_attack_blur_counterhelix_bloodchaser.vpcf"
 		}
 
 		
@@ -606,13 +607,26 @@
 				"ScriptFile"		"abilities/spartan.lua"
 				"Function"			"dispatch"
 			}
-			"RunScript"
-		 	{
-			    "ScriptFile"	"damage.lua"
-			    "Function"		"DoDamage"
-			    "Damage"		"%bleed_damage"
-		  	}
-
+		}
+		// ApplyModifier which does the red popup for bleed damage.
+		"Modifiers"    				
+		{  						
+			"modifier_spartan_dispatch"   
+			{
+				"IsDebuff"					"true"
+				"IsPurgable"				"false"
+				"IsHidden"					"true"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE" //allow multiple stacks
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/spartan.lua"
+						"Function"			"dispatch_bleed"
+					}
+				}
+			}
 		}
 	}
 
@@ -650,17 +664,16 @@
 		"precache"
 		{
 			//"particle"				"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-			"particle"		"particles/items_fx/healing_clarity.vpcf"
-			"particle"		"particles/items2_fx/tranquil_boots_healing_core.vpcf"
+			"particle"		"particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
 			"particle"		"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion_wave.vpcf"
 			"particle"		"particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		}
 
 		"OnSpellStart"
 		{
 			"FireEffect"
 			{
-				//"EffectName"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
 				"EffectName"					"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion_wave.vpcf"
 				"EffectAttachType"				"follow_origin"
 				// "EffectRadius"					"2000"
@@ -670,6 +683,11 @@
 				// "EffectColorA" "0 255 0"
 				// "EffectColorB" "0 0 255"
 				"Target"						"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Sven.GodsStrength"
+				"Target"		"CASTER"
 			}
 			"FireEffect"
 			{
@@ -695,14 +713,12 @@
 			"modifier_valor"
 			{
 				"Duration"						"%duration"
-				"EffectName"					"particles/items2_fx/tranquil_boots_healing_core.vpcf"
-				"EffectAttachType"				"follow_origin"
-				//"EffectAttachType" "follow_overhead"
 				"Properties"
 				{
-				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
 				}
-
+				"EffectName"					"particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
+				"EffectAttachType"				"follow_overhead"
 			}
 		}
 
@@ -758,6 +774,7 @@
 			"particle" 	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
 			"particle"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"particle"	"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt_explosion.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -798,7 +815,11 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"				"0"
-
+			"ApplyModifier"
+			{
+				"ModifierName" "javelin_fx"
+				"Target"	"TARGET"
+			}
 			"RunScript"
 		 	{
 			    "ScriptFile"	"damage.lua"
@@ -812,12 +833,33 @@
 				"Target"				"TARGET"
 			}			
 		}
+		"Modifiers"
+		{
+			"javelin_fx"
+			{
+				"IsHidden"	"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/spartan.lua"
+						"Function"		"javelin_particle"
+					}
+				}
+			}
+		}
 
 	}
 
 	//=================================================================================================================
 	// Spartan Warrior: Charge
 	//=================================================================================================================
+	//You charge headlong at an enemy unit. The charged unit will suffer xxxx damage plus your Strength for xxx mana. 
+	//All nearby units will suffer xxxx damage plus half your Strength and will be dazed for up to 5 seconds. 
+	//While dazed, the affected units will have their movement and attack speed reduced by 50%.
+    //If used against a unit in melee range, the target will be forced to attack you for 4 seconds. 
+    //This skill also receives bonuses from spell damage increases. 
+    //Cooldown 7,5 seconds. 300 AOE, 800 Range.
 	"spartanwarrior_charge"
 	{
 		// General
@@ -845,7 +887,7 @@
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/spartan.lua"
-				"Function"			"spartan_charge"
+				"Function"			"charge"
 			}
 		}
 	}
@@ -853,34 +895,123 @@
 	//=================================================================================================================
 	// Spartan Warrior: Phalanx
 	//=================================================================================================================
+	//You and all nearby units assume a phalanx formation, granting you a 35% chance to dodge physical attacks and a 35% reduction to damage 
+	//from harmful spells for xxx mana. However, the phalanx was never known for fast troop movement and thus your movement speed is reduced by 20%. 
+    //No cooldown. Drain your mana by xxx mana / sec.
 	"spartanwarrior_phalanx"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"spartan_warrior_skill5"
 		"MaxLevel" "1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"20 30 45 65 90 120 160 210"
+
+    	"AbilitySpecial"
 		{
-			"RunScript"
+			"01"
 			{
-				"ScriptFile"		"abilities/spartan.lua"
-				"Function"			"spartan_phalanx"
+				"var_type"	"FIELD_INTEGER"
+				"mana_cost_per_second"	"5 8 12 17 23 31 40 50"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"Range"	"900"
+			}		
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"dodge"	"30"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"magic_resistance"	"35"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"move_speed_reduction"	"-20"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+			"particle"	"particles/units/heroes/hero_legion_commander/legion_commander_duel_body.vpcf"
+			"particle"	"particles/generic_gameplay/dropped_item_rapier.vpcf"
+			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield_snakeskin.vpcf"
+		}
+
+    	"OnToggleOn"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_phalanx"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_LegionCommander.PressTheAttack"
+				"Target"				"CASTER"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_phalanx"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_phalanx"
+			{	
+				"OnCreated"
+				{
+					"AttachEffect" //TODO: Find a better particle effect
+					{
+						"Target" "CASTER"
+						"EffectName"	"particles/units/heroes/hero_legion_commander/legion_commander_duel_body.vpcf"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"IsPassive"	"1"
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"IsHidden" 			"1"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/spartan.lua"
+						"Function"	"phalanx"
+					}
+				}
+				"Aura" 				"phalanx_aura"
+				"Aura_Radius" 		"%Range"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			}
+			"phalanx_aura" //TODO: Better particle
+			{		
+				"IsBuff"				"1"
+				"IsHidden"				"0"
+				//"OverrideAnimation"		"ACT_DOTA_DISABLED"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"	"%dodge"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_reduction"
+				}
+				"EffectName"		"particles/units/heroes/hero_medusa/medusa_mana_shield_snakeskin.vpcf" //"particles/units/heroes/hero_medusa/medusa_mana_shield_snakeskin_backup.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 		}
 	}

@@ -280,8 +280,8 @@ end
 
 -- A player leveled up an ability
 function GameMode:OnPlayerLearnedAbility( keys)
-	print ('[TBR] OnPlayerLearnedAbility')
-	DeepPrintTable(keys)
+	--print ('[TBR] OnPlayerLearnedAbility')
+	--DeepPrintTable(keys)
 
 	local player = EntIndexToHScript(keys.player)
 	local abilityname = keys.abilityname
@@ -289,8 +289,8 @@ end
 
 -- A player leveled up
 function GameMode:OnPlayerLevelUp(keys)
-	print ('[TBR] OnPlayerLevelUp')
-	DeepPrintTable(keys)
+	--print ('[TBR] OnPlayerLevelUp')
+	--DeepPrintTable(keys)
 
 	local player = EntIndexToHScript(keys.player)
 	local level = keys.level
@@ -298,8 +298,8 @@ end
 
 -- A player last hit a creep, a tower, or a hero
 function GameMode:OnLastHit(keys)
-	print ('[TBR] OnLastHit')
-	DeepPrintTable(keys)
+	--print ('[TBR] OnLastHit')
+	--DeepPrintTable(keys)
 
 	local isFirstBlood = keys.FirstBlood == 1
 	local isHeroKill = keys.HeroKill == 1
@@ -309,8 +309,8 @@ end
 
 -- An entity died
 function GameMode:OnEntityKilled( keys )
-	print( '[BAREBONES] OnEntityKilled Called' )
-	DeepPrintTable( keys )
+	--print( '[BAREBONES] OnEntityKilled Called' )
+	--DeepPrintTable( keys )
 	
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
