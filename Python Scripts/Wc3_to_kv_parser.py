@@ -57,7 +57,7 @@ class wc3pars:
             if section['dice1'] is not '-' and section['sides1'] is not '-':
                 self.attackdamagemin = str(float(section['dice1']) + float(section['dmgplus1']))
                 self.attackdamagemax = str(float(section['dice1']) * float(section['sides1']) + float(section['dmgplus1']))
-        self.attackdamagetype = 'DAMAGE_TYPE_ArmorPhysical'
+        self.attackdamagetype = 'DAMAGE_TYPE_PHYSICAL'
         self.attackrate = None
         if 'cool1' in section:
             self.attackrate = section['cool1']
@@ -258,9 +258,7 @@ def sectionoff(textfile):
 
 
 if __name__ == '__main__':
-    afile
     fullfile = sectionoff('units_copy.txt')
-    work
     print(fullfile[''])
     f = open('parsed.txt','w')
     f.write('')
@@ -270,4 +268,4 @@ if __name__ == '__main__':
             work = wc3pars(afile)
             work.writetofile('parsed.txt', 'a')
             #print(work.projectilespeed)
-    work.check()
+    print('finished')
