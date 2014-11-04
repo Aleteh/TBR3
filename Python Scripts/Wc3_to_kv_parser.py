@@ -3,6 +3,30 @@
 
 ##NOTE: Files must have an empty line at the end
 endline = '\t}\n\n'
+
+#Armor Types: - "CombatClassDefend"
+#------------
+armortypes = {}
+armortypes['Flesh'] = 'DOTA_COMBAT_CLASS_DEFEND_SOFT'
+armortypes['small'] = 'DOTA_COMBAT_CLASS_DEFEND_WEAK'
+armortypes['medium'] = 'DOTA_COMBAT_CLASS_DEFEND_BASIC'
+armortypes['large'] = 'DOTA_COMBAT_CLASS_DEFEND_STRONG'
+armortypes['fort'] = 'DOTA_COMBAT_CLASS_DEFEND_STRUCTURE'
+armortypes['hero'] = 'DOTA_COMBAT_CLASS_DEFEND_HERO'
+armortypes['none'] = 'NONE'
+armortypes['divine'] = 'DIVINE'
+
+
+#Attack Types: - "CombatClassAttack"
+#--------------
+attacktypes = {}
+attacktypes['normal'] = 'DOTA_COMBAT_CLASS_ATTACK_BASIC'
+attacktypes['pierce'] = 'DOTA_COMBAT_CLASS_ATTACK_PIERCE'
+attacktypes['siege'] = 'DOTA_COMBAT_CLASS_ATTACK_SIEGE'
+attacktypes['chaos'] = 'DOTA_COMBAT_CLASS_ATTACK_LIGHT'
+attacktypes['hero'] = 'DOTA_COMBAT_CLASS_ATTACK_HERO'
+attacktypes['magic'] = 'MAGIC_MAN'
+attacktypes['spells'] = 'ONLYSPELLS'
 class wc3pars:
     def __init__(self, section):
         self.npc_name = ''
@@ -11,59 +35,108 @@ class wc3pars:
         
         self.baseclass = 'npc_dota_creature'
         self.level = 1
+        if 'level' in section:
+            self.level = section['level']
         self.ability1 = ''
         self.ability2 = ''
         self.ability3 = ''
         self.ability4 = ''
-        
-        self.armorphys = 0
+
+        self.combatclassdefend = 'DOTA_COMBAT_CLASS_DEFEND_BASIC'
+        if 'defType' in section:
+            self.combatclassdefend = armortypes[section['defType']]
+        self.armorphys = None
+        if 'def' in section:
+            self.armorphys = section['def']
         self.armormagic = 0
-        
+
         self.attackcapabilities = 'DOTA_UNIT_CAP_MELEE_ATTACK'
-        self.attackdamagemin = 7
-        self.attackdamagemax = 8
+        self.attackdamagemin = None
+        self.attackdamagemax = None
+        if (('dice1' and 'sides1') in section):
+            if section['dice1'] is not '-' and section['sides1'] is not '-':
+                self.attackdamagemin = str(float(section['dice1']) + float(section['dmgplus1']))
+                self.attackdamagemax = str(float(section['dice1']) * float(section['sides1']) + float(section['dmgplus1']))
         self.attackdamagetype = 'DAMAGE_TYPE_ArmorPhysical'
-        self.attackrate = 1
-        self.attackanimationpoint = .467
-        self.attackacqurange = 500
-        self.attackrange = 100
+        self.attackrate = None
+        if 'cool1' in section:
+            self.attackrate = section['cool1']
+        self.attackanimationpoint = None
+        if 'dmgpt1' in section:
+            self.attackanimationpoint = section['dmgpt1']
+        self.attackacqurange = None
+        if 'acquire' in section:
+            self.attackacqurange = section['acquire']
+        self.attackrange = None
+        if 'rangeN1' in section:
+            self.attackrange = section['rangeN1']
 
-        self.projectilemodel = ''
-        self.projectilespeed = ''
+        self.projectilemodel = None
+        self.projectilespeed = None
+        if 'Missilespeed' in section:
+            if section['Missilespeed'] is not '':
+                self.projectilemodel = ''
+                self.projectilespeed = section['Missilespeed']
+                self.attackcapabilities = 'DOTA_UNIT_CAP_RANGED_ATTACK'
+        
+        self.combatclassattack = 'DOTA_COMBAT_CLASS_ATTACK_BASIC'
+        if 'atkType1' in section:
+            if section['atkType1'] is not 'none':
+                self.combatclassattack = attacktypes[section['atkType1']]
+            else:
+                self.combatclassattack = None
+                self.attackcapabilities = 'DOTA_UNIT_CAP_NO_ATTACK'
 
-        self.bountyxp = 0
-        if 'goldRep' in section:
-            self.bountyxp = section['goldRep']
-        self.bountygoldmin = 4
-        self.bountygoldmax = 6
+        self.bountygoldmin = None
+        self.bountygoldmax = None
+        if 'bountydice' in section:
+            self.bountygoldmin = str(float(section['bountydice']) + float(section['bountyplus']))
+            self.bountygoldmax = str(float(section['bountydice']) * float(section['bountysides']) + float(section['bountyplus']))
 
-        self.statushealth= 365
-        self.statushealthregen = 0
+        self.statushealth= None
+        if 'HP' in section:
+            self.statushealth = section['HP']
+        self.statushealthregen = None
         if 'regenHP' in section:
-            self.statushealthregen = section['regenHP']
-        self.statusmana = 0
-        self.statusmanaregen = 0
+            if section['regenHP'] is not '-':
+                self.statushealthregen = section['regenHP']
+        self.statusmana = None
+        if 'manaN' in section:
+            if section['manaN'] is not '-':
+                self.statusmana = section['manaN']
+        self.statusmanaregen = None
         if 'regenMana' in section:
-            self.statusmanaregen = section['regenMana']
+            if section['regenMana'] is not ' - ':
+                self.statusmanaregen = section['regenMana']
 
         self.team = 'DOTA_TEAM_BADGUYS'
-        self.combatclassattack = 'DOTA_COMBAT_CLASS_ATTACK_BASIC'
-        self.combatclassdefend = 'DOTA_COMBAT_CLASS_DEFEND_BASIC'
         self.unitrelationshipclass = 'DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT'
-        self.visiondaytimerange = 1800
-        self.visionnighttimerange = 800
+        self.visiondaytimerange = 10
+        if 'sight' in section:
+            self.visiondaytimerange = section['sight']
+        self.visionnighttimerange = 10
+        if 'nsight' in section:
+            self.visionnighttimerage = section['nsight']
 
-        self.movementcapabilities = 'DOTA_UNIT_CAP_MOVE_GROUND'
-        self.movementspeed = 375
-        self.movementturnrate = .5
+        self.movementcapabilities = None
+        self.movementspeed = None
+        if 'spd' in section:
+            self.movespeed = section['spd']
+            self.movementcapabilities = 'DOTA_UNIT_CAP_MOVE_GROUND'
+        self.movementturnrate = None
+        if 'turnRate' in section:
+            self.movementturnrate = section['turnRate']
         self.boundshullname = 'DOTA_HULL_SIZE_HERO'
         self.healthbaroffset = 140
 
         self.comments = ''
+        
+        self.discription = None
+        if 'Ubertip' in section:
+            self.discription = section['Ubertip']
 
     def check(self):
         print(self.npc_name)
-        print(self.bountyxp)
         print(self.statushealthregen)
         print(self.statusmanaregen)
 
@@ -79,33 +152,42 @@ class wc3pars:
         lines.append(self.kvline('Ability2',self.ability2, None))
         lines.append(self.kvline('Ability3',self.ability3, None))
         lines.append(self.kvline('Ability4',self.ability4, None))
+        
         lines.append(self.kvline('ArmorPhysical', self.armorphys, None))
         lines.append(self.kvline('MagicalResistance', self.armormagic, None))
+        
         lines.append(self.kvline('AttackCapabilities',self.attackcapabilities, None))
         lines.append(self.kvline('AttackDamageMin', self.attackdamagemin, None))
         lines.append(self.kvline('AttackDamageMax', self.attackdamagemax, None))
         lines.append(self.kvline('AttackDamageType', self.attackdamagetype, None))
         lines.append(self.kvline('AttackRate', self.attackrate, None))
         lines.append(self.kvline('AttackAnimationPoint',self.attackanimationpoint, None))
-        lines.append(self.kvline('AttackRage',self.attackrange, None))
+        lines.append(self.kvline('AttackAcquisitionRange', self.attackacqurange, None))
+        lines.append(self.kvline('AttackRange',self.attackrange, None))
+        
         lines.append(self.kvline('ProjectileModel', self.projectilemodel, 'Add projectile models'))
         lines.append(self.kvline('ProjectileSpeed', self.projectilespeed, None))
-        lines.append(self.kvline('BountyXP', self.bountyxp, None))
+        
         lines.append(self.kvline('BountyGoldMin', self.bountygoldmin, None))
         lines.append(self.kvline('BountyGoldMax', self.bountygoldmax, None))
+        
         lines.append(self.kvline('StatusHealth', self.statushealth, None))
         lines.append(self.kvline('StatusHealthRegen', self.statushealthregen, None))
         lines.append(self.kvline('StatusMana', self.statusmana, None))
-        lines.append(self.kvline('StatsMagaRegen', self.statusmanaregen, None))
+        lines.append(self.kvline('StatsManaRegen', self.statusmanaregen, None))
+        
         lines.append(self.kvline('TeamName', self.team, None))
         lines.append(self.kvline('CombatClassAttack', self.combatclassattack, None))
-        lines.append(self.kvline('CombatClassDefned', self.combatclassdefend, None))
+        lines.append(self.kvline('CombatClassDefened', self.combatclassdefend, None))
         lines.append(self.kvline('UnitRelationShipClass', self.unitrelationshipclass, None))
+        
         lines.append(self.kvline('VisionDaytimeRange', self.visiondaytimerange, None))
         lines.append(self.kvline('VisionNighttimeRange', self.visionnighttimerange, None))
+        
         lines.append(self.kvline('MovementCapabilities', self.movementcapabilities, None))
         lines.append(self.kvline('MovementSpeed', self.movementspeed, None))
         lines.append(self.kvline('MovementTurnRate', self.movementturnrate, None))
+        
         lines.append(self.kvline('BoundsHullName', self.boundshullname, None))
         lines.append(self.kvline('HealthBarOffset', self.healthbaroffset, None))
         lines.append(endline)
@@ -114,23 +196,28 @@ class wc3pars:
         newfile.write(section)
 
     def kvline(self, key, val, comment):
-        key = str(key)
-        val = str(val)
-        line = '\t\t"' + key + '"\t'
-        if len(key) < 6:
-            line += '\t'
-        if len(key) < 14:
-            line += '\t'
-        if len(key) < 22:
-            line += '\t'
-        line += '"' + val +'"'
-        if comment is not None:
-            line += '\t //' + comment
-        line += '\n'
+        line = ''
+        if val is not None:
+            key = str(key)
+            val = str(val)
+            line = '\t\t"' + key + '"\t'
+            if len(key) < 6:
+                line += '\t'
+            if len(key) < 14:
+                line += '\t'
+            if len(key) < 22:
+                line += '\t'
+            line += '"' + val +'"'
+            if comment is not None:
+                line += '\t //' + comment
+            line += '\n'
         return line
 
     def kline(self, unit_name):
-        line = '\t"'+ unit_name +'"\t//unit_name\n' '\t{\n'
+        tip = ''
+        if self.discription is not None:
+            tip = self.discription
+        line = '\t"'+ unit_name +'"\t//' + tip + '\n' '\t{\n'
         return line
         
 
@@ -171,14 +258,16 @@ def sectionoff(textfile):
 
 
 if __name__ == '__main__':
-    file = parse_file_section('druid_example.txt')
+    afile
     fullfile = sectionoff('units_copy.txt')
-    
-    work = wc3pars(file)
-    ##work.writetofile('parsed.txt', 'w')
+    work
+    print(fullfile[''])
+    f = open('parsed.txt','w')
+    f.write('')
     for key in fullfile:
         if key is not '':
-            file = parse_text_section(fullfile[key])
-            work = wc3pars(file)
-        work.writetofile('parsed.txt', 'a')
+            afile = parse_text_section(fullfile[key])
+            work = wc3pars(afile)
+            work.writetofile('parsed.txt', 'a')
+            #print(work.projectilespeed)
     work.check()
