@@ -2572,10 +2572,20 @@
 						"Duration"	"%stun_duration"
 						}
 					}
+				"OnAbilityExecuted"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/assassin.lua"
+						"Function"			"walk_the_shadows_interrupt"
+						}
+					}
 				}
 			}
 		
 	}
+
+
 
 
 	//=================================================================================================================
@@ -2702,7 +2712,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"assassin_skill4"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2717,6 +2727,7 @@
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilityDamage"                 "50 100 175 280 420 630 1000 1500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -2725,7 +2736,7 @@
     		"01"
     			{
     			"var_type"	"FIELD_INTEGER"
-    			"bonus_disabled_target"	"50 100 175 280 420 630 1000 1500"
+    			"creep_duration"	"12"
     			}
     		}
     	
@@ -2737,6 +2748,26 @@
 				"Function"			"garrote"
 			}
 		}
+		"Modifiers"
+			{
+			"assassin_garrote_bleed_modifier"
+				{
+				"IsDebuff"	"1"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/assassin.lua"
+						"Function"			"garrote_bleed"
+						}
+					}
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"35"
+					}
+				}
+			}
 	}
 
 
@@ -2747,30 +2778,52 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_datadriven"
+		"BaseClass"             		"naga_siren_mirror_image"
 		"AbilityTextureName"			"assassin_skill5"
-		"MaxLevel" "1"
-		
+		"MaxLevel" "7"
+		"ID"							"5467"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCooldown"				"120"
+		"AbilityManaCost"				"8 16 24 32 40 48 56 64"
     	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
+		"AbilitySpecial"
 		{
-			"RunScript"
+			"01"
 			{
-				"ScriptFile"		"abilities/assassin.lua"
-				"Function"			"shadow_image"
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"30.0 30.0 30.0 30.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage"			"-95"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"800 700 600 500 400 300 200 100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"1 1 1 1 1 1 2 2"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"invuln_duration"			"0.5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage_tooltip"	"5"
 			}
 		}
 	}
@@ -2783,30 +2836,27 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_datadriven"
+		"BaseClass"             		"juggernaut_blade_dance"
 		"AbilityTextureName"			"assassin_skill6"
 		"MaxLevel" "1"
+		"ID"					"5027"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
     	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
+		"AbilitySpecial"
 		{
-			"RunScript"
+			"01"
 			{
-				"ScriptFile"		"abilities/assassin.lua"
-				"Function"			"critical_strike"
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_mult"		"200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_chance"	"25"
 			}
 		}
 	}

@@ -1,9 +1,16 @@
+--dota_launch_custom_game blackroad test_env
+
 print("Assassin's abilities are loading")
 
 function walk_the_shadows_cast( event )
 		event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "assassin_walk_the_shadows_buff", nil)
 		event.caster:AddNewModifier(event.caster, event.ability, "modifier_invisible", {duration = 25}) 
 		
+end
+
+function walk_the_shadows_interrupt( event )
+	event.caster:RemoveModifierByName("assassin_walk_the_shadows_buff")
+	event.caster:RemoveModifierByName("modifier_invisible")
 end
 
 function walk_the_shadows_attack( event )
@@ -33,3 +40,19 @@ function assassinate( event )
 		end
 	end
 end
+
+
+function garrote( event )
+	ApplyDamage({ victim = event.target, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})	
+	if event.target:IsHero() == true then
+		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "assassin_garrote_bleed_modifier", {duration = 8})
+	else
+		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "assassin_garrote_bleed_modifier", {duration = 12})
+	end
+end
+
+function garrote_bleed( event )
+	ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.caster:GetAgility() + event.ability:GetAbilityDamage() * 0.6 ), damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
+end
+
+
