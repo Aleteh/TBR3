@@ -2173,28 +2173,41 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"temple_guardian_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"60 120 210 335 475 625 800 1000"
+		"AbilityCastPoint"    			"0.3"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"particle" "particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare.vpcf"
+			"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_hit.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_amount"			"400 800 1400 2250 3350 5000 7500 12000"
+			}
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/tg.lua"
-				"Function"			"gift_of_the_gods"
+				"ScriptFile"	"abilities/tg.lua"
+				"Function"		"giff_heal"
 			}
 		}
 	}
@@ -2275,35 +2288,83 @@
 	//=================================================================================================================
 	// Temple Guardian: Hammer of Zeus
 	//=================================================================================================================
-	"templeguardian_hammer_of_zeus"
+	//You slam a target enemy unit with the force of a divine hammer, adding xxxx damage to your normal attack and knocking the target away from you for xxx mana
+	"templeguardian_hammer_of_zeus" 
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"temple_guardian_skill4"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"10"
+		"AbilityDamage"					"100 300 600 1100 1900 300 4500 7500"
+		"AbilityManaCost"				"30 60 100 160 240 340 460 600"
     	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilitySpecial"
+    	{
+    		"01"
+    		{
+				"var_type"				"FIELD_INTEGER"
+				"dmg" 					"100 300 600 1100 1900 300 4500 7500"
+    		}
+    	}
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+    	}
+
 		"OnSpellStart"
 		{
-			"RunScript"
+			"TrackingProjectile"
 			{
-				"ScriptFile"		"abilities/tg.lua"
-				"Function"			"hammer_of_zeus"
+				"Target"		"TARGET"
+				"Dodgeable"			"0"
+				"ProvidesVision"	"1"
+				"VisionRadius"		"100"
+				"EffectName"		"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf" //TODO: Make custom particle
+				"MoveSpeed"			"1200"
+				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"1"
+			"Knockback"
+			{
+				"Center" 	"PROJECTILE"
+				"Target"	"TARGET"
+				"Distance"	"100"
+				"Height"	"100"
+				"Duration"	"0.2"
+			}
+			"Stun"
+			{
+				"Duration"		"2"
+				"Target"		"TARGET"
+			}
+			"RunScript"
+		 	{
+			    "ScriptFile"	"damage.lua"
+			    "Function"		"DoDamage"
+			    "Damage"		"%dmg"
+		  	}
+			"FireSound"
+			{
+				"EffectName"			"Hero_Zuus.GodsWrath.Target"
+				"Target"				"TARGET"
+			}			
 		}
 	}
 
