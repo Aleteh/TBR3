@@ -3,7 +3,8 @@ Update your progress as you go, and write if you need a hand!
 
 	==Agility==
 	> Assassin
-		- Started (igo)
+		- Almost finished (igo)
+		- Missing particles/sounds (N)
 
 	> Ranger
 		- Not Started
@@ -15,8 +16,6 @@ Update your progress as you go, and write if you need a hand!
 		- Almost finished (Noya)
 		- Improve ability effects and polish behavior -STARTED
 			- Make a custom aura particle for Terrorize
-		- Change scythe to TrackingProjectiles -DONE
-		- Add return damage on shroud -DONE
 
 	> Guardian of Nature
 		- Almost finished (N)
@@ -29,9 +28,10 @@ Update your progress as you go, and write if you need a hand!
 		- Review tooltips, add some sounds.
 
 	> Temple Guardian
-		- Not Started
+		- Started
 	> Spartan Warrior
-		- Started (N)
+		- Almost finished (N)
+		- Review tooltips, add some sounds.
 
 	==Intellect==	
 	> Cleric
