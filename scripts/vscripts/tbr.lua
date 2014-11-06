@@ -294,6 +294,20 @@ function GameMode:OnPlayerLevelUp(keys)
 
 	local player = EntIndexToHScript(keys.player)
 	local level = keys.level
+
+
+	--get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local playerHero = player:GetAssignedHero()
+    
+    --get the players current stat points
+    local statsUnspent = playerHero:GetAbilityPoints()
+
+    --Fire Game Event to our UI
+    print("Got " .. statsUnspent .. " Ability Points to spend! Firing game event")
+	FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = statsUnspent })
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -547,4 +561,49 @@ function SpawnBank()
 		bank:AddItem(newItem)
 		local newItem = CreateItem( "item_biting_blade", hero, hero )
 		bank:AddItem(newItem)
+end
+
+-- Flash UI
+-- register the 'AllocateStats' command in our console
+Convars:RegisterCommand( "AllocateStats", function(name, p)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        --if the player is valid, execute the appropiate ModifyStats
+        return GameMode:ModifyStats( cmdPlayer , p)
+    end
+end, "A player uses an ability point", 0 )
+
+function GameMode:ModifyStats( player, p )
+    --NOTE: p contains our parameter now (as a string not a number), we just don't use it
+    
+    --get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local playerHero = player:GetAssignedHero()
+    
+    --get the players current stat points
+    local statsUnspent = playerHero:GetAbilityPoints()
+    
+    --check if the player has stats to spend
+    if statsUnspent > 0 then
+        --spend the stat point
+        playerHero:SetAbilityPoints(statsUnspent-1)
+        --give the corresponding stat point
+        if p=="str" then
+	        playerHero:ModifyStrength(1)
+	        print("+1 STR Allocated")
+	    elseif p=="agi" then
+	    	playerHero:ModifyAgility(1)
+	        print("+1 AGI Allocated")
+	    elseif p=="int" then
+	    	playerHero:ModifyIntellect(1)
+	        print("+1 INT Allocated")
+	    end
+    end
+
+    --Fire the event. The second parameter is an object with all the event's parameters as properties
+    --We have to get the player's unspent stats again, because we have deducted 1 from it since the last time we got it.
+    FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = playerHero:GetAbilityPoints() })
 end

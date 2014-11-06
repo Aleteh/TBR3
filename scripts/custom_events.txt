@@ -1,0 +1,26 @@
+"CustomEvents"
+{
+	//StatsAllocation
+	"cgm_player_stat_points_changed"
+	{
+		"player_ID"		"short"
+		"stat_points"	"short"
+	}
+	
+	"custom_error_show"
+	{
+		"player_ID"		"short"
+		"_error"		"string"
+	}
+	
+	// Stat collection
+	"stat_collection_part"
+	{
+		"data"          "string"
+	}
+
+	"stat_collection_send"
+	{
+	}
+	
+}
