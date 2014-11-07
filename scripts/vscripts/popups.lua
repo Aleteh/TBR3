@@ -81,7 +81,7 @@ function PopupMiss(target)
 end
 
 function PopupExperience(target, amount)
-    PopupNumbers(target, "miss", Vector(154, 46, 254), 1.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
+    PopupNumbers(target, "miss", Vector(154, 46, 254), 2.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
 end
 
 function PopupMana(target, amount)
@@ -106,6 +106,10 @@ end
 
 function PopupBleedingOverTime(target, amount)
     PopupNumbers(target, "damage", Vector(255, 0, 0), 1.0, amount, nil, POPUP_SYMBOL_POST_DROP)
+end
+
+function PopupMaterials(target, amount)
+    PopupNumbers(target, "damage", Vector(18, 89, 27), 3.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
 end
 
 -- Customizable version.

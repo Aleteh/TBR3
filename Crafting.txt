@@ -1,0 +1,9 @@
+Crafting
+
+Let's try to reutilize the Item Reciepe system UI. Can also give the personal courier a botton to assemble items.
+
+There are some recipes that require more than 5 items+Materials, but we can split them in 2 parts.
+
+Some items like regalia you had to be near the NPC and click the button to combine.
+
+You could craft anywhere with your selected profession. Only 1 profession, leveled by making items (progress bar to display this)

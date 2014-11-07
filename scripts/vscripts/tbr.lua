@@ -196,6 +196,9 @@ function GameMode:OnHeroInGame(hero)
 	hero.spellPower = 0
 	hero.healingPower = 0
 
+	-- Initialize custom resources
+	hero.materials = 0
+
 	-- Give Item
 	local item = CreateItem("item_wraithblade", hero, hero)
 	hero:AddItem(item)
@@ -213,7 +216,10 @@ function GameMode:OnHeroInGame(hero)
 	if abil4 ~= nil then abil4:SetLevel(1) end
 	if abil5 ~= nil then abil5:SetLevel(1) end
 	if abil6 ~= nil then abil6:SetLevel(1) end
-	--hero:AddAbility("example_ability")	
+	--hero:AddAbility("example_ability")
+
+	-- Give 2 extra stat points to spend
+	hero:SetAbilityPoints(3)
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive operations here
@@ -304,6 +310,50 @@ function GameMode:OnPlayerLevelUp(keys)
     
     --get the players current stat points
     local statsUnspent = playerHero:GetAbilityPoints()
+
+    --[[ Rules to assign stat points:
+		1-19 = 3
+		20-39 = 4
+		40-59 = 5
+		60-79 = 6
+		80-99 = 7
+		100-119 = 8
+		120-139 = 9
+		140-159 = 10
+		160-179 = 11
+		180-199 = 12
+		200 = 13 (Maybe more for the last level)
+	]]
+
+	-- check the current Level of the hero and assign points accordingly
+	-- we do 1 less than what we want, because the game automatically gives 1
+	local heroLevel = playerHero:GetLevel()
+	if heroLevel <= 19 then
+		playerHero:SetAbilityPoints(statsUnspent+2)
+	elseif heroLevel <= 39 then
+		playerHero:SetAbilityPoints(statsUnspent+3)
+	elseif heroLevel <= 59 then
+		playerHero:SetAbilityPoints(statsUnspent+4)
+    elseif heroLevel <= 79 then
+		playerHero:SetAbilityPoints(statsUnspent+5)
+	elseif heroLevel <= 99 then
+		playerHero:SetAbilityPoints(statsUnspent+6)
+	elseif heroLevel <= 119 then
+		playerHero:SetAbilityPoints(statsUnspent+7)
+	elseif heroLevel <= 139 then
+		playerHero:SetAbilityPoints(statsUnspent+8)
+	elseif heroLevel <= 159 then
+		playerHero:SetAbilityPoints(statsUnspent+9)
+	elseif heroLevel <= 179 then
+		playerHero:SetAbilityPoints(statsUnspent+10)
+	elseif heroLevel <= 199 then
+		playerHero:SetAbilityPoints(statsUnspent+11)
+	elseif heroLevel == 200 then
+		playerHero:SetAbilityPoints(statsUnspent+12)
+	end
+
+	--update the statsUnspent variable to send
+	statsUnspent = playerHero:GetAbilityPoints()
 
     --Fire Game Event to our UI
     print("Got " .. statsUnspent .. " Ability Points to spend! Firing game event")
