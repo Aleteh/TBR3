@@ -6,6 +6,13 @@
 		"player_ID"		"short"
 		"stat_points"	"short"
 	}
+
+	//This is fired when a player's crafting resource changes
+	"cgm_player_materials_changed"
+	{
+		"player_ID"		"short"
+		"materials"		"long"
+	}
 	
 	"custom_error_show"
 	{

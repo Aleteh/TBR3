@@ -40,21 +40,29 @@
 
 		"OnOwnerDied"
 		{
-			"CreateItem"
+			"Random"
 			{
-				"Target"
+				"Chance"	"50"
+				"OnSuccess"
 				{
-					"Center" "CASTER"
-					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
-				}	
-				"ItemName"					"item_key1"
-				"ItemCount"					"1"
-				"SpawnRadius"		        "1"
-				"AutoUse"					"0"
-				"LaunchHeight"		    	"200"
-				"LaunchDistance"	        "?20 50"
-				"LaunchDuration"	        "0.5"
-			}
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}	
+						"ItemName"					"item_gemstone_key"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"	//very important, to set up the charges
+						"SpawnRadius"		        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		    	"200"
+						"LaunchDistance"	        "?100 150"
+						"LaunchDuration"	        "1"
+					}
+				}
+			}	
 		}
 	}
 

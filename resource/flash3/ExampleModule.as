@@ -22,8 +22,9 @@ package  {
 		   
 		public function ExampleModule() {
 		}
-			//set initialise this instance's gameAPI
-			public function setup(api:Object, globals:Object) {
+		
+		//set initialise this instance's gameAPI
+		public function setup(api:Object, globals:Object) {
 			this.gameAPI = api;
 			this.globals = globals;
 			

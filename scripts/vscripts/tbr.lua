@@ -190,7 +190,7 @@ function GameMode:OnHeroInGame(hero)
 	print("[TBR] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
 	-- Starting Gold
-	hero:SetGold(99999, false)
+	hero:SetGold(322, false)
 
 	-- Initialize custom stats
 	hero.spellPower = 0
@@ -625,8 +625,8 @@ Convars:RegisterCommand( "AllocateStats", function(name, p)
 end, "A player uses an ability point", 0 )
 
 function GameMode:ModifyStats( player, p )
-    --NOTE: p contains our parameter now (as a string not a number), we just don't use it
-    
+    --p is str/agi/int depending on which button of the ui was pressed
+
     --get the player's ID
     local pID = player:GetPlayerID()
 
@@ -656,4 +656,32 @@ function GameMode:ModifyStats( player, p )
     --Fire the event. The second parameter is an object with all the event's parameters as properties
     --We have to get the player's unspent stats again, because we have deducted 1 from it since the last time we got it.
     FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = playerHero:GetAbilityPoints() })
+end
+
+-- register the 'ChangeMaterials' command in our console
+Convars:RegisterCommand( "ChangeMaterials", function(name, p)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        --if the player is valid, execute UpdateMaterials
+        return GameMode:UpdateMaterials( cmdPlayer , p)
+    end
+end, "A player spends or adquires crafting materials", 0 )
+
+function GameMode:UpdateMaterials( player, amount )
+	--amount can be negative or positive
+    
+    --get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local playerHero = player:GetAssignedHero()
+    
+    --materials were already added/substracted internally on the function that called this, print it here
+    local heroMaterials = playerHero.materials + amount
+    print("Updating materials for player " .. pID .. " , new ammount: " .. heroMaterials)
+
+    --Fire the event. The second parameter is an object with all the event's parameters as properties
+    --We send the total material number to update the UI of the player
+    FireGameEvent('cgm_player_materials_changed', { player_ID = pID, materials = heroMaterials })
 end

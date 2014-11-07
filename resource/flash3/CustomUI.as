@@ -3,6 +3,7 @@
 //=====================================================================================================
 package {
 	import flash.display.MovieClip;
+	import flash.text.*;
 
 	//import some stuff from the valve lib
 	import ValveLib.Globals;
@@ -28,8 +29,11 @@ package {
 			//let the client rescale the UI
 			Globals.instance.resizeManager.AddListener(this);
 			
-			//pass the gameAPI on to the module
+			//pass the gameAPI on to the modules
 			this.myModule.setup(this.gameAPI, this.globals);
+			this.myResource.setup(this.gameAPI, this.globals);
+			
+			//this.myResource.setMaterials("322"); //TEST
 			
 			//this is not needed, but it shows you your UI has loaded (needs 'scaleform_spew 1' in console)
 			trace("Custom UI loaded!");
