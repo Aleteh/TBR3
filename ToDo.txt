@@ -63,7 +63,7 @@ Suggested Priority List (to organize coding assignment)
 - Items -
 	> 
 
-- Units -
+- Units - (Parsed in python scripts folder)
 	> Everything
 
 - Map - (Make a Map_ToDo if you wish)

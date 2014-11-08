@@ -266,6 +266,8 @@
 	"npc_dota_hero_crystal_maiden" 
 	{
 		"override_hero"				"npc_dota_hero_crystal_maiden"
+		// Abilities
+		//----------------------------------------------------------------
 		"AbilityLayout" "5" 
 		"Ability1"					"cleric_holy_light"
 		"Ability2"					"cleric_regen"
@@ -273,15 +275,58 @@
 		"Ability4"					"cleric_cleansing_flame"
 		"Ability5"					"cleric_rebirth"
 
+		//"Ability1"			""	 //Reference: A00B <- Frost Nova 8 levels herodur 3 cool 6 cost 45 Fire of Heaven
+		//"Ability2"			""	 //Reference: A00A <- Holy Light
+		//"Ability3"			""	 //Reference: AInv <- Inventory
+		//"Ability4"			""	 //Reference: A009 < Rejuvination
+		//"Ability5"			""	 //Reference: A008 <- Int
+		//"Ability6"			""	 //Reference: A007 <- Agi
+		//"Ability7"			""	 //Reference: A006 <- Str
+
 		// Attributes
-        //-------------------------------------------------------------------------------------------------------------
-       	"AttributePrimary"                      "DOTA_ATTRIBUTE_INTELLIGENCE"
-        "AttributeBaseStrength"         "10" 		// Base strength
-        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "16" 		// Base intelligence
-        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
-        "AttributeBaseAgility"          "12" 		// Base agility
-        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+        	//-------------------------------------------------------------------------------------------------------------
+       		"AttributePrimary"                      "DOTA_ATTRIBUTE_INTELLIGENCE"
+        	"AttributeBaseStrength"         "10" 		// Base strength
+        	"AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        	"AttributeBaseIntelligence"     "16" 		// Base intelligence
+        	"AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        	"AttributeBaseAgility"          "12" 		// Base agility
+        	"AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		"ProjectileSpeed"		"900"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"101"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"1"
+		"StatsManaRegen"		"0.01"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
 	}
 
 	//=================================================================================================================

@@ -1,3 +1,4 @@
+https://sites.google.com/site/theblackroad13x/
 - Heroes -
 Update your progress as you go, and write if you need a hand!
 
@@ -35,7 +36,9 @@ Update your progress as you go, and write if you need a hand!
 
 	==Intellect==	
 	> Cleric
-		- Not Started
+		- Started (Rob)
+		- Added correct hero values
+		- Started skills
 	> Druid
 		- Not Started
 	> Warlock
