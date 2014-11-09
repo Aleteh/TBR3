@@ -81,7 +81,39 @@ function zeus_fx( event )
 	ParticleManager:SetParticleControl(particle, 1, event.target:GetAbsOrigin())	
 end
 
-function hammer_fx( event )
+function fire_of_apollo( event )
+	local targets = event.target_entities
+	local hero = event.caster
+	local spellPower = hero.spellPower
+	local damage = event.ability:GetLevelSpecialValueFor("damage_base", (event.ability:GetLevel()-1))
+	local multipler = event.ability:GetLevelSpecialValueFor("spell_power_multipler", (event.ability:GetLevel()-1))
 
+	for _,enemy in pairs(targets) do
+		ApplyDamage({
+			victim = enemy,
+			attacker = hero,
+			damage = damage + (spellPower*multipler),
+			damage_type = DAMAGE_TYPE_MAGICAL
+			})
+    end
+end
 
+function fire_of_apollo_dot( event )
+	local hero = event.caster
+	print(hero:GetUnitName())
+	local target = event.target
+	print(target:GetUnitName())
+	local spellPower = hero.spellPower
+	local duration = event.ability:GetDuration()
+	local multiplier = event.ability:GetLevelSpecialValueFor("spell_power_multipler", (event.ability:GetLevel()-1))
+	print(multiplier)
+	local damage_tick = (event.ability:GetLevelSpecialValueFor("damage_over_time", (event.ability:GetLevel()-1)) + spellPower*multiplier) / duration
+	--gets bonus of spellPower * multiplier split for the duration
+
+	ApplyDamage({victim = target, attacker = hero, damage = damage_tick,	damage_type = DAMAGE_TYPE_MAGICAL })
+end
+
+function fire_apollo_fx( event )
+	local particle = ParticleManager:CreateParticle("particles/fire_of_apollo.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	ParticleManager:SetParticleControl(particle, 7, event.caster:GetAbsOrigin())
 end

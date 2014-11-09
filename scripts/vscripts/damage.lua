@@ -30,11 +30,15 @@ end
 			"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		}
-		"RunScript"
-	 	{
-		    "ScriptFile"	"damage.lua"
-		    "Function"		"DoAoEDamage"
-		    "Target"		"TARGET"
+		"Action"
+		{
+			"RunScript"
+		 	{
+			    "ScriptFile"	"damage.lua"
+			    "Function"		"DoAoEDamage"
+			 	"Damage"		"%dmg"
+			    "Target"		"TARGET"
+		  	}
 	  	}
   	}
 ]]
