@@ -8,16 +8,6 @@ function giff_heal(event)
 	PopupHealing(event.target, heal_amount)
 end
 
-					-- handle, 2 ability handles, 2 booleans
-function SwapAbilities(unit, ability1, ability2, enable1, enable2)
-	--swaps ability and ability2, disables 1 and enables 2
-	print("swapping ".. ability1:GetName() .. " with ".. ability2:GetName())
-	unit:SwapAbilities(ability1:GetName(), ability2:GetName(), enable1, enable2)
-	ability1:SetHidden(enable2)
-	ability2:SetHidden(enable1)
-
-end
-
 function pray_toggle_on(event)
 	local hero = event.caster
 	local ability1 = hero:GetAbilityByIndex(0)
@@ -30,6 +20,11 @@ function pray_toggle_on(event)
 	hero:SwapAbilities(ability1:GetName(), new_ability1:GetName(), false, true)
 	hero:SwapAbilities(ability2:GetName(), new_ability2:GetName(), false, true)
 	hero:SwapAbilities(ability3:GetName(), new_ability3:GetName(), false, true)
+
+	local level = hero:FindAbilityByName("templeguardian_pray"):GetLevel()
+	new_ability1:SetLevel(level)
+	new_ability2:SetLevel(level)
+	new_ability3:SetLevel(level)
 end
 
 function pray_toggle_off(event)
@@ -49,9 +44,9 @@ end
 function GiveAthenaBuff(event)
 	local hero = event.caster
 	local power =  event.ability:GetLevelSpecialValueFor("power_bonus_static", (event.ability:GetLevel()-1))
-	local power_percent = 0.1 * event.ability:GetLevelSpecialValueFor("power_bonus_percent", (event.ability:GetLevel()-1))
+	local power_percent = 0.01 * event.ability:GetLevelSpecialValueFor("power_bonus_percent", (event.ability:GetLevel()-1))
 	if hero:IsRealHero() then
-
+		print("Applying Spell & Healing Power granted by Athena")
 		-- store how much spell power is given, to know exactly how much to remove later after the buff expires
 		hero.athenaSpellPower = ( hero.spellPower * power_percent ) + power
 		hero.athenaHealingPower = ( hero.healingPower * power_percent ) + power
@@ -74,4 +69,19 @@ function RemoveAthenaBuff(event)
 		print("New Spell Power: " .. hero.spellPower)
 		print("New Healing Power: " .. hero.healingPower)
 	end
+end
+
+function zeus_fx( event )
+	local target = event.target
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+	ParticleManager:SetParticleControl(particle, 1, event.target:GetAbsOrigin())
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", MAX_PATTACH_TYPES, target)
+	ParticleManager:SetParticleControl(particle, 1, event.target:GetAbsOrigin())		
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
+	ParticleManager:SetParticleControl(particle, 1, event.target:GetAbsOrigin())	
+end
+
+function hammer_fx( event )
+
+
 end

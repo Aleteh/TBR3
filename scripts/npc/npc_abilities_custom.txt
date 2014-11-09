@@ -2245,7 +2245,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"60 120 210 335 475 625 800 1000"
-		"AbilityCastPoint"    			"0.3"
+		"AbilityCastPoint"    			"0.5"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 
 		"precache"
@@ -2386,6 +2386,8 @@
     	{
     		"particle"	"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
     		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+    		"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
     	}
 
 		"OnSpellStart"
@@ -2413,11 +2415,6 @@
 				"Height"	"100"
 				"Duration"	"0.2"
 			}
-			"Stun"
-			{
-				"Duration"		"2"
-				"Target"		"TARGET"
-			}
 			"RunScript"
 		 	{
 			    "ScriptFile"	"damage.lua"
@@ -2428,7 +2425,33 @@
 			{
 				"EffectName"			"Hero_Zuus.GodsWrath.Target"
 				"Target"				"TARGET"
-			}			
+			}
+			"AttachEffect"
+			{
+				"Target"			"TARGET"	
+				"EffectName"		"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"zeus_stun"
+				"Target"		"TARGET"
+			}
+		}
+
+		"Modifiers"
+		{
+			"zeus_stun"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"2"
+				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"	
+				}
+			}
 		}
 	}
 
@@ -2469,17 +2492,27 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Temple Guardian: Pray - Ares
+	//=================================================================================================================
 	"pray_ares"
 	{
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"dragon_knight_dragon_blood"
 		"MaxLevel" 						"7"
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"15 25 40 50 85 125 170 225"		
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+		}
 
 		"OnSpellStart"
 		{
@@ -2487,6 +2520,12 @@
 			{
 				"Target" 			"TARGET"
 				"ModifierName"		"pray_ares_modifier"
+			}
+			"AttachEffect"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 		}
 
@@ -2520,17 +2559,28 @@
     	}
 	}
 
+	//=================================================================================================================
+	// Temple Guardian: Pray - Athena
+	//=================================================================================================================
 	"pray_athena"
 	{
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"mirana_invis"
 		"MaxLevel" 						"7"
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"15 25 40 50 85 125 170 225"		
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+			"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+		}
 
 		"OnSpellStart"
 		{
@@ -2538,6 +2588,18 @@
 			{
 				"Target" 			"TARGET"
 				"ModifierName"		"pray_athena_modifier"
+			}
+			"AttachEffect"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"AttachEffect"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 		}
 
@@ -2552,6 +2614,7 @@
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%mana_bonus_static"
 				}
+
 				"OnCreated"
 				{
 					"RunScript"
@@ -2591,17 +2654,27 @@
     	}
 	}
 
+	//=================================================================================================================
+	// Temple Guardian: Pray - Zeus
+	//=================================================================================================================
 	"pray_zeus"
 	{
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"zuus_static_field"
 		"MaxLevel" 						"7"
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"15 25 40 50 85 125 170 225"		
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
+		}
 
 		"OnSpellStart"
 		{
@@ -2609,6 +2682,11 @@
 			{
 				"Target" 			"TARGET"
 				"ModifierName"		"pray_zeus_modifier"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/tg.lua"
+				"Function"		"zeus_fx"
 			}
 		}
 

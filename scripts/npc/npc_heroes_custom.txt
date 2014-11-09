@@ -118,7 +118,7 @@
 	//=================================================================================================================
 	"npc_dota_hero_sven"
 	{
-		"override_hero"				"npc_dota_hero_sven"
+		"override_hero"				"npc_dota_hero_omniknight"
 		"AbilityLayout" "6"
 		"Ability1"					"templeguardian_gift_of_the_gods"
 		"Ability2"					"templeguardian_mark_of_artemis"
@@ -126,6 +126,9 @@
 		"Ability4"					"templeguardian_hammer_of_zeus"
 		"Ability5"					"templeguardian_pray"
 		"Ability6"					"templeguardian_hestias_touch"
+		"Ability7"					"pray_ares"
+		"Ability8"					"pray_athena"
+		"Ability9"					"pray_zeus"
 
 		// Attributes
         //-------------------------------------------------------------------------------------------------------------

@@ -85,9 +85,9 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('player_changename', Dynamic_Wrap(GameMode, 'OnPlayerChangedName'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(GameMode, 'OnNPCSpawned'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameMode, 'OnGameRulesStateChange'), self)
-
-	--[[ Possible Use
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameMode, 'OnPlayerLearnedAbility'), self)
+
+	--[[ Possible Use	
 	ListenToGameEvent('entity_hurt', Dynamic_Wrap(GameMode, 'OnEntityHurt'), self)
 	ListenToGameEvent('player_connect', Dynamic_Wrap(GameMode, 'PlayerConnect'), self)
 	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(GameMode, 'OnAbilityUsed'), self)
@@ -290,7 +290,20 @@ function GameMode:OnPlayerLearnedAbility( keys)
 	--DeepPrintTable(keys)
 
 	local player = EntIndexToHScript(keys.player)
+	local hero = player:GetAssignedHero()
 	local abilityname = keys.abilityname
+	local level = hero:FindAbilityByName(abilityname):GetLevel()
+
+	if abilityname == "templeguardian_pray" then
+		print("Updating Prays")
+		local ares = hero:FindAbilityByName("pray_ares")
+		local athena = hero:FindAbilityByName("pray_athena")
+		local zeus = hero:FindAbilityByName("pray_zeus")
+		ares:SetLevel(level)
+		athena:SetLevel(level)
+		zeus:SetLevel(level)
+	end
+
 end
 
 -- A player leveled up
