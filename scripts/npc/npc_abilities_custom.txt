@@ -3752,29 +3752,44 @@
 //{
 	//=================================================================================================================
 	// Cleric: Holy Light
+	//Heals a target friendly unit for xxxx for xxx mana. 5 Seconds cooldown.
 	//=================================================================================================================
 	"cleric_holy_light"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityTextureName"			"cleric_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" 				"7"
+
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
+		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"35 65 115 190 280 380 570 850"
+		
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		}
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+	    	// Special
+    		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FLIED_FLOAT"
+				"heal_amount"		"250 500 900 1500 3000 4500 7500"
+			}
+		}
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -3795,28 +3810,69 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"cleric_skill2"
-		"MaxLevel" "1"
+		"MaxLevel" 				"7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"25 50 90 145 210 285 425 640"
+    		
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"heal_amount"		"15 30 55 90 130 175 275 425"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"duration"		"20.0"
+			}
+			"03"
+			{
+				"var_type"                "FIELD_FLOAT"
+            			"tick_rate"                "1.0"
+			}
+		}
 		"OnSpellStart"
 		{
-			"RunScript"
+			"CreateThinker"
 			{
-				"ScriptFile"		"abilities/cleric.lua"
-				"Function"			"regen"
+				"ModifierName"	"regeneration_thinker"
+				"Target"	"Target"
+			}
+			//"RunScript"
+			//{
+			//	"ScriptFile"		"abilities/cleric.lua"
+			//	"Function"			"regen"
+			//}
+		}
+		"Modifiers"
+		{
+			"regeneration_thinker"
+			{
+				"IsBuff"	"1"
+				"IsPurgable"	"1"
+				"ThinkInterval"	"%tick_rate"
+				"Duration"	"%duration"
+				"OnIntervalThink"
+				{
+					"Heal"
+					{
+						"HealAmount"	"%heal_amout"
+						"Target"	"TARGET"
+					}
+				}
 			}
 		}
 	}
@@ -3835,18 +3891,45 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
+		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCooldown"				"6 6 6 6 6 6 6 6"
+		"AbilityManaCost"				"45 90 150 240 385 550 775 1000"
     	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    		// Damage.
+    		//-------------------------------------------------------------------------------------------------------------
+    		"AbilityDamage"                 "160 320 580 900 1400 2100 3300 5000"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_damage"		"120 240 420 675 1050 1600 2500 3750"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"		"250"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_duration"		"8"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_speed"		""
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hero_slow_duration"	"3"
+			}
+		}
 		"OnSpellStart"
 		{
 			"RunScript"
