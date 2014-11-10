@@ -1147,7 +1147,7 @@
 						"EffectAttachType" "follow_origin"
 					}
 				}
-				"IsPassive"	"1"
+				"Passive"	"1"
 				"IsBuff"	"1"
 				"IsPurgable"	"0"
 				"IsHidden" 			"1"
@@ -1354,8 +1354,7 @@
 
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-	
+  			
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "250"
 		"AbilityCooldown"    "0"
@@ -1437,8 +1436,7 @@
 		
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-
+  		
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "400"
 		"AbilityCooldown"    "0"
@@ -1519,8 +1517,7 @@
 
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-	
+  			
 		"AbilityCastPoint"    "0.0"
 		"AbilityCooldown"    	"1"
 		"AbilityManaCost"    "0" //"15 22 30 39 49 60 72 85"    	
@@ -4079,11 +4076,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"alpha_wolf_command_aura"
+		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"ranger_skill6"
 				// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5309"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	
@@ -4094,12 +4090,45 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct"	"10 15 20 25 30 35 40 50"
+				"bonus_damage"	"10 15 20 25 30 35 40 50"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"900"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_swirl.vpcf"
+		}
+
+		"Modifiers"    				
+		{  						
+			"prevailing_winds_modifier"   	
+			{
+				"IsBuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"1"
+				"Passive"					"1"
+				"EffectName"				"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_swirl.vpcf"
+				"EffectAttachType"			"follow_origin"
+				"Aura"						"prevailing_winds_aura"
+				"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Radius"				"%radius"
+				"Aura_Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"  				"DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
+			}
+			"prevailing_winds_aura"
+			{
+				"IsHidden"					"0"
+				"IsBuff"					"1"
+				"IsPurgable"				"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
+				}
 			}
 		}
 

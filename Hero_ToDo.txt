@@ -9,7 +9,10 @@ Update your progress as you go, and write if you need a hand!
 		- Review tooltips
 
 	> Ranger
-		- Not Started
+		- Almost finished
+		- Add particles & sounds
+		- Review tooltips
+
 	> Warlord
 		- Not Started
 
