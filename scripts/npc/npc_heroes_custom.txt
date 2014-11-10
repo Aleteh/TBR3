@@ -224,10 +224,34 @@
 		"AbilityLayout" "6"
 		"Ability1"					"ranger_black_arrow"
 		"Ability2"					"ranger_stun_shot"
-		"Ability3"					"ranger_puncture"
+		"Ability3"					"ranger_prevailing_winds"
 		"Ability4"					"ranger_star_dust"
 		"Ability5"					"ranger_soul_piercing_shot"
-		"Ability6"					"ranger_prevailing_winds"
+		"Ability6"					"ranger_puncture"
+
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"         "12" 		// Base strength
+        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "13" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "13" 		// Base agility
+        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"										// Physical protection.
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"101"									// Base health.
+		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
+		"StatusMana"				"1"										// Base mana.
+		"StatusManaRegen"			"0.01"									// Mana regeneration rate.
+
 
 		// Attributes
         //-------------------------------------------------------------------------------------------------------------
@@ -238,6 +262,21 @@
         "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "13" 		// Base agility
         "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+
+
+        // Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"2"										// Damage range min.
+		"AttackDamageMax"			"24"										// Damage range max.
+		"AttackRate"				"1.8"									// Speed of attack.
+		"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
+		"AttackRange"				"700"
+
+		"MovementSpeed"				"270"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		"ProjectileSpeed"			"900"
 	}
 
 	//=================================================================================================================

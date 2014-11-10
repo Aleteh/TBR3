@@ -3754,30 +3754,68 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"ranger_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"2"
+		"AbilityManaCost"				"35 65 110 175 260 390 550 750"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "150 300 525 840 1260 1890 3000 4500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
+    	"AbilitySpecial"
 		{
-			"RunScript"
+			"01"
 			{
-				"ScriptFile"		"abilities/ranger.lua"
-				"Function"			"black_arrow"
+				"var_type"					"FIELD_INTEGER"
+				"explosion_radius"		"225"
 			}
 		}
+
+    	"Modifiers"
+			{
+			"ranger_black_arrow_orb_modifier"
+				{
+				"Passive"	"1"
+				"Orb"
+					{
+					"Label"	"DOTA_ORB_LABEL_EXCEPTION"
+					"Priority" "DOTA_ORB_PRIORITY_ABILITY"
+					"CastAttack" "1"
+					}
+				"OnOrbImpact"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"black_arrow"
+						}
+					}
+				}
+			"ranger_black_arrow_post_damage"
+				{
+				"IsDebuff"	"1"
+				"Duration"	"0"
+				"OnTakeDamage"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"black_arrow_post_damage"
+						}
+					}
+				}
+			}
+
 	}
 
 
@@ -3790,30 +3828,67 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"ranger_skill2"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"45 65 95 140 200 300 425 600"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "75 225 450 775 1250 2000 3000 4500"
+
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duraion"		"2.5"
+			}
+		}
+
+
 		"OnSpellStart"
 		{
+			"TrackingProjectile"
+				{
+				"Target"	"TARGET"
+				"Dodgeable"	"1"
+				"ProvidesVision"	"0"
+				"MoveSpeed"	"900"
+				}
+
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/ranger.lua"
 				"Function"			"stun_shot"
 			}
 		}
+		"OnProjectileHitUnit"
+			{
+			"Damage"
+				{
+				"Target"	"TARGET"
+				"Type"	"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"%AbilityDamage"
+				}
+
+			"Stun"
+				{
+				"Target"	"TARGET"
+				"Duration"	"2.5"
+				}
+			}
 	}
 
 
@@ -3826,30 +3901,62 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"ranger_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"25 50 85 140 210 300 425 600"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "40 80 140 225 340 510 750 1150"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"duration"	"10"
+    			}
+    		}
+    	
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/ranger.lua"
 				"Function"			"puncture"
-			}
+			}		
 		}
+		"Modifiers"
+			{
+			"ranger_puncture_bleed_modifier"
+				{
+				"Duration"	"10"
+				"IsDebuff"	"1"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"puncture_bleed"
+						}
+					}
+				}
+			}
+
+
 	}
 
 
@@ -3862,22 +3969,33 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"ranger_skill4"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
-		// Stats
+				// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"40 80 140 225 335 500 725 1000"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "150 300 525 840 1260 1890 3000 4500"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"heal_radius"	"725"
+    			}
+    		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -3886,6 +4004,23 @@
 				"Function"			"star_dust"
 			}
 		}
+		"Modifiers"
+			{
+			"ranger_star_dust_modifier"
+				{
+				"Duration"	"3"
+				"IsDebuff"	"1"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"star_dust_heal"
+						}
+					}
+				}
+			}
 	}
 
 
@@ -3898,30 +4033,42 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"ranger_skill5"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"manaburn"	"10 14 18 22 26 30 34 38"
+    			}
+    		}
+
+		"Modifiers"
 			{
-				"ScriptFile"		"abilities/ranger.lua"
-				"Function"			"soul_piercing_shot"
+			"ranger_soul_piercing_shot_modifier"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttackLanded"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"soul_piercing_shot"
+						}
+					}
+				}
 			}
-		}
 	}
 
 
@@ -3932,32 +4079,30 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_datadriven"
+		"BaseClass"             		"alpha_wolf_command_aura"
 		"AbilityTextureName"			"ranger_skill6"
-		"MaxLevel" "1"
-		
-		// Stats
+				// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
-
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
+		"ID"							"5309"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"RunScript"
+			"01"
 			{
-				"ScriptFile"		"abilities/ranger.lua"
-				"Function"			"prevailing_winds"
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"10 15 20 25 30 35 40 50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
 			}
 		}
+
 	}
 
 //}End Ranger
