@@ -17,7 +17,8 @@ Update your progress as you go, and write if you need a hand!
 	> Khaos Champion
 		- Almost finished (Noya)
 		- Improve ability effects and polish behavior -STARTED
-			- Make a custom aura particle for Terrorize
+			- Make a custom aura particle for Terrorize DONE
+		- Review tooltips
 
 	> Guardian of Nature
 		- Almost finished (N)

@@ -1446,7 +1446,7 @@
 	
 		"precache"
 		{
-			"particle"	"particles/test_particle/channel_field_2.vpcf"
+			"particle"	"particles/channel_field_3.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -1476,11 +1476,8 @@
 					"AttachEffect"
 					{
 						"Target" "CASTER"
-						"EffectName"		"particles/test_particle/channel_field_1.vpcf"
+						"EffectName"		"particles/channel_field_3.vpcf"
 						"EffectAttachType" "follow_origin"
-						"EffectLifeDurationScale" "1"
-						"EffectColorA"		"255 0 0"
-						"EffectColorB"		"255 0 0"
 					}
 				}
 				"Passive" 			"1"
