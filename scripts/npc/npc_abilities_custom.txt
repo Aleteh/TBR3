@@ -3778,6 +3778,12 @@
 			}
 		}
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
+			"particle"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+		}
+
     	"Modifiers"
 			{
 			"ranger_black_arrow_orb_modifier"
@@ -3788,6 +3794,7 @@
 					"Label"	"DOTA_ORB_LABEL_EXCEPTION"
 					"Priority" "DOTA_ORB_PRIORITY_ABILITY"
 					"CastAttack" "1"
+					"ProjectileName"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
 					}
 				"OnOrbImpact"
 					{
@@ -3796,6 +3803,7 @@
 						"ScriptFile"		"abilities/ranger.lua"
 						"Function"			"black_arrow"
 						}
+						
 					}
 				}
 			"ranger_black_arrow_post_damage"
@@ -4102,6 +4110,7 @@
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_swirl.vpcf"
+			"particle"	"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_feet_effects_cascade_b.vpcf"
 		}
 
 		"Modifiers"    				
@@ -4112,7 +4121,7 @@
 				"IsPurgable"				"0"
 				"IsHidden"					"1"
 				"Passive"					"1"
-				"EffectName"				"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_swirl.vpcf"
+				"EffectName"				"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_feet_effects_cascade_b.vpcf"
 				"EffectAttachType"			"follow_origin"
 				"Aura"						"prevailing_winds_aura"
 				"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -4128,6 +4137,15 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_swirl.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"TARGET"
+					}
 				}
 			}
 		}
@@ -4945,5 +4963,35 @@
 		}
 	}
 //}End Druid
+
+
+
+	"dummy_passive"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+			{
+			"dummy_modifier"
+				{
+				"Passive"	"1"
+				"States"
+					{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+					
+					}
+				}
+			}
+		}
+
 
 }

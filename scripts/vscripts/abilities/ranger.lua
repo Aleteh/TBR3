@@ -6,6 +6,16 @@ function black_arrow( event )
 		event.ability:StartCooldown(event.ability:GetCooldown(1))
 		ApplyDamage({ victim = event.target, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
 		if event.target:IsAlive() == false then
+
+			-- attach explosion particle
+			local dummy = CreateUnitByName("dummy_unit", event.target:GetOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
+			print("Creating explosion particle")
+			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+			local radius = event.ability:GetSpecialValueFor("explosion_radius")
+			ParticleManager:SetParticleControl(particle, 1, dummy:GetAbsOrigin()) --location
+			ParticleManager:SetParticleControl(particle, 2, Vector(radius,radius,1)) --radius
+			ParticleManager:SetParticleControl(particle, 3, Vector(radius,radius,1)) --other radius
+
 			local group = FindUnitsInRadius( event.caster:GetTeamNumber(), event.target:GetAbsOrigin(), nil, event.ability:GetSpecialValueFor("explosion_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 			for key, unit in pairs(group) do
 				ApplyDamage({ victim = unit, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
@@ -27,6 +37,10 @@ function black_arrow_post_damage( event )
 		event.unit:RemoveModifierByName("ranger_black_arrow_post_damage")
 	end
 
+end
+
+function black_arrow_explosion( event )
+	
 end
 
 function stun_shot( event )
@@ -60,6 +74,8 @@ function soul_piercing_shot( event )
 	event.target:ReduceMana(manaburn)
 	event.caster:GiveMana(manaburn) 
 	ApplyDamage({ victim = event.target, attacker = event.caster, damage = manaburn, damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
+	local particle = ParticleManager:CreateParticle("particles/neutral_fx/black_dragon_attack_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	ParticleManager:SetParticleControl(particle, 3, event.target:GetAbsOrigin())
 	if math.random(0,4) < 1 then 
 		event.caster:PerformAttack(event.target, true, false, true, true)  
 	end

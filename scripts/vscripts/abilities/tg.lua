@@ -134,12 +134,10 @@ function hestias_touch( event )
 	local mana_warrior = event.ManaWarrior
 	print(mana_transfer,mana_warrior)
 
-	local current_mana = unit:GetMana()
-	print(current_mana)
 	if current_mana and current_mana > 0 then
 		attacker:GiveMana(mana_transfer)
-		unit:SetMana(current_mana-mana_transfer)
-		--do damage for the mana burn?
+		unit:ReduceMana(mana_transfer)
+		ApplyDamage({ victim = unit, attacker = attacker, damage = mana_transfer, damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
 		--TODO implement mana_warrior
 	end	
 
