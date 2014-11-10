@@ -3361,9 +3361,20 @@
     			"stun_duration"	"3.25"
     			}
     		}
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_templar_assassin/templar_assassin_meld.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+    	}
     	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_TemplarAssassin.Meld"
+				"Target" 			"CASTER"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/assassin.lua"
@@ -3376,6 +3387,17 @@
 				{
 				"IsBuff"	"1"
 				"Duration"              "%duration"
+				"EffectName"		"particles/units/heroes/hero_templar_assassin/templar_assassin_meld.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk_smoke.vpcf"
+						"EffectAttachType" "follow_origin"
+						"Target" 			"CASTER"
+					}
+				}
 				"Properties"
 					{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%bonus_movespeed"
@@ -3436,11 +3458,20 @@
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"5"
     	
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_templar_assassin/templar_assassin_meld_armor.vpcf"
+    	}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_BountyHunter.Target"
+				"Target" 		"TARGET"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/assassin.lua"
@@ -3453,6 +3484,8 @@
 				{
 				"IsDebuff"	"1"
 				"IsPurgable"	"1"
+				"EffectName"	"particles/units/heroes/hero_templar_assassin/templar_assassin_meld_armor.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"Properties"
 					{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-75"
@@ -3491,6 +3524,10 @@
     	"AbilityDamage"                 "100 200 350 560 840 1260 2000 3000"
     	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf"
+    	}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -3554,6 +3591,11 @@
     	"AbilityDamage"                 "50 100 175 280 420 630 1000 1500"
     	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+    	}
+
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilitySpecial"
@@ -3567,17 +3609,24 @@
     	
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_TemplarAssassin.Meld.Attack"
+				"Target" 		"TARGET"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/assassin.lua"
 				"Function"			"garrote"
-			}
+			}			
 		}
 		"Modifiers"
 			{
 			"assassin_garrote_bleed_modifier"
 				{
 				"IsDebuff"	"1"
+				"EffectName"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"ThinkInterval"	"1"
 				"OnIntervalThink"
 					{
@@ -3615,6 +3664,11 @@
 		"AbilityCooldown"				"120"
 		"AbilityManaCost"				"8 16 24 32 40 48 56 64"
     	
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+			"particle"	"particles/units/heroes/hero_siren/naga_siren_mirror_image.vpcf"
+		}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------

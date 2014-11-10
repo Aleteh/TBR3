@@ -37,7 +37,12 @@ function assassinate( event )
 		ApplyDamage({ victim = event.target, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
 		if event.target:HasModifier("assassin_disable_debuff") == true then
 			ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.caster:GetAgility() * 3 + event.ability:GetLevelSpecialValueFor("bonus_disabled_target", (event.ability:GetLevel() - 1)) ), damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
-		end
+		end	
+		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_templar_assassin/templar_assassin_meld_hit.vpcf", PATTACH_ROOTBONE_FOLLOW, event.target)
+		ParticleManager:SetParticleControl(particle, 3, event.target:GetAbsOrigin())
+
+		EmitSoundOn("Hero_BountyHunter.Jinada", event.target)
 	end
 end
 

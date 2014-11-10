@@ -5,7 +5,8 @@ Update your progress as you go, and write if you need a hand!
 	==Agility==
 	> Assassin
 		- Almost finished (igo)
-		- Missing particles/sounds (N)
+		- Finished particles/sounds (N)
+		- Review tooltips
 
 	> Ranger
 		- Not Started
