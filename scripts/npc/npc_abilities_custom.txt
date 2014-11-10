@@ -2321,7 +2321,7 @@
     		"03"
     		{
 				"var_type"				"FIELD_INTEGER"
-				"crit_bonus" 			"200"
+				"crit_bonus" 			"300" //or 200?
     		}
     	}
 
@@ -2338,6 +2338,11 @@
 				"EffectName"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
 				"EffectAttachType"			"follow_origin"
 				"EffectRadius"				"800"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.GuardianAngel.Cast"
+				"Target"		"CASTER"
 			}
 
 			//"RunScript"
@@ -2383,6 +2388,7 @@
 				{
 					"Damage"
 					{
+						"Target"	"TARGET"
 						"Damage"	"%dmg_per_hit"
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 					}
@@ -2449,6 +2455,7 @@
 			"particle"	"particles/fire_of_apollo.vpcf" //"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_start_ring_rope_arcana.vpcf"
 			"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
 			"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -2496,7 +2503,7 @@
 						"Function"		"fire_of_apollo"
 					    "Target"		"TARGET"
 				  	}
-				 }
+				}
 			}
 			"CreateThinker"
 	        {
@@ -2595,7 +2602,8 @@
     		"particle"	"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
     		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
     		"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
-			"particle"	"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+			"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"particle"	"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
     	}
 
 		"OnSpellStart"
@@ -2610,6 +2618,11 @@
 				"MoveSpeed"			"1200"
 				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Zuus.GodsWrath.PreCast"
+				"Target" 			"CASTER"
+			}	
 		}
 
 		"OnProjectileHitUnit"
@@ -2619,16 +2632,10 @@
 			{
 				"Center" 	"PROJECTILE"
 				"Target"	"TARGET"
-				"Distance"	"100"
-				"Height"	"100"
-				"Duration"	"0.2"
+				"Distance"	"500"
+				"Height"	"300"
+				"Duration"	"0.5"
 			}
-			"RunScript"
-		 	{
-			    "ScriptFile"	"damage.lua"
-			    "Function"		"DoDamage"
-			    "Damage"		"%dmg"
-		  	}
 			"FireSound"
 			{
 				"EffectName"			"Hero_Zuus.GodsWrath.Target"
@@ -2637,14 +2644,47 @@
 			"AttachEffect"
 			{
 				"Target"			"TARGET"	
-				"EffectName"		"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+				"EffectName"		"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
 				"EffectAttachType"	"follow_origin"
+			}
+			"AttachEffect"
+			{
+				"Target"			"TARGET"	
+				"EffectName"		"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  				"TARGET"
+					"Radius" 				"275"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"Knockback"
+					{
+						"Center" 	"PROJECTILE"
+						"Target"	"TARGET"
+						"Distance"	"200"
+						"Height"	"200"
+						"Duration"	"0.3"
+					}
+				}
 			}
 			"ApplyModifier"
 			{
 				"ModifierName"	"zeus_stun"
 				"Target"		"TARGET"
 			}
+			"RunScript"
+		 	{
+			    "ScriptFile"	"damage.lua"
+			    "Function"		"DoDamage"
+			    "Damage"		"%dmg"
+		  	}
 		}
 
 		"Modifiers"
@@ -2689,6 +2729,11 @@
 				"ScriptFile"		"abilities/tg.lua"
 				"Function"			"pray_toggle_on"
 			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.GuardianAngel"	
+				"Target"		"CASTER"	
+			}
 		}
 		"OnToggleOff"
 		{
@@ -2720,6 +2765,7 @@
 		"precache"
 		{
 			"particle"		"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -2734,6 +2780,11 @@
 				"Target"		"TARGET"
 				"EffectName"	"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
 				"EffectAttachType"	"follow_origin"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_LegionCommander.PressTheAttack"
+				"Target"		"TARGET"	
 			}
 		}
 
@@ -2788,6 +2839,7 @@
 		{
 			"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
 			"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -2808,6 +2860,11 @@
 				"Target"		"TARGET"
 				"EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
 				"EffectAttachType"	"follow_origin"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.Repel"
+				"Target"		"TARGET"	
 			}
 		}
 
@@ -2882,6 +2939,7 @@
 		"precache"
 		{
 			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -2895,6 +2953,11 @@
 			{
 				"ScriptFile"	"abilities/tg.lua"
 				"Function"		"zeus_fx"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Zuus.GodsWrath.PreCast"
+				"Target"		"TARGET"	
 			}
 		}
 
@@ -2938,34 +3001,103 @@
 	//=================================================================================================================
 	// Temple Guardian: Hestia's Touch
 	//=================================================================================================================
+	//As long as Hestia's Touch is active all attacks against the target will drain up to xx mana, which is then added to the attacker's mana pool for xxx mana. 
+	//Warrior classes will drain x mana on each attack. Cooldown 1 second. Lasts up to 30 seconds
 	"templeguardian_hestias_touch"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"temple_guardian_skill6"
-		"MaxLevel" "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"MaxLevel" 						"7"
+			
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		      
+		"AbilityCastRange"				"600"	//made this up
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"30 60 95 135 180 230 285 350"
+		"AbilityDuration"               "30"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+    	{	
+    		"01"
+    		{
+				"var_type"				"FIELD_FLOAT"
+				"mana_stolen_per_hit" 	"8.0 16.0 24.0 32.0 40.0 48.0 56.0 64.0"
+    		}
+			"02"
+    		{
+				"var_type"				"FIELD_FLOAT"
+				"mana_warrior" 			"0.5 1 1.5 2 2.5 3 3 3"
+    		}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/generic_manaburn.vpcf"
+			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_mana_leak.vpcf"
+			"particle"	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		}
+
 		"OnSpellStart"
 		{
-			"RunScript"
+			"ApplyModifier"
 			{
-				"ScriptFile"		"abilities/tg.lua"
-				"Function"			"hestias_touch"
+				"Target" 			"TARGET"
+				"ModifierName"		"hestias_touch_modifier"
+			}
+			"AttachEffect"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_n.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"EffectRadius"	"300"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_KeeperOfTheLight.ManaLeak.Cast"
+				"Target"		"TARGET"	
+			}
+		}
+
+		"Modifiers"
+		{
+			"hestias_touch_modifier"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Duration"		"%AbilityDuration"
+				"EffectName"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_mana_leak.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+				"OnAttacked"
+				{
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/generic_gameplay/generic_manaburn.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/tg.lua"
+						"Function"			"hestias_touch"
+						"ManaTransfer"		"%mana_stolen_per_hit"
+						"ManaWarrior"		"%mana_warrior"
+					}
+				}
 			}
 		}
 	}

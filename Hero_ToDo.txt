@@ -29,7 +29,9 @@ Update your progress as you go, and write if you need a hand!
 		- Review tooltips, add some sounds.
 
 	> Temple Guardian
-		- Started
+		- Almost finished.
+		- Review tooltips, finish Warrior class restriction
+		
 	> Spartan Warrior
 		- Almost finished (N)
 		- Review tooltips, add some sounds.

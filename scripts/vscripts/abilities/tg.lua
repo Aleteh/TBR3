@@ -116,4 +116,31 @@ end
 function fire_apollo_fx( event )
 	local particle = ParticleManager:CreateParticle("particles/fire_of_apollo.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 	ParticleManager:SetParticleControl(particle, 7, event.caster:GetAbsOrigin())
+
+	EmitSoundOn("Hero_DoomBringer.ScorchedEarthAura", event.caster)
+	-- 10 second delayed, run once using gametime (respect pauses)
+	Timers:CreateTimer({
+	    endTime = 11, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+	    callback = function()
+	      StopSoundOn("Hero_DoomBringer.ScorchedEarthAura", event.caster)
+	    end
+	})
+end
+
+function hestias_touch( event )
+	local attacker = event.attacker
+	local unit = event.target
+	local mana_transfer = event.ManaTransfer
+	local mana_warrior = event.ManaWarrior
+	print(mana_transfer,mana_warrior)
+
+	local current_mana = unit:GetMana()
+	print(current_mana)
+	if current_mana and current_mana > 0 then
+		attacker:GiveMana(mana_transfer)
+		unit:SetMana(current_mana-mana_transfer)
+		--do damage for the mana burn?
+		--TODO implement mana_warrior
+	end	
+
 end
