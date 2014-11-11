@@ -3254,6 +3254,11 @@
 				"ScriptFile"		"abilities/warlord.lua"
 				"Function"			"winds_of_war"
 			}
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"spin_thinker"
+			}
 		}
 		"Modifiers"
 			{
@@ -3300,6 +3305,21 @@
 			"warlord_winds_of_war_animation"
 				{
 				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
+				}
+				"spin_thinker"
+				{
+
+					"Duration"	"2"
+	                "ThinkInterval" "0.05"
+	                "OnIntervalThink"
+	                {
+	                    "RunScript"
+	                    {
+	                        "ScriptFile"    "abilities/warlord.lua"
+	                        "Function"      "SpinHero"
+	                        "Angle"         "90"
+	                    }
+	                }
 				}
 			}
 	}

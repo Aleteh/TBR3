@@ -44,6 +44,13 @@ function winds_of_war( event )
 	, 0)
 end
 
+function SpinHero(keys)
+    local caster = keys.caster
+    local total_degrees = keys.Angle
+    print("Spinning ", total_degrees, "degrees about center")
+    caster:SetForwardVector(RotatePosition(Vector(0,0,0), QAngle(0,total_degrees,0), caster:GetForwardVector()))
+end
+
 function winds_of_war_think( event )
 	local caster_point = event.caster:GetAbsOrigin()
 	local next_x = event.ability.x_of_movement + event.ability.cos * 15
