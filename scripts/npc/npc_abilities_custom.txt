@@ -3119,30 +3119,51 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "300 600 900 1200 1500 1800 2100 2400"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
+		
+		"Modifiers"
 			{
-				"ScriptFile"		"abilities/warlord.lua"
-				"Function"			"counter"
+			"warlord_counter_modifier"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"Random"
+						{
+						"Chance" "20"
+						"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+						"OnSuccess"
+							{
+							"RunScript"
+								{
+								"ScriptFile"		"abilities/warlord.lua"
+								"Function"			"counter"
+								"Target"
+									{
+									"Center"	"CASTER"
+									"Radius"	"175"	// this is a right radius from wc3 map JASS
+									"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Types"	"DOTA_UNIT_TARGET_BASIC	| DOTA_UNIT_TARGET_HERO"
+									}
+								}
+							}
+						}
+					
+					}
+				}
 			}
-		}
 	}
 
 
@@ -3155,30 +3176,46 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill2"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"2.25"
+		"AbilityManaCost"				"8 12 17 24 32 42 55 70"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "150 300 525 850 1300 2000 3000 4500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
+
+		"Modifiers"
 			{
-				"ScriptFile"		"abilities/warlord.lua"
-				"Function"			"impale"
+			"assassin_assassinate_orb_modifier"
+				{
+				"Passive"	"1"
+				"Orb"
+					{
+					"Label"	"DOTA_ORB_LABEL_EXCEPTION"
+					"Priority" "DOTA_ORB_PRIORITY_ABILITY"
+					"CastAttack" "1"
+					}
+				"OnOrbImpact"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"impale"
+						}
+					}
+				}
 			}
-		}
 	}
 
 
@@ -3191,19 +3228,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"15 22 30 39 49 69 72 85"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "125 250 435 700 1050 1600 2400 4000"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -3215,6 +3255,53 @@
 				"Function"			"winds_of_war"
 			}
 		}
+		"Modifiers"
+			{
+			"warlord_winds_of_war_modifier"
+				{
+				"IsBuff"	"1"
+				"Duration"	"2"
+				"ThinkInterval"	"0.03"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"winds_of_war_think"
+						}
+					}
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
+				"States"
+					{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				"OnDestroy"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"winds_of_war_anti_stuck"
+						}
+					}
+				}
+			"warlord_winds_of_war_damaged_modifier"
+				{
+				"Duration"	"2"
+				"IsDebuff"	"1"
+				"OnDestroy"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"winds_of_war_anti_stuck_b"
+						}
+					}
+				}
+			"warlord_winds_of_war_animation"
+				{
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
+				}
+			}
 	}
 
 
@@ -4070,6 +4157,22 @@
 				{
 				"Passive"	"1"
 				"IsBuff"	"1"
+				"OnAttackStart"
+					{
+					"Random"
+						{
+						"Chance" "20"
+						"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+						"OnSuccess"
+							{
+							"ApplyModifier"
+								{
+								"ModifierName" "ranger_crit"
+								"Target" "CASTER"
+								}
+							}
+						}
+					}
 				"OnAttackLanded"
 					{
 					"RunScript"
@@ -4079,8 +4182,25 @@
 						}
 					}
 				}
+			"ranger_crit"
+				{
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "200"
+					}
+				"OnAttackLanded"
+					{
+					"RemoveModifier"
+						{
+						"ModifierName"	"ranger_crit"
+						"Target" "CASTER"
+						}
+					}
+				}
 			}
 	}
+
+
 
 
 	//=================================================================================================================
