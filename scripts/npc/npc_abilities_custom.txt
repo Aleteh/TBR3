@@ -4385,6 +4385,10 @@
 				"Function"			"holy_light"
 			}
 		}
+		"Modifiers"
+		{
+
+		}
 	}
 
 
@@ -4397,7 +4401,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"cleric_skill2"
-		"MaxLevel" 				"7"
+		"MaxLevel" 						"7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4417,47 +4421,42 @@
 		{
 			"01"
 			{
-				"var_type"		"FIELD_INTEGER"
-				"heal_amount"		"15 30 55 90 130 175 275 425"
+				"var_type"			"FIELD_INTEGER"
+				"heal_amount"		"250 500 900 1500 2200 3000 4500 7500"
 			}
 			"02"
 			{
-				"var_type"		"FIELD_FLOAT"
-				"duration"		"20.0"
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"20.0"
 			}
 			"03"
 			{
-				"var_type"                "FIELD_FLOAT"
-            			"tick_rate"                "1.0"
+				"var_type"          "FIELD_FLOAT"
+            	"tick_rate"         "1.0"
 			}
 		}
 		"OnSpellStart"
 		{
-			"CreateThinker"
+			"ApplyModifier"
 			{
-				"ModifierName"	"regeneration_thinker"
-				"Target"	"Target"
-			}
-			//"RunScript"
-			//{
-			//	"ScriptFile"		"abilities/cleric.lua"
-			//	"Function"			"regen"
-			//}
+				"Target" 			"TARGET"
+				"ModifierName"		"regeneration_mod"
+			}"
 		}
 		"Modifiers"
 		{
-			"regeneration_thinker"
+			"regeneration_mod"
 			{
-				"IsBuff"	"1"
-				"IsPurgable"	"1"
-				"ThinkInterval"	"%tick_rate"
-				"Duration"	"%duration"
+				"IsBuff"			"1"
+				"IsPurgable"		"1"
+				"Duration"			"%duration"
+				"ThinkInterval"		"%tick_rate"
 				"OnIntervalThink"
 				{
-					"Heal"
+					"RunScript"
 					{
-						"HealAmount"	"%heal_amout"
-						"Target"	"TARGET"
+						"ScriptFile"	"abilities/cleric.lua"
+						"Function"		"regen"
 					}
 				}
 			}
@@ -4474,7 +4473,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"cleric_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4499,7 +4498,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"		"250"
+				"radius"			"250"
 			}
 			"03"
 			{
@@ -4509,7 +4508,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"slow_speed"		""
+				"slow_speed"		"25"
 			}
 			"05"
 			{
@@ -4519,10 +4518,33 @@
 		}
 		"OnSpellStart"
 		{
-			"RunScript"
+			"ApplyModifier"
 			{
-				"ScriptFile"		"abilities/cleric.lua"
-				"Function"			"fire_of_heaven"
+				"Target" 			"TARGET"
+				"ModifierName"		"modifier_name"
+			}"
+		}
+		"Modifiers"    				// Can be used to create custom modifier. 
+		{  							// There are many snippets that can be expanded in to the modifiers. 
+			"modifier_bro"   	// This should be the name of your modifier
+			{
+				// Refer to http://hex6.se/dota/modifier_functions.txt to see what snippets can be expanded in here.
+				"IsDebuff"					"true"
+				"IsPurgable"				"false"
+				"IsStunDebuff"				"true"
+				"IsHidden"					"false"
+				//"AllowIllusionDuplicate"	"false"
+				//"EffectName"				"effect_name"
+				//"EffectAttachType"			"attach_hitloc"
+				//"OverrideAnimation"			"false"
+				//"ThinkInterval"				"10"
+				//"Duration"					"20"
+				//"Aura"						"true"
+				//"Aura_Teams"					""
+				//"Aura_Radius"					"300"
+				//"Aura_Types"					""
+				//"Aura_Flags"  				""
+				//"Aura_ApplyToCaster"    		"0"
 			}
 		}
 	}
