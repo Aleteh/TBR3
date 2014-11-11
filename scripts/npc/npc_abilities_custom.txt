@@ -4346,9 +4346,9 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityTextureName"			"cleric_skill1"
-		"MaxLevel" 				"7"
+		"MaxLevel" 						"7"
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -4373,7 +4373,7 @@
 		{
 			"01"
 			{
-				"var_type"		"FLIED_FLOAT"
+				"var_type"		"FIELD_FLOAT"
 				"heal_amount"		"250 500 900 1500 3000 4500 7500"
 			}
 		}
@@ -4384,10 +4384,6 @@
 				"ScriptFile"		"abilities/cleric.lua"
 				"Function"			"holy_light"
 			}
-		}
-		"Modifiers"
-		{
-
 		}
 	}
 
@@ -4400,8 +4396,20 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityTextureName"			"cleric_skill2"
 		"MaxLevel" 						"7"
+
+
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+		}
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4409,11 +4417,6 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"1"
 		"AbilityManaCost"				"25 50 90 145 210 285 425 640"
-    		
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
-		}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -4441,7 +4444,7 @@
 			{
 				"Target" 			"TARGET"
 				"ModifierName"		"regeneration_mod"
-			}"
+			}
 		}
 		"Modifiers"
 		{
@@ -4451,6 +4454,9 @@
 				"IsPurgable"		"1"
 				"Duration"			"%duration"
 				"ThinkInterval"		"%tick_rate"
+				"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+				"EffectAttachType"	"follow_origin"
+
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -4474,6 +4480,11 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"cleric_skill3"
 		"MaxLevel" 						"7"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4521,30 +4532,25 @@
 			"ApplyModifier"
 			{
 				"Target" 			"TARGET"
-				"ModifierName"		"modifier_name"
-			}"
+				"ModifierName"		"blast_aoe_mod"
+			}
 		}
 		"Modifiers"    				// Can be used to create custom modifier. 
 		{  							// There are many snippets that can be expanded in to the modifiers. 
-			"modifier_bro"   	// This should be the name of your modifier
+			"blast_aoe_mod"   	// This should be the name of your modifier
 			{
 				// Refer to http://hex6.se/dota/modifier_functions.txt to see what snippets can be expanded in here.
 				"IsDebuff"					"true"
-				"IsPurgable"				"false"
-				"IsStunDebuff"				"true"
+				"IsPurgable"				"true"
 				"IsHidden"					"false"
-				//"AllowIllusionDuplicate"	"false"
-				//"EffectName"				"effect_name"
-				//"EffectAttachType"			"attach_hitloc"
-				//"OverrideAnimation"			"false"
-				//"ThinkInterval"				"10"
-				//"Duration"					"20"
-				//"Aura"						"true"
-				//"Aura_Teams"					""
-				//"Aura_Radius"					"300"
-				//"Aura_Types"					""
-				//"Aura_Flags"  				""
-				//"Aura_ApplyToCaster"    		"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/cleric.lua"
+						"Function"		"fire_of_heaven"
+					}
+				}
 			}
 		}
 	}
@@ -5096,16 +5102,16 @@
 
 
 	"dummy_passive"
-		{
+	{
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Modifiers"
-			{
+		{
 			"dummy_modifier"
-				{
+			{
 				"Passive"	"1"
 				"States"
-					{
+				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -5116,11 +5122,7 @@
 					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
-					
-					}
 				}
 			}
 		}
-
-
-}
+	}
