@@ -400,7 +400,7 @@
 	//=================================================================================================================
 	"npc_dota_hero_lone_druid"
 	{
-		"override_hero"				"npc_dota_hero_lone_druid"
+		"override_hero"				"npc_dota_hero_furion"
 		"AbilityLayout" "5"
 		"Ability1"					"druid_rejuvenation"
 		"Ability2"					"druid_natures_wrath"

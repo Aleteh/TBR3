@@ -2025,6 +2025,12 @@
 					{
 						"Target"	"TARGET"
 						"EffectAttachType" "follow_origin"
+						"EffectName"	"particles/units/heroes/hero_earth_spirit/espirit_spawn.vpcf"
+					}
+					"AttachEffect"
+					{
+						"Target"	"TARGET"
+						"EffectAttachType" "follow_origin"
 						"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
 						"ControlPoints"
 						{
@@ -4836,6 +4842,12 @@
 		"AbilityCastRange"				"700"
 		"AbilityManaCost"				"30 60 105 170 250 340 510 750"
 
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/rune_regeneration.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_shadow_word_buff_f.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4850,7 +4862,6 @@
 			}
 		}
 
-		// TODO: Attach Particles
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -4865,8 +4876,10 @@
 		{
 			"regeneration_modifier"
 			{
-				"IsBuff"		"1"
-				"Duration"		"%duration"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/generic_gameplay/rune_regeneration.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"ThinkInterval"	"1"
 				"OnIntervalThink"
 				{
@@ -4875,6 +4888,15 @@
 						"ScriptFile"		"abilities/druid.lua"
 						"Function"			"rejuvenation"
 					}
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					 {
+					 	"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_buff_f.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target" 			"TARGET"
+					 } 
 				}			
 			}
 		}
@@ -5007,6 +5029,15 @@
 		"AbilityManaCost"				"125 200 325 500 650 800 900 1000"
     	"AbilityDamage"                 "150 300 500 800 1400 1600 2500 3750"
 
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+    		"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
+    		"particle"	"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
+    		"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+    	}
+
     	//TODO: Particles & Sound
     	//Do AbilitySpecial?
 		"OnSpellStart"
@@ -5015,6 +5046,7 @@
 			{
 				"ScriptFile"		"abilities/druid.lua"
 				"Function"			"call_lightning"
+				"Target"			"POINT"
 			}
 		}
 	}
@@ -5034,8 +5066,9 @@
 		"AbilityTextureName"			"druid_skill4"
 		"MaxLevel" 						"1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"12"
@@ -5050,6 +5083,12 @@
 				"mana_drained"	"-75 -150 -250 -375 - 525 -750 -1150 -1700"
 			}
 		}
+
+		"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+    	}
 
 		//TODO: Finish
 		"OnSpellStart"

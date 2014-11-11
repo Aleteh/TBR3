@@ -38,7 +38,7 @@ function DoTremorDamage (event)
     local half_damage = (damage+spellPower)/2
 
     -- find enemies in 500 aoe
-    enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(),  nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY,
+    enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), event.target:GetAbsOrigin(),  nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY,
         DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 
@@ -53,7 +53,7 @@ function DoTremorDamage (event)
     end
 
     -- find enemies in 250 aoe
-    enemies2 = FindUnitsInRadius(event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(),  nil, 250, DOTA_UNIT_TARGET_TEAM_ENEMY,
+    enemies2 = FindUnitsInRadius(event.caster:GetTeamNumber(), event.target:GetAbsOrigin(),  nil, 250, DOTA_UNIT_TARGET_TEAM_ENEMY,
         DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
     -- Do another half damage
