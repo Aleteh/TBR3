@@ -4976,6 +4976,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"1"
@@ -4986,8 +4987,8 @@
 		{
 			"particle"	"particles/generic_gameplay/rune_regeneration.vpcf"
 			"particle"	"particles/units/heroes/hero_warlock/warlock_shadow_word_buff_f.vpcf"
-			"particle"	"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_leaves_cascade.vpcf"
-			"precache"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"particle"	"particles/units/heroes/hero_treant/treant_livingarmor.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -5044,12 +5045,6 @@
 					 	"EffectAttachType"	"follow_origin"
 					 	"Target" 			"TARGET"
 					}
-					"AttachEffect"
-					{
-					 	"EffectName"		"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_leaves_cascade.vpcf"
-					 	"EffectAttachType"	"follow_origin"
-					 	"Target" 			"TARGET"
-					} 
 				}			
 			}
 		}
@@ -5072,6 +5067,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
 		"AbilityCastRange"				"700"
 		"AbilityCooldown"				"7"
 		"AbilityManaCost"				"35 79 115 185 275 400 600 900"
@@ -5187,6 +5184,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AOERadius"						"400"		
 		"AbilityCastRange"				"700" //made this up, check it later
@@ -5202,12 +5200,27 @@
     		"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
     		"particle"	"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
     		"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+    		"particle"	"particles/items_fx/diffusal_slow.vpcf"
     		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
     		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
     	}
 
-    	//TODO: Sound, Add Purge slow effect
-    	//Do AbilitySpecial?
+    	"AbilitySpecial"
+		{	
+			//No Idea what these values should be
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"slow_duration"	"2"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"slow_percentage"	"-50" //I made this up. TODO: Check WC3 Value
+			}
+		}
+
+    	//TODO: Add Purge slow effect
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -5232,6 +5245,20 @@
 				"Target"			"POINT"
 			}
 		}
+		"Modifiers"
+		{
+			"call_lightning_modifier"
+			{
+				"Duration"	"%slow_duration"
+				"IsDebuff"	"1"
+				"EffectName"	"particles/items_fx/diffusal_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percentage"
+				}
+			}
+		}
 	}
 
 	//=================================================================================================================
@@ -5252,6 +5279,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"12"
@@ -5282,6 +5311,7 @@
     	{
     		"particle"	"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
     		"particle"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+    		"particle"	"particles/units/heroes/hero_razor/razor_unstable_current.vpcf"
     		"particle"	"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
     		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
     	}
@@ -5341,6 +5371,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AOERadius"						"500"		
 		"AbilityCastRange"				"700" //made this up, check it later
@@ -5358,6 +5389,11 @@
     		"particle"  "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf"
     		"particle"	"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
     		"particle"	"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+    		"particle"	"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+    		"particle"	"particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf"
+    		"particle"	"particles/units/heroes/hero_invoker/invoker_tornado_child.vpcf"
+    		"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_energy.vpcf"
     		"soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
     	}
 
@@ -5436,6 +5472,12 @@
 				  		"Target" 			"TARGET"
 				  		"ModifierName"		"call_storm_modifier"
 				  	}
+				  	"FireEffect"
+				  	{
+				  		"EffectName"		"particles/units/heroes/hero_zuus/zuus_static_field.vpcf"
+				  		"EffectAttachType" 	"follow_origin"
+				  		"Target" 			"TARGET"
+				  	}
 				}
 			}
 		}
@@ -5444,13 +5486,27 @@
 		{
 			"call_storm_modifier"
 			{
-				"IsDebuff"	"1"
+				"Duration"   	"6"
+				"IsDebuff"		"1"
 				"IsPurgable"	"1"
-				"EffectName"	"particles/units/heroes/hero_zuus/zuus_static_field.vpcf"
+				"EffectName"	"particles/units/heroes/hero_invoker/invoker_tornado_child.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percentage"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_brewmaster/brewmaster_cyclone_energy.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"TARGET"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
 				}
 			}
 			"storm_thinker"
@@ -5463,6 +5519,10 @@
 						"EffectName"		"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
 						"EffectAttachType" 	"follow_origin"
 						"Target" 			"TARGET"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
 					}
 				}
 				"ThinkInterval"	"1"

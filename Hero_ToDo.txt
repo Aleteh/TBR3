@@ -45,7 +45,9 @@ Update your progress as you go, and write if you need a hand!
 		- Added correct hero values
 		- Started skills
 	> Druid
-		- Started (N)
+		- Almost Finished (N)
+		- Check some wc3 behavior
+		- Review tooltips and spell behavior
 		
 	> Warlock
 		- Not Started

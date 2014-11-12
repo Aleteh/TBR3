@@ -47,6 +47,7 @@ function call_lightning( event )
 
     -- Do half damage
     for _,enemy in pairs(enemies) do
+        event.ability:ApplyDataDrivenModifier( hero, enemy, "call_lightning_modifier", {duration = daze_duration})
       ApplyDamage({ victim = enemy, attacker = hero, damage = half_damage, damage_type = DAMAGE_TYPE_MAGICAL })
     end
 
@@ -76,7 +77,7 @@ function mind_blast( event )
     ParticleManager:SetParticleControl(particle, 2, target:GetAbsOrigin()) -- point origin
 
     --Do Main Damage
-    ApplyDamage({ victim = enemy, attacker = hero, damage = damage + spellPower, damage_type = DAMAGE_TYPE_MAGICAL })      
+    ApplyDamage({ victim = target, attacker = hero, damage = damage + spellPower, damage_type = DAMAGE_TYPE_MAGICAL })      
 
     local initial_mana = target:GetMana()
 
@@ -129,13 +130,13 @@ function call_storm( event )
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf", MAX_PATTACH_TYPES, dummy)
     ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin()) --location
-    ParticleManager:SetParticleControl(particle, 1, Vector(radius-100,radius+100,1)) --ring/weird
-    ParticleManager:SetParticleControl(particle, 2, Vector(5,5,0)) --duration
+    ParticleManager:SetParticleControl(particle, 1, Vector(radius,radius,radius)) --ring/weird
+    ParticleManager:SetParticleControl(particle, 2, Vector(6,6,0)) --duration
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_disruptor/disruptor_kf_formation.vpcf", MAX_PATTACH_TYPES, dummy)
     ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin()) --location
     ParticleManager:SetParticleControl(particle, 1, Vector(300,300,1)) --ring/weird
-    ParticleManager:SetParticleControl(particle, 2, Vector(5,5,0)) --duration
+    ParticleManager:SetParticleControl(particle, 2, Vector(6,6,0)) --duration
 
 
 end
@@ -143,8 +144,8 @@ end
 function stormy( event )
     local target = event.target:GetAbsOrigin()
     
-    -- find enemies in 500 aoe
-    enemies = FindUnitsInRadius(event.target:GetTeamNumber(), target,  nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY,
+    -- find enemies in 350 aoe (center of the storm)
+    enemies = FindUnitsInRadius(event.target:GetTeamNumber(), target,  nil, 350, DOTA_UNIT_TARGET_TEAM_ENEMY,
         DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
     -- spam lightnings
@@ -153,12 +154,20 @@ function stormy( event )
             endTime = RandomFloat(0.1, 0.9),
             callback = function()
                 EmitSoundOn("Hero_Zuus.StaticField", enemy)
-                local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_WORLDORIGIN, enemy)
+                local lightning_type = RandomInt(1,3)
+                local particle
+                if lightning_type == 1 then
+                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, enemy)
+                elseif lightning_type == 2 then
+                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_WORLDORIGIN, enemy)
+                elseif lightning_type == 3 then
+                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf", PATTACH_WORLDORIGIN, enemy)
+                end
+                --shared control points for all the different lightnings
                 ParticleManager:SetParticleControl(particle, 0, Vector(enemy:GetAbsOrigin().x,enemy:GetAbsOrigin().y,1000)) -- height of the bolt
                 ParticleManager:SetParticleControl(particle, 1, enemy:GetAbsOrigin()) -- point landing
                 ParticleManager:SetParticleControl(particle, 2, enemy:GetAbsOrigin()) -- point origin  
             end
           })
-        
     end
 end
