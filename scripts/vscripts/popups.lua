@@ -88,6 +88,10 @@ function PopupMana(target, amount)
     PopupNumbers(target, "heal", Vector(0, 176, 246), 1.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
 end
 
+function PopupManaDrain(target, amount)
+    PopupNumbers(target, "damage", Vector(0, 176, 246), 1.0, amount, POPUP_SYMBOL_PRE_MINUS, nil)
+end
+
 function PopupHealthTome(target, amount)
     PopupNumbers(target, "miss", Vector(255, 255, 255), 1.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end

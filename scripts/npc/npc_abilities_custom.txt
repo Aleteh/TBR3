@@ -4986,6 +4986,8 @@
 		{
 			"particle"	"particles/generic_gameplay/rune_regeneration.vpcf"
 			"particle"	"particles/units/heroes/hero_warlock/warlock_shadow_word_buff_f.vpcf"
+			"particle"	"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_leaves_cascade.vpcf"
+			"precache"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -5004,12 +5006,17 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Huskar.Inner_Vitality"
+				"Target" 			"TARGET"
+			}
 			"ApplyModifier"
 			{
 				//cleric regeneration spell should have this modifier name
 				"Target" 			"TARGET" 
 				"ModifierName"		"regeneration_modifier"
-			}
+			}	
 		}
 
 		"Modifiers"
@@ -5032,11 +5039,17 @@
 				"OnCreated"
 				{
 					"AttachEffect"
-					 {
+					{
 					 	"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_buff_f.vpcf"
 					 	"EffectAttachType"	"follow_origin"
 					 	"Target" 			"TARGET"
-					 } 
+					}
+					"AttachEffect"
+					{
+					 	"EffectName"		"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_leaves_cascade.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target" 			"TARGET"
+					} 
 				}			
 			}
 		}
@@ -5067,6 +5080,8 @@
 		{
 			"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
 			"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+			"particle"				"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -5090,6 +5105,11 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Treant.Overgrowth.Cast"
+				"Target" 			"TARGET"
+			}	
 			"ApplyModifier"
 			{
 				"Target" 			"TARGET"
@@ -5104,6 +5124,12 @@
 			{
 				"OnCreated"
 				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+						"EffectAttachType" "attach_hitloc"
+					}
 					"AttachEffect"
 					{
 						"Target" 			"TARGET"
@@ -5176,12 +5202,29 @@
     		"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
     		"particle"	"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
     		"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
     	}
 
-    	//TODO: Particles & Sound
+    	//TODO: Sound, Add Purge slow effect
     	//Do AbilitySpecial?
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Zuus.LightningBolt"
+				"Target" 			"CASTER"
+			}	
+			"FireSound"
+			{
+				"EffectName"		"Hero_Jakiro.LiquidFire"
+				"Target" 			"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Zuus.StaticField"
+				"Target" 			"CASTER"
+			}	
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/druid.lua"
@@ -5204,7 +5247,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"druid_skill4"
-		"MaxLevel" 						"1"
+		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -5214,13 +5257,24 @@
 		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"25 50 85 145 230 360 500 750"
 		"AbilityDamage"                 "50 100 175 300 475 750 1150 1700"
+		"AOERadius"						"200"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"mana_drained"	"-75 -150 -250 -375 - 525 -750 -1150 -1700"
+				"mana_drain"	"75 150 250 375 525 750 1150 1700"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"daze_duration"	"4"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"slow_percentage"	"-50" //I made this up. TODO: Check WC3 Value
 			}
 		}
 
@@ -5228,51 +5282,199 @@
     	{
     		"particle"	"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
     		"particle"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+    		"particle"	"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
     	}
 
-		//TODO: Finish
+		//TODO: Check in WC3 if the mana drain Or the AoE damage scales with spell power
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Antimage.ManaVoid"
+				"Target"			"TARGET"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/druid.lua"
 				"Function"			"mind_blast"
 			}
+			"AttachEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_antimage/antimage_manavoid_explode_b.vpcf"
+				"EffectAttachType" 	"follow_origin"
+				"EffectRadius"		"200"
+				"Target" 			"TARGET"
+			}
+			
 		}
+
+		"Modifiers"
+		{
+			"mind_blast_modifier"
+			{
+				"IsDebuff"	"1"
+				"IsPurgable"	"1"
+				"EffectName"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percentage"
+				}
+			}
+		}
+
 	}
 
 
 	//=================================================================================================================
 	// Druid: Call Storm
 	//=================================================================================================================
+	//Calls down a bolt of lightning and then pushes the energy outward doing xxxx damage and slowing enemies by 50% for xxx mana. 
+	//7 seconds cooldown, 500 AOE.
 	"druid_call_storm"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"druid_skill5"
-		"MaxLevel" "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+		"AOERadius"						"500"		
+		"AbilityCastRange"				"700" //made this up, check it later
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"7"
+		"AbilityManaCost"				"50 105 175 280 425 600 750 950"
+    	"AbilityDamage"                 "75 215 400 700 1225 2140 3750 6500"
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf"
+    		"particle"  "particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_disruptor/disruptor_kf_formation.vpcf"
+    		"particle"  "particles/units/heroes/hero_disruptor/disruptor_glimpse_targetend.vpcf"
+    		"particle"  "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf"
+    		"particle"	"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
+    		"particle"	"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+    	}
+
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"slow_percentage"	"-50"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"500"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"dmg"			"75 215 400 700 1225 2140 3750 6500"
+			}
+		}
+
+    	//TODO: Check what this spell does in WC3
+    	//		Particles
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Razor.Storm.Cast"
+				"Target"		"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Furion.WrathOfNature_Damage"
+				"Target" 		"CASTER"	
+			}	
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/druid.lua"
-				"Function"			"call_storm"
+				"ScriptFile"	"abilities/druid.lua"
+				"Function"		"call_storm"
+				"Target"		"POINT"
+			}
+			//EXTRA EFFECT, Tell me what do you think later
+			"CreateThinker"
+			{
+				"ModifierName"	"storm_thinker"
+				"Target" 		"POINT"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"POINT"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"Knockback"
+					{
+						"Target" "TARGET"
+						"Center" "POINT"
+						"Distance"	"250"
+						"Height"	"200"
+						"Duration"	"0.5"
+					}
+					"RunScript"
+				 	{
+					    "ScriptFile"	"damage.lua"
+					    "Function"		"DoDamage"
+					    "Damage"		"%dmg"
+				  	}
+				  	"ApplyModifier"
+				  	{
+				  		"Target" 			"TARGET"
+				  		"ModifierName"		"call_storm_modifier"
+				  	}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"call_storm_modifier"
+			{
+				"IsDebuff"	"1"
+				"IsPurgable"	"1"
+				"EffectName"	"particles/units/heroes/hero_zuus/zuus_static_field.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percentage"
+				}
+			}
+			"storm_thinker"
+			{
+				"Duration"		"5"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"TARGET"
+					}
+				}
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/druid.lua"
+						"Function"		"stormy"
+						"Target"		"POINT"
+					}
+				}
 			}
 		}
 	}
