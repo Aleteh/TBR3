@@ -3895,6 +3895,7 @@
 		{
 			"particle"	"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
 			"particle"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+			"particle"  "particles/econ/items/vengeful/vengeful_weapon_talon/vengeful_wave_of_terror_glow_c_talon.vpcf"
 		}
 
     	"Modifiers"
@@ -3908,6 +3909,7 @@
 					"Priority" "DOTA_ORB_PRIORITY_ABILITY"
 					"CastAttack" "1"
 					"ProjectileName"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+					//TODO: Fix bug with projectile firing every time
 					}
 				"OnOrbImpact"
 					{
@@ -3971,21 +3973,26 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duraion"		"2.5"
+				"duration"		"7"
 			}
 		}
-
 
 		"OnSpellStart"
 		{
 			"TrackingProjectile"
-				{
-				"Target"	"TARGET"
-				"Dodgeable"	"1"
+			{
+				"Target"		"TARGET"
+				"Dodgeable"			"0"
 				"ProvidesVision"	"0"
-				"MoveSpeed"	"900"
-				}
-
+				"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_shackleshot.vpcf" //TODO: Make custom particle
+				"MoveSpeed"			"900"
+				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Windrunner.ShackleshotCast"
+				"Target" 			"CASTER"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/ranger.lua"
@@ -3994,6 +4001,11 @@
 		}
 		"OnProjectileHitUnit"
 			{
+				"FireSound"
+				{
+					"EffectName"		"Hero_Windrunner.ShackleshotStun"
+					"Target" 			"TARGET"
+				}
 			"Damage"
 				{
 				"Target"	"TARGET"
@@ -4004,7 +4016,7 @@
 			"Stun"
 				{
 				"Target"	"TARGET"
-				"Duration"	"2.5"
+				"Duration"	"%duration"
 				}
 			}
 	}
@@ -4036,6 +4048,12 @@
     	"AbilityDamage"                 "40 80 140 225 340 510 750 1150"
     	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
+    		"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
+    	}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -4050,6 +4068,20 @@
     	
 		"OnSpellStart"
 		{
+			"TrackingProjectile"
+			{
+				"Target"			"TARGET"
+				"Dodgeable"			"1"
+				"ProvidesVision"	"0"
+				"EffectName"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
+				"MoveSpeed"			"1000"
+				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Ability.Powershot"
+				"Target" 			"CASTER"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/ranger.lua"
@@ -4073,6 +4105,21 @@
 					}
 				}
 			}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"1"
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target" 			"TARGET"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Riki.Backstab"
+				"Target" 			"TARGET"
+			}
+		}
 
 
 	}
@@ -4095,8 +4142,8 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"40 80 140 225 335 500 725 1000"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
@@ -4106,39 +4153,131 @@
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilitySpecial"
-    		{
-    		"01"
-    			{
+		{
+			"01"
+			{
     			"var_type"	"FIELD_INTEGER"
     			"heal_radius"	"725"
-    			}
-    		}
+			}
+		}
+
+    	"precache"
+    	{
+    		"particle"	"particles/econ/items/windrunner/windrunner_weapon_sparrowhawk/windrunner_spell_powershot_sparrowhawk.vpcf"
+    		"particle"	"particles/units/heroes/hero_mirana/mirana_starfall_moonray.vpcf"
+    		"particle"	"particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
+    		"particle"	"particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
+    		"particle"	"particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf"
+    		"particle"	"particles/units/heroes/hero_wisp/wisp_death.vpcf"
+    		"particle"	"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
+    		"particle"	"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1_a.vpcf"
+    		"particle"	"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    	}
 
 		"OnSpellStart"
 		{
+			"LinearProjectile"
+			{
+				"Target"				"POINT"
+				"EffectName"			"particles/econ/items/windrunner/windrunner_weapon_sparrowhawk/windrunner_spell_powershot_sparrowhawk.vpcf"
+				"MoveSpeed"				"1000"
+				"TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"StartPosition"			"attach_attack1"
+				"FixedDistance"			"5000"
+				"StartRadius"			"100"
+				"EndRadius"				"100"
+				"HasFrontalCone"		"0"
+				"ProvidesVision"		"1"
+				"VisionRadius"			"300"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Mirana.ArrowCast"
+				"Target" 			"CASTER"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"1"
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_wisp/wisp_death.vpcf"
+				"EffectAttachType"  "follow_overhead"
+				"Target" 			"TARGET"
+			}
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target" 			"TARGET"
+			}
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target" 			"TARGET"
+			}
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target" 			"TARGET"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Luna.LucentBeam.Target"
+				"Target" 			"TARGET"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/ranger.lua"
 				"Function"			"star_dust"
 			}
 		}
+
 		"Modifiers"
-			{
+		{
 			"ranger_star_dust_modifier"
+			{
+				"Duration"			"3"
+				"EffectName"		"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_feet_effects_cascade_c.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"IsDebuff"			"0"
+				"ThinkInterval"		"1"
+				"OnCreated"
 				{
-				"Duration"	"3"
-				"IsDebuff"	"1"
-				"ThinkInterval"	"1"
-				"OnIntervalThink"
+					"AttachEffect"
 					{
+						"EffectName"		"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_feet_effects_cascade_b.vpcf"
+						"EffectAttachType"  "follow_overhead"
+						"Target" 			"TARGET"
+					}					
+				}
+				"OnIntervalThink"
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"		"abilities/ranger.lua"
 						"Function"			"star_dust_heal"
-						}
 					}
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target" 			"TARGET"
+					}
+					"FireSound"
+					{
+						"EffectName"		"Ability.StarfallImpact"
+						"Target" 			"CASTER"
+					}				
 				}
 			}
+		}
 	}
 
 
