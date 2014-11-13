@@ -4777,10 +4777,7 @@
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
 		"AbilityCooldown"				"6 6 6 6 6 6 6 6"
 		"AbilityManaCost"				"45 90 150 240 385 550 775 1000"
-    	
-    		// Damage.
-    		//-------------------------------------------------------------------------------------------------------------
-    		"AbilityDamage"                 "160 320 580 900 1400 2100 3300 5000"
+    	"AbilityDamage"                 "160 320 580 900 1400 2100 3300 5000"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -4814,17 +4811,16 @@
 		}
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"RunScript"
 			{
-				"Target" 			"TARGET"
-				"ModifierName"		"blast_aoe_mod"
+				"ScriptFile"		"abilities/cleric.lua"
+				"Function"			"fire_of_heaven"
 			}
 		}
 		"Modifiers"    				// Can be used to create custom modifier. 
 		{  							// There are many snippets that can be expanded in to the modifiers. 
 			"blast_aoe_mod"   	// This should be the name of your modifier
 			{
-				// Refer to http://hex6.se/dota/modifier_functions.txt to see what snippets can be expanded in here.
 				"IsDebuff"					"true"
 				"IsPurgable"				"true"
 				"IsHidden"					"false"
@@ -4837,12 +4833,28 @@
 					}
 				}
 			}
+			"fire_of_heaven_slow"
+			{
+				"IsDebuff"					"true"
+				"IsPurgable"				"true"
+				"IsHidden"					"false"
+				"Duration"					"%slow_duration"
+				"Properties"
+				{
+					// You may use "modifierProperty" completions within quotes here. Below is an example
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-30"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "-20"
+				}
+			}
 		}
 	}
 
 
 	//=================================================================================================================
 	// Cleric: Cleansing Flame
+	//Sears the soul of a target enemy unit with holy fire, causing xxx damage per second for 10 seconds for xxxx mana.
+	// While this spell is being channeled, friendly units near the target also gain xxx health per second.
+	// Cooldown 3 seconds, 800 AOE, 700 range.
 	//=================================================================================================================
 	"cleric_cleansing_flame"
 	{
@@ -4850,28 +4862,76 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"cleric_skill4"
-		"MaxLevel" "1"
+		"MaxLevel"						"7"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"3"
+		"AbilityManaCost"				"50 100 180 300 440 600 800 1000"
+		"AbilityDuration"               "10"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 50  90  150 220  300 450 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"800"
+			}
+		}
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
-			"RunScript"
+			//"ApplyModifier"
+			//{
+			//	"Target" 			"TARGET"
+			//	"ModifierName"		"cleanser_mod"
+			//}
+		}
+		//TODO Add Particles
+		"Modifiers"    				// Can be used to create custom modifier. 
+		{  							// There are many snippets that can be expanded in to the modifiers. 
+			"cleanser_mod"   	// This should be the name of your modifier
 			{
-				"ScriptFile"		"abilities/cleric.lua"
-				"Function"			"cleansing_flame"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
+						"EffectAttachType" "attach_hitloc"
+					}
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+						"EffectAttachType" "attach_hitloc"
+					}			
+				}
+				"Duration"			"10.0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"ThinkInterval"		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/cleric.lua"
+						"Function"		"cleansing_flame"
+					}
+				}
 			}
 		}
 	}
@@ -4913,6 +4973,7 @@
 	}
 
 //}End Cleric
+
 
 //Magician
 //{
