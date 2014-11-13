@@ -534,7 +534,7 @@
 	//30 seconds cooldown. 
     //225 AOE, 600 range, no mana cost.
 	
-	"barbarian_mighty_leap"	//TODO: Sound
+	"barbarian_mighty_leap"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -4673,28 +4673,42 @@
 	//=================================================================================================================
 	// Warlock: Torment
 	//=================================================================================================================
+	//Costs xxx hit points to cast. Burns the target for xxxx damage over 8 seconds for xxx mana. 
+	//This skill receives a 75% bonus to spell damage increases. 1 second cooldown, 700 range
 	"warlock_torment"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlock_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"15 30 50 80 125 190 285 400"
     	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"self_damage"		"50 100 230 320 400 500 650"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_dmg"	"75"
+			}
+		}
+
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4709,28 +4723,44 @@
 	//=================================================================================================================
 	// Warlock: Soul Drain
 	//=================================================================================================================
+	//Absorbs the life essence of a target by taking xxxx hit points per second from it and giving them to the warlock for xxxx mana. 
+	//Also, while channeling this spell you will do 10% of your spell damage bonus to enemies around you every 2 seconds. 
+	//lasts 15 seconds. 1000 AOE, 10 seconds cooldown and 750 range.
 	"warlock_soul_drain"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlock_skill2"
-		"MaxLevel" "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"MaxLevel" 						"7"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"10"
+		"AbilityDuration"				"15"
+		"AbilityChannelTime"			"15"
+		"AbilityManaCost"				"50 100 165 255 380 540 750 1000"
+    	"AbilityDamage"                 "75 180 1800 300 460 680 960 1540 2250"
+
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_transfered"	"75 180 1800 300 460 680 960 1540 2250"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe_spell_dmg"		"10"
+			}
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4744,28 +4774,42 @@
 	//=================================================================================================================
 	// Warlock: Deathwave
 	//=================================================================================================================
+	//The warlock unleashes a skull which glides across the land and damages enemies at the end of its course it will split and 
+	//cause a nova of death. Costs xxxx hit points to cost.Deals xxxx damage for xxxx mana. 650 range, 8 seconds cooldown and 125 AOE. 
 	"warlock_deathwave"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlock_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"40 80 150 225 375 575 775 1000"
+    	"AbilityDamage"                 "225 420 790 1260 1990 2920 4250"
+
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"self_damage"		"100 200 350 500 720 1010 1440 2000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"blast_aoe"			"1250"
+			}
+		}
+
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4780,6 +4824,8 @@
 	//=================================================================================================================
 	// Warlock: Vengeance
 	//=================================================================================================================
+	//Costs xxx hit points to cast for no mana cost. Instantly deals xxxx damage to a target enemy unit. 
+	//The target will also have its attack damage reduced by 25% for up to 10 seconds. 3,5 Seconds cooldown.
 	"warlock_vengeance"
 	{
 		// General
@@ -4787,21 +4833,33 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlock_skill4"
 		"MaxLevel" "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		
+		"AbilityCastRange"				"700"
+		"AbilityDuration"				"12"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"3.5"
+		"AbilityManaCost"				"0"
+    	"AbilityDamage"                 "250 500 800 1200 1800 2700 4000 6000"
+
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"self_damage"		"50 100 160 225 310 400 525 700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_dmg_reduction"	"-25"
+			}
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4810,33 +4868,54 @@
 				"Function"			"vengeance"
 			}
 		}
+
+		"Modifiers"
+		{
+			"vengeance_modifier"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"%AbilityDuration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%attack_dmg_reduction"
+				}
+			}
+		}
 	}
 
 	//=================================================================================================================
 	// Warlock: Blind
 	//=================================================================================================================
+	//Blinds a target enemy unit for up to 10 seconds for 600 mana. While it is blinded, the affected unit will move randomly
+	// and will not attack. This skill cannot be improved. Cooldown 8 seconds, 700 range. 
 	"warlock_blind"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlock_skill5"
-		"MaxLevel" "1"
+		"MaxLevel" 						"1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		
+		"AbilityCastRange"				"700"
+		"AbilityDuration"				"10"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"600"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"blind_duration"	"10"
+			}
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -5197,9 +5276,6 @@
 			}
 		}
 
-		//OnAbilityEndChannel
-
-		//TODO Add Particles
 		"Modifiers"    		
 		{  						
 			"cleanser_modifier"   
@@ -5644,7 +5720,6 @@
 
 		"Modifiers"
 		{
-			//TODO: Sound
 			"entangle_modifier"
 			{
 				"OnCreated"
