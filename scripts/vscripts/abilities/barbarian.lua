@@ -38,6 +38,9 @@ function leap( event )
 	end)
 	
 	Timers:CreateTimer(.6, function() 
+
+			EmitSoundOn("Hero_Centaur.HoofStomp", unit)
+
 			FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
 			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", PATTACH_WORLDORIGIN, event.caster)
 			ParticleManager:SetParticleControl(particle, 0, event.caster:GetAbsOrigin())
@@ -88,6 +91,8 @@ function cleave ( event )
 					})
 		print("Done " .. single_target_damage .. " damage to the main target") 
 
+		EmitSoundOn("Hero_Axe.CounterHelix_Blood_Chaser", target)
+
 		-- causes three times your Strength plus xxxx damage to nearby enemy units for xx mana. 
 		-- Find enemies
 		enemies = FindUnitsInRadius(event.caster:GetTeamNumber(),
@@ -120,8 +125,6 @@ function cleave ( event )
 	    local particle = ParticleManager:CreateParticle("particles/econ/items/axe/axe_weapon_bloodchaser/axe_attack_blur_counterhelix_bloodchaser.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	    ParticleManager:SetParticleControl(particle, 0, event.target:GetAbsOrigin())
 
-	    --TODO: Sound
-
 	    local cooldown =  event.ability:GetLevelSpecialValueFor("cooldown", (event.ability:GetLevel()-1))
 	    event.ability:StartCooldown(cooldown)
 	end
@@ -141,6 +144,8 @@ function bloodbath ( event )
 				})
 
  	-- All damage dealt in this way will be added to your health. 
-	event.caster:Heal(damage_done, event.ability) 
+	event.caster:Heal(damage_done, event.ability)
+
+	PopupHealing(event.caster,damage_done)
 
 end
