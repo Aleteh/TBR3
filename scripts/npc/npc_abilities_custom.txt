@@ -5251,19 +5251,35 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"cleric_skill5"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"1"
+		"AbilityCooldown"				"90 90 90 90 90 90 75 60"
+		"AbilityManaCost"				"200 250 300 350 400 450 500 450"
     	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"			"FIELD_INTEGER"
+    			"hp"				"25 50 50 75 100 100 100 100"
+    		}
+    		"02"
+    		{
+    			"var_type"			"FIELD_INTEGER"
+    			"mana"				"0 0 25 25 25 50 50 50"
+    		}
+    	}
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -5271,6 +5287,14 @@
 		{
 			"RunScript"
 			{
+				"Target"
+				{
+					"Center"  				"TARGET"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"  // You may use "targetKey" completions here.
+					"Types" 				"DOTA_UNIT_TARGET_BASIC"
+					"Flags"					"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+					"ExcludeFlags"			"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+				}
 				"ScriptFile"		"abilities/cleric.lua"
 				"Function"			"rebirth"
 			}

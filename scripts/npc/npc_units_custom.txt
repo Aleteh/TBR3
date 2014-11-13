@@ -366,7 +366,7 @@
 		"Model"						"models/props_structures/gravestone005.vmdl"	// Model.
 		"IsAncient"					"1"
 		"ModelScale"				"1"
-		"HasInventory"				"1"
+		"HasInventory"				"0"
 		"Level"						"1"
 		"AbilityLayout"				"4"
 		"Ability1"					"gravestone"

@@ -91,3 +91,21 @@ function destroy_drain_fx(event)
 	local target = event.target
 	ParticleManager:DestroyParticle(target.drain_particle,false)
 end
+
+function rebirth(event)
+	if event.target:GetUnitName() == "player_gravestone" then
+		local target_hero = event.target:GetOwner():GetAssignedHero()
+		local location = Vector(event.target:GetAbsOrigin().x, event.target:GetAbsOrigin().y, event.target:GetAbsOrigin().z+100)
+		local hero = event.caster
+
+		if UnitCanRespawn() then
+			target_hero:RespawnUnit()
+			target_hero:FindClearSpaceForUnit(target_hero, target_hero.GetAbsOrigin(), true)
+		end
+	else
+		event.ability:RefundManaCost()
+		event.ability:EndCooldown()
+		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", event.caster:GetPlayerOwner())
+		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Ability Must Target Tombstones" } )
+	end
+end
