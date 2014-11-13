@@ -1364,6 +1364,7 @@
 		"precache"
 		{
 			"particle"	"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -1379,6 +1380,11 @@
 				"EffectColorA" "25 225 100"
 				"EffectColorB" "25 225 100"
 
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_SkeletonKing.MortalStrike.Target" //"Hero_Beastmaster.Wild_Axes"
+				"Target"		"CASTER"
 			}
 			"ActOnTargets"
 			{
@@ -1412,6 +1418,11 @@
 				"Target"		"TARGET"
 				"Type"			"DAMAGE_TYPE_MAGICAL"
 				"Damage"		"%damage"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Beastmaster.Wild_Axes_Damage"
+				"Target"		"CASTER"
 			}
 		}
 	}
@@ -1625,6 +1636,7 @@
 		"precache"
 		{
 			"particle"	"particles/econ/courier/courier_trail_hw_2012/courier_trail_hw_2012_ghosts.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -1646,6 +1658,11 @@
 						"ModifierName"		"modifier_khaoschampion_requim"
 					}
 				}
+			}
+			"FireSound"
+			{
+				"EffectName" "Hero_DeathProphet.Exorcism.Cast"
+				"Target"	"CASTER"
 			}
 		}
 
@@ -1672,6 +1689,11 @@
 						"Target"		 "ATTACKER" //caster?
 						"Type"			 "DAMAGE_TYPE_PHYSICAL"
 						"Damage"		 "%damage_attacker"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_DeathProphet.Exorcism.Damage"
+						"Target" 		"ATTACKER"
 					}
 				}
 			}
