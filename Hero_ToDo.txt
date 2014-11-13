@@ -50,6 +50,7 @@ Update your progress as you go, and write if you need a hand!
 		- Review tooltips and spell behavior
 		
 	> Warlock
-		- Not Started
+		- Started (N))
+		
 	> Magician
 		- Not Started
