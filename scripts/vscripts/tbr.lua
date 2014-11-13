@@ -165,6 +165,7 @@ end
 	--PrecacheItemByNameAsync("example_ability", function(...) end)
 	--PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
 	PrecacheUnitByNameAsync("npc_bank", function(...) end)
+	PrecacheUnitByNameAsync("player_gravestone", function(...) end)
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes
@@ -182,6 +183,10 @@ function GameMode:OnNPCSpawned(keys)
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 			npc.bFirstSpawned = true
 			GameMode:OnHeroInGame(npc)
+	elseif npc:IsRealHero() and npc.grave then
+		-- remove the player grave
+		npc.grave:ForceKill(true)
+		UTIL_Remove(npc.grave)
 	end
 end
 
@@ -396,31 +401,33 @@ function GameMode:OnEntityKilled( keys )
 
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
-end
+	end
 
-if killedUnit:IsRealHero() then 
+	if killedUnit and killedUnit:IsRealHero() then 
 		print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
+		local grave = CreateUnitByName("player_gravestone", killedUnit:GetAbsOrigin(), true, killedUnit, killedUnit, killedUnit:GetTeamNumber())
+		killedUnit.grave = grave
+
 		if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
 			self.nRadiantKills = self.nRadiantKills + 1
 			if END_GAME_ON_KILLS and self.nRadiantKills >= KILLS_TO_END_GAME_FOR_TEAM then
 				GameRules:SetSafeToLeave( true )
 				GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-		end
-		elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
-				self.nDireKills = self.nDireKills + 1
-				if END_GAME_ON_KILLS and self.nDireKills >= KILLS_TO_END_GAME_FOR_TEAM then
-					GameRules:SetSafeToLeave( true )
-					GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
 			end
+		elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
+			self.nDireKills = self.nDireKills + 1
+			if END_GAME_ON_KILLS and self.nDireKills >= KILLS_TO_END_GAME_FOR_TEAM then
+				GameRules:SetSafeToLeave( true )
+				GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+			end
+		end
+
+		if SHOW_KILLS_ON_TOPBAR then
+			GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireKills )
+			GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
+		end
 	end
 
-	if SHOW_KILLS_ON_TOPBAR then
-		GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireKills )
-		GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
-end
-end
-
-	-- Put code here to handle when an entity gets killed
 end
 
 
