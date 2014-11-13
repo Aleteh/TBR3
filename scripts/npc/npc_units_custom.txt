@@ -365,6 +365,7 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/props_structures/gravestone005.vmdl"	// Model.
 		"IsAncient"					"1"
+		"IsInvulnerable"			"1"
 		"ModelScale"				"1"
 		"HasInventory"				"0"
 		"Level"						"1"

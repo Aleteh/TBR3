@@ -94,13 +94,17 @@ end
 
 function rebirth(event)
 	if event.target:GetUnitName() == "player_gravestone" then
-		local target_hero = event.target:GetOwner():GetAssignedHero()
+		local target_hero = event.target:GetOwnerEntity()
 		local location = Vector(event.target:GetAbsOrigin().x, event.target:GetAbsOrigin().y, event.target:GetAbsOrigin().z+100)
+		local health_difference = target_hero:GetMaxHealth() * ( (event.ability:GetLevelSpecialValueFor("hp", event.ability:GetLevel()-1) / 100))
+		local mana_difference = target_hero:GetMaxMana() * (1 - (event.ability:GetLevelSpecialValueFor("mana", event.ability:GetLevel()-1) / 100))
 		local hero = event.caster
 
-		if UnitCanRespawn() then
+		if target_hero:UnitCanRespawn() then
 			target_hero:RespawnUnit()
-			target_hero:FindClearSpaceForUnit(target_hero, target_hero.GetAbsOrigin(), true)
+			target_hero:ModifyHealth(health_difference, nil, false, 0)
+			target_hero:ReduceMana(mana_difference)
+			--target_hero:FindClearSpaceForUnit(target_hero, target_hero:GetAbsOrigin(), true)
 		end
 	else
 		event.ability:RefundManaCost()
