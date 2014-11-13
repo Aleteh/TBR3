@@ -697,6 +697,12 @@
 		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
     	"AbilityDamage"                 "100 200 350 550 850 1250 2000 3000"
 
+    	"precache"
+    	{	
+    		"particle"		"particles/units/heroes/hero_pudge/pudge_dismember.vpcf"
+    		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+    	}
+
     	"AbilitySpecial"
 		{
 			"01"
@@ -713,6 +719,11 @@
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"	"hero_bloodseeker.bloodRage"
+				"Target"		"CASTER"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/spartan.lua"
@@ -735,6 +746,12 @@
 					{
 						"ScriptFile"		"abilities/spartan.lua"
 						"Function"			"dispatch_bleed"
+					}
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_pudge/pudge_dismember.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"TARGET"
 					}
 				}
 			}
@@ -787,12 +804,6 @@
 			{
 				"EffectName"					"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion_wave.vpcf"
 				"EffectAttachType"				"follow_origin"
-				// "EffectRadius"					"2000"
-				// "EffectDurationScale"			"2"
-				// "EffectLifeDurationScale"		"1"
-				// "EffectColor" "255 0 0"
-				// "EffectColorA" "0 255 0"
-				// "EffectColorB" "0 0 255"
 				"Target"						"CASTER"
 			}
 			"FireSound"
@@ -885,6 +896,7 @@
 			"particle" 	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
 			"particle"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 			"particle"	"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt_explosion.vpcf"
 		}
 		
@@ -916,6 +928,11 @@
     	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_LegionCommander.Overwhelming.Cast"
+				"Target"		"CASTER"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/spartan.lua"
@@ -1001,6 +1018,7 @@
     		"particle"	"particles/econ/items/dragon_knight/dk_immortal_dragon/dragon_knight_dragon_tail_iron_dragon.vpcf"
     		"particle"	"particles/econ/items/dragon_knight/dk_immortal_dragon/dragon_knight_dragon_tail_dragonform_iron_dragon.vpcf"
     		"particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_remnant_dash.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
     	}
 
         "AbilitySpecial"
@@ -1040,6 +1058,11 @@
 				"Target" 			"CASTER"
 				"ModifierName"		"modifier_start_charge"
 			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_EmberSpirit.FlameGuard.Cast"
+				"Target"		"TARGET"
+			}
 			"DelayedAction"
 			{
 				"Delay"	"0.3"
@@ -1057,6 +1080,11 @@
 						"ScriptFile"		"abilities/spartan.lua"
 						"Function"			"charge"
 						"Target"		"POINT"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_EmberSpirit.SleightOfFist.Cast"
+						"Target"		"TARGET"
 					}
 				}
 			}
@@ -1099,6 +1127,11 @@
 					{
 						"ScriptFile"		"abilities/spartan.lua"
 						"Function"			"taunt"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_DragonKnight.DragonTail.Target"
+						"Target"		"TARGET"
 					}
 				}
 			}
@@ -1194,7 +1227,7 @@
 						"EffectAttachType" "follow_origin"
 					}
 				}
-				"Passive"	"1"
+				"Passive"	"0"
 				"IsBuff"	"1"
 				"IsPurgable"	"0"
 				"IsHidden" 			"1"
