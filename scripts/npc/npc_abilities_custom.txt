@@ -4011,46 +4011,62 @@
 			"particle"	"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
 			"particle"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
 			"particle"  "particles/econ/items/vengeful/vengeful_weapon_talon/vengeful_wave_of_terror_glow_c_talon.vpcf"
+			"sounds"	"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
 		}
 
     	"Modifiers"
-			{
+		{
 			"ranger_black_arrow_orb_modifier"
-				{
+			{
 				"Passive"	"1"
 				"Orb"
-					{
+				{
 					"Label"	"DOTA_ORB_LABEL_EXCEPTION"
 					"Priority" "DOTA_ORB_PRIORITY_ABILITY"
 					"CastAttack" "1"
 					"ProjectileName"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
 					//TODO: Fix bug with projectile firing every time
-					}
+					//TODO: Fix explosions sometimes not happening (many instances not triggering the kill? This skills sucks...)
+					//		If you have enough physical damage, the unit will die from that source and not explode...
+				}
 				"OnOrbImpact"
-					{
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"		"abilities/ranger.lua"
 						"Function"			"black_arrow"
-						}
-						
 					}
+					"FireSound"
+					{	
+						//TODO: Fix playing sound on every impact
+						"EffectName"		"Hero_VengefulSpirit.MagicMissileImpact"
+						"Target"			"TARGET"
+					}
+						
 				}
-			"ranger_black_arrow_post_damage"
+				"OnOrbFire"
 				{
-				"IsDebuff"	"1"
-				"Duration"	"0"
-				"OnTakeDamage"
-					{
 					"RunScript"
-						{
+					{
 						"ScriptFile"		"abilities/ranger.lua"
-						"Function"			"black_arrow_post_damage"
-						}
+						"Function"			"black_arrow_fx"
 					}
 				}
 			}
-
+			"ranger_black_arrow_post_damage"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"0"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"black_arrow_post_damage"
+					}
+				}
+			}
+		}
 	}
 
 

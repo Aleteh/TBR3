@@ -1,12 +1,19 @@
+function black_arrow_fx(event)
+	local caster = event.caster
+	if event.ability:IsCooldownReady() == true then
+		event.ability:StartCooldown(event.ability:GetCooldown(1))
+		EmitSoundOn("Hero_VengefulSpirit.MagicMissile", event.caster)
+	end
+end
 
 function black_arrow( event )
-	
 	if event.ability:IsCooldownReady() == true then
+		EmitSoundOn("Hero_VengefulSpirit.MagicMissileImpact", event.target)
 		event.ability:PayManaCost()
-		event.ability:StartCooldown(event.ability:GetCooldown(1))
 		ApplyDamage({ victim = event.target, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
 		if event.target:IsAlive() == false then
 
+			EmitSoundOn("Hero_VengefulSpirit.WaveOfTerror", event.caster)
 			-- attach explosion particle
 			local dummy = CreateUnitByName("dummy_unit", event.target:GetOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
 			print("Creating explosion particle")
