@@ -52,4 +52,4 @@ Update your progress as you go, and write if you need a hand!
 		- Started (N))
 		
 	> Magician
-		- Not Started
+		- Started (Rob)
