@@ -1829,6 +1829,7 @@
 		"precache"
 		{
 			"particle" "particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+			"particle"	"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge_e.vpcf"	 
 			"particle" "particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"	 
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
 		}
@@ -1881,9 +1882,15 @@
 					"FireEffect"
 					{
 						"EffectName"		"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"	 
-						"EffectAttachType"	 "attach_hitloc"
+						"EffectAttachType"	 "follow_origin"
 						"Target"			 "TARGET"
 					}	
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge_e.vpcf"	 
+						"EffectAttachType"	 "follow_origin"
+						"Target"			 "TARGET"
+					}
 					"RunScript"
 				 	{
 					    "ScriptFile"	"abilities/gon.lua"
@@ -1961,12 +1968,12 @@
 			"FireSound"
 			{
 				"EffectName"			"Hero_Magnataur.ShockWave.Cast"
-				"Target"				"TARGET"
+				"Target"				"CASTER"
 			}
 			"FireSound"
 			{
 				"EffectName"			"Hero_Magnataur.ShockWave.Particle"
-				"Target"				"TARGET"
+				"Target"				"CASTER"
 			}
 			"RunScript"
 			{
@@ -2177,6 +2184,11 @@
 					    "ScriptFile"	"damage.lua"
 					    "Function"		"DoDamage"
 					    "Damage"		"%damage_over_time"
+			  		}
+			  		"FireSound"
+			  		{
+			  			"EffectName"	"Hero_Leshrac.Pulse_Nova_Strike"
+			  			"Target" 		"TARGET"
 			  		}
 			  	}
 			}
