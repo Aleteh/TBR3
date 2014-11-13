@@ -19,49 +19,20 @@ end
 
 function fire_of_heaven(event)
 	local target = event.target
-	local hero = event.caster
-	local spellpower = hero.spellPower
-
-	local aoe = event.ability:GetSpecialValueFor("radius")
-
-	local damage = event.ability:GetAbilityDamage()
-	local aoe_damage =  event.ability:GetLevelSpecialValueFor("aoe_damage", event.ability:GetLevel()-1)
-	local slow_duration = event.ability:GetSpecialValueFor("slow_duration")
-
-	enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), target:GetAbsOrigin(),  nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY,
-        DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-
-	--SendToConsole('Say Please Print Dawg Damage: '..damage.." and spellpower: "..spellpower.." and aoe_damage: "..aoe_damage) 
-
-	ApplyDamage({ victim = target, attacker = hero, damage = damage + spellpower, damage_type = DAMAGE_TYPE_MAGICAL })
-
+	local hero = even.caster
+	local idamage = event.Damage
+	local spellpower = event.spellPower
+	local tdamage = event.Damage + event.spellPower * 3 / 4
+	enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), event.target, nil, event.ability:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY,
+	DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false) --[[Returns:table
+	Finds the units in a given radius with the given flags. ( iTeamNumber, vPosition, hCacheUnit, flRadius, iTeamFilter, iTypeFilter, iFlagFilter, iOrder, bCanGrowCache )
+	]]
 	for _,enemy in pairs(enemies) do
-		--target:ApplyDataDrivenModifier(handle source, handle target, string modifier_name, handle modifierArgs)
-		event.ability:ApplyDataDrivenModifier(hero, enemy, "fire_of_heaven_slow", nil)
-        -- event.ability:ApplyDataDrivenModifier( hero, enemy, "mind_blast_modifier", {duration = daze_duration})
-        ApplyDamage({ victim = enemy, attacker = hero, damage = aoe_damage + spellpower * 3 / 4, damage_type = DAMAGE_TYPE_MAGICAL })    
-    end
-end
-
-function cleansing_flame(event)
-	local target = event.target
-	local hero = event.caster
-	local spellpower = hero.spellPower
-	local healpower = hero.healingPower
-
-	local aoe = event.ability:GetSpecialValueFor("aoe")
-	local damage = event.ability:GetLevelSpecialValueFor("damage", event.ability:GetLevel()-1) + spellpower
-	local heal = event.ability:GetLevelSpecialValueFor("damage", event.ability:GetLevel()-1) + healpower
-
-	enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), target:GetAbsOrigin(),  nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY,
-        DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	allies = FindUnitsInRadius(event.caster:GetTeamNumber(), target:GetAbsOrigin(),  nil, aoe, DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-        DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	for _,enemy in pairs(enemies) do
-		ApplyDamage({ victim = enemy, attacker = hero, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL }) 
-	end
-	for _,ally in pairs(allies) do
-		ally:Heal(heal, hero)
-		PopupHealing(ally, heal)
-	end
+		ApplyDamage({
+        victim = enemy,
+        attacker = hero,
+        damage = tdamage,
+		damage_type = DAMAGE_TYPE_MAGICAL
+		})
+	end	
 end
