@@ -735,9 +735,9 @@
 		{  						
 			"modifier_spartan_dispatch"   
 			{
-				"IsDebuff"					"true"
-				"IsPurgable"				"false"
-				"IsHidden"					"true"
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"1"
 				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE" //allow multiple stacks
 				"ThinkInterval"		"1"
 				"OnIntervalThink"
@@ -1400,8 +1400,8 @@
 					"TrackingProjectile"
 					{
 						"Target"			"TARGET"
-						"Dodgeable"			"false"
-						"ProvidesVision"	"false"
+						"Dodgeable"			"0"
+						"ProvidesVision"	"0"
 						"VisionRadius"		"0"
 						"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
 						"MoveSpeed"			"550"
@@ -4921,7 +4921,7 @@
 
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
 			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
 		}
 		
@@ -4946,28 +4946,28 @@
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"20.0"
 			}
-			"03"
-			{
-				"var_type"          "FIELD_FLOAT"
-            	"tick_rate"         "1.0"
-			}
 		}
 		"OnSpellStart"
 		{
 			"ApplyModifier"
 			{
 				"Target" 			"TARGET"
-				"ModifierName"		"regeneration_mod"
+				"ModifierName"		"regeneration_modifier"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Enchantress.EnchantCast"
+				"Target" 			"TARGET"
 			}
 		}
 		"Modifiers"
 		{
-			"regeneration_mod"
+			"regeneration_modifier"	//Same name as the druid regeneration
 			{
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 				"Duration"			"%duration"
-				"ThinkInterval"		"%tick_rate"
+				"ThinkInterval"		"1"
 				"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
 				"EffectAttachType"	"follow_origin"
 
@@ -4987,6 +4987,9 @@
 	//=================================================================================================================
 	// Cleric: Fire of Heaven
 	//=================================================================================================================
+	// You call forth a mighty firebolt from the heavens that blasts a target enemy unit for xxxx damage and 
+	// strikes all nearby enemy units for xxxx damage for xxxx mana.
+	// All affected units have their movement speed reduced for up to 8 seconds. 6 Seconds cooldown, 250 AOE, 700 range.
 	"cleric_fire_of_heaven"
 	{
 		// General
@@ -4995,7 +4998,7 @@
 		"AbilityTextureName"			"cleric_skill3"
 		"MaxLevel" 						"7"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -5003,10 +5006,11 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"6 6 6 6 6 6 6 6"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"45 90 150 240 385 550 775 1000"
     	"AbilityDamage"                 "160 320 580 900 1400 2100 3300 5000"
+    	"AOERadius"						"250"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -5030,7 +5034,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"slow_speed"		"25"
+				"slow_speed"		"-25"
 			}
 			"05"
 			{
@@ -5038,41 +5042,49 @@
 				"hero_slow_duration"	"3"
 			}
 		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+			"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+			"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_ignite_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+
 		"OnSpellStart"
 		{
+			"AttachEffect"
+			{
+				"Target"		"TARGET"
+				"EffectName"	"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"EffectRadius"	"%radius"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Invoker.SunStrike.Ignite"
+				"Target" 		"TARGET"
+			}	
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/cleric.lua"
 				"Function"			"fire_of_heaven"
 			}
 		}
-		"Modifiers"    				// Can be used to create custom modifier. 
-		{  							// There are many snippets that can be expanded in to the modifiers. 
-			"blast_aoe_mod"   	// This should be the name of your modifier
-			{
-				"IsDebuff"					"true"
-				"IsPurgable"				"true"
-				"IsHidden"					"false"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/cleric.lua"
-						"Function"		"fire_of_heaven"
-					}
-				}
-			}
+		"Modifiers"    				
+		{  						
 			"fire_of_heaven_slow"
 			{
-				"IsDebuff"					"true"
-				"IsPurgable"				"true"
-				"IsHidden"					"false"
+				"IsDebuff"					"1"
+				"IsPurgable"				"1"
+				"IsHidden"					"0"
 				"Duration"					"%slow_duration"
+				"EffectName"				"particles/units/heroes/hero_ogre_magi/ogre_magi_ignite_debuff.vpcf"
+				"EffectAttachType"			"follow_origin"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-30"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "-20"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "-20" //is this correct?
 				}
 			}
 		}
@@ -5093,7 +5105,7 @@
 		"AbilityTextureName"			"cleric_skill4"
 		"MaxLevel"						"7"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -5105,6 +5117,7 @@
 		"AbilityCooldown"				"3"
 		"AbilityManaCost"				"50 100 180 300 440 600 800 1000"
 		"AbilityDuration"               "10"
+		"AbilityChannelTime"			"10" //<-
 
 		"AbilitySpecial"
 		{
@@ -5119,37 +5132,94 @@
 				"aoe"					"800"
 			}
 		}
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
+			"particle"	"particles/units/heroes/hero_phoenix/phoenix_supernova_egg_ground.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+		}
+
 		"OnSpellStart"
 		{
-			//"ApplyModifier"
-			//{
-			//	"Target" 			"TARGET"
-			//	"ModifierName"		"cleanser_mod"
-			//}
+			"ApplyModifier"
+			{
+				"Target" 		"TARGET"
+				"ModifierName" 	"cleanser_modifier"
+			}
+			"ApplyModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"channelling_animation"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Pugna.LifeDrain.Target"
+				"Target" 		"CASTER"
+			}
 		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target" 		"TARGET"
+				"ModifierName" 	"cleanser_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"channelling_animation"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/cleric.lua"
+				"Function"		"destroy_drain_fx"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"TARGET"
+				"ModifierName"	"cleanser_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"channelling_animation"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/cleric.lua"
+				"Function"		"destroy_drain_fx"
+			}
+		}
+
+		//OnAbilityEndChannel
+
 		//TODO Add Particles
-		"Modifiers"    				// Can be used to create custom modifier. 
-		{  							// There are many snippets that can be expanded in to the modifiers. 
-			"cleanser_mod"   	// This should be the name of your modifier
+		"Modifiers"    		
+		{  						
+			"cleanser_modifier"   
 			{
 				"OnCreated"
 				{
-					"AttachEffect"
+					"RunScript"
 					{
-						"Target" 			"TARGET"
-						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
-						"EffectAttachType" "attach_hitloc"
+						"ScriptFile"	"abilities/cleric.lua"
+						"Function"		"drain_fx"
 					}
 					"AttachEffect"
 					{
-						"Target" 			"TARGET"
-						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
-						"EffectAttachType" "attach_hitloc"
-					}			
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_phoenix/phoenix_supernova_egg_ground.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"EffectRadius"	"%aoe" //doesnt work, need CPs
+					}
 				}
-				"Duration"			"10.0"
+				//"Duration"			"10.0"
 				"IsDebuff"			"1"
 				"IsPurgable"		"0"
 				"ThinkInterval"		"1.0"
@@ -5162,6 +5232,12 @@
 					}
 				}
 			}
+			"channelling_animation"
+			{
+				"IsHidden"	"0"
+				"OverrideAnimation"	"ACT_DOTA_TELEPORT"
+			} //TODO: Fix not re-animating
+
 		}
 	}
 
@@ -5443,7 +5519,6 @@
 			}
 			"ApplyModifier"
 			{
-				//cleric regeneration spell should have this modifier name
 				"Target" 			"TARGET" 
 				"ModifierName"		"regeneration_modifier"
 			}	
@@ -5451,7 +5526,7 @@
 
 		"Modifiers"
 		{
-			"regeneration_modifier"
+			"regeneration_modifier"		//same as the cleric regeneration spell
 			{
 				"IsBuff"			"1"
 				"Duration"			"%duration"

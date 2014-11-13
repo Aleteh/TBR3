@@ -5,7 +5,7 @@ function rejuvenation( event )
 	local duration = event.ability:GetLevelSpecialValueFor("duration", (event.ability:GetLevel()-1))
 	local heal_tick = (heal_amount + healingPower) / duration 
 	event.target:Heal( heal_tick, hero)	
-	PopupHealing(event.target, heal_tick)
+	PopupHealing(event.target, math.floor(heal_tick))
 end
 
 function natures_wrath_dot( event )
