@@ -131,3 +131,30 @@ function deathwave_dmg( event )
 
 	ApplyDamage({ victim = target, attacker = hero, damage = dmg, damage_type = DAMAGE_TYPE_MAGICAL })
 end
+
+function vengeance( event )
+	local hero = event.caster
+	local target = event.target
+	local spellPower = hero.spellPower
+	local dmg = event.ability:GetAbilityDamage() + spellPower
+
+	ApplyDamage({ victim = target, attacker = hero, damage = dmg, damage_type = DAMAGE_TYPE_MAGICAL })
+
+	local self_dmg = event.ability:GetLevelSpecialValueFor("self_damage", (event.ability:GetLevel() - 1))
+	ApplyDamage({ victim = event.caster, attacker = event.caster, damage = self_dmg, damage_type = DAMAGE_TYPE_HP_REMOVAL, ability = event.ability }) 
+	--might want to use ModifyHealth if this damage can't be lethal. TODO: Check ingame
+	PopupDamage(event.caster,self_dmg)
+end
+
+function blind( event )
+
+	local max_duration = event.ability:GetLevelSpecialValueFor("blind_max_duration", (event.ability:GetLevel() - 1))
+	local random_duration = RandomFloat(1, max_duration)
+	event.ability:ApplyDataDrivenModifier( event.caster, event.target, "blind_modifier", {duration = random_duration})
+
+end
+
+function blind_desorient( event )
+	local vector = event.target:GetAbsOrigin() + RandomVector(600)
+	event.target:MoveToPosition(vector)
+end

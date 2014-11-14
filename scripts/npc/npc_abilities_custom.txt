@@ -5187,12 +5187,22 @@
 			}
 		}
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/warlock.lua"
 				"Function"			"vengeance"
+			}
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"vengeance_modifier"
 			}
 		}
 
@@ -5202,6 +5212,8 @@
 			{
 				"IsDebuff"	"1"
 				"Duration"	"%AbilityDuration"
+				"EffectName"	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_core_realcore.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%attack_dmg_reduction"
@@ -5239,8 +5251,13 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"blind_duration"	"10"
+				"blind_max_duration"	"10"
 			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 		}
 
 		"OnSpellStart"
@@ -5249,6 +5266,32 @@
 			{
 				"ScriptFile"		"abilities/warlock.lua"
 				"Function"			"blind"
+			}
+		}
+		"Modifiers"
+		{
+			"blind_modifier"
+			{
+				"IsDebuff"	"1"
+				"EffectName"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/warlock.lua"
+						"Function"		"blind_desorient"
+					}
+				}
+				"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/warlock.lua"
+						"Function"		"blind_desorient"
+					}
+				}
 			}
 		}
 	}
