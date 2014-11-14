@@ -102,3 +102,49 @@ function winds_of_war_anti_stuck_b(event )
 	FindClearSpaceForUnit(event.target, event.target:GetAbsOrigin(), true)
 
 end
+
+
+function bleed( event )
+	event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bleed_bleed_modifier", nil)
+end
+
+function bleed_bleed( event )
+	ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.caster:GetAgility() + event.ability:GetAbilityDamage()), damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
+end
+
+function bum_rush( event )
+	
+	FindClearSpaceForUnit(event.caster, event.target:GetAbsOrigin(), true)
+
+
+
+	if event.target:IsHero() == true then
+		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bum_rush_disarm", {duration = 3})
+		ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
+	else
+		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bum_rush_disarm", {duration = 5})
+		ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
+	end
+
+	local aoe_damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()) / 3
+
+	for key, unit in pairs(event.target_entities) do 
+		if unit:IsHero() == true then
+			event.ability:ApplyDataDrivenModifier( event.caster, unit, "warlord_bum_rush_haze", {duration = 6})
+		else
+			event.ability:ApplyDataDrivenModifier( event.caster, unit, "warlord_bum_rush_haze", {duration = 12})
+		end
+
+		ApplyDamage({ victim = unit, attacker = event.caster, damage = aoe_damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
+
+	end
+end
+
+
+function bum_rush_deosoriantation( event )
+
+	local vector = event.target:GetAbsOrigin() + RandomVector(600)
+
+	event.target:MoveToPosition(vector)
+
+end
