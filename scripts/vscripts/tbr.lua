@@ -185,7 +185,6 @@ function GameMode:OnNPCSpawned(keys)
 			GameMode:OnHeroInGame(npc)
 	elseif npc:IsRealHero() and npc.grave then
 		-- remove the player grave
-		npc.grave:ForceKill(true)
 		UTIL_Remove(npc.grave)
 	end
 end

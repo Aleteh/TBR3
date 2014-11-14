@@ -5320,7 +5320,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"35 65 115 190 280 380 570 850"
 		
@@ -5366,7 +5366,7 @@
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
 		"precache"
 		{
@@ -5377,7 +5377,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"1"
 		"AbilityManaCost"				"25 50 90 145 210 285 425 640"
 
@@ -5450,12 +5450,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastAnimation"			"ACT_DOTA_DIE" //"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"45 90 150 240 385 550 775 1000"
     	"AbilityDamage"                 "160 320 580 900 1400 2100 3300 5000"
@@ -5586,6 +5586,9 @@
 		{
 			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
 			"particle"	"particles/units/heroes/hero_phoenix/phoenix_supernova_egg_ground.vpcf"
+			"particle"	"particles/units/heroes/hero_phoenix/phoenix_supernova_egg.vpcf"
+			"particle"	"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+			"particle"	"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_shockwave.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
 		}
 
@@ -5595,11 +5598,6 @@
 			{
 				"Target" 		"TARGET"
 				"ModifierName" 	"cleanser_modifier"
-			}
-			"ApplyModifier"
-			{
-				"Target" 		"CASTER"
-				"ModifierName" 	"channelling_animation"
 			}
 			"FireSound"
 			{
@@ -5615,16 +5613,6 @@
 				"Target" 		"TARGET"
 				"ModifierName" 	"cleanser_modifier"
 			}
-			"RemoveModifier"
-			{
-				"Target" 		"CASTER"
-				"ModifierName" 	"channelling_animation"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"abilities/cleric.lua"
-				"Function"		"destroy_drain_fx"
-			}
 		}
 
 		"OnChannelInterrupted"
@@ -5634,16 +5622,6 @@
 				"Target"		"TARGET"
 				"ModifierName"	"cleanser_modifier"
 			}
-			"RemoveModifier"
-			{
-				"Target" 		"CASTER"
-				"ModifierName" 	"channelling_animation"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"abilities/cleric.lua"
-				"Function"		"destroy_drain_fx"
-			}
 		}
 
 		"Modifiers"    		
@@ -5652,17 +5630,22 @@
 			{
 				"OnCreated"
 				{
-					"RunScript"
+					"AttachEffect"
 					{
-						"ScriptFile"	"abilities/cleric.lua"
-						"Function"		"drain_fx"
+						"Target" 				"TARGET"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_hitloc"
+							"TARGET"		"attach_hitloc"
+						}
+						"EffectName"		"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
 					}
 					"AttachEffect"
 					{
 						"Target"		"TARGET"
 						"EffectName"	"particles/units/heroes/hero_phoenix/phoenix_supernova_egg_ground.vpcf"
 						"EffectAttachType"	"follow_origin"
-						"EffectRadius"	"%aoe" //doesnt work, need CPs
 					}
 				}
 				//"Duration"			"10.0"
@@ -5676,14 +5659,14 @@
 						"ScriptFile"	"abilities/cleric.lua"
 						"Function"		"cleansing_flame"
 					}
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_sphere_shockwave.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
 				}
 			}
-			"channelling_animation"
-			{
-				"IsHidden"	"0"
-				"OverrideAnimation"	"ACT_DOTA_TELEPORT"
-			} //TODO: Fix not re-animating
-
 		}
 	}
 
@@ -5725,6 +5708,13 @@
     			"var_type"			"FIELD_INTEGER"
     			"mana"				"0 0 25 25 25 50 50 50"
     		}
+    	}
+
+    	"precache"
+    	{
+    		"particle"	"particles/frostivus_gameplay/wraith_king_heal.vpcf"
+    		"particle"	"particles/units/heroes/hero_chen/chen_holy_persuasion_a.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
     	}
 
     	// Special

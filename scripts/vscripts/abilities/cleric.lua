@@ -73,23 +73,7 @@ function cleansing_flame(event)
 		ally:Heal(heal, hero)
 		PopupHealing(ally, heal)
 	end
-end
 
-function drain_fx(event)
-	local hero = event.caster
-	local target = event.target
-
-	target.drain_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_pugna/pugna_life_drain.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
-    ParticleManager:SetParticleControl(target.drain_particle, 0, target:GetAbsOrigin()) --coordinates of the sucking
-    ParticleManager:SetParticleControl(target.drain_particle, 1, Vector(hero:GetAbsOrigin().x,hero:GetAbsOrigin().y,hero:GetAbsOrigin().z+100)) --where to suck to
-    --ParticleManager:SetParticleControl(particle, 2, Vector(0,0,0))
-    --ParticleManager:SetParticleControl(particle, 3, Vector(0,0,0))
-
-end
-
-function destroy_drain_fx(event)
-	local target = event.target
-	ParticleManager:DestroyParticle(target.drain_particle,false)
 end
 
 function rebirth(event)
@@ -101,10 +85,29 @@ function rebirth(event)
 		local hero = event.caster
 
 		if target_hero:UnitCanRespawn() then
-			target_hero:RespawnUnit()
-			target_hero:ModifyHealth(health_difference, nil, false, 0)
-			target_hero:ReduceMana(mana_difference)
-			--target_hero:FindClearSpaceForUnit(target_hero, target_hero:GetAbsOrigin(), true)
+			--target_hero:RespawnUnit() --doesn't actually respawn heroes, the 'Killed by' still remains.
+			target_hero:SetTimeUntilRespawn(0)
+
+			--need to wait a bit for the hero to respawn	   
+			Timers:CreateTimer({
+		    	endTime = 0.1,
+		    	callback = function()
+		    		FindClearSpaceForUnit(target_hero, location, true)
+		    		EmitSoundOn("Hero_Chen.HandOfGodHealHero", target_hero)
+		    		target_hero:ModifyHealth(health_difference, nil, false, 0)
+					target_hero:ReduceMana(mana_difference)
+    				particle = ParticleManager:CreateParticle("particles/frostivus_gameplay/wraith_king_heal.vpcf", PATTACH_OVERHEAD_FOLLOW, target_hero)
+    				ParticleManager:SetParticleControl(particle, 0, target_hero:GetAbsOrigin())
+    				ParticleManager:SetParticleControl(particle, 1, target_hero:GetAbsOrigin())
+    				ParticleManager:SetParticleControl(particle, 2, target_hero:GetAbsOrigin())
+    				ParticleManager:SetParticleControl(particle, 3, target_hero:GetAbsOrigin())
+    				particle = ParticleManager:CreateParticle("particles/units/heroes/hero_chen/chen_holy_persuasion_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, target_hero)
+    				ParticleManager:SetParticleControl(particle, 0, target_hero:GetAbsOrigin())
+    				ParticleManager:SetParticleControl(particle, 1, target_hero:GetAbsOrigin())
+
+    		 	end
+		  	})
+			
 		end
 	else
 		event.ability:RefundManaCost()
