@@ -4686,11 +4686,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"warlock_cast1_fatal_bonds"
 		
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"1"
+		"AbilityDuration"				"8"
 		"AbilityManaCost"				"15 30 50 80 125 190 285 400"
     	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
 
@@ -4708,13 +4710,42 @@
 			}
 		}
 
+		"precache"
+		{
+			"particle"	"particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_hellborn_debuff.vpcf"
+		}
 
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/warlock.lua"
-				"Function"			"torment"
+				"Function"			"torment_cost"
+			}
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"torment_modifier"
+			}
+		}
+
+		"Modifiers"
+		{
+			"torment_modifier"
+			{
+				"IsDebuff"			"1"
+				"ThinkInterval"		"1"
+				"Duration"			"%AbilityDuration"
+				"EffectName"		"particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_hellborn_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/warlock.lua"
+						"Function"			"torment"
+					}
+				}	
 			}
 		}
 	}
@@ -4734,10 +4765,10 @@
 		"AbilityTextureName"			"warlock_skill2"
 		"MaxLevel" 						"7"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"			"warlock_cast3_upheaval_channel"
 
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0"
@@ -4761,12 +4792,108 @@
 			}
 		}
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
+			"particle"	"particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+		}
+
 		"OnSpellStart"
 		{
+			"ApplyModifier"
+			{
+				"Target" 		"TARGET"
+				"ModifierName" 	"soul_drain_modifier"
+			}
+			"ApplyModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"channelling_animation"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Pugna.LifeDrain.Target"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target" 		"TARGET"
+				"ModifierName" 	"soul_drain_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"channelling_animation"
+			}
 			"RunScript"
 			{
-				"ScriptFile"		"abilities/warlock.lua"
-				"Function"			"soul_drain"
+				"ScriptFile"	"abilities/warlock.lua"
+				"Function"		"destroy_drain_fx"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"TARGET"
+				"ModifierName"	"soul_drain_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"channelling_animation"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/warlock.lua"
+				"Function"		"destroy_drain_fx"
+			}
+		}
+
+		"Modifiers"
+		{
+			"soul_drain_modifier"
+			{
+				"IsDebuff"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/warlock.lua"
+						"Function"		"drain_fx"
+					}
+				}
+				"IsPurgable"		"0"
+				"ThinkInterval"		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/warlock.lua"
+						"Function"		"soul_drain"
+					}
+				}
+			}
+
+			"channelling_animation"
+			{
+				"IsHidden"	"1"
+				"OverrideAnimation"	"warlock_cast3_upheaval_channel"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
 			}
 		}
 	}
@@ -4809,15 +4936,39 @@
 			}
 		}
 
+		"precache"
+		{
+			"particle"	"particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+		}
+
 
 		"OnSpellStart"
 		{
+			"LinearProjectile"
+	        {
+	            "Target"                "POINT"
+	            "EffectName"            "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+	            "MoveSpeed"             "1100"
+	            "StartRadius"           "300"
+	            "EndRadius"             "300"
+	            "FixedDistance"         "810"
+	            "StartPosition"         "follow_origin"
+	            "TargetTeams"           "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	            "TargetTypes"           "DOTA_UNIT_TARGET_CREEP"
+	            "TargetFlags"           "DOTA_UNIT_TARGET_FLAG_NONE"
+	            "HasFrontalCone"        "0"
+	        }
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/warlock.lua"
 				"Function"			"deathwave"
 			}
 		}
+
+		"OnProjectileHitUnit"
+    	{
+        	"DeleteOnHit" "0"
+    	} 
 	}
 
 
