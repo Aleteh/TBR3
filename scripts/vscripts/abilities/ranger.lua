@@ -53,7 +53,28 @@ function black_arrow_post_damage( event )
 end
 
 function black_arrow_rework( event )
-	
+	local hero = event.caster
+	local projSpeed = hero:GetProjectileSpeed()
+	local heroSpeed = hero:GetBaseAttackTime() / (100 + hero:GetAttackSpeed()) / 100
+
+	local info = {
+			EffectName = "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf",
+			Ability = event.ability,
+			vSpawnOrigin = hero:GetAbsOrigin(),
+			--fDistance = 800,
+			fStartRadius = 125,
+			fEndRadius = 125,
+			Target = event.target,
+			Source = hero,
+			iMoveSpeed = 800,
+			bReplaceExisting = false,
+			bHasFrontalCone = false,
+			iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+			iUnitTargetFlags = 0,
+			iUnitTargetType = DOTA_UNIT_TARGET_CREEP,
+			--fExpireTime = GameRules:GetGameTime() + 10
+		}
+		ProjectileManager:CreateTrackingProjectile(info)
 
 	event.caster:MoveToTargetToAttack(event.target) 
 	event.ability:RefundManaCost() 
