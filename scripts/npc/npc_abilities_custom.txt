@@ -3546,19 +3546,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill4"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"35 40 46 53 61 70 81 95"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "150 300 600 1200 2400 4500 6750 11250"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
@@ -3568,8 +3571,44 @@
 			{
 				"ScriptFile"		"abilities/warlord.lua"
 				"Function"			"bum_rush"
+				"Target"
+					{
+					"Center"	"TARGET"
+					"Radius"	"300"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
 			}
 		}
+		"Modifiers"
+			{
+			"warlord_bum_rush_haze"
+				{
+				"IsDebuff"	"1"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"35"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-50"
+					}
+				}
+			"warlord_bum_rush_disarm"
+				{
+				"IsDebuff"	"1"
+				"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"bum_rush_deosoriantation"
+						}
+					}
+				"States"
+					{
+					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
 	}
 
 
@@ -3582,30 +3621,62 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill5"
-		"MaxLevel" "1"
+		"MaxLevel" "7"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"8 12 17 23 30 38 47 57"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+    	"AbilityDamage"                 "50 100 175 275 425 650 1000 1500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"duration"	"10"
+    			}
+    		}
+    	
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/warlord.lua"
 				"Function"			"bleed"
-			}
+			}			
 		}
+		"Modifiers"
+			{
+			"warlord_bleed_bleed_modifier"
+				{
+				"IsDebuff"	"1"
+				"Duration"	"%duration"
+				"EffectName"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"bleed_bleed"
+						}
+					}
+				}
+			}
 	}
 
 
@@ -3616,21 +3687,29 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill6"
+		"BaseClass"             		"juggernaut_blade_dance"
+		"AbilityTextureName"			"assassin_skill6"
 		"MaxLevel" "1"
+		"ID"					"5027"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
     	
-    	// Damage.
+
+    	// Special
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_mult"		"200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_chance"	"25"
+			}
+		}
 	}
 
 //}End Warlord
