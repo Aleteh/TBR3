@@ -65,3 +65,69 @@ function soul_drain_aoe( event )
 		ApplyDamage({ victim = enemy, attacker = hero, damage = dmg, damage_type = DAMAGE_TYPE_MAGICAL })
     end
 end
+
+function deathwave_cost( event )
+	local self_dmg = event.ability:GetLevelSpecialValueFor("self_damage", (event.ability:GetLevel() - 1))
+	ApplyDamage({ victim = event.caster, attacker = event.caster, damage = self_dmg, damage_type = DAMAGE_TYPE_HP_REMOVAL, ability = event.ability }) 
+	--might want to use ModifyHealth if this damage can't be lethal. TODO: Check ingame
+	PopupDamage(event.caster,self_dmg)
+end
+
+function deathwave( event )
+	point = event.target_points[1]
+    caster = event.caster
+    ability = event.ability
+
+    local info = {
+        EffectName =  "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf",
+        Ability = ability,
+        vSpawnOrigin = point,
+        fDistance = 1250,
+        fStartRadius = 150,
+        fEndRadius = 150,
+        Source = caster,
+        bHasFrontalCone = false,
+        iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+        iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+        iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_OTHER,
+        --fMaxSpeed = 5200,
+        bReplaceExisting = false,
+        fExpireTime = GameRules:GetGameTime() + 4.0,
+        bDeleteOnHit = false,
+		vVelocity = 0.0, --vVelocity = caster:GetForwardVector() * 1800,
+		iMoveSpeed = 1000,
+    }
+
+    local speed = 1000
+
+    point.z = 0
+    local pos = caster:GetAbsOrigin()
+    pos.z = 0
+    local diff = point - pos
+    info.vVelocity = diff:Normalized() * speed
+
+    local explode_time = (diff:Length2D()/1000)-0.1
+    print("Creating Deathwave in "..explode_time.. " seconds")
+
+  	Timers:CreateTimer({
+    endTime = explode_time,
+    callback = function()
+      	--Creates the projectiles in 360 degrees
+      	EmitSoundOn("Hero_DeathProphet.CarrionSwarm.Mortis", caster)
+		for i=-180,180,(360/10) do
+			info.vVelocity = RotatePosition(Vector(0,0,0), QAngle(0,i,0), caster:GetForwardVector()) * info.iMoveSpeed
+			projectile = ProjectileManager:CreateLinearProjectile( info )
+		end
+    end
+  	})
+    
+end
+
+function deathwave_dmg( event )
+	local hero = event.caster
+	local target = event.target
+	local spellPower = hero.spellPower
+	local dmg = event.ability:GetAbilityDamage() + spellPower
+
+	ApplyDamage({ victim = target, attacker = hero, damage = dmg, damage_type = DAMAGE_TYPE_MAGICAL })
+end

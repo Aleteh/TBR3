@@ -4916,11 +4916,6 @@
 				"Target" 		"CASTER"
 				"ModifierName" 	"channelling_animation"
 			}
-			//"RunScript"
-			//{
-			//	"ScriptFile"	"abilities/warlock.lua"
-			//	"Function"		"destroy_drain_fx"
-			//}
 		}
 
 		"OnChannelInterrupted"
@@ -4935,11 +4930,6 @@
 				"Target" 		"CASTER"
 				"ModifierName" 	"channelling_animation"
 			}
-			"RunScript"
-			//{
-			//	"ScriptFile"	"abilities/warlock.lua"
-			//	"Function"		"destroy_drain_fx"
-			//}
 		}
 
 		"Modifiers"
@@ -5026,7 +5016,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"			"warlock_cast4_rain_chaos"
 
 		"AbilityCastRange"				"650"
 		"AbilityCastPoint"				"0.5"
@@ -5051,36 +5041,110 @@
 		"precache"
 		{
 			"particle"	"particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+			"particle"	"particles/units/heroes/hero_death_prophet/death_prophet_carrion_swarm.vpcf"
+			"particle"	"particles/econ/items/vengeful/vengeful_weapon_talon/vengeful_wave_of_terror_weapon_talon.vpcf"
+			"particle"	"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+			"particle"	"particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
 		}
-
 
 		"OnSpellStart"
 		{
-			"LinearProjectile"
-	        {
-	            "Target"                "POINT"
-	            "EffectName"            "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
-	            "MoveSpeed"             "1100"
-	            "StartRadius"           "300"
-	            "EndRadius"             "300"
-	            "FixedDistance"         "810"
-	            "StartPosition"         "follow_origin"
-	            "TargetTeams"           "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	            "TargetTypes"           "DOTA_UNIT_TARGET_CREEP"
-	            "TargetFlags"           "DOTA_UNIT_TARGET_FLAG_NONE"
-	            "HasFrontalCone"        "0"
-	        }
 			"RunScript"
+			{
+				"ScriptFile"			"abilities/warlock.lua"
+				"Function"				"deathwave_cost"
+			}
+			"LinearProjectile"
+            {
+                "Target"                "POINT"
+                "EffectName"            "particles/econ/items/vengeful/vengeful_weapon_talon/vengeful_wave_of_terror_weapon_talon.vpcf"
+               	"MoveSpeed"				"1100"
+				"StartRadius"			"125"
+				"EndRadius"				"125"
+				//"FixedDistance"		"650"
+                "TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"			"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"		"0"
+            }
+            "LinearProjectile"
+            {
+                "Target"                "POINT"
+                "EffectName"            "particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast.vpcf"
+               	"MoveSpeed"				"1100"
+				"StartRadius"			"125"
+				"StartPosition"			"attach_attack1"
+				"EndRadius"				"125"
+				//"FixedDistance"		"650"
+                "TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"			"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"		"0"
+            }
+       		"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_DeathProphet.Silence"
+			}
+			//Do damage on a line first
+			"ActOnTargets"
+			{
+				"Target"
+			 	{
+				 	"Center"  		"POINT"
+				 	"Line"
+			 		{
+			 			"Length" 			"650"
+			 			"Thickness" 		"150"
+			 		}
+			 		"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"  
+			 		"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			 	}
+			 	"Action"
+			 	{
+			 		"RunScript"
+    				{
+    					"ScriptFile"	"abilities/warlock.lua"
+    					"Function"		"deathwave_dmg"
+    				}
+			 	}
+			}
+    		"RunScript"
 			{
 				"ScriptFile"		"abilities/warlock.lua"
 				"Function"			"deathwave"
+				"Target"			"POINT"
 			}
 		}
 
 		"OnProjectileHitUnit"
     	{
         	"DeleteOnHit" "0"
-    	} 
+        	"ApplyModifier"
+        	{
+        		"Target" 			"TARGET"
+        		"ModifierName"		"deathwave_modifier"
+        	}
+    	}
+
+    	"Modifiers"
+    	{
+    		"deathwave_modifier"
+    		{
+    			"IsDebuff"	"1"
+    			"IsHidden"	"0"
+    			"Duration"	"1"
+    			"OnCreated"
+    			{
+    				"RunScript"
+    				{
+    					"ScriptFile"	"abilities/warlock.lua"
+    					"Function"		"deathwave_dmg"
+    				}
+    			}
+    		}
+    	}
 	}
 
 
