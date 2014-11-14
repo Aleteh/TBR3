@@ -4165,7 +4165,7 @@
 		"AbilityCooldown"				"2"
 		"AbilityManaCost"				"35 65 110 175 260 390 550 750"
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     	
@@ -4191,50 +4191,23 @@
 			"sounds"	"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
 		}
 
+		"OnSpellStart"
+			{
+			"RunScript"
+					{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"black_arrow_rework"
+					}
+			}
+
     	"Modifiers"
 		{
-			"ranger_black_arrow_orb_modifier"
-			{
-				"Passive"	"1"
-				"Orb"
-				{
-					"Label"	"DOTA_ORB_LABEL_EXCEPTION"
-					"Priority" "DOTA_ORB_PRIORITY_ABILITY"
-					"CastAttack" "1"
-					"ProjectileName"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
-					//TODO: Fix bug with projectile firing every time
-					//TODO: Fix explosions sometimes not happening (many instances not triggering the kill? This skills sucks...)
-					//		If you have enough physical damage, the unit will die from that source and not explode...
-				}
-				"OnOrbImpact"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"abilities/ranger.lua"
-						"Function"			"black_arrow"
-					}
-					"FireSound"
-					{	
-						//TODO: Fix playing sound on every impact
-						"EffectName"		"Hero_VengefulSpirit.MagicMissileImpact"
-						"Target"			"TARGET"
-					}
-						
-				}
-				"OnOrbFire"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"abilities/ranger.lua"
-						"Function"			"black_arrow_fx"
-					}
-				}
-			}
+			
 			"ranger_black_arrow_post_damage"
 			{
 				"IsDebuff"	"1"
 				"Duration"	"0"
-				"OnTakeDamage"
+				"OnDestroy"
 				{
 					"RunScript"
 					{
@@ -4243,6 +4216,34 @@
 					}
 				}
 			}
+			"black_arrow_rework_modifier"
+				{
+				"Passive"	"1"
+				"OnAttackLanded"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"black_arrow"
+						}
+					}
+				"OnAbilityExecuted"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"black_arrow_interrupt"
+						}
+					}
+				"OnAttackStart"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities/ranger.lua"
+						"Function"			"black_arrow_start"
+						}
+					}
+				}
 		}
 	}
 

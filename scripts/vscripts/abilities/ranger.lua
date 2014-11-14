@@ -7,8 +7,9 @@ function black_arrow_fx(event)
 end
 
 function black_arrow( event )
-	if event.ability:IsCooldownReady() == true then
+	if event.ability:IsCooldownReady() == true and event.caster:GetMana() >= event.ability:GetManaCost((event.ability:GetLevel() - 1)) and (event.caster.black_arrow_flag == true or event.ability:GetAutoCastState() == true) then
 		EmitSoundOn("Hero_VengefulSpirit.MagicMissileImpact", event.target)
+		event.ability:StartCooldown(event.ability:GetCooldown(1))
 		event.ability:PayManaCost()
 		ApplyDamage({ victim = event.target, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
 		if event.target:IsAlive() == false then
@@ -26,26 +27,48 @@ function black_arrow( event )
 			local particle = ParticleManager:CreateParticle("particles/econ/items/vengeful/vengeful_weapon_talon/vengeful_wave_of_terror_glow_c_talon.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
 
 			local group = FindUnitsInRadius( event.caster:GetTeamNumber(), event.target:GetAbsOrigin(), nil, event.ability:GetSpecialValueFor("explosion_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+			local black_aroow_aoe_damage = event.ability:GetAbilityDamage()
+			local black_arrow_damage_type = event.ability:GetAbilityDamageType()
 			for key, unit in pairs(group) do
-				ApplyDamage({ victim = unit, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
+				ApplyDamage({ victim = unit, attacker = event.caster, damage = black_aroow_aoe_damage, damage_type = black_arrow_damage_type, ability = event.ability	})
 			end
 		else
 			event.ability:ApplyDataDrivenModifier( event.caster, event.target, "ranger_black_arrow_post_damage", nil)
 		end
+		event.caster.black_arrow_flag = false
 	end
 end
 
 function black_arrow_post_damage( event )
-	if event.attacker == event.caster then
-		if event.unit:IsAlive() == false then
-				local group = FindUnitsInRadius( event.caster:GetTeamNumber(), event.unit:GetAbsOrigin(), nil, event.ability:GetSpecialValueFor("explosion_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+		if event.target:IsAlive() == false then
+				local group = FindUnitsInRadius( event.caster:GetTeamNumber(), event.target:GetAbsOrigin(), nil, event.ability:GetSpecialValueFor("explosion_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+				local black_aroow_aoe_damage = event.ability:GetAbilityDamage()
+				local black_arrow_damage_type = event.ability:GetAbilityDamageType()
 				for key, unit in pairs(group) do
-					ApplyDamage({ victim = unit, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
+					ApplyDamage({ victim = unit, attacker = event.caster, damage = black_aroow_aoe_damage, damage_type = black_arrow_damage_type, ability = event.ability	})
 				end
 		end
-		event.unit:RemoveModifierByName("ranger_black_arrow_post_damage")
-	end
+		event.target:RemoveModifierByName("ranger_black_arrow_post_damage")
 
+end
+
+function black_arrow_rework( event )
+	
+
+	event.caster:MoveToTargetToAttack(event.target) 
+	event.ability:RefundManaCost() 
+	event.ability:EndCooldown()
+	event.caster.black_arrow_flag = true
+	--event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "black_arrow_rework_modifier", nil)
+
+end
+
+function black_arrow_interrupt( event )
+	event.caster.black_arrow_flag = false
+end
+
+function black_arrow_start( event )
+	print(event.unit)
 end
 
 function black_arrow_explosion( event )
@@ -109,9 +132,9 @@ function soul_piercing_shot( event )
 	ApplyDamage({ victim = event.target, attacker = event.caster, damage = manaburn, damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
 	local particle = ParticleManager:CreateParticle("particles/neutral_fx/black_dragon_attack_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 	ParticleManager:SetParticleControl(particle, 3, event.target:GetAbsOrigin())
-	if math.random(0,4) < 1 then 
+	--[[if math.random(0,4) < 1 then 
 		event.caster:PerformAttack(event.target, true, false, true, true)  
-	end
+	end]]
 end
 
 
