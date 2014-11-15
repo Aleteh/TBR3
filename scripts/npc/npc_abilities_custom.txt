@@ -4881,8 +4881,9 @@
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
-			"particle"	"particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+			"particle"	"particles/frostivus_gameplay/frostivus_wraithking_tombstone.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+			"particle"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient.vpcf"
 		}
 
 		"OnSpellStart"
@@ -4891,6 +4892,11 @@
 			{
 				"Target" 		"TARGET"
 				"ModifierName" 	"soul_drain_modifier"
+			}
+			"ApplyModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"soul_drain_aoe_modifier"
 			}
 			"ApplyModifier"
 			{
@@ -4914,6 +4920,11 @@
 			"RemoveModifier"
 			{
 				"Target" 		"CASTER"
+				"ModifierName" 	"soul_drain_aoe_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
 				"ModifierName" 	"channelling_animation"
 			}
 		}
@@ -4924,6 +4935,11 @@
 			{
 				"Target"		"TARGET"
 				"ModifierName"	"soul_drain_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"soul_drain_aoe_modifier"
 			}
 			"RemoveModifier"
 			{
@@ -4980,6 +4996,12 @@
 						"ScriptFile"	"abilities/warlock.lua"
 						"Function"		"soul_drain_aoe"
 					}
+					"AttachEffect"
+					{
+						"Target"		"CASTER"
+						"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient_endcap.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
 				}
 			}
 
@@ -4989,10 +5011,22 @@
 				"OverrideAnimation"	"warlock_cast3_upheaval_channel"
 				"OnCreated"
 				{
+					//"AttachEffect" //This might be too much.
+					//{
+					//	"Target"		"TARGET"
+					//	"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient.vpcf"
+					//	"EffectAttachType"	"follow_origin"
+					//}
 					"AttachEffect"
 					{
 						"Target"		"TARGET"
-						"EffectName"	"particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+						"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient_beams_i.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_ambient.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
 				}
