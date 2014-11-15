@@ -3312,7 +3312,7 @@
                         "Function"      "SpinHero"
                         "Angle"         "90"
                     }
-                    // Try to fix: Spinning stops the hero
+                    // TODO: Fix Spinning stops the hero
 				}
 			}
 		}
@@ -3417,6 +3417,7 @@
     		"particle"	"particles/units/heroes/hero_invoker/invoker_tornado_trail.vpcf"
     		"particle"	"particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf"
     		"particle"	"particles/units/heroes/hero_earth_spirit/espirit_boouldersmash_groundsmoketrail.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
     	}
 
 
@@ -3433,55 +3434,55 @@
 			{
 				"Target" 			"CASTER"
 				"ModifierName"		"spin_thinker"
-			}
+			}	
 		}
 		"Modifiers"
-			{
+		{
 			"warlord_winds_of_war_modifier"
-				{
+			{
 				"IsBuff"	"1"
 				"Duration"	"2"
 				"ThinkInterval"	"0.03"
 				"OnIntervalThink"
-					{
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"		"abilities/warlord.lua"
 						"Function"			"winds_of_war_think"
-						}
-					}
-				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
-				"States"
-					{
-					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
-					}
-				"OnDestroy"
-					{
-					"RunScript"
-						{
-						"ScriptFile"		"abilities/warlord.lua"
-						"Function"			"winds_of_war_anti_stuck"
-						}
 					}
 				}
-			"warlord_winds_of_war_damaged_modifier"
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
+				"States"
 				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnDestroy"
+					{
+				"RunScript"
+					{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"winds_of_war_anti_stuck"
+					}
+				}
+			}
+			"warlord_winds_of_war_damaged_modifier"
+			{
 				"Duration"	"2"
 				"IsDebuff"	"1"
 				"OnDestroy"
-					{
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"		"abilities/warlord.lua"
 						"Function"			"winds_of_war_anti_stuck_b"
-						}
 					}
 				}
+			}
 			"warlord_winds_of_war_animation"
-				{
+			{
 				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
-				}
-				"spin_thinker"
+			}
+			"spin_thinker"
 				{
 
 					"OnCreated"
@@ -3546,7 +3547,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill4"
-		"MaxLevel" "7"
+		"MaxLevel" 						"7"
+		"AbilityCastAnimation"			"run_chase"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3563,6 +3565,12 @@
     	"AbilityDamage"                 "150 300 600 1200 2400 4500 6750 11250"
     	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
+
+    	"precache"
+    	{
+    		"particle"	"particles/frostivus_herofx/juggernaut_omnislash_ascension.vpcf"
+    	}
+
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
@@ -3572,43 +3580,55 @@
 				"ScriptFile"		"abilities/warlord.lua"
 				"Function"			"bum_rush"
 				"Target"
-					{
+				{
 					"Center"	"TARGET"
 					"Radius"	"300"
 					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
+				}
 			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Axe.BerserkersCall.Item.Shoutmask"
+				"Target" 			"CASTER"
+			}
+			"AttachEffect"
+			{
+				"EffectName"		"particles/frostivus_herofx/juggernaut_omnislash_ascension_sparks.vpcf"
+				"EffectAttachType" 	"follow_origin"
+				"Target" 			"CASTER"
+			}
+			
 		}
 		"Modifiers"
-			{
+		{
 			"warlord_bum_rush_haze"
-				{
+			{
 				"IsDebuff"	"1"
 				"Properties"
-					{
+				{
 					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"35"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-50"
-					}
 				}
+			}
 			"warlord_bum_rush_disarm"
-				{
+			{
 				"IsDebuff"	"1"
 				"ThinkInterval"	"0.5"
 				"OnIntervalThink"
-					{
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"		"abilities/warlord.lua"
 						"Function"			"bum_rush_deosoriantation"
-						}
-					}
-				"States"
-					{
-					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
 					}
 				}
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
+		}
 	}
 
 
@@ -3621,7 +3641,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"warlord_skill5"
-		"MaxLevel" "7"
+		"MaxLevel" 						"7"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3642,13 +3663,20 @@
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilitySpecial"
-    		{
+    	{
     		"01"
-    			{
+    		{
     			"var_type"	"FIELD_INTEGER"
     			"duration"	"10"
-    			}
     		}
+    	}
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+    		"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
+    		"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+    	}
     	
 		"OnSpellStart"
 		{
@@ -3656,27 +3684,41 @@
 			{
 				"ScriptFile"		"abilities/warlord.lua"
 				"Function"			"bleed"
-			}			
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Axe.Culling_Blade_Success"
+				"Target" 			"TARGET"
+			}	
 		}
 		"Modifiers"
-			{
+		{
 			"warlord_bleed_bleed_modifier"
-				{
+			{
 				"IsDebuff"	"1"
 				"Duration"	"%duration"
 				"EffectName"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"ThinkInterval"	"1"
-				"OnIntervalThink"
+				"OnCreated"
+				{
+					"AttachEffect"
 					{
-					"RunScript"
-						{
-						"ScriptFile"		"abilities/warlord.lua"
-						"Function"			"bleed_bleed"
-						}
+						"EffectName"		"particles/units/heroes/hero_axe/axe_culling_blade_kill_b.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"TARGET"
 					}
 				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/warlord.lua"
+						"Function"			"bleed_bleed"
+					}					
+				}
 			}
+		}
 	}
 
 
@@ -4881,8 +4923,9 @@
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
-			"particle"	"particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+			"particle"	"particles/frostivus_gameplay/frostivus_wraithking_tombstone.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+			"particle"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient.vpcf"
 		}
 
 		"OnSpellStart"
@@ -4891,6 +4934,11 @@
 			{
 				"Target" 		"TARGET"
 				"ModifierName" 	"soul_drain_modifier"
+			}
+			"ApplyModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"soul_drain_aoe_modifier"
 			}
 			"ApplyModifier"
 			{
@@ -4914,6 +4962,11 @@
 			"RemoveModifier"
 			{
 				"Target" 		"CASTER"
+				"ModifierName" 	"soul_drain_aoe_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
 				"ModifierName" 	"channelling_animation"
 			}
 		}
@@ -4924,6 +4977,11 @@
 			{
 				"Target"		"TARGET"
 				"ModifierName"	"soul_drain_modifier"
+			}
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"soul_drain_aoe_modifier"
 			}
 			"RemoveModifier"
 			{
@@ -4980,6 +5038,12 @@
 						"ScriptFile"	"abilities/warlock.lua"
 						"Function"		"soul_drain_aoe"
 					}
+					"AttachEffect"
+					{
+						"Target"		"CASTER"
+						"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient_endcap.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
 				}
 			}
 
@@ -4989,10 +5053,22 @@
 				"OverrideAnimation"	"warlock_cast3_upheaval_channel"
 				"OnCreated"
 				{
+					//"AttachEffect" //This might be too much.
+					//{
+					//	"Target"		"TARGET"
+					//	"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient.vpcf"
+					//	"EffectAttachType"	"follow_origin"
+					//}
 					"AttachEffect"
 					{
 						"Target"		"TARGET"
-						"EffectName"	"particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+						"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient_beams_i.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_ambient.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
 				}

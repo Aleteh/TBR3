@@ -20,6 +20,14 @@ end
 
 function winds_of_war( event )
 	event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "warlord_winds_of_war_modifier", nil) 
+	EmitSoundOn("Hero_Juggernaut.BladeFuryStart", event.caster)
+	Timers:CreateTimer({
+	    endTime = 2.5,
+	    callback = function()
+	    	event.caster:StopSound("Hero_Juggernaut.BladeFuryStart")
+	    	EmitSoundOn("Hero_Juggernaut.BladeFuryStop", event.caster)
+ 	end
+	})
 	local point = event.ability:GetCursorPosition()
 	local caster_point = event.caster:GetAbsOrigin()
 	local vector_between = (point - caster_point)
@@ -114,30 +122,35 @@ end
 
 function bum_rush( event )
 	
-	FindClearSpaceForUnit(event.caster, event.target:GetAbsOrigin(), true)
+	Timers:CreateTimer({
+	    endTime = 0.5,
+	    callback = function()
+	    	FindClearSpaceForUnit(event.caster, event.target:GetAbsOrigin(), true)
 
+	    	if event.target:IsHero() == true then
+				event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bum_rush_disarm", {duration = 3})
+				ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
+			else
+				event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bum_rush_disarm", {duration = 5})
+				ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
+			end
 
+			local aoe_damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()) / 3
 
-	if event.target:IsHero() == true then
-		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bum_rush_disarm", {duration = 3})
-		ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
-	else
-		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "warlord_bum_rush_disarm", {duration = 5})
-		ApplyDamage({ victim = event.target, attacker = event.caster, damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})
-	end
+			for key, unit in pairs(event.target_entities) do 
+				if unit:IsHero() == true then
+					event.ability:ApplyDataDrivenModifier( event.caster, unit, "warlord_bum_rush_haze", {duration = 6})
+				else
+					event.ability:ApplyDataDrivenModifier( event.caster, unit, "warlord_bum_rush_haze", {duration = 12})
+				end
 
-	local aoe_damage = (event.ability:GetAbilityDamage() + event.caster:GetAgility()) / 3
+				ApplyDamage({ victim = unit, attacker = event.caster, damage = aoe_damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
+			end
 
-	for key, unit in pairs(event.target_entities) do 
-		if unit:IsHero() == true then
-			event.ability:ApplyDataDrivenModifier( event.caster, unit, "warlord_bum_rush_haze", {duration = 6})
-		else
-			event.ability:ApplyDataDrivenModifier( event.caster, unit, "warlord_bum_rush_haze", {duration = 12})
-		end
+	    end
+	    -- TODO: add a landing animation fx
+	})
 
-		ApplyDamage({ victim = unit, attacker = event.caster, damage = aoe_damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = event.ability	})
-
-	end
 end
 
 
