@@ -143,46 +143,20 @@
 
   //Sideshop Start - Page 1
   //--------------------------
-    // Crafting Supplies
+
     "sideshop1"
     {
-        // Enchanted Diamond Dust
-        // Tempered Steel
-        // Crafting Materials
-        // Lots of Crafting Materials
-        // Ruby Heart
-        // Transport Stone
-        // Shipyard - Hire Trireme
+        
+
 
     }
 
  //Sideshop Page 2
-    // Crafting Supplies
+
     "sideshop2"
     {
-        // Sapphire
-        // Power Stone
-        // Crafting Materials
-        // Lots of Crafting Materials
-        // Meteoric Iron
-        // Runestone
+
     }
-
-    // Crafting Supplies
-    //"sideshop3"
-    //{
-        // Sea Essence
-        // Crafting Materials
-        // Lots of Crafting Materials
-    //}
-
-     // Crafting Supplies
-    //"sideshop4"
-    //{
-        // Heart of Frost
-        // Crafting Materials
-        // Lots of Crafting Materials
-    //}
 
  //Secret Shop Start
  //--------------------------   

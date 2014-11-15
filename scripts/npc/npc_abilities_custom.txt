@@ -5821,6 +5821,8 @@
 	//=================================================================================================================
 	// Magician: Frost Bolt
 	//=================================================================================================================
+	//The magician hurls a line of frost particles that deals xxxx damage to enemy units, and solidifies them for 2 seconds for xxx mana. 
+	//10 seconds cooldown, 225 AOE, 700 range.
 	"magician_frost_bolt"
 	{
 		// General
@@ -5877,6 +5879,8 @@
 	//=================================================================================================================
 	// Magician: Flame Spire
 	//=================================================================================================================
+	//Conjures a pillar of flame that burns enemy ground units in an area of effect for xxxxx damage over 3 seconds for xxxx mana. 
+	//8 seconds cooldown, 275 AOE.
 	"magician_flame_spire"
 	{
 		// General
@@ -5955,6 +5959,8 @@
 	//=================================================================================================================
 	// Magician: Flash Point
 	//=================================================================================================================
+	//Creates a circular wall of flames that traps all creatures near the caster within, the ignites the space between the wall and the caster. 
+	//Deals xxx damage to all enemies in the blast area. 14 seconds cooldown, 600 AOE
 	"magician_flash_point"
 	{
 		// General
@@ -5991,6 +5997,8 @@
 	//=================================================================================================================
 	// Magician: Meteor Shower
 	//=================================================================================================================
+	//Calls a barrage of meteors from the heavens to bombard enemy units in a line, stunning for up to 3 seconds and causing xxxx damage for xxx mana.
+	//900 range, 10 seconds cooldown.
 	"magician_meteor_shower"
 	{
 		// General
@@ -6027,6 +6035,8 @@
 	//=================================================================================================================
 	// Magician: Freezing Field
 	//=================================================================================================================
+	//Summons multi explosion around the magician damaging enemies and slowing them for 4 seconds. 
+	//Each explosion deals xxxxx damage for xxxx mana. 45 seconds cooldown.
 	"magician_freezing_field"
 	{
 		// General
@@ -6058,6 +6068,13 @@
 			}
 		}
 	}
+
+	//Class Skill - Preparation
+	//Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
 
 //}End Magician
 
