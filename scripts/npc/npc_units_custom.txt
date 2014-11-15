@@ -308,11 +308,11 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
+		"Model"						"models/elven_farm.vmdl"	// Model.
 		"SoundSet"					""					// Name of sound set.
 		"Level"						"0"
 		"IsAncient"					"1"
-		"ModelScale"				"0.5"
+		"ModelScale"				"1"
 		"HasInventory"				"1"
 		"Level"						"85"
 
