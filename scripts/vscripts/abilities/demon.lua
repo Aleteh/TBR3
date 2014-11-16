@@ -78,21 +78,27 @@ function demon_form_off( event )
 end
 
 function AttachWearables( hero )
+    weaponModel = "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl" --"models/heroes/terrorblade/weapon.vmdl"
     local weapon = Entities:CreateByClassname("dota_item_wearable")
-    weapon:SetModel("models/heroes/terrorblade/weapon.vmdl") --("models/heroes/terrorblade/weapon.vmdl")
+    weapon:SetModel(weaponModel)
+      
+    --attempt
     weapon:SetAngles(90,0,0)
-    weapon:SetForwardVector(RandomVector(300))
+    weapon:SetForwardVector(RandomVector(3000))
+   
     weapon:SetParent(hero, "attach_weapon_r")
-    ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
+    --ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
     
 
     local weapon = Entities:CreateByClassname("dota_item_wearable")
-    weapon:SetModel("models/heroes/terrorblade/weapon.vmdl") --("models/heroes/terrorblade/weapon.vmdl")
-    weapon:SetAngles(90,0,0)
-    weapon:SetParent(hero, "attach_weapon_l")
-    weapon:SetForwardVector(RandomVector(300))
-    ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
-    
+    weapon:SetModel(weaponModel)
+    weapon:SetParent(hero:GetRootMoveParent(), "attach_weapon_l")
+    --ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
+
+    --local horns = Entities:CreateByClassname("dota_item_wearable")
+    --horns:SetModel("models/heroes/terrorblade/horns.vmdl")
+    --horns:SetParent(hero, "attach_head")
+    --how the fuck do I put them in the correct place!?
 end
     
 function RemoveWearables( hero )
@@ -101,7 +107,7 @@ function RemoveWearables( hero )
     while model ~= nil do
         if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
             print(model:GetModelName())
-            if string.find(model:GetModelName(), "weapon") ~= nil then
+            if string.find(model:GetModelName(), "weapon") ~= nil then --or string.find(model:GetModelName(), "horns") ~= nil then
                 table.insert(wearables, model)
             end
         end
@@ -109,7 +115,7 @@ function RemoveWearables( hero )
     end
 
     for i = 1, #wearables do
-        print("removed 1 weapon")
+        print("removed 1 wearable")
         wearables[i]:RemoveSelf()
     end
 end
