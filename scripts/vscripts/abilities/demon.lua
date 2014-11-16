@@ -1,4 +1,12 @@
-function Warglaives( event )
+--models/heroes/terrorblade/horns.vmdl
+--models/heroes/terrorblade/armor.vmdl
+--models/heroes/terrorblade/wings.vmdl
+--models/heroes/terrorblade/weapon.vmdl
+--models/heroes/terrorblade/terrorblade_weapon_planes.vmdl
+--models/heroes/terrorblade/horns_arcana.vmdl
+--models/heroes/terrorblade/demon.vmdl
+
+function Warglaives_on( event )
     local hero = event.caster
 	print("No Draw")
 	--event.caster:AddNoDraw()
@@ -19,14 +27,13 @@ function Warglaives( event )
         if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
             print(model:GetModelName())
             if string.find(model:GetModelName(), "weapon") ~= nil then
-                table.insert(wearables, model)
                 model:SetModel("models/development/invisiblebox.vmdl")  
             end
         end
         model = model:NextMovePeer()
     end
     
-    Timers:CreateTimer({
+    --[[Timers:CreateTimer({
         endTime = 5,
         callback = function()
             print(#wearables)
@@ -35,15 +42,74 @@ function Warglaives( event )
                 wearables[i]:SetModel("models/heroes/terrorblade/weapon.vmdl")
             end
         end
-    })
-   
+    })]]
+                           
+end
 
---models/heroes/terrorblade/horns.vmdl
---models/heroes/terrorblade/armor.vmdl
---models/heroes/terrorblade/wings.vmdl
---models/heroes/terrorblade/weapon.vmdl
---models/heroes/terrorblade/terrorblade_weapon_planes.vmdl
---models/heroes/terrorblade/horns_arcana.vmdl
---models/heroes/terrorblade/demon.vmdl
-                        
+function Warglaives_off( event )
+    local hero = event.caster
+    print("No Draw")
+
+    local wearables = {}
+    local model = hero:FirstMoveChild()
+    while model ~= nil do
+        if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
+            print(model:GetModelName())
+            if string.find(model:GetModelName(), "invisiblebox") ~= nil then
+                model:SetModel("models/heroes/terrorblade/weapon.vmdl")
+            end
+        end
+        model = model:NextMovePeer()
+    end
+                           
+end
+
+function demon_form_on( event )
+    event.caster:SetOriginalModel("models/heroes/terrorblade/demon.vmdl")
+    event.caster:SetModel("models/heroes/terrorblade/demon.vmdl")
+    event.caster:SetRangedProjectileName("particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf")
+    RemoveWearables(event.caster)
+end
+
+function demon_form_off( event )
+    event.caster:SetModel("models/heroes/terrorblade/terrorblade.vmdl")
+    event.caster:SetOriginalModel("models/heroes/terrorblade/terrorblade.vmdl")
+    AttachWearables(event.caster)
+end
+
+function AttachWearables( hero )
+    local weapon = Entities:CreateByClassname("dota_item_wearable")
+    weapon:SetModel("models/heroes/terrorblade/weapon.vmdl") --("models/heroes/terrorblade/weapon.vmdl")
+    weapon:SetAngles(90,0,0)
+    weapon:SetForwardVector(RandomVector(300))
+    weapon:SetParent(hero, "attach_weapon_r")
+    ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
+    
+
+    local weapon = Entities:CreateByClassname("dota_item_wearable")
+    weapon:SetModel("models/heroes/terrorblade/weapon.vmdl") --("models/heroes/terrorblade/weapon.vmdl")
+    weapon:SetAngles(90,0,0)
+    weapon:SetParent(hero, "attach_weapon_l")
+    weapon:SetForwardVector(RandomVector(300))
+    ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
+    
+end
+    
+function RemoveWearables( hero )
+    local wearables = {}
+    local model = hero:FirstMoveChild()
+    while model ~= nil do
+        if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
+            print(model:GetModelName())
+            if string.find(model:GetModelName(), "weapon") ~= nil then
+                table.insert(wearables, model)
+            end
+        end
+        model = model:NextMovePeer()
+    end
+
+    for i = 1, #wearables do
+        print("removed 1 weapon")
+        wearables[i]:RemoveSelf()
+    end
 end

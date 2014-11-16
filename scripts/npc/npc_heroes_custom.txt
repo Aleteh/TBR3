@@ -448,6 +448,7 @@
         "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+        "AttackRange"				"500"
 	}
 
 
