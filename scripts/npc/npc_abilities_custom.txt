@@ -5896,12 +5896,12 @@
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"40 80 140 225 375 575 775 1000"
 		"AbilityDuration"               "3"
-		"AbilityChannelTime"			"3" //<-
 		"AOERadius"						"275"
     	
-    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    	//"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 
     	"AbilitySpecial"
@@ -5969,6 +5969,8 @@
 		"AbilityTextureName"			"magician_skill3"
 		"MaxLevel" "1"
 		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
@@ -5983,14 +5985,14 @@
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/magician/flash_point.lua"
-				"Function"			"barbarian_taunt"
-			}
-		}
+		//"OnSpellStart"
+		//{
+		//	"RunScript"
+		//	{
+		//		"ScriptFile"		"abilities/magician.lua"
+		//		"Function"			"barbarian_taunt"
+		//	}
+		//}
 	}
 
 
@@ -6007,6 +6009,8 @@
 		"AbilityTextureName"			"magician_skill4"
 		"MaxLevel" "1"
 		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
@@ -6021,14 +6025,14 @@
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/magician/meteor_shower.lua"
-				"Function"			"barbarian_taunt"
-			}
-		}
+		//"OnSpellStart"
+		//{
+		//	"RunScript"
+		//	{
+		//		"ScriptFile"		"abilities/magician.lua"
+		//		"Function"			"barbarian_taunt"
+		//	}
+		//}
 	}
 
 
@@ -6059,22 +6063,54 @@
 
     	// Special
     	//-------------------------------------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/magician/freezing_field.lua"
-				"Function"			"barbarian_taunt"
-			}
-		}
+		//"OnSpellStart"
+		//{
+		//	"RunScript"
+		//	{
+		//		"ScriptFile"		"abilities/magician.lua"
+		//		"Function"			"barbarian_taunt"
+		//	}
+		//}
 	}
 
-	//Class Skill - Preparation
+	"magician_preparation"
 	//Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
-	//Benefits From: N/A
-	//Cooldown: N/A
-	//Range: N/A
-	//Cost: N/A
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_skill6"
+		"MaxLevel" 						"1"
+
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"preparation_modifier"
+			{
+				"Passive"			"1"
+				"IsBuff"			"1"
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"OnAbilityExecuted"
+				{
+					"Random"
+					{
+						"Chance"	"50" //5
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"abilities/magician.lua"
+								"Function"			"refresh_cooldowns"
+							}
+						}
+					}
+				}
+			}	
+		}
+
+	}
 
 //}End Magician
 
