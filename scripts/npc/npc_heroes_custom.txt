@@ -419,6 +419,37 @@
         "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
 	}
 
+	//=================================================================================================================
+	// HERO: Demon Hunter/Master?
+	//=================================================================================================================
+	"npc_tbr_demon"
+	{
+		"override_hero"				"npc_dota_hero_terrorblade"
+		"AbilityLayout"				"6"
+		"Ability1"					"demon_immolation"	//boring toggle, should be an active for a duration.
+		"Ability2"					"demon_warglaives" //cleave, throw weapons around
+		"Ability3"					"demon_dodge"	//+critical on next attack after dodge
+		"Ability4"					"demon_form" //class skill, toggle to lose the melee skills
+		"Ability5"					"demon_flame_crash" //go high and land
+		"Ability6"					"demon_avatar" //ultimate1, illusion with shared HP
+		"Ability7"					"demon_summons" //many demons
+		"Ability8"					"demon_strike" //bouncing projectile
+		"Ability9"					"demon_passive" //dunno what should this be
+		"Ability10"					"demon_shadow_blast" //maybe redundant
+		"Ability11"					"demon_frenzy" //active, synergy with summons
+		"Ability12"					"demon_army" //ultimate2, gives the ability to swap to different summons
+
+		// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"         "12" 		// Base strength
+        "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "15" 		// Base intelligence
+        "AttributeIntelligenceGain"     "1.8"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+        "AttackRange"				"500"
+	}
 
 
 }

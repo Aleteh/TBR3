@@ -6658,6 +6658,188 @@
 	}
 //}End Druid
 
+//Start Demon (WIP Draft)
+//{
+	"demon_immolation"	//boring toggle, should be an active for a duration.
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_immolation"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+
+	"demon_warglaives" //cleave, throw weapons around
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_warglaives"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/demon.lua"
+				"Function"				"Warglaives_on"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/demon.lua"
+				"Function"				"Warglaives_off"
+			}
+		}
+	}
+	
+	"demon_dodge"	//+critical on next attack after dodge
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_dodge"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastPoint"				"0.35"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_form" //class skill, toggle to lose the melee skills and get access to the summons
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_form"
+		"MaxLevel" 						"7"
+		"AbilityCastAnimation"			"transform"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/demon.lua"
+				"Function"				"demon_form_on"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/demon.lua"
+				"Function"				"demon_form_off"
+			}
+		}
+	}
+	
+	"demon_flame_crash" //go high and land
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_flame_crash"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_avatar" //ultimate1, illusion with shared HP
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_avatar"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_summons" //many demons
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_summons"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_strike" //bouncing projectile
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_strike"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_passive" //dunno what should this be
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_immolation"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_shadow_blast" //maybe redundant
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_shadow_blast"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_frenzy" //active, synergy with summons
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_frenzy"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+	
+	"demon_army" //ultimate2, gives the ability to swap to different summons
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"demon_army"
+		"MaxLevel" 						"7"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"	
+		"AbilityManaCost"				"0"
+	}
+
+//}End Demon
 
 
 	"dummy_passive"
