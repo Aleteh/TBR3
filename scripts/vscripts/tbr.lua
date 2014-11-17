@@ -15,16 +15,16 @@ GOLD_TICK_TIME = 5                      -- How long should we wait in seconds be
 RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes (Note: this is not working currently I believe)
 CAMERA_DISTANCE_OVERRIDE = 1500         -- How far out should we allow the camera to go?  1134 is the default in Dota
 
-MINIMAP_ICON_SIZE = 500                 -- What icon size should we use for our heroes?
+MINIMAP_ICON_SIZE = 1                 -- What icon size should we use for our heroes?
 MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
-MINIMAP_RUNE_ICON_SIZE = 500            -- What icon size should we use for runes?
+MINIMAP_RUNE_ICON_SIZE = 1            -- What icon size should we use for runes?
 
 RUNE_SPAWN_TIME = 120                   -- How long in seconds should we wait between rune spawns?
 CUSTOM_BUYBACK_COST_ENABLED = true      -- Should we use a custom buyback cost setting?
 CUSTOM_BUYBACK_COOLDOWN_ENABLED = true  -- Should we use a custom buyback time?
 BUYBACK_ENABLED = false                 -- Should we allow people to buyback when they die?
 
-DISABLE_FOG_OF_WAR_ENTIRELY = true      -- Should we disable fog of war entirely for both teams?
+DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirely for both teams?
 --USE_STANDARD_DOTA_BOT_THINKING = false  -- Should we have bots act like they would in Dota? (This requires 3 lanes, normal items, etc)
 USE_STANDARD_HERO_GOLD_BOUNTY = true    -- Should we give gold for hero kills the same as in Dota, or allow those values to be changed?
 
