@@ -377,12 +377,13 @@
 	"npc_dota_hero_invoker"
 	{
 		"override_hero"				"npc_dota_hero_invoker"
-		"AbilityLayout" "5"
+		"AbilityLayout" "6"
 		"Ability1"					"magician_frost_bolt"
 		"Ability2"					"magician_flame_spire"
 		"Ability3"					"magician_flash_point"
 		"Ability4"					"magician_meteor_shower"
 		"Ability5"					"magician_freezing_field"
+		"Ability6"					"magician_preparation"
 
 		// Attributes
         //-------------------------------------------------------------------------------------------------------------
