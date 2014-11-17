@@ -5829,47 +5829,76 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"magician_skill1"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.35"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"35 70 125 200 350 550 700 950"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
     	"AbilityDamage"                 "175 400 700 1000 1750 2500 3500 5000"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"			"FIELD_INTEGER"
+    			"dmg"				"175 400 700 1000 1750 2500 3500 5000"
+    		}
+    	}
+
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"ActOnTargets"
 			{
-				"Target" 			"TARGET"
-				"ModifierName"		"frost_bolt_mod"
+				"Target"
+				{
+					"Center"  			"POINT"
+				 	"Line"
+			 		{
+			 			"Length" 		"700"
+			 			"Thickness" 	"225"
+			 		}
+			 		"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"  
+			 		"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"ApplyModifier"
+					{
+						"Target" 			"TARGET"
+						"ModifierName"		"frost_bolt_modifier"
+					}
+					"RunScript"
+				 	{
+					    "ScriptFile"	"damage.lua"
+					    "Function"		"DoDamage"
+					    "Damage"		"%dmg"
+				  	}
+				}
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician.lua"
+				"Function"			"frost_bolt"
 			}
 		}
-		"Modifiers"    				// Can be used to create custom modifier. 
-		{  							// There are many snippets that can be expanded in to the modifiers. 
-			"frost_bolt_mod"   	// This should be the name of your modifier
+
+		"Modifiers"
+		{  					
+			"frost_bolt_modifier"
 			{
 				"IsDebuff"					"1"
 				"IsPurgable"				"1"
-				"IsStunDebuff"				"1"
 				"IsHidden"					"0"
 				"Duration"					"2"
 				"States"
 				{
-					"MODIFIER_STATE_FROZEN"				"MODIFIER_STATE_VALUE_ENABLED"
-					
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"			
 				}
 			}
 		}
@@ -5888,9 +5917,7 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"magician_skill2"
 		"MaxLevel" 						"7"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"8"
@@ -5898,11 +5925,8 @@
 		"AbilityDuration"               "3"
 		"AOERadius"						"275"
     	
-    	//"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
 
     	"AbilitySpecial"
     	{
@@ -5928,21 +5952,20 @@
     		}
     	}
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"CreateThinker"
 			{
-				"Target" 			"POINT"
-				"ModifierName"		"flame_spire_mod"
+				"ModifierName"	"flame_spire_modifier"
+				"Target" 		"POINT"
 			}
 		}
-		"Modifiers"    				// Can be used to create custom modifier. 
-		{  							// There are many snippets that can be expanded in to the modifiers. 
-			"flame_spire_mod"   	// This should be the name of your modifier
+		"Modifiers"
+		{  			
+			"flame_spire_modifier"
 			{	
-				"ThinkInterval"				"%tick_interval"
+				"ThinkInterval"		"%tick_interval"
+				"Duration"			"%duration"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -5971,28 +5994,54 @@
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"35 70 115 170 235 365 575 800"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		//"OnSpellStart"
-		//{
-		//	"RunScript"
-		//	{
-		//		"ScriptFile"		"abilities/magician.lua"
-		//		"Function"			"barbarian_taunt"
-		//	}
-		//}
+    	"AbilityDamage"                 "75 200 350 560 840 1260 200 3000"
+
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"radius"				"600"
+    		}
+    		"02"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"dmg"				"75 200 350 560 840 1260 200 3000"               
+    		}
+    	}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician.lua"
+				"Function"			"flash_point"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius" 				"%radius"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"RunScript"
+				 	{
+					    "ScriptFile"	"damage.lua"
+					    "Function"		"DoDamage"
+					    "Damage"		"%dmg"
+				  	}
+				}
+			}
+		}
 	}
 
 
@@ -6009,30 +6058,32 @@
 		"AbilityTextureName"			"magician_skill4"
 		"MaxLevel" "1"
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"40 70 120 195 290 435 600 800"
+    	"AbilityDamage"                 "75 200 350 560 840 1260 2000 3000"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		//"OnSpellStart"
-		//{
-		//	"RunScript"
-		//	{
-		//		"ScriptFile"		"abilities/magician.lua"
-		//		"Function"			"barbarian_taunt"
-		//	}
-		//}
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"radius"				"350" //Made this up
+    		}
+    	}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician.lua"
+				"Function"			"meteor_shower"
+				"Target"			"POINT"
+			}
+		}
 	}
 
 
@@ -6047,30 +6098,45 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"magician_skill5"
-		"MaxLevel" "1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
-		"AbilityCooldown"				"12 12 12 12 12 12 12 12"
-		"AbilityManaCost"				"10 17 25 35 47 60 74 90"
-		//"AbilityDuration"               "3.11 3.11 3.11 3.11"
-    	
-    	// Damage.
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+		"MaxLevel" 						"7"
 
-    	// Special
-    	//-------------------------------------------------------------------------------------------------------------
-		//"OnSpellStart"
-		//{
-		//	"RunScript"
-		//	{
-		//		"ScriptFile"		"abilities/magician.lua"
-		//		"Function"			"barbarian_taunt"
-		//	}
-		//}
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"125 250 400 575 800 1000 1000 1000"
+    	"AbilityDamage"                 "300 600 1100 1750 3000 4500 7500 10000"
+
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"slow"					"-25"
+    		}
+    	}
+
+    	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/magician.lua"
+				"Function"			"freezing_field"
+			}
+		}
+
+		"Modifiers"
+		{  					
+			"freezing_field_modifier"
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"1"
+				"IsHidden"					"0"
+				"Duration"					"2"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
 	}
 
 	"magician_preparation"

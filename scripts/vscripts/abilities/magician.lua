@@ -1,4 +1,13 @@
+function frost_bolt( event )
+	local target = event.target_points[1]
+	
+	-- icewall starting from the caster up to the target point (or use a fixed distance)
+end
+
 function flame_spire(event)
+
+	--macropyre
+
 	local hero = event.caster
 	local spellpower = hero.spellPower
 
@@ -13,6 +22,23 @@ function flame_spire(event)
 	for _,enemy in pairs(enemies) do
 		ApplyDamage({ victim = enemy, attacker = hero, damage = aoe_damage, damage_type = DAMAGE_TYPE_MAGICAL })
     end
+end
+
+function flash_point( event )
+	
+	-- light strike arraw with fireworks
+end
+
+function meteor_shower( event )
+	local target = event.target_points[1]
+
+	-- delay impact of 6~7 meteors in a line from the caster and the target point
+end
+
+function freezing_field( event )
+
+	--random frost blast? field in a big aoe
+	
 end
 
 function refresh_cooldowns( event )
