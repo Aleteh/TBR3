@@ -78,34 +78,29 @@ function demon_form_off( event )
 end
 
 function AttachWearables( hero )
-    weaponModel = "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl" --"models/heroes/terrorblade/weapon.vmdl"
-    local weapon = Entities:CreateByClassname("dota_item_wearable")
+    weaponModel = "models/heroes/terrorblade/weapon.vmdl" --"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl" 
+    local weapon = Entities:CreateByClassname("prop_dynamic")
     weapon:SetModel(weaponModel)
       
-    --attempt
-    weapon:SetAngles(90,0,0)
-    weapon:SetForwardVector(RandomVector(3000))
-   
     weapon:SetParent(hero, "attach_weapon_r")
-    --ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
-    
+    weapon:SetAbsOrigin(hero:GetAbsOrigin())
+    weapon:SetAngles(-30,30,-45)
+    ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
 
-    local weapon = Entities:CreateByClassname("dota_item_wearable")
-    weapon:SetModel(weaponModel)
-    weapon:SetParent(hero:GetRootMoveParent(), "attach_weapon_l")
+    --local weapon = Entities:CreateByClassname("dota_item_wearable")
+    --weapon:SetModel(weaponModel)
+    --weapon:SetParent(hero:GetRootMoveParent(), "attach_weapon_l")
+    --GetRootMoveParent()
     --ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_ambient_sword_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon)
 
-    --local horns = Entities:CreateByClassname("dota_item_wearable")
-    --horns:SetModel("models/heroes/terrorblade/horns.vmdl")
-    --horns:SetParent(hero, "attach_head")
-    --how the fuck do I put them in the correct place!?
+    --weapon:SetAngles(90,0,0)
 end
     
 function RemoveWearables( hero )
     local wearables = {}
-    local model = hero:FirstMoveChild()
+    local model = hero:FirstMoveChild() --the new prop_dynamics aren't getting included in the hero childs, we need a new method
     while model ~= nil do
-        if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
+        if model ~= nil and model:GetClassname() ~= "" then --and model:GetClassname() == "dota_item_wearable" then
             print(model:GetModelName())
             if string.find(model:GetModelName(), "weapon") ~= nil then --or string.find(model:GetModelName(), "horns") ~= nil then
                 table.insert(wearables, model)
