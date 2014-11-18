@@ -51,6 +51,9 @@ function flame_spire_fx( event )
 	ParticleManager:SetParticleControl(particle, 0, target) -- origin
 	ParticleManager:SetParticleControl(particle, 1, target) -- origin
     ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0)) -- duration
+
+    --not sure if I should keep this:
+    local particle = ParticleManager:CreateParticle("particles/dire_fx/bad_ancient002_pit_lava_blast.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 end
 
 function flash_point( event )
@@ -59,6 +62,9 @@ function flash_point( event )
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 	--ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
 	--ParticleManager:SetParticleControl(particle, 2, hero:GetAbsOrigin())
+
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 end
 
 function meteor_shower( event )

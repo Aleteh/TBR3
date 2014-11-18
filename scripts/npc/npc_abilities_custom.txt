@@ -5831,10 +5831,10 @@
 		"AbilityTextureName"			"magician_skill1"
 		"MaxLevel" 						"7"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6" //doesnt work for some reason
 		
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.35"
@@ -5854,10 +5854,16 @@
     	"precache"
     	{
     		"particle"	"particles/units/heroes/hero_jakiro/jakiro_ice_path_b.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
     	}
 
 		"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Jakiro.IcePath"
+				"Target" 			"CASTER"
+			}
 			"ActOnTargets"
 			{
 				"Target"
@@ -5902,6 +5908,8 @@
 				"IsPurgable"				"1"
 				"IsHidden"					"0"
 				"Duration"					"2"
+				"EffectName"				"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"			"follow_origin"
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"			
@@ -5961,6 +5969,7 @@
     	"precache"
     	{
     		"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
     	}
 
 		"OnSpellStart"
@@ -5983,6 +5992,11 @@
 					{
 						"ScriptFile"		"abilities/magician.lua"
 						"Function"			"flame_spire_fx"
+					}
+					"FireSound"
+					{
+						"EffectName"		"Hero_EmberSpirit.FlameGuard.Cast"
+						"Target" 			"TARGET"
 					}
 				}
 				"OnIntervalThink"
@@ -6037,7 +6051,10 @@
     	"precache"
     	{
     		"particles"	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_explosion.vpcf"
-    		"particles"	"particles/units/heroes/hero_skeletonking/skeletonking_mortalstrike.vpcf"
+    		"particles"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+    		"particles"	"particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf"
+    		"particles" "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
     	}
 
 		"OnSpellStart"
@@ -6046,6 +6063,26 @@
 			{
 				"ScriptFile"		"abilities/magician.lua"
 				"Function"			"flash_point"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Gyrocopter.CallDown.Damage"
+				"Target"			"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target"
+				{
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}			
+				"EffectName"			"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"EffectRadius"			"%radius"
+				"EffectDurationScale"	"3"
+				"EffectLifeDurationScale" "3"
+				"EffectColorA"			"255 75 25"
+				"EffectColorB"			"255 75 25"
 			}
 			"ActOnTargets"
 			{
