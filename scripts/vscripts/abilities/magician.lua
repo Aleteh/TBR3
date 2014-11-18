@@ -58,13 +58,24 @@ end
 
 function flash_point( event )
 	local hero = event.caster
+	local radius = event.ability:GetSpecialValueFor("radius")
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-	--ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
-	--ParticleManager:SetParticleControl(particle, 2, hero:GetAbsOrigin())
+	--[[local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle, 1, Vector(radius,0,0))
+	ParticleManager:SetParticleControl(particle, 3, hero:GetAbsOrigin())]]
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+	
+	--local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	local particle1 = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle1, 0, hero:GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle1, 3, hero:GetAbsOrigin())
+	
+	local particle2 = ParticleManager:CreateParticle("particles/holdout_lina/holdout_wildfire_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle2, 0, hero:GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle2, 1, hero:GetAbsOrigin())
 end
 
 function meteor_shower( event )
