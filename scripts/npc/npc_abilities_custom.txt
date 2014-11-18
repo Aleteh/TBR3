@@ -5872,7 +5872,7 @@
 				 	"Line"
 			 		{
 			 			"Length" 		"700"
-			 			"Thickness" 	"225"
+			 			"Thickness" 	"150" //"225"
 			 		}
 			 		"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"  
 			 		"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
@@ -6051,7 +6051,7 @@
     	"precache"
     	{
     		"particle"	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_explosion.vpcf"
-    		"particle"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+    		"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf"
     		"particle"	"particles/holdout_lina/holdout_wildfire_start.vpcf"
     		"particle"	"particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf"
     		"particle" "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
@@ -6134,6 +6134,79 @@
 				"ScriptFile"		"abilities/magician.lua"
 				"Function"			"meteor_shower"
 				"Target"			"POINT"
+			}
+		}
+	}
+
+	"magician_meteor_shower_proxy"
+	{
+		"BaseClass"						"invoker_chaos_meteor"
+		"MaxLevel"						"1"
+		"HotKeyOverride"				"D"
+		"AbilityBehavior"			 	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+
+		"AbilityCastRange"				"9000"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityModifierSupportValue"	"0.0"	// Mainly about damage
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"land_time"				"1.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"275"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"		"50"
+				"levelkey"				"wexlevel"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_speed"			"300"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_distance"		"500"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"end_vision_duration"	"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"main_damage"			"57.5 75 92.5 110 127.5 145 162.5"
+				"levelkey"				"exortlevel"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_duration"			"3.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_dps"				"11.5 15 18.5 22 25.5 29 32.5"
+				"levelkey"				"exortlevel"
 			}
 		}
 	}

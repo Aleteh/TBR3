@@ -9,8 +9,11 @@ end
 function impale( event )
 	if event.ability:IsCooldownReady() == true then
 		event.ability:ApplyDataDrivenModifier( event.caster, event.caster, "warlord_impale_animation", nil)
-		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_axe/axe_culling_blade_kill_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+
+		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 		ParticleManager:SetParticleControl(particle, 4, event.target:GetAbsOrigin()) --location
+		ParticleManager:SetParticleControlEnt(particle, 1, event.target, 0, "attach_hitloc", event.target:GetAbsOrigin(), false)
+		
 		event.ability:PayManaCost()
 		event.ability:StartCooldown(event.ability:GetCooldown(1))
 		ApplyDamage({ victim = event.target, attacker = event.caster, damage = event.ability:GetAbilityDamage(), damage_type = event.ability:GetAbilityDamageType(), ability = event.ability	})

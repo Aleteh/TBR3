@@ -83,7 +83,7 @@ function meteor_shower( event )
 	local caster = event.caster
 
 	-- delay impact of 6~7 meteors in a line from the caster and the target point
-	local info = {
+	--[[local info = {
         EffectName = "particles/meteor_strike.vpcf",
         Ability = event.ability,
         vSpawnOrigin = caster:GetOrigin()+Vector(0,0,500),
@@ -101,13 +101,79 @@ function meteor_shower( event )
 
     local speed = 500
 
-    point.z = 0
-    local pos = caster:GetAbsOrigin()
-    pos.z = 0
+    local  pos = caster:GetAbsOrigin()
     local diff = point - pos
     info.vVelocity = diff:Normalized() * speed
 
-    ProjectileManager:CreateLinearProjectile( info )
+    ProjectileManager:CreateLinearProjectile( info )]]
+
+ 	print("Creating meteor particle")
+    --local caster = CreateUnitByName("dummy_unit", caster:GetOrigin(), false, caster, caster, event.caster:GetTeam())
+    caster:AddAbility("magician_meteor_shower_proxy")
+    local ability = caster:FindAbilityByName("magician_meteor_shower_proxy")
+    ability:SetLevel(1)
+
+    caster:CastAbilityOnPosition(point, ability, -1)
+
+    Timers:CreateTimer({
+		endTime = 0.5,
+		callback = function()
+			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
+			local dist = dir * 200
+
+			local position = point + dist
+
+		    caster:CastAbilityOnPosition(position, ability, -1)
+			print("Cast another meteor")
+		end
+	})
+
+	Timers:CreateTimer({
+		endTime = 1,
+		callback = function()
+			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
+			local dist = dir * 400
+
+			local position = point + dist
+
+		    caster:CastAbilityOnPosition(position, ability, -1)
+			print("Cast another meteor")
+		end
+	})
+
+	Timers:CreateTimer({
+		endTime = 1.5,
+		callback = function()
+			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
+			local dist = dir * 600
+
+			local position = point + dist
+
+		    caster:CastAbilityOnPosition(position, ability, -1)
+			print("Cast another meteor")
+		end
+	})
+
+	Timers:CreateTimer({
+		endTime = 2,
+		callback = function()
+			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
+			local dist = dir * 800
+
+			local position = point + dist
+
+		    caster:CastAbilityOnPosition(position, ability, -1)
+			print("Cast another meteor")
+		end
+	})
+
+    Timers:CreateTimer({
+		endTime = 5,
+		callback = function()
+			caster:RemoveAbility("magician_meteor_shower_proxy")
+			print("removed meteor proxy")
+		end
+	})
 
 end
 
