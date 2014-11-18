@@ -51,6 +51,6 @@ tools_asset_info.bin
 maps/test_env.vpk
 
 # Compiled Particles
-#*.vpcf_c
+*.vpcf_c
 *.vtex_c
 *.vpk

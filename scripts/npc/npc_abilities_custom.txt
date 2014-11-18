@@ -5851,6 +5851,11 @@
     		}
     	}
 
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_jakiro/jakiro_ice_path_b.vpcf"
+    	}
+
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -5885,6 +5890,7 @@
 			{
 				"ScriptFile"		"abilities/magician.lua"
 				"Function"			"frost_bolt"
+				"Target"			"POINT"
 			}
 		}
 
@@ -5950,6 +5956,11 @@
     			"var_type"				"FIELD_FLOAT"
     			"tick_interval"			"0.5"
     		}
+    	}
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
     	}
 
 		"OnSpellStart"
