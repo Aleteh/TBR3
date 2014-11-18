@@ -5977,6 +5977,14 @@
 			{	
 				"ThinkInterval"		"%tick_interval"
 				"Duration"			"%duration"
+				"OnCreated"
+				{	
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/magician.lua"
+						"Function"			"flame_spire_fx"
+					}
+				}
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -6001,7 +6009,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"magician_skill3"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -6024,6 +6032,12 @@
     			"var_type"				"FIELD_INTEGER"
     			"dmg"				"75 200 350 560 840 1260 200 3000"               
     		}
+    	}
+
+    	"precache"
+    	{
+    		"particles"	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_explosion.vpcf"
+    		"particles"	"particles/units/heroes/hero_skeletonking/skeletonking_mortalstrike.vpcf"
     	}
 
 		"OnSpellStart"
@@ -6067,7 +6081,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"magician_skill4"
-		"MaxLevel" "1"
+		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 
@@ -6085,7 +6099,11 @@
     			"radius"				"350" //Made this up
     		}
     	}
-
+    	
+    	"precache"
+    	{
+    		"particle"	"particles/meteor_strike.vpcf"
+    	}
 		"OnSpellStart"
 		{
 			"RunScript"

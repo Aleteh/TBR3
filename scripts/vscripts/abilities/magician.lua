@@ -28,17 +28,8 @@ function frost_bolt( event )
 	end
 
 function flame_spire(event)
-
-	local target = event.target:GetAbsOrigin()
-
-	--macropyre
 	local hero = event.caster
 	local spellPower = hero.spellPower
-
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
-	ParticleManager:SetParticleControl(particle, 0, target) -- origin
-	ParticleManager:SetParticleControl(particle, 1, target) -- origin
-    ParticleManager:SetParticleControl(particle, 2, Vector(1,0,0)) -- duration
 
 	local aoe = event.ability:GetSpecialValueFor("radius")
 	local duration = event.ability:GetSpecialValueFor("duration")
@@ -54,15 +45,53 @@ function flame_spire(event)
     end
 end
 
+function flame_spire_fx( event )
+	local target = event.target:GetAbsOrigin()
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	ParticleManager:SetParticleControl(particle, 0, target) -- origin
+	ParticleManager:SetParticleControl(particle, 1, target) -- origin
+    ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0)) -- duration
+end
+
 function flash_point( event )
-	
-	-- light strike arraw with fireworks
+	local hero = event.caster
+
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	--ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+	--ParticleManager:SetParticleControl(particle, 2, hero:GetAbsOrigin())
 end
 
 function meteor_shower( event )
-	local target = event.target_points[1]
+	local point = event.target_points[1]
+	local caster = event.caster
 
 	-- delay impact of 6~7 meteors in a line from the caster and the target point
+	local info = {
+        EffectName = "particles/meteor_strike.vpcf",
+        Ability = event.ability,
+        vSpawnOrigin = caster:GetOrigin()+Vector(0,0,500),
+        fDistance = 500,
+        fStartRadius = 350,
+        fEndRadius = 350,
+        Source = caster,
+        bHasFrontalCone = false,
+        iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+        iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+        iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_OTHER,
+        --fMaxSpeed = 5200,
+        fExpireTime = GameRules:GetGameTime() + 4.0,
+    }
+
+    local speed = 500
+
+    point.z = 0
+    local pos = caster:GetAbsOrigin()
+    pos.z = 0
+    local diff = point - pos
+    info.vVelocity = diff:Normalized() * speed
+
+    ProjectileManager:CreateLinearProjectile( info )
+
 end
 
 function freezing_field( event )
