@@ -6130,7 +6130,6 @@
     	}
 		"OnSpellStart"
 		{
-			//TODO: Fix sound not stoping bug
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/magician.lua"
