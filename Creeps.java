@@ -7,14 +7,20 @@ Fire Demon
 Forest bear	 
 
 =Goblins Area
-Goblin Shaman	 
-Bandit Area
+Goblin 
+Shaman
+
+=Bandit Area
 Bandit	 
 	PARTICULARITY : Have a 10% chance to do 2 times his normal damage.
+Mounted Bandit // Cant remember the name, but its the first elite that drops basic items
 
-	=Black Goblin Area
-Black goblin
-Ogre Shaman	 
+=Black Goblin Area
+Black Goblin
+Ogre 
+Shaman
+Goblin Boss	// Boss name eludes me, also drops basic items
+	PARTICULARITY : Casts Chain Lightning	 
 
 =Spiders Area
 Forest spider	
