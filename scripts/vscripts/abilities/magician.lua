@@ -80,7 +80,7 @@ end
 
 function meteor_shower( event )
 	local point = event.target_points[1]
-	local caster = event.caster
+	--local caster = event.caster
 
 	-- delay impact of 6~7 meteors in a line from the caster and the target point
 	--[[local info = {
@@ -108,7 +108,7 @@ function meteor_shower( event )
     ProjectileManager:CreateLinearProjectile( info )]]
 
  	print("Creating meteor particle")
-    --local caster = CreateUnitByName("dummy_unit", caster:GetOrigin(), false, caster, caster, event.caster:GetTeam())
+    local caster = CreateUnitByName("dummy_unit", event.caster:GetOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
     caster:AddAbility("magician_meteor_shower_proxy")
     local ability = caster:FindAbilityByName("magician_meteor_shower_proxy")
     ability:SetLevel(1)
@@ -124,7 +124,6 @@ function meteor_shower( event )
 			local position = point + dist
 
 		    caster:CastAbilityOnPosition(position, ability, -1)
-			print("Cast another meteor")
 		end
 	})
 
@@ -137,7 +136,6 @@ function meteor_shower( event )
 			local position = point + dist
 
 		    caster:CastAbilityOnPosition(position, ability, -1)
-			print("Cast another meteor")
 		end
 	})
 
@@ -150,7 +148,6 @@ function meteor_shower( event )
 			local position = point + dist
 
 		    caster:CastAbilityOnPosition(position, ability, -1)
-			print("Cast another meteor")
 		end
 	})
 
@@ -163,24 +160,86 @@ function meteor_shower( event )
 			local position = point + dist
 
 		    caster:CastAbilityOnPosition(position, ability, -1)
-			print("Cast another meteor")
 		end
 	})
 
     Timers:CreateTimer({
-		endTime = 5,
+		endTime = 4,
 		callback = function()
 			caster:RemoveAbility("magician_meteor_shower_proxy")
-			print("removed meteor proxy")
+			caster:RemoveSelf()
+			print("Removed meteor proxy")
 		end
 	})
 
 end
 
+function freezing_field_start( event )
+	local hero = event.caster
+    hero.FF_particle0 = ParticleManager:CreateParticle("particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(event.caster.FF_particle0, 0, hero:GetAbsOrigin())
+	ParticleManager:SetParticleControl(event.caster.FF_particle0, 1, hero:GetAbsOrigin())
+	ParticleManager:SetParticleControl(event.caster.FF_particle0, 3, hero:GetAbsOrigin())
+
+	event.caster.FF_particle1 = ParticleManager:CreateParticle("particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(hero.FF_particle1, 0, hero:GetAbsOrigin())
+	ParticleManager:SetParticleControl(hero.FF_particle1, 1, Vector(600,600,0))
+end
+
+function freezing_field_end( event )
+	local hero = event.caster
+	ParticleManager:DestroyParticle(hero.FF_particle1,false) --ice effect on the ground still remains
+	ParticleManager:ReleaseParticleIndex(hero.FF_particle1)
+end
+
 function freezing_field( event )
 
-	--random frost blast? field in a big aoe
-	
+	local position = event.caster:GetAbsOrigin() + RandomVector(RandomInt(50, 600))
+
+	local dummy = CreateUnitByName("dummy_unit", position, false, event.caster, event.caster, event.caster:GetTeam())
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+	ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin())
+
+	if RandomInt(0,1)==0 then 
+		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+		ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin())
+	end
+
+	--Each Explosion deals xx + 1/20 Spelldamage in 200 AoE.
+	local aoe = event.ability:GetSpecialValueFor("blast_radius")
+	local spellPower = event.caster.spellPower
+	local explosion_damage = event.ability:GetLevelSpecialValueFor("dmg", event.ability:GetLevel()-1) + (spellPower/20)
+
+	enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), position,  nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+	for _,enemy in pairs(enemies) do
+		event.ability:ApplyDataDrivenModifier( hero, enemy, "call_lightning_modifier", {duration = daze_duration})
+		--Damage reduced by 75% and 50% reduction on units that have already been hit.
+		if enemy.FF == nil then	--first time being hit by a FF blast, do full damage
+			enemy.FF = 1
+			ApplyDamage({ victim = enemy, attacker = event.caster, damage = explosion_damage, damage_type = DAMAGE_TYPE_MAGICAL })
+		elseif enemy.FF == 1 then
+			enemy.FF = 2
+			ApplyDamage({ victim = enemy, attacker = event.caster, damage = explosion_damage*0.75, damage_type = DAMAGE_TYPE_MAGICAL })
+		elseif enemy.FF == 2 then
+			ApplyDamage({ victim = enemy, attacker = event.caster, damage = explosion_damage*0.5, damage_type = DAMAGE_TYPE_MAGICAL })
+		end
+
+		--reset the FF counters
+		Timers:CreateTimer({
+			endTime = 4,
+			callback = function()
+				enemy.FF = nil
+			end
+		})
+    end
+
+    Timers:CreateTimer({
+		endTime = 1,
+		callback = function()
+			dummy:RemoveSelf()
+		end
+	})
+
 end
 
 function refresh_cooldowns( event )

@@ -5854,6 +5854,7 @@
     	"precache"
     	{
     		"particle"	"particles/units/heroes/hero_jakiro/jakiro_ice_path_b.vpcf"
+    		"particle"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
     		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
     	}
 
@@ -5908,7 +5909,7 @@
 				"IsPurgable"				"1"
 				"IsHidden"					"0"
 				"Duration"					"2"
-				"EffectName"				"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectName"				"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
 				"EffectAttachType"			"follow_origin"
 				"States"
 				{
@@ -6215,8 +6216,12 @@
 	//=================================================================================================================
 	// Magician: Freezing Field
 	//=================================================================================================================
-	//Summons multi explosion around the magician damaging enemies and slowing them for 4 seconds. 
-	//Each explosion deals xxxxx damage for xxxx mana. 45 seconds cooldown.
+	//"Summons 80 Explosion around the Magicain damaging enemies.
+	//Each Explosion deals xx + 1/20 Spelldamage in 200 AoE. Damage reduced by 75% and 50% reduction on units that have already been hit.
+	//Last 4 seconds"
+
+	//80*xx + 4*SD in the Area. But far less to a single target as it wont get hit 80 times and after beeing hit nce, it recieves only half the Damage.
+	//So even with huge luck, you wont deal much more then 15*xx + 1*SD
 	"magician_freezing_field"
 	{
 		// General
@@ -6225,8 +6230,17 @@
 		"AbilityTextureName"			"magician_skill5"
 		"MaxLevel" 						"7"
 
-		"AbilityCastPoint"				"0.5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED" // | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"invoker_ghost_walk"
+
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"45"
+		"AbilityDuration"				"4"
+		"AbilityChannelTime"			"4"
 		"AbilityManaCost"				"125 250 400 575 800 1000 1000 1000"
     	"AbilityDamage"                 "300 600 1100 1750 3000 4500 7500 10000"
 
@@ -6235,27 +6249,97 @@
     		"01"
     		{
     			"var_type"				"FIELD_INTEGER"
+    			"dmg"					"300 600 1100 1750 3000 4500 7500 10000"
+    		}
+    		"02"
+    		{
+    			"var_type"				"FIELD_INTEGER"
     			"slow"					"-25"
     		}
+    		"03"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"blast_radius"			"200"
+    		}
+    	}
+
+    	"precache"
+    	{
+    		"particle" "particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"particle" "particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_explode.vpcf"
+			"particle"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_debuff.vpcf"
+			"particle" "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
+			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
+			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
     	}
 
     	"OnSpellStart"
 		{
-			"RunScript"
+			"ApplyModifier"
 			{
-				"ScriptFile"		"abilities/magician.lua"
-				"Function"			"freezing_field"
+				"Target" 		"CASTER"
+				"ModifierName" 	"freezing_field_thinker"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target" 		"CASTER"
+				"ModifierName" 	"freezing_field_thinker"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"freezing_field_thinker"
 			}
 		}
 
 		"Modifiers"
-		{  					
+		{  
+			"freezing_field_thinker"
+			{
+				"Duration"	"%AbilityDuration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/magician.lua"
+						"Function"			"freezing_field_start"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/magician.lua"
+						"Function"			"freezing_field_end"
+					}
+				}
+				"ThinkInterval"	"0.05"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/magician.lua"
+						"Function"			"freezing_field"
+					}
+				}
+			}
+
 			"freezing_field_modifier"
 			{
 				"IsDebuff"					"1"
 				"IsPurgable"				"1"
 				"IsHidden"					"0"
-				"Duration"					"2"
+				"Duration"					"4"
+				"EffectName"				"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"			"follow_origin"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
