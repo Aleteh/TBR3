@@ -80,95 +80,69 @@ end
 
 function meteor_shower( event )
 	local point = event.target_points[1]
-	--local caster = event.caster
+	local caster = event.caster
 
-	-- delay impact of 6~7 meteors in a line from the caster and the target point
-	--[[local info = {
-        EffectName = "particles/meteor_strike.vpcf",
-        Ability = event.ability,
-        vSpawnOrigin = caster:GetOrigin()+Vector(0,0,500),
-        fDistance = 500,
-        fStartRadius = 350,
-        fEndRadius = 350,
-        Source = caster,
-        bHasFrontalCone = false,
-        iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-        iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-        iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_OTHER,
-        --fMaxSpeed = 5200,
-        fExpireTime = GameRules:GetGameTime() + 4.0,
-    }
-
-    local speed = 500
-
-    local  pos = caster:GetAbsOrigin()
-    local diff = point - pos
-    info.vVelocity = diff:Normalized() * speed
-
-    ProjectileManager:CreateLinearProjectile( info )]]
-
+	local aoe = event.ability:GetSpecialValueFor("radius")
+	local spellPower = event.caster.spellPower
+	local damage = event.ability:GetAbilityDamage() + spellPower
+	
  	print("Creating meteor particle")
-    local caster = CreateUnitByName("dummy_unit", event.caster:GetOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
-    caster:AddAbility("magician_meteor_shower_proxy")
-    local ability = caster:FindAbilityByName("magician_meteor_shower_proxy")
+    local dummy = CreateUnitByName("dummy_unit", caster:GetOrigin(), false, caster, caster, caster:GetTeam())
+    dummy:AddAbility("magician_meteor_shower_proxy")
+    local ability = dummy:FindAbilityByName("magician_meteor_shower_proxy")
     ability:SetLevel(1)
 
-    caster:CastAbilityOnPosition(point, ability, -1)
+    Timers:CreateTimer({
+		endTime = 0.05,
+		callback = function()
+			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
+			local dist = dir * 10
+
+			local position = point + dist
+			dummy:CastAbilityOnPosition(position, ability, -1)
+		end
+		})
 
     Timers:CreateTimer({
-		endTime = 0.5,
-		callback = function()
-			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
-			local dist = dir * 200
-
-			local position = point + dist
-
-		    caster:CastAbilityOnPosition(position, ability, -1)
-		end
-	})
-
-	Timers:CreateTimer({
-		endTime = 1,
-		callback = function()
-			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
-			local dist = dir * 400
-
-			local position = point + dist
-
-		    caster:CastAbilityOnPosition(position, ability, -1)
-		end
-	})
-
-	Timers:CreateTimer({
 		endTime = 1.5,
 		callback = function()
-			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
-			local dist = dir * 600
-
-			local position = point + dist
-
-		    caster:CastAbilityOnPosition(position, ability, -1)
+			-- Do damage on the impact
+   			enemies = FindUnitsInRadius(caster:GetTeamNumber(), point,  nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+			for _,enemy in pairs(enemies) do
+				ApplyDamage({ victim = enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+			end
 		end
 	})
 
-	Timers:CreateTimer({
-		endTime = 2,
+    for i=0.5,2,0.5 do
+    	local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
+		local dist = dir * i * 400
+		local position = point + dist
+
+		Timers:CreateTimer({
+		endTime = i,
 		callback = function()
-			local dir = (event.target_points[1] - caster:GetAbsOrigin()):Normalized()
-			local dist = dir * 800
-
-			local position = point + dist
-
-		    caster:CastAbilityOnPosition(position, ability, -1)
+			dummy:CastAbilityOnPosition(position, ability, -1)
 		end
-	})
+		})
+
+		Timers:CreateTimer({
+		endTime = 1.5+i,
+		callback = function()
+			-- Do damage on the impact position
+   			enemies = FindUnitsInRadius(caster:GetTeamNumber(), position,  nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+			for _,enemy in pairs(enemies) do
+				ApplyDamage({ victim = enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+			end
+		end
+		})
+	end
 
     Timers:CreateTimer({
-		endTime = 4,
+		endTime = 10,
 		callback = function()
-			caster:RemoveAbility("magician_meteor_shower_proxy")
-			caster:RemoveSelf()
-			print("Removed meteor proxy")
+			dummy:RemoveSelf()
+			print("Removed meteor dummy")
 		end
 	})
 
@@ -184,6 +158,9 @@ function freezing_field_start( event )
 	event.caster.FF_particle1 = ParticleManager:CreateParticle("particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 	ParticleManager:SetParticleControl(hero.FF_particle1, 0, hero:GetAbsOrigin())
 	ParticleManager:SetParticleControl(hero.FF_particle1, 1, Vector(600,600,0))
+
+	EmitSoundOn("Hero_Crystal.CrystalNova.Yulsaria", hero)
+	EmitSoundOn("hero_Crystal.freezingField.wind", hero)
 end
 
 function freezing_field_end( event )
@@ -223,6 +200,7 @@ function freezing_field( event )
 		elseif enemy.FF == 2 then
 			ApplyDamage({ victim = enemy, attacker = event.caster, damage = explosion_damage*0.5, damage_type = DAMAGE_TYPE_MAGICAL })
 		end
+		EmitSoundOn("hero_Crystal.freezingField.explosion", enemy)
 
 		--reset the FF counters
 		Timers:CreateTimer({

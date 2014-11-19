@@ -6120,7 +6120,7 @@
     		"01"
     		{
     			"var_type"				"FIELD_INTEGER"
-    			"radius"				"350" //Made this up
+    			"radius"				"275" //Made this up
     		}
     	}
     	
@@ -6130,6 +6130,7 @@
     	}
 		"OnSpellStart"
 		{
+			//TODO: Fix sound not stoping bug
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/magician.lua"
@@ -6139,6 +6140,7 @@
 		}
 	}
 
+	// Dummy spell to make the particle
 	"magician_meteor_shower_proxy"
 	{
 		"BaseClass"						"invoker_chaos_meteor"
@@ -6153,7 +6155,7 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
-		"AbilityModifierSupportValue"	"0.0"	// Mainly about damage
+		"AbilityModifierSupportValue"	"0.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6175,7 +6177,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_speed"			"300"
+				"travel_speed"			"800"
 			}			
 			"05"
 			{
@@ -6195,18 +6197,18 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"main_damage"			"57.5 75 92.5 110 127.5 145 162.5"
+				"main_damage"			"0"
 				"levelkey"				"exortlevel"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_duration"			"3.0"
+				"burn_duration"			"0"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"11.5 15 18.5 22 25.5 29 32.5"
+				"burn_dps"				"0"
 				"levelkey"				"exortlevel"
 			}
 		}
@@ -6271,6 +6273,7 @@
 			"particle" "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
 			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
 			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
     	}
 
     	"OnSpellStart"
