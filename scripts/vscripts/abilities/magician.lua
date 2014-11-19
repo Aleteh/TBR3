@@ -223,6 +223,9 @@ end
 function refresh_cooldowns( event )
 	print("refreshing cooldowns")
 
+	local particle = ParticleManager:CreateParticle("particles/items2_fx/refresher.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	ParticleManager:SetParticleControl(particle, 0, event.caster:GetAbsOrigin())
+
   	Timers:CreateTimer({
     	endTime = 0.1,
     	callback = function()

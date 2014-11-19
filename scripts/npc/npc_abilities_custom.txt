@@ -6130,7 +6130,6 @@
     	}
 		"OnSpellStart"
 		{
-			//TODO: Fix sound not stoping bug
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/magician.lua"
@@ -6362,6 +6361,11 @@
 
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"precache"
+		{
+			"particle"	"particles/items2_fx/refresher.vpcf"
+		}
+
 		"Modifiers"
 		{
 			"preparation_modifier"
@@ -6374,13 +6378,18 @@
 				{
 					"Random"
 					{
-						"Chance"	"50" //5
+						"Chance"	"50" //5 TODO: Don't forget to change this later.
 						"OnSuccess"
 						{
 							"RunScript"
 							{
 								"ScriptFile"		"abilities/magician.lua"
 								"Function"			"refresh_cooldowns"
+							}
+							"FireSound"
+							{
+								"EffectName"		"DOTA_Item.Refresher.Activate"
+								"Target"      		"CASTER"
 							}
 						}
 					}
