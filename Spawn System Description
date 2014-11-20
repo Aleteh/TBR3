@@ -1,0 +1,14 @@
+Spawn System Description
+
+When 1 player enters a zone, spawn X mobs (can be a RandomInt(X,Y) for each particular mob) in npc_dota_spawner + RandomVector optional
+
+Unit list should be stored in a table to iterate easier and avoid extra FindUnits
+
+When all players leave a zone, UTIL_Remove all after a delay
+
+	Test that no items/xp/mats are grantes this way, it shouldnt count as a creep killed
+	It should never Ever delete mobs with people still in the area, so do a double check after the delay to check if they didn't re-enter
+
+Respawning mobs have a passive OnOwnerDied RunScript that starts a timer to spawn a new unit of the same type near the original location
+
+Extra AI can be made for creeps to roam a path, stop folliwing after X range, etc. Default is follow forever
