@@ -52,7 +52,8 @@
 	//		Demon Imp
 	//		Demon Hound 	 
 	//		Fire Demon 	 
-	//		Forest bear	 
+	//		Forest Bear
+	//	 	Mini-Boss Nukacha
 	//=================================================================================
 
 
@@ -380,6 +381,92 @@
 		//----------------------------------------------------------------
 	}
 
+	//=================================================================================
+	// Creature: Nukacha
+	// TODO: Lightning spell of 200 damage
+	//=================================================================================
+	"npc_nukacha"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/shadow_demon/shadow_demon.vmdl"
+		"ModelScale"			"1"
+		"Level"				"23"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A087
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"5"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"47.0"
+		"AttackDamageMax"		"61.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"26.0"
+		"BountyGoldMax"			"35.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"2700"
+		"StatusHealthRegen"		"4.00"
+		"StatusMana"			"250"
+		"StatsManaRegen"		"2.50"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"250"
+		
+		// Creature Data attacherino
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"6574"	} // "Diabolical Appendages"
+				"Wearable2"		{	"ItemDef"	"4379"	} // "Sigil of the Summoned Lord"
+				"Wearable3"		{	"ItemDef"	"4377"	} // "Lash of the Summoned Lord"
+				"Wearable4"		{	"ItemDef"	"4380"	} // "Plate of the Summoned Lord"
+				"Wearable5"		{	"ItemDef"	"545"	} // "Shadow Demon's Ambient Effects" TODO: Fix not showing
+			}			
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient.vpcf"
+		}
+	}
+
 	//=================================================================================	
 	// Goblins Area
 	//=================================================================================
@@ -552,7 +639,6 @@
 
 	//=================================================================================
 	// Creature: Bandit
-	// TODO: Add 10% chance to do 2 times his normal damage.
 	//=================================================================================
 	"npc_bandit"
 	{
@@ -565,7 +651,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: Ashm
+		"Ability1"			"bandit_crit"	 //Reference: Ashm
 		
 		// Armor
 		//----------------------------------------------------------------
@@ -631,7 +717,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				"models/items/chaos_knight/chaos_legion_mount/chaos_legion_mount.vmdl"
+		"Model"				"models/heroes/chaos_knight/chaos_knight.vmdl"
 		"ModelScale"			"1"
 		"Level"				"35"
 		
@@ -686,10 +772,26 @@
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"140"
+		"HealthBarOffset"		"250"
 		
 		// Creature Data
 		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"	
+			{
+				"Wearable1"		{	"ItemDef"	"5828"	} // "Atramentos the Apocalyptic"
+				"Wearable2"		{	"ItemDef"	"6266"	} // "Pauldrons of the Chaos Hound"
+				"Wearable3"		{	"ItemDef"	"5173"	} // "Entropic Helmet"
+				"Wearable4"		{	"ItemDef"	"5925"	} // "Shield of Screaming Souls"
+				"Wearable5"		{	"ItemDef"	"5233"	} // "Blade of Endless Havoc"
+			}
+		}
+
+		"precache"
+		{
+			"particle_folder"	"particles/units/heroes/hero_chaos_knight"
+		}
 	}
 
 	//=================================================================================	
@@ -697,7 +799,7 @@
 	//=================================================================================
 	//		Black Goblin
 	//		Ogre 
-	//		Goblin Boss	// Boss name eludes me, also drops basic items
+	//		Mini-Boss Rokthul
 	//=================================================================================
 
 	//=================================================================================
@@ -766,7 +868,7 @@
 		"HealthBarOffset"		"140"
 		
 		// Creature Data
-		//----------------------------------------------------------------
+		//----------------------------------------------------------------		
 	}
 
 	//=================================================================================
@@ -835,6 +937,95 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------
+	}
+
+	//=================================================================================
+	// Creature: Rokthul
+	// TODO: Chain? lightning spell of 200 damage
+	//		 Has a 15% command aura
+	//=================================================================================
+	"npc_rokthul"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/rikimaru/rikimaru.vmdl"
+		"ModelScale"		"2"
+		"Level"				"39"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A05N
+		"Ability2"			""	 //Reference: A05M
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"3"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"127.0"
+		"AttackDamageMax"		"159.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"72.0"
+		"BountyGoldMax"			"90.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"12111"
+		"StatusHealthRegen"		"8.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"4.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"250"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"	
+			{
+				"Wearable1"		{	"ItemDef"	"6368"	} // "Horns of the Frozen Blood"
+				"Wearable2"		{	"ItemDef"	"6365"	} // "Bracers of the Frozen Blood"
+				"Wearable3"		{	"ItemDef"	"5524"	} // "Wrath of the Highborn"
+				"Wearable4"		{	"ItemDef"	"5525"	} // "Temper of the Highborn - Off-Hand"
+				"Wearable5"		{	"ItemDef"	"6369"	} // "Armor of the Frozen Blood"
+				"Wearable6"		{	"ItemDef"	"6370"	} // "Tail of the Frozen Blood"
+			}
+		}
+
+		"precache"
+		{
+			"particle_folder"	"particles/units/heroes/hero_riki"
+		}
 	}
 
 

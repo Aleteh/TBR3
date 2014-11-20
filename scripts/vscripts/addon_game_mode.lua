@@ -15,6 +15,7 @@ function Precache( context )
 		-- PrecacheModel should generally used over PrecacheResource for individual models
 		PrecacheResource("model_folder", "particles/heroes/antimage", context)
 		PrecacheResource( "particle_folder", "particles/units/heroes/hero_ember_spirit", context)
+		PrecacheResource( "particle_folder", "particles/econ/items", context)
 		PrecacheResource("model", "particles/heroes/viper/viper.vmdl", context)
 		PrecacheModel("models/heroes/viper/viper.vmdl", context)
 
