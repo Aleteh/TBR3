@@ -1,0 +1,32 @@
+Despawns seem to be after ~10 seconds of leaving the area
+Killing an Ogre took 30 seconds to respawn
+Killing a Shaman in the Goblins Area 2 took 3 seconds, but when I killed 5 at the same time, they spawned 1 by 1 (different than the current method)
+	meaning a system like a thinker for each creature type is present:
+		every X seconds, check for the unit counter in the area, if it's less than the max, spawn 1 of that creature
+		when 1 creature is killed, substract 1 to the unit counter of the area
+		when area is deactivated, stop the thinker?
+
+Demon Area
+	9 Demon Imp
+	3 Demon Fire
+	2 Demon Hound
+	3 Forest Bear	
+
+Goblins Area 1
+	9 Goblin
+	3 Shaman
+
+Goblins Area 2
+	6 Black Goblin
+	6 Shaman
+	3 Ogre
+
+Rokthul Sub Area(doesn't despawn)
+	4 Black Goblin
+	2 Shaman
+	2 Goblin Hut
+
+Bandits Area
+	7 Bandits
+	Swiftward (doesn't despawn)
+
