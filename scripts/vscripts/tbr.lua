@@ -166,6 +166,7 @@ end
 	--PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
 	PrecacheUnitByNameAsync("npc_bank", function(...) end)
 	PrecacheUnitByNameAsync("player_gravestone", function(...) end)
+	PrecacheUnitByNameAsync("npc_demon_fire", function(...) end)
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes

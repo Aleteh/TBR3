@@ -3,6 +3,7 @@ require('timers')
 require('physics')
 require('xp_table')
 require('popups')
+require('spawn')
 
 function Precache( context )
 		print("Performing pre-load precache")

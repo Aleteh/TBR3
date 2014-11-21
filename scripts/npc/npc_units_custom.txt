@@ -255,6 +255,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"material_assign"			// Ability 1
 		"Ability2"					"material_drop"
+		"Ability3"					"creep_respawn"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -290,7 +291,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"5600"		// Base health.
+		"StatusHealth"				"560"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"100"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

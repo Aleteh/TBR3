@@ -6,7 +6,7 @@ Unit list should be stored in a table to iterate easier and avoid extra FindUnit
 
 When all players leave a zone, UTIL_Remove all after a delay
 
-	Test that no items/xp/mats are grantes this way, it shouldnt count as a creep killed
+	Test that no items/xp/mats are grantes this way, it shouldnt count as a creep killed -> DONE. Works fine.
 	It should never Ever delete mobs with people still in the area, so do a double check after the delay to check if they didn't re-enter
 
 Respawning mobs have a passive OnOwnerDied RunScript that starts a timer to spawn a new unit of the same type near the original location

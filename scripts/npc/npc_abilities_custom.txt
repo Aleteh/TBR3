@@ -3,6 +3,80 @@
 {
 	"Version"		"1"
 
+
+
+
+
+	//=================================================================================================================
+	// Creep Respawn - Respawn this unit after a set ammount of time
+	//=================================================================================================================
+	"creep_respawn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE" //| DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_hand_of_midas"
+
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"spawn.lua"
+				"Function"				"RespawnCreep"
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//=================================================================================================================
 	// Assign Crafting Materials On Death - Add this ability on every mob which is supposed to drop them everytime.
 	//=================================================================================================================
