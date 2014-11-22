@@ -1,81 +1,132 @@
 
 -- called when 1 hero enters an area
-function SpawnArea( trigger )
+
+function SpawnGoblinArea( trigger )
 	areaName = trigger.caller:GetName()
-	print(areaName)
 
-	-- we should do this on the main tbr.lua at the beggining and just keep the lists in GameMode.
-	local allSpawns = Entities:FindAllByClassname("npc_dota_spawner") 
-	local possibleLocations = {}
-
-	for _,v in pairs(allSpawns) do
-		-- if the spawn name contains the area name, add to possible locations of areaName
-		--if string.find(v:GetName(), areaName) then
-			table.insert(possibleLocations, v)
-		--end
-	end
-	--
-	
-	if areaName == "area_spawner1" then
-		GameMode.area1Creeps = {} -- initialize the table to store all the creeps in the area
+	if not IsAreaActive( areaName ) then
+		SetAreaActive( areaName, true )
 		
-		for i=1,10 do
-			local spawnLocation = possibleLocations[RandomInt(1, #possibleLocations)]
+		print("\n Spawning units of "..areaName.. "\n")
+		
+		GameMode.GoblinAreaCreeps = {} -- initialize the table to store all the creeps in the area
 
-			if spawnLocation ~= nil then		
-				local unit = CreateUnitByName("npc_demon_fire", spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-				unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
-				unit.original_position = unit:GetAbsOrigin() -- store the original position
-				table.insert(GameMode.area1Creeps,unit)
-			end
-		end
+		-- Spawn Initial Units
+		for _,v in pairs(GameMode.GoblinAreaInfoList) do
+			--v.Name is the unit to spawn
+			--v.MaxSpawn is how many
+			print("Spawning",v.MaxSpawn,v.Name)
+			for i=1,v.MaxSpawn do
+				-- Get a spawn location for a particular unit
+				local spawnLocation = GetNewPositionInAreaFor(areaName,v.Name)
+
+				if spawnLocation ~= nil then	
+					local unit = CreateUnitByName(v.Name, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+					unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
+					unit.area = areaName -- set the area to respawn easier
+					table.insert(GameMode.GoblinAreaCreeps,unit) -- store the unit in the area table
+				else
+					print("No spawn location found")
+				end
+			end	
+		end		
 	end
-	
-
-	DeepPrintTable(GameMode.area1Creeps)
-
 end
 
 -- called after all the heroes leave the area
 function DespawnArea( trigger )
 	areaName = trigger.caller:GetName()
 
-	if areaName == "area_spawner1" then
-		DeepPrintTable(GameMode.area1Creeps)
-		for _,creep in pairs(GameMode.area1Creeps) do
-			if creep then creep:RemoveSelf()
-			else print("ERROR") end
+	if IsAreaActive( areaName ) then
+		SetAreaActive( areaName )
+		print("\n Despawning units of "..areaName.. " \n")
+
+		local creepsDeleted = 0
+		local creep_list = GetAreaCreepList( areaName )
+		for _,creep in pairs(creep_list) do
+			if creep ~= nil and creep:IsAlive() then 
+				UTIL_Remove(creep)
+				creepsDeleted = creepsDeleted+1
+			else print("Creep is not alive or has not respawned yet, ignoring.") end
 		end
+		print("Deleted ",creepsDeleted," creeps")
 	end
 end
 
 -- called after a unit dies, starts a timer to spawn a new unit near the original spawn location
 function RespawnCreep( event )
 
-	--[[Timers:CreateTimer({
-    	endTime = 10,
-    	callback = function()
-    
-    	end
-  	})]]
-
-	local unit = event.caster --handle of the unit that died
+	-- get the unit name to respawn
+	local unit = event.caster 
 	local unit_name = unit:GetUnitName()
-	local unit_position = unit.original_position
-	local new_position = unit.original_position + RandomVector(100) -- variate a little away from the spawner entity
-	local new_unit = CreateUnitByName(unit_name, new_position, true, nil, nil, DOTA_TEAM_NEUTRALS)
 
-	new_unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
-	new_unit.original_position = unit.original_position -- keep the original spawn point near the npc_dota_spawner entity
+	-- get the area the unit belongs to
+	local unit_area = unit.area
+	local area_table = GameMode.SpawnInfoKV[unit_area]
 
-	-- we have to check to which area this unit belongs
-	if string.find(unit_name, "demon") ~= nil then -- demon area.
-		-- add the new_unit handle to the area creep list
-		table.insert(GameMode.area1Creeps,new_unit)
-		-- remove the old unit if needed later...
+	-- get the unit respawn time from the spawn_info table
+	local unitTableIndex = getUnitIndex(area_table,unit_name)
+	local respawn_time = area_table[unit_name].RespawnTime
+
+	Timers:CreateTimer({
+    endTime = respawn_time,
+    callback = function()
+    	-- we have to check to which area this unit belongs
+    	if IsAreaActive(unit_area) then
+			-- get a new position and create the unit
+			local new_position = GetNewPositionInAreaFor(unit_area,unit_name)
+			local new_unit = CreateUnitByName(unit_name, new_position:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			print("Respawned unit in "..respawn_time.. " seconds on ",new_position:GetOrigin())
+
+			-- variate facing of the unit
+			new_unit:SetForwardVector(RandomVector(5000)) 
+
+			-- get the creep list to add and remove
+			local creep_list = GetAreaCreepList(unit_area)
+
+			-- add the new_unit handle to the area creep list
+			table.insert(creep_list,new_unit)
+			-- remove the old unit
+			table.remove(creep_list,getIndex(creep_list, unit))
+		end
+    end
+  	})
+
+end
+
+------------------
+-- Area Methods --
+------------------
+
+-- returns whether the area is activate or not, that is, there are still players inside the area
+function IsAreaActive( areaName )
+	if areaName == "GoblinArea" then
+		return GameMode.GoblinAreaActive
 	end
+end
 
-	-- Global unit counter
-	--GameMode.creepCounter[unit_name] = GameMode.creepCounter[unit_name] + 1
+-- sets the area active or inactive
+function SetAreaActive( areaName, bool )
+	if areaName == "GoblinArea" then
+		GameMode.GoblinAreaActive = bool
+	end
+end
 
+-- returns the list in which the creeps of the area are stored
+function GetAreaCreepList( areaName )
+	if areaName == "GoblinArea" then
+		return GameMode.GoblinAreaCreeps
+	end
+end
+
+-- Gives a new position from the available for that type of creature
+function GetNewPositionInAreaFor( areaName, unitName )
+	print("Finding new position in "..areaName.." for "..unitName)
+	if areaName == "GoblinArea" then
+		if unitName == "npc_goblin" then
+			return GameMode.goblin_spawnLocations[RandomInt(1, #GameMode.goblin_spawnLocations)]
+		elseif unitName == "npc_shaman" then
+			return GameMode.shaman_spawnLocations[RandomInt(1, #GameMode.shaman_spawnLocations)]
+		end
+	end
 end

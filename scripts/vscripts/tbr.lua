@@ -24,7 +24,7 @@ CUSTOM_BUYBACK_COST_ENABLED = true      -- Should we use a custom buyback cost s
 CUSTOM_BUYBACK_COOLDOWN_ENABLED = true  -- Should we use a custom buyback time?
 BUYBACK_ENABLED = false                 -- Should we allow people to buyback when they die?
 
-DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirely for both teams?
+DISABLE_FOG_OF_WAR_ENTIRELY = true      -- Should we disable fog of war entirely for both teams?
 --USE_STANDARD_DOTA_BOT_THINKING = false  -- Should we have bots act like they would in Dota? (This requires 3 lanes, normal items, etc)
 USE_STANDARD_HERO_GOLD_BOUNTY = true    -- Should we give gold for hero kills the same as in Dota, or allow those values to be changed?
 
@@ -54,6 +54,7 @@ function GameMode:InitGameMode()
 	print('[TBR] Starting to load TBR gamemode...')
 
 	-- Setup rules
+	self:ReadGameConfiguration()
 	GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
 	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
 	GameRules:SetSameHeroSelectionEnabled( ALLOW_SAME_HERO_SELECTION )
@@ -118,6 +119,39 @@ function GameMode:InitGameMode()
 
 	self.bSeenWaitForPlayers = false
 
+	-- Spawn Locations and Area Activations
+
+	-- Make separate lists based on creepName to randomize spawn locations later
+	-- These lists store the entity handles of every spawn location on the map (actual location is accessed via :GetOrigin())
+	-- Spawn name entity format guide: (areaName_)creepName(_number)
+	-- Important string is the creepName, unless we want to repeat a creep in 2 areas or different densities
+
+	-- Spawner entities named: creepName_spawner
+	-- Also, they are fricking Satyrs, not golins, what the hell :D
+
+	 -- Demon Area
+	GameMode.demon_imp_spawnLocations = Entities:FindAllByName("demon_imp_spawner")
+	GameMode.demon_hound_spawnLocations = Entities:FindAllByName("demon_hound_spawner")
+	GameMode.demon_fire_spawnLocations = Entities:FindAllByName("demon_fire_spawner")
+	GameMode.forest_bear_spawnLocations = Entities:FindAllByName("forest_bear_spawner")
+	GameMode.DemonAreaCreeps = {} -- Keep a list of all creeps in the area
+
+	-- Goblin Area
+	GameMode.goblin_spawnLocations = Entities:FindAllByName("goblin_spawner")
+	GameMode.shaman_spawnLocations = Entities:FindAllByName("shaman_spawner")
+	GameMode.GoblinAreaActive = false
+
+	-- Black Goblin Area
+	GameMode.black_goblin_spawnLocations = Entities:FindAllByName("black_goblin_spawner")
+	GameMode.ogre_spawnLocations = Entities:FindAllByName("ogre_spawner")
+	GameMode.black_shaman_spawnLocations = Entities:FindAllByName("black_shaman_spawner")
+	GameMode.BlackGoblinAreaCreeps = {}
+
+	-- Bandit Area
+	GameMode.bandit_spawnLocations = Entities:FindAllByName("bandit_spawner")
+	GameMode.BanditAreaCreeps = {}
+
+
 	print('[TBR] Done loading the gamemode!\n\n')
 end
 
@@ -146,7 +180,6 @@ function GameMode:CaptureGameMode()
 		mode:SetGoldSoundDisabled( DISABLE_GOLD_SOUNDS )
 		mode:SetRemoveIllusionsOnDeath( REMOVE_ILLUSIONS_ON_DEATH )
 
-
 		--GameRules:GetGameModeEntity():SetThink( "Think", self, "GlobalThink", 2 )
 
 		--self:SetupMultiTeams()
@@ -159,9 +192,9 @@ end
 	in addon_game_mode.lua used to and may still sometimes have issues with client's appropriately precaching stuff.
 	If this occurs it causes the client to never precache things configured in that block.
 	]]
-	function GameMode:PostLoadPrecache()
-		print("[TBR] Performing Post-Load precache")    
-		PrecacheItemByNameAsync("item_wraithblade", function(...) end)
+function GameMode:PostLoadPrecache()
+	print("[TBR] Performing Post-Load precache")    
+	PrecacheItemByNameAsync("item_wraithblade", function(...) end)
 	--PrecacheItemByNameAsync("example_ability", function(...) end)
 	--PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
 	PrecacheUnitByNameAsync("npc_bank", function(...) end)
@@ -169,9 +202,42 @@ end
 	PrecacheUnitByNameAsync("npc_demon_fire", function(...) end)
 end
 
+
+-- Read and assign configurable keyvalues if applicable
+function GameMode:ReadGameConfiguration()
+	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
+
+	-- separate in different lists to make it more manageable
+	self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )
+
+end
+
+function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
+	
+	self.GoblinAreaInfoList = {}
+	if type( kvSpawns ) ~= "table" then
+		print("NO TABLE")
+		return
+	end
+
+	for _,unit in pairs( kvSpawns ) do
+		DeepPrintTable(unit)
+		table.insert( self.GoblinAreaInfoList, {
+			Name = unit.Name or "",
+			RespawnTime = tonumber( unit.RespawnTime or 0 ),
+			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
+			GoldBounty = tonumber( unit.GoldBounty or 0 ),
+			MatBounty = tonumber( unit.MatBounty or 0 )
+		})
+	end
+
+	DeepPrintTable(self.GoblinAreaInfoList)
+
+end
+
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
-	print("[TBR] NPC Spawned")
+	--print("[TBR] NPC Spawned")
 	local index = keys.entindex
 	local unit = EntIndexToHScript(index)
 	local npc = EntIndexToHScript(keys.entindex)
