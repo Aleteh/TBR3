@@ -209,6 +209,7 @@ function GameMode:ReadGameConfiguration()
 
 	-- separate in different lists to make it more manageable
 	self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )
+	self:ReadBlackGoblinAreaSpawnConfiguration( self.SpawnInfoKV["BlackGoblinArea"] )
 	self:ReadBanditAreaSpawnConfiguration( self.SpawnInfoKV["BanditArea"] )
 
 end
@@ -233,6 +234,29 @@ function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
 	end
 
 	DeepPrintTable(self.GoblinAreaInfoList)
+
+end
+
+function GameMode:ReadBlackGoblinAreaSpawnConfiguration( kvSpawns )
+	
+	self.GoblinAreaInfoList = {}
+	if type( kvSpawns ) ~= "table" then
+		print("NO TABLE")
+		return
+	end
+
+	for _,unit in pairs( kvSpawns ) do
+		DeepPrintTable(unit)
+		table.insert( self.BlackGoblinAreaInfoList, {
+			Name = unit.Name or "",
+			RespawnTime = tonumber( unit.RespawnTime or 0 ),
+			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
+			GoldBounty = tonumber( unit.GoldBounty or 0 ),
+			MatBounty = tonumber( unit.MatBounty or 0 )
+		})
+	end
+
+	DeepPrintTable(self.BlackGoblinAreaInfoList)
 
 end
 

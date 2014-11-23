@@ -106,6 +106,8 @@ end
 function IsAreaActive( areaName )
 	if areaName == "GoblinArea" then
 		return GameMode.GoblinAreaActive
+	elseif areaName == "BlackGoblinArea" then
+		return GameMode.BlackGoblinAreaActive
 	elseif areaName == "BanditArea" then
 		return GameMode.BanditAreaActive
 	end
@@ -115,6 +117,8 @@ end
 function SetAreaActive( areaName, bool )
 	if areaName == "GoblinArea" then
 		GameMode.GoblinAreaActive = bool
+	elseif areaName == "BlackGoblinArea" then
+		GameMode.BlackGoblinAreaActive = bool
 	elseif areaName == "BanditArea" then
 		GameMode.BanditAreaActive = bool
 	end
@@ -123,6 +127,8 @@ end
 function InitializeCreepList( areaName )
 	if areaName == "GoblinArea" then
 		GameMode.GoblinAreaCreeps = {}
+	elseif areaName == "BlackGoblinArea" then
+		GameMode.BlackGoblinAreaCreeps = {}
 	elseif areaName == "BanditArea" then
 		GameMode.BanditAreaCreeps = {}
 	end
@@ -132,6 +138,8 @@ end
 function GetAreaCreepList( areaName )
 	if areaName == "GoblinArea" then
 		return GameMode.GoblinAreaCreeps
+	elseif areaName == "BlackGoblinArea" then
+		return GameMode.BlackGoblinAreaCreeps
 	elseif areaName == "BanditArea" then
 		return GameMode.BanditAreaCreeps
 	end
@@ -145,6 +153,14 @@ function GetNewPositionInAreaFor( areaName, unitName )
 			return GameMode.goblin_spawnLocations[RandomInt(1, #GameMode.goblin_spawnLocations)]
 		elseif unitName == "npc_shaman" then
 			return GameMode.shaman_spawnLocations[RandomInt(1, #GameMode.shaman_spawnLocations)]
+		end
+	elseif areaName == "BlackGoblinArea" then
+		if unitName == "npc_black_goblin" then
+			return GameMode.black_goblin_spawnLocations[RandomInt(1, #GameMode.black_goblin_spawnLocations)]
+		elseif unitName == "npc_black_shaman" then
+			return GameMode.black_shaman_spawnLocations[RandomInt(1, #GameMode.black_shaman_spawnLocations)]
+		elseif unitName == "npc_ogre" then
+			return GameMode.ogre_spawnLocations[RandomInt(1, #GameMode.ogre_spawnLocations)]
 		end
 	elseif areaName == "BanditArea" then
 		if unitName == "npc_bandit" then

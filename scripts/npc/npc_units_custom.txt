@@ -802,6 +802,7 @@
 	// Black Goblins Area
 	//=================================================================================
 	//		Black Goblin
+	//		Black Shaman
 	//		Ogre 
 	//		Mini-Boss Rokthul
 	//=================================================================================
@@ -873,6 +874,94 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------		
+	}
+
+	//=================================================================================
+	// Creature: Black Shaman TODO: Make it stronker
+	// Description: "Primary spellcaster. Can initially cast Purge, which dispels magical buffs and can immobilize enemies. 
+	// *Unused*			 Can also learn Lightning Shield and Bloodlust.
+	//=================================================================================
+	"npc_black_shaman"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/blood_seeker/blood_seeker.vmdl"
+		"ModelScale"			"1"
+		"Level"				"2"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: Ablo
+		"Ability2"			""	 //Reference: Alsh
+		"Ability3"			""	 //Reference: Apg2
+		"Ability4"			""	 //Reference: Aion
+		"Ability5"				"creep_respawn"
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"8.0"
+		"AttackDamageMax"		"9.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.1"
+		"AttackAnimationPoint"		"0.43"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		"ProjectileModel"		"particles/units/heroes/hero_disruptor/disruptor_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"32.0"
+		"BountyGoldMax"			"46.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"335"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"200"
+		"StatsManaRegen"		"0.666666666666667"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"MAGIC_MAN"
+		"CombatClassDefened"		"NONE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"5608"	} // "Bloodstone Blade"
+				"Wearable2"		{	"ItemDef"	"5609"	} // "Bloodstone Blade - Off-Hand"
+				"Wearable3"		{	"ItemDef"	"5511"	} // "Hood of the Scarlet Raven"
+				"Wearable4"		{	"ItemDef"	"5510"	} // "Coat of the Scarlet Raven"
+				"Wearable5"		{	"ItemDef"	"5508"	} // "Necklace of Scarlet Raven"
+			}			
+		}
 	}
 
 	//=================================================================================
