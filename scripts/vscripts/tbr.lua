@@ -207,14 +207,11 @@ end
 function GameMode:ReadGameConfiguration()
 	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
 
-	-- separate in different lists to make it more manageable
-	self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )
-	self:ReadBlackGoblinAreaSpawnConfiguration( self.SpawnInfoKV["BlackGoblinArea"] )
-	self:ReadBanditAreaSpawnConfiguration( self.SpawnInfoKV["BanditArea"] )
-
+	-- separate in different lists to make it more manageable (not needed)
+	--[[self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )]]
 end
 
-function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
+--[[function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
 	
 	self.GoblinAreaInfoList = {}
 	if type( kvSpawns ) ~= "table" then
@@ -223,9 +220,8 @@ function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
 	end
 
 	for _,unit in pairs( kvSpawns ) do
-		DeepPrintTable(unit)
+		DeepPrintTable(unit)	
 		table.insert( self.GoblinAreaInfoList, {
-			Name = unit.Name or "",
 			RespawnTime = tonumber( unit.RespawnTime or 0 ),
 			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
 			GoldBounty = tonumber( unit.GoldBounty or 0 ),
@@ -235,53 +231,7 @@ function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
 
 	DeepPrintTable(self.GoblinAreaInfoList)
 
-end
-
-function GameMode:ReadBlackGoblinAreaSpawnConfiguration( kvSpawns )
-	
-	self.BlackGoblinAreaInfoList = {}
-	if type( kvSpawns ) ~= "table" then
-		print("NO TABLE")
-		return
-	end
-
-	for _,unit in pairs( kvSpawns ) do
-		DeepPrintTable(unit)
-		table.insert( self.BlackGoblinAreaInfoList, {
-			Name = unit.Name or "",
-			RespawnTime = tonumber( unit.RespawnTime or 0 ),
-			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
-			GoldBounty = tonumber( unit.GoldBounty or 0 ),
-			MatBounty = tonumber( unit.MatBounty or 0 )
-		})
-	end
-
-	DeepPrintTable(self.BlackGoblinAreaInfoList)
-
-end
-
-function GameMode:ReadBanditAreaSpawnConfiguration( kvSpawns )
-	
-	self.BanditAreaInfoList = {}
-	if type( kvSpawns ) ~= "table" then
-		print("NO TABLE")
-		return
-	end
-
-	for _,unit in pairs( kvSpawns ) do
-		DeepPrintTable(unit)
-		table.insert( self.BanditAreaInfoList, {
-			Name = unit.Name or "",
-			RespawnTime = tonumber( unit.RespawnTime or 0 ),
-			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
-			GoldBounty = tonumber( unit.GoldBounty or 0 ),
-			MatBounty = tonumber( unit.MatBounty or 0 )
-		})
-	end
-
-	DeepPrintTable(self.BanditAreaInfoList)
-
-end
+end]]
 
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
