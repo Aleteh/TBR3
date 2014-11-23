@@ -123,8 +123,8 @@ function GameMode:InitGameMode()
 
 	-- Make separate lists based on creepName to randomize spawn locations later
 	-- These lists store the entity handles of every spawn location on the map (actual location is accessed via :GetOrigin())
-	-- Spawn name entity format guide: (areaName_)creepName(_number)
-	-- Important string is the creepName, unless we want to repeat a creep in 2 areas or different densities
+	-- Spawn name entity format guide: creepName_spawner
+	-- Dont repeat creepNames, just make new copies of the unit if thats the case
 
 	-- Spawner entities named: creepName_spawner
 	-- Also, they are fricking Satyrs, not golins, what the hell :D
@@ -209,6 +209,7 @@ function GameMode:ReadGameConfiguration()
 
 	-- separate in different lists to make it more manageable
 	self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )
+	self:ReadBanditAreaSpawnConfiguration( self.SpawnInfoKV["BanditArea"] )
 
 end
 
@@ -232,6 +233,29 @@ function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
 	end
 
 	DeepPrintTable(self.GoblinAreaInfoList)
+
+end
+
+function GameMode:ReadBanditAreaSpawnConfiguration( kvSpawns )
+	
+	self.BanditAreaInfoList = {}
+	if type( kvSpawns ) ~= "table" then
+		print("NO TABLE")
+		return
+	end
+
+	for _,unit in pairs( kvSpawns ) do
+		DeepPrintTable(unit)
+		table.insert( self.BanditAreaInfoList, {
+			Name = unit.Name or "",
+			RespawnTime = tonumber( unit.RespawnTime or 0 ),
+			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
+			GoldBounty = tonumber( unit.GoldBounty or 0 ),
+			MatBounty = tonumber( unit.MatBounty or 0 )
+		})
+	end
+
+	DeepPrintTable(self.BanditAreaInfoList)
 
 end
 

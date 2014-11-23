@@ -1,7 +1,7 @@
 
 -- called when 1 hero enters an area
 
-function SpawnGoblinArea( trigger )
+function SpawnArea( trigger )
 	areaName = trigger.caller:GetName()
 
 	if not IsAreaActive( areaName ) then
@@ -9,10 +9,12 @@ function SpawnGoblinArea( trigger )
 		
 		print("\n Spawning units of "..areaName.. "\n")
 		
-		GameMode.GoblinAreaCreeps = {} -- initialize the table to store all the creeps in the area
+		-- initialize the table to store all the creeps in the area
+		InitializeCreepList( areaName )
 
 		-- Spawn Initial Units
-		for _,v in pairs(GameMode.GoblinAreaInfoList) do
+		local AreaInfoList = GameMode.SpawnInfoKV[ areaName ]
+		for _,v in pairs( AreaInfoList ) do
 			--v.Name is the unit to spawn
 			--v.MaxSpawn is how many
 			print("Spawning",v.MaxSpawn,v.Name)
@@ -24,7 +26,7 @@ function SpawnGoblinArea( trigger )
 					local unit = CreateUnitByName(v.Name, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 					unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
 					unit.area = areaName -- set the area to respawn easier
-					table.insert(GameMode.GoblinAreaCreeps,unit) -- store the unit in the area table
+					table.insert( GetAreaCreepList(areaName) ,unit) -- store the unit in the area table
 				else
 					print("No spawn location found")
 				end
@@ -79,7 +81,9 @@ function RespawnCreep( event )
 			print("Respawned unit in "..respawn_time.. " seconds on ",new_position:GetOrigin())
 
 			-- variate facing of the unit
-			new_unit:SetForwardVector(RandomVector(5000)) 
+			new_unit:SetForwardVector(RandomVector(5000))
+			-- set the area to respawn easier
+			new_unit.area = unit_area 
 
 			-- get the creep list to add and remove
 			local creep_list = GetAreaCreepList(unit_area)
@@ -102,6 +106,8 @@ end
 function IsAreaActive( areaName )
 	if areaName == "GoblinArea" then
 		return GameMode.GoblinAreaActive
+	elseif areaName == "BanditArea" then
+		return GameMode.BanditAreaActive
 	end
 end
 
@@ -109,6 +115,16 @@ end
 function SetAreaActive( areaName, bool )
 	if areaName == "GoblinArea" then
 		GameMode.GoblinAreaActive = bool
+	elseif areaName == "BanditArea" then
+		GameMode.BanditAreaActive = bool
+	end
+end
+
+function InitializeCreepList( areaName )
+	if areaName == "GoblinArea" then
+		GameMode.GoblinAreaCreeps = {}
+	elseif areaName == "BanditArea" then
+		GameMode.BanditAreaCreeps = {}
 	end
 end
 
@@ -116,6 +132,8 @@ end
 function GetAreaCreepList( areaName )
 	if areaName == "GoblinArea" then
 		return GameMode.GoblinAreaCreeps
+	elseif areaName == "BanditArea" then
+		return GameMode.BanditAreaCreeps
 	end
 end
 
@@ -127,6 +145,10 @@ function GetNewPositionInAreaFor( areaName, unitName )
 			return GameMode.goblin_spawnLocations[RandomInt(1, #GameMode.goblin_spawnLocations)]
 		elseif unitName == "npc_shaman" then
 			return GameMode.shaman_spawnLocations[RandomInt(1, #GameMode.shaman_spawnLocations)]
+		end
+	elseif areaName == "BanditArea" then
+		if unitName == "npc_bandit" then
+			return GameMode.bandit_spawnLocations[RandomInt(1, #GameMode.bandit_spawnLocations)]
 		end
 	end
 end
