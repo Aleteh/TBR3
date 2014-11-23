@@ -239,7 +239,7 @@ end
 
 function GameMode:ReadBlackGoblinAreaSpawnConfiguration( kvSpawns )
 	
-	self.GoblinAreaInfoList = {}
+	self.BlackGoblinAreaInfoList = {}
 	if type( kvSpawns ) ~= "table" then
 		print("NO TABLE")
 		return

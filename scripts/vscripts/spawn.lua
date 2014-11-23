@@ -14,16 +14,17 @@ function SpawnArea( trigger )
 
 		-- Spawn Initial Units
 		local AreaInfoList = GameMode.SpawnInfoKV[ areaName ]
-		for _,v in pairs( AreaInfoList ) do
+		DeepPrintTable(AreaInfoList)
+		for k,v in pairs( AreaInfoList ) do
 			--v.Name is the unit to spawn
 			--v.MaxSpawn is how many
-			print("Spawning",v.MaxSpawn,v.Name)
+			print("Spawning",v.MaxSpawn,k)
 			for i=1,v.MaxSpawn do
 				-- Get a spawn location for a particular unit
-				local spawnLocation = GetNewPositionInAreaFor(areaName,v.Name)
+				local spawnLocation = GetNewPositionInAreaFor(areaName,k)
 
 				if spawnLocation ~= nil then	
-					local unit = CreateUnitByName(v.Name, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+					local unit = CreateUnitByName(k, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 					unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
 					unit.area = areaName -- set the area to respawn easier
 					table.insert( GetAreaCreepList(areaName) ,unit) -- store the unit in the area table
@@ -147,7 +148,7 @@ end
 
 -- Gives a new position from the available for that type of creature
 function GetNewPositionInAreaFor( areaName, unitName )
-	print("Finding new position in "..areaName.." for "..unitName)
+	print("Finding new position in ",areaName," for ",unitName)
 	if areaName == "GoblinArea" then
 		if unitName == "npc_goblin" then
 			return GameMode.goblin_spawnLocations[RandomInt(1, #GameMode.goblin_spawnLocations)]
