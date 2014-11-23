@@ -70,6 +70,8 @@ function GameMode:InitGameMode()
 	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
+
+
 	print('[TBR] GameRules set')
 
 	InitLogFile( "log/barebones.txt","")
@@ -172,6 +174,10 @@ function GameMode:CaptureGameMode()
 		mode:SetUseCustomHeroLevels ( USE_CUSTOM_HERO_LEVELS )
 		mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
 		mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+		
+		mode:SetAnnouncerDisabled(true)
+		mode:SetBuybackEnabled(false)
+		mode:SetFixedRespawnTime(45)
 
 		--mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )
 		mode:SetTowerBackdoorProtectionEnabled( ENABLE_TOWER_BACKDOOR_PROTECTION )
@@ -440,6 +446,10 @@ function GameMode:OnPlayerLevelUp(keys)
     --Fire Game Event to our UI
     print("Got " .. statsUnspent .. " Ability Points to spend! Firing game event")
 	FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = statsUnspent })
+
+	--Fully heal Health & Mana of the player
+	playerHero:SetHealth(playerHero:GetMaxHealth())
+	playerHero:SetMana(playerHero:GetMaxMana())
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -468,6 +478,7 @@ function GameMode:OnEntityKilled( keys )
 	end
 
 	if killedUnit and killedUnit:IsRealHero() then 
+
 		print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
 		local grave = CreateUnitByName("player_gravestone", killedUnit:GetAbsOrigin(), true, killedUnit, killedUnit, killedUnit:GetTeamNumber())
 		killedUnit.grave = grave
