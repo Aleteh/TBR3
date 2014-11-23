@@ -1125,6 +1125,28 @@
 
 
 
+	//=================================================================================	
+	// Demon Waves
+	//=================================================================================
+	//	Champion of Hades
+	//	Demonic Carrion
+	//	Demonic Pillager
+	//	Demon Thrall
+	//	Demon Slave
+	//	Minor Demon
+	//  Lesser Demon
+	//  Demon Ogre 
+	// 	Demon Warrior
+	//	Nether Demon 
+	//	Engine of Destruction
+	//	Demon Seer
+	//	Greater Demon 
+	//	Destroyer
+	//=================================================================================
+
+
+
+
 
 
 
@@ -1143,7 +1165,7 @@
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/heroes/tiny_04/tiny_04.vmdl"
 		"ModelScale"		"2"
-		"Level"				"1"
+		"Level"				"20"
 		
 		"ConsideredHero"	"1"
 
