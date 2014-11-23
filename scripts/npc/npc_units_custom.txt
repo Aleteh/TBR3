@@ -1129,20 +1129,666 @@
 
 
 
+//=====================================================================================//	
+//	Titans - Bosses
+//=====================================================================================//
+
+	//=================================================================================	
+	// Boss: Atlas, Avatar of Earth
+	//=================================================================================
+	"Avatar_of_Earth"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/tiny_04/tiny_04.vmdl"
+		"ModelScale"		"2"
+		"Level"				"1"
+		
+		"ConsideredHero"	"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: AInv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"8"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"264.0"
+		"AttackDamageMax"		"342.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"3.00"
+		"AttackAnimationPoint"		"0.36"
+		"AttackAcquisitionRange"	"800.00"
+		"AttackRange"			"128"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"8.0"
+		"BountyGoldMax"			"0.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"1411"
+		"StatusHealthRegen"		"1.00"
+		"StatusMana"			"400"
+		"StatsManaRegen"		"4.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		//"Creature"
+		//{
+		//	"AttachWearables"
+		//	{
+		//		"Wearable1"		{	"ItemDef"	"497"	} // "Tiny's Tree"			
+		//	}			
+		//}
+	}
 
 
+	//=================================================================================	
+	// Boss: Thea, Avatar of Nature
+	//=================================================================================
+	"Avatar_of_Nature"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/treant_protector/treant_protector.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: AInv
+		
+		"ConsideredHero"	"1"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"8"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"338.0"
+		"AttackDamageMax"		"416.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.50"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"1000"
+		"AttackRange"			"128"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"1300"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"0.0"
+		"BountyGoldMax"			"0.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"3551"
+		"StatusHealthRegen"		"1.50"
+		"StatusMana"			"300"
+		"StatsManaRegen"		"5.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"229"	} // "Treants' Hands"
+				"Wearable2"		{	"ItemDef"	"227"	} // "Treants' Head"
+				"Wearable3"		{	"ItemDef"	"230"	} // "Treants' Feet"
+				"Wearable4"		{	"ItemDef"	"228"	} // "Treants' Foliage"
+			}			
+		}
+	}
 
 
+	//=================================================================================	
+	// Boss: Themis, Avatar of Justice
+	//=================================================================================
+	"Avatar_of_Justice"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/siren/siren.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: AInv
+		
+		"ConsideredHero"	"1"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"8"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"492.0"
+		"AttackDamageMax"		"580.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"3.00"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"1000.00"
+		"AttackRange"			"100"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"0.0"
+		"BountyGoldMax"			"0.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"5386"
+		"StatusHealthRegen"		"2.00"
+		"StatusMana"			"1000"
+		"StatsManaRegen"		"0.10"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"5322"	} // "Breastplate of the Slithereen Knight"
+				"Wearable2"		{	"ItemDef"	"5326"	} // "Might of the Slithereen Knight"
+				"Wearable3"		{	"ItemDef"	"5324"	} // "Bite of the Slithereen Knight - Off-Hand"
+				"Wearable4"		{	"ItemDef"	"4493"	} // "Tail Fins of the Slithereen Nobility"
+				"Wearable5"		{	"ItemDef"	"5323"	} // "Helm of the Slithereen Knight"
+			}			
+		}
+	}
+
+	//=================================================================================	
+	// Boss: Cronus, Avatar of Death
+	//=================================================================================
+	"Avatar_of_Death"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/razor/razor.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+		
+		"ConsideredHero"	"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: Acri
+		"Ability2"			""	 //Reference: AInv
+		"Ability3"			""	 //Reference: AUdc
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"17"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"1210.0"
+		"AttackDamageMax"		"1477.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.50"
+		"AttackAnimationPoint"		"0.56"
+		"AttackAcquisitionRange"	"1000.00"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"0.0"
+		"BountyGoldMax"			"0.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"8074"
+		"StatusHealthRegen"		"4.00"
+		"StatusMana"			"1200"
+		"StatsManaRegen"		"0.01"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"5380"	} // "Storm-Stealer's Whip"
+				"Wearable2"		{	"ItemDef"	"5873"	} // "Grand Helm of the Narrow Maze"
+				"Wearable3"		{	"ItemDef"	"5342"	} // "Storm-Stealer's Armor"
+				"Wearable4"		{	"ItemDef"	"5357"	} // "Storm-Stealer's Belt"
+				"Wearable5"		{	"ItemDef"	"5349"	} // "Storm-Stealer's Bracers"
+			}			
+		}
+	}
 
 
+	//=================================================================================	
+	// Boss: Uranus, Avatar of the Sky -- Needs a better model?
+	//=================================================================================
+	"Avatar_of_the_Sky"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/items/courier/azuremircourierfinal/azuremircourierfinal_flying.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+		
+		"ConsideredHero"	"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACfb
+		"Ability2"			""	 //Reference: AInv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"15"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"1053.0"
+		"AttackDamageMax"		"1275.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"5.00"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"1500.00"
+		"AttackRange"			"400"
+		"ProjectileModel"		"particles/neutral_fx/black_dragon_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"38.0"
+		"BountyGoldMax"			"54.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"			"220"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"9149"
+		"StatusHealthRegen"		"-3.50"
+		"StatusMana"			"1200"
+		"StatsManaRegen"		"0.01"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+
+	//=================================================================================	
+	// Boss: Rhea, Avatar of Sacrifice
+	//=================================================================================
+	"Avatar_of_Sacrifice"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/queenofpain/queenofpain.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+
+		"ConsideredHero"	"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: AInv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"18"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2633.0"
+		"AttackDamageMax"		"3345.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.50"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"1000.00"
+		"AttackRange"			"150"
+		"ProjectileModel"		"particles/econ/items/queen_of_pain/qop_navi_mace/queen_base_attack_navi_mace.vpcf"
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"38.0"
+		"BountyGoldMax"			"54.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.35"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"31011"
+		"StatusHealthRegen"		"4.00"
+		"StatusMana"			"750"
+		"StatsManaRegen"		"0.01"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"6572"	} // "Wings of Searing Pain"
+				"Wearable2"		{	"ItemDef"	"5159"	} // "Guard of Anguish"
+				"Wearable3"		{	"ItemDef"	"5588"	} // "Horns of Blight"
+				"Wearable4"		{	"ItemDef"	"4962"	} // "Tear of Agony"
+				"Wearable5"		{	"ItemDef"	"545"	} // "Shadow Demon's Ambient Effects" TODO: Fix not showing
+			}			
+		}
+	}
 
 
+	//=================================================================================	
+	// Boss: Oceanus, Avatar of the Sea
+	//=================================================================================
+	"Avatar_of_the_Sea"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/morphling/morphling.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+
+		"ConsideredHero"	"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A02E
+		"Ability2"			""	 //Reference: AInv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"36"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"7847.0"
+		"AttackDamageMax"		"9035.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"3.00"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"1000.00"
+		"AttackRange"			"200"
+		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"38.0"
+		"BountyGoldMax"			"54.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"53411"
+		"StatusHealthRegen"		"50.00"
+		"StatusMana"			"3000"
+		"StatsManaRegen"		"0.01"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"4348"	} // "Crown of the Comet's Tail"
+				"Wearable2"		{	"ItemDef"	"4296"	} // "Shoulders of the Comet's Tail"
+			}			
+		}
+	}
 
 
+	//=================================================================================	
+	// Boss: Gaea, Mother of Earth
+	//=================================================================================
+	"Mother_of_Earth"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/lina/lina.vmdl"
+		"ModelScale"		"2"
+		"Level"				"5"
+		
+		"ConsideredHero"	"1"
 
-
-
-
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: AInv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"8"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"107.0"
+		"AttackDamageMax"		"129.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.50"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"650"
+		"AttackRange"			"600"
+		"ProjectileModel"		"particles/holdout_lina/lina_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"38.0"
+		"BountyGoldMax"			"54.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"0"
+		"MovementTurnRate"		"0.30"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"66984"
+		"StatusHealthRegen"		"12.00"
+		"StatusMana"			"3650"
+		"StatsManaRegen"		"10.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DIVINE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"300"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"4794"	} // "Fiery Soul of the Slayer"
+				"Wearable2"		{	"ItemDef"	"4755"	} // "Flares of the Solar Divine"
+				"Wearable3"		{	"ItemDef"	"4756"	} // "Arc of the Solar Divine"
+				"Wearable4"		{	"ItemDef"	"4754"	} // "Sleeves of the Solar Divine"
+			}			
+		}
+	}
 
 
 
