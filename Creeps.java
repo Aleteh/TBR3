@@ -120,6 +120,13 @@ Ice Giant
 	SPELLS : Can frozen in place
 
 =Waves
+	=Wave 1
+		Demon Thrall
+		Demonic Carrion
+		Demonic Pillager
+		Bloodwrath (Boss)
+			SPELLS : Can use War Stomp (AoE Splash dmg)
+
 Demon Seer 	 
 	SPELLS :
 Greater Demon 	 
