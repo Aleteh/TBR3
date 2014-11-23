@@ -12,3 +12,10 @@ When all players leave a zone, UTIL_Remove all after a delay
 Respawning mobs have a passive OnOwnerDied RunScript that starts a timer to spawn a new unit of the same type near the original location
 
 Extra AI can be made for creeps to roam a path, stop folliwing after X range, etc. Default is follow forever
+
+
+= Notes to extend the Spawn System inside the Map =
+1. Trigger names for areas = spawn_info name for the area
+2. Entity Scripts = spawn.lua
+3. Outputs OnStartTouch, OnEndTouch = SpawnArea, DespawnArea
+4. Spawner Name Format = creepName_spawner
