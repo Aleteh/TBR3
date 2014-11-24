@@ -21,7 +21,7 @@ function SpawnArea( trigger )
 			print("Spawning",v.MaxSpawn,k)
 			for i=1,v.MaxSpawn do
 				-- Get a spawn location for a particular unit
-				local spawnLocation = GetNewPositionInAreaFor(areaName,k)
+				local spawnLocation = GetFreePositionInAreaFor(areaName,k)
 
 				if spawnLocation ~= nil then	
 					local unit = CreateUnitByName(k, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
@@ -77,7 +77,7 @@ function RespawnCreep( event )
     	-- we have to check to which area this unit belongs
     	if IsAreaActive(unit_area) then
 			-- get a new position and create the unit
-			local new_position = GetNewPositionInAreaFor(unit_area,unit_name)
+			local new_position = GetFreePositionInAreaFor(unit_area,unit_name)
 			local new_unit = CreateUnitByName(unit_name, new_position:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 			print("Respawned unit in "..respawn_time.. " seconds on ",new_position:GetOrigin())
 
@@ -147,25 +147,48 @@ function GetAreaCreepList( areaName )
 end
 
 -- Gives a new position from the available for that type of creature
-function GetNewPositionInAreaFor( areaName, unitName )
-	print("Finding new position in ",areaName," for ",unitName)
+function GetFreePositionInAreaFor( areaName, unitName )
+	print("Finding free position in ",areaName," for ",unitName)
 	if areaName == "GoblinArea" then
 		if unitName == "npc_goblin" then
-			return GameMode.goblin_spawnLocations[RandomInt(1, #GameMode.goblin_spawnLocations)]
+			return GetEmptyPosition(GameMode.goblin_spawnLocations)
 		elseif unitName == "npc_shaman" then
-			return GameMode.shaman_spawnLocations[RandomInt(1, #GameMode.shaman_spawnLocations)]
+			return GetEmptyPosition(GameMode.shaman_spawnLocations)
 		end
 	elseif areaName == "BlackGoblinArea" then
 		if unitName == "npc_black_goblin" then
-			return GameMode.black_goblin_spawnLocations[RandomInt(1, #GameMode.black_goblin_spawnLocations)]
+			return GetEmptyPosition(GameMode.black_goblin_spawnLocations)
 		elseif unitName == "npc_black_shaman" then
-			return GameMode.black_shaman_spawnLocations[RandomInt(1, #GameMode.black_shaman_spawnLocations)]
+			return GetEmptyPosition(GameMode.black_shaman_spawnLocations)
 		elseif unitName == "npc_ogre" then
-			return GameMode.ogre_spawnLocations[RandomInt(1, #GameMode.ogre_spawnLocations)]
+			return GetEmptyPosition(GameMode.ogre_spawnLocations)
 		end
 	elseif areaName == "BanditArea" then
 		if unitName == "npc_bandit" then
-			return GameMode.bandit_spawnLocations[RandomInt(1, #GameMode.bandit_spawnLocations)]
+			return GetEmptyPosition(GameMode.bandit_spawnLocations)
 		end
 	end
+end
+
+function GetEmptyPosition( list )
+	print("Finding empty location")
+	local counter = 0
+	position = list[RandomInt(1, #list)]
+	local nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetOrigin(),nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,	DOTA_UNIT_TARGET_FLAG_NONE,	FIND_ANY_ORDER,false)
+	
+	-- find until theres an empty position
+	while #nearbyUnits > 0 do
+		-- care of infinite loop
+		if counter <= #list then
+			counter = counter+1
+			position = list[RandomInt(1, #list)]
+			nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetOrigin(),nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
+			print(nearbyUnits)
+		else
+			nearbyUnits = 0
+			print("Couldn't find empty position, returning random instead")
+		end
+	end
+
+	return position
 end
