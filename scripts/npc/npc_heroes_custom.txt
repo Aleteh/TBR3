@@ -60,7 +60,7 @@
 		"StatusHealth"			"100"
 		"StatusHealthRegen"		"0.25"
 		"StatusMana"			"50"	//It is 35 with 1 int
-		"StatsManaRegen"		"-0.25"
+		"StatsManaRegen"		"0"		//-0.25, set in lua
 	}
 
 	//=================================================================================================================
@@ -172,7 +172,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"			"100"
 		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"32" //10 with 1 int
+		"StatusMana"			"35" //10 with 1 int
 		"StatsManaRegen"		"0.75"
 	}
 
@@ -337,7 +337,7 @@
        	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"         "13" 		// Base strength
         "AttributeStrengthGain"         "1"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeBaseIntelligence"     "0" 		// Base intelligence
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "15" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.

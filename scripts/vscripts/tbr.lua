@@ -264,8 +264,6 @@ end
 function GameMode:OnHeroInGame(hero)
 	print("[TBR] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
-	local heroLevel = hero:GetLevel()
-
 	-- Starting Gold
 	hero:SetGold(322, false)
 
@@ -298,37 +296,52 @@ function GameMode:OnHeroInGame(hero)
 	-- Give 2 extra stat points to spend
 	hero:SetAbilityPoints(3)
 
+	local heroName = hero:GetUnitName()
+
 	-- Set Class
-	if hero:GetUnitName() == "npc_dota_hero_beastmaster" then
+	if heroName == "npc_dota_hero_beastmaster" then
 		print("BARBARIAN IN GAME")
-		hero.class = barbarian
-		-- Adjust Mana Rules, Decay
-		hero:SetBaseManaRegen( -(0.1 * heroLevel) ) -- TODO: I think it feels way faster in game... check numbers for every mana system
+		hero.class = "barbarian"
 		hero:AddAbility("barbarian_rage")
 		hero:FindAbilityByName("barbarian_rage"):SetLevel(1)
-	elseif hero:GetUnitName() == "npc_dota_hero_axe" then
+	elseif heroName == "npc_dota_hero_axe" then
 		print("WARLORD IN GAME")
-		hero.class = warlord
-		-- Adjust Mana Rules
-		hero:SetBaseManaRegen( (0.02 * heroLevel + 0.5) )	
+		hero.class = "warlord"
 		hero:AddAbility("warlord_focus")
 		hero:FindAbilityByName("warlord_focus"):SetLevel(1)
-	elseif hero:GetUnitName() == "npc_dota_hero_skeleton_king" then
+	elseif heroName == "npc_dota_hero_skeleton_king" then
 		print("KHAOS CHAMPION IN GAME")
-		hero.class = khaos_champion
-		-- Adjust Mana Rules
-		hero:SetBaseManaRegen( (0.01 * heroLevel + 0.15) )
+		hero.class = "khaos_champion"
 		hero:AddAbility("kc_hatred")
 		hero:FindAbilityByName("kc_hatred"):SetLevel(1)
-	elseif hero:GetUnitName() == "npc_dota_hero_bounty_hunter" then
+	elseif heroName == "npc_dota_hero_bounty_hunter" then
 		print("ASSASSIN IN GAME")
-		hero.class = assassin
-		-- Adjust Mana Rules
-		hero:SetBaseManaRegen( (0.06 * heroLevel + 0.6) )
+		hero.class = "assassin"
 		hero:AddAbility("assassin_energy")
 		hero:FindAbilityByName("assassin_energy"):SetLevel(1)
 	end
 
+	AdjustWarriorClassMana(hero)
+
+end
+
+function AdjustWarriorClassMana( hero )
+	Timers:CreateTimer(0.1,function() 
+		local heroLevel = hero:GetLevel()
+		--Adjust Warrior class Mana rules
+		if hero.class == "barbarian" then
+			hero:SetBaseManaRegen( -(0.01 * heroLevel) - 0.25)
+		elseif hero.class == "warlord" then
+			hero:SetBaseManaRegen( (0.02 * heroLevel + 0.5) )	
+		elseif hero.class == "khaos_champion" then
+			hero:SetBaseManaRegen( (0.01 * heroLevel + 0.15) )
+		elseif hero.class == "assassin" then
+			hero:SetBaseManaRegen( (0.06 * heroLevel + 0.6) )
+		else 
+			print("ERROR, Not a Warrior Class")
+		end
+		print(hero.class.." mana regen adjusted to ".. hero:GetConstantBasedManaRegen() )
+	end)
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive operations here
@@ -485,13 +498,7 @@ function GameMode:OnPlayerLevelUp(keys)
 	hero:SetHealth(hero:GetMaxHealth())
 	hero:SetMana(hero:GetMaxMana())
 
-	--Adjust Warrior class Mana rules
-	-- TODO: Complete after fixing the values
-	if hero.class == barbarian then
-		hero:SetBaseManaRegen( -(0.1 * heroLevel) )
-	end
-	--elseif hero.class == warlord then
-
+	AdjustWarriorClassMana(hero)
 
 end
 

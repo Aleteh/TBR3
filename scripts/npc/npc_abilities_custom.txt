@@ -364,8 +364,7 @@
 	//=================================================================================================================
 	//Barbarian 0.02 * level + 3 per attack landed
 	//plus 0.02 * level + 0.4  per attack recieved
-	//but he decays 0.01 * level mana every 0.74 seconds > 0.01333 * level every second?
-	//doing 0.1 decay per second for now, those numbers seem stupid (80 seconds to lose 1 mana? LOL)
+	//but he decays 0.01 * level mana every 0.74 seconds > 0.01333 * level every second? > whatever, normalized to 0.01 p/sec
 	"barbarian_rage"
 	{
 		"BaseClass"             		"ability_datadriven"
@@ -3945,7 +3944,7 @@
 	//=================================================================================================================
 	// Assassin: Custom Mana System
 	//=================================================================================================================
-	//	gets every 0.51 seconds 0.03 * level + 0.3 mana
+	//	gets every 0.51 seconds 0.03 * level + 0.3 mana > normalized to 0.06 * level + 0.6 per second, to show in the mana UI
 	"assassin_energy"
 	{
 		"BaseClass"             		"ability_datadriven"

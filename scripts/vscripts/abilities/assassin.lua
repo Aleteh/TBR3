@@ -1,12 +1,3 @@
-function ManaGain( event )
-	local hero = event.caster
-	local level = hero:GetLevel()
-
-	hero:GiveMana(0.03 * level + 0.3)
-end
-
-print("Assassin's abilities are loading")
-
 function walk_the_shadows_cast( event )
 		event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "assassin_walk_the_shadows_buff", nil)
 		event.caster:AddNewModifier(event.caster, event.ability, "modifier_invisible", {duration = 25}) 

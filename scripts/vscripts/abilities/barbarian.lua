@@ -12,7 +12,6 @@ function ManaOnAttack( event )
 	local level = hero:GetLevel()
 
 	hero:GiveMana(0.02 * level + 3)
-	print("Barbarian current mana: "..hero:GetMana())
 end
 
 function ManaOnAttacked( event )
@@ -20,7 +19,6 @@ function ManaOnAttacked( event )
 	local level = hero:GetLevel()
 
 	hero:GiveMana(0.02 * level + 0.4)
-	print("Barbarian current mana: "..hero:GetMana())
 end
 
 function taunt( event )
