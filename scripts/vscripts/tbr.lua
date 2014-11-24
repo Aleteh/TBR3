@@ -89,6 +89,7 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(GameMode, 'OnNPCSpawned'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameMode, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameMode, 'OnPlayerLearnedAbility'), self)
+	ListenToGameEvent( 'dota_player_pick_hero', Dynamic_Wrap( GameMode, 'OnPlayerPicked' ), self )
 
 	--[[ Possible Use	
 	ListenToGameEvent('entity_hurt', Dynamic_Wrap(GameMode, 'OnEntityHurt'), self)
@@ -97,7 +98,6 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('dota_non_player_used_ability', Dynamic_Wrap(GameMode, 'OnNonPlayerUsedAbility'), self)
 	ListenToGameEvent('dota_player_take_tower_damage', Dynamic_Wrap(GameMode, 'OnPlayerTakeTowerDamage'), self)
 	ListenToGameEvent("player_reconnected", Dynamic_Wrap(GameMode, 'OnPlayerReconnect'), self)
-	ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( GameMode, "OnPlayerPicked" ), self )
 	ListenToGameEvent('tree_cut', Dynamic_Wrap(GameMode, 'OnTreeCut'), self)
 	ListenToGameEvent('dota_rune_activated_server', Dynamic_Wrap(GameMode, 'OnRuneActivated'), self)
 	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameMode, 'OnAbilityChannelFinished'), self)
@@ -282,7 +282,7 @@ function GameMode:OnHeroInGame(hero)
 
 	-- Give Item
 	local item = CreateItem("item_wraithblade", hero, hero)
-	--hero:AddItem(item)
+	hero:AddItem(item)
 
 	--Abilities
 	local abil1 = hero:GetAbilityByIndex(0)
@@ -327,7 +327,9 @@ function GameMode:OnHeroInGame(hero)
 		hero:FindAbilityByName("assassin_energy"):SetLevel(1)
 	end
 
-	AdjustWarriorClassMana(hero)
+	if GameMode:IsWarriorClass(hero) then
+		AdjustWarriorClassMana(hero)
+	end
 
 	GameMode:ModifyStatBonuses(hero)
 
@@ -350,6 +352,14 @@ function AdjustWarriorClassMana( hero )
 		end
 		print(hero.class.." mana regen adjusted to ".. hero:GetConstantBasedManaRegen() )
 	end)
+end
+
+function GameMode:IsWarriorClass(hero)
+	if hero.class == "barbarian" or hero.class == "warlord" or hero.class == "khaos_champion" or hero.class == "assassin" then
+		return true
+	else
+		return false
+	end
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive operations here
@@ -717,8 +727,8 @@ end
 -- A player picked a hero and pressed Play
 function GameMode:OnPlayerPicked( event )
 	local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
-		-- Apply timer to update stats
-		-- :ModifyStatBonuses(spawnedUnitIndex)
+	-- Apply timer to update stats
+	GameMode:ModifyStatBonuses(spawnedUnitIndex)
 end
 -- A channelled ability finished by either completing or being interrupted
 function GameMode:OnAbilityChannelFinished(keys)
@@ -800,6 +810,15 @@ function GameMode:ModifyStatBonuses(unit)
  
 			-- If player intellect is different this time around, start the adjustment
 			if intellect ~= spawnedUnitIndex.intBonus then
+
+				-- If Warrior Class, update Spell & Healing Power based on Int
+				if not GameMode:IsWarriorClass(spawnedUnitIndex) then
+					spawnedUnitIndex.spellPower = spawnedUnitIndex.spellPower + ( intellect * 3 )
+					spawnedUnitIndex.healingPower = spawnedUnitIndex.healingPower + ( intellect * 3 )
+					print(spawnedUnitIndex.spellPower,spawnedUnitIndex.healingPower)
+					print("Spell - Healing Powah")
+				end
+
 				-- Modifier values
 				local bitTable = {4096,2048,1024,512,256,128,64,32,16,8,4,2,1}
  
