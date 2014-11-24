@@ -121,6 +121,8 @@ function GameMode:InitGameMode()
 
 	self.bSeenWaitForPlayers = false
 
+	self.nPlayerCount = 0
+
 	-- Spawn Locations and Area Activations
 
 	-- Make separate lists based on creepName to randomize spawn locations later
@@ -269,6 +271,15 @@ end
 --This function is called once and only once for every player when they spawn into the game for the first time. 
 function GameMode:OnHeroInGame(hero)
 	print("[TBR] Hero spawned in game for first time -- " .. hero:GetUnitName())
+
+	local player = PlayerResource:GetPlayer(hero:GetPlayerID())
+
+	-- update the player count
+	if not player.addedToCount then 
+		self.nPlayerCount = self.nPlayerCount + 1
+		player.addedToCount = true 
+	end
+	print(self.nPlayerCount)
 
 	-- Starting Gold
 	hero:SetGold(322, false)
@@ -545,7 +556,24 @@ function GameMode:OnEntityKilled( keys )
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
 
-	if killedUnit and killedUnit:IsRealHero() then 
+	if killedUnit and ( killedUnit:GetTeamNumber()==DOTA_TEAM_NEUTRALS or killedUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) and killedUnit:IsCreature() then
+		local level = killedUnit:GetLevel()
+		-- Increase by 10% for each party member
+		local party_bonus = 1 + ( self.nPlayerCount * 0.1 )
+		local xp = ( 20 + level * 5 ) * party_bonus
+
+		--Popup XP
+		PopupExperience(killedUnit,math.floor(xp))
+
+		-- Grant XP in AoE
+		local heroesNearby = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, killedUnit:GetOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
+		for _,hero in pairs(heroesNearby) do
+			if hero:IsRealHero() then
+				hero:AddExperience(math.floor(xp), false)
+			end
+		end
+
+	elseif killedUnit and killedUnit:IsRealHero() then 
 
 		print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
 		local grave = CreateUnitByName("player_gravestone", killedUnit:GetAbsOrigin(), true, killedUnit, killedUnit, killedUnit:GetTeamNumber())
@@ -730,6 +758,7 @@ function GameMode:OnPlayerPicked( event )
 	-- Apply timer to update stats
 	GameMode:ModifyStatBonuses(spawnedUnitIndex)
 end
+
 -- A channelled ability finished by either completing or being interrupted
 function GameMode:OnAbilityChannelFinished(keys)
 	print ('[TBR] OnAbilityChannelFinished')

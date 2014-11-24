@@ -27,8 +27,8 @@ Suggested Priority List (to organize coding assignment)
 	Creep spawning: OnTouch/OnTouchEnd that spawn set creeps at random locations that patrol to random waypoints. DONE
 					Waves of Demons getting increasingly harder, starting every 7 minutes up to 20 minutes per attack.
 	Max gold: 		Increase to 1 million.
-	Experience: 	Increase XP accordingly while in a Party.
-					XP Base 25, 5 per level
+	Experience: 	Increase XP accordingly while in a Party (+10% per extra party member) DONE
+					XP Base 20, 5 per level
 	Save/Load:		Provide a persisten RPG system that allows players to instantly load their current hero data, connected to their SteamID.
 	
 	Bank: 			Extra 6 slots to store items, items are saved. Only accessible in the city. Will need a custom storage system.
