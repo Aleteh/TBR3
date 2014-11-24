@@ -92,6 +92,35 @@
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"2"
+		"MagicalResistance"		"0"
+
+        // Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.00"
+		"AttackAnimationPoint"		"0.433"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
 
 	//=================================================================================================================
@@ -169,6 +198,35 @@
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"2"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.00"
+		"AttackAnimationPoint"		"0.433"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
 
 	//=================================================================================================================
@@ -197,6 +255,35 @@
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "11" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"2"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.00"
+		"AttackAnimationPoint"		"0.433"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
 
 	//=================================================================================================================
@@ -310,31 +397,31 @@
         "AttributeBaseAgility"          "13" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"0"										// Physical protection.
-
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"100"									// Base health.
-		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
-		"StatusMana"				"1"										// Base mana.
-		"StatusManaRegen"			"0.01"									// Mana regeneration rate.
-
-        // Attack
-		//-------------------------------------------------------------------------------------------------------------
+		// Attack
+		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"2"										// Damage range min.
-		"AttackDamageMax"			"24"										// Damage range max.
-		"AttackRate"				"1.8"									// Speed of attack.
-		"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
-		"AttackRange"				"700"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"12.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.46"
+		"AttackAnimationPoint"		"0.7"
+		"AttackAcquisitionRange"	"650"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		//"ProjectileSpeed"		"900"
 
-		"MovementSpeed"				"270"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		"ProjectileSpeed"			"900"
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"350"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
 
 	//=================================================================================================================
@@ -359,8 +446,40 @@
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		//"ProjectileSpeed"		"900"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
-		//=================================================================================================================
+
+	//=================================================================================================================
 	// HERO: Cleric
 	//=================================================================================================================
 	"npc_dota_hero_crystal_maiden" 
@@ -420,7 +539,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"			"100"
 		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"1"
+		"StatusMana"			"0"
 		"StatsManaRegen"		"0.01"
 
 		// Vision
@@ -452,6 +571,36 @@
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.55"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
 
 	//=================================================================================================================
@@ -476,6 +625,37 @@
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"2"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"1200"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
 	}
 
 	//=================================================================================================================
