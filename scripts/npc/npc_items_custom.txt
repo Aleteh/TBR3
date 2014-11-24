@@ -426,7 +426,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
@@ -500,7 +500,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%hp_bonus"
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%evasion"
@@ -520,7 +520,7 @@
 				"IsDebuff"				"1"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-30"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-30"
 				}
@@ -2753,7 +2753,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%dmg_bonus"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%int_bonus"
@@ -2806,7 +2806,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_bonus"
 				}
@@ -2852,7 +2852,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 				}
@@ -2898,7 +2898,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"
 				}
@@ -2962,7 +2962,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%dmg_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%str_bonus"
 				}
@@ -3008,7 +3008,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus"
 				}
@@ -3104,7 +3104,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"
 				}
 			}
@@ -3201,7 +3201,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
@@ -3293,7 +3293,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_bonus"
 				}
 			}
@@ -3333,7 +3333,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dmg_bonus"
@@ -3413,7 +3413,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%stat_bonus"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%stat_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
@@ -3460,7 +3460,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%str_bonus"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%armor_bonus"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%magic_res"
@@ -3535,7 +3535,7 @@
 				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
+					
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_bonus"
 				}
 			}
@@ -13027,6 +13027,352 @@
 		}	
 	}
 				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////
+
+	//Every point of strength gives you 20 HP and 0.25 hp per second regeneration
+	//Extra 1 HP and 0.22 hpRegen per STR
+	"item_health_modifier"
+	{
+		"ID"							"2100"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+ 
+		"Modifiers"
+		{
+			"modifier_health_mod_1"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"0.22"
+				}
+			}
+			"modifier_health_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{				
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"2"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"0.44"
+				}
+			}
+			"modifier_health_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"4"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"0.88"
+				}
+			}
+			"modifier_health_mod_8"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"8"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"1.76"
+				}
+			}
+			"modifier_health_mod_16"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"16"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"3.52"
+				}
+			}
+			"modifier_health_mod_32"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"32"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"7.04"
+				}
+			}
+			"modifier_health_mod_64"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"14.08"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"64"
+				}
+			}
+			"modifier_health_mod_128"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"28.16"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"128"
+				}
+			}
+			"modifier_health_mod_256"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"56.32"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"256"
+				}
+			}
+			"modifier_health_mod_512"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"112.64"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"512"
+				}
+			}
+			"modifier_health_mod_1024"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"225.28"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1024"
+				}
+			}
+			"modifier_health_mod_2048"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"450.56"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"2048"
+				}
+			}
+			"modifier_health_mod_4096"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"901.12"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"4096"
+				}
+			}
+		}
+	}
+
+	//Every one point in INT will give you an extra 15 mana and a .01 MP per second mana regen bonuses
+	//Extra 2 MP and -0.03 per INT
+	"item_mana_modifier"
+	{
+		"ID"							"2101"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+
+		"Modifiers"
+		{
+
+			"modifier_mana_mod_1"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-0.03"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"2"
+				}
+			}
+			"modifier_mana_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-0.06"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"4"
+				}
+			}
+			"modifier_mana_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-0.12"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"8"
+				}
+			}
+			"modifier_mana_mod_8"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-0.24"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"16"
+				}
+			}
+			"modifier_mana_mod_16"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-0.48"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"32"
+				}
+			}
+			"modifier_mana_mod_32"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-0.96"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"64"
+				}
+			}
+			"modifier_mana_mod_64"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-1.92"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"128"
+				}
+			}
+			"modifier_mana_mod_128"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-3.84"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"256"
+				}
+			}
+			"modifier_mana_mod_256"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-7.68"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"512"
+				}
+			}
+			"modifier_mana_mod_512"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-15.36"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"1024"
+				}
+			}
+			"modifier_mana_mod_1024"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-30.72"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"2048"
+				}
+			}
+			"modifier_mana_mod_2048"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-61.44"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"4096"
+				}
+			}
+			"modifier_mana_mod_4096"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"-122.88"
+					"MODIFIER_PROPERTY_MANA_BONUS"	"8192"
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
