@@ -549,6 +549,7 @@ function GameMode:OnEntityKilled( keys )
 	
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
+	local unitName = killedUnit:GetUnitName()
 	-- The Killing entity
 	local killerEntity = nil
 
@@ -564,6 +565,9 @@ function GameMode:OnEntityKilled( keys )
 
 		--Popup XP
 		PopupExperience(killedUnit,math.floor(xp))
+
+		--Popup Gold
+		PopupGoldGain(killedUnit,GameMode:GetBountyFor(unitName))
 
 		-- Grant XP in AoE
 		local heroesNearby = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, killedUnit:GetOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
@@ -599,6 +603,21 @@ function GameMode:OnEntityKilled( keys )
 		end
 	end
 
+end
+
+-- go through the self.SpawnInfoKV and return the bounty
+function GameMode:GetBountyFor( unitName )
+	for k,v in pairs(self.SpawnInfoKV) do
+		print(k,v)
+		for key,value in pairs(self.SpawnInfoKV[k]) do
+			if key == unitName then 
+				return value.GoldBounty
+			end
+		end
+	end
+	
+	return 0
+	
 end
 
 
