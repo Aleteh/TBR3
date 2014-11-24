@@ -37,6 +37,7 @@ function leap( event )
 	print("Starting Leap")
 	local point = event.target_points[1]
 	local unit = event.caster
+	local manaGain = event.ability:GetLevelSpecialValueFor("mana_gain", (event.ability:GetLevel()-1))
 	Physics:Unit(unit)
 	unit:SetPhysicsFriction(0)
 	unit:PreventDI(true)
@@ -65,6 +66,7 @@ function leap( event )
 			EmitSoundOn("Hero_Centaur.HoofStomp", unit)
 
 			FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
+			unit:GiveMana(manaGain)
 			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", PATTACH_WORLDORIGIN, event.caster)
 			ParticleManager:SetParticleControl(particle, 0, event.caster:GetAbsOrigin())
 			ParticleManager:SetParticleControl(particle, 1, Vector(225,225,225))

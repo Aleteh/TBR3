@@ -173,7 +173,7 @@
 		"StatusHealth"			"100"
 		"StatusHealthRegen"		"0.25"
 		"StatusMana"			"35" //10 with 1 int
-		"StatsManaRegen"		"0.75"
+		"StatsManaRegen"		"0" //0.75, set in lua
 	}
 
 	//=================================================================================================================
@@ -369,7 +369,7 @@
 		"StatusHealth"			"100"
 		"StatusHealthRegen"		"0.25"
 		"StatusMana"			"25"	//10 with 1 int
-		"StatsManaRegen"		"0.75"
+		"StatsManaRegen"		"0"	//0.75, set in lua
 	}
 
 	//=================================================================================================================

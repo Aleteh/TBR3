@@ -334,9 +334,9 @@ function AdjustWarriorClassMana( hero )
 		elseif hero.class == "warlord" then
 			hero:SetBaseManaRegen( (0.02 * heroLevel + 0.5) )	
 		elseif hero.class == "khaos_champion" then
-			hero:SetBaseManaRegen( (0.01 * heroLevel + 0.15) )
+			hero:SetBaseManaRegen( (0.01 * heroLevel + 0.15) + 0.75)
 		elseif hero.class == "assassin" then
-			hero:SetBaseManaRegen( (0.06 * heroLevel + 0.6) )
+			hero:SetBaseManaRegen( (0.06 * heroLevel + 0.6) + 0.75)
 		else 
 			print("ERROR, Not a Warrior Class")
 		end

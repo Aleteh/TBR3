@@ -46,7 +46,8 @@ Suggested Priority List (to organize coding assignment)
 					INT = 15 mana, .01 MP per second, 3 Spell & Healing Power.
 					STR = 20 HP and 0.25 hp per second regeneration.
 					AGI = .2 armor, 1% IAS.
-	Warrior Mana:  	Barbarians - gain their mana whenever they attack, also gains mana when attacked. Degenerates over time.
+	Warrior Mana:  	DONE, needs test!
+					Barbarians - gain their mana whenever they attack, also gains mana when attacked. Degenerates over time.
 					Warlords   	- gain their mana whenever they attack. Regenerates slowly over time.
 					Assassin/KC: - does not gain mana with each attack but quickly regenerates his mana naturally. 
 	Skills:			Unlearneable normally, only through purchase/droppable Book system.

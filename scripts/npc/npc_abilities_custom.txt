@@ -662,7 +662,6 @@
 	//In addition, xx mana is added to your mana pool.
 	//30 seconds cooldown. 
     //225 AOE, 600 range, no mana cost.
-	
 	"barbarian_mighty_leap"
 	{
 		// General
@@ -684,6 +683,16 @@
     	// Damage.
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilityDamage"                 "50 100 175 280 420 630 1000 1500"
+
+    	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_gain"			"8 16 25 35 47 60 72 85"
+			}
+		}
+
 
     	"precache"
     	{
@@ -3382,7 +3391,7 @@
 	"warlord_focus"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill0"
+		"AbilityTextureName"			"warlord_skill0"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
@@ -3948,7 +3957,7 @@
 	"assassin_energy"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill0"
+		"AbilityTextureName"			"assassin_skill0"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
