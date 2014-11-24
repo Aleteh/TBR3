@@ -559,15 +559,11 @@
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/heroes/blood_seeker/blood_seeker.vmdl"
 		"ModelScale"			"1"
-		"Level"				"2"
+		"Level"				"10"
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: Ablo
-		"Ability2"			""	 //Reference: Alsh
-		"Ability3"			""	 //Reference: Apg2
-		"Ability4"			""	 //Reference: Aion
-		"Ability5"				"creep_respawn"
+		"Ability1"			""	 //Reference: Aion
 		
 		// Armor
 		//----------------------------------------------------------------
@@ -577,10 +573,10 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"8.0"
-		"AttackDamageMax"		"9.0"
+		"AttackDamageMin"		"24.0"
+		"AttackDamageMax"		"30.0"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.1"
+		"AttackRate"			"1.65"
 		"AttackAnimationPoint"		"0.43"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"			"600"
@@ -589,8 +585,8 @@
 		
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"			"32.0"
-		"BountyGoldMax"			"46.0"
+		//"BountyGoldMin"			"11.0"
+		//"BountyGoldMax"			"14.0"
 		
 		// Movement
 		//----------------------------------------------------------------
@@ -600,10 +596,10 @@
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			"335"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"200"
-		"StatsManaRegen"		"0.666666666666667"
+		"StatusHealth"			"1035"
+		"StatusHealthRegen"		"1.50"
+		"StatusMana"			"250"
+		"StatsManaRegen"		"1.00"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -613,7 +609,7 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"MAGIC_MAN"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefened"		"NONE"
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
@@ -677,8 +673,8 @@
 		
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"			"4.0"
-		"BountyGoldMax"			"6.0"
+		//"BountyGoldMin"			"4.0"
+		//"BountyGoldMax"			"6.0"
 		
 		// Movement
 		//----------------------------------------------------------------
@@ -843,8 +839,8 @@
 		
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"			"15.0"
-		"BountyGoldMax"			"19.0"
+		//"BountyGoldMin"			"15.0"
+		//"BountyGoldMax"			"19.0"
 		
 		// Movement
 		//----------------------------------------------------------------
@@ -890,15 +886,11 @@
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/heroes/blood_seeker/blood_seeker.vmdl"
 		"ModelScale"			"1"
-		"Level"				"2"
+		"Level"				"10"
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: Ablo
-		"Ability2"			""	 //Reference: Alsh
-		"Ability3"			""	 //Reference: Apg2
-		"Ability4"			""	 //Reference: Aion
-		"Ability5"				"creep_respawn"
+		"Ability1"			""	 //Reference: Aion
 		
 		// Armor
 		//----------------------------------------------------------------
@@ -908,10 +900,10 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"8.0"
-		"AttackDamageMax"		"9.0"
+		"AttackDamageMin"		"24.0"
+		"AttackDamageMax"		"30.0"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.1"
+		"AttackRate"			"1.65"
 		"AttackAnimationPoint"		"0.43"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"			"600"
@@ -920,8 +912,8 @@
 		
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"			"32.0"
-		"BountyGoldMax"			"46.0"
+		//"BountyGoldMin"			"11.0"
+		//"BountyGoldMax"			"14.0"
 		
 		// Movement
 		//----------------------------------------------------------------
@@ -931,10 +923,10 @@
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			"335"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"200"
-		"StatsManaRegen"		"0.666666666666667"
+		"StatusHealth"			"1035"
+		"StatusHealthRegen"		"1.50"
+		"StatusMana"			"250"
+		"StatsManaRegen"		"1.00"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -944,7 +936,7 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"MAGIC_MAN"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefened"		"NONE"
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		

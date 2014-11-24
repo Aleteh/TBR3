@@ -611,11 +611,11 @@ function GameMode:GetBountyFor( unitName )
 		print(k,v)
 		for key,value in pairs(self.SpawnInfoKV[k]) do
 			if key == unitName then 
-				return value.GoldBounty
+				return RandomInt(value.BountyGoldMin, value.BountyGoldMax)
 			end
 		end
 	end
-	
+
 	return 0
 	
 end
