@@ -254,7 +254,7 @@ function GameMode:OnNPCSpawned(keys)
 	if npc:IsHero() then
 		npc.strBonus = 0
         npc.intBonus = 0
-        --npc.agilityBonus = 0
+        npc.agilityBonus = 0
     end
 
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
@@ -830,6 +830,72 @@ function GameMode:ModifyStatBonuses(unit)
 			end
 			-- Updates the stored intellect bonus value for next timer cycle
 			spawnedUnitIndex.intBonus = spawnedUnitIndex:GetIntellect()
+
+			-- ==================================
+			-- Adjust armor based on agi 
+			-- Added as +Armor and not Base Armor because there's no BaseArmor modifier (please...)
+			-- ==================================
+
+			-- Get player primary stat value
+			local agility = spawnedUnitIndex:GetAgility()
+
+			--Check if primaryStatBonus is stored on hero, if not set it to 0
+			if spawnedUnitIndex.agilityBonus == nil then
+				spawnedUnitIndex.agilityBonus = 0
+			end
+
+			-- If player int is different this time around, start the adjustment
+			if agility ~= spawnedUnitIndex.agilityBonus then
+				-- Modifier values
+				local bitTable = {1024,512,256,128,64,32,16,8,4,2,1}
+
+				-- Gets the list of modifiers on the hero and loops through removing and armor modifier
+				for u = 1, #bitTable do
+					local val = bitTable[u]
+					if spawnedUnitIndex:HasModifier( "modifier_armor_mod_" .. val)  then
+						spawnedUnitIndex:RemoveModifierByName("modifier_armor_mod_" .. val)
+					end
+					
+					if spawnedUnitIndex:HasModifier( "modifier_negative_armor_mod_" .. val)  then
+						spawnedUnitIndex:RemoveModifierByName("modifier_negative_armor_mod_" .. val)
+					end
+				end
+				print("========================")
+				agility = agility / 7
+				print("Agi / 7: "..agility)
+				-- Remove Armor
+				-- Creates temporary item to steal the modifiers from
+				local armorUpdater = CreateItem("item_armor_modifier", nil, nil) 
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(agility / val)
+					if count >= 1 then
+						armorUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_negative_armor_mod_" .. val, {})
+						print("Adding modifier_negative_armor_mod_" .. val)
+						agility = agility - val
+					end
+				end
+
+				agility = spawnedUnitIndex:GetAgility()
+				agility = agility / 5
+				print("Agi / 5: "..agility)
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(agility / val)
+					if count >= 1 then
+						armorUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_armor_mod_" .. val, {})
+						agility = agility - val
+						print("Adding modifier_armor_mod_" .. val)
+					end
+				end
+
+				-- Cleanup
+				UTIL_RemoveImmediate(armorUpdater)
+				armorUpdater = nil
+			end
+			-- Updates the stored Int bonus value for next timer cycle
+			spawnedUnitIndex.agilityBonus = spawnedUnitIndex:GetAgility()
+
 
 			return 0.25
 		end
