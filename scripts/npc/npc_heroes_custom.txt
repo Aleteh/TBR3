@@ -28,10 +28,17 @@
        	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength"         "15" 		// Base strength
         "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeBaseIntelligence"     "0" 		// Base intelligence
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "10" 		// Base agility
         "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+
+        // Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"100"									// Base health.
+		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
+		"StatusMana"				"50"									// Base mana.
+		"StatusManaRegen"			"0"										// Mana regeneration rate.
 	}
 
 	//=================================================================================================================
@@ -83,10 +90,17 @@
        	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength"         "14" 		// Base strength
         "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "10" 		// Base intelligence
-        "AttributeIntelligenceGain"     "2"  		// Intelligence bonus per level.
+        "AttributeBaseIntelligence"     "0" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "12" 		// Base agility
         "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+
+        // Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"100"									// Base health.
+		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
+		"StatusMana"				"25"									// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	}
 
 	//=================================================================================================================
@@ -160,10 +174,17 @@
        	"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"         "14" 		// Base strength
         "AttributeStrengthGain"         "1.2"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeBaseIntelligence"     "0" 		// Base intelligence
         "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
         "AttributeBaseAgility"          "14" 		// Base agility
         "AttributeAgilityGain"          "2.8" 		// Agility bonus per level.
+
+         // Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"100"									// Base health.
+		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
+		"StatusMana"				"35"									// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	}
 
 	//=================================================================================================================
@@ -196,10 +217,10 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"101"									// Base health.
+		"StatusHealth"				"100"									// Base health.
 		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
-		"StatusMana"				"10"										// Base mana.
-		"StatusManaRegen"			"0.01"									// Mana regeneration rate.
+		"StatusMana"				"25"										// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
@@ -360,7 +381,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			"101"
+		"StatusHealth"			"100"
 		"StatusHealthRegen"		"0.25"
 		"StatusMana"			"1"
 		"StatsManaRegen"		"0.01"

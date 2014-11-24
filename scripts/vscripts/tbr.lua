@@ -264,6 +264,8 @@ end
 function GameMode:OnHeroInGame(hero)
 	print("[TBR] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
+	local heroLevel = hero:GetLevel()
+
 	-- Starting Gold
 	hero:SetGold(322, false)
 
@@ -276,7 +278,7 @@ function GameMode:OnHeroInGame(hero)
 
 	-- Give Item
 	local item = CreateItem("item_wraithblade", hero, hero)
-	hero:AddItem(item)
+	--hero:AddItem(item)
 
 	--Abilities
 	local abil1 = hero:GetAbilityByIndex(0)
@@ -295,6 +297,38 @@ function GameMode:OnHeroInGame(hero)
 
 	-- Give 2 extra stat points to spend
 	hero:SetAbilityPoints(3)
+
+	-- Set Class
+	if hero:GetUnitName() == "npc_dota_hero_beastmaster" then
+		print("BARBARIAN IN GAME")
+		hero.class = barbarian
+		-- Adjust Mana Rules, Decay
+		hero:SetBaseManaRegen( -(0.1 * heroLevel) ) -- TODO: I think it feels way faster in game... check numbers for every mana system
+		hero:AddAbility("barbarian_rage")
+		hero:FindAbilityByName("barbarian_rage"):SetLevel(1)
+	elseif hero:GetUnitName() == "npc_dota_hero_axe" then
+		print("WARLORD IN GAME")
+		hero.class = warlord
+		-- Adjust Mana Rules
+		hero:SetBaseManaRegen( (0.02 * heroLevel + 0.5) )	
+		hero:AddAbility("warlord_focus")
+		hero:FindAbilityByName("warlord_focus"):SetLevel(1)
+	elseif hero:GetUnitName() == "npc_dota_hero_skeleton_king" then
+		print("KHAOS CHAMPION IN GAME")
+		hero.class = khaos_champion
+		-- Adjust Mana Rules
+		hero:SetBaseManaRegen( (0.01 * heroLevel + 0.15) )
+		hero:AddAbility("kc_hatred")
+		hero:FindAbilityByName("kc_hatred"):SetLevel(1)
+	elseif hero:GetUnitName() == "npc_dota_hero_bounty_hunter" then
+		print("ASSASSIN IN GAME")
+		hero.class = assassin
+		-- Adjust Mana Rules
+		hero:SetBaseManaRegen( (0.06 * heroLevel + 0.6) )
+		hero:AddAbility("assassin_energy")
+		hero:FindAbilityByName("assassin_energy"):SetLevel(1)
+	end
+
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive operations here
@@ -394,10 +428,10 @@ function GameMode:OnPlayerLevelUp(keys)
     local pID = player:GetPlayerID()
 
     --get the hero handle
-    local playerHero = player:GetAssignedHero()
+    local hero = player:GetAssignedHero()
     
     --get the players current stat points
-    local statsUnspent = playerHero:GetAbilityPoints()
+    local statsUnspent = hero:GetAbilityPoints()
 
     --[[ Rules to assign stat points:
 		1-19 = 3
@@ -415,41 +449,50 @@ function GameMode:OnPlayerLevelUp(keys)
 
 	-- check the current Level of the hero and assign points accordingly
 	-- we do 1 less than what we want, because the game automatically gives 1
-	local heroLevel = playerHero:GetLevel()
+	local heroLevel = hero:GetLevel()
 	if heroLevel <= 19 then
-		playerHero:SetAbilityPoints(statsUnspent+2)
+		hero:SetAbilityPoints(statsUnspent+2)
 	elseif heroLevel <= 39 then
-		playerHero:SetAbilityPoints(statsUnspent+3)
+		hero:SetAbilityPoints(statsUnspent+3)
 	elseif heroLevel <= 59 then
-		playerHero:SetAbilityPoints(statsUnspent+4)
+		hero:SetAbilityPoints(statsUnspent+4)
     elseif heroLevel <= 79 then
-		playerHero:SetAbilityPoints(statsUnspent+5)
+		hero:SetAbilityPoints(statsUnspent+5)
 	elseif heroLevel <= 99 then
-		playerHero:SetAbilityPoints(statsUnspent+6)
+		hero:SetAbilityPoints(statsUnspent+6)
 	elseif heroLevel <= 119 then
-		playerHero:SetAbilityPoints(statsUnspent+7)
+		hero:SetAbilityPoints(statsUnspent+7)
 	elseif heroLevel <= 139 then
-		playerHero:SetAbilityPoints(statsUnspent+8)
+		hero:SetAbilityPoints(statsUnspent+8)
 	elseif heroLevel <= 159 then
-		playerHero:SetAbilityPoints(statsUnspent+9)
+		hero:SetAbilityPoints(statsUnspent+9)
 	elseif heroLevel <= 179 then
-		playerHero:SetAbilityPoints(statsUnspent+10)
+		hero:SetAbilityPoints(statsUnspent+10)
 	elseif heroLevel <= 199 then
-		playerHero:SetAbilityPoints(statsUnspent+11)
+		hero:SetAbilityPoints(statsUnspent+11)
 	elseif heroLevel == 200 then
-		playerHero:SetAbilityPoints(statsUnspent+12)
+		hero:SetAbilityPoints(statsUnspent+12)
 	end
 
 	--update the statsUnspent variable to send
-	statsUnspent = playerHero:GetAbilityPoints()
+	statsUnspent = hero:GetAbilityPoints()
 
     --Fire Game Event to our UI
     print("Got " .. statsUnspent .. " Ability Points to spend! Firing game event")
 	FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = statsUnspent })
 
 	--Fully heal Health & Mana of the player
-	playerHero:SetHealth(playerHero:GetMaxHealth())
-	playerHero:SetMana(playerHero:GetMaxMana())
+	hero:SetHealth(hero:GetMaxHealth())
+	hero:SetMana(hero:GetMaxMana())
+
+	--Adjust Warrior class Mana rules
+	-- TODO: Complete after fixing the values
+	if hero.class == barbarian then
+		hero:SetBaseManaRegen( -(0.1 * heroLevel) )
+	end
+	--elseif hero.class == warlord then
+
+
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -726,31 +769,31 @@ function GameMode:ModifyStats( player, p )
     local pID = player:GetPlayerID()
 
     --get the hero handle
-    local playerHero = player:GetAssignedHero()
+    local hero = player:GetAssignedHero()
     
     --get the players current stat points
-    local statsUnspent = playerHero:GetAbilityPoints()
+    local statsUnspent = hero:GetAbilityPoints()
     
     --check if the player has stats to spend
     if statsUnspent > 0 then
         --spend the stat point
-        playerHero:SetAbilityPoints(statsUnspent-1)
+        hero:SetAbilityPoints(statsUnspent-1)
         --give the corresponding stat point
         if p=="str" then
-	        playerHero:ModifyStrength(1)
+	        hero:ModifyStrength(1)
 	        print("+1 STR Allocated")
 	    elseif p=="agi" then
-	    	playerHero:ModifyAgility(1)
+	    	hero:ModifyAgility(1)
 	        print("+1 AGI Allocated")
 	    elseif p=="int" then
-	    	playerHero:ModifyIntellect(1)
+	    	hero:ModifyIntellect(1)
 	        print("+1 INT Allocated")
 	    end
     end
 
     --Fire the event. The second parameter is an object with all the event's parameters as properties
     --We have to get the player's unspent stats again, because we have deducted 1 from it since the last time we got it.
-    FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = playerHero:GetAbilityPoints() })
+    FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = hero:GetAbilityPoints() })
 end
 
 -- register the 'ChangeMaterials' command in our console
@@ -770,10 +813,10 @@ function GameMode:UpdateMaterials( player, amount )
     local pID = player:GetPlayerID()
 
     --get the hero handle
-    local playerHero = player:GetAssignedHero()
+    local hero = player:GetAssignedHero()
     
     --materials were already added/substracted internally on the function that called this, print it here
-    local heroMaterials = playerHero.materials + amount
+    local heroMaterials = hero.materials + amount
     print("Updating materials for player " .. pID .. " , new ammount: " .. heroMaterials)
 
     --Fire the event. The second parameter is an object with all the event's parameters as properties

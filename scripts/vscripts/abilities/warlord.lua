@@ -1,3 +1,17 @@
+function ManaOnAttack( event )
+	local hero = event.caster
+	local level = hero:GetLevel()
+
+	hero:GiveMana(0.02 * level + 2.5)
+end
+
+function ManaGain( event )
+	local hero = event.caster
+	local level = hero:GetLevel()
+
+	hero:GiveMana(0.02 * level + 0.5)
+end
+
 function counter( event )
 	local damage = event.ability:GetAbilityDamage()
 	local damage_type = event.ability:GetAbilityDamageType()

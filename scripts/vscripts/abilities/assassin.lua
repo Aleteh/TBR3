@@ -1,4 +1,9 @@
---dota_launch_custom_game blackroad test_env
+function ManaGain( event )
+	local hero = event.caster
+	local level = hero:GetLevel()
+
+	hero:GiveMana(0.03 * level + 0.3)
+end
 
 print("Assassin's abilities are loading")
 

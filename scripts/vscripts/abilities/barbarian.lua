@@ -1,3 +1,28 @@
+function ZeroManaOnSpawn( event )
+	local hero = event.caster
+	Timers:CreateTimer(.01, function()
+		print("Set Mana to 0 on spawn")
+		hero:SetMana(0)
+	end)
+	
+end
+
+function ManaOnAttack( event )
+	local hero = event.caster
+	local level = hero:GetLevel()
+
+	hero:GiveMana(0.02 * level + 3)
+	print("Barbarian current mana: "..hero:GetMana())
+end
+
+function ManaOnAttacked( event )
+	local hero = event.caster
+	local level = hero:GetLevel()
+
+	hero:GiveMana(0.02 * level + 0.4)
+	print("Barbarian current mana: "..hero:GetMana())
+end
+
 function taunt( event )
 	event.target:SetForceAttackTarget(event.caster)
 	
