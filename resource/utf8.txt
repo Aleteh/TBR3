@@ -4,7 +4,8 @@
 	"Tokens"
 	{		
 		"addon_game_name"			"The Black Road 3"
-
+		"game_mode_15_desc" 		"RPG"
+	
 		//Custom Hero Names
 
    		"npc_dota_hero_axe"                 "Warlord"
@@ -20,6 +21,23 @@
    		"npc_dota_hero_warlock"             "Warlock"
    		"npc_dota_hero_omniknight"          "Temple Guardian"
 
+		// Chat
+		"DOTA_Chat_PlayerKilledGeneric" "<font color='#386BE8'>%s1</font> is dead! Respawn in 45 seconds"
+		"DOTA_Chat_PickedUpAegis"		""
+		
+		"DOTA_MiniKillcam_KilledByNeutral"	"KILLED BY\n TEST MOB"
+		
+		//Team strings
+		"DOTA_GoodGuys"			"ATHENS"
+		"DOTA_BadGuys"			"UNDERWORLD"
+		"DOTA_GoodGuysCaps"			"ATHENS"
+		"DOTA_BadGuysCaps"			"UNDERWORLD"
+
+		//Winner strings
+		"DOTA_Winner_GoodGuys"			"Athenians Victory"
+		"DOTA_Winner_BadGuys"			"Underworld Victory"
+		"DOTA_Winner_Teamname"			"%s1 Victory"
+		
    		// Stat Tooltip
 		"DOTA_StatTooltip_Header"	"Hero Attributes:\n\n"
 		"DOTA_StatTooltip_Strength"		"Strength:"
