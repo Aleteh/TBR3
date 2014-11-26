@@ -47,11 +47,10 @@ end
 function AresLifesteal(event)
 	-- Regenerate .33% of your maximum life total. 
 
-	print("kappa")
 	local hero = event.caster
 	local heroHP = hero:GetMaxHealth()
 	local lifesteal_total = event.ability:GetSpecialValueFor("lifesteal_total")
-	local health_recovered = heroHP * lifesteal_total
+	local health_recovered = heroHP * lifesteal_total * 0.01
 
 	hero:Heal(health_recovered, hero)
 	PopupHealing(hero, math.floor(health_recovered))
