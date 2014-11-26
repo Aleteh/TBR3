@@ -295,6 +295,12 @@ function GameMode:OnHeroInGame(hero)
 	local item = CreateItem("item_wraithblade", hero, hero)
 	hero:AddItem(item)
 
+	local item = CreateItem("item_ares_bloodthirsty_spear", hero, hero)
+	hero:AddItem(item)
+
+	local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
+	hero:AddItem(item)
+
 	--Abilities
 	local abil1 = hero:GetAbilityByIndex(0)
 	local abil2 = hero:GetAbilityByIndex(1)
