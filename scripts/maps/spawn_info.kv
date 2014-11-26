@@ -155,6 +155,31 @@
 
 	"DemonWaves"
 	{
+		"PrepTimeBetweenRounds"			"35"
+		"SpawnLocations"
+		{
+			"1"
+			{
+				"SpawnerName"		"spawner_tester"
+				"Waypoint"			"path_01"
+
+			}
+			"2"
+			{
+				"SpawnerName"		"spawner_tester_1"
+				"Waypoint"			"path_01"
+			}
+		}
+		"Round1" //Enemies Wave Data Here
+		{
+			"UnitFodder_1a" // Duration 80s - Continues with UnitFodderGrouped_2a & 3a to 120s total
+			{
+				"NPCName"				"npc_dota_creature_kobold_tunneler"
+				"TotalUnitsToSpawn"		"6"
+				"UnitsPerSpawn"			"3"
+				"SpawnInterval"			"10"
+			}
+		}
 		//	Champion of Hades 		- 1 per wave, gains levels)
 		//	Demonic Carrion			- Level 5
 		//	Demonic Pillager  		- Level 6
