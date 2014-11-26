@@ -456,6 +456,15 @@
 			"Particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
 		}
 
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items.lua"
+				"Function"		"ItemCheck"
+			}
+		}
+
 		"Modifiers"
 		{
 			"flame_of_prometheus_modifier"
@@ -940,7 +949,7 @@
 		"Model" 						"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
 		"Effect" 						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
 
-		//"OnEquiped"
+		//"OnEquip"
 		//{
 		//	"ApplyModifier"
 		//	{
@@ -954,6 +963,15 @@
 		//		"Target"			"CASTER"
 		//	}
 		//}
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items.lua"
+				"Function"		"ItemCheck"
+			}
+		}
 
 		"Modifiers"
 		{

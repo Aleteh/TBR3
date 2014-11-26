@@ -1,3 +1,46 @@
+function ItemCheck( event )
+	local itemName = event.ability:GetAbilityName()
+	local hero = EntIndexToHScript( event.caster_entindex )
+	local itemTable = GameMode.ItemInfoKV[itemName]
+	print("Checking Restrictions for "..itemName)
+	DeepPrintTable(itemTable)
+
+	if itemTable == nil then
+		return true
+	end
+
+	Timers:CreateTimer(0.1,function()
+		for itemSlot = 0, 5, 1 do 
+		    local Item = hero:GetItemInSlot( itemSlot )
+		    -- When we found the item we want to check
+		    DeepPrintTable(Item)
+			if Item ~= nil then
+				itemName = Item:GetName()
+				print(itemName)
+				-- Check Level Restriction
+				print("=======================")
+				print(itemTable.levelRequired,hero:GetLevel())
+				if itemTable.levelRequired > hero:GetLevel() then
+					DropItem(Item, hero)
+				end		
+			end
+		end
+	end)
+end
+
+function DropItem( item, hero )
+	local newItem = CreateItem( item:GetName(), nil, nil )
+	newItem:SetPurchaseTime( 0 )
+	--newItem:SetCurrentCharges( goldToDrop )
+	local spawnPoint = Vector( 0, 0, 0 )
+	spawnPoint = hero:GetAbsOrigin()
+	local drop = CreateItemOnPositionSync( spawnPoint, newItem )
+	newItem:LaunchLoot( false, 200, 0.75, spawnPoint + RandomVector( RandomFloat( 50, 150 ) ) )
+    
+    --finally, remove the item
+    hero:RemoveItem(item)
+end
+
 -- OnEquip an item with Spell Power
 function GiveSpellPower(event)
 	--DeepPrintTable(event)
