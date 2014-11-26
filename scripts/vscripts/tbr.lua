@@ -292,14 +292,14 @@ function GameMode:OnHeroInGame(hero)
 	hero.materials = 0
 
 	-- Give Item
-	local item = CreateItem("item_immortal_armor_of_hephaestus", hero, hero)
+	local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
 	hero:AddItem(item)
 
-	local item = CreateItem("item_ares_bloodthirsty_spear", hero, hero)
+	--[[local item = CreateItem("item_ares_bloodthirsty_spear", hero, hero)
 	hero:AddItem(item)
 
 	local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
-	hero:AddItem(item)
+	hero:AddItem(item)]]
 
 	--Abilities
 	local abil1 = hero:GetAbilityByIndex(0)
@@ -933,9 +933,9 @@ function GameMode:ModifyStatBonuses(unit)
 						spawnedUnitIndex:RemoveModifierByName("modifier_negative_armor_mod_" .. val)
 					end
 				end
-				print("========================")
+				--print("========================")
 				agility = agility / 7
-				print("Agi / 7: "..agility)
+				--print("Agi / 7: "..agility)
 				-- Remove Armor
 				-- Creates temporary item to steal the modifiers from
 				local armorUpdater = CreateItem("item_armor_modifier", nil, nil) 
@@ -944,21 +944,21 @@ function GameMode:ModifyStatBonuses(unit)
 					local count = math.floor(agility / val)
 					if count >= 1 then
 						armorUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_negative_armor_mod_" .. val, {})
-						print("Adding modifier_negative_armor_mod_" .. val)
+						--print("Adding modifier_negative_armor_mod_" .. val)
 						agility = agility - val
 					end
 				end
 
 				agility = spawnedUnitIndex:GetAgility()
 				agility = agility / 5
-				print("Agi / 5: "..agility)
+				--print("Agi / 5: "..agility)
 				for p=1, #bitTable do
 					local val = bitTable[p]
 					local count = math.floor(agility / val)
 					if count >= 1 then
 						armorUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_armor_mod_" .. val, {})
 						agility = agility - val
-						print("Adding modifier_armor_mod_" .. val)
+						--print("Adding modifier_armor_mod_" .. val)
 					end
 				end
 
