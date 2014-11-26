@@ -296,6 +296,9 @@ function GameMode:OnHeroInGame(hero)
 	local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
 	hero:AddItem(item)
 
+	local item = CreateItem("item_gemstone_key", hero, hero)
+	Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
+
 	--[[local item = CreateItem("item_ares_bloodthirsty_spear", hero, hero)
 	hero:AddItem(item)
 
@@ -350,6 +353,9 @@ function GameMode:OnHeroInGame(hero)
 	end
 
 	GameMode:ModifyStatBonuses(hero)
+
+	-- Profession placeholder
+	hero.profession = "None"
 
 end
 

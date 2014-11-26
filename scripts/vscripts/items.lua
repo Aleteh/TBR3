@@ -12,23 +12,46 @@ function ItemCheck( event )
 	Timers:CreateTimer(0.1,function()
 		for itemSlot = 0, 5, 1 do 
 		    local Item = hero:GetItemInSlot( itemSlot )
-		    -- When we found the item we want to check
-		    DeepPrintTable(Item)
-			if Item ~= nil then
-				itemName = Item:GetName()
-				print(itemName)
+		    -- When we find the item we want to check
+			if Item ~= nil and itemName == Item:GetName() then
+				DeepPrintTable(Item)
+
 				-- Check Level Restriction
-				print("=======================")
-				print(itemTable.levelRequired,hero:GetLevel())
-				if itemTable.levelRequired > hero:GetLevel() then
-					DropItem(Item, hero)
-				end		
+				if itemTable.levelRequired then
+					print("Name","Level Req","Hero Level")
+					print(itemName,itemTable.levelRequired,hero:GetLevel())
+					if itemTable.levelRequired > hero:GetLevel() then
+						FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "You need level "..itemTable.levelRequired.." to use this." } )
+						DropItem(Item, hero)
+					end	
+				end
+
+				-- Check Class Restriction
+				if itemTable.warRestricted then
+					print("Name","Not Warrior","Hero Class")
+					print(itemName,itemTable.warRestricted,hero.class)
+					if itemTable.warRestricted == "true" and GameMode:IsWarriorClass(hero) then
+						FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "A Warrior can't use this item." } )
+						DropItem(Item, hero)
+					end
+				end
+
+				-- Check Profession Restriction
+				if itemTable.professionRequired then
+					print("Name","Profession","Hero Profession")
+					print(itemName,itemTable.professionRequired,hero.profession)
+					if itemTable.professionRequired ~= hero.profession then
+						FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Requires " .. itemTable.professionRequired " to pick up." } )
+						DropItem(Item, hero)
+					end
+				end
 			end
 		end
 	end)
 end
 
 function DropItem( item, hero )
+	EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", hero:GetPlayerOwner())
 	local newItem = CreateItem( item:GetName(), nil, nil )
 	newItem:SetPurchaseTime( 0 )
 	--newItem:SetCurrentCharges( goldToDrop )

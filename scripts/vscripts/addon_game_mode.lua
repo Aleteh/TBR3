@@ -6,6 +6,7 @@ require('popups')
 require('spawn')
 require('utilities')
 require('items')
+require('crafting')
 
 function Precache( context )
 		print("Performing pre-load precache")
