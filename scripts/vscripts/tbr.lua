@@ -214,6 +214,7 @@ end
 -- Read and assign configurable keyvalues if applicable
 function GameMode:ReadGameConfiguration()
 	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
+	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
 
 	-- separate in different lists to make it more manageable (not needed)
 	--[[self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )]]
@@ -805,6 +806,9 @@ function GameMode:ModifyStatBonuses(unit)
 		Timers:CreateTimer(DoUniqueString("updateHealth_" .. spawnedUnitIndex:GetPlayerID()), {
 		endTime = 0.25,
 		callback = function()
+
+			GameMode:AdjustSpellPower(spawnedUnitIndex)
+
 			-- ==================================
 			-- Adjust health based on strength
 			-- ==================================
@@ -864,14 +868,6 @@ function GameMode:ModifyStatBonuses(unit)
  
 			-- If player intellect is different this time around, start the adjustment
 			if intellect ~= spawnedUnitIndex.intBonus then
-
-				-- If Warrior Class, update Spell & Healing Power based on Int
-				if not GameMode:IsWarriorClass(spawnedUnitIndex) then
-					spawnedUnitIndex.spellPower = spawnedUnitIndex.spellPower + ( intellect * 3 )
-					spawnedUnitIndex.healingPower = spawnedUnitIndex.healingPower + ( intellect * 3 )
-					print(spawnedUnitIndex.spellPower,spawnedUnitIndex.healingPower)
-					print("Spell - Healing Powah")
-				end
 
 				-- Modifier values
 				local bitTable = {4096,2048,1024,512,256,128,64,32,16,8,4,2,1}
@@ -976,6 +972,56 @@ function GameMode:ModifyStatBonuses(unit)
 end
 
 
+function GameMode:AdjustSpellPower( hero )
+
+	-- Loop though all the hero items checking a table
+	hero.spellPower = 0
+	hero.healingPower = 0
+	hero.PowerMultiplier = 1
+	for itemSlot = 0, 5, 1 do
+		local Item = hero:GetItemInSlot( itemSlot )
+		if Item ~= nil then
+			itemName = Item:GetName()
+			if self.ItemInfoKV[itemName] ~= nil then
+				local itemTable = self.ItemInfoKV[itemName]
+
+				-- if the item has spell power, add it
+				if itemTable.spellPower then
+					hero.spellPower = hero.spellPower + itemTable.spellPower
+				end
+
+				-- if the item has healing power, add it
+				if itemTable.healingPower then
+					hero.healingPower = hero.healingPower + itemTable.healingPower
+				end
+
+				-- if the item has power multiplier, add it
+				if itemTable.Multiplier then
+					hero.PowerMultiplier = hero.PowerMultiplier + ( itemTable.Multiplier * 0.01)
+				end
+				
+			end
+		end
+	end
+
+	-- Add Int based Spell Power bonus from Int
+	local powerFromIntBonus = hero:GetIntellect() * 3
+
+	-- Warrior Class doesnt get Power from Int
+	if not GameMode:IsWarriorClass(hero) then
+		hero.spellPower = hero.spellPower + powerFromIntBonus
+		hero.healingPower = hero.healingPower + powerFromIntBonus
+	end
+
+	-- Multiply the spell & healing power for the stacked PowerMultiplier, after all the spell power sources are adjusted
+	hero.spellPower = hero.spellPower * hero.PowerMultiplier
+	hero.healingPower = hero.healingPower * hero.PowerMultiplier
+
+	--[[print("=========================")
+	print(hero.spellPower,hero.healingPower)
+	print("Spell - Healing Powah")]]
+
+end			
 
 
 
