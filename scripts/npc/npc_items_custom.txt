@@ -279,27 +279,111 @@
 		}	
 	}
 
+	//TODO Recipe
+	//Heletes will forge you the Immortal Armor of Hephaestus. 
+	//Requires two Gemstone of the Olympians, two Stone of Heaven, Gem of the North, Gem of the South, Gem of the East, Gem of the West, 
+	//Aphrodite's Favor, Plates of the Ancients, Armor of Zeus, Unyielding Breastplate, 
+	//100 000 Crafting Materials, 100 000 gold. Requires Level 200
+
+	//Increases all your stats by 100. Adds 250 to your Armor Class and increases your spell damage and healing by 3000. 
+	//Regenerates .66% of your maximum life total each second and 65 mana per second. 
+	//In addition, when you die you will be revived with full hit points and mana (5 minute cooldown).
+	//Cannot be used by Warrior classes.
 	"item_immortal_armor_of_hephaestus"
 	{
 		"ID"                            "1365"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"immortal_armor_of_hephaestus"
-		//"ItemStockMax"				"2"
-		//"ItemStockInitial"			"2"
-		//"ItemStockTime"				"48.0"
-
+		
 		"ItemQuality"					"rare"
-		"ItemCost"                      "9000" 	
-		"ItemShopTags"					"caster"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Modifiers"
-		{
+		"ItemCost"                      "100000"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 
+		"ItemKillable" 					"0" 
+		"ItemSellable" 					"0"
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+
+		"AbilityCooldown"				"300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_all_stats" "100"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_armor" "250"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_power" "3000"
+			}
+			"04"
+			{
+				"var_type" "FIELD_FLOAT"
+				"liferegen_total" "0.66"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"mana_per_second" "65"
+			}
 		}
 
+		"Precache"
+		{
+			"Particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+			"Particle"	"particles/units/heroes/hero_centaur/centaur_stampede_overhead.vpcf"
+			"Particle"	"particles/items_fx/aegis_respawn_timer.vpcf"
+		}
 
-	
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items.lua"
+				"Function"		"HephaestusRespawn"
+			}
+		}
+
+		"Modifiers"
+		{
+			"armor_of_hephaestus_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					//"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%mana_per_second"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 		"%bonus_all_stats"
+				}
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"HephaestusRegen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"DestroyHephaestusRegen"
+					}
+				}
+			}
+		}		
 	}
 
 	"item_searing_flame_of_prometheus"
@@ -13790,8 +13874,129 @@
 	}
 
 
+	"item_healthregen_modifier"
+	{
+		"ID"							"2106"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+ 
+		"Modifiers"
+		{
+			"modifier_healthregen_mod_1"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"1"
+				}
+			}
+			"modifier_healthregen_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{				
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"2"
+				}
+			}
+			"modifier_healthregen_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{			
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"4"
 
-
+				}
+			}
+			"modifier_healthregen_mod_8"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"8"
+				}
+			}
+			"modifier_healthregen_mod_16"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"16"
+				}
+			}
+			"modifier_healthregen_mod_32"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{					
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"32"
+				}
+			}
+			"modifier_healthregen_mod_64"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"64"
+				}
+			}
+			"modifier_healthregen_mod_128"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"128"
+				}
+			}
+			"modifier_healthregen_mod_256"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"256"
+				}
+			}
+			"modifier_healthregen_mod_512"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"512"
+				}
+			}
+			"modifier_healthregen_mod_1024"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"1024"
+				}
+			}
+		}
+	}
 
 
 

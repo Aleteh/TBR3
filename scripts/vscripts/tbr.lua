@@ -292,7 +292,7 @@ function GameMode:OnHeroInGame(hero)
 	hero.materials = 0
 
 	-- Give Item
-	local item = CreateItem("item_wraithblade", hero, hero)
+	local item = CreateItem("item_immortal_armor_of_hephaestus", hero, hero)
 	hero:AddItem(item)
 
 	local item = CreateItem("item_ares_bloodthirsty_spear", hero, hero)

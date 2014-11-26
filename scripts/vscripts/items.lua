@@ -130,3 +130,103 @@ function HeliosMeteors(event)
 	})
 
 end
+
+function HephaestusRegen( event )
+	-- Regenerates .66% of your maximum life total
+	local hero = event.caster
+	local liferegen_total = event.ability:GetSpecialValueFor("liferegen_total") * 0.01
+
+	-- ==================================
+	-- Adjust health regen on health
+	-- ==================================
+
+	-- Get player health
+	local health = hero:GetMaxHealth() --8400 * 0.0066 = 55 regen
+
+	--Check if healthRegenBonus is stored on hero, if not set it to 0
+	if hero.healthRegenBonus == nil then
+		hero.healthRegenBonus = 0
+	end
+
+	-- If player health is different this time around, start the adjustment
+	if health ~= hero.healthRegenBonus then
+		-- Modifier values
+		local bitTable = {1024,512,256,128,64,32,16,8,4,2,1}
+
+		-- Gets the list of modifiers on the hero and loops through removing any healthregen modifier
+		local modCount = hero:GetModifierCount()
+		for i = 0, modCount do
+			for u = 1, #bitTable do
+				local val = bitTable[u]
+				if hero:GetModifierNameByIndex(i) == "modifier_healthregen_mod_" .. val  then
+					hero:RemoveModifierByName("modifier_healthregen_mod_" .. val)
+				end
+			end
+		end
+
+		health = health * liferegen_total
+		print("HealthRegen .66%: "..health)
+
+		-- Creates temporary item to steal the modifiers from
+		local healthUpdater = CreateItem("item_healthregen_modifier", nil, nil) 
+		for p=1, #bitTable do
+			local val = bitTable[p]
+			local count = math.floor(health / val)
+			if count >= 1 then
+				healthUpdater:ApplyDataDrivenModifier(hero, hero, "modifier_healthregen_mod_" .. val, {})
+				health = health - val
+			end
+		end
+		-- Cleanup
+		UTIL_RemoveImmediate(healthUpdater)
+		healthUpdater = nil
+	end
+	-- Updates the stored health bonus value for next timer cycle
+	hero.healthRegenBonus = hero:GetMaxHealth()
+
+end
+
+function DestroyHephaestusRegen( event )
+	-- Remove the health regen
+	local hero = event.caster
+
+	-- Modifier values
+	local bitTable = {1024,512,256,128,64,32,16,8,4,2,1}
+
+	-- Gets the list of modifiers on the hero and loops through removing any healthregen modifier
+	local modCount = hero:GetModifierCount()
+	for i = 0, modCount do
+		for u = 1, #bitTable do
+			local val = bitTable[u]
+			if hero:GetModifierNameByIndex(i) == "modifier_healthregen_mod_" .. val  then
+				hero:RemoveModifierByName("modifier_healthregen_mod_" .. val)
+				print("Removing modifier_healthregen_mod_" .. val)
+			end
+		end
+	end	
+end
+
+function HephaestusRespawn( event )
+	-- Revived with full hit points and mana
+    print("Respawning")
+    local ability = event.ability
+	local hero = event.caster
+
+	if ability:IsCooldownReady() then
+    	Timers:CreateTimer(.01, function()
+    		local grave = hero.grave
+			--local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf", PATTACH_ABSORIGIN_FOLLOW, grave)
+			local particle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, grave)
+			ParticleManager:SetParticleControl(particle, 0, grave:GetAbsOrigin())
+			ParticleManager:SetParticleControl(particle, 1, Vector(3,0,0))
+			ParticleManager:SetParticleControl(particle, 2, Vector(1,0,0))
+			--ParticleManager:SetParticleControl(particle, 3, Vector(1,0,0))
+			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_stampede_overhead.vpcf", PATTACH_OVERHEAD_FOLLOW, grave)
+			ParticleManager:SetParticleControl(particle, 0, grave:GetAbsOrigin())
+			ParticleManager:SetParticleControl(particle, 3, grave:GetAbsOrigin())
+	    	hero:SetTimeUntilRespawn(3)
+	    	hero:SetRespawnPosition(grave:GetOrigin())
+			ability:StartCooldown(ability:GetCooldownTimeRemaining())
+		end)
+    end    
+end
