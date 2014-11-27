@@ -336,11 +336,11 @@
 			}
 		}
 
-		"Precache"
+		"precache"
 		{
-			"Particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
-			"Particle"	"particles/units/heroes/hero_centaur/centaur_stampede_overhead.vpcf"
-			"Particle"	"particles/items_fx/aegis_respawn_timer.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_stampede_overhead.vpcf"
+			"particle"	"particles/items_fx/aegis_respawn_timer.vpcf"
 		}
 
 		"OnOwnerDied"
@@ -451,9 +451,9 @@
 			}
 		}
 
-		"Precache"
+		"precache"
 		{
-			"Particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
 		}
 
 		"OnEquip"
@@ -478,7 +478,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 		"%bonus_all_stats"
 				}
-				//TODO: Attach Particle Effect
+				//TODO: Attach particle Effect
 				"ThinkInterval"		"1"
 				"OnIntervalThink"
 				{
@@ -590,11 +590,11 @@
 			}
 		}
 
-		"Precache"
+		"precache"
 		{
-			"Particle"	"particles/generic_gameplay/generic_stunned_old.vpcf"
-			"Particle"	"particles/items_fx/chain_lightning.vpcf"
-			"Particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+			"particle"	"particles/generic_gameplay/generic_stunned_old.vpcf"
+			"particle"	"particles/items_fx/chain_lightning.vpcf"
+			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
 		}
 
 		"OnEquip"
@@ -690,26 +690,206 @@
 		}
 	}
 
+	//TODO: Recipe
+	//Heletes will forge you the Towering Shield of Athena. 
+	//Requires two Gemstone of the Olympians, two Stone of Heaven, Gem of the North, Gem of the South, Gem of the East, Gem of the West, 
+	//Armor of Hera, Unyielding Tower, Adamantium Tower, Bright Silver Shinguards, 100 000 Crafting Materials, 100 000 gold. Requires Level 200
+
+	//Grants you 35% Magic Resistance and creates an aura around you that increases the Armor Class of nearby allies by 100. 
+	//Also gives you a 60% chance to block 10,000 damage from physical attacks. Any enemy that strikes you will have its attack speed reduced by 25% and movement speed reduced 50% for up to 6 seconds. 
+	//Use: Completely restores you and your nearby allies to full health and mana. 7 minute cooldown. 
 	"item_towering_shield_of_athena"
 	{
 		"ID"                            "1374"
 		"BaseClass"                     "item_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"towering_shield_of_athena"
-		//"ItemStockMax"				"2"
-		//"ItemStockInitial"			"2"
-		//"ItemStockTime"				"48.0"
-
 		"ItemQuality"					"rare"
-		"ItemCost"                      "9000" 	
-		"ItemShopTags"					"caster"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Modifiers"
-		{
+		"ItemCost"                      "100000"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 
+		"ItemKillable" 					"0" 
+		"ItemSellable" 					"0"
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+
+		"AbilityCooldown"				"420"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"magic_resistance" "35"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_armor_aura" "100"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"radius" "900"
+			}
+			"04"
+			{
+				"var_type" "FIELD_INTEGER"
+				"block_chance" "60"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"damage_blocked" "10000"
+			}
+			"06"
+			{
+				"var_type" "FIELD_INTEGER"
+				"attack_speed_slow" "-25"
+			}
+			"07"
+			{
+				"var_type" "FIELD_INTEGER"
+				"move_speed_slow" "-50"
+			}
+			"08"
+			{
+				"var_type" "FIELD_INTEGER"
+				"slow_duration" "6"
+			}
 		}
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+			"particle"	"particles/units/heroes/hero_chen/chen_cast_4.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		}
 
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items.lua"
+				"Function"		"ItemCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items.lua"
+				"Function"		"AthenaHeal"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Chen.HandOfGodHealHero"
+				"Target"		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"shield_of_athena_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" 	"%magic_resistance"
+				}
+				"OnCreated"
+				{
+					"Random"
+					{
+						"Chance"	"%block_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"block_modifier"
+							}
+						}
+					}
+				}
+				"OnAttacked"
+				{
+					"Random"
+					{
+						"Chance"	"%block_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"block_modifier"
+							}
+						}
+						"OnFailure"
+						{
+							"RemoveModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"block_modifier"
+							}
+						}
+					}
+					"ApplyModifier"
+					{
+						"Target" 			"ATTACKER"
+						"ModifierName"		"shield_of_athena_slow"
+					}			
+				}
+				"Aura" 			"shield_of_athena_aura"
+	    		"Aura_Radius" 	"%radius"
+	    		"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    		"Aura_Types" 	"DOTA_UNIT_TARGET_ALL"			
+			}
+
+			"block_modifier"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"	"%damage_blocked"
+				}
+				"OnAttacked"
+				{
+					"RemoveModifier"
+					{
+						"Target" 			"CASTER"
+						"ModifierName"		"block_modifier"
+					}
+				}
+			}
+	
+			"shield_of_athena_slow"
+			{
+				"Duration"	"%slow_duration"
+				"IsDebuff"	"1"
+		    	"IsHidden"	"0"
+		    	"IsPurgable" "0"
+				"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
+		     		"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_slow"
+		    	}
+			}
+			"shield_of_athena_aura"
+	   		{	
+		    	"IsBuff"	"1"
+		    	"IsHidden"	"0"
+		    	"IsPurgable" "0"
+		    	
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor_aura"
+		    	}
+		    }
+		}
 	
 	}
 	///////// RELICS ////////////
@@ -966,9 +1146,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_aura_arcana.vpcf"
+			"particle"					"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_aura_arcana.vpcf"
 		}
 		"Modifiers"
 		{
@@ -1339,9 +1519,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles\units\heroes\hero_centaur\centaur_return.vpcf"
+			"particle"					"particles\units\heroes\hero_centaur\centaur_return.vpcf"
 		}
 
 		"Modifiers"
@@ -1408,9 +1588,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"					"particles/generic_gameplay/generic_stunned.vpcf"
 		}
 
 		"Modifiers"
@@ -1565,10 +1745,10 @@
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 
-		"Precache"
+		"precache"
 		{
-			"Soundfile"					"sounds/weapons/hero/zuus/arc_lightning.vsnd"
-			"Particle"					"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+			"soundfile"					"sounds/weapons/hero/zuus/arc_lightning.vsnd"
+			"particle"					"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
 		}
 		"Modifiers"
 		{
@@ -2392,9 +2572,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf"
+			"particle"					"particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf"
 		}
 		"Modifiers"
 		{
@@ -2463,9 +2643,9 @@
 		"AbilityCooldown"               "180"
     	"AbilityManaCost"               "0"
 
-    	"Precache"
+    	"precache"
     	{
-    		"Particle"					"particles/items_fx/black_king_bar_avatar.vpcf"
+    		"particle"					"particles/items_fx/black_king_bar_avatar.vpcf"
     	}
     	"OnSpellStart"
     	{
@@ -2629,7 +2809,7 @@
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 
-		"Precache"
+		"precache"
 		{
 			"particle"					"particles/items_fx/aura_endurance.vpcf"
 		}
@@ -2868,9 +3048,9 @@
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/generic_gameplay/generic_slowed_cold.vpcf"
+			"particle"					"particles/generic_gameplay/generic_slowed_cold.vpcf"
 		}
 
 		"Modifiers"
@@ -2957,9 +3137,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/generic_gameplay/generic_slowed_cold.vpcf"
+			"particle"					"particles/generic_gameplay/generic_slowed_cold.vpcf"
 		}
 		"Modifiers"
 		{
@@ -4127,11 +4307,11 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
 			"Soundfile"					"sounds/weapons/hero/zuus/arc_lightning.vsnd"
-			"Particle"					"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
-			"Particle"					"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"					"particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf"
+			"particle"					"particles/generic_gameplay/generic_stunned.vpcf"
 		}
 		"Modifiers"
 		{
@@ -5277,10 +5457,10 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
-			"Particle"					"particles/units/heroes/hero_warlock/warlock_upheaval_debuff.vpcf"
+			"particle"					"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
+			"particle"					"particles/units/heroes/hero_warlock/warlock_upheaval_debuff.vpcf"
 		}
 		"Modifiers"
 		{
@@ -5829,9 +6009,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/items_fx/bloodstone_heal.vpcf"
+			"particle"					"particles/items_fx/bloodstone_heal.vpcf"
 		}
 		"Modifiers"
 		{
@@ -8551,9 +8731,9 @@
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles\units\heroes\hero_centaur\centaur_return.vpcf"
+			"particle"					"particles\units\heroes\hero_centaur\centaur_return.vpcf"
 		}
 
 		"Modifiers"
@@ -9469,7 +9649,7 @@
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 
-		"Precache"
+		"precache"
 		{
 			"Soundfile"					"sounds/weapons/hero/slardar/slithereen_crush.vsnd"
 		}
@@ -9592,9 +9772,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/items_fx/bloodstone_heal.vpcf"
+			"particle"					"particles/items_fx/bloodstone_heal.vpcf"
 		}
 		"Modifiers"
 		{
@@ -9774,9 +9954,9 @@
 		"ItemCost"                      "9000" 	
 		"ItemShopTags"					"caster"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"Precache"
+		"precache"
 		{
-			"Particle"					"particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
+			"particle"					"particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
 		}
 		"Modifiers"
 		{
@@ -10281,9 +10461,9 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"               "180"
     	"AbilityManaCost"               "0"
-    	"Precache"
+    	"precache"
     	{
-    		"Particle"					"particles/items_fx/black_king_bar_avatar.vpcf"
+    		"particle"					"particles/items_fx/black_king_bar_avatar.vpcf"
     	}
     	"OnSpellStart"
     	{
@@ -11252,7 +11432,7 @@
 		}
 	}
 
-	"item_cloak_of_flames_25" // TODO KV Particles > Lua Particles precaching
+	"item_cloak_of_flames_25" // TODO KV particles > Lua particles precaching
 	{
 		"ID"                            "1051"
 		"BaseClass"                     "item_datadriven"
@@ -11314,7 +11494,7 @@
 		}
 	}
 
-	"item_cloak_of_flames_50" // TODO KV Particles > Lua Particles precaching
+	"item_cloak_of_flames_50" // TODO KV particles > Lua particles precaching
 	{
 		"ID"                            "1115"
 		"BaseClass"                     "item_datadriven"

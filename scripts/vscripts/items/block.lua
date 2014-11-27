@@ -31,7 +31,11 @@ end
 
 function Blockerino( event )
 	print("Added Blockerino")
-	event.caster:AddNewModifier(event.caster, event.ability, "modifier_item_vanguard", {}) 
+	--event.caster:AddNewModifier(event.caster, event.ability, "modifier_item_stout_shield", {})
+	--event.caster:AddNewModifier(event.caster, event.ability, "modifier_item_stout_shield", {damage_block_melee = "1000", damage_block_ranged = "1000",block_chance = "60"}) 
+	
+	event.caster:AddAbility("block_giver")
+	print(event.caster:FindAbilityByName("block_giver"))
+
 end
 
---bonus_health = "0", bonus_health_regen = "0", block_chance = "60", block_damage_melee = "1000", block_damage_ranged = "1000"

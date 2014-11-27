@@ -397,3 +397,21 @@ function ZeusLightning( event )
 	end)
 
 end
+
+function AthenaHeal( event )
+	local hero = event.caster
+	--Completely restores you and your nearby allies to full health and mana.
+
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_chen/chen_hand_of_god.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+
+	local allies = FindUnitsInRadius(hero:GetTeamNumber(), hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
+
+	for _,unit in pairs(allies) do
+		unit:GiveMana(unit:GetMaxMana())
+		unit:Heal(unit:GetMaxHealth(),event.caster)
+		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_chen/chen_cast_4.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+		ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin())
+	end
+
+end
