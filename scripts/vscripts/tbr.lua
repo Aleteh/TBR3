@@ -216,6 +216,8 @@ function GameMode:ReadGameConfiguration()
 	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
 	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
 
+	DeepPrintTable(self.ItemInfoKV)
+
 	-- separate in different lists to make it more manageable (not needed)
 	--[[self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )]]
 end
