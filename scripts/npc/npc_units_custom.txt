@@ -485,7 +485,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl"
-		"ModelScale"			"1"
+		"ModelScale"			"0.5"
 		"Level"				"7"
 		
 		// Abilities
@@ -558,7 +558,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/heroes/blood_seeker/blood_seeker.vmdl"
-		"ModelScale"			"1"
+		"ModelScale"			"0.5"
 		"Level"				"10"
 		
 		// Abilities
@@ -815,7 +815,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"
-		"ModelScale"			"1"
+		"ModelScale"			"0.5"
 		"Level"				"14"
 		
 		// Abilities
@@ -885,7 +885,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/heroes/blood_seeker/blood_seeker.vmdl"
-		"ModelScale"			"1"
+		"ModelScale"			"0.5"
 		"Level"				"10"
 		
 		// Abilities
