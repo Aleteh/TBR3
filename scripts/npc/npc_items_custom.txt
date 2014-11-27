@@ -583,7 +583,11 @@
 				"var_type" "FIELD_INTEGER"
 				"lightning_decay" "20"
 			}
-			//Bounce Range: 900
+			"12"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bounce_range" "450"
+			}
 		}
 
 		"Precache"
@@ -591,7 +595,6 @@
 			"Particle"	"particles/generic_gameplay/generic_stunned_old.vpcf"
 			"Particle"	"particles/items_fx/chain_lightning.vpcf"
 			"Particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
-			"Soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
 		"OnEquip"

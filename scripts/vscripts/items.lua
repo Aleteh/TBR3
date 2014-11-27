@@ -303,6 +303,7 @@ function ZeusLightning( event )
 	local target = event.target
 	local damage = event.ability:GetSpecialValueFor("lightning_damage")
 	local bounces = event.ability:GetSpecialValueFor("lightning_bounces")
+	local bounce_range = event.ability:GetSpecialValueFor("bounce_range")
 	local decay = event.ability:GetSpecialValueFor("lightning_decay") * 0.01
 
 	local lightningBolt = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, hero)
@@ -322,12 +323,12 @@ function ZeusLightning( event )
 	local units = nil
 
 	Timers:CreateTimer(DoUniqueString("ChainLightning"), {
-		endTime = 0.2,
+		endTime = 0.1,
 		callback = function()
 	
 			-- unit selection and counting
 			-- dead flag is for the chain to not stop if the target is killed
-			units = FindUnitsInRadius(hero:GetTeamNumber(), target:GetOrigin(), target, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, 
+			units = FindUnitsInRadius(hero:GetTeamNumber(), target:GetOrigin(), target, bounce_range, DOTA_UNIT_TARGET_TEAM_ENEMY, 
 						DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
 
 			-- particle
@@ -364,28 +365,30 @@ function ZeusLightning( event )
 			local lightningChain = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, dummy)
 			ParticleManager:SetParticleControl(lightningChain,0,Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,dummy:GetAbsOrigin().z + dummy:GetBoundingMaxs().z ))	
 			
+			-- damage and decay
+			damage = damage - (damage*decay)
 			ApplyDamage({ victim = target, attacker = hero, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
 			PopupDamage(target,math.floor(damage))
-		
+			print(damage)
+
 			-- play the sound
 			EmitSoundOn("Hero_Zuus.ArcLightning.Target",target)
 
 			-- make the particle shoot to the target
 			ParticleManager:SetParticleControl(lightningChain,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
 	
-			-- decrement remaining spell bounces, reduce damage, and clear relevant tables
+			-- decrement remaining spell bounces
 			bounces = bounces - 1
-			damage = damage / (1+decay)
 
 			-- fire the timer again if spell bounces remain
 			if bounces > 0 then
-				return 0.2
+				return 0.1
 			end
 		end
 	})
 
 	
-	Timers:CreateTimer(1,function() 
+	Timers:CreateTimer(0.6,function() 
 		-- double check
 		for _,v in pairs(targetsStruck) do
 		   	v.struckByZeus = false

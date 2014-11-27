@@ -25,11 +25,12 @@ function Precache( context )
 
 		-- Sounds can precached here like anything else
 		PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
+		PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
 
 		-- Entire items can be precached by name
 		-- Abilities can also be precached in this way despite the name
-		PrecacheItemByNameSync("example_ability", context)
-		PrecacheItemByNameSync("item_example_item", context)
+		--PrecacheItemByNameSync("example_ability", context)
+		--PrecacheItemByNameSync("item_example_item", context)
 
 		PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
 		PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
