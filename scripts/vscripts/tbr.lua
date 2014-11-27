@@ -299,7 +299,7 @@ function GameMode:OnHeroInGame(hero)
 	--local item = CreateItem("item_gemstone_key", hero, hero)
 	--Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
 
-	local item = CreateItem("item_thundering_hammer_of_zeus", hero, hero)
+	local item = CreateItem("item_towering_shield_of_athena", hero, hero)
 	hero:AddItem(item)
 
 	--[[local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
