@@ -1,0 +1,277 @@
+ALL_ITEMS
+
+	"item_adamantium_helm"
+	"item_adamantium_lance"		// TODO Add With Adamantium Helm, Adamantium Tower: +50 armor, +100 attack damage.
+	"item_adamantium_scythe"
+	"item_adamantium_tower"
+	"item_amulet_of_protection"
+	"item_aphrodites_blessed_orb"		// TODO Add  Use: increases spell damage and healing by 2000 for 30 seconds. 60 second cooldown.
+	"item_aphrodites_favor"
+	"item_ares_blade_of_command"
+	"item_ares_bloodthirsty_spear"
+	"item_armor_modifier"
+	"item_armor_of_the_firstborn"
+	"item_armor_of_zeus"
+	"item_athenian_arrows" // TODO add 15% ranged dmg aura
+	"item_athenian_mail"
+	"item_athenian_shirt_of_fine_steel"
+	"item_barbaric_helm"
+	"item_battle_wizards_staff"	// TODO add spell damage and healing by 120
+	"item_battle_wizards_wand" // TODO Add 75 Spell and Healing power
+	"item_battleaxe"
+	"item_battleforge_blade"
+	"item_battleforge_gemstone"
+	"item_battleforge_plate"  // TODO Valve has to fix the rounding of numbers as 0.2 Mana regained OnAttacked puts your total regen to 0
+	"item_battleforge_regalia"
+	"item_battleforge_shield"	// TODO Add block mechanic
+	"item_biting_blade"
+	"item_biting_blade_of_agility"
+	"item_biting_blade_of_strength"
+	"item_blackfire_staff"		// TODO Add  spell damage and healing by 25%. 
+	"item_blade_of_ares"
+	"item_blade_of_the_chosen"
+	"item_blazing_sword_of_helios"
+	"item_bloodrage_charm"
+	"item_bone_wreath"		// TODO Add 200 spell and healing power
+	"item_boots_of_agility_16"
+	"item_boots_of_agility_24"
+	"item_boots_of_agility_8"
+	"item_boots_of_hermes"		// TODO Make item unique equip
+	"item_boots_of_marathon"	// TODO Add Use: returns you to Athens. Cooldown: 3 minutes.
+	"item_breastplate_of_the_chosen"
+	"item_bright_silver_bracers"
+	"item_bright_silver_plates"
+	"item_bright_silver_shinguards"
+	"item_burning_hand_of_the_war_god"
+	"item_champions_blade"
+	"item_champions_plate"
+	"item_charm_of_battle_fury"
+	"item_charm_of_battle_lust"
+	"item_charm_of_speed"
+	"item_charm_of_the_war_king"
+	"item_chillstone_ring"		// TODO Add spell damage and healing by 300,
+	"item_circlet_of_the_mother_goddess"
+	"item_cloak_of_flames_100"
+	"item_cloak_of_flames_25" // TODO KV particles > Lua particles precaching
+	"item_cloak_of_flames_50" // TODO KV particles > Lua particles precaching
+	"item_cloak_of_flames_75"
+	"item_cloak_of_the_chosen"
+	"item_crown_of_kings_6"
+	"item_crown_of_power"		// TODO Add spell damage by 225.
+	"item_crown_of_the_wild"		// TODO Add 180 Spell and healing power
+	"item_crystal_helm"		// TODO Add spell healing by 450.
+	"item_deathbringers_blade"
+	"item_deathbringers_gauntlets"
+	"item_deathbringers_gemstone"
+	"item_deathbringers_mail"
+	"item_deathbringers_regalia"	// TODO Add Set Bonus: Your Critical Strike ability will now do triple damage instead of double damage.
+	"item_deathchill_blade"		// TODO Make Lua script that applies 25% of your base damage as AoE damage around the target
+	"item_deathchill_greatsword"	// TODO Make Lua script that applies 35% of your base damage as AoE damage around the target. Note that this does not include damage bonuses from items.
+	"item_divine_blade"		// TODO add spell damage and healing by 150.
+	"item_divine_gemstone"
+	"item_divine_helm"		// TODO add spell damage and healing by 150.
+	"item_divine_plate"		// TODO add spell damage and healing by 150.
+	"item_divine_regalia"	// TODO add spell damage and healing by 500. and Set Bonus: Whenever your physical attacks land there is a 10% chance that a bolt of fire will leap from your sword, causing damage equal to double your Strength to all enemy units in front of you in a line.
+	"item_enchanted_diamond_dust"	// TODO Make it work
+	"item_eris_golden_apple_of_discord"		// TODO Add  spell damage and healing by 300. Use: 75% chance to receive a random powerful buff and 25% chance for debuff. Cooldown: 1 minute.
+	"item_firehand_gauntlets_20"
+	"item_firehand_gauntlets_40"
+	"item_firehand_gauntlets_50"
+	"item_frozen_ring_of_the_ice_queen"
+	"item_full_plate"
+	"item_gauntlets_of_might_16"
+	"item_gauntlets_of_might_24"
+	"item_gauntlets_of_might_8"
+	"item_gem_of_birth"
+	"item_gem_of_death"
+	"item_gem_of_life"
+	"item_gemstone_key"		// TODO Add icon
+	"item_gemstone_of_khaos"
+	"item_gemstone_of_light"
+	"item_gemstone_of_power"
+	"item_gemstone_of_shadows"
+	"item_gemstone_of_the_olympians"
+	"item_gemstone_of_the_wild"
+	"item_gift_of_hera"		// TODO Add healing done by your spells by 3000.
+	"item_great_axe"
+	"item_great_axe_of_the_minotaur_cheiftain"
+	"item_great_maul"
+	"item_green_dragonscale_ring"
+	"item_green_dragonscale_ring_of_addiction"
+	"item_health_modifier"
+	"item_healthregen_modifier"
+	"item_heart_blade"
+	"item_heart_of_frost"	// TODO Make it work
+	"item_heartstone_ring_of_agility"
+	"item_heartstone_ring_of_intelligence"
+	"item_heartstone_ring_of_strength"
+	"item_hephaestus_thundering_axe"
+	"item_heras_blessing"		// TODO Add spell damage and healing by 500.
+	"item_heros_blade"
+	"item_heros_hauberk"
+	"item_hide_of_the_wild"
+	"item_high_oracles_robes" // TODO Add spell damage and healing by 120. With High Oracle's Staff: +100 spell damage and healing.
+	"item_high_oracles_staff" // TODO Add spell damage and healing by 270. With High Oracle's Robes: +100 spell damage and healing.
+	"item_high_shamans_staff"	// TODO Add 250 spell power and healing power
+	"item_horn_of_the_hallowed_one"
+	"item_hunting_spear_of_artemis"
+	"item_immortal_armor_of_hephaestus"
+	"item_iron_will_of_hephaestus"		// TODO Make the ability absorb 10,000 magic damage instead.
+	"item_ironwood_bow"		// TODO Add 200 Spell and healing power
+	"item_ironwood_chestplate"
+	"item_ironwood_gemstone"
+	"item_ironwood_helm"		// TODO Add 300 Spell and healing power
+	"item_ironwood_regalia"  	// TODO Add spell damage and healing by 650 and Set Bonus: Your attacks explode on impact, causing damage equal to one third of your agility to enemy units in an area of effect around the target.
+	"item_khaos_blade"
+	"item_khaos_helm"
+	"item_khaos_regalia"
+	"item_khaos_shield"
+	"item_life_gem"
+	"item_light_regalia"	// TODO Add  spell damage and healing by 700
+	"item_liquid_crystal"		// TODO Fix Icon
+	"item_magefire_ring"		// TODO Add Increases spell damage and healing by 1100. 
+	"item_magefire_ring_of_intelligence"		// TODO Add spell damage and healing by 1100. 
+	"item_magus_rod"	// TODO add 200 spell and healing power
+	"item_mail_shirt"
+	"item_mana_modifier"
+	"item_mask_of_death"
+	"item_medallion_of_stamina"
+	"item_meteoric_iron"	// TODO Make it work
+	"item_mighty_axe"
+	"item_mighty_chestguard_of_the_olympians"		// Fix particle not ending
+	"item_mighty_helm_of_the_olympians"
+	"item_mighty_olympian_regalia"
+	"item_mighty_sword_of_the_olympians"
+	"item_myrmidon_scale"
+	"item_night_blade"		// TODO Fix Valve rounding of numbers. This item gives 0.5 constant mana regen, not 1.
+	"item_night_cloak"
+	"item_night_gemstone"
+	"item_night_mask"		// TODO Fix Valve rounding of numbers. This item gives 0.5 constant mana regen, not 1.
+	"item_night_regalia"		// TODO Add Set Bonus: Increases the stun duration of your Walk the Shadows ability to 4 seconds and adds a bleed effect that will cause damage equal to five times your Agility plus 1000 over 5 seconds.
+	"item_oracles_robes" // TODO Add spell damage and healing by 75. With Oracle's Staff: +50 spell damage and healing.
+	"item_oracles_staff" // TODO Add spell damage and healing by 180. With Oracle's Robes: +50 spell damage and healing.
+	"item_orb_of_chill_midnight"
+	"item_orb_of_mana"
+	"item_orb_of_the_mind"
+	"item_orb_of_true_vision"
+	"item_orb_of_unending_life"
+	"item_orb_of_wisdom"
+	"item_peacebringer"
+	"item_pendant_of_shadows"		 	// TODO Add 300 spell damage
+	"item_plates_of_the_ancients"
+	"item_power_regalia"	// TODO Add  spell damage by 800 and Set Bonus: Your spell damage is increased by 25%.
+	"item_power_stone"	// TODO Make it work
+	"item_priams_scepter"		// TODO Add  spell damage and healing by 225.
+	"item_red_dragonscale_ring"
+	"item_red_dragonscale_ring_of_addiction"
+	"item_regal_crown"		// TODO Add spell damage by 450.
+	"item_regal_helm_of_sparkling_crystal"		// TODO Add spell damage and healing by 400.
+	"item_ring_of_dodging"
+	"item_ring_of_healing_power" // TODO add spell healing by 150
+	"item_ring_of_might"
+	"item_ring_of_power"	// TODO Add 375 spell and healing power
+	"item_ring_of_regeneration" 
+	"item_ring_of_spell_power" // TODO add spell power by 150
+	"item_ring_of_the_frozen_citadel"
+	"item_ring_of_vigor"
+	"item_robe_of_shadows" 	// TODO Add 200 spell damage
+	"item_robes_of_delphi" // TODO Add spell damage by 120, and spell healing by 180. With Staff of Delphi: +150 spell damage and healing.
+	"item_robes_of_enlightenment_16"
+	"item_robes_of_enlightenment_24"
+	"item_robes_of_enlightenment_8"
+	"item_robes_of_light"	// TODO add spell damage and healing by 180.
+	"item_robes_of_power"		// TODO Add spell damage by 225.
+	"item_robes_of_the_chosen"
+	"item_rod_of_healing_power"			// TODO Add 300 healing power
+	"item_rod_of_spell_power"		// TODO Add 300 spell power
+	"item_rod_of_the_chosen"		// TODO Add spell damage and healing by 100.
+	"item_roundshield"
+	"item_ruby_heart"	// TODO Make it work
+	"item_runestone"	// TODO Make it work
+	"item_sacred_chestguard_of_the_olympians"		// TODO Add  spell damage and healing by 450.
+	"item_sacred_helm_of_the_olympians"		// TODO Add  spell damage and healing by 450.
+	"item_sacred_olympian_regalia"	// TODO Add spell damage and healing by 1500. and Set Bonus: +400 Spell Healing, +400 Spell Damage
+	"item_sacred_sword_of_the_olympians"		// TODO Add  spell damage and healing by 600
+	"item_sapphire"	// TODO Make it work
+	"item_savage_helm"
+	"item_savage_war_axe_of_hephaestus"
+	"item_scepter_of_the_chosen_ones"		// TODO Add spell and healing power by 800
+	"item_scepter_of_the_ice_queen"		// TODO Add increases healing done by your spells by 600. 
+	"item_sea_essence"	// TODO Make it work
+	"item_searing_flame_of_prometheus"
+	"item_shadow_blade"
+	"item_shadows_regalia"		// TODO Add spell damage by 750.
+	"item_shield_of_living_bone"		// TODO Fix a better block method that works.
+	"item_shield_of_warding"
+	"item_shield_of_zeus"
+	"item_shimmering_lance"
+	"item_shining_chestguard_of_the_olympians"  // TODO Add spell damage and healing by 300.
+	"item_shining_helm_of_the_olympians"		 // TODO Add spell damage and healing by 375.
+	"item_shining_olympian_regalia"		// TODO Add spell damage and healing by 1000.
+	"item_shining_sword_of_the_olympians"		 // TODO Add spell damage and healing by 500.
+	"item_soul_blade"		// TODO Adds damage equal to 3% of your current health to each of your attacks.
+	"item_soul_charm"
+	"item_spartan_breastplate" // TODO With Spartan Short Sword: +5 Strength and Agility.
+	"item_spartan_chestguard"
+	"item_spartan_full_plate"	// TODO Add With Spartan Greatsword: +15 Strength and Agility.
+	"item_spartan_greatsword"	// TODO Add With Spartan Full Plate: +15 Strength and Agility.
+	"item_spartan_longsword"	// TODO With Spartan Longsword: +10 Strength and Agility.
+	"item_spartan_plate_mail"  // TODO With Spartan Longsword: +10 Strength and Agility.
+	"item_spartan_short_sword"	 // TODO With Spartan Breastplate: +5 Strength and Agility.
+	"item_spirit_charm"
+	"item_staff_of_delphi"		// TODO Add Also increases spell damage and healing by 360. With Robes of Delphi: +150 spell damage and healing.
+	"item_staff_of_healing_power" // TODO Add 225 healing power
+	"item_staff_of_light"	// TODO add spell damage and healing by 300.
+	"item_staff_of_poseidon"	// TODO Add 700 spell power
+	"item_staff_of_power"		// TODO Add spell damage by 375.
+	"item_staff_of_shadows"		 	// TODO Add 300 spell damage
+	"item_staff_of_spell_power" // TODO Add 225 spell power
+	"item_staff_of_the_wild"		// TODO Add 270 spell and healing power
+	"item_starlight_charm"
+	"item_stone_axe"		// TODO Add spell damage by 250.
+	"item_stone_dial"		// TODO Add spell damage by 450.
+	"item_stone_gemstone"
+	"item_stone_regalia"	// TODO Add spell damage by 1000
+	"item_stone_shield"		// TODO Add spell damage by 300.
+	"item_sword_of_command"
+	"item_sword_of_destruction"
+	"item_sword_of_the_high_commander"
+	"item_talisman_of_addiction"
+	"item_talisman_of_serious_addiction"
+	"item_talisman_of_the_winged_god"
+	"item_talisman_of_wisdom"
+	"item_tbr_broadsword"
+	"item_tbr_buckler" // TODO Fix blocking to be like evasion
+	"item_tbr_circlet_of_nobility"
+	"item_tbr_scroll_of_town_portal" // TODO Make it work
+	"item_tbr_talisman_of_evasion"
+	"item_tempered_steel"	// TODO Make it work
+	"item_the_winged_gods_blessed_boots"
+	"item_thespian_boiled_leather"
+	"item_thespian_halberd"
+	"item_thunder_lance"	// TODO Add Increases your Strength and Agility by 35 and damage by 75. Also grants you an 8% chance on attack to cause 1000 additional damage and stun the target for up to 2 seconds.
+	"item_thundering_hammer_of_zeus"
+	"item_tooth_of_the_hallowed_one"
+	"item_towering_shield_of_athena"
+	"item_transport_stone"	// TODO Make it work
+	"item_unfinished_gemstone_key"		// TODO Add icon
+	"item_unyielding_breastplate"
+	"item_unyielding_breastplate_of_agility"
+	"item_unyielding_breastplate_of_strength"
+	"item_unyielding_tower"
+	"item_veteran_gemstone"
+	"item_veterans_breastplate"		// TODO add spell healing by 250.
+	"item_veterans_greatsword"		// TODO add spell healing by 250.
+	"item_veterans_regalia"		// TODO Add Increase spell healing by 900 and Set Bonus: Increases the dodge chance and spell damage reduction of your Phalanx skill to 40%.
+	"item_veterans_shield"			// TODO add spell healing by 400.
+	"item_wand_of_healing_power" // TODO Add 75 Healing power
+	"item_wand_of_light"	// TODO add spell damage and healing by 180.
+	"item_wand_of_spell_power"	// TODO Add 50 Spell Power
+	"item_warriors_talisman_of_addiction"
+	"item_warriors_talisman_of_serious_addiction"
+	"item_well_of_souls"
+	"item_white_dragonscale_ring"
+	"item_white_dragonscale_ring_of_addiction"
+	"item_wild_regalia"		// TODO Add spell damage and healing by 600
+	"item_wraithblade"	// TODO Add 600 Spell power and Healing power
+	"item_crown_of_kings_10"
