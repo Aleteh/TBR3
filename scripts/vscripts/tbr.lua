@@ -293,16 +293,16 @@ function GameMode:OnHeroInGame(hero)
 	hero.materials = 0
 
 	-- Give Item
-	local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
+	--local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
+	--hero:AddItem(item)
+
+	--local item = CreateItem("item_gemstone_key", hero, hero)
+	--Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
+
+	local item = CreateItem("item_thundering_hammer_of_zeus", hero, hero)
 	hero:AddItem(item)
 
-	local item = CreateItem("item_gemstone_key", hero, hero)
-	Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
-
-	--[[local item = CreateItem("item_ares_bloodthirsty_spear", hero, hero)
-	hero:AddItem(item)
-
-	local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
+	--[[local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
 	hero:AddItem(item)]]
 
 	--Abilities
