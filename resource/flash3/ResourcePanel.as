@@ -49,6 +49,7 @@ package  {
 	
 			//listener for button clicks
 			this.tradeButton.addEventListener(MouseEvent.CLICK, onTradeButtonClicked);
+			this.glyphButton.addEventListener(MouseEvent.CLICK, onGlyphButtonClicked);
 			
 			trace("##Module Setup!");
 		}
@@ -125,6 +126,11 @@ package  {
 			removeChild(this._btnYes);
             return;
         }
+		
+		public function onGlyphButtonClicked(event:MouseEvent) {
+			this.gameAPI.SendServerCommand("StartTeleport");
+			trace("##TELEPORT");
+		}
 		
 		//onScreenResize
 	}

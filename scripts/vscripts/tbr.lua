@@ -207,6 +207,7 @@ function GameMode:PostLoadPrecache()
 	--PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
 	PrecacheUnitByNameAsync("npc_bank", function(...) end)
 	PrecacheUnitByNameAsync("player_gravestone", function(...) end)
+	PrecacheUnitByNameAsync("player_teleporter",function(...) end)
 	PrecacheUnitByNameAsync("npc_demon_fire", function(...) end)
 end
 
@@ -1142,4 +1143,50 @@ function GameMode:UpdateMaterials( player, amount )
     --Fire the event. The second parameter is an object with all the event's parameters as properties
     --We send the total material number to update the UI of the player
     FireGameEvent('cgm_player_materials_changed', { player_ID = pID, materials = heroMaterials })
+end
+
+-- Flash UI
+-- register the 'StartTeleport' command in our console
+Convars:RegisterCommand( "StartTeleport", function(name, p)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        --if the player is valid, execute the teleport
+        return GameMode:Teleport( cmdPlayer , p)
+    end
+end, "A player uses the teleport button", 0 )
+
+function GameMode:Teleport( player )
+
+    --get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local hero = player:GetAssignedHero()
+    
+    if hero.TeleportCooldown == nil then
+    	hero.TeleportCooldown = 0
+    end   
+
+    --check if the teleport is ready
+    if hero.TeleportCooldown == 0 then
+        GameMode:CreatePortal( hero )        
+    end
+
+    --set this on cooldown, update in a global thinker?
+    hero.TeleportCooldown = 300
+    
+    --will have to do a FireGameEvent to make the button clickable again?
+    --FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = hero:GetAbilityPoints() })
+end
+
+-- An attempt for a Diablo 2 Style portal
+function GameMode:CreatePortal( hero )
+
+	-- Place the portal 200 units away from where the hero is facing
+	local position = hero:GetAbsOrigin():Normalized() + Vector(200,200,0)
+
+	-- Create the teleporter unit, which has a small aura to move people to the city
+	teleporter = CreateUnitByName("player_teleporter", position, false, hero, hero, hero:GetTeamNumber())
+
 end
