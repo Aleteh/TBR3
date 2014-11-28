@@ -27,6 +27,18 @@
 			// Philosopher's Stone:  2 Gemstone of the Olympians, 2 Stone of Heaven
 			// Primatic Gem: Gem of the North, Gem of the South, Gem of the East, Gem of the West
 	// TODO: Recipe
+	"item_ares_bloodthirsty_spear_recipe"
+	{
+		"ID"							"2362"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ares_bloodthirsty_spear"
+		"ItemCost"						"10000"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_of_ares;item_shadow_blade;item_burning_hand_of_the_war_god;item_heartstone_ring_of_agility"
+		}
+	}
 
 	//Increases your Strength and Agility by 150 and your intelligence by 5. 
 	//Adds 125 to your movement speed and gives you 25% evasion. In addition, each time you attack you will regenerate .33% of your maximum life total. 
