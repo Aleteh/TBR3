@@ -298,10 +298,19 @@ function GameMode:OnHeroInGame(hero)
 	--local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
 	--hero:AddItem(item)
 
-	--local item = CreateItem("item_gemstone_key", hero, hero)
-	--Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
+	local item = CreateItem("item_ares_bloodthirsty_spear_recipe", hero, hero)
+	Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
 
-	local item = CreateItem("item_towering_shield_of_athena", hero, hero)
+	local item = CreateItem("item_blade_of_ares", hero, hero)
+	hero:AddItem(item)
+
+	local item = CreateItem("item_shadow_blade", hero, hero)
+	hero:AddItem(item)
+
+	local item = CreateItem("item_burning_hand_of_the_war_god", hero, hero)
+	hero:AddItem(item)
+
+	local item = CreateItem("item_heartstone_ring_of_agility", hero, hero)
 	hero:AddItem(item)
 
 	--[[local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
