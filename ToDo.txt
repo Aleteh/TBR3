@@ -1,12 +1,111 @@
-Suggested Priority List (to organize coding assignment)
+If you want to contribute to this project, here is a list of all the remaining tasks, with an explanation on how and where to continue.
+All categories are basically independant from each other and in no particular order so you can work on whichever you feel like it.
+Last Updated: 29 November.
 
-1. Complete all the hero abilities (Check and edit the Hero_ToDo for more details)
-	This includes particles and sounds! 
+	- Hero Abilities - Polishing left
+		Find and fix all occurrences of TODO in npc_abilities_custom
+		Review every tooltip to use AbilitySpecials, might need to change some spells that don't have them:
+		  	We need to rewrite every "damages by xxx" WC3 style tooltip to a Dota style of tooltip (only static values go in the _Description, while the variable values each go in a separate line, which is taken from AbilitySpecials). This way to change ability values like damage or debuff duration we only need to change the AbilitySpecial var, instead of Code & Tooltips.
+	
+	- Extra Hero Abilities - Including TBR 1.4 Concepts:
+		Define a Class Skill for all heroes
+			Each hero should have 3 active starting skills (which are already done) and 1 "Class Skill" type of ability that goes with the hero theme. 
+			Check the file to find some possible passives or design your own. Currently Magician (Preparation), Temple Guardian (Pray) Ranger (Soul Piercing Shots) and Warlord/Assassin (Boring copied crit) have them.
+		Define alternative 5th and 6th abilities for every hero (refered as Journeyman and Ultimate abilities)
+			Each hero should have 2 optional spells, meaning 1 extra option of the 5th and 6th slots. Again you can check the 1.4 Concepts or make your own, try to find a theme/path to differentiate both spells.
+			For example, a class could have a path between supporting and more spell damage(Guardian of Nature Tranquility/Cataclysm), choice between caster and physical damage (Druid Spirit Form/Summon Totems), choosing between boosting your own damage/defenses vs party boost (so if someone normally plays solo/duo, the party buffs aren't as attractive), etc.
 
-2. Improve and finish all the items
+	- Item Functionality
+		Most permanent stat boosting items are implemented, need to find and fix all ocurrences of TODO in npc_items_custom
+		Missing all the consumables, recipes and crafting related items.
+		For crafting items will multiple components, we need to try to reutilize the dota recipe system as best as possible before deciding if a custom Flash UI needs to be done.
+
+	- Item Restrictions
+		Add OnEquip RunScript ItemCheck (as detailed in the beginning of npc_items_custom) which looks for the item name inside maps/item_info.kv table file to eject it from the hero inventory if any restriction isn't met
+		Level Restriction is implemented but the table is incomplete, we need to go through every item adding the proper level number to the levelRequired table. Check the item database sorted by name in Resources.txt 
+		Class Restriction is implemented through the warRestricted value in the table, which is binary true/false check. 
+			The same concept needs to be extended for items that are only usable by a particular class (instead of warRestricted which means "cannot be used by this 4 Warrior Classes"). 
+			This is similar to how the "professionRequired" value works, so you just need to add something like "classRequired" "Druid" for each item and add the appropiate check inside the ItemCheck function in items.lua
+		Profession Restriction is implemented but the Profession system itself isn't, it's just doing a hero.profession = "None" placeholder in the main lua file for now. The item_info Table can still be filled appropiately.
+		Unique item restriction is not started yet, but it can follows a similar concept (ItemCheck all items in the hero inventory, if we find a copy, eject it)
+
+	- Item Sets
+		Give bonuses when particular items are together in the player's inventory. Most of the TODO lines in the missing item functionalities are this type of function.
+		This can be done in two ways:
+			OnEquip RunScript function on each set item to check if the other item pieces are there, if so, apply the bonus modifier. Would also need a OnUnequip RemoveModifier or lua function to remove the bonus.
+				Probably the better way for most sets, but those that give Spell/Healing power need to be considered inside the AdjustSpellPower lua (which constantly adjusts the spell & healing power as listed on item_info)
+			Inside ModifyStatBonuses lua thinker (tbr.lua), have a CheckForItemSets function that constantly checks for all of them (in the same style of the AdjustSpellPower function). An item_sets_info table could be used.
+				Kinda expensive and complicated, but might be needed if the first option doesn't work properly.
+
+	- Stat System - Flash UI
+		ResourcePanel.as needs to hide the button to skill INT for Warrior Classes (Barbarian, KC, Assassin, Warlord). The hero.class can seen in the game API, so this should be trivial Action Script
+		An artistic improvement of the buttons would be nice, adding sounds, hiding after deselecting the hero (not sure if possible), etc. The folder FlashUI Source has some photoshop and images to work with, plus CustomUI.fla
+	
+	- Skill System (Needs Brainstorming!)
+		In the TBRmap (which you can find in the repo), skills can't be learned through the normal Dota system. To start this up, add DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE to the AbilityBehavior key value in npc_abilities_custom
+		Most skills have up to 8 ranks. Dota supports up to 7 skill levels to show in the UI, so each skill will be done as 7 ranks with a separate lvl 8 skill with MaxLevel 1.
+		To actually upgrade the available spells, the wc3 system was purchasing Skill Books in a shop, one different for each skill upgrade, which when used after certain levels (7, 15, 30, 50, 85, 135 and the last one at 200) granted the hero an option to upgrade an ability to the next rank. This opened up a window with buttons to choose the abilities you could improve to a next rank when using that particular book
+		If you bought a lvl 4 book, and had 3 lvl 3 spells, it would give you 3 button options, if you had none to skill there wouldn't be an option at all and the book would be wasted (:D)
+		These systems could be improved to a more modern RPG style, with access to Flash Interfaces, while mantaining the general idea (you can't simply upgrade your spells after the required level)
+
+		The 5th ability slot is not available from the start, but was learned through purchasing another skill book available after level 5 (costs 500g)
+
+		Unlocking the 6th ultimate ability is not done through a book either, but each of the first 3 Titans will drop 1 spell book that contained one random ultimate spell for each class (so there would be many useless tomes)
+
+
+		(Normal Shop? Custom UI? Rework the system?)
+
+	- Units
+		parsed.txt and how to port units
+		adding vscripts to roaming units
+		unit abilities
+
+	- Save/Load
+		Provide a persistent RPG system that allows players to load their hero data, connected to their SteamID.
+		stat-rpg library
+		check gistfile.as and talk to SinZ
+
+	- Bank
+		current version
+		ideas for implementing it
+
+	- Backpack
+		current version
+		ideas for implementing it
+
+	- Professions	Complete Flash UI needed.
+	
+	- Crating Mats 	
+		Adding to spawn info
+
+	- City Attacks
+		Configured similar to holdout waves. Difficulty based on Average Hero level.
+
+	- Quests 
+		Will probably need a Flash UI, but the repeatable Kill-Quests can use the ingame system to start with.
+
+	- Duel/PvP System
+		Change to Multi-Team settings.
+	
+	- Divine Armor
+		Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied.
+
+
+Latest Accomplishments
+
+	- 
+	- Party Experience & Gold system finished (XP/Gold granted in AoE to every party member in equal parts, scaling with party size)
+	- Warrior Class Mana systems finished
+	- 
+
+
+
+
+
+
 
 3. Work on the core mechanics related to the hero skill-leveling ability sytem.
-	Every level, each hero gains a certain amount of spendable stat points (more than 1 each level, and they get more points on later levels)
+	
 	Stats points can be put in STR/AGI/INT individually (just STR/AGI for Warrior classes)
 	The heroes start with the rank 1 of their basic 3 spells.
 	Skills are unlearnable by normal means (like Invoker's spells), and have up to 8 ranks (with some exceptions).
@@ -15,9 +114,7 @@ Suggested Priority List (to organize coding assignment)
 		After using they let the user choose what skill to upgrade.
 		Books can be bought or dropped by some enemies.
 		
-4. Start the unit porting
 
-5. Expand on unit abilities and AI.
 
 
 ========================================================
