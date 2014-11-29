@@ -2,6 +2,17 @@
 
 "DOTAAbilities" 
 {
+	//Add this on every item that needs to do a check for restrictions
+	//This is needed because the listener for inventory changed is broken, and OnItemPickedUp doesn't account for someone dragging an item into another players inventory
+	//Item restrictions are defined here, looking them in the item_info.kv table
+	//	"OnEquip"
+	//	{
+	//		"RunScript"
+	//		{
+	//			"ScriptFile"	"items.lua"
+	//			"Function"		"ItemCheck"
+	//		}
+	//	}
 
 	// "artifact" (Orange)
 	// "epic" (Purple)
