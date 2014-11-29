@@ -52,155 +52,103 @@ Last Updated: 29 November.
 
 		Unlocking the 6th ultimate ability is not done through a book either, but each of the first 3 Titans will drop 1 spell book that contained one random ultimate spell for each class (so there would be many useless tomes)
 
-
-		(Normal Shop? Custom UI? Rework the system?)
+		A custom UI would be perfect. More on this soon.
 
 	- Units
-		parsed.txt and how to port units
-		adding vscripts to roaming units
-		unit abilities
+		Inside the WC3 units folder, you will find a huge parsed.txt file, which contains each unit with its base stats found in the Warcraft map in a Key Value format ready to copy to the npc_units_custom
+		There is also a Creeps file that has all the basic creeps, split by area.
+		For bosses, minibosses and other special units, check Data.txt which contains links with all the units found in the map, and open TBRmap.w3x in a World Editor.
+		With this file and info, you can implement every unit by just copying it to the txt and adding: Model, ModelScale, Projectile and if needed, the Creature AttachWearables block. Check "npc_shaman" for an example. 
+		Item numbers to attach wearables can be found in the items_game.txt which contains all the cosmetic codes (some might not be available in workshop tools yet). Models can be seen through Asset Browser.
+		Identify and add the Unit Abilities to code them later.
+		Unit Stat Gains per level is missing, this only applies for Boss-Hero units, check the stat gain in World Editor or just the Bestiary link in Data.txt to adjust the boss stats properly.
 
-	- Save/Load
-		Provide a persistent RPG system that allows players to load their hero data, connected to their SteamID.
-		stat-rpg library
-		check gistfile.as and talk to SinZ
-
-	- Bank
-		current version
-		ideas for implementing it
+	- Unit AI
+		For creeps to roam, add "vscripts" "creep_ai.lua", add the proper entities in the map, which contains the AI. In the lua, new areas need to be added just by copying the structure and adding the proper names.
+		Special Unit AI needs to be done after the unit spells and everything starts coming together.
 
 	- Backpack
+		Extra 6 slots that you can carry around, items are not saved. This was done as a little Wisp courier invulnerable that followed you around, you could use consumables through it and it would heal your main hero.
+			The first option is then to have a controllable unit similar to a courier
+			> Having a controllable unit with inventory is possible.
 		current version
-		ideas for implementing it
 
-	- Professions	Complete Flash UI needed.
-	
-	- Crating Mats 	
-		Adding to spawn info
+	- Bank
+		Originally this was 6 extra slots to store items between saves. Only accessible near in the city.
+			First option is to reuse the default dota stash system, but this is available from level 1 and we'd like it to be an unlockable feature for later levels.
+			The currently implemented npc_bank is very awkward, as the building needs to "rotate" to drag items.
+			Giving the Bank building 6 abilities, one to drop/eject/transfer each item. This is even more weird, and should be avoided.
+			Flash UI! The best option, which would be very flexible and also let us provide as many item slots as we want, unlocking
+				To implement this, have a look at Hook and Slice map, which has a great flash UI done for Inventory, with dragging and tooltips. The repo is github.com/Ractis/HookAndSlice
+				A great idea which opens up is to make the items in the Bank shareable within different characters in the same account, once Save/Load is in place. 
+
+	- Crafting Materials and Gold
+		Each creep Gold and Material drop values need to go in spawn_info.kv table, to support the party Gold/Mat share. 
+		Currently materialsToAssign is hardcoded to 322 inside crafting.lua, but it should instead just look through SpawnInfoKV[k] for the unit name and assign the materials established there.
+		The basic materials resource UI is done, just needs a slightly better art design.
+		Trading materials x gold UI is incomplete, need to fix the Flash UI using ReplaceWithValveComponent Action Scripts.
+		Max gold needs to be increased to 1 million somehow (Valve please)
 
 	- City Attacks
 		Configured similar to holdout waves. Difficulty based on Average Hero level.
+		Waves of Demons getting increasingly harder, starting every ~7 minutes up to 20 minutes per attack.
+		There's some work done in demon_wave_mode.lua and demon_wave_round.lua which are the basic holdout functions.
+		Investigate how to adjust this to the maps needs and how the difficulty increases with hero levels.
+
+	- Teleport Button (WIP Concept)
+		The Dota Glyph button is replaced by a Teleport button which opens a Diablo 2 Style portal and should teleport anyone who steps in to the latest city visited the party visited.
+		Finish the flash UI and add different teleport points and saves on the map.
+
+
+
+	==========================================
+	= Mechanics and Features Not Yet Started =
+	==========================================
+
+	- Professions	
+		Flash UI needed? Up to discussion
 
 	- Quests 
-		Will probably need a Flash UI, but the repeatable Kill-Quests can use the ingame system to start with.
+		Will need a Flash UI, but the repeatable Kill-Quests can use the ingame system to start with (however, remember these quests are global, not player based)
+		A full review of all the quests can be found in the google site. Quests are very open to creative work after the system is implemented.
 
 	- Duel/PvP System
-		Change to Multi-Team settings.
+		Make an arena area and Change to Multi-Team settings.
+		Possibly add an option for Free for All, 1v1, 2v2, etc.
 	
 	- Divine Armor
-		Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied.
+		Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied. Most bosses use this.
+		This was implemented in Enfos, check how it's done in their repo (github.com/D3luxe/Enfos) to see if we can reutilize it.
 
+	- Save/Load
+		Tough work!	Provide a persistent RPG system that allows players to load their hero data, connected to their SteamID.
+		Study the stat-rpg library and its Commands.as
+		Many internal tables and values need to be stored and changed appropiately, to have the data ready to be saved to a server at any time (for example someone leaves/disconnects)
+		Talk to SinZ and jimmydorry to implement it.
 
-Latest Accomplishments
+	- Party System
+		Like Meepo UI for your current party
+		Give an option to hide HP bars and change the separators dynamically ( dota_health_per_vertical_marker dota_health_marker_major_alpha dota_health_marker_minor_alpha dota_hud_healthbar_number)
 
-	- 
-	- Party Experience & Gold system finished (XP/Gold granted in AoE to every party member in equal parts, scaling with party size)
-	- Warrior Class Mana systems finished
-	- 
+	==========================================
+	=   Extra Features we should implement   =
+	==========================================
 
+	- Roll System
+		WoW Style, doesn't matter if someone picks the item as the ownership can be easily changed in lua. Flash UI for this, obviously.
 
-
-
-
-
-
-3. Work on the core mechanics related to the hero skill-leveling ability sytem.
+	- Trade System
 	
-	Stats points can be put in STR/AGI/INT individually (just STR/AGI for Warrior classes)
-	The heroes start with the rank 1 of their basic 3 spells.
-	Skills are unlearnable by normal means (like Invoker's spells), and have up to 8 ranks (with some exceptions).
-		Dota supports up to 7 skill levels to show in the UI, so each skill will be done as 7 ranks with a separate lvl 8 skill with MaxLevel 1.
-	Each skill that can be improved is leveled up with Skill Books (one for each level)
-		After using they let the user choose what skill to upgrade.
-		Books can be bought or dropped by some enemies.
-		
+	- Up to 5 players the game use Normal Difficulty, then 6 to 10 it's Heroic. Or any type of scaling difficulty.
 
-
-
-========================================================
-
-- General Mechanics - (will look deeply into this later)
-	Leveling: 		Spendable attribute points instead of skill levels.
-	Creep spawning: OnTouch/OnTouchEnd that spawn set creeps at random locations that patrol to random waypoints. DONE
-					Waves of Demons getting increasingly harder, starting every 7 minutes up to 20 minutes per attack.
-	Max gold: 		Increase to 1 million.
-	Experience: 	Increase XP accordingly while in a Party (+10% per extra party member) DONE
-					XP Base 20, 5 per level
-	Save/Load:		Provide a persisten RPG system that allows players to instantly load their current hero data, connected to their SteamID.
-	
-	Bank: 			Extra 6 slots to store items, items are saved. Only accessible in the city. Will need a custom storage system.
-						> Units without Move capability can't drag items.
-							Option 1: Putting the Bank unit on a place where it can't "escape".
-							Option 2: Giving the Bank building 6 abilities, one to drop/eject/transfer each item.
-							Option 3: Flash UI?
-
-	Backpack:		Extra 6 slots that you can carry around, items are not saved. Could possibly reuse the default Stash, making it global.
-						> If we make the default stash global, the shop would also also global.
-						> Having a controllable unit with inventory is possible.
-
-	Stats:			Custom Spell Power & Spell Healing. Every Heal & Damage spell is affected by it, 1:1 additively. Some spells use a custom multiplier of it.
-	 				Assassin, Warlord, Barbarian and Khaos Champion doesn't benefit from spell power and healing power. Warrior Classes.
-					INT = 15 mana, .01 MP per second, 3 Spell & Healing Power.
-					STR = 20 HP and 0.25 hp per second regeneration.
-					AGI = .2 armor, 1% IAS.
-	Warrior Mana:  	DONE, needs test!
-					Barbarians - gain their mana whenever they attack, also gains mana when attacked. Degenerates over time.
-					Warlords   	- gain their mana whenever they attack. Regenerates slowly over time.
-					Assassin/KC: - does not gain mana with each attack but quickly regenerates his mana naturally. 
-	Skills:			Unlearneable normally, only through purchase/droppable Book system.
-	Professions:	Complete Flash UI needed.
-	Crating Mats: 	Custom resource.
-	City Attacks:	Configured similar to holdout waves. Difficulty based on Average Hero level.
-	Quests:			Will probably need a Flash UI, but the repeatable Kill-Quests can use the ingame system to start with.
-	Item Restrict:	Automatically drop items that are not allowed to be carried by the hero. Restrictions are Level & Class.
-	Item Sets:		Give bonuses when particular items are together in the player's inventory.
-	Duel:			PvP! Change to Multi-Team settings.
-	Divine Armor:	Divine armor takes only 10% dmg from all types of atacks. After this flat reduction of 90% the reduction from the armor value is also applied.
-
-- Heroes -
-	> Hero_ToDo
-
-- Items -
-	> 
-
-- Units - (Parsed in python scripts folder)
-	> Everything
-
-- Map - (Make a Map_ToDo if you wish)
-	> Optimize base mesh
-	> Layout triggers for creep spawners
-	> Work on city features
-		> Buildings
-			> Main Castle
-			> Blacksmith (Weapons & Armor)
-			> Minor Items
-			> Greater Items
-			> Scrolls
-			> Potions
-			> Trinkets
-			> Artifacts
-			> Books
-			> Champion's Armory
-			> Arrow Tower
-			> Cannon Tower
-			> Spell Tower
-			> Bank Redesign
-		> Patroling NPCs
-		> Quest NPCs
-		> Crafting NPCs
-		> ?
-	> Create forward defense camp
-		> 2 Arrow Towers
-		> 2 Cannon Tower
-		> 2 Dosen patroling NPCs
-	> Create starter outpost
-		> Journeymans Store
-		> Quest NPC
-		> Patroling NPCs
-		> Fountain of Restoration
-	> Detail work
-
-
+	- A Player Progress/Score UI which would track history of:
+		Creeps killed, Highest threat killed.
+		Bosses killed, how many times. Use the dota minimap icons.
+		Total Deaths (and to what)
+		PvP Ranking
+		Parties Shared (like a social thing)
+		Achievements (not sure how)
+		Make a score number with this and create Leaderboards!
 
 
 
