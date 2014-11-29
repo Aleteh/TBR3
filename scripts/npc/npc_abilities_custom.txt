@@ -4458,7 +4458,7 @@
 
     	"Modifiers"
 		{
-			
+			// TODO: Fix the Orb System, properly attach a projectile only on the Black Arrow attacks.
 			"ranger_black_arrow_post_damage"
 			{
 				"IsDebuff"	"1"
@@ -4544,12 +4544,13 @@
 
 		"OnSpellStart"
 		{
+			//TODO: Make custom particle or fix the attachment of Shackleshot
 			"TrackingProjectile"
 			{
 				"Target"		"TARGET"
 				"Dodgeable"			"0"
 				"ProvidesVision"	"0"
-				"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_shackleshot.vpcf" //TODO: Make custom particle
+				"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_shackleshot.vpcf" 
 				"MoveSpeed"			"900"
 				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 			}
@@ -6580,8 +6581,18 @@
 			"particle"	"particles/items2_fx/refresher.vpcf"
 		}
 
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"refresh_chance"		"5"
+    		}
+    	}
+
 		"Modifiers"
 		{
+			//TODO: Restrict items from procing this buff (maybe not needed, just a balance issue)
 			"preparation_modifier"
 			{
 				"Passive"			"1"
@@ -6592,7 +6603,7 @@
 				{
 					"Random"
 					{
-						"Chance"	"50" //5 TODO: Don't forget to change this later.
+						"Chance"	"%refresh_chance"
 						"OnSuccess"
 						{
 							"RunScript"
@@ -6711,7 +6722,7 @@
 	//=================================================================================================================
 	//Causes roots to burst from the ground, immobilizing and disarming a target enemy unit for up to 8 seconds and dealing
 	//xxx damage per second for xxx mana. While entangled, the unit's armor will be reduced by xx. 7 seconds cooldown, 700 range. 
-	//TODO: WTF THIS SPELL IS BROKEN?
+	// TODO: Apply the buff through lua with a random {duration = } between 1 and 8
 	"druid_natures_wrath"
 	{
 		// General
