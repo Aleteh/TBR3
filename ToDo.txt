@@ -1,6 +1,6 @@
 If you want to contribute to this project, here is a list of all the remaining tasks, with an explanation on how and where to continue.
 All categories are basically independant from each other and in no particular order so you can work on whichever you feel like it.
-Last Updated: 29 November.
+Last Updated: 1st December.
 
 	- Hero Abilities - Polishing left
 		Find and fix all occurrences of TODO in npc_abilities_custom
@@ -47,12 +47,10 @@ Last Updated: 29 November.
 		To actually upgrade the available spells, the wc3 system was purchasing Skill Books in a shop, one different for each skill upgrade, which when used after certain levels (7, 15, 30, 50, 85, 135 and the last one at 200) granted the hero an option to upgrade an ability to the next rank. This opened up a window with buttons to choose the abilities you could improve to a next rank when using that particular book
 		If you bought a lvl 4 book, and had 3 lvl 3 spells, it would give you 3 button options, if you had none to skill there wouldn't be an option at all and the book would be wasted (:D)
 		These systems could be improved to a more modern RPG style, with access to Flash Interfaces, while mantaining the general idea (you can't simply upgrade your spells after the required level)
-
 		The 5th ability slot is not available from the start, but was learned through purchasing another skill book available after level 5 (costs 500g)
-
 		Unlocking the 6th ultimate ability is not done through a book either, but each of the first 3 Titans will drop 1 spell book that contained one random ultimate spell for each class (so there would be many useless tomes)
-
-		A custom UI would be perfect. More on this soon.
+		
+		A custom UI would be perfect. Check resource\flash3\FlashUI Source\Skill UI
 
 	- Units
 		Inside the WC3 units folder, you will find a huge parsed.txt file, which contains each unit with its base stats found in the Warcraft map in a Key Value format ready to copy to the npc_units_custom
@@ -105,8 +103,12 @@ Last Updated: 29 November.
 	= Mechanics and Features Not Yet Started =
 	==========================================
 
-	- Professions	
+	- Profession Crafting	
 		Flash UI needed? Up to discussion
+		Try to reutilize the Item Reciepe system UI. Can also give the personal courier a botton to assemble items.
+		There are some recipes that require more than 5 items+Materials, but we can split them in 2 parts (as seen in the ares spear recipe example)
+		Some items like regalia you had to be near the NPC and click the button to combine.
+		You could craft anywhere with your selected profession. Only 1 profession, leveled by making items (progress bar to display this)
 
 	- Quests 
 		Will need a Flash UI, but the repeatable Kill-Quests can use the ingame system to start with (however, remember these quests are global, not player based)
