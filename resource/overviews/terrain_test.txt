@@ -1,0 +1,8 @@
+terrain_test
+{
+	material materials/overviews/terrain_test.vmat
+	pos_x -8340
+	pos_y 8352
+	scale 16.313
+}
+

@@ -1,0 +1,56 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "multiblend.vfx"
+
+	//---- Normal Maps ----
+	F_NORMAL_MAP 1
+
+	//---- Layer 0 ----
+	g_flTexCoordRotate0 "0.000"
+	g_flTexCoordScale0 "1.000"
+	g_vColorTint0 "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset0 "[0.000 0.000]"
+	g_vTexCoordScroll0 "[0.000 0.000]"
+	TextureColor0 "materials/blend/tbr_dirt_01.tga"
+	TextureNormal0 "materials/blend/tbr_dirt_01_bump.tga"
+
+	//---- Layer 1 ----
+	g_flTexCoordRotate1 "0.000"
+	g_flTexCoordScale1 "1.000"
+	g_vColorTint1 "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset1 "[0.000 0.000]"
+	g_vTexCoordScroll1 "[0.000 0.000]"
+	TextureColor1 "materials/blend/tbr_grass_01.psd"
+	TextureNormal1 "materials/default/default_normal.tga"
+	TextureRevealMask1 "materials/blend/tbr_grass_01_mask.psd"
+
+	//---- Layer 2 ----
+	g_flTexCoordRotate2 "0.000"
+	g_flTexCoordScale2 "1.000"
+	g_vColorTint2 "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset2 "[0.000 0.000]"
+	g_vTexCoordScroll2 "[0.000 0.000]"
+	TextureColor2 "materials/blend/tbr_dirt_01.tga"
+	TextureNormal2 "materials/blend/tbr_dirt_01_bump.tga"
+	TextureRevealMask2 "materials/default/default_blend.tga"
+
+	//---- Layer 3 ----
+	g_flTexCoordRotate3 "0.000"
+	g_flTexCoordScale3 "1.000"
+	g_vColorTint3 "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset3 "[0.000 0.000]"
+	g_vTexCoordScroll3 "[0.000 0.000]"
+	TextureColor3 "materials/blend/tbr_grass_01.psd"
+	TextureNormal3 "materials/default/default_normal.tga"
+	TextureRevealMask3 "materials/blend/tbr_grass_01_mask.psd"
+
+	//---- Normal Map ----
+	g_flBumpStrength "1.000"
+
+	Attributes
+	{
+		dota.nav.walkable "1"
+	}
+}
