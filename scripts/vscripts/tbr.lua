@@ -9,11 +9,11 @@ PRE_GAME_TIME = 5                       -- How long after people select their he
 POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
-GOLD_PER_TICK = 0                     -- How much gold should players get per tick?
-GOLD_TICK_TIME = 0                      -- How long should we wait in seconds between gold ticks?
+GOLD_PER_TICK = 100                     -- How much gold should players get per tick?
+GOLD_TICK_TIME = 5                      -- How long should we wait in seconds between gold ticks?
 
 RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes (Note: this is not working currently I believe)
-CAMERA_DISTANCE_OVERRIDE = 1350         -- How far out should we allow the camera to go?  1134 is the default in Dota
+CAMERA_DISTANCE_OVERRIDE = 1500         -- How far out should we allow the camera to go?  1134 is the default in Dota
 
 MINIMAP_ICON_SIZE = 1                 -- What icon size should we use for our heroes?
 MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
@@ -29,14 +29,14 @@ DISABLE_FOG_OF_WAR_ENTIRELY = false      -- Should we disable fog of war entirel
 USE_STANDARD_HERO_GOLD_BOUNTY = true    -- Should we give gold for hero kills the same as in Dota, or allow those values to be changed?
 
 USE_CUSTOM_TOP_BAR_VALUES = true        -- Should we do customized top bar values or use the default kill count per team?
-TOP_BAR_VISIBLE = false                  -- Should we display the top bar score/count at all?
+TOP_BAR_VISIBLE = true                  -- Should we display the top bar score/count at all?
 SHOW_KILLS_ON_TOPBAR = true             -- Should we display kills only on the top bar? (No denies, suicides, kills by neutrals)  Requires USE_CUSTOM_TOP_BAR_VALUES
 
 ENABLE_TOWER_BACKDOOR_PROTECTION = false-- Should we enable backdoor protection for our towers?
-REMOVE_ILLUSIONS_ON_DEATH = true       -- Should we remove all illusions if the main hero dies?
-DISABLE_GOLD_SOUNDS = true             -- Should we disable the gold sound when players get gold?
+REMOVE_ILLUSIONS_ON_DEATH = false       -- Should we remove all illusions if the main hero dies?
+DISABLE_GOLD_SOUNDS = false             -- Should we disable the gold sound when players get gold?
 
-END_GAME_ON_KILLS = false                -- Should the game end after a certain number of kills?
+END_GAME_ON_KILLS = true                -- Should the game end after a certain number of kills?
 KILLS_TO_END_GAME_FOR_TEAM = 50         -- How many kills for a team should signify an end of game?
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
@@ -155,7 +155,7 @@ function GameMode:InitGameMode()
 	GameMode.bandit_spawnLocations = Entities:FindAllByName("bandit_spawner")
 	GameMode.BanditAreaCreeps = {}
 
-
+	
 	print('[TBR] Done loading the gamemode!\n\n')
 end
 
@@ -216,8 +216,9 @@ end
 function GameMode:ReadGameConfiguration()
 	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
 	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
+	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
 
-	DeepPrintTable(self.ItemInfoKV)
+	DeepPrintTable(GameRules.DropTable)
 
 	-- separate in different lists to make it more manageable (not needed)
 	--[[self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )]]
@@ -583,6 +584,10 @@ function GameMode:OnEntityKilled( keys )
 	end
 
 	if killedUnit and ( killedUnit:GetTeamNumber()==DOTA_TEAM_NEUTRALS or killedUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) and killedUnit:IsCreature() then
+
+		-- Item Drops
+		RollDrops(killedUnit)
+
 		local level = killedUnit:GetLevel()
 		-- Increase by 10% for each party member
 		local party_bonus = 1 + ( self.nPlayerCount * 0.1 )
@@ -628,6 +633,43 @@ function GameMode:OnEntityKilled( keys )
 		end
 	end
 
+end
+
+function RollDrops(unit)
+	print("Rolling Drops for "..unit:GetUnitName())
+    local DropInfo = GameRules.DropTable[unit:GetUnitName()]
+    if DropInfo then
+        for k,ItemTable in pairs(DropInfo) do
+            -- If its an ItemSet entry, decide which item to drop
+            local item_name
+            if ItemTable.ItemSets then
+            	-- Count how many there are to choose from
+            	local count = 0
+            	for i,v in pairs(ItemTable.ItemSets) do
+            		count = count+1
+            	end
+                local random_i = RandomInt(1,count)
+                item_name = ItemTable.ItemSets[tostring(random_i)]
+            else
+                item_name = ItemTable.Item
+            end
+            local chance = ItemTable.Chance or 100
+            local max_drops = ItemTable.Multiple or 1
+            for i=1,max_drops do
+            	print("Rolling chance "..chance)
+                if RollPercentage(chance) then
+                    print("Creating "..item_name)
+                    local item = CreateItem(item_name, nil, nil)
+                    item:SetPurchaseTime(0)
+                    --item:SetCurrentCharges(1)
+					local pos = unit:GetAbsOrigin()
+					local drop = CreateItemOnPositionSync( pos, item )
+					local pos_launch = pos+RandomVector(RandomFloat(150,200))
+					item:LaunchLoot(false, 200, 0.75, pos_launch)
+                end
+            end
+        end
+    end
 end
 
 -- go through the self.SpawnInfoKV and return the bounty
