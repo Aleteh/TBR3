@@ -1,0 +1,18 @@
+General Info about the game
+	http://www.theblackroad.net/forums/viewtopic.php?f=13&t=2612
+
+Items
+	http://mightypirates.de/tbr/?sort=name&order=ascending&filter= can also sort by level and source, it's for version 1.33 but most items are there)
+	http://www.theblackroad.net/forums/viewtopic.php?f=72&t=2609 Every v1.36 permanent item
+
+Heroes
+	https://sites.google.com/site/theblackroad13x/Classes
+	
+Units
+	https://sites.google.com/site/theblackroad13x/Bestiary and all the sub links
+
+Quests
+	https://sites.google.com/site/theblackroad13x/quests-gold-experience
+
+Cheat List for TBRmap.w3x
+	http://www.hastebin.com/agomedilaf.dos

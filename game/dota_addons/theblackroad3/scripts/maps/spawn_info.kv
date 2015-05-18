@@ -1,0 +1,230 @@
+"Spawns"
+{
+	"DemonArea"
+	{
+		"npc_demon_imp"
+		{
+			"RespawnTime"	"2"
+			"MaxSpawn"		"12"
+			"BountyGoldMin"	"2"
+			"BountyGoldMax"	"3"
+			"MatBounty"		"0"
+		}
+
+		"npc_demon_hound"
+		{
+			"RespawnTime"	"3"
+			"MaxSpawn"		"6"
+			"BountyGoldMin"	"6"
+			"BountyGoldMax"	"7"
+			"MatBounty"		"0"
+		}
+
+		"npc_fire_demon"
+		{
+			"RespawnTime"	"3"
+			"MaxSpawn"		"6"
+			"BountyGoldMin"	"4"
+			"BountyGoldMax"	"5"
+			"MatBounty"		"0"
+		}
+
+		"npc_forest_bear"
+		{
+			"RespawnTime"	"4"
+			"MaxSpawn"		"5"
+			"BountyGoldMin"	"7"
+			"BountyGoldMax"	"8"
+			"MatBounty"		"0"
+		}
+	
+	}
+
+	"GoblinArea"
+	{
+		"npc_goblin"
+		{
+			"RespawnTime"	"2"
+			"MaxSpawn"		"9"
+			"BountyGoldMin"	"8"
+			"BountyGoldMax"	"10"
+			"MatBounty"		"0"
+		}
+
+		"npc_shaman"
+		{
+			"RespawnTime"	"5"
+			"MaxSpawn"		"3"
+			"BountyGoldMin"	"11"
+			"BountyGoldMax"	"14"
+			"MatBounty"		"0"
+		}
+	}
+
+	"BlackGoblinArea"
+	{
+		"npc_black_goblin"
+		{
+			"RespawnTime"	"2"
+			"MaxSpawn"		"9"
+			"BountyGoldMin"	"15"
+			"BountyGoldMax"	"19"
+			"MatBounty"		"0"
+		}
+
+		"npc_black_shaman"
+		{
+			"RespawnTime"	"5"
+			"MaxSpawn"		"3"
+			"BountyGoldMin"	"11"
+			"BountyGoldMax"	"14"
+			"MatBounty"		"0"
+		}
+		"npc_ogre"
+		{
+			"RespawnTime"	"5"
+			"MaxSpawn"		"3"
+			"BountyGoldMin"	"18"
+			"BountyGoldMax"	"23"
+			"MatBounty"		"0"
+		}
+	}
+
+	"BanditArea"
+	{
+		"npc_bandit"
+		{
+			"RespawnTime"	"1"
+			"MaxSpawn"		"25"
+			"BountyGoldMin"	"4"
+			"BountyGoldMax"	"6"
+			"MatBounty"		"1" // Needs to have a min/max values on this just like gold
+		}
+	}
+
+	"SpiderArea"
+	{
+
+	}
+
+	"SeaServantArea"
+	{
+
+	}
+
+	"MinotaurArea"
+	{
+
+	}
+
+	"TuskarrArea"
+	{
+
+	}
+
+	"HillBeastArea"
+	{
+
+	}
+
+	"UndeadArea"
+	{
+
+	}
+
+	"GemArea"
+	{
+
+	}
+
+	"MyrArea"
+	{
+
+	}
+
+	"HighandBeastArea"
+	{
+
+	}
+
+	"HighMinotaurArea"
+	{
+
+	}
+
+	"HighUndeadArea"
+	{
+
+	}
+
+	"CentaurArea"
+	{
+
+	}
+
+	"SeaElementalArea"
+	{
+
+	}
+
+	"IceBehemothArea"
+	{
+
+	}
+
+	"CitadelArea"
+	{
+
+	}
+
+	"BlackRoadArea"
+	{
+		//Pit Fiend 	 
+		//Corrupter 	 
+		//Tormenter 	 
+		//Hellspawn
+	}
+
+	"DemonWaves"
+	{
+		"PrepTimeBetweenRounds"			"35"
+		"SpawnLocations"
+		{
+			"1"
+			{
+				"SpawnerName"		"spawner_tester"
+				"Waypoint"			"path_01"
+
+			}
+			"2"
+			{
+				"SpawnerName"		"spawner_tester_1"
+				"Waypoint"			"path_01"
+			}
+		}
+		"Round1" //Enemies Wave Data Here
+		{
+			"UnitFodder_1a" // Duration 80s - Continues with UnitFodderGrouped_2a & 3a to 120s total
+			{
+				"NPCName"				"npc_dota_creature_kobold_tunneler"
+				"TotalUnitsToSpawn"		"6"
+				"UnitsPerSpawn"			"3"
+				"SpawnInterval"			"10"
+			}
+		}
+		//	Champion of Hades 		- 1 per wave, gains levels)
+		//	Demonic Carrion			- Level 5
+		//	Demonic Pillager  		- Level 6
+		//	Demon Thrall			- Level 9
+		//	Demon Slave				- Level 11
+		//	Minor Demon 			- Level 18
+		//  Lesser Demon 			- Level 21
+		//  Demon Ogre 				- Level 22
+		// 	Demon Warrior			- Level 28
+		//	Nether Demon 	 		- Level 31
+		//	Engine of Destruction 	- Level 34
+		//	Demon Seer 	 			- Level 39
+		//	Greater Demon 			- Level 43
+		//	Destroyer				- Level 49
+	}
+}

@@ -1,0 +1,8 @@
+test_env2
+{
+	material materials/overviews/test_env2.vmat
+	pos_x -8088
+	pos_y 8128
+	scale 15.922
+}
+

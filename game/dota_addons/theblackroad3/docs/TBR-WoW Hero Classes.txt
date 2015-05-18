@@ -1,0 +1,44 @@
+Aknowledgements:
+
+	1. TBR Greek lore doesn't fit Dota and is unnecessary, trying to reutilize some Dota world lore to make new anthagonists would be way better and a perfect move to attract dota players, make an involving game and get good promotional material.
+	2. Making a new game instead of being locked into a port, taking just the good concepts of TBR and expand with the available assets and features, will provide a way better result.
+	3. There are class names that arent self-defining nor real class archetypes: KC, SW, TG, GoN.
+	4. A good RPG should have classes that define a playstyle, and be able to be played in 2 or 3 different ways: Tank/DPS/Heal, Caster/Melee, Summon/Nuke, etc.
+
+
+Magician -> Mage
+Cleric -> Priest
+Warlock -> Warlock
+Druid -> Druid/Shaman Caster
+
+Barbarian -> Warrior DPS
+KC -> Warrior Tank
+TG -> Paladin
+GoN -> Shaman Melee
+SW -> Warrior Tank
+
+Ranger -> Hunter
+Assassin -> Rogue
+Warlord -> Warrior DPS
+
+3 Skill Types
+Priest: Ligth, Dark, Passives
+Druid: Transform, Heals, Nukes
+Warrior: Tank, DPS, 2hand/DW/Shield
+Paladin: Tank, Heal, DPS
+Shaman: Physical, Elemental, Healer
+
+Pure Damage classes
+Hunter: Pets, Ranged, Traps/Utility
+Rogue: Poison, Physical, Passives
+Warlock: Nuke, Summons, Debuffs
+Mage: Fire, Ice, Utility
+
+Flash Skill Tree concepts
+
+	* 6 Active Skills top, rotations
+	* Passive components to actives?
+	* Be able to swap specs easily
+	* 3 Starting abilities+Class Skill?
+	* There are 3 main types of abilities: Actives, Passives, and Upgrades which replace an Active/Passive with a new improved effect (a new ability, possibly more than 1 but Upgrade B includes A if its a requirement in the tree)
+

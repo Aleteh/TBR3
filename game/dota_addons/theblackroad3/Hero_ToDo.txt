@@ -1,0 +1,41 @@
+https://sites.google.com/site/theblackroad13x/
+- Heroes -
+Update your progress as you go, and write if you need a hand!
+
+	==General==
+		- Find and fix all occurrences of TODO
+		- Review all tooltips
+		- Define Class Skill for all heroes
+		- Define alternative journeyman and ultimate spells for every hero
+
+	==Agility==
+	> Assassin
+
+	> Ranger
+		- Fix projectile particles
+
+	> Warlord
+		- Fix Animations
+
+	==Strength==
+	> Khaos Champion
+
+	> Guardian of Nature
+
+	> Barbarian
+
+	> Temple Guardian
+		- Finish Warrior class restriction
+		
+	> Spartan Warrior
+
+	==Intellect==	
+	> Cleric
+
+	> Druid
+		- Change call storm behavior
+		
+	> Warlock
+		
+	> Magician
+		- Fix Animations
