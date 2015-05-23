@@ -139,7 +139,7 @@ end
 function GetAreaCreepList( areaName )
 	if areaName == "DemonArea" then
 		return GameMode.DemonAreaCreeps
-	if areaName == "GoblinArea" then
+	elseif areaName == "GoblinArea" then
 		return GameMode.GoblinAreaCreeps
 	elseif areaName == "BlackGoblinArea" then
 		return GameMode.BlackGoblinAreaCreeps
