@@ -137,6 +137,8 @@ end
 
 -- returns the list in which the creeps of the area are stored
 function GetAreaCreepList( areaName )
+	if areaName == "DemonArea" then
+		return GameMode.DemonAreaCreeps
 	if areaName == "GoblinArea" then
 		return GameMode.GoblinAreaCreeps
 	elseif areaName == "BlackGoblinArea" then
@@ -149,6 +151,15 @@ end
 -- Gives a new position from the available for that type of creature
 function GetFreePositionInAreaFor( areaName, unitName )
 	print("Finding free position in ",areaName," for ",unitName)
+	if areaName == "DemonArea" then
+		if unitName == "npc_demon_imp" then
+			return GetEmptyPosition(GameMode.goblin_spawnLocations)
+		elseif unitName == "npc_demon_hound"
+			return GetEmptyPosition(GameMode.demon_hound_spawnLocations)
+		elseif unitName == "npc_demon_fire"
+			return GetEmptyPosition(GameMode.demon_fire_spawnLocations)
+		elseif unitName == "npc_forest_bear"
+			return GetEmptyPosition(GameMode.forest_bear_spawnLocations)
 	if areaName == "GoblinArea" then
 		if unitName == "npc_goblin" then
 			return GetEmptyPosition(GameMode.goblin_spawnLocations)
