@@ -160,6 +160,7 @@ function GetFreePositionInAreaFor( areaName, unitName )
 			return GetEmptyPosition(GameMode.demon_fire_spawnLocations)
 		elseif unitName == "npc_forest_bear" then
 			return GetEmptyPosition(GameMode.forest_bear_spawnLocations)
+		end
 	if areaName == "GoblinArea" then
 		if unitName == "npc_goblin" then
 			return GetEmptyPosition(GameMode.goblin_spawnLocations)
