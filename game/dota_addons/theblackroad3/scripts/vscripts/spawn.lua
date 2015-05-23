@@ -153,7 +153,7 @@ function GetFreePositionInAreaFor( areaName, unitName )
 	print("Finding free position in ",areaName," for ",unitName)
 	if areaName == "DemonArea" then
 		if unitName == "npc_demon_imp" then
-			return GetEmptyPosition(GameMode.goblin_spawnLocations)
+			return GetEmptyPosition(GameMode.demon_imp_spawnLocations)
 		elseif unitName == "npc_demon_hound" then
 			return GetEmptyPosition(GameMode.demon_hound_spawnLocations)
 		elseif unitName == "npc_demon_fire" then
