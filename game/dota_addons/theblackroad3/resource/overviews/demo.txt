@@ -1,8 +1,0 @@
-demo
-{
-	material materials/overviews/demo.vmat
-	pos_x -8340
-	pos_y 8352
-	scale 16.313
-}
-
