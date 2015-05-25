@@ -21,13 +21,25 @@
 	}
 	
 	// Stat collection
-	"stat_collection_part"
+
+    "stat_collection_steamID" //Note this one event will power both StatsCollectionAchievments, StatsCollectionRPG aswell as StatsCollectionHighscores
+    {
+        "ids"           "string"
+    }
+
+	// End Stat Collection
+
+	"rpg_save"
 	{
-		"data"          "string"
+		"player_ID"		"short"
+		"hero_ID"		"short"
+		"hero_level"	"short"
+		"hero_items"	"string"
 	}
 
-	"stat_collection_send"
+	"rpg_load"
 	{
+		"player_ID"		"short"
+		"hero_ID"		"short"
 	}
-	
 }

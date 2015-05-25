@@ -35,11 +35,67 @@ package {
 			
 			//this.myResource.setMaterials("322"); //TEST
 			
+			//Listeners
+			this.gameAPI.SubscribeToGameEvent("rpg_load", this.loadPlayerData);
+			this.gameAPI.SubscribeToGameEvent("rpg_save", this.savePlayerData);
+			
 			//this is not needed, but it shows you your UI has loaded (needs 'scaleform_spew 1' in console)
 			trace("Custom UI loaded!");
 		}
 		
-		//this handles the resizes - credits to Nullscope
+		public function loadPlayerData(args:Object) : void {
+			trace("[RPG]Starting to Load Player Data");
+			
+			// Get the player save for his heroID (if there is one)
+			var pID:int = globals.Players.GetLocalPlayer();
+			if (args.player_ID == pID) {
+				trace("[RPG]Calling GetSave for player "+pID+" of heroID "+args.hero_ID);
+				globals.Loader_StatsCollectionRPG.movieClip.GetSave('07dac9699d6c9b7442f8ee7c18c18126', args.hero_ID, playerDataCallback);
+			}
+
+			trace("#[RPG]Finished Loading Player Data ");
+		}
+		
+		// With the acquired string we'll send the info back to lua??
+		public function playerDataCallback(jsonData:Object) : void {
+			trace("[RPG]playerDataCallback");
+			
+			for (var info in jsonData) {
+				trace("jsonData." + info + " = " + jsonData[info]);
+			}
+			
+			var pID:int = globals.Players.GetLocalPlayer();
+			var hero_level:int = jsonData["hero_level"];
+			var hero_items:String = jsonData["hero_items"];
+			
+			var command:String = "Load "+pID+" "+hero_level+" "+hero_items;
+			this.gameAPI.SendServerCommand(command);
+			trace("[RPG]SendServerCommand "+command);			
+			trace("[RPG]End playerDataCallback");
+		}
+		
+		public function savePlayerData(args:Object) : void {
+			trace("[RPG]Saving Player Data");
+			
+			// args.hero_level has a single value
+			// args.hero_items has item0,item1,item2,empty,item4,empty
+			
+			var pID:int = globals.Players.GetLocalPlayer();
+			if (args.player_ID == pID) {
+				globals.Loader_StatsCollectionRPG.movieClip.SaveData('07dac9699d6c9b7442f8ee7c18c18126', args.hero_ID, {"hero_level":args.hero_level,"hero_items":args.hero_items}, "Save1", saveDataCallback);
+			}
+		}
+		
+		public function saveDataCallback(success:Boolean) {
+			if (success) {
+				trace("[RPG]Successfully saved the data for the player");
+			}
+			else{
+				trace("[RPG]Something went wrong, save failed");
+			}
+		}
+		
+		//this handles the resizes
 		public function onResize(re:ResizeManager) : * {
 			var rm = Globals.instance.resizeManager;
 			var currentRatio:Number =  re.ScreenWidth / re.ScreenHeight;

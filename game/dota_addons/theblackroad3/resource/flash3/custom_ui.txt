@@ -15,7 +15,11 @@
 		"File"		"CustomError"
 		"Depth"		"50"
 	}
-	
+	"3"
+	{
+		"File"      "StatsCollectionRPG"
+		"Depth"		"1"
+	}
 }
 
 // =============================================

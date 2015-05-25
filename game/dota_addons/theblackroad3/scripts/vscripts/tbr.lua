@@ -300,7 +300,7 @@ function GameMode:OnHeroInGame(hero)
 	--local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
 	--hero:AddItem(item)
 
-	local item = CreateItem("item_ares_bloodthirsty_spear_recipe", hero, hero)
+	--[[local item = CreateItem("item_ares_bloodthirsty_spear_recipe", hero, hero)
 	Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
 
 	local item = CreateItem("item_blade_of_ares", hero, hero)
@@ -313,7 +313,7 @@ function GameMode:OnHeroInGame(hero)
 	hero:AddItem(item)
 
 	local item = CreateItem("item_heartstone_ring_of_agility", hero, hero)
-	hero:AddItem(item)
+	hero:AddItem(item)]]
 
 	--[[local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
 	hero:AddItem(item)]]
@@ -386,17 +386,19 @@ function AdjustWarriorClassMana( hero )
 			hero:SetBaseManaRegen( (0.06 * heroLevel + 0.6) + 0.75)
 		else 
 			print("ERROR, Not a Warrior Class")
+			return
 		end
 		print(hero.class.." mana regen adjusted to ".. hero:GetConstantBasedManaRegen() )
 	end)
 end
 
 function GameMode:IsWarriorClass(hero)
-	if hero.class == "barbarian" or hero.class == "warlord" or hero.class == "khaos_champion" or hero.class == "assassin" then
-		return true
-	else
-		return false
+	if hero.class then
+		if hero.class == "barbarian" or hero.class == "warlord" or hero.class == "khaos_champion" or hero.class == "assassin" then
+			return true
+		end
 	end
+	return false
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive operations here
@@ -553,8 +555,38 @@ function GameMode:OnPlayerLevelUp(keys)
 	hero:SetHealth(hero:GetMaxHealth())
 	hero:SetMana(hero:GetMaxMana())
 
-	AdjustWarriorClassMana(hero)
+	if GameMode:IsWarriorClass(hero) then
+		AdjustWarriorClassMana(hero)
+	end
 
+	-- Stat RPG Save
+	-- Still need to decide when to save, currently its just on levelup for testing
+	if not GameRules.LOADING then
+		for pID = 0, DOTA_MAX_PLAYERS-1 do
+	    	if PlayerResource:IsValidPlayer(pID) then
+				local hero = PlayerResource:GetSelectedHeroEntity( pID )
+				local hID = PlayerResource:GetSelectedHeroID( pID )
+				local level = hero:GetLevel()
+
+				-- Go through the inventory
+				local items = ""
+				for i=0,5 do
+					local item_i = hero:GetItemInSlot(i)
+					if item_i then
+						item_name = item_i:GetAbilityName()
+					else
+						item_name = "empty"
+					end
+					items = items..item_name
+					if i<5 then
+						items = items..","
+					end
+				end
+				print("FireGameEvent(rpg_save, {"..pID,hID,level,items.."}")
+				FireGameEvent( 'rpg_save', { player_ID = pID, hero_ID = hID, hero_level = level, hero_items = items})
+			end
+		end
+	end
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -696,6 +728,20 @@ end
 --This function is called once and only once after all players have loaded into the game, right as the hero selection time begins.
 function GameMode:OnAllPlayersLoaded()
 	print("[TBR] All Players have loaded into the game")
+
+	-- Stats Collection (RPG, Highscores, Achievements)
+	-- This is for Flash to know its steamID
+	j = {}
+	for i=0,9 do
+	    j[i+1] = tostring(PlayerResource:GetSteamAccountID(i))
+	end
+	local result = table.concat(j, ",")
+	j = {ids=result}
+	print("FireGameEvent(stat_collection_steamID, {",j,"})")
+	DeepPrintTable(j)
+	FireGameEvent("stat_collection_steamID", j)
+
+	GameRules.LOADING = false
 end
 
 -- The overall game state has changed
@@ -843,6 +889,12 @@ function GameMode:OnPlayerPicked( event )
 	local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
 	-- Apply timer to update stats
 	GameMode:ModifyStatBonuses(spawnedUnitIndex)
+
+	-- StatRPG Load
+	local pID = spawnedUnitIndex:GetPlayerID()
+	local hID = PlayerResource:GetSelectedHeroID( pID )
+	print("FireGameEvent('rpg_load', {"..pID.."})")
+	FireGameEvent( 'rpg_load', { player_ID = pID , hero_ID = hID})
 end
 
 -- A channelled ability finished by either completing or being interrupted
@@ -1114,7 +1166,58 @@ function SpawnBank()
 		bank:AddItem(newItem)
 end
 
+-- Lua pls
+function split(inputstr, sep)
+    if sep == nil then
+            sep = "%s"
+    end
+    local t={} ; i=1
+    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+            t[i] = str
+            i = i + 1
+    end
+    return t
+end
+
 -- Flash UI
+-- Load RPG Command.
+Convars:RegisterCommand( "Load", function(name, player_ID, hero_level, hero_items)
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        return GameMode:LoadPlayer( cmdPlayer , tonumber(player_ID), tonumber(hero_level), hero_items )
+    end
+end, "Load GDS RPG", 0 )
+
+-- Will need to ask for validation through another flash event to prevent loading shit manually
+function GameMode:LoadPlayer( player, player_ID, hero_level, hero_items )
+	print("============")
+	print("Player ID: "..player_ID)
+	print("Hero ID: "..PlayerResource:GetSelectedHeroID( player_ID ))
+	print("Hero Level: "..hero_level)
+	print("Hero Items: ")
+	local items = split(hero_items, ",")
+	DeepPrintTable(items)
+
+	-- Load the values
+	local hero = player:GetAssignedHero()
+	GameRules.LOADING = true -- Doing this temporarily to prevent OnPlayerGainedLevel from saving while we still haven't loaded everything
+
+	hero:AddExperience(XP_PER_LEVEL_TABLE[hero_level], false, false)
+	print("Added "..XP_PER_LEVEL_TABLE[hero_level].. " XP to put the player at level "..hero_level)
+
+	for _,item_name in pairs(items) do
+		if item_name ~= "empty" then
+			local newItem = CreateItem(item_name, hero, hero)
+			hero:AddItem(newItem)
+			newItem = nil
+			print("Added "..item_name.." to this player")
+		end
+	end
+	GameRules.LOADING = false
+	print("============")
+end
+
+
 -- register the 'AllocateStats' command in our console
 Convars:RegisterCommand( "AllocateStats", function(name, p)
     --get the player that sent the command
