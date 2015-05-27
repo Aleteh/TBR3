@@ -41,6 +41,7 @@
 		"INT_points"    "short"
 		"unspent_points" "short"
 		"hero_items"    "string"
+		"ability_levels" "string"
 	}
 
 	"rpg_load"

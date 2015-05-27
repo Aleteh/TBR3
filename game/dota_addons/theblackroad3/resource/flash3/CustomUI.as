@@ -73,8 +73,9 @@ package {
 			var INT_points:int = jsonData["INT_points"];
 			var unspent_points:int = jsonData["unspent_points"];
 			var hero_items:String = jsonData["hero_items"];
+			var ability_levels:String = jsonData["ability_levels"];
 			
-			var command:String = "Load "+pID+" "+hero_XP+" "+gold+" "+materials+" "+STR_points+" "+AGI_points+" "+INT_points+" "+unspent_points+" "+hero_items;
+			var command:String = "Load "+pID+" "+hero_XP+" "+gold+" "+materials+" "+STR_points+" "+AGI_points+" "+INT_points+" "+unspent_points+" "+hero_items+" "+ability_levels;
 			this.gameAPI.SendServerCommand(command);
 			trace("[RPG]SendServerCommand "+command);			
 			trace("[RPG]End playerDataCallback");
@@ -96,7 +97,8 @@ package {
 						"AGI_points":args.AGI_points,
 						"INT_points":args.INT_points,
 						"unspent_points":args.unspent_points,
-					  	"hero_items":args.hero_items }, "Save1", saveDataCallback);
+					  	"hero_items":args.hero_items,
+					  	"ability_levels":args.ability_levels }, "Save1", saveDataCallback);
 			}
 		}
 		

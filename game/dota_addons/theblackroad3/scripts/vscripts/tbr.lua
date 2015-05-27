@@ -43,7 +43,7 @@ USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom
 MAX_LEVEL = 200                          -- What level should we let heroes get to?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
-AUTOSAVE_INTERVAL = 300 				-- The time between RPGSave() commands. OnPlayerLevelUp and OnPlayerDisconnect also sends a save
+AUTOSAVE_INTERVAL = 10 				-- The time between RPGSave() commands. OnPlayerLevelUp and OnPlayerDisconnect also sends a save
 
 if GameMode == nil then
 	GameMode = class({})
@@ -707,12 +707,6 @@ end
 function GameMode:OnFirstPlayerLoaded()
 	print("[TBR] First Player has loaded")
 
-	-- Apparently you can be level 10 after doing AddExperience and this will still fucking return 0 so... we gotta keep a private track of this shit
-	Timers:CreateTimer(1,function()
-		local hero = PlayerResource:GetSelectedHeroEntity(0)
-		if hero then print("hero.XP:",hero.XP) end
-		return 1
-	end)
 end
 
 --This function is called once and only once after all players have loaded into the game, right as the hero selection time begins.
@@ -1166,16 +1160,16 @@ end
 
 -- Flash UI
 -- Load RPG Command.
-Convars:RegisterCommand( "Load", function(name, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items)
+Convars:RegisterCommand( "Load", function(name, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items, ability_levels)
     local cmdPlayer = Convars:GetCommandClient()
     if cmdPlayer then 
         return GameMode:LoadPlayer( cmdPlayer , tonumber(player_ID), tonumber(hero_XP), tonumber(gold), tonumber(materials), 
-        										tonumber(STR_points), tonumber(AGI_points), tonumber(INT_points), tonumber(unspent_points), hero_items )
+        										tonumber(STR_points), tonumber(AGI_points), tonumber(INT_points), tonumber(unspent_points), hero_items, ability_levels )
     end
 end, "Load GDS RPG", 0 )
 
 -- Will need to ask for validation through another flash event to prevent loading shit manually
-function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items )
+function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items, ability_levels )
 	print("============")
 	print("Player ID: "..player_ID)
 	print("Hero ID: "..PlayerResource:GetSelectedHeroID( player_ID ))
@@ -1184,6 +1178,7 @@ function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_p
 	print("Stat Points-> STR: "..STR_points.."  AGI: "..AGI_points.."  INT: "..INT_points)
 	print("Unspent Skill Points: "..unspent_points)
 	print("Hero Items: "..hero_items)
+	print("Ability Levels: "..ability_levels)
 
 	-- Load the values
 	local hero = player:GetAssignedHero()
@@ -1207,6 +1202,16 @@ function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_p
 			hero:AddItem(newItem)
 			newItem = nil
 			print("Added "..item_name.." to this player")
+		end
+	end
+
+	local levels = split(ability_levels, ",")
+	DeepPrintTable(levels)
+	for k,level in pairs(levels) do
+		local ability = hero:GetAbilityByIndex(k-1)
+		if ability then
+			ability:SetLevel(tonumber(level))
+			print("Set Level "..level.." on ability "..k..":"..ability:GetAbilityName())
 		end
 	end
 	GameRules.LOADING = false
