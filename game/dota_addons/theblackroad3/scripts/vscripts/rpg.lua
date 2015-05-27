@@ -7,7 +7,7 @@ function RPGSave()
 				local hero = PlayerResource:GetSelectedHeroEntity( pID )
 				if hero then
 					local hID = PlayerResource:GetSelectedHeroID( pID )		
-					local XP = hero.XP
+					local XP = PlayerResource:GetTotalEarnedXP( pID )
 					
 					-- Resources Gold and Materials
 					local gold = PlayerResource:GetGold( pID )

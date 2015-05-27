@@ -308,9 +308,6 @@ function GameMode:OnHeroInGame(hero)
 	hero.AGI = 0
 	hero.INT = 0
 
-	-- Initialize xp tracking
-	hero.XP = 0
-
 	-- Initialize custom resources
 	hero.materials = 0
 
@@ -613,8 +610,7 @@ function GameMode:OnEntityKilled( keys )
 		local heroesNearby = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, killedUnit:GetOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
 		for _,hero in pairs(heroesNearby) do
 			if hero:IsRealHero() then
-				hero:AddExperience(math.floor(xp), false, false)
-				hero.XP = hero.XP + xp
+				hero:AddExperience(math.floor(xp), false, true)
 			end
 		end
 
@@ -1184,8 +1180,7 @@ function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_p
 	local hero = player:GetAssignedHero()
 	GameRules.LOADING = true -- Doing this temporarily to prevent OnPlayerGainedLevel from saving while we still haven't loaded everything
 
-	hero:AddExperience(hero_XP, false, false)
-	hero.XP = hero_XP
+	hero:AddExperience(hero_XP, false, true)
 	print("Added "..hero_XP.. " XP to put the player at level "..hero:GetLevel())
 
 	hero:SetGold(gold, false)
