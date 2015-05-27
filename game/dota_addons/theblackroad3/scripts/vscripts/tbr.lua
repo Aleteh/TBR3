@@ -43,6 +43,8 @@ USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom
 MAX_LEVEL = 200                          -- What level should we let heroes get to?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
+AUTOSAVE_INTERVAL = 300 				-- The time between RPGSave() commands. OnPlayerLevelUp and OnPlayerDisconnect also sends a save
+
 if GameMode == nil then
 	GameMode = class({})
 end
@@ -90,6 +92,7 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameMode, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameMode, 'OnPlayerLearnedAbility'), self)
 	ListenToGameEvent( 'dota_player_pick_hero', Dynamic_Wrap( GameMode, 'OnPlayerPicked' ), self )
+	ListenToGameEvent('player_disconnect', Dynamic_Wrap(GameMode, 'OnDisconnect'), self)
 
 	--[[ Possible Use	
 	ListenToGameEvent('entity_hurt', Dynamic_Wrap(GameMode, 'OnEntityHurt'), self)
@@ -101,7 +104,6 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('tree_cut', Dynamic_Wrap(GameMode, 'OnTreeCut'), self)
 	ListenToGameEvent('dota_rune_activated_server', Dynamic_Wrap(GameMode, 'OnRuneActivated'), self)
 	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameMode, 'OnAbilityChannelFinished'), self)
-	ListenToGameEvent('player_disconnect', Dynamic_Wrap(GameMode, 'OnDisconnect'), self)
 	]]
 
 	-- Change random seed
@@ -122,6 +124,14 @@ function GameMode:InitGameMode()
 	self.bSeenWaitForPlayers = false
 
 	self.nPlayerCount = 0
+
+	-- SaveRPG Thinker
+	Timers:CreateTimer("SaveRPGThink", { 
+		endTime = AUTOSAVE_INTERVAL,
+		callback = function()
+			RPGSave()
+			return AUTOSAVE_INTERVAL		
+		end })
 
 	-- Spawn Locations and Area Activations
 
@@ -287,11 +297,19 @@ function GameMode:OnHeroInGame(hero)
 	print(self.nPlayerCount)
 
 	-- Starting Gold
-	hero:SetGold(322, false)
+	hero:SetGold(0, false)
 
 	-- Initialize custom stats
 	hero.spellPower = 0
 	hero.healingPower = 0
+
+	-- Initialize stat allocation
+	hero.STR = 0
+	hero.AGI = 0
+	hero.INT = 0
+
+	-- Initialize xp tracking
+	hero.XP = 0
 
 	-- Initialize custom resources
 	hero.materials = 0
@@ -299,24 +317,6 @@ function GameMode:OnHeroInGame(hero)
 	-- Give Item
 	--local item = CreateItem("item_searing_flame_of_prometheus", hero, hero)
 	--hero:AddItem(item)
-
-	--[[local item = CreateItem("item_ares_bloodthirsty_spear_recipe", hero, hero)
-	Timers:CreateTimer(1,function() CreateItemOnPositionSync(hero:GetAbsOrigin()+RandomVector(100), item) end )
-
-	local item = CreateItem("item_blade_of_ares", hero, hero)
-	hero:AddItem(item)
-
-	local item = CreateItem("item_shadow_blade", hero, hero)
-	hero:AddItem(item)
-
-	local item = CreateItem("item_burning_hand_of_the_war_god", hero, hero)
-	hero:AddItem(item)
-
-	local item = CreateItem("item_heartstone_ring_of_agility", hero, hero)
-	hero:AddItem(item)]]
-
-	--[[local item = CreateItem("item_blazing_sword_of_helios", hero, hero)
-	hero:AddItem(item)]]
 
 	--Abilities
 	local abil1 = hero:GetAbilityByIndex(0)
@@ -369,6 +369,9 @@ function GameMode:OnHeroInGame(hero)
 
 	-- Profession placeholder
 	hero.profession = "None"
+
+	-- Stat RPG Load
+	RPGLoad(hero)
 
 end
 
@@ -559,34 +562,8 @@ function GameMode:OnPlayerLevelUp(keys)
 		AdjustWarriorClassMana(hero)
 	end
 
-	-- Stat RPG Save
-	-- Still need to decide when to save, currently its just on levelup for testing
-	if not GameRules.LOADING then
-		for pID = 0, DOTA_MAX_PLAYERS-1 do
-	    	if PlayerResource:IsValidPlayer(pID) then
-				local hero = PlayerResource:GetSelectedHeroEntity( pID )
-				local hID = PlayerResource:GetSelectedHeroID( pID )
-				local level = hero:GetLevel()
-
-				-- Go through the inventory
-				local items = ""
-				for i=0,5 do
-					local item_i = hero:GetItemInSlot(i)
-					if item_i then
-						item_name = item_i:GetAbilityName()
-					else
-						item_name = "empty"
-					end
-					items = items..item_name
-					if i<5 then
-						items = items..","
-					end
-				end
-				print("FireGameEvent(rpg_save, {"..pID,hID,level,items.."}")
-				FireGameEvent( 'rpg_save', { player_ID = pID, hero_ID = hID, hero_level = level, hero_items = items})
-			end
-		end
-	end
+	-- Save all players
+	RPGSave()
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -616,7 +593,6 @@ function GameMode:OnEntityKilled( keys )
 	end
 
 	if killedUnit and ( killedUnit:GetTeamNumber()==DOTA_TEAM_NEUTRALS or killedUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) and killedUnit:IsCreature() then
-
 		-- Item Drops
 		RollDrops(killedUnit)
 
@@ -631,11 +607,14 @@ function GameMode:OnEntityKilled( keys )
 		--Popup Gold
 		PopupGoldGain(killedUnit,GameMode:GetBountyFor(unitName))
 
+		print("Killed Creature, XP gain: "..xp)
+
 		-- Grant XP in AoE
 		local heroesNearby = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, killedUnit:GetOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
 		for _,hero in pairs(heroesNearby) do
 			if hero:IsRealHero() then
 				hero:AddExperience(math.floor(xp), false, false)
+				hero.XP = hero.XP + xp
 			end
 		end
 
@@ -692,12 +671,16 @@ function RollDrops(unit)
                 if RollPercentage(chance) then
                     print("Creating "..item_name)
                     local item = CreateItem(item_name, nil, nil)
-                    item:SetPurchaseTime(0)
-                    --item:SetCurrentCharges(1)
-					local pos = unit:GetAbsOrigin()
-					local drop = CreateItemOnPositionSync( pos, item )
-					local pos_launch = pos+RandomVector(RandomFloat(150,200))
-					item:LaunchLoot(false, 200, 0.75, pos_launch)
+                    if item then
+	                    item:SetPurchaseTime(0)
+	                    --item:SetCurrentCharges(1)
+						local pos = unit:GetAbsOrigin()
+						local drop = CreateItemOnPositionSync( pos, item )
+						local pos_launch = pos+RandomVector(RandomFloat(150,200))
+						item:LaunchLoot(false, 200, 0.75, pos_launch)
+					else
+						print("WARNING: Item couldn't be created, probably doesn't exist an item with the name '"..item_name.."'")
+					end
                 end
             end
         end
@@ -723,6 +706,13 @@ end
 --This function is called once and only once as soon as the first player (almost certain to be the server in local lobbies) loads in.
 function GameMode:OnFirstPlayerLoaded()
 	print("[TBR] First Player has loaded")
+
+	-- Apparently you can be level 10 after doing AddExperience and this will still fucking return 0 so... we gotta keep a private track of this shit
+	Timers:CreateTimer(1,function()
+		local hero = PlayerResource:GetSelectedHeroEntity(0)
+		if hero then print("hero.XP:",hero.XP) end
+		return 1
+	end)
 end
 
 --This function is called once and only once after all players have loaded into the game, right as the hero selection time begins.
@@ -801,6 +791,7 @@ function GameMode:OnDisconnect(keys)
 	local reason = keys.reason
 	local userid = keys.userid
 
+	RPGSave()
 end
 
 -- A player has reconnected to the game.  
@@ -889,12 +880,6 @@ function GameMode:OnPlayerPicked( event )
 	local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
 	-- Apply timer to update stats
 	GameMode:ModifyStatBonuses(spawnedUnitIndex)
-
-	-- StatRPG Load
-	local pID = spawnedUnitIndex:GetPlayerID()
-	local hID = PlayerResource:GetSelectedHeroID( pID )
-	print("FireGameEvent('rpg_load', {"..pID.."})")
-	FireGameEvent( 'rpg_load', { player_ID = pID , hero_ID = hID})
 end
 
 -- A channelled ability finished by either completing or being interrupted
@@ -1181,30 +1166,41 @@ end
 
 -- Flash UI
 -- Load RPG Command.
-Convars:RegisterCommand( "Load", function(name, player_ID, hero_level, hero_items)
+Convars:RegisterCommand( "Load", function(name, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items)
     local cmdPlayer = Convars:GetCommandClient()
     if cmdPlayer then 
-        return GameMode:LoadPlayer( cmdPlayer , tonumber(player_ID), tonumber(hero_level), hero_items )
+        return GameMode:LoadPlayer( cmdPlayer , tonumber(player_ID), tonumber(hero_XP), tonumber(gold), tonumber(materials), 
+        										tonumber(STR_points), tonumber(AGI_points), tonumber(INT_points), tonumber(unspent_points), hero_items )
     end
 end, "Load GDS RPG", 0 )
 
 -- Will need to ask for validation through another flash event to prevent loading shit manually
-function GameMode:LoadPlayer( player, player_ID, hero_level, hero_items )
+function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items )
 	print("============")
 	print("Player ID: "..player_ID)
 	print("Hero ID: "..PlayerResource:GetSelectedHeroID( player_ID ))
-	print("Hero Level: "..hero_level)
-	print("Hero Items: ")
-	local items = split(hero_items, ",")
-	DeepPrintTable(items)
+	print("Hero XP: "..hero_XP)
+	print("Resources-> Gold: "..gold.."  Materials: "..materials)
+	print("Stat Points-> STR: "..STR_points.."  AGI: "..AGI_points.."  INT: "..INT_points)
+	print("Unspent Skill Points: "..unspent_points)
+	print("Hero Items: "..hero_items)
 
 	-- Load the values
 	local hero = player:GetAssignedHero()
 	GameRules.LOADING = true -- Doing this temporarily to prevent OnPlayerGainedLevel from saving while we still haven't loaded everything
 
-	hero:AddExperience(XP_PER_LEVEL_TABLE[hero_level], false, false)
-	print("Added "..XP_PER_LEVEL_TABLE[hero_level].. " XP to put the player at level "..hero_level)
+	hero:AddExperience(hero_XP, false, false)
+	hero.XP = hero_XP
+	print("Added "..hero_XP.. " XP to put the player at level "..hero:GetLevel())
 
+	hero:SetGold(gold, false)
+	--SetMaterials(hero, materials)
+	hero:ModifyStrength(STR_points)
+	hero:ModifyAgility(AGI_points)
+	hero:ModifyIntellect(INT_points)
+	hero:SetAbilityPoints(unspent_points)
+
+	local items = split(hero_items, ",")
 	for _,item_name in pairs(items) do
 		if item_name ~= "empty" then
 			local newItem = CreateItem(item_name, hero, hero)
@@ -1247,12 +1243,15 @@ function GameMode:ModifyStats( player, p )
         --give the corresponding stat point
         if p=="str" then
 	        hero:ModifyStrength(1)
+	        hero.STR = hero.STR + 1
 	        print("+1 STR Allocated")
 	    elseif p=="agi" then
 	    	hero:ModifyAgility(1)
+	    	hero.AGI = hero.AGI + 1
 	        print("+1 AGI Allocated")
 	    elseif p=="int" then
 	    	hero:ModifyIntellect(1)
+	    	hero.INT = hero.INT + 1
 	        print("+1 INT Allocated")
 	    end
     end

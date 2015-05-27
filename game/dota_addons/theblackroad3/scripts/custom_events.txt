@@ -31,15 +31,21 @@
 
 	"rpg_save"
 	{
-		"player_ID"		"short"
-		"hero_ID"		"short"
-		"hero_level"	"short"
-		"hero_items"	"string"
+		"player_ID"     "short"
+		"save_ID"       "short"
+		"hero_XP"       "short"
+		"gold"          "short"
+		"materials"     "short"
+		"STR_points"    "short"
+		"AGI_points"    "short"
+		"INT_points"    "short"
+		"unspent_points" "short"
+		"hero_items"    "string"
 	}
 
 	"rpg_load"
 	{
-		"player_ID"		"short"
-		"hero_ID"		"short"
+		"player_ID"     "short"
+		"save_ID"       "short"
 	}
 }

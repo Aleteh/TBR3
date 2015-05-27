@@ -49,8 +49,8 @@ package {
 			// Get the player save for his heroID (if there is one)
 			var pID:int = globals.Players.GetLocalPlayer();
 			if (args.player_ID == pID) {
-				trace("[RPG]Calling GetSave for player "+pID+" of heroID "+args.hero_ID);
-				globals.Loader_StatsCollectionRPG.movieClip.GetSave('07dac9699d6c9b7442f8ee7c18c18126', args.hero_ID, playerDataCallback);
+				trace("[RPG]Calling GetSave for player "+pID+" of heroID "+args.save_ID);
+				globals.Loader_StatsCollectionRPG.movieClip.GetSave('07dac9699d6c9b7442f8ee7c18c18126', args.save_ID, playerDataCallback);
 			}
 
 			trace("#[RPG]Finished Loading Player Data ");
@@ -65,10 +65,16 @@ package {
 			}
 			
 			var pID:int = globals.Players.GetLocalPlayer();
-			var hero_level:int = jsonData["hero_level"];
+			var hero_XP:int = jsonData["hero_XP"];
+			var gold:int = jsonData["gold"];
+			var materials:int = jsonData["materials"];
+			var STR_points:int = jsonData["STR_points"];
+			var AGI_points:int = jsonData["AGI_points"];
+			var INT_points:int = jsonData["INT_points"];
+			var unspent_points:int = jsonData["unspent_points"];
 			var hero_items:String = jsonData["hero_items"];
 			
-			var command:String = "Load "+pID+" "+hero_level+" "+hero_items;
+			var command:String = "Load "+pID+" "+hero_XP+" "+gold+" "+materials+" "+STR_points+" "+AGI_points+" "+INT_points+" "+unspent_points+" "+hero_items;
 			this.gameAPI.SendServerCommand(command);
 			trace("[RPG]SendServerCommand "+command);			
 			trace("[RPG]End playerDataCallback");
@@ -82,7 +88,15 @@ package {
 			
 			var pID:int = globals.Players.GetLocalPlayer();
 			if (args.player_ID == pID) {
-				globals.Loader_StatsCollectionRPG.movieClip.SaveData('07dac9699d6c9b7442f8ee7c18c18126', args.hero_ID, {"hero_level":args.hero_level,"hero_items":args.hero_items}, "Save1", saveDataCallback);
+				globals.Loader_StatsCollectionRPG.movieClip.SaveData('07dac9699d6c9b7442f8ee7c18c18126', args.save_ID, 
+					{ 	"hero_XP":args.hero_XP,
+						"gold":args.gold,
+						"materials":args.materials,
+						"STR_points":args.STR_points,
+						"AGI_points":args.AGI_points,
+						"INT_points":args.INT_points,
+						"unspent_points":args.unspent_points,
+					  	"hero_items":args.hero_items }, "Save1", saveDataCallback);
 			}
 		}
 		

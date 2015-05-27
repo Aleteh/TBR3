@@ -10,6 +10,9 @@ game/dota_addons/theblackroad3/resource/overviews/*
 # Ignore all particles
 *.vpcf_c
 
+#Ignore all compiled mats
+*.vmat_c
+
 
 # Map Files
 *.vpk
