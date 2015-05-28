@@ -33,7 +33,7 @@
 	{
 		"player_ID"     "short"
 		"save_ID"       "short"
-		"hero_XP"       "short"
+		"hero_XP"       "long"
 		"gold"          "short"
 		"materials"     "short"
 		"STR_points"    "short"
