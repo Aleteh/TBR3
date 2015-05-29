@@ -43,7 +43,7 @@ USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom
 MAX_LEVEL = 200                          -- What level should we let heroes get to?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
-AUTOSAVE_INTERVAL = 10 				-- The time between RPGSave() commands. OnPlayerLevelUp and OnPlayerDisconnect also sends a save
+AUTOSAVE_INTERVAL = 60 				-- The time between RPGSave() commands. OnPlayerLevelUp and OnPlayerDisconnect also sends a save
 
 if GameMode == nil then
 	GameMode = class({})

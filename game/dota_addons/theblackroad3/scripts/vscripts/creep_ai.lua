@@ -2,6 +2,11 @@
 -- waypoint name format: unitName_waypoint
 
 function Spawn( entityKeyValues )
+	-- Don't roam specific units placed through hammer with the "guard" keyword
+	local entName = thisEntity:GetName()
+	if entName == "guard" then
+		return
+	end
 	thisEntity:SetContextThink( "roam_ai_think", RoamThink , 5)
 	print("Starting AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex())
 	thisEntity.state = "roam"
