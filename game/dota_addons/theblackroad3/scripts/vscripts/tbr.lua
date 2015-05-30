@@ -228,7 +228,7 @@ function GameMode:ReadGameConfiguration()
 	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
 	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
 
-	DeepPrintTable(GameRules.DropTable)
+	--DeepPrintTable(GameRules.DropTable)
 
 	-- separate in different lists to make it more manageable (not needed)
 	--[[self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )]]

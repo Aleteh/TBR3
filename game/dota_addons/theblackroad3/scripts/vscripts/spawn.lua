@@ -3,38 +3,41 @@
 
 function SpawnArea( trigger )
 	local areaName = trigger.caller:GetName()
+	local caller = trigger.caller
 	local activator = trigger.activator
 
-	if trigger:IsTouching(activator) and not IsAreaActive( areaName ) then
-		SetAreaActive( areaName, true )
-		
-		print("\n Spawning units of "..areaName.. "\n")
-		
-		-- initialize the table to store all the creeps in the area
-		InitializeCreepList( areaName )
+	Timers:CreateTimer(1, function() 
+		if caller:IsTouching(activator) and not IsAreaActive( areaName ) then
+			SetAreaActive( areaName, true )
+			
+			print("\n Spawning units of "..areaName.. "\n")
+			
+			-- initialize the table to store all the creeps in the area
+			InitializeCreepList( areaName )
 
-		-- Spawn Initial Units
-		local AreaInfoList = GameMode.SpawnInfoKV[ areaName ]
-		DeepPrintTable(AreaInfoList)
-		for k,v in pairs( AreaInfoList ) do
-			--v.Name is the unit to spawn
-			--v.MaxSpawn is how many
-			print("Spawning",v.MaxSpawn,k)
-			for i=1,v.MaxSpawn do
-				-- Get a spawn location for a particular unit
-				local spawnLocation = GetFreePositionInAreaFor(areaName,k)
+			-- Spawn Initial Units
+			local AreaInfoList = GameMode.SpawnInfoKV[ areaName ]
+			DeepPrintTable(AreaInfoList)
+			for k,v in pairs( AreaInfoList ) do
+				--v.Name is the unit to spawn
+				--v.MaxSpawn is how many
+				print("Spawning",v.MaxSpawn,k)
+				for i=1,v.MaxSpawn do
+					-- Get a spawn location for a particular unit
+					local spawnLocation = GetFreePositionInAreaFor(areaName,k)
 
-				if spawnLocation ~= nil then	
-					local unit = CreateUnitByName(k, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-					unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
-					unit.area = areaName -- set the area to respawn easier
-					table.insert( GetAreaCreepList(areaName) ,unit) -- store the unit in the area table
-				else
-					print("No spawn location found")
-				end
-			end	
-		end		
-	end
+					if spawnLocation ~= nil then	
+						local unit = CreateUnitByName(k, spawnLocation:GetOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+						unit:SetForwardVector(RandomVector(5000)) -- variate facing of the unit
+						unit.area = areaName -- set the area to respawn easier
+						table.insert( GetAreaCreepList(areaName) ,unit) -- store the unit in the area table
+					else
+						print("No spawn location found")
+					end
+				end	
+			end		
+		end
+	end)
 end
 
 -- called after all the heroes leave the area
@@ -42,9 +45,10 @@ function DespawnArea( trigger )
 	print("DespawnArea called")
 
 	local areaName = trigger.caller:GetName()
+	local caller = trigger.caller
 	local activator = trigger.activator
 
-	if not activator:IsTouching(trigger) and IsAreaActive( areaName ) then
+	if not caller:IsTouching(activator) and IsAreaActive( areaName ) then
 		SetAreaActive( areaName, false )
 		print("\n Despawning units of "..areaName.. " \n")
 
@@ -205,7 +209,7 @@ function GetEmptyPosition( list )
 			counter = counter+1
 			position = list[RandomInt(1, #list)]
 			nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetOrigin(),nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
-			print(nearbyUnits)
+			--print(nearbyUnits)
 		else
 			nearbyUnits = 0
 			print("Couldn't find empty position, returning random instead")
