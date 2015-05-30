@@ -47,8 +47,8 @@ function DespawnArea( trigger )
 		local creepsDeleted = 0
 		local creep_list = GetAreaCreepList( areaName )
 		for _,creep in pairs(creep_list) do
-			if creep ~= nil and creep:IsAlive() then 
-				UTIL_Remove(creep)
+			if IsValidEntity(creep) ~= nil and creep:IsAlive() then 
+				creep:RemoveSelf()
 				creepsDeleted = creepsDeleted+1
 			else print("Creep is not alive or has not respawned yet, ignoring.") end
 		end
