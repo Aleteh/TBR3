@@ -4,49 +4,6 @@
 	"Version"	"1"
 	
 	//=================================================================================	
-	// Creature: TBD
-	//=================================================================================
-	"npc_name"
-	{
-		"BaseClass"			"npc_dota_creature"	// All units will use this
-		"Model"				"models/items/invoker/forge_spirit/grievous_ingots/grievous_ingots.vmdl"			
-		"ModelScale"		"2"
-		"Level"						"100"
-		"Ability1"					""			// Ability 1-16, as many as needed
-		"ArmorPhysical"				"10"			
-		"MagicalResistance"			"0"			
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"	// This should take just the "main" attack of the wc3 unit, in case theres 2.
-		"AttackDamageMin"			"0"		// This next two values have to be calculated with the dice system
-		"AttackDamageMax"			"1"		// 
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical" //I think this is useless, the actual damage type goes on CombatClassAttack
-		"AttackRate"				"1"			// Speed of attack.
-		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"400"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			""			// Speed of projectile.
-		"BountyXP"					"8"		// Experience earn.
-		"BountyGoldMin"				"4"		// Gold earned min.
-		"BountyGoldMax"				"6"		// Gold earned max.
-		"StatusHealth"				"100000"		// Base health.
-		"StatusHealthRegen"			"0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
-		"TeamName"					"DOTA_TEAM_BADGUYS"						// This isn't really used when you spawn units with lua or hammer, can be removed
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"		// Attack damage type, I have a list to get the equivalents
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"		// Armor type
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"	// default
-		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"375"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.	
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"	
-		"HealthBarOffset"			"140"						// height where the unit health bar will be placed, doesn't matter for conversion
-	}
-
-
-	//=================================================================================	
 	// Demons Area
 	//=================================================================================
 	//		Demon Imp
@@ -89,8 +46,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"7"		// Damage range min.
-		"AttackDamageMax"			"8"		// Damage range max.
+		"AttackDamageMin"			"14"		// Damage range min.
+		"AttackDamageMax"			"16"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
@@ -127,14 +84,17 @@
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"375"									// Speed.
+		"MovementSpeed"				"270"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
 
 		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
+		//----------------------------------------------------------------
+
+		"vscripts"		"creep_ai.lua"
+
 		"Creature"
 		{
 			
@@ -181,8 +141,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"15"		// Damage range min.
-		"AttackDamageMax"			"18"		// Damage range max.	
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.	
 		"AttackRate"				"1.35"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
@@ -202,9 +162,10 @@
 		"BountyGoldMax"				"26"		// Gold earned max.
 
 		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"270"									// Speed.
+		"MovementTurnRate"			"0.5"
 
 		// Status
 		//----------------------------------------------------------------
@@ -227,7 +188,9 @@
 
 		
 		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
+		//----------------------------------------------------------------
+
+		"vscripts"		"creep_ai.lua"
 	}
 	
 	//=================================================================================	
@@ -264,8 +227,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"11"		// Damage range min.
-		"AttackDamageMax"			"13"		// Damage range max.	
+		"AttackDamageMin"			"22"		// Damage range min.
+		"AttackDamageMax"			"26"		// Damage range max.	
 		"AttackRate"				"1.35"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
@@ -285,9 +248,10 @@
 		"BountyGoldMax"				"26"		// Gold earned max.
 
 		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"270"									// Speed.
+		"MovementTurnRate"			"0.5"
 
 		// Status
 		//----------------------------------------------------------------
@@ -310,7 +274,9 @@
 
 		
 		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
+		//----------------------------------------------------------------
+
+		"vscripts"		"creep_ai.lua"
 	}
 
 	//=================================================================================
@@ -337,8 +303,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"18.0"
-		"AttackDamageMax"		"22.0"
+		"AttackDamageMin"		"36"
+		"AttackDamageMax"		"44"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.4"
@@ -380,6 +346,8 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------
+
+		"vscripts"		"creep_ai.lua"
 	}
 
 	//=================================================================================
@@ -407,8 +375,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"47.0"
-		"AttackDamageMax"		"61.0"
+		"AttackDamageMin"		"96"
+		"AttackDamageMax"		"122"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.3"

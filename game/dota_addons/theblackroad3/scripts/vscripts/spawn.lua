@@ -38,6 +38,8 @@ end
 
 -- called after all the heroes leave the area
 function DespawnArea( trigger )
+	print("DespawnArea called")
+
 	areaName = trigger.caller:GetName()
 
 	if IsAreaActive( areaName ) then
@@ -105,7 +107,9 @@ end
 
 -- returns whether the area is activate or not, that is, there are still players inside the area
 function IsAreaActive( areaName )
-	if areaName == "GoblinArea" then
+	if areaName == "DemonArea" then
+		return GameMode.DemonAreaActive
+	elseif areaName == "GoblinArea" then
 		return GameMode.GoblinAreaActive
 	elseif areaName == "BlackGoblinArea" then
 		return GameMode.BlackGoblinAreaActive
@@ -116,7 +120,9 @@ end
 
 -- sets the area active or inactive
 function SetAreaActive( areaName, bool )
-	if areaName == "GoblinArea" then
+	if areaName == "DemonArea" then
+		GameMode.DemonAreaActive = bool
+	elseif areaName == "GoblinArea" then
 		GameMode.GoblinAreaActive = bool
 	elseif areaName == "BlackGoblinArea" then
 		GameMode.BlackGoblinAreaActive = bool
@@ -126,7 +132,9 @@ function SetAreaActive( areaName, bool )
 end
 
 function InitializeCreepList( areaName )
-	if areaName == "GoblinArea" then
+	if areaName == "DemonArea" then
+		GameMode.DemonAreaCreeps = {}
+	elseif areaName == "GoblinArea" then
 		GameMode.GoblinAreaCreeps = {}
 	elseif areaName == "BlackGoblinArea" then
 		GameMode.BlackGoblinAreaCreeps = {}
