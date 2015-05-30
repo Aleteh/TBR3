@@ -5,7 +5,7 @@ function SpawnArea( trigger )
 	local areaName = trigger.caller:GetName()
 	local activator = trigger.activator
 
-	if activator:IsTouching(trigger) and not IsAreaActive( areaName ) then
+	if trigger:IsTouching(activator) and not IsAreaActive( areaName ) then
 		SetAreaActive( areaName, true )
 		
 		print("\n Spawning units of "..areaName.. "\n")
