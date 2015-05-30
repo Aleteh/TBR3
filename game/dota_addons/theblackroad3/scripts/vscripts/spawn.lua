@@ -2,9 +2,10 @@
 -- called when 1 hero enters an area
 
 function SpawnArea( trigger )
-	areaName = trigger.caller:GetName()
+	local areaName = trigger.caller:GetName()
+	local activator = trigger.activator
 
-	if not IsAreaActive( areaName ) then
+	if activator:IsTouching(trigger) and not IsAreaActive( areaName ) then
 		SetAreaActive( areaName, true )
 		
 		print("\n Spawning units of "..areaName.. "\n")
@@ -40,10 +41,11 @@ end
 function DespawnArea( trigger )
 	print("DespawnArea called")
 
-	areaName = trigger.caller:GetName()
+	local areaName = trigger.caller:GetName()
+	local activator = trigger.activator
 
-	if IsAreaActive( areaName ) then
-		SetAreaActive( areaName )
+	if not activator:IsTouching(trigger) and IsAreaActive( areaName ) then
+		SetAreaActive( areaName, false )
 		print("\n Despawning units of "..areaName.. " \n")
 
 		local creepsDeleted = 0
