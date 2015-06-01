@@ -1,0 +1,117 @@
+//=================================================================================================================
+// Guardian of Nature: Tremor
+//=================================================================================================================
+"guardianofnature_tremor"
+//Gives the guardian a 15% chance to do slam the ground on an attack causing xxxx damage to all enemies within a 250 AOE. 
+//Enemies outside that radius will suffer half damage.
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"guardian_of_nature_skill2"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityCastRange"				"250"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"chance"			"15"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"full_radius"			"250"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"half_radius"			"500"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"dmg"				"250 450 700 1000 1350 1600 2000 2300"
+		}
+	}
+	
+	"precache"
+	{
+		"particle" "particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+		"particle"	"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge_e.vpcf"	 
+		"particle" "particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"	 
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+	}
+
+	"Modifiers"
+	{
+		"guardianofnature_tremor_passive"
+		{
+			"Passive"	 "1"
+			"IsHidden"	 "1"
+			"OnAttackStart"
+			{
+				"Random"
+				{
+					"Chance" "%chance"
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName" "guardianofnature_tremor_proc"
+							"Target"	   "CASTER"	
+						}
+						"AttachEffect"
+						{
+							"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"Target" 		"CASTER"
+						}						
+					}
+				}
+			}
+		}
+
+		"guardianofnature_tremor_proc"
+		{
+			"Duration"	"1"
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%damage"
+			}
+			
+			"OnAttackLanded"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Brewmaster.ThunderClap"
+					"Target"		"TARGET"
+				}
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"	 
+					"EffectAttachType"	 "follow_origin"
+					"Target"			 "TARGET"
+				}	
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge_e.vpcf"	 
+					"EffectAttachType"	 "follow_origin"
+					"Target"			 "TARGET"
+				}
+				"RunScript"
+			 	{
+				    "ScriptFile"	"abilities/gon.lua"
+				    "Function"		"DoTremorDamage"
+				    "Damage"		"%dmg"
+			  	}
+				"RemoveModifier"
+				{
+					"ModifierName"		"guardianofnature_tremor_proc"
+					"Target"			"CASTER"	
+				}
+			}
+		}
+	}
+}

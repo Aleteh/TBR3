@@ -1,0 +1,105 @@
+//}End Cleric
+
+
+//Magician
+//{
+//=================================================================================================================
+// Magician: Frost Bolt
+//=================================================================================================================
+//The magician hurls a line of frost particles that deals xxxx damage to enemy units, and solidifies them for 2 seconds for xxx mana. 
+//10 seconds cooldown, 225 AOE, 700 range.
+"magician_frost_bolt"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"magician_skill1"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6" //doesnt work for some reason
+	
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.35"
+	"AbilityCooldown"				"10"
+	"AbilityManaCost"				"35 70 125 200 350 550 700 950"
+    	"AbilityDamage"                 "175 400 700 1000 1750 2500 3500 5000"
+
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"			"FIELD_INTEGER"
+    			"dmg"				"175 400 700 1000 1750 2500 3500 5000"
+    		}
+    	}
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_jakiro/jakiro_ice_path_b.vpcf"
+    		"particle"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+    	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_Jakiro.IcePath"
+			"Target" 			"CASTER"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  			"POINT"
+			 	"Line"
+		 		{
+		 			"Length" 		"700"
+		 			"Thickness" 	"150" //"225"
+		 		}
+		 		"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"  
+		 		"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			}
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"Target" 			"TARGET"
+					"ModifierName"		"frost_bolt_modifier"
+				}
+				"RunScript"
+			 	{
+				    "ScriptFile"	"damage.lua"
+				    "Function"		"DoDamage"
+				    "Damage"		"%dmg"
+			  	}
+			}
+		}
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/magician.lua"
+			"Function"			"frost_bolt"
+			"Target"			"POINT"
+		}
+	}
+
+	"Modifiers"
+	{  					
+		"frost_bolt_modifier"
+		{
+			"IsDebuff"					"1"
+			"IsPurgable"				"1"
+			"IsHidden"					"0"
+			"Duration"					"2"
+			"EffectName"				"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"			
+			}
+		}
+	}
+}

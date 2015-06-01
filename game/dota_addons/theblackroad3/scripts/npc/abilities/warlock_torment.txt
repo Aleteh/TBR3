@@ -1,0 +1,83 @@
+//}End Ranger
+
+//Warlock
+//{
+//=================================================================================================================
+// Warlock: Torment
+//=================================================================================================================
+//Costs xxx hit points to cast. Burns the target for xxxx damage over 8 seconds for xxx mana. 
+//This skill receives a 75% bonus to spell damage increases. 1 second cooldown, 700 range
+"warlock_torment"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlock_skill1"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"warlock_cast1_fatal_bonds"
+	
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"1"
+	"AbilityDuration"				"8"
+	"AbilityManaCost"				"15 30 50 80 125 190 285 400"
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"self_damage"		"50 100 230 320 400 500 650"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_spell_dmg"	"75"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_hellborn_debuff.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/warlock.lua"
+			"Function"			"torment_cost"
+		}
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"torment_modifier"
+		}
+	}
+
+	"Modifiers"
+	{
+		"torment_modifier"
+		{
+			"IsDebuff"			"1"
+			"ThinkInterval"		"1"
+			"Duration"			"%AbilityDuration"
+			"EffectName"		"particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_hellborn_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/warlock.lua"
+					"Function"			"torment"
+				}
+			}	
+		}
+	}
+}

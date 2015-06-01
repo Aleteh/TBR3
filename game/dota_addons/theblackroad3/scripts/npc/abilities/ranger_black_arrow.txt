@@ -1,0 +1,103 @@
+//}End Assassin
+
+//Ranger
+//{
+//=================================================================================================================
+// Ranger: Black Arrow
+//=================================================================================================================
+"ranger_black_arrow"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ranger_skill1"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"2"
+	"AbilityManaCost"				"35 65 110 175 260 390 550 750"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1890 3000 4500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"explosion_radius"		"225"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
+		"particle"	"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+		"particle"  "particles/econ/items/vengeful/vengeful_weapon_talon/vengeful_wave_of_terror_glow_c_talon.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+	}
+
+	"OnSpellStart"
+		{
+		"RunScript"
+				{
+				"ScriptFile"		"abilities/ranger.lua"
+				"Function"			"black_arrow_rework"
+				}
+		}
+
+    	"Modifiers"
+	{
+		// TODO: Fix the Orb System, properly attach a projectile only on the Black Arrow attacks.
+		"ranger_black_arrow_post_damage"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"0"
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"black_arrow_post_damage"
+				}
+			}
+		}
+		"black_arrow_rework_modifier"
+			{
+			"Passive"	"1"
+			"OnAttackLanded"
+				{
+				"RunScript"
+					{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"black_arrow"
+					}
+				}
+			"OnAbilityExecuted"
+				{
+				"RunScript"
+					{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"black_arrow_interrupt"
+					}
+				}
+			"OnAttackStart"
+				{
+				"RunScript"
+					{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"black_arrow_start"
+					}
+				}
+			}
+	}
+}

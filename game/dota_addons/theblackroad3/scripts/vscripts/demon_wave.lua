@@ -1,4 +1,4 @@
-BASE_TIME_UNTIL_ATTACK = 10 -- 10 minutes
+BASE_TIME_UNTIL_ATTACK = 600 -- 10 minutes
 TIME_BETWEEN_SPAWNS = 3 -- How much time between each 4 mob pack spawn
 BASE_SPAWN_SIZE = 10 -- Minimum amount of demons spawned, for each player
 MAX_SPAWN_TIER = 6 -- From demon_waves.kv

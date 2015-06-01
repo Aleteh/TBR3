@@ -1,0 +1,53 @@
+//Barbarian
+//{
+//=================================================================================================================
+// Barbarian: Custom Mana System
+//=================================================================================================================
+//Barbarian 0.02 * level + 3 per attack landed
+//plus 0.02 * level + 0.4  per attack recieved
+//but he decays 0.01 * level mana every 0.74 seconds > 0.01333 * level every second? > whatever, normalized to 0.01 p/sec
+"barbarian_rage"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"barbarian_skill0"
+	"MaxLevel" 						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE  | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers"
+	{
+		"rage_modifier"
+		{
+			"Passive"			"1"
+			"IsBuff"			"1"
+			"IsHidden"			"0"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/barbarian.lua"
+					"Function"			"ZeroManaOnSpawn"
+				}
+			}
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/barbarian.lua"
+					"Function"			"ManaOnAttack"
+				}
+			}
+
+			"OnAttacked"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/barbarian.lua"
+					"Function"			"ManaOnAttacked"
+				}
+			}
+		}
+	}
+
+}

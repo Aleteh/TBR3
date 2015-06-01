@@ -1,0 +1,93 @@
+//=================================================================================================================
+// Warlord: Counter
+//=================================================================================================================
+"warlord_counter"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlord_skill1"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "300 600 900 1200 1500 1800 2100 2400"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+	
+	"Modifiers"
+	{
+		"warlord_counter_modifier"
+		{
+			"Passive"	"1"
+			"IsBuff"	"1"
+			"OnAttacked"
+			{
+				"Random"
+				{
+					"Chance" "20"
+					"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+					"OnSuccess"
+					{
+						"FireSound"
+						{
+							"EffectName"		"Hero_Axe.CounterHelix"
+							"Target"			"CASTER"
+						}
+						"ApplyModifier"
+						{
+							"Target" 			"CASTER"
+							"ModifierName"		"warlord_spin_animation"
+						}
+						"RunScript"
+						{
+							"ScriptFile"		"abilities/warlord.lua"
+							"Function"			"counter"
+							"Target"
+							{
+								"Center"	"CASTER"
+								"Radius"	"175"	// this is a right radius from wc3 map JASS
+								"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
+		}
+		"warlord_spin_animation"
+		{
+			"IsBuff"	"1"
+			"IsHidden"	"1"
+			//"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_3"
+			"EffectName"	"particles/units/heroes/hero_axe/axe_counterhelix_unused2.vpcf"
+			"EffectAttachType" "follow_origin"
+			"Duration"	"0.3"
+                "ThinkInterval" "0.05"
+                "OnCreated"
+                {
+                	"FireEffect"
+                	{
+                		"EffectName"	"particles/units/heroes/hero_axe/axe_counterhelix_unused.vpcf"
+					"EffectAttachType" "follow_overhead"
+					"Target"	"CASTER"
+                	}
+                }
+                "OnIntervalThink"
+            {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "abilities/warlord.lua"
+                        "Function"      "SpinHero"
+                        "Angle"         "90"
+                    }
+                    // TODO: Fix Spinning stops the hero
+			}
+		}
+	}
+}

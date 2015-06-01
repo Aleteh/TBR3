@@ -1,0 +1,82 @@
+//=================================================================================================================
+// Khaos Champion: Shroud
+//=================================================================================================================
+//The Khaos Champion is shrouded in darkness, providing him several adavantages in battle.
+//His armor is increased by xx and all physical damage done to him is reduced by xx %.
+//Also a small amount of the physical damage that is inflicted upon him is reflected to enemies nearby. 250 AOE.
+
+"khaoschampion_shroud"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"khaos_champion_skill3"
+	"MaxLevel" "7"
+
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  			
+	"AbilityCastPoint"    "0.0"
+	"AbilityCastRange"    "250"
+	"AbilityCooldown"    "0"
+	"AbilityManaCost"    "0"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"armor_bonus"	"3 5 7 10 15 25 35 50"
+		}
+		"02"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"damage_reduction"	"2.0 5.0 8.0 11.0 14.0 17.0 20.0 23.0"
+		}
+		"03"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"reflect_aoe"		"250"
+		}
+		"04"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"damage_return_percentage"	"2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.8"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_khaoschampion_shroud"
+		{
+			"Passive" 			"1"
+			"IsHidden" 			"1"
+			"IsBuff"			"1"
+			"EffectName"		"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+				"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" 	"%damage_reduction"
+			}
+			"OnAttacked"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/kc.lua"
+					"Function"	"shroud"
+				}
+			}
+		}
+		"shroud_helper"
+		{
+			"Duration"	"0.033"
+			"OnTakeDamage"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/kc.lua"
+					"Function"	"shroud_damage"
+				}
+			}
+		}
+	}
+}

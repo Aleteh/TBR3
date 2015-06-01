@@ -1,0 +1,191 @@
+//=================================================================================================================
+// Guardian of Nature: Cataclysm
+//=================================================================================================================
+"guardianofnature_cataclysm"
+//Causes the earth to buckle and spew forth rock and magma from targetted point. 
+//Deals xxxxx initial damage and xxxx damage per second for 3 seconds for xxxx mana. 450 AOE, 800 range, 45 seconds cooldown
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"guardian_of_nature_skill4"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+	"AOERadius"     "%radius"
+
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"45"
+
+	"AbilityManaCost"				"150 275 425 600 850 1000 1000 1000"
+	"AbilityDamage"					"1000 2500 5000 8000 12000 20000 35000 50000"
+
+
+	"AbilitySpecial"
+	{		
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"1000 2500 5000 8000 12000 20000 35000 50000"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_over_time"		"50 125 250 500 850 1000 1500 2000"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"3"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"450"
+		}
+	}
+	
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+		"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf"
+		"particle"	"particles/units/heroes/hero_earthshaker/temp_eruption_dirt.vpcf"
+		"particle"	"particles/dire_fx/dire_lava_falling_rocks.vpcf"
+		"particle"	"particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"		"CASTER"
+			"EffectName"	"Hero_Leshrac.Split_Earth"
+		}
+		"CreateThinker"
+        {
+            "ModifierName" "guardianofnature_cataclysm_area_damage"
+            "Target" 		"POINT"
+        }
+		"ActOnTargets"	//initial damage
+		{
+			"Target"
+			{
+				"Center"	"POINT"
+				"Radius"	"%radius"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Action"
+			{
+				"RunScript"
+			 	{
+				    "ScriptFile"	"damage.lua"
+				    "Function"		"DoAoEDamage"
+				 	"Damage"		"%damage"
+				    "Target"		"TARGET"
+			  	}
+			}
+		}
+	}
+	"Modifiers"    				
+	{  							
+		"guardianofnature_cataclysm_area_damage"
+		{		
+			"Aura" 		"modifier_guardianofnature_cataclysm"
+            "Aura_Radius"	"%radius"
+			"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Duration"		"%duration"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"	"TARGET"
+					"EffectAttachType" "follow_origin"
+					"EffectName"	"particles/units/heroes/hero_earth_spirit/espirit_spawn.vpcf"
+				}
+				"AttachEffect"
+				{
+					"Target"	"TARGET"
+					"EffectAttachType" "follow_origin"
+					"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+					"ControlPoints"
+					{
+						"01"		"%radius 50 50"
+					}
+				}
+				"AttachEffect"
+				{
+					"Target"	"TARGET"
+					"EffectAttachType" "follow_origin"
+					"EffectName"	"particles/dire_fx/dire_lava_falling_rocks.vpcf"
+				}
+				"AttachEffect"
+				{
+					"Target"	"TARGET"
+					"EffectAttachType" "follow_origin"
+					"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
+				}
+			}
+
+			"ThinkInterval"				"0.99"
+			"OnIntervalThink"
+			{
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"TARGET"
+				}
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_earthshaker/temp_eruption_dirt.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"TARGET"
+				}
+				"AttachEffect"
+				{
+					"Target"	"TARGET"
+					"EffectAttachType" "follow_origin"
+					"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+					"ControlPoints"
+					{
+						"01"		"%radius 50 50"
+					}
+				}
+				"AttachEffect"
+				{
+					"Target"	"TARGET"
+					"EffectAttachType" "follow_origin"
+					"EffectName"	"particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf"
+				}
+			}
+		}
+		"modifier_guardianofnature_cataclysm"  
+		{
+			"IsDebuff"					"1"
+			"IsPurgable"				"0"
+			"IsHidden"					"0"
+			"ThinkInterval"				"0.99"
+			"OnIntervalThink"
+			{
+				"RunScript"
+		 		{
+				    "ScriptFile"	"damage.lua"
+				    "Function"		"DoDamage"
+				    "Damage"		"%damage_over_time"
+		  		}
+		  		"FireSound"
+		  		{
+		  			"EffectName"	"Hero_Leshrac.Pulse_Nova_Strike"
+		  			"Target" 		"TARGET"
+		  		}
+		  	}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+//=================================================================================================================
+// Ranger: Soul-Piercing Shot
+//=================================================================================================================
+"ranger_soul_piercing_shot"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ranger_skill5"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"manaburn"	"10 14 18 22 26 30 34 38"
+    			}
+    		}
+
+	"Modifiers"
+		{
+		"ranger_soul_piercing_shot_modifier"
+			{
+			"Passive"	"1"
+			"IsBuff"	"1"
+			"OnAttackStart"
+				{
+				"Random"
+					{
+					"Chance" "20"
+					"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+					"OnSuccess"
+						{
+						"ApplyModifier"
+							{
+							"ModifierName" "ranger_crit"
+							"Target" "CASTER"
+							}
+						}
+					}
+				}
+			"OnAttackLanded"
+				{
+				"RunScript"
+					{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"soul_piercing_shot"
+					}
+				}
+			}
+		"ranger_crit"
+			{
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "200"
+				}
+			"OnAttackLanded"
+				{
+				"RemoveModifier"
+					{
+					"ModifierName"	"ranger_crit"
+					"Target" "CASTER"
+					}
+				}
+			}
+		}
+}

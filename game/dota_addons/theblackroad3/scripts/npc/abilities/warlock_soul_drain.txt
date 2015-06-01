@@ -1,0 +1,202 @@
+//=================================================================================================================
+// Warlock: Soul Drain
+//=================================================================================================================
+//Absorbs the life essence of a target by taking xxxx hit points per second from it and giving them to the warlock for xxxx mana. 
+//Also, while channeling this spell you will do 10% of your spell damage bonus to enemies around you every 2 seconds. 
+//lasts 15 seconds. 1000 AOE, 10 seconds cooldown and 750 range.
+"warlock_soul_drain"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlock_skill2"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"warlock_cast3_upheaval_channel"
+
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"10"
+	"AbilityDuration"				"15"
+	"AbilityChannelTime"			"15"
+	"AbilityManaCost"				"50 100 165 255 380 540 750 1000"
+    	"AbilityDamage"                 "75 180 1800 300 460 680 960 1540 2250"
+
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"health_transfered"	"75 180 1800 300 460 680 960 1540 2250"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_spell_dmg"	"10"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aoe"				"1000"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
+		"particle"	"particles/frostivus_gameplay/frostivus_wraithking_tombstone.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+		"particle"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 		"TARGET"
+			"ModifierName" 	"soul_drain_modifier"
+		}
+		"ApplyModifier"
+		{
+			"Target" 		"CASTER"
+			"ModifierName" 	"soul_drain_aoe_modifier"
+		}
+		"ApplyModifier"
+		{
+			"Target" 		"CASTER"
+			"ModifierName" 	"channelling_animation"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Pugna.LifeDrain.Target"
+			"Target" 		"CASTER"
+		}
+	}
+
+	"OnChannelFinish"
+	{
+		"RemoveModifier"
+		{
+			"Target" 		"TARGET"
+			"ModifierName" 	"soul_drain_modifier"
+		}
+		"RemoveModifier"
+		{
+			"Target" 		"CASTER"
+			"ModifierName" 	"soul_drain_aoe_modifier"
+		}
+		"RemoveModifier"
+		{
+			"Target" 		"CASTER"
+			"ModifierName" 	"channelling_animation"
+		}
+	}
+
+	"OnChannelInterrupted"
+	{
+		"RemoveModifier"
+		{
+			"Target"		"TARGET"
+			"ModifierName"	"soul_drain_modifier"
+		}
+		"RemoveModifier"
+		{
+			"Target" 		"CASTER"
+			"ModifierName" 	"soul_drain_aoe_modifier"
+		}
+		"RemoveModifier"
+		{
+			"Target" 		"CASTER"
+			"ModifierName" 	"channelling_animation"
+		}
+	}
+
+	"Modifiers"
+	{
+		"soul_drain_modifier"
+		{
+			"IsDebuff"	"1"
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/warlock.lua"
+					"Function"		"drain_fx"
+				}
+				"AttachEffect"
+				{
+					"Target" 				"TARGET"
+					"ControlPointEntities"
+					{
+						"CASTER"		"attach_hitloc"
+						"TARGET"		"attach_hitloc"
+					}
+					"EffectName"		"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+				}
+			}
+			"IsPurgable"		"0"
+			"ThinkInterval"		"1.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/warlock.lua"
+					"Function"		"soul_drain"
+				}
+			}
+		}
+
+		"soul_drain_aoe_modifier"
+		{
+			"IsBuff"	"1"
+			"IsPurgable"		"0"
+			"ThinkInterval"		"2.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/warlock.lua"
+					"Function"		"soul_drain_aoe"
+				}
+				"AttachEffect"
+				{
+					"Target"		"CASTER"
+					"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient_endcap.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+		}
+
+		"channelling_animation"
+		{
+			"IsHidden"	"1"
+			"OverrideAnimation"	"warlock_cast3_upheaval_channel"
+			"OnCreated"
+			{
+				//"AttachEffect" //This might be too much.
+				//{
+				//	"Target"		"TARGET"
+				//	"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient.vpcf"
+				//	"EffectAttachType"	"follow_origin"
+				//}
+				"AttachEffect"
+				{
+					"Target"		"TARGET"
+					"EffectName"	"particles/frostivus_gameplay/frostivus_throne_wraith_king_ambient_beams_i.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+				"AttachEffect"
+				{
+					"Target"		"TARGET"
+					"EffectName"	"particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_ambient.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+		}
+	}
+}

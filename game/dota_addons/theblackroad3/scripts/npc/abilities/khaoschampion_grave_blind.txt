@@ -1,0 +1,61 @@
+//=================================================================================================================
+// Khaos Champion: Grave Blind
+//=================================================================================================================
+//Blinds the target to his grave stunning it for 3 seconds and dealing xxxx damage for xx mana.
+//20 seconds cooldown. 450 Range
+
+"khaoschampion_grave_blind"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"skeleton_king_hellfire_blast"
+	"AbilityTextureName"			"khaos_champion_skill1"
+	"MaxLevel" "7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	
+	"AbilityCastRange"				"450"
+	"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+	"AbilityCooldown"				"20"
+	"AbilityDamage"					"100 225 425 770 2675 4875 9020"
+	"AbilityManaCost"				"7 13 19 25 31 37 43 49"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blast_speed"			"1000"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"blast_stun_duration"	"3.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blast_slow"			"0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"blast_dot_duration"	"0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blast_dot_damage"		"0"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"tooltip_slow_duration"	"0"
+		}
+	}
+}

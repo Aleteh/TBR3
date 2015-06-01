@@ -1,0 +1,23 @@
+//=================================================================================================================
+// Assign Crafting Materials On Death - Add this ability on every mob which is supposed to drop them everytime.
+//=================================================================================================================
+"material_assign"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE" //| DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"item_hand_of_midas"
+
+	"OnOwnerDied"
+	{
+		//Check everyone in AoE and give mats
+		"RunScript"
+		{
+			"ScriptFile"			"crafting.lua"
+			"Function"				"AssignMaterials" 
+			//the ammount is controlled inside the lua file
+		}
+
+	}
+}

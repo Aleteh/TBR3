@@ -1,0 +1,35 @@
+//}End Temple Guardian
+
+//Warlord
+//{
+//=================================================================================================================
+// Warlord: Custom Mana System
+//=================================================================================================================
+//	Warlord every time he attacks he regens hero level * 0.02 + 2.5 mana
+//	every 0.99 seconds he gets 0.02 * level + 0.5 mana
+"warlord_focus"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlord_skill0"
+	"MaxLevel" 						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers"
+	{
+		"focus_modifier"
+		{
+			"Passive"			"1"
+			"IsBuff"			"1"
+			"IsHidden"			"0"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/warlord.lua"
+					"Function"			"ManaOnAttack"
+				}
+			}
+		}
+	}
+}

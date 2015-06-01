@@ -1,0 +1,59 @@
+//=================================================================================================================
+// HERO: Barbarian
+//=================================================================================================================
+"npc_dota_hero_beastmaster"
+{
+	"override_hero"				"npc_dota_hero_beastmaster"
+	"AbilityLayout" "5"
+	"Ability1"					"barbarian_taunt"
+	"Ability2"					"barbarian_rend_armor"
+	"Ability3"					"barbarian_cleave"
+	"Ability4"					"barbarian_mighty_leap"
+	"Ability5"					"barbarian_bloodbath"
+	"Ability6"					""
+	"Ability7"					""
+	"Ability8"					""
+	"Ability9"					""
+	"Ability10"					""
+	"Ability11"					""
+	"Ability12"					""
+
+	// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"         "15" 		// Base strength
+        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "10" 		// Base agility
+        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"2"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"2.0"
+	"AttackDamageMax"		"24.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.00"
+	"AttackAnimationPoint"		"0.433"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+
+       	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"100"
+	"StatusHealthRegen"		"0.25"
+	"StatusMana"			"35"
+	"StatsManaRegen"		"0"		//-0.25, set in lua
+}

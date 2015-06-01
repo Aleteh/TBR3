@@ -1,0 +1,72 @@
+//=================================================================================
+// Creature: Greater Demon
+// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+//=================================================================================
+"greater_demon"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/queenofpain/queenofpain.vmdl"	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"43"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"20"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"114.0"
+	"AttackDamageMax"		"138.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.35"
+	"AttackAnimationPoint"		"0.33"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+	"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"900"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"44.0"
+	"BountyGoldMax"			"58.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"320"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"7500"
+	"StatusHealthRegen"		"7.00"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+
+	"vscripts"		"demon_wave_ai.lua"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

@@ -1,0 +1,79 @@
+//=================================================================================================================
+// Magician: Flash Point
+//=================================================================================================================
+//Creates a circular wall of flames that traps all creatures near the caster within, the ignites the space between the wall and the caster. 
+//Deals xxx damage to all enemies in the blast area. 14 seconds cooldown, 600 AOE
+"magician_flash_point"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"magician_skill3"
+	"MaxLevel" 						"7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"14"
+	"AbilityManaCost"				"35 70 115 170 235 365 575 800"
+
+    	"AbilityDamage"                 "75 200 350 560 840 1260 200 3000"
+
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"radius"				"600"
+    		}
+    		"02"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"dmg"				"75 200 350 560 840 1260 200 3000"               
+    		}
+    	}
+
+    	"precache"
+    	{
+    		"particle"	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_explosion.vpcf"
+    		"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf"
+    		"particle"	"particles/holdout_lina/holdout_wildfire_start.vpcf"
+    		"particle"	"particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf"
+    		"particle" "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+    	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/magician.lua"
+			"Function"			"flash_point"
+		}
+		"FireSound"
+		{
+			"EffectName"		"Hero_Gyrocopter.CallDown.Damage"
+			"Target"			"CASTER"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  				"CASTER"
+				"Radius" 				"%radius"
+				"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 				"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			}
+			"Action"
+			{
+				"RunScript"
+			 	{
+				    "ScriptFile"	"damage.lua"
+				    "Function"		"DoDamage"
+				    "Damage"		"%dmg"
+			  	}
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+//=================================================================================================================
+// Druid: Call Lightning
+//=================================================================================================================
+//Calls down a bolt of lightning in the target area doing xxxx damage within 200 range of lightning and half damage 
+//within 400 range of lightning for xxxx mana. Cooldown 9 seconds, 400 AOE.
+"druid_call_lightning"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"druid_skill3"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+	"AOERadius"						"400"		
+	"AbilityCastRange"				"700" //made this up, check it later
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"9"
+	"AbilityManaCost"				"125 200 325 500 650 800 900 1000"
+    	"AbilityDamage"                 "150 300 500 800 1400 1600 2500 3750"
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+    		"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
+    		"particle"	"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
+    		"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+    		"particle"	"particles/items_fx/diffusal_slow.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+    	}
+
+    	"AbilitySpecial"
+	{	
+		//No Idea what these values should be
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"slow_duration"	"2"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"slow_percentage"	"-50" //I made this up. TODO: Check WC3 Value
+		}
+	}
+
+    	//TODO: Add Purge slow effect
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_Zuus.LightningBolt"
+			"Target" 			"CASTER"
+		}	
+		"FireSound"
+		{
+			"EffectName"		"Hero_Jakiro.LiquidFire"
+			"Target" 			"CASTER"
+		}
+		"FireSound"
+		{
+			"EffectName"		"Hero_Zuus.StaticField"
+			"Target" 			"CASTER"
+		}	
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/druid.lua"
+			"Function"			"call_lightning"
+			"Target"			"POINT"
+		}
+	}
+	"Modifiers"
+	{
+		"call_lightning_modifier"
+		{
+			"Duration"	"%slow_duration"
+			"IsDebuff"	"1"
+			"EffectName"	"particles/items_fx/diffusal_slow.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percentage"
+			}
+		}
+	}
+}

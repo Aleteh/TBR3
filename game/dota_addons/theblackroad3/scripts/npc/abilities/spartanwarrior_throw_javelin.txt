@@ -1,0 +1,113 @@
+//=================================================================================================================
+// Spartan Warrior: Throw Javelin
+//=================================================================================================================
+//You hurl a javelin at the enemy, causing double your Strength plus xxxx damage to all enemies in a line for xxx mana. 
+//This skill also receives bonuses from spell damage increases. 6 Second cooldown, 250 AOE, range 700.
+"spartanwarrior_throw_javelin"	// TODO: Find a better projectile (Huskar seemed to be tracking)
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"spartan_warrior_skill3"
+	"MaxLevel" 	"7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"6"
+	"AbilityManaCost"				"35 70 120 195 295 440 650 900"
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+		"particle"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		"particle"	"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt_explosion.vpcf"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"throw_speed"			"1000"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"throw_width"			"150"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"throw_distance"		"700"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"throw_damage"			"150 300 525 840 1260 1900 3000 4500"
+		}
+	}
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_LegionCommander.Overwhelming.Cast"
+			"Target"		"CASTER"
+		}
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/spartan.lua"
+			"Function"			"spartan_throw"
+			"Target"			"POINT"
+		}
+	}
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"				"0"
+		"ApplyModifier"
+		{
+			"ModifierName" "javelin_fx"
+			"Target"	"TARGET"
+		}
+		"RunScript"
+	 	{
+		    "ScriptFile"	"damage.lua"
+		    "Function"		"DoDamage"
+		    "Damage"		"%throw_damage"
+	  	}
+
+		"FireSound" // TODO: Find a proper sound
+		{
+			"EffectName"			"Hero_Magnataur.ShockWave.Target"
+			"Target"				"TARGET"
+		}			
+	}
+	"Modifiers"
+	{
+		"javelin_fx"
+		{
+			"IsDebuff" "1"
+			"IsHidden"	"0"
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/spartan.lua"
+					"Function"		"javelin_particle"
+				}
+			}
+		}
+	}
+
+}
