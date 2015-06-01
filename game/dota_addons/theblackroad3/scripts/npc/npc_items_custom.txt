@@ -14170,9 +14170,130 @@
 	// Draught = Long duration buffs, single target. Can only have 1 active
 	// Scroll = Applies long duration buffs on self and friends. Can have multiple active but they share CD.
 	
-	// Lesser->(Normal)->Greater->Super->Mega
+	// Minor->Lesser->(Normal)->Greater->Super->Mega
 	
 	// Common
+	// Potion of Minor Healing 			//250 HP
+	"item_potion_of_minor_healing"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_potion_of_lesser_healing"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
+		"Model"							"models/props_gameplay/salve.vmdl" //Green
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+	
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+	
+		"ItemCost"						"600"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"2"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"250"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"Target"        	"CASTER"
+				"HealAmount"		"%heal_amount"
+			}
+			"FireEffect"
+			{
+				"Target"			"CASTER"
+				"EffectName"		"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"FireSound"
+			{
+				"Target" 			"CASTER"
+				"EffectName" 		"DOTA_Item.HealingSalve.Activate"
+			}
+			"SpendCharge"
+			{}		
+		}
+	}
+	
+	// Potion of Minor Mana 			//200 Mana
+	"item_potion_of_minor_mana"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_potion_of_minor_mana"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
+		"Model"							"models/props_gameplay/clarity.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+	
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+	
+		"ItemCost"						"200"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restored"			"200"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/mana.lua"
+				"Function"			"GiveMana"
+				"Target"			"CASTER"
+				"mana_amount"		"%mana_restored"
+			}
+			"FireEffect"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak_cast.vpcf"
+				"EffectAttachType"		"follow_origin"
+			}
+			"FireSound"
+			{
+				"Target" 		"UNIT"
+				"EffectName" 	"DOTA_Item.ClarityPotion.Activate"
+			}
+			"SpendCharge"
+			{}	
+		}
+	}
 	//	Potion of Lesser Healing		//500 HP
 	"item_potion_of_lesser_healing"
 	{
