@@ -1156,7 +1156,7 @@
 	// Creature: Champion of Hades
 	// Discription: "Cunning Hero, adept at maneuvering through battles. Can learn Immolation, Evasion, Mana Burn, and Metamorphosis. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Champion_of_Hades"
+	"champion_of_hades"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1229,7 +1229,7 @@
 	// Creature: Demonic Carrion
 	// Discription: "Demonic beast that casts Mana Burn. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Demonic_Carrion"
+	"demonic_carrion"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1299,7 +1299,7 @@
 	// Creature: Demonic Pillager
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Demonic_Pillager"
+	"demonic_pillager"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1370,7 +1370,7 @@
 	// Creature: Demon Thrall
 	// Discription: "Light melee unit that can Bash opponents. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Demon_Thrall"
+	"demon_thrall"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1440,7 +1440,7 @@
 	// Creature: Demon Slave
 	// Discription: "Light ranged unit that casts Slow and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"Demon_Slave"
+	"demon_slave"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1512,7 +1512,7 @@
 	// Creature: Minor Demon
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Minor_Demon"
+	"minor_demon"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1581,7 +1581,7 @@
 	// Creature: Lesser Demon
 	// Discription: "Light ranged unit with Shadowmeld. Can cast Curse. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"Lesser_Demon"
+	"lesser_demon"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1653,7 +1653,7 @@
 	// Creature: Demon Ogre
 	// Discription: "Standard warrior of the Ogre Legion. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Demon_Ogre"
+	"demon_ogre"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1722,7 +1722,7 @@
 	// Creature: Demon Warrior
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Demon_Warrior"
+	"demon_warrior"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1791,7 +1791,7 @@
 	// Creature: Nether Demon
 	// Discription: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"Nether_Demon"
+	"nether_demon"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1864,7 +1864,7 @@
 	// Creature: Engine of Destruction
 	// Discription: "Heavy ranged unit that hurls fiery missiles. Can cast Breath of Fire. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"Engine_of_Destruction"
+	"engine_of_destruction"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1935,7 +1935,7 @@
 	// Creature: Demon Seer
 	// Discription: "Medium ranged unit with Bloodlust and Cast Ray of Disruption. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"Demon_Seer"
+	"demon_seer"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -2007,7 +2007,7 @@
 	// Creature: Greater Demon
 	// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"Greater_Demon"
+	"greater_demon"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -2078,7 +2078,7 @@
 	// Creature: Destroyer
 	// Discription: "Heavy ranged unit can cast Dispel Magic, War Stomp, Cripple and Rain of Fire. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"Destroyer"
+	"destroyer"
 	{
 		// General
 		//----------------------------------------------------------------
