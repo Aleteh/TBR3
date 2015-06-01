@@ -1,0 +1,57 @@
+"A horde of demons has been unleashed from the Underworld and is heading for Athens."
+
+Rules to spawn the demon waves will be the following:
+
+After everyone has picked and succesfully loaded their heroes
+Time until city attack = 10 minutes + math.floor(Average Party Level/10) * 30 seconds.
+	avg party level 1  = 10 minutes
+	avg party level 20 = 11 minutes
+	avg party level 100= 15 minutes
+	avg party level 200= 20 minutes (max)
+After an attack is launched, the next attack will start counting down only after all the units are killed.
+
+The wave strength is based on the party level
+	
+	Demons (Names and models up to discussion):
+	Champion of Hades 		 	Level 1-200	Lycan/Giff Pit Lord
+	1. Demonic Carrion		 	Level 5  	Felhound
+	2. Demonic Pillager  	 	Level 10  	Forge Spirit
+	3. Demon Thrall			 	Level 15  	Kobold?
+	4. Demon Slave			 	Level 20  	Kobold?
+	5. Minor Demon 				Level 25  	Satyr?
+	6. Lesser Demon 		 	Level 30  	Satyr?
+	7. Demon Ogre 			 	Level 35  	Ogre?
+	8. Demon Warrior		 	Level 40  	Sven
+	9. Nether Demon 	 	 	Level 45  	Bane
+	10. Engine of Destruction 	Level 50  	Catapult?
+	11. Demon Seer 	 		 	Level 55  	Dark Seer
+	12. Greater Demon 			Level 60 	QoP
+	13. Destroyer				Level 66  	Doom
+
+Other unit models:
+
+Melee: Abaddon, Chaos Knight, Undying, Night Stalker, Lifestealer (Makes perfect low level units), Spectre, Slark
+Ranged: Visage, Pugna, Clinkz, Shadow Fiend (Arcana so gud), Weaver, Death Prophet, OD, Necrophos, Warlock, Enigma, Lich
+
+Each wave will have 1 Champion and 3 types of demons. Champion hero level will be equal to the average party level
+Tier = Level/10
+Tier1: Demons 1,2,3
+Tier2: Demons 3,4,5
+Tier3: Demons 5,6,7
+Tier4: Demons 7,8,9
+Tier5: Demons 9,10,11
+Tier6: Demons 11,12,13
+
+Composition will be 1/2 of the middle level mob (2,4,6,8,10,12) as beefy melee frontliners, 1/4 of the other 2 which are ranged DPS/caster-support pairs.
+
+The size of the wave is determined by the party size and avg party level.
+	demonsToSpawn = (10 + math.floor(Average Party Level/10) ) * partySize
+	Translates to:
+		5 200 -> 150
+		1 200 -> 30
+
+		5 100 -> 100
+		1 100 -> 20
+
+		5 10  -> 55
+		1 10  -> 11
