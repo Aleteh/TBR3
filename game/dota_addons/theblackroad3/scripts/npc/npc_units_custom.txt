@@ -1234,7 +1234,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/invoker/forge_spirit.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"5"
 		
@@ -1304,7 +1304,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/invoker/forge_spirit.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"6"
 		
@@ -1375,7 +1375,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/creeps/neutral_creeps/n_creep_kobold/kobold_b/n_creep_kobold_b.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"9"
 		
@@ -1445,7 +1445,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/creeps/neutral_creeps/n_creep_kobold/kobold_b/n_creep_kobold_b.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"11"
 		
@@ -1517,7 +1517,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"18"
 		
@@ -1586,7 +1586,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"21"
 		
@@ -1658,7 +1658,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/ogre_magi/ogre_magi.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"22"
 		
@@ -1727,7 +1727,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/sven/sven.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"28"
 		
@@ -1796,7 +1796,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/bane/bane.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"31"
 		
@@ -1869,7 +1869,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"34"
 		
@@ -1940,7 +1940,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/dark_seer/dark_seer.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"39"
 		
@@ -2012,7 +2012,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
+		"Model"				"models/heroes/queenofpain/queenofpain.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"43"
 		
@@ -2083,8 +2083,8 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
-		"ModelScale"			"1"
+		"Model"				"models/heroes/doom/doom.vmdl"
+		"ModelScale"		"1"
 		"Level"				"49"
 		
 		// Abilities
@@ -2102,15 +2102,15 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"192.0"
-		"AttackDamageMax"		"222.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.8"
+		"AttackDamageMin"			"192.0"
+		"AttackDamageMax"			"222.0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.8"
 		"AttackAnimationPoint"		"0.5"
 		"AttackAcquisitionRange"	"600"
-		"AttackRange"			"150"
-		"ProjectileModel"		""	 //Add projectile models
-		"ProjectileSpeed"		"900"
+		"AttackRange"				"150"
+		"ProjectileModel"			""	 //Add projectile models
+		"ProjectileSpeed"			"900"
 		
 		// Bounty
 		//----------------------------------------------------------------
