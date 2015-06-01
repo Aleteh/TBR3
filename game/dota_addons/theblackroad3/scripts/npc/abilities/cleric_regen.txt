@@ -1,0 +1,80 @@
+//=================================================================================================================
+// Cleric: Regen
+//=================================================================================================================
+"cleric_regen"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityTextureName"			"cleric_skill2"
+	"MaxLevel" 						"7"
+
+
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
+		"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+	}
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"25 50 90 145 210 285 425 640"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"heal_amount"		"250 500 900 1500 2200 3000 4500 7500"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"20.0"
+		}
+	}
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"regeneration_modifier"
+		}
+		"FireSound"
+		{
+			"EffectName"		"Hero_Enchantress.EnchantCast"
+			"Target" 			"TARGET"
+		}
+	}
+	"Modifiers"
+	{
+		"regeneration_modifier"	//Same name as the druid regeneration
+		{
+			"IsBuff"			"1"
+			"IsPurgable"		"1"
+			"Duration"			"%duration"
+			"ThinkInterval"		"1"
+			"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/cleric.lua"
+					"Function"		"regen"
+				}
+			}
+		}
+	}
+}

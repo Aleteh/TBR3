@@ -1,0 +1,135 @@
+//=================================================================================================================
+// Temple Guardian: Fire of Apollo
+//=================================================================================================================
+//Apollo grants you the power of a single ray of burning sunlight to sear the flesh of all enemy units around you. 
+//Deals xxxx damage to all enemy units nearby and continues to burn the ground for an additional xxxx damage over 10 seconds for xxxx mana. 
+//This skill receives a 500% bonus from spell damage increases. 11 seconds cooldown. 300 AOE.
+"templeguardian_fire_of_apollo"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"temple_guardian_skill3"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"45 90 115 250 375 565 775 1000"
+	"AbilityDuration"               "11"
+	"AbilityCastRange"				"300"
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+		"particle"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+		"particle"	"particles/fire_of_apollo.vpcf" //"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_start_ring_rope_arcana.vpcf"
+		"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+		"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+	}
+
+	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"			
+    			"damage_base"			"50 100 175 305 535 935 1500 2250"
+    		}
+    		"02"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_over_time" 		"125 440 770 1350 2365 3600 4500 5500"
+    		}
+    		"03"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_power_multipler" "5"
+    		}
+    		"04"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"radius"				"300"
+    		}
+    	}
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"		"CASTER"
+				"Radius"		"%radius"
+				"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Action"
+			{
+				"RunScript"
+			 	{
+				    "ScriptFile"	"abilities/tg.lua"
+					"Function"		"fire_of_apollo"
+				    "Target"		"TARGET"
+			  	}
+			}
+		}
+		"CreateThinker"
+        {
+            "ModifierName" 	"fire_of_apollo_thinker"
+            "Target" 		"CASTER"
+        }
+	}
+	"Modifiers"
+	{
+		"fire_of_apollo_thinker"
+		{
+			"Aura"			"fire_of_apollo_dot"
+			"Aura_Radius"	"%radius"
+			"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Duration"		"%AbilityDuration"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"		"TARGET"
+					"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"EffectRadius"	"%radius"
+				}
+				"AttachEffect"
+				{
+					"Target"		"TARGET"
+					"EffectName"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"EffectRadius"	"%radius"
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/tg.lua"
+					"Function"		"fire_apollo_fx" //ring of fire 300 radius
+				}
+			}
+
+		}
+		"fire_of_apollo_dot"
+		{
+			"IsDebuff"		"1"
+			"IsPurgeable"	"0"
+			"EffectName"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/tg.lua"
+					"Function"		"fire_of_apollo_dot"
+				}
+			}
+		}
+	}
+}

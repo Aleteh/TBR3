@@ -1,0 +1,81 @@
+//=================================================================================================================
+// Barbarian: Cleave 
+//=================================================================================================================
+//Adds four times your Strength plus xxxx bonus damage to your next attack against a single target and causes three times your Strength plus xxxx damage to nearby enemy units for xx mana. 
+    //2,25 seconds cooldown. Can be autocast 
+
+"barbarian_cleave" //TODO: 	Check if this damage added/cleaved can crit. Maybe rewrite in a smarter way.
+{					
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"barbarian_skill3"
+	"MaxLevel" "7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"100"
+	"AbilityCastPoint"				"0.0"
+	"AbilityManaCost"				"8 12 17 24 32 42 53 65"
+	"AbilityCooldown"				"2.25" //just for the display
+
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"100 200 350 560 840 1260 2000 3000"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"250"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aoe_damage"		"75 150 265 400 600 900 1500 2250"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"cooldown"			"2.25"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/econ/items/axe/axe_weapon_bloodchaser/axe_attack_blur_counterhelix_bloodchaser.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+	}
+
+	
+    	"Modifiers"
+	{ 
+		"modifier_barbarian_cleave"
+		{
+			"Passive"               "1"
+			"IsHidden"				"1"
+			"Orb"
+			{
+				"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+				//"ProjectileName"    ""
+				"CastAttack"		"1"
+			}
+			"OnOrbImpact"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/barbarian.lua"
+					"Function"			"cleave"
+				}
+
+			}
+		}
+	}	
+}

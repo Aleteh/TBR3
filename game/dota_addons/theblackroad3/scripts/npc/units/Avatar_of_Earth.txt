@@ -1,0 +1,81 @@
+//=====================================================================================//	
+//	Titans - Bosses
+//=====================================================================================//
+
+//=================================================================================	
+// Boss: Atlas, Avatar of Earth
+//=================================================================================
+"Avatar_of_Earth"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/tiny_04/tiny_04.vmdl"
+	"ModelScale"		"2"
+	"Level"				"20"
+	
+	"ConsideredHero"	"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: AInv
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"8"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"264.0"
+	"AttackDamageMax"		"342.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"3.00"
+	"AttackAnimationPoint"		"0.36"
+	"AttackAcquisitionRange"	"800.00"
+	"AttackRange"			"128"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"8.0"
+	"BountyGoldMax"			"0.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.30"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"1411"
+	"StatusHealthRegen"		"1.00"
+	"StatusMana"			"400"
+	"StatsManaRegen"		"4.00"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefened"		"DIVINE"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"300"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	//"Creature"
+	//{
+	//	"AttachWearables"
+	//	{
+	//		"Wearable1"		{	"ItemDef"	"497"	} // "Tiny's Tree"			
+	//	}			
+	//}
+}

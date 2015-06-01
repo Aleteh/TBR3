@@ -1,0 +1,51 @@
+//}End Guardian of Nature
+
+//Temple Guardian
+//{
+//=================================================================================================================
+// Temple Guardian: Gift of the Gods
+//=================================================================================================================
+"templeguardian_gift_of_the_gods"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"temple_guardian_skill1"
+	"MaxLevel" "7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastRange"				"800"
+	"AbilityCooldown"				"12"
+	"AbilityManaCost"				"60 120 210 335 475 625 800 1000"
+	"AbilityCastPoint"    			"0.5"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		"particle" "particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+		"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare.vpcf"
+		"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_hit.vpcf"
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"heal_amount"			"400 800 1400 2250 3350 5000 7500 12000"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"abilities/tg.lua"
+			"Function"		"giff_heal"
+		}
+	}
+}

@@ -1,0 +1,69 @@
+//=================================================================================================================
+// Barbarian: Bloodbath
+//=================================================================================================================
+//Your axe sinks home in the enemy's flesh, drenching you in blood and dealing twice your Strength plus xxxx damage to a target enemy unit for xx mana.
+//All damage dealt in this way will be added to your health. 
+//12 seconds cooldown. 
+
+"barbarian_bloodbath"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"barbarian_skill5"
+	"MaxLevel" "7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	
+	"AbilityCastRange"				"100"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"12"
+	"AbilityManaCost"				"10 17 25 35 47 60 74 90"
+
+	"precache"
+	{
+		"particle"	"particles/items2_fx/soul_ring_blood.vpcf"
+		"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodbath.vpcf"
+		"particle"	"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+	}
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 840 1260 1900 3000 4500"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Axe.Culling_Blade_Success"
+			"Target"		"TARGET"
+		}	
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/barbarian.lua"
+			"Function"			"bloodbath"
+		}
+		"AttachEffect"
+		{
+			"Target"		"TARGET"
+			"EffectName"	"particles/items2_fx/soul_ring_blood.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"AttachEffect"
+		{
+			"Target"		"TARGET"
+			"EffectName"	"particles/units/heroes/hero_axe/axe_culling_blade_kill_b.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"AttachEffect"
+		{
+			"Target"		"CASTER"
+			"EffectName"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodbath.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+	}
+}

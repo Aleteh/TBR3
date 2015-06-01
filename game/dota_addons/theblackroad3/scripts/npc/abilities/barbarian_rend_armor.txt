@@ -1,0 +1,74 @@
+//=================================================================================================================
+// Barbarian: Rend Armor 
+//=================================================================================================================
+//Reduces a target enemy unit's armor by xx for xx mana. Lasts up to 30 seconds.
+//Cooldown 1 second.
+
+"barbarian_rend_armor"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"barbarian_skill2"
+	"MaxLevel" "7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"10 16 23 31 40 51 62 75"
+	"AbilityDuration"               "30"
+    	
+    	//"AbilityDamage"                 "0"
+
+    	"AbilitySpecial"
+	{		
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"30"
+		}
+		"02"
+		{  
+			"var_type"				"FIELD_INTEGER"
+			"armor_reduction"	"-15 -19 -23 -27 -31 -35 -40 -45"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 		"TARGET"
+			"ModifierName"	"modifier_barbarian_rend_armor"
+		}
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.MedallionOfCourage.Activate"
+			"Target"		"TARGET"
+		}	
+	}
+
+	"Modifiers"    				
+	{  							
+		"modifier_barbarian_rend_armor"  
+		{
+			"IsDebuff"					"1"
+			"IsPurgable"				"0"
+			"IsHidden"					"0"
+			"Duration"					"%duration"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
+			}
+			"EffectName"	"particles/items2_fx/medallion_of_courage.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		}
+	}
+}

@@ -1,0 +1,11 @@
+"demon_dodge"	//+critical on next attack after dodge
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"demon_dodge"
+	"MaxLevel" 						"7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityCastPoint"				"0.35"
+	"AbilityCooldown"				"0"	
+	"AbilityManaCost"				"0"
+}

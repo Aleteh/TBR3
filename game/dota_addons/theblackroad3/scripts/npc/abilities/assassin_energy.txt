@@ -1,0 +1,25 @@
+//}End Warlord
+
+//Assassin
+//{
+//=================================================================================================================
+// Assassin: Custom Mana System
+//=================================================================================================================
+//	gets every 0.51 seconds 0.03 * level + 0.3 mana > normalized to 0.06 * level + 0.6 per second, to show in the mana UI
+"assassin_energy"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"assassin_skill0"
+	"MaxLevel" 						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers"
+	{
+		"energy_modifier"
+		{
+			"Passive"			"1"
+			"IsBuff"			"1"
+			"IsHidden"			"0"
+		}
+	}
+}

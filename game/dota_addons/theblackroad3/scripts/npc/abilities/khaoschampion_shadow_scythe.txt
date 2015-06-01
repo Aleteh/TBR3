@@ -1,0 +1,96 @@
+//=================================================================================================================
+// Khaos Champion: Shadow Scythe
+//=================================================================================================================
+//The Khaos Champion hurls his scythe damaging nearby enemies.
+//Each blade does xxxxx damage for xx mana.
+//Cooldown 13 seconds. 750 AOE. 
+
+"khaoschampion_shadow_scythe"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"khaos_champion_skill2"
+	"MaxLevel" "7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"13"	
+	"AbilityManaCost"				"10 14 19 26 35 48 55 68"
+    
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"75 125 280 630 1500 3200 7200 16200"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"Target" "CASTER" //"TargetPoint" "POINT"
+			"EffectName" "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+			"EffectAttachType" "follow_origin"
+			"EffectRadius" 		"750"
+			"EffectDurationScale" "1"
+			"EffectLifeDurationScale" "1"
+			"EffectColorA" "25 225 100"
+			"EffectColorB" "25 225 100"
+
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_SkeletonKing.MortalStrike.Target" //"Hero_Beastmaster.Wild_Axes"
+			"Target"		"CASTER"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"750"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Action"
+			{
+				"TrackingProjectile"
+				{
+					"Target"			"TARGET"
+					"Dodgeable"			"0"
+					"ProvidesVision"	"0"
+					"VisionRadius"		"0"
+					"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+					"MoveSpeed"			"550"
+					"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				}
+			}
+		}
+	}
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%damage"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Beastmaster.Wild_Axes_Damage"
+			"Target"		"CASTER"
+		}
+	}
+}

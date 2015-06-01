@@ -1,0 +1,66 @@
+//please keep this indentation style.	
+
+//=================================================================================================================
+// Warlord: Impale
+//=================================================================================================================
+"warlord_impale"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlord_skill2"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"100"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"2.25"
+	"AbilityManaCost"				"8 12 17 24 32 42 55 70"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 525 850 1300 2000 3000 4500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+    	"precache"
+    	{
+    		"particle" "particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_owner_shoutmask.vpcf"
+    		"particle"	"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+    	}
+
+	"Modifiers"
+	{
+		"warlord_impale_modifier"
+		{
+			"Passive"	"1"
+			"Orb"
+			{
+				"Label"	"DOTA_ORB_LABEL_EXCEPTION"
+				"Priority" "DOTA_ORB_PRIORITY_ABILITY"
+				"CastAttack" "1"
+			}
+			"OnOrbImpact"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/warlord.lua"
+					"Function"			"impale"
+				}
+			}
+		}
+		"warlord_impale_animation"
+		{
+			"IsBuff"	"1"
+			"IsHidden"	"0"
+			"Duration"	"0.7"
+			"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_4"
+			"EffectName"			"particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_owner_e_shoutmask.vpcf"
+			"EffectAttachType" 		"attach_attack4"
+		}
+	}
+}

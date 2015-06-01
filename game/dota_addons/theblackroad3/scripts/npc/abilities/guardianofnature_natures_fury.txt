@@ -1,0 +1,123 @@
+//=================================================================================================================
+// Guardian of Nature: Nature's Fury
+//=================================================================================================================
+"guardianofnature_natures_fury"
+//Gives you a xx % chance on attack to stun for 2.5 seconds and cause an extra xxxx damage to all enemiey in a 350 radius.
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"guardian_of_nature_skill5"
+	"MaxLevel" "1"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"chance"			"3 6 6 6 8 8 10 12"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"350" 
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"200 300 825 1150 1750 2000 2750 3350"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"stun_duration"		"2.5"
+		}
+	}
+	
+	"precache"
+	{
+		"particle" "particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+		"particle" "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_egset.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+	}
+
+	"Modifiers"
+	{
+		"guardianofnature_natures_fury_passive"
+		{
+			"Passive"	 "1"
+			"IsHidden"	 "1"
+			"OnAttackStart"
+			{
+				"Random"
+				{
+					"Chance" "%chance"
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName" "guardianofnature_natures_fury_proc"
+							"Target"	   "CASTER"	
+						}
+						"AttachEffect"
+						{
+							"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"Target" 		"CASTER"
+						}							
+					}
+				}
+			}
+		}
+
+		"guardianofnature_natures_fury_proc"
+		{
+			"Duration"	"1"
+			"IsHidden"	"1"
+			
+			"OnAttackLanded"
+			{
+				"FireEffect"
+				{
+					"EffectName"		 "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_egset.vpcf"
+					"EffectAttachType"	 "attach_hitloc"
+					"Target"			 "TARGET"						
+				}
+				"FireSound"
+				{
+					"EffectName"	"Hero_EarthShaker.EchoSlam"
+					"Target"		"CASTER"
+				}					
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"		"TARGET"
+						"Radius"		"%radius"
+						"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+					}
+					"Action"
+					{
+						"RunScript"
+					 	{
+						    "ScriptFile"	"damage.lua"
+						    "Function"		"DoDamage"
+						    "Damage"		"%damage"
+					  	}
+						"Stun"
+						{
+							"Target"	"TARGET"
+							"Duration"	"%stun_duration"
+						}
+					}
+				}
+				"RemoveModifier"
+				{
+					"ModifierName"		"guardianofnature_natures_fury_proc"
+					"Target"			"CASTER"	
+				}
+			}
+		}
+	}
+}

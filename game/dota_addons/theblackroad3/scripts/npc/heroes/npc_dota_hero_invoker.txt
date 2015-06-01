@@ -1,0 +1,54 @@
+//=================================================================================================================
+// HERO: Magician
+//=================================================================================================================
+"npc_dota_hero_invoker"
+{
+	"override_hero"				"npc_dota_hero_invoker"
+	"AbilityLayout" "6"
+	"Ability1"					"magician_frost_bolt"
+	"Ability2"					"magician_flame_spire"
+	"Ability3"					"magician_flash_point"
+	"Ability4"					"magician_meteor_shower"
+	"Ability5"					"magician_freezing_field"
+	"Ability6"					"magician_preparation"
+
+	// Attributes
+        //-------------------------------------------------------------------------------------------------------------
+       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"         "10" 		// Base strength
+        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+        "AttributeBaseIntelligence"     "16" 		// Base intelligence
+        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+        "AttributeBaseAgility"          "12" 		// Base agility
+        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+        // Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"2.0"
+	"AttackDamageMax"		"24.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.25"
+	"AttackAnimationPoint"		"0.55"
+	"AttackAcquisitionRange"	"600"
+	"AttackRange"			"600"
+	//"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"900"
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"100"
+	"StatusHealthRegen"		"0.25"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0.01"
+}

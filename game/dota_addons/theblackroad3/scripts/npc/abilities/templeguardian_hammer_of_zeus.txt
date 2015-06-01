@@ -1,0 +1,138 @@
+//=================================================================================================================
+// Temple Guardian: Hammer of Zeus
+//=================================================================================================================
+//You slam a target enemy unit with the force of a divine hammer, adding xxxx damage to your normal attack and knocking the target away from you for xxx mana
+"templeguardian_hammer_of_zeus" 
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"temple_guardian_skill4"
+	"MaxLevel" 						"7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"10"
+	"AbilityDamage"					"100 300 600 1100 1900 300 4500 7500"
+	"AbilityManaCost"				"30 60 100 160 240 340 460 600"
+    	
+	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"dmg" 					"100 300 600 1100 1900 300 4500 7500"
+    		}
+    	}
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+    		"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
+		"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+		"particle"	"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
+    	}
+
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"		"TARGET"
+			"Dodgeable"			"0"
+			"ProvidesVision"	"1"
+			"VisionRadius"		"100"
+			"EffectName"		"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf" //TODO: Make custom particle
+			"MoveSpeed"			"1200"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+		"FireSound"
+		{
+			"EffectName"		"Hero_Zuus.GodsWrath.PreCast"
+			"Target" 			"CASTER"
+		}	
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"				"1"
+		"Knockback"
+		{
+			"Center" 	"PROJECTILE"
+			"Target"	"TARGET"
+			"Distance"	"500"
+			"Height"	"300"
+			"Duration"	"0.5"
+		}
+		"FireSound"
+		{
+			"EffectName"			"Hero_Zuus.GodsWrath.Target"
+			"Target"				"TARGET"
+		}
+		"AttachEffect"
+		{
+			"Target"			"TARGET"	
+			"EffectName"		"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"AttachEffect"
+		{
+			"Target"			"TARGET"	
+			"EffectName"		"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  				"TARGET"
+				"Radius" 				"275"
+				"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Action"
+			{
+				"Knockback"
+				{
+					"Center" 	"PROJECTILE"
+					"Target"	"TARGET"
+					"Distance"	"200"
+					"Height"	"200"
+					"Duration"	"0.3"
+				}
+			}
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"zeus_stun"
+			"Target"		"TARGET"
+		}
+		"RunScript"
+	 	{
+		    "ScriptFile"	"damage.lua"
+		    "Function"		"DoDamage"
+		    "Damage"		"%dmg"
+	  	}
+	}
+
+	"Modifiers"
+	{
+		"zeus_stun"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"2"
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"	
+			}
+		}
+	}
+}

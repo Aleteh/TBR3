@@ -1,0 +1,78 @@
+//=================================================================================================================
+// Assassin: Garrote
+//=================================================================================================================
+"assassin_garrote"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"assassin_skill4"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"100"
+	"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+	"AbilityCooldown"				"20"
+	"AbilityManaCost"				"17 24 32 42 54 68 83 85"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "50 100 175 280 420 630 1000 1500"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+    	}
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"creep_duration"	"12"
+    			}
+    		}
+    	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_TemplarAssassin.Meld.Attack"
+			"Target" 		"TARGET"
+		}
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/assassin.lua"
+			"Function"			"garrote"
+		}			
+	}
+	"Modifiers"
+		{
+		"assassin_garrote_bleed_modifier"
+			{
+			"IsDebuff"	"1"
+			"EffectName"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+				{
+				"RunScript"
+					{
+					"ScriptFile"		"abilities/assassin.lua"
+					"Function"			"garrote_bleed"
+					}
+				}
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"35"
+				}
+			}
+		}
+}

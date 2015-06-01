@@ -1,0 +1,15 @@
+// Basic Bank Spells
+"drop_all_items"
+{
+	"BaseClass"								"ability_datadriven"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityCooldown"						"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"					"bank.lua"
+			"Function"						"DropAllItems"
+		}
+	}
+}

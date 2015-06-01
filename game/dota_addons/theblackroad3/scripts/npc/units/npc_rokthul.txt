@@ -1,0 +1,88 @@
+//=================================================================================
+// Creature: Rokthul
+// TODO: Chain? lightning spell of 200 damage
+//		 Has a 15% command aura
+//=================================================================================
+"npc_rokthul"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/rikimaru/rikimaru.vmdl"
+	"ModelScale"		"2"
+	"Level"				"39"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: A05N
+	"Ability2"			""	 //Reference: A05M
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"3"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"127.0"
+	"AttackDamageMax"		"159.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.35"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"72.0"
+	"BountyGoldMax"			"90.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"12111"
+	"StatusHealthRegen"		"8.00"
+	"StatusMana"			"500"
+	"StatsManaRegen"		"4.00"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"250"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+	{
+		"AttachWearables"	
+		{
+			"Wearable1"		{	"ItemDef"	"6368"	} // "Horns of the Frozen Blood"
+			"Wearable2"		{	"ItemDef"	"6365"	} // "Bracers of the Frozen Blood"
+			"Wearable3"		{	"ItemDef"	"5524"	} // "Wrath of the Highborn"
+			"Wearable4"		{	"ItemDef"	"5525"	} // "Temper of the Highborn - Off-Hand"
+			"Wearable5"		{	"ItemDef"	"6369"	} // "Armor of the Frozen Blood"
+			"Wearable6"		{	"ItemDef"	"6370"	} // "Tail of the Frozen Blood"
+		}
+	}
+
+	"precache"
+	{
+		"particle_folder"	"particles/units/heroes/hero_riki"
+	}
+}
