@@ -123,7 +123,8 @@ function GameMode:InitGameMode()
 
 	self.bSeenWaitForPlayers = false
 
-	self.nPlayerCount = 0
+	GameRules.PLAYER_COUNT = 0
+	GameRules.PLAYERS_PICKED_HERO = 0
 
 	-- SaveRPG Thinker
 	Timers:CreateTimer("SaveRPGThink", { 
@@ -227,6 +228,7 @@ function GameMode:ReadGameConfiguration()
 	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
 	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
 	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
+	GameRules.DemonWaves = LoadKeyValues("scripts/kv/demon_waves.kv")
 
 	--DeepPrintTable(GameRules.DropTable)
 
@@ -288,13 +290,6 @@ function GameMode:OnHeroInGame(hero)
 	print("[TBR] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
 	local player = PlayerResource:GetPlayer(hero:GetPlayerID())
-
-	-- update the player count
-	if not player.addedToCount then 
-		self.nPlayerCount = self.nPlayerCount + 1
-		player.addedToCount = true 
-	end
-	print(self.nPlayerCount)
 
 	-- Starting Gold
 	hero:SetGold(0, false)
@@ -595,7 +590,7 @@ function GameMode:OnEntityKilled( keys )
 
 		local level = killedUnit:GetLevel()
 		-- Increase by 10% for each party member
-		local party_bonus = 1 + ( self.nPlayerCount * 0.1 )
+		local party_bonus = 1 + ( GameRules.PLAYER_COUNT * 0.1 )
 		local xp = ( 20 + level * 5 ) * party_bonus
 
 		--Popup XP
@@ -686,7 +681,6 @@ end
 -- go through the self.SpawnInfoKV and return the bounty
 function GameMode:GetBountyFor( unitName )
 	for k,v in pairs(self.SpawnInfoKV) do
-		print(k,v)
 		for key,value in pairs(self.SpawnInfoKV[k]) do
 			if key == unitName then 
 				return RandomInt(value.BountyGoldMin, value.BountyGoldMax)
@@ -708,6 +702,15 @@ end
 --This function is called once and only once after all players have loaded into the game, right as the hero selection time begins.
 function GameMode:OnAllPlayersLoaded()
 	print("[TBR] All Players have loaded into the game")
+
+	local playercounter = 0
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+		if PlayerResource:IsValidPlayer(nPlayerID) and not PlayerResource:IsBroadcaster(nPlayerID) then 
+			playercounter=playercounter+1
+		end
+	end
+	GameRules.AllPlayersLoaded = true
+	GameRules.PLAYER_COUNT = playercounter
 
 	-- Stats Collection (RPG, Highscores, Achievements)
 	-- This is for Flash to know its steamID
@@ -732,43 +735,43 @@ function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
 		self.bSeenWaitForPlayers = true
-		elseif newState == DOTA_GAMERULES_STATE_INIT then
-			Timers:RemoveTimer("alljointimer")
-			elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-				local et = 6
-				if self.bSeenWaitForPlayers then
-					et = .01
-			end
-			Timers:CreateTimer("alljointimer", {
-					useGameTime = true,
-					endTime = et,
-					callback = function()
-					if PlayerResource:HaveAllPlayersJoined() then
-						GameMode:PostLoadPrecache()
-						GameMode:OnAllPlayersLoaded()
-						return 
-				end
-				return 1
+	elseif newState == DOTA_GAMERULES_STATE_INIT then
+		Timers:RemoveTimer("alljointimer")
+	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+		local et = 1
+		if self.bSeenWaitForPlayers then
+			et = .01
 		end
-		})
-			elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-					GameMode:OnGameInProgress()
+		Timers:CreateTimer("alljointimer", {
+			useGameTime = true,
+			endTime = et,
+			callback = function()
+				if PlayerResource:HaveAllPlayersJoined() then
+					GameMode:PostLoadPrecache()
+					GameMode:OnAllPlayersLoaded()
+					return 
+				end
+				return 0.5
 			end
+		})
+	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		GameMode:OnGameInProgress()
 	end
+end
 
 
 --[[
 	This function is called once and only once when the game completely begins (about 0:00 on the clock).
 	This function is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 	]]
-	function GameMode:OnGameInProgress()
+function GameMode:OnGameInProgress()
 	--print("[TBR] The game has officially begun")
 
 	Timers:CreateTimer(30, -- Start this timer 30 game-time seconds later
 		function()
 		--print("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
 		return 30.0 -- Rerun this timer every 30 game-time seconds 
-		end)
+	end)
 end
 
 -- Cleanup a player when they leave
@@ -781,6 +784,15 @@ function GameMode:OnDisconnect(keys)
 	local reason = keys.reason
 	local userid = keys.userid
 
+	-- Update player count
+	local playercounter = 0
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+		if PlayerResource:IsValidPlayer(nPlayerID) and not PlayerResource:IsBroadcaster(nPlayerID) then 
+			playercounter=playercounter+1
+		end
+	end
+	GameRules.PLAYER_COUNT = playercounter
+
 	RPGSave()
 end
 
@@ -789,6 +801,15 @@ end
 function GameMode:OnPlayerReconnect(keys)
 	print ( '[TBR] OnPlayerReconnect' )
 	--DeepPrintTable(keys) 
+
+	-- Update player count
+	local playercounter = 0
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+		if PlayerResource:IsValidPlayer(nPlayerID) and not PlayerResource:IsBroadcaster(nPlayerID) then 
+			playercounter=playercounter+1
+		end
+	end
+	GameRules.PLAYER_COUNT = playercounter
 end
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
@@ -867,10 +888,30 @@ end
 
 -- A player picked a hero and pressed Play
 function GameMode:OnPlayerPicked( event )
+	local player = EntIndexToHScript(event.player)
 	local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
 	-- Apply timer to update stats
 	GameMode:ModifyStatBonuses(spawnedUnitIndex)
+
+	-- update the player count
+	if not player.addedToCount then 
+		GameRules.PLAYERS_PICKED_HERO = GameRules.PLAYERS_PICKED_HERO + 1
+		player.addedToCount = true 
+	end
+	print(GameRules.PLAYERS_PICKED_HERO.." players have picked a hero. "..GameRules.PLAYER_COUNT.. " in game.")
+
+    if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) then
+    	GameMode:OnEveryonePicked()
+    end
 end
+
+function GameMode:OnEveryonePicked()
+	-- Wait a bit for the last hero loading
+	Timers:CreateTimer(5, function() 
+		StartFirstAttackTimer()
+	end)
+end
+
 
 -- A channelled ability finished by either completing or being interrupted
 function GameMode:OnAbilityChannelFinished(keys)

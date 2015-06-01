@@ -8,6 +8,7 @@ require('utilities')
 require('items')
 require('crafting')
 require('rpg')
+require('demon_wave')
 
 function Precache( context )
 		print("Performing pre-load precache")
@@ -32,6 +33,13 @@ function Precache( context )
 		-- Abilities can also be precached in this way despite the name
 		--PrecacheItemByNameSync("example_ability", context)
 		--PrecacheItemByNameSync("item_example_item", context)
+
+		-- Units
+		PrecacheUnitByNameSync("demonic_carrion", context)
+		PrecacheUnitByNameSync("demonic_pillager", context)
+		PrecacheUnitByNameSync("demon_thrall", context)
+		PrecacheUnitByNameSync("champion_of_hades", context)
+
 
 		PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
 		PrecacheUnitByNameSync("npc_dota_hero_enigma", context)

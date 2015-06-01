@@ -1161,8 +1161,8 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
-		"ModelScale"			"1"
+		"Model"				"models/heroes/lycan/lycan.vmdl"	 //Needs model data
+		"ModelScale"		"1"
 		"Level"				"5"
 		
 		// Abilities
@@ -1220,9 +1220,23 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables" //Sanguine Set
+			{
+				"Wearable1"		{	"ItemDef"		"4859"		}
+				"Wearable2"		{	"ItemDef"		"4860"		}
+				"Wearable3" 	{	"ItemDef"		"4861"		}
+				"Wearable4"		{	"ItemDef"		"4862"		}
+				"Wearable5"		{	"ItemDef"		"4863"		}
+				"Wearable5"		{	"ItemDef"		"207"		}
+			}
+		}
 	}
 
 	//=================================================================================
@@ -1290,6 +1304,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1361,6 +1377,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1431,6 +1449,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1503,6 +1523,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1572,6 +1594,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1644,6 +1668,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1713,6 +1739,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1855,6 +1883,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1926,6 +1956,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1998,6 +2030,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -2069,6 +2103,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -2144,6 +2180,8 @@
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"140"
+
+		"vscripts"		"demon_wave_ai.lua"
 		
 		// Creature Data
 		//----------------------------------------------------------------
