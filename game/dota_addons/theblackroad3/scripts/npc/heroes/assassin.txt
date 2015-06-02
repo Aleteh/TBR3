@@ -1,28 +1,46 @@
 //=================================================================================================================
 // HERO: Assassin
+// • Assassin's are intended to be exceptional boss killers. Able to deal massive melee damage, while also being able to effectively hit and run with long DoT's
 //=================================================================================================================
-"npc_dota_hero_phantom_assassin"
+"tbr_hero_assassin"
 {
 	"override_hero"				"npc_dota_hero_phantom_assassin"
-	"AbilityLayout" "6"
-	"Ability1"					"assassin_walk_the_shadows"
-	"Ability2"					"assassin_disable"
-	"Ability3"					"assassin_assassinate"
-	"Ability4"					"assassin_garrote"
-	"Ability5"					"assassin_shadow_image"
-	"Ability6"					"assassin_critical_strike"
+	"AbilityLayout" 			"6"
+	//"Ability1"					"assassin_walk_the_shadows"
+	//"Ability2"					"assassin_disable"
+	//"Ability3"					"assassin_assassinate"
+	//"Ability4"					"assassin_garrote"
+	//"Ability5"					"assassin_shadow_image"
+	//"Ability6"					"assassin_critical_strike"
+	
+	"Ability1"					"assassin_lacerate"
+	"Ability2"					"assassin_mutilate"
+	"Ability3"					"assassin_mangle"
+	"Ability4"					"assassin_hemorrhage" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"assassin_walk_the_shadows" //Journeyman 1
+	"Ability8"					"assassin_shadow_image" //Journeyman 2
+	"Ability9"					"assassin_foreboding_mask" //Ultimate 1
+	"Ability10"					"assassin_reverbatory_blade" //Ultimate 2
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
 
 	// Attributes
-        //-------------------------------------------------------------------------------------------------------------
-       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"         "13" 		// Base strength
-        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "1" 		// Base intelligence
-        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-        "AttributeBaseAgility"          "15" 		// Base agility
-        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"         "13" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "1" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "15" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
-       // Armor
+    // Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			"0"
 	"MagicalResistance"		"0"

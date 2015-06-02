@@ -1,22 +1,35 @@
 //=================================================================================================================
 // HERO: Barbarian
+// • Designed to be effective tanks, and effective DPS with the option of being a hybrid in between and acting as an offtank
+// • Barbarians are intended to be an unstoppable force of destruction. 
+// If they want to attack something, nothing will stop them. Thus Charge has a short cooldown, causes very high (temporary) movement and can push enemies aside to reach a target
 //=================================================================================================================
-"npc_dota_hero_axe"
+"tbr_hero_barbarian"
 {
 	"override_hero"				"npc_dota_hero_axe"
-	"AbilityLayout" "5"
-	"Ability1"					"barbarian_taunt"
-	"Ability2"					"barbarian_rend_armor"
-	"Ability3"					"barbarian_cleave"
-	"Ability4"					"barbarian_mighty_leap"
-	"Ability5"					"barbarian_bloodbath"
-	"Ability6"					""
-	"Ability7"					""
-	"Ability8"					""
-	"Ability9"					""
-	"Ability10"					""
+	"AbilityLayout" 			"6"
+	//"Ability1"					"barbarian_taunt"
+	//"Ability2"					"barbarian_rend_armor"
+	//"Ability3"					"barbarian_cleave"
+	//"Ability4"					"barbarian_mighty_leap"
+	//"Ability5"					"barbarian_bloodbath"
+
+	"Ability1"					"barbarian_maul"
+	"Ability2"					"barbarian_cleave"
+	"Ability3"					"barbarian_charge"
+	"Ability4"					"barbarian_callused_skin" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"barbarian_taunt" //Journeyman 1
+	"Ability8"					"barbarian_rend_armor" //Journeyman 2
+	"Ability9"					"barbarian_vicious_repel" //Ultimate 1
+	"Ability10"					"barbarian_shieldcrusher" //Ultimate 2
 	"Ability11"					""
 	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
 
 	// Attributes
     //-------------------------------------------------------------------------------------------------------------
@@ -28,7 +41,7 @@
     "AttributeBaseAgility"          "10" 		// Base agility
     "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
-        // Armor
+    // Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			"2"
 	"MagicalResistance"		"0"
@@ -44,7 +57,7 @@
 	"AttackAcquisitionRange"	"500"
 	"AttackRange"			"100"
 
-       	// Movement
+    // Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"			"270"

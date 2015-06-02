@@ -1,35 +1,45 @@
 //=================================================================================================================
 // HERO: Cleric
+// • Clerics have a lot of heal and damage potential, but which one's more effective will depend largely on gear choices
+// • Though they are not the only class that can revive (anymore), they have the ability to revive a single target for average mana, 
+// or multiple targets for a large amount of mana. Their ability to do it quickly is their biggest advantage.
 //=================================================================================================================
-"npc_dota_hero_crystal_maiden" 
+"tbr_hero_cleric" 
 {
 	"override_hero"				"npc_dota_hero_crystal_maiden"
-	// Abilities
-	//----------------------------------------------------------------
-	"AbilityLayout" "5" 
-	"Ability1"					"cleric_holy_light"
-	"Ability2"					"cleric_regen"
-	"Ability3"					"cleric_fire_of_heaven"
-	"Ability4"					"cleric_cleansing_flame"
-	"Ability5"					"cleric_rebirth"
-
-	//"Ability1"			""	 //Reference: A00B <- Frost Nova 8 levels herodur 3 cool 6 cost 45 Fire of Heaven
-	//"Ability2"			""	 //Reference: A00A <- Holy Light
-	//"Ability3"			""	 //Reference: AInv <- Inventory
-	//"Ability4"			""	 //Reference: A009 < Rejuvination
-	//"Ability5"			""	 //Reference: A008 <- Int
-	//"Ability6"			""	 //Reference: A007 <- Agi
-	//"Ability7"			""	 //Reference: A006 <- Str
+	"AbilityLayout" 			"6" 
+	//"Ability1"					"cleric_holy_light"
+	//"Ability2"					"cleric_regen"
+	//"Ability3"					"cleric_fire_of_heaven"
+	//"Ability4"					"cleric_cleansing_flame"
+	//"Ability5"					"cleric_rebirth"
+	
+	"Ability1"					"cleric_heavenly_regeneration"
+	"Ability2"					"cleric_righteous_burning"
+	"Ability3"					"cleric_holy_nova"
+	"Ability4"					"cleric_rebirth" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"cleric_cleansing_flame" //Journeyman 1
+	"Ability8"					"cleric_inner_sigth" //Journeyman 2
+	"Ability9"					"cleric_meditated_connection" //Ultimate 1
+	"Ability10"					"cleric_shield_of_faith" //Ultimate 2
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
 
 	// Attributes
-    	//-------------------------------------------------------------------------------------------------------------
-   		"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
-    	"AttributeBaseStrength"         "10" 		// Base strength
-    	"AttributeStrengthGain"         "1"		// Strength bonus per level.
-    	"AttributeBaseIntelligence"     "16" 		// Base intelligence
-    	"AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-    	"AttributeBaseAgility"          "12" 		// Base agility
-    	"AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"         "10" 		// Base strength
+	"AttributeStrengthGain"         "1"		// Strength bonus per level.
+	"AttributeBaseIntelligence"     "16" 		// Base intelligence
+	"AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	"AttributeBaseAgility"          "12" 		// Base agility
+	"AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
 	// Armor
 	//----------------------------------------------------------------

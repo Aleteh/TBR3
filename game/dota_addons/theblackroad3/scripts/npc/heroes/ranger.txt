@@ -1,27 +1,47 @@
 //=================================================================================================================
 // HERO: Ranger
+// • Rangers are first and foremost a DPS class, with minor hybrid capabilities. They are not intended to be entire group healers. 
+// With some specialization however they can be quite effective DPS and quite effective tank/melee healers.
+// • Agility Rangers will deal higher damage than Intelligence Rangers but will not have the ability to assist in healing
 //=================================================================================================================
-"npc_dota_hero_drow_ranger"
+"tbr_hero_ranger"
 {
 	"override_hero"				"npc_dota_hero_windrunner"
-	"AbilityLayout" "6"
-	"Ability1"					"ranger_black_arrow"
-	"Ability2"					"ranger_stun_shot"
-	"Ability3"					"ranger_puncture"
-	"Ability4"					"ranger_star_dust"
-	"Ability5"					"ranger_soul_piercing_shot"
-	"Ability6"					"ranger_prevailing_winds"
+	"AbilityLayout" 			"6"
+	//"Ability1"					"ranger_black_arrow"
+	//"Ability2"					"ranger_stun_shot"
+	//"Ability3"					"ranger_puncture"
+	//"Ability4"					"ranger_star_dust"
+	//"Ability5"					"ranger_soul_piercing_shot"
+	//"Ability6"					"ranger_prevailing_winds"
+	
+	"Ability1"					"ranger_puncture"
+	"Ability2"					"ranger_strafe"
+	"Ability3"					"ranger_prevailing_winds"
+	"Ability4"					"ranger_soul_piercing_shot" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"ranger_black_arrow" //Journeyman 1
+	"Ability8"					"ranger_poisoned_arrow" //Journeyman 2
+	"Ability9"					"ranger_star_dust" //Ultimate 1
+	"Ability10"					"ranger_aimed_shot" //Ultimate 2
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
 
 
 	// Attributes
-        //-------------------------------------------------------------------------------------------------------------
-       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"         "12" 		// Base strength
-        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "13" 		// Base intelligence
-        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-        "AttributeBaseAgility"          "13" 		// Base agility
-        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"         "12" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "13" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "13" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
 	// Attack
 	//----------------------------------------------------------------

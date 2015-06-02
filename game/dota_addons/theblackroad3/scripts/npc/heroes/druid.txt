@@ -1,27 +1,45 @@
 //=================================================================================================================
 // HERO: Druid
+// • Druids can make decent healers with spell healing gear and totems, but they excel at being Hybrid Support being half healer and half DPS
 //=================================================================================================================
-"npc_dota_hero_lone_druid"
+"tbr_hero_druid"
 {
 	"override_hero"				"npc_dota_hero_furion"
-	"AbilityLayout" "5"
+	"AbilityLayout" 			"6"
+	//"Ability1"					"druid_rejuvenation"
+	//"Ability2"					"druid_natures_wrath"
+	//"Ability3"					"druid_call_lightning"
+	//"Ability4"					"druid_mind_blast"
+	//"Ability5"					"druid_call_storm"
+	
 	"Ability1"					"druid_rejuvenation"
 	"Ability2"					"druid_natures_wrath"
-	"Ability3"					"druid_call_lightning"
-	"Ability4"					"druid_mind_blast"
-	"Ability5"					"druid_call_storm"
+	"Ability3"					"druid_terra_firma"
+	"Ability4"					"druid_innervate" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"druid_mind_blast" //Journeyman 1
+	"Ability8"					"druid_tornado" //Journeyman 2
+	"Ability9"					"druid_spirit_form" //Ultimate 1
+	"Ability10"					"druid_summon_totems" //Ultimate 2
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
 
 	// Attributes
-        //-------------------------------------------------------------------------------------------------------------
-       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
-        "AttributeBaseStrength"         "12" 		// Base strength
-        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "15" 		// Base intelligence
-        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-        "AttributeBaseAgility"          "12" 		// Base agility
-        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+    "AttributeBaseStrength"         "12" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "15" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "12" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
-        // Armor
+    // Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			"2"
 	"MagicalResistance"		"0"

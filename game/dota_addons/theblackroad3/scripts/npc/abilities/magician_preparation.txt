@@ -1,10 +1,19 @@
+// Class Skill - Preparation
+// Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
+// Benefits From: N/A
+// Cooldown: N/A
+// Range: N/A
+// Cost: N/A
+
+// Notes:
+// • Will give the Magician very good occasional burst damage
 "magician_preparation"
 //Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"magician_skill6"
+	"AbilityTextureName"			"magician_preparation"
 	"MaxLevel" 						"1"
 
 	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"

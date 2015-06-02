@@ -1,27 +1,46 @@
 //=================================================================================================================
 // HERO: Warlock
+// • Warlocks are primarily damage dealers, but they also have several debuffs they use to debilitate enemies
+// • Warlocks are masters of Blinding enemies, and even all by themselves can keep enemies blind a large portion of the time
 //=================================================================================================================
 "npc_dota_hero_warlock"
 {
 	"override_hero"				"npc_dota_hero_warlock"
-	"AbilityLayout" "5"
+	"AbilityLayout" 			"6"
+	//"Ability1"					"warlock_torment"
+	//"Ability2"					"warlock_soul_drain"
+	//"Ability3"					"warlock_deathwave"
+	//"Ability4"					"warlock_vengeance"
+	//"Ability5"					"warlock_blind"
+
 	"Ability1"					"warlock_torment"
 	"Ability2"					"warlock_soul_drain"
 	"Ability3"					"warlock_deathwave"
-	"Ability4"					"warlock_vengeance"
-	"Ability5"					"warlock_blind"
+	"Ability4"					"warlock_blind" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"warlock_soul_link" //Journeyman 1
+	"Ability8"					"warlock_dark_void" //Journeyman 2
+	"Ability9"					"warlock_haunt" //Ultimate 1
+	"Ability10"					"warlock_bone_spirit" //Ultimate 2
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
 
 	// Attributes
-        //-------------------------------------------------------------------------------------------------------------
-       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
-        "AttributeBaseStrength"         "13" 		// Base strength
-        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "14" 		// Base intelligence
-        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-        "AttributeBaseAgility"          "12" 		// Base agility
-        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+    "AttributeBaseStrength"         "13" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "14" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "12" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
-        // Armor
+    // Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			"0"
 	"MagicalResistance"		"0"
