@@ -1,42 +1,64 @@
 "DOTAHeroes"
 {
 	//=================================================================================================================
-	// HERO: Warlord
+	// HERO: Assassin
 	//=================================================================================================================
-	"npc_dota_hero_axe"
+	"npc_dota_hero_phantom_assassin"
 	{
-		"override_hero"				"npc_dota_hero_axe"
+		"override_hero"				"npc_dota_hero_phantom_assassin"
 		"AbilityLayout" "6"
-		"Ability1"					"warlord_counter"
-		"Ability2"					"warlord_impale"
-		"Ability3"					"warlord_winds_of_war"
-		"Ability4"					"warlord_bum_rush"
-		"Ability5"					"warlord_bleed"
-		"Ability6"					"warlord_critical_strike"
+		"Ability1"					"assassin_walk_the_shadows"
+		"Ability2"					"assassin_disable"
+		"Ability3"					"assassin_assassinate"
+		"Ability4"					"assassin_garrote"
+		"Ability5"					"assassin_shadow_image"
+		"Ability6"					"assassin_critical_strike"
 	
 		// Attributes
 	        //-------------------------------------------------------------------------------------------------------------
 	       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
-	        "AttributeBaseStrength"         "14" 		// Base strength
+	        "AttributeBaseStrength"         "13" 		// Base strength
 	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
 	        "AttributeBaseIntelligence"     "1" 		// Base intelligence
 	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "14" 		// Base agility
+	        "AttributeBaseAgility"          "15" 		// Base agility
 	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 	
-	         // Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"100"									// Base health.
-		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
-		"StatusMana"				"35"									// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+	       // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.60"
+		"AttackAnimationPoint"		"0.40"
+		"AttackAcquisitionRange"	"650"
+		"AttackRange"			"100"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"25"	//10 with 1 int
+		"StatsManaRegen"		"0"	//0.75, set in lua
 	}
 	//=================================================================================================================
 	// HERO: Barbarian
 	//=================================================================================================================
-	"npc_dota_hero_beastmaster"
+	"npc_dota_hero_axe"
 	{
-		"override_hero"				"npc_dota_hero_beastmaster"
+		"override_hero"				"npc_dota_hero_axe"
 		"AbilityLayout" "5"
 		"Ability1"					"barbarian_taunt"
 		"Ability2"					"barbarian_rend_armor"
@@ -52,14 +74,14 @@
 		"Ability12"					""
 	
 		// Attributes
-	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
-	        "AttributeBaseStrength"         "15" 		// Base strength
-	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "1" 		// Base intelligence
-	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "10" 		// Base agility
-	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	    //-------------------------------------------------------------------------------------------------------------
+	   	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"         "15" 		// Base strength
+	    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	    "AttributeBaseIntelligence"     "1" 		// Base intelligence
+	    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	    "AttributeBaseAgility"          "10" 		// Base agility
+	    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 	
 	        // Armor
 		//----------------------------------------------------------------
@@ -89,58 +111,6 @@
 		"StatusHealthRegen"		"0.25"
 		"StatusMana"			"35"
 		"StatsManaRegen"		"0"		//-0.25, set in lua
-	}
-	//=================================================================================================================
-	// HERO: Guardian of Nature
-	//=================================================================================================================
-	"npc_dota_hero_brewmaster"
-	{
-		"override_hero"				"npc_dota_hero_brewmaster"
-		"AbilityLayout" "5"
-		"Ability1"					"guardianofnature_roar"
-		"Ability2"					"guardianofnature_tremor"
-		"Ability3"					"guardianofnature_earth_shock"
-		"Ability4"					"guardianofnature_cataclysm"
-		"Ability5"					"guardianofnature_natures_fury"
-	
-		// Attributes
-	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
-	        "AttributeBaseStrength"         "14" 		// Base strength
-	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "12" 		// Base intelligence
-	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "12" 		// Base agility
-	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	
-	        // Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"2"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"2.0"
-		"AttackDamageMax"		"24.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.00"
-		"AttackAnimationPoint"		"0.433"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"100"
-	
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.6"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"100"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"0"
-		"StatsManaRegen"		"0.01"
 	}
 	//=================================================================================================================
 	// HERO: Cleric
@@ -211,28 +181,108 @@
 		"VisionNighttimeRange"		"10"
 	}
 	//=================================================================================================================
-	// HERO: Spartan Warrior
+	// HERO: Demon Hunter/Master?
 	//=================================================================================================================
-	"npc_dota_hero_dragon_knight"
+	"npc_tbr_demon"
 	{
-		"override_hero"				"npc_dota_hero_dragon_knight"
-		"AbilityLayout" "5"
-		"Ability1"					"spartanwarrior_dispatch"
-		"Ability2"					"spartanwarrior_valor"
-		"Ability3"					"spartanwarrior_throw_javelin"
-		"Ability4"					"spartanwarrior_charge"
-		"Ability5"					"spartanwarrior_phalanx"
-		"Ability6"					""
-		"Ability7"					""
-		"Ability8"					""
-		"Ability9"					""
-		"Ability10"					""
-		"Ability11"					""
-		"Ability12"					""
+		"override_hero"				"npc_dota_hero_terrorblade"
+		"AbilityLayout"				"6"
+		"Ability1"					"demon_immolation"	//boring toggle, should be an active for a duration.
+		"Ability2"					"demon_warglaives" //cleave, throw weapons around
+		"Ability3"					"demon_dodge"	//+critical on next attack after dodge
+		"Ability4"					"demon_form" //class skill, toggle to lose the melee skills
+		"Ability5"					"demon_flame_crash" //go high and land
+		"Ability6"					"demon_avatar" //ultimate1, illusion with shared HP
+		"Ability7"					"demon_summons" //many demons
+		"Ability8"					"demon_strike" //bouncing projectile
+		"Ability9"					"demon_passive" //dunno what should this be
+		"Ability10"					"demon_shadow_blast" //maybe redundant
+		"Ability11"					"demon_frenzy" //active, synergy with summons
+		"Ability12"					"demon_army" //ultimate2, gives the ability to swap to different summons
 	
 		// Attributes
 	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+	       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+	        "AttributeBaseStrength"         "12" 		// Base strength
+	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	        "AttributeBaseIntelligence"     "15" 		// Base intelligence
+	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	        "AttributeBaseAgility"          "12" 		// Base agility
+	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	        "AttackRange"				"500"
+	}
+	
+	
+	//=================================================================================================================
+	// HERO: Druid
+	//=================================================================================================================
+	"npc_dota_hero_lone_druid"
+	{
+		"override_hero"				"npc_dota_hero_furion"
+		"AbilityLayout" "5"
+		"Ability1"					"druid_rejuvenation"
+		"Ability2"					"druid_natures_wrath"
+		"Ability3"					"druid_call_lightning"
+		"Ability4"					"druid_mind_blast"
+		"Ability5"					"druid_call_storm"
+	
+		// Attributes
+	        //-------------------------------------------------------------------------------------------------------------
+	       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+	        "AttributeBaseStrength"         "12" 		// Base strength
+	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	        "AttributeBaseIntelligence"     "15" 		// Base intelligence
+	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	        "AttributeBaseAgility"          "12" 		// Base agility
+	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	
+	        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"2"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"1200"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
+	}
+	//=================================================================================================================
+	// HERO: Guardian of Nature
+	//=================================================================================================================
+	"npc_dota_hero_brewmaster"
+	{
+		"override_hero"				"npc_dota_hero_brewmaster"
+		"AbilityLayout" "5"
+		"Ability1"					"guardianofnature_roar"
+		"Ability2"					"guardianofnature_tremor"
+		"Ability3"					"guardianofnature_earth_shock"
+		"Ability4"					"guardianofnature_cataclysm"
+		"Ability5"					"guardianofnature_natures_fury"
+	
+		// Attributes
+	        //-------------------------------------------------------------------------------------------------------------
+	       	"AttributePrimary"                      "DOTA_ATTRIBUTE_STRENGTH"
 	        "AttributeBaseStrength"         "14" 		// Base strength
 	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
 	        "AttributeBaseIntelligence"     "12" 		// Base intelligence
@@ -244,8 +294,8 @@
 		//----------------------------------------------------------------
 		"ArmorPhysical"			"2"
 		"MagicalResistance"		"0"
-	
-	        // Attack
+		
+		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"2.0"
@@ -255,12 +305,118 @@
 		"AttackAnimationPoint"		"0.433"
 		"AttackAcquisitionRange"	"500"
 		"AttackRange"			"100"
-		
+	
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"			"270"
 		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
+	}
+	//=================================================================================================================
+	// HERO: Khaos Champion
+	//=================================================================================================================
+	"npc_dota_hero_skeleton_king"
+	{
+		"override_hero"				"npc_dota_hero_skeleton_king"
+		"AbilityLayout" "5"
+		"Ability1"					"khaoschampion_grave_blind"
+		"Ability2"					"khaoschampion_shadow_scythe"
+		"Ability3"					"khaoschampion_shroud"
+		"Ability4"					"khaoschampion_terrorize"
+		"Ability5"					"khaoschampion_requim"
+	
+		// Attributes
+	        //-------------------------------------------------------------------------------------------------------------
+	       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+	        "AttributeBaseStrength"         "14" 		// Base strength
+	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	        "AttributeBaseIntelligence"     "1" 		// Base intelligence
+	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	        "AttributeBaseAgility"          "12" 		// Base agility
+	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	
+	        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.00"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"650"
+		"AttackRange"			"100"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"35" //10 with 1 int
+		"StatsManaRegen"		"0" //0.75, set in lua
+	}
+	//=================================================================================================================
+	// HERO: Magician
+	//=================================================================================================================
+	"npc_dota_hero_invoker"
+	{
+		"override_hero"				"npc_dota_hero_invoker"
+		"AbilityLayout" "6"
+		"Ability1"					"magician_frost_bolt"
+		"Ability2"					"magician_flame_spire"
+		"Ability3"					"magician_flash_point"
+		"Ability4"					"magician_meteor_shower"
+		"Ability5"					"magician_freezing_field"
+		"Ability6"					"magician_preparation"
+	
+		// Attributes
+	        //-------------------------------------------------------------------------------------------------------------
+	       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+	        "AttributeBaseStrength"         "10" 		// Base strength
+	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	        "AttributeBaseIntelligence"     "16" 		// Base intelligence
+	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	        "AttributeBaseAgility"          "12" 		// Base agility
+	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	
+	        // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.55"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
 		
 		// Status
 		//----------------------------------------------------------------
@@ -321,78 +477,31 @@
 		"StatsManaRegen"		"0.01"
 	}
 	//=================================================================================================================
-	// HERO: Magician
+	// HERO: Spartan Warrior
 	//=================================================================================================================
-	"npc_dota_hero_invoker"
+	"npc_dota_hero_dragon_knight"
 	{
-		"override_hero"				"npc_dota_hero_invoker"
-		"AbilityLayout" "6"
-		"Ability1"					"magician_frost_bolt"
-		"Ability2"					"magician_flame_spire"
-		"Ability3"					"magician_flash_point"
-		"Ability4"					"magician_meteor_shower"
-		"Ability5"					"magician_freezing_field"
-		"Ability6"					"magician_preparation"
-	
-		// Attributes
-	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
-	        "AttributeBaseStrength"         "10" 		// Base strength
-	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "16" 		// Base intelligence
-	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "12" 		// Base agility
-	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	
-	        // Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"0"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"2.0"
-		"AttackDamageMax"		"24.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.25"
-		"AttackAnimationPoint"		"0.55"
-		"AttackAcquisitionRange"	"600"
-		"AttackRange"			"600"
-		//"ProjectileModel"		""	 //Add projectile models
-		"ProjectileSpeed"		"900"
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"100"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"0"
-		"StatsManaRegen"		"0.01"
-	}
-	//=================================================================================================================
-	// HERO: Druid
-	//=================================================================================================================
-	"npc_dota_hero_lone_druid"
-	{
-		"override_hero"				"npc_dota_hero_furion"
+		"override_hero"				"npc_dota_hero_dragon_knight"
 		"AbilityLayout" "5"
-		"Ability1"					"druid_rejuvenation"
-		"Ability2"					"druid_natures_wrath"
-		"Ability3"					"druid_call_lightning"
-		"Ability4"					"druid_mind_blast"
-		"Ability5"					"druid_call_storm"
+		"Ability1"					"spartanwarrior_dispatch"
+		"Ability2"					"spartanwarrior_valor"
+		"Ability3"					"spartanwarrior_throw_javelin"
+		"Ability4"					"spartanwarrior_charge"
+		"Ability5"					"spartanwarrior_phalanx"
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
 	
 		// Attributes
 	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
-	        "AttributeBaseStrength"         "12" 		// Base strength
+	       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+	        "AttributeBaseStrength"         "14" 		// Base strength
 	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "15" 		// Base intelligence
+	        "AttributeBaseIntelligence"     "12" 		// Base intelligence
 	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
 	        "AttributeBaseAgility"          "12" 		// Base agility
 	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
@@ -401,25 +510,23 @@
 		//----------------------------------------------------------------
 		"ArmorPhysical"			"2"
 		"MagicalResistance"		"0"
-		
-		// Attack
+	
+	        // Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"2.0"
 		"AttackDamageMax"		"24.0"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.25"
-		"AttackAnimationPoint"		"0.4"
-		"AttackAcquisitionRange"	"600"
-		"AttackRange"			"600"
-		//"ProjectileModel"		""	 //Add projectile models
-		"ProjectileSpeed"		"1200"
+		"AttackRate"			"2.00"
+		"AttackAnimationPoint"		"0.433"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
 		
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.4"
+		"MovementTurnRate"		"0.6"
 		
 		// Status
 		//----------------------------------------------------------------
@@ -427,111 +534,6 @@
 		"StatusHealthRegen"		"0.25"
 		"StatusMana"			"0"
 		"StatsManaRegen"		"0.01"
-	}
-	//=================================================================================================================
-	// HERO: Assassin
-	//=================================================================================================================
-	"npc_dota_hero_phantom_assassin"
-	{
-		"override_hero"				"npc_dota_hero_phantom_assassin"
-		"AbilityLayout" "6"
-		"Ability1"					"assassin_walk_the_shadows"
-		"Ability2"					"assassin_disable"
-		"Ability3"					"assassin_assassinate"
-		"Ability4"					"assassin_garrote"
-		"Ability5"					"assassin_shadow_image"
-		"Ability6"					"assassin_critical_strike"
-	
-		// Attributes
-	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
-	        "AttributeBaseStrength"         "13" 		// Base strength
-	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "1" 		// Base intelligence
-	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "15" 		// Base agility
-	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	
-	       // Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"0"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"2.0"
-		"AttackDamageMax"		"24.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.60"
-		"AttackAnimationPoint"		"0.40"
-		"AttackAcquisitionRange"	"650"
-		"AttackRange"			"100"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"100"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"25"	//10 with 1 int
-		"StatsManaRegen"		"0"	//0.75, set in lua
-	}
-	//=================================================================================================================
-	// HERO: Khaos Champion
-	//=================================================================================================================
-	"npc_dota_hero_skeleton_king"
-	{
-		"override_hero"				"npc_dota_hero_skeleton_king"
-		"AbilityLayout" "5"
-		"Ability1"					"khaoschampion_grave_blind"
-		"Ability2"					"khaoschampion_shadow_scythe"
-		"Ability3"					"khaoschampion_shroud"
-		"Ability4"					"khaoschampion_terrorize"
-		"Ability5"					"khaoschampion_requim"
-	
-		// Attributes
-	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
-	        "AttributeBaseStrength"         "14" 		// Base strength
-	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "1" 		// Base intelligence
-	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "12" 		// Base agility
-	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	
-	        // Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"0"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"2.0"
-		"AttackDamageMax"		"24.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.00"
-		"AttackAnimationPoint"		"0.3"
-		"AttackAcquisitionRange"	"650"
-		"AttackRange"			"100"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"100"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"35" //10 with 1 int
-		"StatsManaRegen"		"0" //0.75, set in lua
 	}
 	//=================================================================================================================
 	// HERO: Temple Guardian
@@ -644,36 +646,34 @@
 		"StatsManaRegen"		"0.01"
 	}
 	//=================================================================================================================
-	// HERO: Demon Hunter/Master?
+	// HERO: Warlord
 	//=================================================================================================================
-	"npc_tbr_demon"
+	"npc_dota_hero_juggernaut"
 	{
-		"override_hero"				"npc_dota_hero_terrorblade"
-		"AbilityLayout"				"6"
-		"Ability1"					"demon_immolation"	//boring toggle, should be an active for a duration.
-		"Ability2"					"demon_warglaives" //cleave, throw weapons around
-		"Ability3"					"demon_dodge"	//+critical on next attack after dodge
-		"Ability4"					"demon_form" //class skill, toggle to lose the melee skills
-		"Ability5"					"demon_flame_crash" //go high and land
-		"Ability6"					"demon_avatar" //ultimate1, illusion with shared HP
-		"Ability7"					"demon_summons" //many demons
-		"Ability8"					"demon_strike" //bouncing projectile
-		"Ability9"					"demon_passive" //dunno what should this be
-		"Ability10"					"demon_shadow_blast" //maybe redundant
-		"Ability11"					"demon_frenzy" //active, synergy with summons
-		"Ability12"					"demon_army" //ultimate2, gives the ability to swap to different summons
+		"override_hero"				"npc_dota_hero_juggernaut"
+		"AbilityLayout" "6"
+		"Ability1"					"warlord_counter"
+		"Ability2"					"warlord_impale"
+		"Ability3"					"warlord_winds_of_war"
+		"Ability4"					"warlord_bum_rush"
+		"Ability5"					"warlord_bleed"
+		"Ability6"					"warlord_critical_strike"
 	
 		// Attributes
 	        //-------------------------------------------------------------------------------------------------------------
 	       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
-	        "AttributeBaseStrength"         "12" 		// Base strength
+	        "AttributeBaseStrength"         "14" 		// Base strength
 	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "15" 		// Base intelligence
+	        "AttributeBaseIntelligence"     "1" 		// Base intelligence
 	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "12" 		// Base agility
+	        "AttributeBaseAgility"          "14" 		// Base agility
 	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	        "AttackRange"				"500"
+	
+	         // Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"100"									// Base health.
+		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
+		"StatusMana"				"35"									// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	}
-	
-	
 }

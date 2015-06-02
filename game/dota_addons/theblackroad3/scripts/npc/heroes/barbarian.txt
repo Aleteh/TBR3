@@ -1,9 +1,9 @@
 //=================================================================================================================
 // HERO: Barbarian
 //=================================================================================================================
-"npc_dota_hero_beastmaster"
+"npc_dota_hero_axe"
 {
-	"override_hero"				"npc_dota_hero_beastmaster"
+	"override_hero"				"npc_dota_hero_axe"
 	"AbilityLayout" "5"
 	"Ability1"					"barbarian_taunt"
 	"Ability2"					"barbarian_rend_armor"
@@ -19,14 +19,14 @@
 	"Ability12"					""
 
 	// Attributes
-        //-------------------------------------------------------------------------------------------------------------
-       	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
-        "AttributeBaseStrength"         "15" 		// Base strength
-        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-        "AttributeBaseIntelligence"     "1" 		// Base intelligence
-        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-        "AttributeBaseAgility"          "10" 		// Base agility
-        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"         "15" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "1" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "10" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
         // Armor
 	//----------------------------------------------------------------

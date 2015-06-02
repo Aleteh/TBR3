@@ -28,97 +28,47 @@ function impale( event )
 	end
 end
 
-function winds_of_war( event )
-	event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "warlord_winds_of_war_modifier", nil) 
-	EmitSoundOn("Hero_Juggernaut.BladeFuryStart", event.caster)
-	Timers:CreateTimer({
-	    endTime = 2.5,
-	    callback = function()
-	    	event.caster:StopSound("Hero_Juggernaut.BladeFuryStart")
-	    	EmitSoundOn("Hero_Juggernaut.BladeFuryStop", event.caster)
- 	end
-	})
-	local point = event.ability:GetCursorPosition()
-	local caster_point = event.caster:GetAbsOrigin()
-	local vector_between = (point - caster_point)
-	local hypotenyse = (vector_between.x ^ 2 + vector_between.y ^ 2) ^ 0.5
-	event.ability.x_of_movement = caster_point.x
-	event.ability.y_of_movement = caster_point.y
-	event.ability.sin = vector_between.y / hypotenyse
-	event.ability.cos = vector_between.x / hypotenyse
-	event.ability.damaged_group = nil
-	event.ability.damaged_group = {}
-	--event.caster:SetAbsOrigin(GetGroundPosition(Vector(caster_point.x + cos * 400, caster_point.y + sin * 400, 0), event.caster))
 
-	event.caster:SetContextThink("winds_of_war_animation", 
-	function ()
-		if event.caster:HasModifier("warlord_winds_of_war_modifier") == true then
-			event.caster:RemoveModifierByName("warlord_winds_of_war_animation")
-			event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "warlord_winds_of_war_animation", nil)
+------------------
+-- Winds of War --
+------------------
 
-			return  0.4
+function WhirlwindMoveToPoint( event )
+	local caster = event.caster
+	local caster_location = caster:GetAbsOrigin() 
+	local target_point = event.target_points[1]
+	local ability = event.ability
+
+	local speed = ability:GetLevelSpecialValueFor("speed", (ability:GetLevel() - 1)) * 0.03
+	local distance = (target_point - caster_location):Length2D()
+	local direction = (target_point - caster_location):Normalized()
+	local traveled_distance = 0
+
+	-- Move the caster towards the point every frame
+	-- ToDo: change to use physics for grid nav
+	Timers:CreateTimer(function()
+		if traveled_distance < distance then
+			caster_location = caster_location + direction * speed
+			caster:SetAbsOrigin(caster_location)
+			traveled_distance = traveled_distance + speed
+			return 0.03
 		else
-			event.caster:RemoveModifierByName("warlord_winds_of_war_animation")
-			return nil
+			caster:RemoveModifierByName("modifier_whirlwind")
+			caster:RemoveModifierByName("modifier_whirlwind_spin")
 		end
-	end
-	, 0)
+	end)
 end
 
-function SpinHero(keys)
-    local caster = keys.caster
-    local total_degrees = keys.Angle
-    print("Spinning ", total_degrees, "degrees about center")
-    caster:SetForwardVector(RotatePosition(Vector(0,0,0), QAngle(0,total_degrees,0), caster:GetForwardVector()))
+function WhirlwindStop( event )
+	local caster = event.caster
+	
+	caster:StopSound("Hero_Juggernaut.BladeFuryStart")
 end
 
-function winds_of_war_think( event )
-	local caster_point = event.caster:GetAbsOrigin()
-	local next_x = event.ability.x_of_movement + event.ability.cos * 15
-	local next_y = event.ability.y_of_movement + event.ability.sin * 15
-	local next_point = GetGroundPosition(Vector(next_x, next_y, 0), event.caster)
-
-	--FindClearSpaceForUnit(event.caster, next_point, true) 
-	event.caster:SetAbsOrigin(next_point)
-
-	event.ability.x_of_movement = next_x
-	event.ability.y_of_movement = next_y
-
-	local group = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(), nil, 250, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	local caster_team = event.caster:GetTeamNumber()
-	local caster_agility = event.caster:GetAgility() 
-	local spell_damage = event.ability:GetAbilityDamage()
-	local damage_type = event.ability:GetAbilityDamageType()
-
-
-
-	for key,unit in pairs(group) do
-		if unit ~= event.caster then
-			local unit_point = unit:GetAbsOrigin()
-			local push_point = (unit_point - caster_point):Normalized() * 25 + unit_point
-
-			--FindClearSpaceForUnit(unit, push_point, true)
-			unit:SetAbsOrigin(push_point)
-
-			if unit:GetTeamNumber() ~= caster_team then
-				if unit:HasModifier("warlord_winds_of_war_damaged_modifier") == false then
-					ApplyDamage({ victim = unit, attacker = event.caster, damage = (spell_damage + caster_agility), damage_type = damage_type, ability = event.ability	})
-					event.ability:ApplyDataDrivenModifier(event.caster, unit, "warlord_winds_of_war_damaged_modifier", nil)
-				end
-			end
-
-		end
-	end
-end
-
+---
 
 function winds_of_war_anti_stuck( event )
 	FindClearSpaceForUnit(event.target, event.target:GetAbsOrigin(), true)
-end
-
-function winds_of_war_anti_stuck_b(event )
-	FindClearSpaceForUnit(event.target, event.target:GetAbsOrigin(), true)
-
 end
 
 

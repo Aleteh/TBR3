@@ -8,9 +8,9 @@
 	
 		//Custom Hero Names
 
-   		"npc_dota_hero_axe"                 "Warlord"
-   		"npc_dota_hero_beastmaster"         "Barbarian"
-   		"npc_dota_hero_bounty_hunter"       "Assassin"
+   		"npc_dota_hero_juggernaut"                 "Warlord"
+   		"npc_dota_hero_axe"         "Barbarian"
+   		"npc_dota_hero_phantom_assassin"       "Assassin"
    		"npc_dota_hero_crystal_maiden"      "Cleric"
    		"npc_dota_hero_dragon_knight"       "Spartan Warrior"
    		"npc_dota_hero_windrunner"         "Ranger"
