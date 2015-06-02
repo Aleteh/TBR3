@@ -1,0 +1,44 @@
+//Tertiary - Charge
+//Effect: You charge into your enemy dealing static plus Strength damage, increased depending on the distance you started your charge from. Weak enemies will be pushed out of your way.
+//Benefits From: N/A
+//Cooldown: 8 seconds
+//Range: 650
+//Cost: Low
+
+//Notes:
+//• Intended as a basis of a Barbarian in combat. He is able to very quickly charge around with nothing able to stop him
+//• Can be used to very quickly enter combat, or attack a ranged unit when surrounded or blocked by enemies
+"barbarian_charge"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"barbarian_charge"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

@@ -1,0 +1,44 @@
+// Journeyman 2 - Sanctimonious Shield
+// Effect: Having the ability to focus holy energies into anything, the Templar focuses those energies into his large shield, then smashes the enemy in the face with it releasing the energy. They receive Strength-Based damage, half physical and half magical, and it can hit additional enemies near the target based on the rank of the spell. Any affected targets are knocked back. If the unit cannot be knocked back it takes increased damage. Number of targets affected increases with the rank of the spell.
+// Benefits From: Spell Damage
+// Cooldown: 12 seconds
+// Range: Melee
+// Cost: Average
+
+// Notes:
+// • A defensive ability effective when fighting groups of enemies. 
+// • It will hit X targets from rank 1 - 8 each second: 2, 2, 2, 3, 3, 3, 4, 4
+"templar_sanctimonious_shield"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"templar_sanctimonious_shield"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

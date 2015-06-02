@@ -5,6 +5,16 @@
 //His armor is increased by xx and all physical damage done to him is reduced by xx %.
 //Also a small amount of the physical damage that is inflicted upon him is reflected to enemies nearby. 250 AOE.
 
+//Class Skill - Shroud
+//Effect: Anytime the Khaos Champion casts a spell he receives reduced damage for 6 seconds.
+//Benefits From: N/A
+//Cooldown: N/A
+//Range: N/A
+//Cost: N/A
+
+//Notes:
+//• Intended to be efficiently kept active through rotating Grave Bind and Death Coil
+
 "khaoschampion_shroud"
 {
 	// General

@@ -1,5 +1,15 @@
 //=================================================================================================================
 // Warlock: Blind
+//Class Skill - Blind
+//Effect: You have a 5% chance everytime you deal damage of inflicting Blind.
+//Benefits From: N/A
+//Cooldown: N/A
+//Range: N/A
+//Cost: N/A
+
+//Notes:
+//• A very effective way of mitigating physical damage. Blind reduces the enemies chance to hit making it stack nicely with attack speed slow, as well as being effective both in groups and by yourself
+
 //=================================================================================================================
 //Blinds a target enemy unit for up to 10 seconds for 600 mana. While it is blinded, the affected unit will move randomly
 // and will not attack. This skill cannot be improved. Cooldown 8 seconds, 700 range. 

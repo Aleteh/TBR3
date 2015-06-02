@@ -1,5 +1,14 @@
 //=================================================================================================================
 // Ranger: Prevailing Winds
+//Class Skill - Soul-Piercing Shot
+//Effect: You have a 5% chance to deal X*(Agility+Intelligence) to your target. Additionally you steal X mana from your target every hit, if it has mana.
+//Benefits From: N/A
+//Cooldown: N/A
+//Range: N/A
+//Cost: N/A
+
+//Notes:
+//• A nice passive bonus to damage as well as the ability to steal mana every attack
 //=================================================================================================================
 "ranger_prevailing_winds"
 {

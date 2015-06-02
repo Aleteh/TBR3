@@ -1,0 +1,44 @@
+//Ultimate 2 - Reverberatory Blade
+//Effect: You throw a blade engineered for killing at an enemy. Upon impact it springs additional blades back at surrounding enemies (in a 180° arc from the enemy hit), dealing static plus Agility damage to any //enemies struck. Has 5% higher chance to inflict Hemorrhage.
+//Benefits From: N/A
+//Cooldown: 30 seconds
+//Range: 400
+//Cost: Average
+
+//Notes:
+//• The only real AoE the assassin can get, effective against large groups
+//• Useful even on bosses, as it has an increased chance of Hemorrhage
+"assassin_reverbatory_blade"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"assassin_reverbatory_blade"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

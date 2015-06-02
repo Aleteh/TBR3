@@ -1,0 +1,44 @@
+//Ultimate 1 - Haunt
+//Effect: You instill fear and paranoia into an enemy, causing them to see phantoms while also dealing damage to them over time. The target will suffer damage every 4 seconds, and everytime they do a Spectre will spawn beside them. The Spectre has no attack, dies after 1 damage and only lasts 3 seconds, but it returns an enormous percentage of received damage back to the attacker. Haunt lasts 16 seconds. Enemies feel very threatened by Spectres.
+//Benefits From: Spell Damage
+//Cooldown: 32 seconds
+//Range: 600
+//Cost: High
+
+//Notes:
+//• An effective way to help mitigate group damage causing the enemy to potentially waste attacks on the Spectres.
+//• Can be very effective is used in conjunction with Requiem
+"warlock_haunt"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlock_haunt"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}
