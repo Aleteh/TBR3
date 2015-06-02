@@ -9,7 +9,7 @@
 //Increases the damage of nearby friendly units by xx% and armor by xx. Lasts 30 seconds. 500 AOE
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"guardian_of_nature_skill1"
+	"AbilityTextureName"			"guardianofnature_roar"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"		

@@ -20,7 +20,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"khaos_champion_skill3"
+	"AbilityTextureName"			"khaoschampion_shroud"
 	"MaxLevel" "7"
 
 	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"

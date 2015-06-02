@@ -8,7 +8,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"warlock_skill3"
+	"AbilityTextureName"			"warlock_deathwave"
 	"MaxLevel" 						"7"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"

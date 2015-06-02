@@ -10,7 +10,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"druid_skill4"
+	"AbilityTextureName"			"druid_mind_blast"
 	"MaxLevel" 						"7"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

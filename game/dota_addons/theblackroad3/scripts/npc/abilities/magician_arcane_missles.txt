@@ -1,16 +1,16 @@
-//Ultimate 2 - Shadow Grasp
-//Effect: You harness dark energy around a targetted enemy and use it to pull the target towards you dealing static plus Strength damage and causing the target to be taunted to you for 5 seconds.
-//Benefits From: N/A
-//Cooldown: 30 seconds
-//Range: 400
-//Cost: High
+// Primary - Arcane Missles (Channeled)
+// Effect: You fire bolts of unstable arcane energy each second at the enemy unit. With each bolt the energy buildup on the target increases and causes the next bolt to deal more damage. Lasts 10 seconds. Channeling cannot be broken by enemy stuns.
+// Benefits From: Spell Damage
+// Cooldown: 12 second
+// Range: 600
+// Cost: Average
 
-//Notes:
-//• A powerful single target damage ability that also violently pulls a targetted unit from where they are into melee combat with the Khaos Champion and forces them to attack them for 5 seconds. The only ability //in the game that can move bosses.
-"khaoschampion_shadow_grasp"
+// Notes:
+// • An effective single target attack that can get to devastating damage if Preparation procs after casting and is used without the spell being interrupted or delayed 
+"magician_arcane_missles"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"khaoschampion_shadow_grasp"
+	"AbilityTextureName"			"magician_arcane_missles"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

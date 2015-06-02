@@ -9,7 +9,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"temple_guardian_skill3"
+	"AbilityTextureName"			"templeguardian_fire_of_apollo"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"

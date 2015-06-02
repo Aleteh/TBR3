@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"assassin_skill4"
+	"AbilityTextureName"			"assassin_garrote"
 	"MaxLevel" "7"
 	
 	// Stats

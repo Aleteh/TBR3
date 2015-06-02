@@ -1,16 +1,17 @@
-//Ultimate 2 - Shadow Grasp
-//Effect: You harness dark energy around a targetted enemy and use it to pull the target towards you dealing static plus Strength damage and causing the target to be taunted to you for 5 seconds.
-//Benefits From: N/A
-//Cooldown: 30 seconds
-//Range: 400
-//Cost: High
+// Tertiary - Enchantment
+// Effect: Enchants the selected ally, as well as the Magician, increasing their Intelligence and giving them a chance to Burn the enemy on attack. A Magician can only have the effect active on one ally at a time. Lasts 60 seconds. Cannot be cast on Warrior Classes.
+// Benefits From: N/A
+// Cooldown: 30 second
+// Range: 600
+// Cost: High
 
-//Notes:
-//• A powerful single target damage ability that also violently pulls a targetted unit from where they are into melee combat with the Khaos Champion and forces them to attack them for 5 seconds. The only ability //in the game that can move bosses.
-"khaoschampion_shadow_grasp"
+// Notes:
+// • An ally buff that increases the damage potential of casters
+// • Rather expensive, though effective
+"magician_enchantment"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"khaoschampion_shadow_grasp"
+	"AbilityTextureName"			"magician_enchantment"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

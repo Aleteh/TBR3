@@ -1,5 +1,51 @@
 "DOTAAbilities"
 {
+	"ability_journeyman"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"rubick_empty1"
+		"MaxLevel" 						"1"
+	}
+	"hero_ability_name"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"hero_ability_name"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	"ability_ultimate"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"rubick_empty1"
+		"MaxLevel" 						"1"
+	}
 	//=================================================================================================================
 	// Assassin: Assassinate
 	//=================================================================================================================
@@ -8,7 +54,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"assassin_skill3"
+		"AbilityTextureName"			"assassin_assassinate"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -74,7 +120,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"juggernaut_blade_dance"
-		"AbilityTextureName"			"assassin_skill6"
+		"AbilityTextureName"			"assassin_critical_strike"
 		"MaxLevel" "1"
 		"ID"					"5027"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -105,7 +151,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"assassin_skill2"
+		"AbilityTextureName"			"assassin_disable"
 		"MaxLevel" "1"
 		
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -168,7 +214,7 @@
 	"assassin_energy"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"assassin_skill0"
+		"AbilityTextureName"			"assassin_energy"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	
@@ -182,6 +228,50 @@
 			}
 		}
 	}
+	//Ultimate 1 - Foreboding Mark
+	//Effect: Places a percent damage buff on the targetted friendly unit of this spell, as well as the caster, for a short time. Any attacks made by the caster during this time will place a short taunt debuff on the enemy, forcing it to attack the targetted unit of the spell. Lasts 5 seconds. If this ability is used on a Shadow Image it loses the increased damage taken for the duration as well as taking 50% less damage.
+	//Benefits From: N/A
+	//Cooldown: 30 seconds
+	//Range: 300
+	//Cost: High
+	
+	//Notes:
+	//• Mixture of offensive and defensive, the damage buff is exceptionally nice offensively
+	//• Can be used to help keep threat on a tank if they are stunned, knocked back, or there's an extra add running around.
+	"assassin_foreboding_mask"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_foreboding_mask"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Assassin: Garrote
 	//=================================================================================================================
@@ -190,7 +280,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"assassin_skill4"
+		"AbilityTextureName"			"assassin_garrote"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -259,6 +349,223 @@
 					}
 				}
 			}
+	}
+	//Class Skill - Hemorrhage
+	//Effect: You have a 5% chance on each melee attack of placing a bleed on the target for Agility-Based damage every second for 3 seconds.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Class Notes:
+	//• Assassin's are intended to be exceptional boss killers. Able to deal massive melee damage, while also being able to effectively hit and run with long DoT's
+	"assassin_hemorrhage"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_hemorrhage"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Primary - Lacerate (Autocastable)
+	//Effect: Deals static damage to the target. Adds Agility-Based damage for every bleed effect on the target caused by the Assassin.
+	//Benefits From: N/A
+	//Cooldown: 4 seconds
+	//Range: Melee
+	//Cost: Low
+	
+	//Notes:
+	//• Primary damaging ability. Alone it will do low damage, but with self-caused bleeds on the target the damage is doubled, tripled, or quadrupled
+	//• The assassin should be able to cast this endlessly, as in, they recover mana at the exact rate they use this spell
+	"assassin_lacerate"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_lacerate"
+		"MaxLevel" 						"3"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Tertiary - Mangle
+	//Effect: Places a bleed on the target for 21 seconds that deals static plus Agility damage.
+	//Benefits From: N/A
+	//Cooldown: 20 seconds
+	//Range: Melee
+	//Cost: Average
+	
+	//Notes:
+	//• Long duration bleed
+	"assassin_mangle"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_mangle"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Secondary - Mutilate
+	//Effect: Places a bleed on the target for 11 seconds that deals static plus Agility damage.
+	//Benefits From: N/A
+	//Cooldown: 10 seconds
+	//Range: Melee
+	//Cost: Average
+	
+	//Notes:
+	//• Medium duration bleed
+	"assassin_mutilate"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_mutilate"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 2 - Reverberatory Blade
+	//Effect: You throw a blade engineered for killing at an enemy. Upon impact it springs additional blades back at surrounding enemies (in a 180° arc from the enemy hit), dealing static plus Agility damage to any //enemies struck. Has 5% higher chance to inflict Hemorrhage.
+	//Benefits From: N/A
+	//Cooldown: 30 seconds
+	//Range: 400
+	//Cost: Average
+	
+	//Notes:
+	//• The only real AoE the assassin can get, effective against large groups
+	//• Useful even on bosses, as it has an increased chance of Hemorrhage
+	"assassin_reverbatory_blade"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"assassin_reverbatory_blade"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Assassin: Shadow Image
@@ -539,7 +846,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"barbarian_skill5"
+		"AbilityTextureName"			"barbarian_bloodbath"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -596,6 +903,93 @@
 			}
 		}
 	}
+	//Class Skill - Callused Skin
+	//Effect: When the Barbarian suffers damage from any effect, physical or magical, it calluses his skin increasing it's toughness. Each time he's damaged he gains ((Character Level/8)+5) armor for 7 seconds. The effect can stack 10 times.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• Barbarians skin is more resilient than most humans. It calluses when injured making them less susceptible to damage for a time.
+	"barbarian_callused_skin"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_callused_skin"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Tertiary - Charge
+	//Effect: You charge into your enemy dealing static plus Strength damage, increased depending on the distance you started your charge from. Weak enemies will be pushed out of your way.
+	//Benefits From: N/A
+	//Cooldown: 8 seconds
+	//Range: 650
+	//Cost: Low
+	
+	//Notes:
+	//• Intended as a basis of a Barbarian in combat. He is able to very quickly charge around with nothing able to stop him
+	//• Can be used to very quickly enter combat, or attack a ranged unit when surrounded or blocked by enemies
+	"barbarian_charge"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_charge"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Barbarian: Cleave 
 	//=================================================================================================================
@@ -607,7 +1001,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"barbarian_skill3"
+		"AbilityTextureName"			"barbarian_cleave"
 		"MaxLevel" "7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
@@ -677,6 +1071,49 @@
 			}
 		}	
 	}
+	//Primary - Maul (Autocastable)
+	//Effect: You focus your attacks increasing your attack damage by a percent each successful application. If you miss or delay between cooldowns the momentum is lost. Buff lasts 11 seconds. (Max stack of 3). Stacks with similar effects.
+	//Benefits From: N/A
+	//Cooldown: 10 seconds
+	//Range: Melee
+	//Cost: Low
+	
+	//Notes:
+	//• Intended to give the barbarian greater effectiveness in longer battles
+	"barbarian_maul"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_maul"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Barbarian: Mighty leap 
 	//=================================================================================================================
@@ -690,7 +1127,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"barbarian_skill4"
+		"AbilityTextureName"			"barbarian_mighty_leap"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -767,7 +1204,7 @@
 	"barbarian_rage"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"barbarian_skill0"
+		"AbilityTextureName"			"barbarian_rage"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE  | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	
@@ -820,7 +1257,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"barbarian_skill2"
+		"AbilityTextureName"			"barbarian_rend_armor"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -883,6 +1320,49 @@
 			}
 		}
 	}
+	//Ultimate 2 - Shieldcrusher
+	//Effect: You swing your weapon with such barbaric strength, you ignore any mortal defence completely. The swing deals large static plus Strength magical damage.
+	//Benefits From: N/A
+	//Cooldown: 30 seconds
+	//Range: Melee
+	//Cost: High
+	
+	//Notes:
+	//• Very effective on high physical resistance enemies
+	"barbarian_shieldcrusher"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_shieldcrusher"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Barbarian: Taunt
 	//=================================================================================================================
@@ -894,7 +1374,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"barbarian_skill1"
+		"AbilityTextureName"			"barbarian_taunt"
 		"MaxLevel" "1"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -963,6 +1443,49 @@
 			}
 		}
 	}
+	//Ultimate 1 - Vicious Repel
+	//Effect: You spin in circles holding your weapon outstretched, dealing static plus Strength+Agility damage to all enemies immediately around you every second for 5 seconds. At the end of your spin you shake off any debuffs.
+	//Benefits From: N/A
+	//Cooldown: 35 seconds
+	//Range: 200
+	//Cost: High
+	
+	//Notes:
+	//• The only effective full AoE ability of the Barbarian class
+	"barbarian_vicious_repel"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"barbarian_vicious_repel"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Cleric: Cleansing Flame
 	//Sears the soul of a target enemy unit with holy fire, causing xxx damage per second for 10 seconds for xxxx mana.
@@ -974,7 +1497,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cleric_skill4"
+		"AbilityTextureName"			"cleric_cleansing_flame"
 		"MaxLevel"						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -1103,7 +1626,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cleric_skill3"
+		"AbilityTextureName"			"cleric_fire_of_heaven"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -1197,6 +1720,49 @@
 			}
 		}
 	}
+	//Primary - Heavenly Regeneration
+	//Effect: Heals the targetted friendly unit a small amount every second for 25 seconds.
+	//Benefits From: Spell Healing
+	//Cooldown: 1 second
+	//Range: 600
+	//Cost: Low
+	
+	//Notes:
+	//• Long single target regeneration, increased slightly from "Regen"
+	"cleric_heavenly_regeneration"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_heavenly_regeneration"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}End Warlock
 	
 	//Cleric
@@ -1211,7 +1777,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityTextureName"			"cleric_skill1"
+		"AbilityTextureName"			"cleric_holy_light"
 		"MaxLevel" 						"7"
 	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -1250,6 +1816,137 @@
 			}
 		}
 	}
+	//Tertiary - Holy Nova
+	//Effect: You release a wave of Holy energy that restore allies health based off Spell Healing, and damages enemies based off Spell Damage. Can Inflict Blind.
+	//Benefits From: Spell Damage, Spell Healing
+	//Cooldown: 16 seconds
+	//Range: 500
+	//Cost: High
+	
+	//Notes:
+	//• An effective AoE both for healing and damage, depending on what gear you specialize in
+	"cleric_holy_nova"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_holy_nova"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Journeyman 2 - Inner Sight
+	//Effect: Removes any buffs on enemies, any debuffs on allies, and resets the timer of all the Clerics heal over time spells affecting allies.
+	//Benefits From: N/A
+	//Cooldown: 20 seconds
+	//Range: 700
+	//Cost: High
+	
+	//Notes:
+	//• An effective dispel, this will also double as an extremely effective way to keep "Heavenly Regeneration" on an entire group with a single cast every 20 seconds
+	//• The high mana cost will make it only effective for keep HoT's up if there are more than 3 allies around
+	"cleric_inner_sight"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_inner_sight"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 1 - Meditated Connection (Channeled)
+	//Effect: You meditate intensely releasing a bolt of holy energy once every 2 seconds for 10 seconds that heals the lowest maximum health target nearby for a large amount plus a percent of their maximum health. Channeling cannot be broken by enemy stuns.
+	//Benefits From: Spell Healing
+	//Cooldown: 30 seconds
+	//Range: 700
+	//Cost: High
+	
+	//Notes:
+	//• Has a long cooldown and a high cost, as well as being channeled. Also it cannot be targetted, but chooses it's own. Aside from these specific conditions it is capable of healing an extremely large amount
+	//• Should generally be used when a vital member of the group is about to die
+	"cleric_meditated_connection"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_meditated_connection"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Cleric: Rebirth
 	//=================================================================================================================
@@ -1258,7 +1955,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"cleric_skill5"
+		"AbilityTextureName"			"cleric_rebirth"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -1324,7 +2021,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityTextureName"			"cleric_skill2"
+		"AbilityTextureName"			"cleric_regen"
 		"MaxLevel" 						"7"
 	
 	
@@ -1392,6 +2089,89 @@
 						"Function"		"regen"
 					}
 				}
+			}
+		}
+	}
+	//Secondary - Righteous Burning
+	//Effect: When cast on an ally it will restore some health instantly based on Spell Healing, and an equal amount over 5 seconds. When cast on an enemy it will deal instant static damage, and an equal amount over 5 seconds. May inflict Burn.
+	//Benefits From: Spell Damage, Spell Healing
+	//Cooldown: 15 seconds
+	//Range: 600
+	//Cost: Average
+	"cleric_righteous_burning"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_righteous_burning"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 2 - Shield of Faith
+	//Effect: You place a buff on a targetted ally. Every 3 seconds they will gain a small damage absorbing shield based on their level. Lasts 15 seconds. While the damage absorbing shield is around the target they receive 100% increased healing from the Cleric.
+	//Benefits From: N/A
+	//Cooldown: 30 seconds
+	//Range: 600
+	//Cost: High
+	
+	//Notes:
+	//• Though it creates damage absorbing shields, helping mitigate damage, it's main purpose is to increase the healing the target receives
+	"cleric_shield_of_faith"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"cleric_shield_of_faith"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
 			}
 		}
 	}
@@ -1636,7 +2416,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"druid_skill3"
+		"AbilityTextureName"			"druid_call_lightning"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -1726,7 +2506,7 @@
 	"druid_call_storm"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"druid_skill5"
+		"AbilityTextureName"			"druid_call_storm"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -1899,6 +2679,49 @@
 			}
 		}
 	}
+	//Class Skill - Innervate
+	//Effect: You have a 5% chance when you cast a spell to gain Rank-Based increased mana regeneration for 10 seconds.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• Innervate makes Druids the most mana "efficient" casters in the game
+	"druid_innervate"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_innervate"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Druid: Mind Blast
 	//=================================================================================================================
@@ -1911,7 +2734,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"druid_skill4"
+		"AbilityTextureName"			"druid_mind_blast"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -2004,7 +2827,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"druid_skill2"
+		"AbilityTextureName"			"druid_natures_wrath"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -2122,7 +2945,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"druid_skill1"
+		"AbilityTextureName"			"druid_rejuvenation"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -2200,6 +3023,188 @@
 			}
 		}
 	}
+	//Ultimate 1 - Spirit Form
+	//Effect: The Druid communicates with the souls of nearby animals and harnesses their essence.
+	//• Essence of the Bear - The Druid receives increased armor and Strength.
+	//• Essence of the Wolf - The Druid receives increased movement and attack speed.
+	//• Essence of the Eagle - The Druid receives a low percent increase to all stats.
+	//• Essence of the Ram - The Druid receives a chance to knockback melee attackers when struck.
+	//Benefits From: N/A
+	//Cooldown: 15 seconds
+	//Range: N/A
+	//Cost: Medium
+	
+	//Notes:
+	//• A versatile ability allowing the druid to better suit the circumstances and conditions.
+	"druid_spirit_form"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_spirit_form"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 2 - Summon Totems
+	//Effect: You gain the ability to summon several different totems to channel your powers. Totems last 30 seconds. Totems health is based on the casters maximum health.
+	//• Air - Unbridled Static (Green Chain Lightning dealing damage based off the Druid's Spell Damage)
+	//• Earth - Tellurian Bond (Can Soul Link to one selected ally and absorb half of the targets incoming damage until it or the target dies)
+	//• Fire - Funneled Rage (+Static Damage to all allies in range of the totem)
+	//• Water - Healing Stream (Blue Chain healing based off the Druid's Spell Healing)
+	//Benefits From: Spell Damage, Spell Healing
+	//Cooldown: 15 second Global/ 30 second Individual
+	//Range: N/A
+	//Cost: Average
+	
+	//Notes:
+	//• Gives the Druid a wide selection of effects, allowing a lot of versatility
+	//• Totems are most effective when used in groups, though they can be effective when soloing if used correctly
+	"druid_summon_totems"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_summon_totems"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Tertiary - Terra Firma
+	//Effect: You cause the roots of plants, and the earth itself, to burst from the ground at a targetted point dealing damage at the center, and half damage in the surrounding area. Targets standing on Nature's Wrath take increased damage.
+	//Benefits From: Spell Damage
+	//Cooldown: 12 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• A good single target spell, with decent mid range damage
+	"druid_terra_firma"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_terra_firma"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Journeyman 2 - Tornado
+	//Effect: You release a tornado in the targetted direction. It will move unpredictably and deal physical damage.
+	//Benefits From: Spell Damage
+	//Cooldown: 15 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• Physical based damage allowing for effective use on enemies with high magical resistance
+	//• Deals very high damage per second, though it moves unpredictably
+	"druid_tornado"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"druid_tornado"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}
 	
 	"dummy_passive"
@@ -2256,7 +3261,7 @@
 	//Deals xxxxx initial damage and xxxx damage per second for 3 seconds for xxxx mana. 450 AOE, 800 range, 45 seconds cooldown
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"guardian_of_nature_skill4"
+		"AbilityTextureName"			"guardianofnature_cataclysm"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -2447,7 +3452,7 @@
 	// 150 AOE. 8 seconds cooldown. 700 range.
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"guardian_of_nature_skill3"
+		"AbilityTextureName"			"guardianofnature_earth_shock"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
@@ -2533,6 +3538,136 @@
 			}			
 		}
 	}
+	//Journeyman 1 - Living Bark
+	//Effect: You harden your skin increasing your armor and making you immune to any status changes for the duration. Lasts 30 seconds.
+	//Benefits From: N/A
+	//Cooldown: 45 seconds
+	//Range: N/A
+	//Cost: Average
+	
+	//Notes:
+	//• An effective survival ability for any Guardian of Nature
+	//• Gives armor and immunity to most spell effects, but not the damage from spells
+	"guardianofnature_living_bark"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardianofnature_living_bark"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Secondary - Nature's Assistance
+	//Effect: You command nature's nearby inhabitants to surround and attack an enemy dealing damage each second. They have a 2% chance of spreading to a nearby enemy each time they deal damage. If the target of Nature's Assistance dies, the remaining duration jumps to a nearby enemy. Lasts 14 seconds.
+	//Benefits From: Spell Damage
+	//Cooldown: 14 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• Can be an effective AoE when large groups of enemies are present and it's given more opportunity to spread
+	"guardianofnature_natures_assistance"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardianofnature_natures_assistance"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Class Skill - Nature's Defence
+	//Effect: You have a 15% chance when you cast a spell and an additional 5% chance when struck by an enemy of summoning an AI controlled Treant. Treants will heal a target once every second they're alive, //targetting allied heros in a 700 range missing the highest percent of maximum health. Their heal is dependant on the Guardian of Nature's Spell Healing, and their health is dependant on the Guardian of Natures //health. When the Treants die or expire, the Guardian of Nature that summoned them is healed based on the Treants health. Treants last 5 seconds.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• Treants for Int GoN's heal allies more, while healing the GoN less when they expire. Treants for Str GoN's heal allies less, while healing the GoN more when they expire.
+	"guardianofnature_natures_defense"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardianofnature_natures_defense"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Guardian of Nature: Nature's Fury
 	//=================================================================================================================
@@ -2540,7 +3675,7 @@
 	//Gives you a xx % chance on attack to stun for 2.5 seconds and cause an extra xxxx damage to all enemiey in a 350 radius.
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"guardian_of_nature_skill5"
+		"AbilityTextureName"			"guardianofnature_natures_fury"
 		"MaxLevel" "1"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2667,7 +3802,7 @@
 	//Increases the damage of nearby friendly units by xx% and armor by xx. Lasts 30 seconds. 500 AOE
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"guardian_of_nature_skill1"
+		"AbilityTextureName"			"guardianofnature_roar"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"		
@@ -2765,6 +3900,94 @@
 			}
 		}
 	}
+	//Journeyman 2 - Tempest
+	//Effect: You swing your weapon with all your strength causing a powerful blast of air so fierce it blows nearby debris and enemies away from yourself and deals static plus Strength damage. Large units immune to //knockback will take increased damage.
+	//Benefits From: Spell Damage
+	//Cooldown: 8 seconds
+	//Range: 450
+	//Cost: Average
+	
+	//Notes:
+	//• Will benefit from both Strength and Spell Damage encouraging either build
+	//• A effective frontal AoE that also causes Blind
+	"guardianofnature_tempest"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardianofnature_tempest"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 2 - Tranquility (Channeled)
+	//Effect: You request assistance from the harmony of Nature recovering all allies around you every 2 seconds. They're healed for a percentage of your maximum health. Lasts 20 seconds. If Living Bark is active //you will taunt nearby enemies once every 10 seconds. Channeling cannot be broken by enemy stuns.
+	//Benefits From: Spell Healing
+	//Cooldown: 45 seconds
+	//Range: 600
+	//Cost: High
+	
+	//Notes:
+	//• Tranquility will be effective for either all strength GoN's because of their high health, or caster GoN's
+	//• It will be more effective when used by caster GoN's
+	"guardianofnature_tranquility"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"guardianofnature_tranquility"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Guardian of Nature: Tremor
 	//=================================================================================================================
@@ -2773,7 +3996,7 @@
 	//Enemies outside that radius will suffer half damage.
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"guardian_of_nature_skill2"
+		"AbilityTextureName"			"guardianofnature_tremor"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2893,7 +4116,7 @@
 	"kc_hatred"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill0"
+		"AbilityTextureName"			"kc_hatred"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	
@@ -2907,18 +4130,61 @@
 			}
 		}
 	}
+	//Tertiary - Death Coil
+	//Effect: You release a concentrated ball of malice at the enemy dealing static plus Strength damage. Targets will be taunted to you for 5 seconds. Deals double damage if Grave Bind is active on the enemy.
+	//Benefits From: N/A
+	//Cooldown: 12 seconds
+	//Range: 400
+	//Cost: Average
+	
+	//Notes:
+	//• The basic taunt of the Khaos Champion
+	"khaoschampion_death_coil"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaoschampion_death_coil"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
-	// Khaos Champion: Grave Blind
+	// Khaos Champion: Grave Bind
 	//=================================================================================================================
 	//Blinds the target to his grave stunning it for 3 seconds and dealing xxxx damage for xx mana.
 	//20 seconds cooldown. 450 Range
 	
-	"khaoschampion_grave_blind"
+	"khaoschampion_grave_bind"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"skeleton_king_hellfire_blast"
-		"AbilityTextureName"			"khaos_champion_skill1"
+		"AbilityTextureName"			"khaoschampion_grave_bind"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -2969,18 +4235,18 @@
 		}
 	}
 	//=================================================================================================================
-	// Khaos Champion: Requim
+	// Khaos Champion: Requiem
 	//=================================================================================================================
 	//Calls forth fallen souls to form a boundary around the Khaos Champion.
 	//Theses Souls do xxxx to anyone who physically attacks him during 60 seconds for xx mana.
 	//Cooldown 1 second. 160 AOE.
 	
-	"khaoschampion_requim"
+	"khaoschampion_requiem"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill5"
+		"AbilityTextureName"			"khaoschampion_requiem"
 		"MaxLevel" "7"
 	
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -3076,6 +4342,49 @@
 			}
 		}
 	}
+	//Ultimate 2 - Shadow Grasp
+	//Effect: You harness dark energy around a targetted enemy and use it to pull the target towards you dealing static plus Strength damage and causing the target to be taunted to you for 5 seconds.
+	//Benefits From: N/A
+	//Cooldown: 30 seconds
+	//Range: 400
+	//Cost: High
+	
+	//Notes:
+	//• A powerful single target damage ability that also violently pulls a targetted unit from where they are into melee combat with the Khaos Champion and forces them to attack them for 5 seconds. The only ability //in the game that can move bosses.
+	"khaoschampion_shadow_grasp"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaoschampion_shadow_grasp"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Khaos Champion: Shadow Scythe
 	//=================================================================================================================
@@ -3088,7 +4397,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill2"
+		"AbilityTextureName"			"khaoschampion_shadow_scythe"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -3179,12 +4488,22 @@
 	//His armor is increased by xx and all physical damage done to him is reduced by xx %.
 	//Also a small amount of the physical damage that is inflicted upon him is reflected to enemies nearby. 250 AOE.
 	
+	//Class Skill - Shroud
+	//Effect: Anytime the Khaos Champion casts a spell he receives reduced damage for 6 seconds.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• Intended to be efficiently kept active through rotating Grave Bind and Death Coil
+	
 	"khaoschampion_shroud"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill3"
+		"AbilityTextureName"			"khaoschampion_shroud"
 		"MaxLevel" "7"
 	
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3264,7 +4583,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"khaos_champion_skill4"
+		"AbilityTextureName"			"khaoschampion_terrorize"
 		"MaxLevel" 			"7"
 		
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3331,6 +4650,136 @@
 			}
 		}
 	}
+	//Journeyman 2 - Unholy Presence
+	//Effect: Allies around you are bolstered by your presence and have immunity to movement reduction and Rank-Based percent health regeneration.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• Some people prefer buffing allies to debuffing enemies. Especially if they intend to acquire Requiem.
+	"khaoschampion_unholy_presence"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"khaoschampion_unholy_presence"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Primary - Arcane Missles (Channeled)
+	// Effect: You fire bolts of unstable arcane energy each second at the enemy unit. With each bolt the energy buildup on the target increases and causes the next bolt to deal more damage. Lasts 10 seconds. Channeling cannot be broken by enemy stuns.
+	// Benefits From: Spell Damage
+	// Cooldown: 12 second
+	// Range: 600
+	// Cost: Average
+	
+	// Notes:
+	// • An effective single target attack that can get to devastating damage if Preparation procs after casting and is used without the spell being interrupted or delayed 
+	"magician_arcane_missles"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_arcane_missles"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Tertiary - Enchantment
+	// Effect: Enchants the selected ally, as well as the Magician, increasing their Intelligence and giving them a chance to Burn the enemy on attack. A Magician can only have the effect active on one ally at a time. Lasts 60 seconds. Cannot be cast on Warrior Classes.
+	// Benefits From: N/A
+	// Cooldown: 30 second
+	// Range: 600
+	// Cost: High
+	
+	// Notes:
+	// • An ally buff that increases the damage potential of casters
+	// • Rather expensive, though effective
+	"magician_enchantment"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_enchantment"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Magician: Flame Spire
 	//=================================================================================================================
@@ -3341,7 +4790,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"magician_skill2"
+		"AbilityTextureName"			"magician_flame_spire"
 		"MaxLevel" 						"7"
 	
 		"AbilityCastRange"				"800"
@@ -3432,7 +4881,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"magician_skill3"
+		"AbilityTextureName"			"magician_flash_point"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -3501,6 +4950,50 @@
 			}
 		}
 	}
+	// Secondary - Flux Matrix
+	// Effect: You create a stationary temporal distortion around yourself. Enemies inside the distortion have Rank-Based decreased movement and attack speed, while allies receive Rank-Based increased movement and attack speed. Lasts 15 seconds.
+	// Benefits From: N/A
+	// Cooldown: 15 seconds
+	// Range: 450
+	// Cost: High
+	
+	// Notes:
+	// • A effective enemy debuff/ally buff at the same time
+	// • Flux Matrix reacts with learned abilities in different ways
+	"magician_flux_matrix"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_flux_matrix"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Magician: Freezing Field
 	//=================================================================================================================
@@ -3515,7 +5008,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"magician_skill5"
+		"AbilityTextureName"			"magician_freezing_field"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED" // | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -3651,7 +5144,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"magician_skill1"
+		"AbilityTextureName"			"magician_frost_bolt"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -3741,6 +5234,49 @@
 			}
 		}
 	}
+	// Journeyman 1 - Hoarfrost
+	// Effect: You surround a targetted enemy in a snap of frozen air, freezing their skin as well as any moisture in their body. The target takes cold damage over time, decreasing as they thaw, and suffer from Chilled. Lasts 10 seconds.
+	// Benefits From: Spell Damage
+	// Cooldown: 15 seconds
+	// Range: 600
+	// Cost: Average
+	
+	// Notes:
+	// • When cast on a unit inside your own Flux Matrix, HoarFrost will spread to all enemies within the radius of Flux Matrix
+	"magician_hoarfrost"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_hoarfrost"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Magician: Meteor Shower
 	//=================================================================================================================
@@ -3751,7 +5287,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"magician_skill4"
+		"AbilityTextureName"			"magician_meteor_shower"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -3858,13 +5394,22 @@
 			}
 		}
 	}
+	// Class Skill - Preparation
+	// Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
+	// Benefits From: N/A
+	// Cooldown: N/A
+	// Range: N/A
+	// Cost: N/A
+	
+	// Notes:
+	// • Will give the Magician very good occasional burst damage
 	"magician_preparation"
 	//Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"magician_skill6"
+		"AbilityTextureName"			"magician_preparation"
 		"MaxLevel" 						"1"
 	
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3915,6 +5460,50 @@
 			}	
 		}
 	
+	}
+	// Ultimate 1 - Snow Globe
+	// Effect: You launch a ball of ice in the targetted direction. The ball of ice splinters as it flies releasing shards in all directions. Affected targets are Chilled.
+	// Benefits From: Spell Damage
+	// Cooldown: 30 seconds
+	// Range: 600
+	// Cost: High
+	
+	// Notes:
+	// • When cast into your own Flux Matrix, the shards that break off in outward directions will get caught inside the Flux Matrix bouncing continuously inside until they hit something or one of the spells ends
+	// • Will not override HoarFrost's Flux effect. Will override Flashpoint's Flux effect.
+	"magician_snow_globe"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"magician_snow_globe"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Assign Crafting Materials On Death - Add this ability on every mob which is supposed to drop them everytime.
@@ -4226,6 +5815,49 @@
 	    		}
 		}
 	}
+	//Ultimate 2 - Aimed Shot
+	//Effect: You study your enemy and fire an arrow with all possible accuracy and care. You deal static plus Agility damage and reduce the targets health regeneration by 40% for 12 seconds.
+	//Benefits From: N/A
+	//Cooldown: 25 seconds
+	//Range: 650
+	//Cost: High
+	
+	//Notes:
+	//• Very high single target damage, and the rare ability to decrease the enemies ability to regenerate health. Very effective on multiple bosses
+	"ranger_aimed_shot"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_aimed_shot"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}End Assassin
 	
 	//Ranger
@@ -4238,7 +5870,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ranger_skill1"
+		"AbilityTextureName"			"ranger_black_arrow"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -4329,15 +5961,67 @@
 				}
 		}
 	}
+	//Journeyman 2 - Poisoned Arrow (Autocastable)
+	//Effect: You coat your arrow in a concentrated poison and fire it deep into the enemy. They initially take static plus Agility damage and then poison damage over time based on the level of the enemy. The poison reacts more violently the stronger the immune system, thus dealing increased damage to stronger enemies.
+	//Benefits From: N/A
+	//Cooldown: 16 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• Effective single target ability with a chance to debuff the enemy, as well as dealing poison damage based off the enemies level
+	"ranger_poisoned_arrow"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_poisoned_arrow"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ranger: Prevailing Winds
+	//Class Skill - Soul-Piercing Shot
+	//Effect: You have a 5% chance to deal X*(Agility+Intelligence) to your target. Additionally you steal X mana from your target every hit, if it has mana.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• A nice passive bonus to damage as well as the ability to steal mana every attack
 	//=================================================================================================================
 	"ranger_prevailing_winds"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ranger_skill6"
+		"AbilityTextureName"			"ranger_prevailing_winds"
 				// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"7"
@@ -4411,7 +6095,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ranger_skill3"
+		"AbilityTextureName"			"ranger_puncture"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -4512,7 +6196,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ranger_skill5"
+		"AbilityTextureName"			"ranger_soul_piercing_shot"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -4589,7 +6273,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ranger_skill4"
+		"AbilityTextureName"			"ranger_star_dust"
 		"MaxLevel" "7"
 		
 				// Stats
@@ -4735,6 +6419,49 @@
 			}
 		}
 	}
+	//Secondary - Strafe
+	//Effect: You fire an arrow at the enemy that pierces through them, seeking additional targets.
+	//Benefits From: N/A
+	//Cooldown: 18 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• The increased hits and increased damage per hit will be balanced DPS wise
+	"ranger_strafe"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"ranger_strafe"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ranger: Stun Shot
 	//=================================================================================================================
@@ -4743,7 +6470,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"ranger_skill2"
+		"AbilityTextureName"			"ranger_stun_shot"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -4832,7 +6559,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityTextureName"			"spartan_warrior_skill4"
+		"AbilityTextureName"			"spartanwarrior_charge"
 		"MaxLevel" 						"7"
 	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -4974,6 +6701,49 @@
 			}
 		}
 	}
+	//Journeyman 2 - Demoralizing Slam
+	//Effect: You slam the ground in a rage, intimidating enemies around you. They receive static plus Strength damage and all targets receive reduced attack and movement speed. Affected targets are taunted for 5 seconds if they suffer from Lunge's disorient effect.
+	//Benefits From: Spell Damage
+	//Cooldown: 30 seconds
+	//Range: 450
+	//Cost: High
+	
+	//Notes:
+	//• A large AoE taunt that also deals large damage
+	"spartanwarrior_demoralizing_slam"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartanwarrior_demoralizing_slam"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}End Barbarian
 	
 	//Spartan Warrior
@@ -4989,7 +6759,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"spartan_warrior_skill1"
+		"AbilityTextureName"			"spartanwarrior_dispatch"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -5065,6 +6835,135 @@
 			}
 		}
 	}
+	//Primary - Disrupt (Autocastable)
+	//Effect: You damage an enemy's internal functions. They take static plus Strength damage over time. The effect can stack. Lasts 14 seconds.
+	//Benefits From: Spell Damage
+	//Cooldown: 7 seconds
+	//Range: Melee
+	//Cost: Average
+	
+	//Notes:
+	//• An effective damage over time that can stack. Tends to be more effective in longer fights
+	"spartanwarrior_disrupt"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartanwarrior_disrupt"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Class Skill - Last Stand
+	//Effect: Once per minute when your hero is brought to near death his evasion and spell resist are increased to 90% for 5 seconds. Does not stack with any similar effects.
+	//Benefits From: N/A
+	//Cooldown: 60 seconds
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• Largely dependant on balancing, this ability will allow Spartan Warriors a brief grace period, where they refuse to go down without a fight, before death takes them
+	"spartanwarrior_last_stand"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartanwarrior_last_stand"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Tertiary - Lunge
+	//Effect: You leap through the air with all of your power dealing static plus Strength damage upon landing and disorienting affected enemies. Disoriented enemies move 50% slower for 4 seconds.
+	//Benefits From: N/A
+	//Cooldown: 15 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• One of the few abilities not increased by Spell Damage. A strength Spartan Warrior's main AoE.
+	"spartanwarrior_lunge"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartanwarrior_lunge"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Spartan Warrior: Phalanx
 	//=================================================================================================================
@@ -5074,7 +6973,7 @@
 	"spartanwarrior_phalanx"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"spartan_warrior_skill5"
+		"AbilityTextureName"			"spartanwarrior_phalanx"
 		"MaxLevel" "1"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -5188,6 +7087,49 @@
 			}
 		}
 	}
+	//Ultimate 2 - Testudo
+	//Effect: You order nearby allies to create a defensive formation around your current position. Allies will use anything available to create a wall between them and enemies. Incoming ranged attacks are reduced by 30% and Spell Resist is increased, to those in the formation. Lasts 40 seconds.
+	//Benefits From: N/A
+	//Cooldown: 40 seconds
+	//Range: 450
+	//Cost: High
+	
+	//Notes:
+	//• A very effective defensive ability reducing incoming damages to allies. Requires bunching up however which can be more detrimental than beneficial and thus requires considerations. Functions differently than //Phalanx in the form of increasing Spell Resist instead of using percent reduction - this can lead to varying gains. Additionally, because it uses Spell Resist values it also decreases debuff lengths which //Phalanx does not.
+	"spartanwarrior_testudo"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"spartanwarrior_testudo"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Spartan Warrior: Throw Javelin
 	//=================================================================================================================
@@ -5198,7 +7140,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"spartan_warrior_skill3"
+		"AbilityTextureName"			"spartanwarrior_throw_javelin"
 		"MaxLevel" 	"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
@@ -5312,7 +7254,7 @@
 		// General
 		// -------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_datadriven"
-		"AbilityTextureName"					"spartan_warrior_skill2"
+		"AbilityTextureName"					"spartanwarrior_valor"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5599,6 +7541,364 @@
 	
 	
 	
+	// Ultimate 2 - Benediction
+	// Effect: The Templar sacrifices 25% of his max health to place a shield on all nearby allies for an amount equal to the health lost. Lasts 20 seconds.
+	// Benefits From: N/A
+	// Cooldown: 25 seconds
+	// Range: 450
+	// Cost: High
+	
+	// Notes:
+	// • Effective in groups when used by high health Templars. Can be dangerous if used at the wrong times however as the Templar can kill himself with the ability.
+	"templar_benediction"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_benediction"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Primary - Conviction
+	// Effect: The Templar strikes and enemy with conviction, dealing Strength-Based damage to the enemy. Additional effects are applied, based on any Sanction currently active on the Templar.
+	// Benefits From: Spell Damage
+	// Cooldown: 15 seconds
+	// Range: Melee
+	// Cost: Average
+	
+	// Notes:
+	// • A high damage spell with the ability of causing multiple different effects based on the currently active Sanction:
+	// • Conviction of Fury - The target will suffer from reduced armor for 7 seconds. (Doesn't stack with similar effects)
+	// • Conviction of Harmony - The target will suffer from reduced attack speed, stacking with Chilled and Maim, for 10 seconds. The target is also taunted for 5 seconds.
+	// • Conviction of Wit - The target will receive a debuff that restore mana to allies upon dealing damage to the target.
+	// • Conviction of Bestowment - The target will suffer reduced stats equal to the increase in stats the Templar currently has from the Sanction.
+	// • Conviction of Suffering - The target will receive a debuff that increases the damage it takes from "Magical" effects. (Doesn't stack with similar effects)
+	"templar_conviction"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_conviction"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Journeyman 1 - Graceful Light
+	// Effect: The Templar focuses his energy into a single heal that has a 10% chance of healing for 50% more. If the Templar has Sanction of Wit or Sanction of Bestowment active, the chance is increased to 20%.
+	// Benefits From: Spell Healing
+	// Cooldown: 12 seconds
+	// Range: 600
+	// Cost: Average
+	
+	// Notes:
+	// • An average heal with a chance to heal for above average results
+	"templar_graceful_light"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_graceful_light"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Secondary - Hallowed Ground
+	// Effect: The Templar concecrates an area around himself. Every second an enemy will be randomly selected and damaged by a beam of light. Higher ranks of the spell can hit multiple targets. Lasts 10 seconds.
+	// Benefits From: Spell Damage, Max Health
+	// Cooldown: 20 seconds
+	// Range: 800
+	// Cost: Average
+	
+	// Notes:
+	// • It will hit X targets from rank 1 - 8 each second: 1, 1, 1, 1, 2, 2, 2, 3
+	// • Initially, due to the huge range and random targetting, it can be ineffective if improperly used. Higher levels are more effective at killing creeps.
+	"templar_hallowed_ground"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_hallowed_ground"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Ultimate 1 - Hope's Envoy (Channeled)
+	// Effect: You focus holy energies inward for a short period, then release the energy rapidly healing all allies around you in repeated succession. Heals each second are dependant on SpellHealing/Length. Length of channeling reduced per rank. Lasts for 20 seconds. Channeling cannot be broken by enemy stuns.
+	// Benefits From: Spell Healing
+	// Cooldown: 25 seconds
+	// Range: 700
+	// Cost: High
+	
+	// Notes:
+	// • Takes several seconds to begin channeling, in which time the Templar is susceptible to stuns and interrupts
+	// • Each rank of the spell reduces the length of the channeling by 1 second
+	"templar_hopes_envoy"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_hopes_envoy"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Journeyman 2 - Sanctimonious Shield
+	// Effect: Having the ability to focus holy energies into anything, the Templar focuses those energies into his large shield, then smashes the enemy in the face with it releasing the energy. They receive Strength-Based damage, half physical and half magical, and it can hit additional enemies near the target based on the rank of the spell. Any affected targets are knocked back. If the unit cannot be knocked back it takes increased damage. Number of targets affected increases with the rank of the spell.
+	// Benefits From: Spell Damage
+	// Cooldown: 12 seconds
+	// Range: Melee
+	// Cost: Average
+	
+	// Notes:
+	// • A defensive ability effective when fighting groups of enemies. 
+	// • It will hit X targets from rank 1 - 8 each second: 2, 2, 2, 3, 3, 3, 4, 4
+	"templar_sanctimonious_shield"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_sanctimonious_shield"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Tertiary - Sanction
+	// Effect: The Templar sanctions himself toward a specific mission, increasing his fervor in acheiving that goal.
+	// • Sanction of Fury - While active, the Templar has increased attack speed and attack damage.
+	// • Sanction of Harmony - While active, the Templar receives reduced damage and increased healing.
+	// • Sanction of Wit - While active, the Templar restores mana on attack.
+	// • Sanction of Bestowment - While active, the Templar has a chance to gain increased stats on each attack for 30 seconds. Effect can stack.
+	// • Sanction of Suffering - While active, the Templar deals large magic damage on every attack, but receives a portion of the damage back.
+	// Benefits From: N/A
+	// Cooldown: 5 second
+	// Range: N/A
+	// Cost: High
+	
+	// Notes:
+	// • Sanctions allow the Templar to boost himself is very specific, and effective, ways
+	"templar_sanction"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_sanction"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	// Class Skill - Withdrawal From the Dark
+	// Effect: If the Templar casts Hallowed Ground after a player dies, and their gravestone remains for the full duration of the spell, they will revive at the end with health based on the rank of Hallowed Ground. While the Templar stands on Hallowed Ground, it will receive a small increase to regeneration values.
+	// Benefits From: N/A
+	// Cooldown: N/A
+	// Range: N/A
+	// Cost: N/A
+	
+	// Notes:
+	// • Players revived by Hallowed Ground will have no mana and health equal to: 10%, 15%, 20%, 25%, 30%, 35%, 40%, 45%
+	// • As the dead player MUST be in Hallowed Ground for the entire duration, a Templar cannot cast Hallowed Ground then Benediction killing himself and revive himself
+	"templar_withdrawal_from_the_dark"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"templar_withdrawal_from_the_dark"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Temple Guardian: Fire of Apollo
 	//=================================================================================================================
@@ -5610,7 +7910,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"temple_guardian_skill3"
+		"AbilityTextureName"			"templeguardian_fire_of_apollo"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -5746,7 +8046,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"temple_guardian_skill1"
+		"AbilityTextureName"			"templeguardian_gift_of_the_gods"
 		"MaxLevel" "7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -5794,7 +8094,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"temple_guardian_skill4"
+		"AbilityTextureName"			"templeguardian_hammer_of_zeus"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -5933,7 +8233,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"temple_guardian_skill6"
+		"AbilityTextureName"			"templeguardian_hestias_touch"
 		"MaxLevel" 						"7"
 			
 	        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -6041,7 +8341,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"temple_guardian_skill2"
+		"AbilityTextureName"			"templeguardian_mark_of_artemis"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -6182,7 +8482,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"temple_guardian_skill5"
+		"AbilityTextureName"			"templeguardian_pray"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -6241,6 +8541,16 @@
 	}
 	//=================================================================================================================
 	// Warlock: Blind
+	//Class Skill - Blind
+	//Effect: You have a 5% chance everytime you deal damage of inflicting Blind.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: N/A
+	//Cost: N/A
+	
+	//Notes:
+	//• A very effective way of mitigating physical damage. Blind reduces the enemies chance to hit making it stack nicely with attack speed slow, as well as being effective both in groups and by yourself
+	
 	//=================================================================================================================
 	//Blinds a target enemy unit for up to 10 seconds for 600 mana. While it is blinded, the affected unit will move randomly
 	// and will not attack. This skill cannot be improved. Cooldown 8 seconds, 700 range. 
@@ -6249,7 +8559,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlock_skill5"
+		"AbilityTextureName"			"warlock_blind"
 		"MaxLevel" 						"1"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -6312,6 +8622,92 @@
 			}
 		}
 	}
+	//Ultimate 2 - Bone Spirit
+	//Effect: You release dark spirits that track and damage enemies, ignoring magical defenses. Higher ranks create more spirits per cast.
+	//Benefits From: Spell Damage
+	//Cooldown: 30 seconds
+	//Range: 600
+	//Cost: High
+	
+	//Notes:
+	//• Releases a large quantity of Spirits that when focusing on a single target can deal massive damage
+	"warlock_bone_spirit"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_bone_spirit"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Journeyman 2 - Dark Void
+	//Effect: You release a dark pulse of energy inflicting Blind on all enemies around you, and damaging them.
+	//Benefits From: Spell Damage
+	//Cooldown: 20 seconds
+	//Range: 600
+	//Cost: Average
+	
+	//Notes:
+	//• A strong AoE attack that has a guaranteed Blind effect on all enemies.
+	"warlock_dark_void"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_dark_void"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Warlock: Deathwave
 	//=================================================================================================================
@@ -6322,7 +8718,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlock_skill3"
+		"AbilityTextureName"			"warlock_deathwave"
 		"MaxLevel" 						"7"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
@@ -6458,6 +8854,50 @@
 	    		}
 	    	}
 	}
+	//Ultimate 1 - Haunt
+	//Effect: You instill fear and paranoia into an enemy, causing them to see phantoms while also dealing damage to them over time. The target will suffer damage every 4 seconds, and everytime they do a Spectre will spawn beside them. The Spectre has no attack, dies after 1 damage and only lasts 3 seconds, but it returns an enormous percentage of received damage back to the attacker. Haunt lasts 16 seconds. Enemies feel very threatened by Spectres.
+	//Benefits From: Spell Damage
+	//Cooldown: 32 seconds
+	//Range: 600
+	//Cost: High
+	
+	//Notes:
+	//• An effective way to help mitigate group damage causing the enemy to potentially waste attacks on the Spectres.
+	//• Can be very effective is used in conjunction with Requiem
+	"warlock_haunt"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_haunt"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Warlock: Soul Drain
 	//=================================================================================================================
@@ -6469,7 +8909,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlock_skill2"
+		"AbilityTextureName"			"warlock_soul_drain"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -6660,6 +9100,49 @@
 			}
 		}
 	}
+	//Journeyman 1 - Soul Link
+	//Effect: You master the art of sapping enemies strength. When you Soul Drain an enemy, a portion of the healing you receive will also affect nearby allies.
+	//Benefits From: N/A
+	//Cooldown: N/A
+	//Range: 300
+	//Cost: N/A
+	
+	//Notes:
+	//• The only support ability the Warlock has. The only thing the Warlock likes more than sapping an enemies strength and fortifying himself is sapping an enemies strength and fortifying himself and his allies.
+	"warlock_soul_link"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlock_soul_link"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}End Ranger
 	
 	//Warlock
@@ -6674,7 +9157,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlock_skill1"
+		"AbilityTextureName"			"warlock_torment"
 		"MaxLevel" 						"7"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -6753,7 +9236,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlock_skill4"
+		"AbilityTextureName"			"warlock_vengeance"
 		"MaxLevel" "1"
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -6816,6 +9299,55 @@
 			}
 		}
 	}
+	//Journeyman 1 - Bear Focus (Autocastable)
+	//Effect: You increase your focus on the fight at hand, gaining increased ability the longer you focus.
+	//• Level 1 Focus Effect - You deal static plus Agility+Strength damage as well as an instant crit.
+	//• Level 2 Focus Effect - You deal static plus Agility+Strength damage as well as increasing your movement speed.
+	//• Level 3 Focus Effect - You deal static plus Agility+Strength damage as well as increasing your mana regeneration.
+	//• Level 1 Finisher Effect - You deal static plus Agility+Strength damage as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+	//• Level 2 Finisher Effect - You deal static plus Agility+Strength damage, slow the enemies movement speed as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+	//• Level 3 Finisher Effect - You deal static plus Agility+Strength damage, slow the enemies movement and attack speed as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+	//Benefits From: Agility
+	//Cooldown: 7 seconds
+	//Range: Melee
+	//Cost: Low
+	
+	//Notes:
+	//• Focuses primarily on single targets and dealing physical damage
+	"warlord_bear_focus"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_bear_focus"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Warlord: Bleed
 	//=================================================================================================================
@@ -6824,7 +9356,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill5"
+		"AbilityTextureName"			"warlord_bleed"
 		"MaxLevel" 						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -6912,7 +9444,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill4"
+		"AbilityTextureName"			"warlord_bum_rush"
 		"MaxLevel" 						"7"
 		"AbilityCastAnimation"			"run_chase"
 		
@@ -7004,7 +9536,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill1"
+		"AbilityTextureName"			"warlord_counter"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -7097,7 +9629,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"juggernaut_blade_dance"
-		"AbilityTextureName"			"assassin_skill6"
+		"AbilityTextureName"			"warlord_critical_strike"
 		"MaxLevel" "1"
 		"ID"					"5027"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -7120,6 +9652,49 @@
 			}
 		}
 	}
+	//Tertiary - Dragon Claw
+	//Effect: When used the Warlord gains the ability to critically strike for 30 seconds. Finishing skill.
+	//Benefits From: N/A
+	//Cooldown: 1 seconds
+	//Range: Melee
+	//Cost: Average
+	
+	//Notes:
+	//• A melee skill that can be potentially devastating depending on the level of Focus the Warlord has
+	"warlord_dragon_claw"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_dragon_claw"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}End Temple Guardian
 	
 	//Warlord
@@ -7132,7 +9707,7 @@
 	"warlord_focus"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill0"
+		"AbilityTextureName"			"warlord_focus"
 		"MaxLevel" 						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	
@@ -7165,7 +9740,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill2"
+		"AbilityTextureName"			"warlord_impale"
 		"MaxLevel" "7"
 		
 		// Stats
@@ -7221,6 +9796,142 @@
 			}
 		}
 	}
+	//Journeyman 2 - Lightning Rush
+	//Effect: You rush a targetted area, with lightning-like speed, and strike every target within it. The Warlord will deal static plus Agility damage as he bounces from one target to the next, losing momentum as he does, decreasing the damage of successive hits.
+	//Benefits From: N/A
+	//Cooldown: 22 seconds
+	//Range: 450
+	//Cost: Average
+	
+	//Notes:
+	//• An effective AoE that makes the Warlord untargetable for the duration
+	"warlord_lightning_rush"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_lightning_rush"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 2 - Mortal Strike
+	//Effect: You strike a vital point in the enemy, dealing static plus Agility+Strength damage and reducing it's health regeneration by 40% for 12 seconds.
+	//Benefits From: N/A
+	//Cooldown: 25 seconds
+	//Range: Melee
+	//Cost: High
+	
+	//Notes:
+	//• A high damage single target attack that also has the rare ability of reducing the enemies regeneration
+	"warlord_mortal_strike"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_mortal_strike"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
+	//Ultimate 1 - Pheonix Focus (Autocastable)
+	//Effect: As a lord of war you have even learned to channel the elements to a degree.
+	//• Level 1 Focus Effect - You create a fire orb effect centered on the enemy you strike.
+	//• Level 2 Focus Effect - You release a wave of chilling cold air centered on the enemy you strike.
+	//• Level 3 Focus Effect - You release a crackling lightning from the enemy you strike that bounces to nearby enemies.
+	//• Level 1 Finisher Effect - The enemy erupts in a small explosion of fire.
+	//• Level 2 Finisher Effect - The area near the enemy is bombarded from the skies by hail.
+	//• Level 3 Finisher Effect - The enemy is struck by a powerful bolt of electricity that bounces to nearby enemies, branching into two each bounce. Bounces 3 times.
+	//Benefits From: N/A
+	//Cooldown: 8 seconds
+	//Range: Melee
+	//Cost: Average
+	
+	//Notes:
+	//• Focuses primarily on dealing magical damage
+	//• ALL damage is formulated from a static amount modified by player level. As such, it does the same damage at level 200 for all builds.
+	"warlord_phoenix_focus"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"warlord_phoenix_focus"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Warlord: Winds of war
 	//=================================================================================================================
@@ -7229,7 +9940,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"warlord_skill3"
+		"AbilityTextureName"			"warlord_winds_of_war"
 		"MaxLevel" "7"
 		
 		// Stats

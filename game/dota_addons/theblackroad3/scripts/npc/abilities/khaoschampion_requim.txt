@@ -1,16 +1,16 @@
 //=================================================================================================================
-// Khaos Champion: Requim
+// Khaos Champion: Requiem
 //=================================================================================================================
 //Calls forth fallen souls to form a boundary around the Khaos Champion.
 //Theses Souls do xxxx to anyone who physically attacks him during 60 seconds for xx mana.
 //Cooldown 1 second. 160 AOE.
 
-"khaoschampion_requim"
+"khaoschampion_requiem"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"khaos_champion_skill5"
+	"AbilityTextureName"			"khaoschampion_requiem"
 	"MaxLevel" "7"
 
 	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"

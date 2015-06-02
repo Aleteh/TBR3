@@ -1,0 +1,71 @@
+//=================================================================================================================
+// HERO: Guardian of Nature
+// • The design is having all Str and all Int being viable builds
+// • With Barkskin, Class Regalia, and Nature's Defense GoN's can make very self sufficient tanks
+//=================================================================================================================
+"tbr_hero_guardianofnature"
+{
+	"override_hero"				"npc_dota_hero_brewmaster"
+	"AbilityLayout" 			"6"
+	//"Ability1"					"guardianofnature_roar"
+	//"Ability2"					"guardianofnature_tremor"
+	//"Ability3"					"guardianofnature_earth_shock"
+	//"Ability4"					"guardianofnature_cataclysm"
+	//"Ability5"					"guardianofnature_natures_fury"
+	
+	"Ability1"					"guardianofnature_earth_shock"
+	"Ability2"					"guardianofnature_natures_assistance"
+	"Ability3"					"guardianofnature_roar"
+	"Ability4"					"guardianofnature_natures_defense" //Class Skill
+	"Ability5"					"ability_journeyman" //Journeyman Choice
+	"Ability6"					"ability_ultimate" //Ultimate Choice
+	"Ability7"					"guardianofnature_living_bark" //Journeyman 1
+	"Ability8"					"guardianofnature_tempest" //Journeyman 2
+	"Ability9"					"guardianofnature_cataclysm" //Ultimate 1
+	"Ability10"					"guardianofnature_tranquility" //Ultimate 2
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
+
+	// Attributes
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"         "14" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "12" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "12" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+    // Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"2"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"2.0"
+	"AttackDamageMax"		"24.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.00"
+	"AttackAnimationPoint"		"0.433"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"100"
+	"StatusHealthRegen"		"0.25"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0.01"
+}

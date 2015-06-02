@@ -7,10 +7,10 @@
 
 //Class Notes:
 //• Assassin's are intended to be exceptional boss killers. Able to deal massive melee damage, while also being able to effectively hit and run with long DoT's
-"assassin_hemorraghe"
+"assassin_hemorrhage"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"assassin_hemorraghe"
+	"AbilityTextureName"			"assassin_hemorrhage"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

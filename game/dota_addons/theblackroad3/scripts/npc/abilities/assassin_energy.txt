@@ -9,7 +9,7 @@
 "assassin_energy"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"assassin_skill0"
+	"AbilityTextureName"			"assassin_energy"
 	"MaxLevel" 						"1"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 

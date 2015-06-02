@@ -8,7 +8,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"magician_skill2"
+	"AbilityTextureName"			"magician_flame_spire"
 	"MaxLevel" 						"7"
 
 	"AbilityCastRange"				"800"

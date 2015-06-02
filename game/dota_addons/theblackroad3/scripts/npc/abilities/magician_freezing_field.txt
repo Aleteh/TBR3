@@ -12,7 +12,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"magician_skill5"
+	"AbilityTextureName"			"magician_freezing_field"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED" // | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"

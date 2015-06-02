@@ -8,7 +8,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"warlord_skill2"
+	"AbilityTextureName"			"warlord_impale"
 	"MaxLevel" "7"
 	
 	// Stats

@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"ranger_skill4"
+	"AbilityTextureName"			"ranger_star_dust"
 	"MaxLevel" "7"
 	
 			// Stats

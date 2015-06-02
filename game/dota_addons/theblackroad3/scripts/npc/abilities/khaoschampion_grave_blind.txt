@@ -1,15 +1,15 @@
 //=================================================================================================================
-// Khaos Champion: Grave Blind
+// Khaos Champion: Grave Bind
 //=================================================================================================================
 //Blinds the target to his grave stunning it for 3 seconds and dealing xxxx damage for xx mana.
 //20 seconds cooldown. 450 Range
 
-"khaoschampion_grave_blind"
+"khaoschampion_grave_bind"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"skeleton_king_hellfire_blast"
-	"AbilityTextureName"			"khaos_champion_skill1"
+	"AbilityTextureName"			"khaoschampion_grave_bind"
 	"MaxLevel" "7"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

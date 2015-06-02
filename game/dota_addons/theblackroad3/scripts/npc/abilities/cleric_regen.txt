@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityTextureName"			"cleric_skill2"
+	"AbilityTextureName"			"cleric_regen"
 	"MaxLevel" 						"7"
 
 

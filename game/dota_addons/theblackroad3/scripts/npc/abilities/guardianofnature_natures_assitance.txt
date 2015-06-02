@@ -7,10 +7,10 @@
 
 //Notes:
 //• Can be an effective AoE when large groups of enemies are present and it's given more opportunity to spread
-"guardianofnature_natures_assitance"
+"guardianofnature_natures_assistance"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"guardianofnature_natures_assitance"
+	"AbilityTextureName"			"guardianofnature_natures_assistance"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

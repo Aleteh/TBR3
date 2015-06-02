@@ -7,7 +7,7 @@
 "spartanwarrior_phalanx"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"spartan_warrior_skill5"
+	"AbilityTextureName"			"spartanwarrior_phalanx"
 	"MaxLevel" "1"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"

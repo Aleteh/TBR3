@@ -6,7 +6,7 @@
 //Deals xxxxx initial damage and xxxx damage per second for 3 seconds for xxxx mana. 450 AOE, 800 range, 45 seconds cooldown
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"guardian_of_nature_skill4"
+	"AbilityTextureName"			"guardianofnature_cataclysm"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"

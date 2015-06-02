@@ -1,16 +1,16 @@
-//Ultimate 2 - Shadow Grasp
-//Effect: You harness dark energy around a targetted enemy and use it to pull the target towards you dealing static plus Strength damage and causing the target to be taunted to you for 5 seconds.
-//Benefits From: N/A
-//Cooldown: 30 seconds
-//Range: 400
-//Cost: High
+// Journeyman 1 - Hoarfrost
+// Effect: You surround a targetted enemy in a snap of frozen air, freezing their skin as well as any moisture in their body. The target takes cold damage over time, decreasing as they thaw, and suffer from Chilled. Lasts 10 seconds.
+// Benefits From: Spell Damage
+// Cooldown: 15 seconds
+// Range: 600
+// Cost: Average
 
-//Notes:
-//• A powerful single target damage ability that also violently pulls a targetted unit from where they are into melee combat with the Khaos Champion and forces them to attack them for 5 seconds. The only ability //in the game that can move bosses.
-"khaoschampion_shadow_grasp"
+// Notes:
+// • When cast on a unit inside your own Flux Matrix, HoarFrost will spread to all enemies within the radius of Flux Matrix
+"magician_hoarfrost"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"khaoschampion_shadow_grasp"
+	"AbilityTextureName"			"magician_hoarfrost"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

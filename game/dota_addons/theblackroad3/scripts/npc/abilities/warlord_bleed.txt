@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"warlord_skill5"
+	"AbilityTextureName"			"warlord_bleed"
 	"MaxLevel" 						"7"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	

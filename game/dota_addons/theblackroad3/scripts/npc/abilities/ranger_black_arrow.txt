@@ -10,7 +10,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"ranger_skill1"
+	"AbilityTextureName"			"ranger_black_arrow"
 	"MaxLevel" "7"
 	
 	// Stats

@@ -6,7 +6,7 @@
 //Enemies outside that radius will suffer half damage.
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"guardian_of_nature_skill2"
+	"AbilityTextureName"			"guardianofnature_tremor"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

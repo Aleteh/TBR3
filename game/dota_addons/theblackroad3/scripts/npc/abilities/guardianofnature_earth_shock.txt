@@ -6,7 +6,7 @@
 // 150 AOE. 8 seconds cooldown. 700 range.
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"guardian_of_nature_skill3"
+	"AbilityTextureName"			"guardianofnature_earth_shock"
 	"MaxLevel" 						"7"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"

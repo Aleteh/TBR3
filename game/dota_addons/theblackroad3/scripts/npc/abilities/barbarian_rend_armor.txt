@@ -9,7 +9,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"barbarian_skill2"
+	"AbilityTextureName"			"barbarian_rend_armor"
 	"MaxLevel" "7"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"ranger_skill5"
+	"AbilityTextureName"			"ranger_soul_piercing_shot"
 	"MaxLevel" "7"
 	
 	// Stats

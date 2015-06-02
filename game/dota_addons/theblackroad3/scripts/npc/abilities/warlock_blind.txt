@@ -18,7 +18,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"warlock_skill5"
+	"AbilityTextureName"			"warlock_blind"
 	"MaxLevel" 						"1"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

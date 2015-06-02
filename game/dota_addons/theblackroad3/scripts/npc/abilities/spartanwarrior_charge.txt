@@ -13,7 +13,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityTextureName"			"spartan_warrior_skill4"
+	"AbilityTextureName"			"spartanwarrior_charge"
 	"MaxLevel" 						"7"
 
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"

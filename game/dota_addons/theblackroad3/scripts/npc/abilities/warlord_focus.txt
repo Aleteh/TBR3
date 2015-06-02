@@ -10,7 +10,7 @@
 "warlord_focus"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"warlord_skill0"
+	"AbilityTextureName"			"warlord_focus"
 	"MaxLevel" 						"1"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 

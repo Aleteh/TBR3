@@ -12,7 +12,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityTextureName"			"cleric_skill1"
+	"AbilityTextureName"			"cleric_holy_light"
 	"MaxLevel" 						"7"
 
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

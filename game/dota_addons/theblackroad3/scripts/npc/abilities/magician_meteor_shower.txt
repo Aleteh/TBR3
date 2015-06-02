@@ -8,7 +8,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"magician_skill4"
+	"AbilityTextureName"			"magician_meteor_shower"
 	"MaxLevel" 						"7"
 	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"

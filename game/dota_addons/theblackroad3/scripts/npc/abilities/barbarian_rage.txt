@@ -9,7 +9,7 @@
 "barbarian_rage"
 {
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"barbarian_skill0"
+	"AbilityTextureName"			"barbarian_rage"
 	"MaxLevel" 						"1"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE  | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 

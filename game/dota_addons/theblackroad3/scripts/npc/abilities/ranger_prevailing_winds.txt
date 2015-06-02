@@ -15,7 +15,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"ranger_skill6"
+	"AbilityTextureName"			"ranger_prevailing_winds"
 			// General
 	//-------------------------------------------------------------------------------------------------------------
 	"MaxLevel"						"7"
