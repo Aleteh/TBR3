@@ -13,6 +13,8 @@ game/dota_addons/theblackroad3/resource/overviews/*
 #Ignore all compiled mats
 *.vmat_c
 
+#Ignore all compiled sounds
+*.vsndevts_c
 
 # Map Files
 *.vpk
