@@ -546,6 +546,13 @@ function GameMode:OnPlayerLevelUp(keys)
     print("Got " .. statsUnspent .. " Ability Points to spend! Firing game event")
 	FireGameEvent('cgm_player_stat_points_changed', { player_ID = pID, stat_points = statsUnspent })
 
+	--Fire Game Event for Unlocking Journeyman and Ultimate abilities
+	if heroLevel==15 then --and not yet used/unlocked
+		FireGameEvent('ability_5_unlocked', { player_ID = pID })
+	elseif heroLevel==30 then
+		FireGameEvent('ability_6_unlocked', { player_ID = pID })		
+	end
+
 	--Fully heal Health & Mana of the player
 	hero:SetHealth(hero:GetMaxHealth())
 	hero:SetMana(hero:GetMaxMana())
@@ -1252,6 +1259,42 @@ function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_p
 	end
 	GameRules.LOADING = false
 	print("============")
+end
+
+
+--AbilityChoice 5 and 6
+Convars:RegisterCommand( "AbilityChoice", function(name, slot, ability_name)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        return GameMode:LearnAbility( cmdPlayer , slot, ability_name)
+    end
+end, "A player uses an ability point", 0 )
+
+function GameMode:LearnAbility(player, slot, ability_name)
+
+	--get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local hero = player:GetAssignedHero()
+
+    local old_ability = hero:GetAbilityByIndex(tonumber(slot-1))
+    local new_ability = hero:FindAbilityByName(ability_name)
+    if new_ability then
+    	hero:SwapAbilities(old_ability:GetAbilityName(), ability_name, false, true)
+    	new_ability:SetLevel(1)
+    else
+    	hero:AddAbility(ability_name)
+    	local added_ability = hero:FindAbilityByName(ability_name)
+    	if added_ability then
+    		hero:SwapAbilities(old_ability:GetAbilityName(), ability_name, false, true)
+    		added_ability:SetLevel(1)
+    	else
+    		print("ABILITY DOES NOT EXIST")
+    	end
+    end
+
 end
 
 

@@ -20,6 +20,16 @@
 		"_error"		"string"
 	}
 
+	"ability_5_unlocked"
+	{
+		"player_ID"		"short"
+	}
+
+	"ability_6_unlocked"
+	{
+		"player_ID"		"short"
+	}
+
 	// CustomUI_Timer
 	"cgm_timer_display"
     {
