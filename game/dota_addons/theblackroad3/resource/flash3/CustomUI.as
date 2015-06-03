@@ -32,6 +32,7 @@ package {
 			//pass the gameAPI on to the modules
 			this.myModule.setup(this.gameAPI, this.globals);
 			this.myResource.setup(this.gameAPI, this.globals);
+			this.myUnlockAbility.setup(this.gameAPI, this.globals);
 			
 			//this.myResource.setMaterials("322"); //TEST
 			
