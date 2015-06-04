@@ -152,14 +152,6 @@ function DemonsRemaining()
 	end
 end
 
-function Pause( event )
-	FireGameEvent('cgm_timer_pause', { timePaused = true})
-end
-
-function UnPause( event )
-	FireGameEvent('cgm_timer_pause', { timePaused = false})
-end
-
 function GetPlayersPowerLevel()
 	local level = 0
 	for pID = 0, DOTA_MAX_PLAYERS-1 do
