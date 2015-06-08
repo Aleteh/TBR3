@@ -10,8 +10,8 @@
 	// General
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
-	"Model"				"models/heroes/tiny_04/tiny_04.vmdl"
-	"ModelScale"		"2"
+	"Model"				"models/heroes/tiny_01/tiny_01.vmdl"
+	"ModelScale"		"4"
 	"Level"				"20"
 	
 	"ConsideredHero"	"1"
@@ -49,10 +49,10 @@
 	
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"			"1411"
-	"StatusHealthRegen"		"1.00"
-	"StatusMana"			"400"
-	"StatsManaRegen"		"4.00"
+	"StatusHealth"			"3311"
+	"StatusHealthRegen"		"25"
+	"StatusMana"			"850"
+	"StatsManaRegen"		"10"
 	
 	// Vision
 	//----------------------------------------------------------------

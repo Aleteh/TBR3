@@ -27,6 +27,7 @@ function CollectWaypoints( unitName )
 end
 
 function RoamThink()
+	print(thisEntity:GetUnitName())
 	if thisEntity.currentWP == nil then 
 		thisEntity.currentWP = thisEntity:GetOrigin()
 	end
