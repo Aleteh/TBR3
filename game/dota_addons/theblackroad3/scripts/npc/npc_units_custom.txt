@@ -156,13 +156,18 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------
-		//"Creature"
-		//{
-		//	"AttachWearables"
-		//	{
-		//		"Wearable1"		{	"ItemDef"	"497"	} // "Tiny's Tree"			
-		//	}			
-		//}
+		"Creature"
+		{
+			"DisableClumpingBehavior"	"1"
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "493" } //Head
+				"Wearable2"	{ "ItemDef"	"494" } //Body
+				"Wearable3" { "ItemDef"	"495" } //Left Arm
+				"Wearable4" { "ItemDef"	"496" } //Right Arm
+				//"Wearable5"	{ "ItemDef"	"497" } //Tree, doesnt work, try modifier_tiny_grow without the stats
+			}
+		}
 	}
 	//=================================================================================	
 	// Boss: Themis, Avatar of Justice
