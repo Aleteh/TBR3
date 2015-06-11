@@ -56,6 +56,10 @@ package {
 				itemQuality = "common";
 			}
 			var itemText:String = Globals.instance.GameInterface.Translate("#DOTA_Tooltip_ability_"+itemName); //Full item name
+			if (itemText == null || itemText.length == 0){
+				trace("[ItemDrops] Couldn't find an Item Tooltip, defaulting to the itemName: "+itemName);
+				itemText = itemName;
+			}
 			
 			var itemDrop = new ItemDropPanel(itemName, itemQuality, itemText, dropIndex, gameAPI);
 			this.addChild(itemDrop);

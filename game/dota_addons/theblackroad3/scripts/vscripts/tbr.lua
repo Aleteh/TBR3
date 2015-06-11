@@ -720,7 +720,11 @@ function RollDrops(unit)
 						local pos_launch = pos+RandomVector(RandomFloat(150,200))
 						item:LaunchLoot(false, 200, 0.75, pos_launch)
 
+						-- Fire the ItemDrops UI
 						FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
+						drop.Rolls = {}
+						drop.players_rolled = 0
+						table.insert(GameRules.RollingItems, drop:GetEntityIndex())
 					else
 						print("WARNING: Item couldn't be created, probably doesn't exist an item with the name '"..item_name.."'")
 					end
@@ -1341,7 +1345,14 @@ function GameMode:RollForItem( pID, roll_type, drop_index)
 	local drop = EntIndexToHScript(drop_index)
 	local itemEntity = drop:GetContainedItem()
 	local item_name = itemEntity:GetAbilityName()
-	local item_string = "["..GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name].."]"
+	local tooltip_key = "DOTA_Tooltip_ability_"..item_name
+	local item_string = GameRules.Tooltips["Tokens"][tooltip_key]
+	if item_string then
+		item_string = "["..item_string.."]"
+	else
+		item_string = item_name
+	end
+
 	local item_quality = GameRules.ItemKV[item_name].ItemQuality or "component"
 
 	 -- No SteamName inside the Tools

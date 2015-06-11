@@ -14177,7 +14177,7 @@
 	"item_potion_of_minor_healing"
 	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_potion_of_lesser_healing"
+		"AbilityTextureName"			"item_potion_of_minor_healing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
