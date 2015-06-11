@@ -35,10 +35,12 @@ function Precache( context )
 		--PrecacheItemByNameSync("item_example_item", context)
 
 		-- Units
+		PrecacheUnitByNameSync("champion_of_hades", context)
 		PrecacheUnitByNameSync("demonic_carrion", context)
 		PrecacheUnitByNameSync("demonic_pillager", context)
 		PrecacheUnitByNameSync("demon_thrall", context)
-		PrecacheUnitByNameSync("champion_of_hades", context)
+		PrecacheUnitByNameSync("npc_demon_hound", context)
+		PrecacheUnitByNameSync("npc_forest_bear", context)
 
 
 		PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)

@@ -73,4 +73,10 @@
 		"player_ID"     "short"
 		"save_ID"       "short"
 	}
+
+	"item_drop"
+	{
+		"item_name"		"string"
+		"drop_index"	"short"
+	}
 }

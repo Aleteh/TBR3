@@ -123,6 +123,43 @@ function GameMode:InitGameMode()
 
 	self.bSeenWaitForPlayers = false
 
+	self.PLAYER_COLOR_BY_ID = {
+		[0] = "#3375FF",
+		[1] = "#66FFBF",
+		[2] = "#BF00BF",
+		[3] = "#F3F00B",
+		[4] = "#FF6B00",
+		[5] = "#FE86C2",
+		[6] = "#A1B447",
+		[7] = "#65D9F7",
+		[8] = "#008321",
+		[9] = "#A46900"
+	}
+
+	self.HERO_NAMES_BY_INTERNAL_NAME = {
+		["npc_dota_hero_juggernaut"] = "Warlord",
+		["npc_dota_hero_axe"] = "Barbarian",
+		["npc_dota_hero_phantom_assassin"] = "Assassin",
+		["npc_dota_hero_crystal_maiden"] = "Cleric",
+		["npc_dota_hero_dragon_knight"] = "Spartan Warrior",
+		["npc_dota_hero_windrunner"] = "Ranger",
+		["npc_dota_hero_invoker"] = "Magician",
+		["npc_dota_hero_furion"] = "Druid",
+		["npc_dota_hero_skeleton_king"] = "Khaos Champion",
+		["npc_dota_hero_brewmaster"] = "Guardian of Nature",
+		["npc_dota_hero_warlock"] =  "Warlock",
+		["npc_dota_hero_omniknight"] = "Temple Guardian"
+	}
+
+    self.ITEM_COLOR_BY_QUALITY = {
+        ["artifact"] = "#FFA500",
+        ["epic"] = "#8847FF",
+        ["rare"] = "#4B69FF",
+        ["common"] = "#00FF00",
+        ["component"] = "#FFFFFF",
+        ["consumable"] = "#FFFFFF"
+	}
+
 	GameRules.PLAYER_COUNT = 0
 	GameRules.PLAYERS_PICKED_HERO = 0
 
@@ -133,6 +170,9 @@ function GameMode:InitGameMode()
 			RPGSave()
 			return AUTOSAVE_INTERVAL		
 		end })
+
+	-- ItemDrops Table of items currently being rolled
+	GameRules.RollingItems = {}
 
 	-- Spawn Locations and Area Activations
 
@@ -229,6 +269,9 @@ function GameMode:ReadGameConfiguration()
 	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
 	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
 	GameRules.DemonWaves = LoadKeyValues("scripts/kv/demon_waves.kv")
+
+	GameRules.ItemKV = LoadKeyValues("scripts/npc/npc_items_custom.txt")
+	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt") --VOLVO WHY
 
 	--DeepPrintTable(GameRules.DropTable)
 
@@ -676,6 +719,8 @@ function RollDrops(unit)
 						local drop = CreateItemOnPositionSync( pos, item )
 						local pos_launch = pos+RandomVector(RandomFloat(150,200))
 						item:LaunchLoot(false, 200, 0.75, pos_launch)
+
+						FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
 					else
 						print("WARNING: Item couldn't be created, probably doesn't exist an item with the name '"..item_name.."'")
 					end
@@ -910,6 +955,37 @@ function GameMode:OnPlayerPicked( event )
     if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) then
     	GameMode:OnEveryonePicked()
     end
+
+    -- ItemDrops UI TEST
+    local item_name = "item_ares_bloodthirsty_spear"
+    local item = CreateItem(item_name, nil, nil)
+    item:SetPurchaseTime(0)
+    local pos = spawnedUnitIndex:GetAbsOrigin()
+	local drop = CreateItemOnPositionSync( pos, item )
+	local pos_launch = pos+RandomVector(RandomFloat(150,200))
+	item:LaunchLoot(false, 200, 0.75, pos_launch)
+
+	-- Fire the ItemDrops UI
+    FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
+	drop.Rolls = {} 
+	drop.players_rolled = 0
+
+	local item_name2 = "item_charm_of_battle_lust"
+    local item2 = CreateItem(item_name2, nil, nil)
+    item2:SetPurchaseTime(0)
+    local pos2 = spawnedUnitIndex:GetAbsOrigin()
+	local drop2 = CreateItemOnPositionSync( pos2, item2 )
+	local pos_launch2 = pos2+RandomVector(RandomFloat(150,200))
+	item2:LaunchLoot(false, 200, 0.75, pos_launch2)
+
+	-- Fire the ItemDrops UI
+    FireGameEvent("item_drop", { item_name = item_name2, drop_index = drop2:GetEntityIndex()} )
+	drop2.Rolls = {}
+	drop2.players_rolled = 0
+
+    -- Add it to the list of items in Roll state (drop has +1 of the real item EntityIndex)
+    table.insert(GameRules.RollingItems, drop:GetEntityIndex())
+    table.insert(GameRules.RollingItems, drop2:GetEntityIndex())
 end
 
 function GameMode:OnEveryonePicked()
@@ -1189,19 +1265,6 @@ function SpawnBank()
 		bank:AddItem(newItem)
 end
 
--- Lua pls
-function split(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={} ; i=1
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            t[i] = str
-            i = i + 1
-    end
-    return t
-end
-
 -- Flash UI
 -- Load RPG Command.
 Convars:RegisterCommand( "Load", function(name, player_ID, hero_XP, gold, materials, STR_points, AGI_points, INT_points, unspent_points, hero_items, ability_levels)
@@ -1259,6 +1322,106 @@ function GameMode:LoadPlayer( player, player_ID, hero_XP, gold, materials, STR_p
 	end
 	GameRules.LOADING = false
 	print("============")
+end
+
+
+-- ItemDrop Rolls. roll_type can be need, greed or pass.
+Convars:RegisterCommand( "ItemDropsRoll", function(name, player_ID, roll_type, drop_index)
+	print("ItemDropsRoll command registered: ",player_ID, roll_type, drop_index)
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer --[[and IsCurrentlyRolling(drop_index)]] then
+        return GameMode:RollForItem( tonumber(player_ID), roll_type, tonumber(drop_index))
+    end
+end, "A player uses an ability point", 0 )
+
+function GameMode:RollForItem( pID, roll_type, drop_index)
+	print("RollForItem ", "pID: "..pID, "roll_type: "..roll_type, "drop_index: "..drop_index)
+	local player_name = PlayerResource:GetPlayerName(pID)
+	local hero_name = self.HERO_NAMES_BY_INTERNAL_NAME[PlayerResource:GetSelectedHeroName(pID)] --("..hero_name..")
+	local drop = EntIndexToHScript(drop_index)
+	local itemEntity = drop:GetContainedItem()
+	local item_name = itemEntity:GetAbilityName()
+	local item_string = "["..GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name].."]"
+	local item_quality = GameRules.ItemKV[item_name].ItemQuality or "component"
+
+	 -- No SteamName inside the Tools
+	if string.len(player_name) == 0 then 
+		player_name = "HammerEdit"
+	end
+
+	local player_color = self.PLAYER_COLOR_BY_ID[pID]
+	local item_color = self.ITEM_COLOR_BY_QUALITY[item_quality]
+	local colored_player_name = "<font color='"..player_color.."'>"..player_name.."</font>"
+	local colored_item_name = "<font color='"..item_color.."'>"..item_string.."</font>"
+
+	-- Roll and message
+	local random_roll = 0
+	if roll_type == "pass" then
+		GameRules:SendCustomMessage(player_name.. " passed on "..colored_item_name, 0, 0)
+	elseif roll_type == "need" then
+		random_roll = RandomInt(1, 100)
+		GameRules:SendCustomMessage("Need Roll - "..random_roll.." for "..colored_item_name.." by "..colored_player_name, 0, 0)
+		random_roll = random_roll + 100 -- This gives priority to the Need rolls, so that as long as someone chooses 'Need' it will prioritize over every Greed roll
+	elseif roll_type == "greed" then
+		random_roll = RandomInt(1, 100)
+		GameRules:SendCustomMessage("Greed Roll - "..random_roll.." for "..colored_item_name.." by "..colored_player_name, 0, 0)
+	end
+
+	-- Assign the player's random_roll inside the drop container
+	if not drop.Rolls[pID] then
+		drop.Rolls[pID] = random_roll
+		drop.players_rolled = drop.players_rolled + 1
+	end
+
+	print("Items currently being rolled: ")
+	for k,v in pairs(GameRules.RollingItems) do
+		print(k,v)
+	end
+	print("-----------------------------")
+
+	print("Roll Table for drop_index "..drop_index..":")
+	for k,v in pairs(drop.Rolls) do
+		print(k,v)
+	end
+	print("-----------------------------")
+
+	print("("..drop.players_rolled .."/"..GameRules.PLAYER_COUNT..") players rolled")
+	if (drop.players_rolled == GameRules.PLAYER_COUNT) then
+		print("Finished rolling for item "..item_name.." index "..drop_index)
+		table.remove(GameRules.RollingItems, getIndex(GameRules.RollingItems, drop_index))
+
+
+		-- Credit the item to the highest roll
+		local max_roll = 0
+		local player_max_roll
+		for k,v in pairs(drop.Rolls) do
+			if v > max_roll then
+				max_roll = v
+				player_max_roll = k
+			end
+		end
+
+		if max_roll > 0 then
+			print(" Max Roll was: "..max_roll.." from player "..player_max_roll)
+			local hero = PlayerResource:GetSelectedHeroEntity(player_max_roll)
+			hero:AddItem(itemEntity)
+			drop:RemoveSelf()
+			print(" Added "..item_name.." to player "..player_max_roll.." inventory")
+			if max_roll > 100 then
+				max_roll = max_roll - 100 -- Adjusting Need rolls before showing it on screen
+				GameRules:SendCustomMessage(colored_player_name.. " won " ..colored_item_name.." ("..max_roll.." Need)", 0, 0)
+			else
+				GameRules:SendCustomMessage(colored_player_name.. " won " ..colored_item_name.." ("..max_roll.." Greed)", 0, 0)
+			end
+
+			--FireGameEvent("item_won", { item_name = item_name })
+		else
+			print(" Everyone passed on the item. Free For All enabled!")
+		end
+
+		print("-----------------------------\n")
+	end
+
 end
 
 
@@ -1328,15 +1491,12 @@ function GameMode:ModifyStats( player, p )
         if p=="str" then
 	        hero:ModifyStrength(1)
 	        hero.STR = hero.STR + 1
-	        print("+1 STR Allocated")
 	    elseif p=="agi" then
 	    	hero:ModifyAgility(1)
 	    	hero.AGI = hero.AGI + 1
-	        print("+1 AGI Allocated")
 	    elseif p=="int" then
 	    	hero:ModifyIntellect(1)
 	    	hero.INT = hero.INT + 1
-	        print("+1 INT Allocated")
 	    end
     end
 
