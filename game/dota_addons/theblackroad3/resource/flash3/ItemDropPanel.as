@@ -28,11 +28,11 @@ package {
         private var needBtn:SimpleButton;
         private var greedBtn:SimpleButton;
 
-		// Constructor takes the item name, text and quality for coloring
-		public function ItemDropPanel(itemName:String, itemQuality:String, itemText:String, dropIndex:String, api:Object){
+		// Constructor takes the item name, text and color
+		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, dropIndex:String, api:Object){
 
 			trace("[ItemDrop] ItemDropPanel Start");
-			trace("[ItemDropPanel] Data: ",itemName,itemQuality,itemText,dropIndex)
+			trace("[ItemDropPanel] Data: ",itemName,itemColor,itemText,dropIndex)
 			this.gameAPI = api;
 			this.panelIndex = dropIndex;
 
@@ -108,42 +108,10 @@ package {
 			textBox.filters = [new GlowFilter(0x000000)];
 
 			trace("[ItemDrop] TextBox Ok");
-           
-			//"ItemQuality" Ingame Colors. Could be done as a separate KV file
-			var artifactColor:Number = 0xFFA500; //Orange
-            var epicColor:Number = 0x8847FF; //Purple
-            var rareColor:Number = 0x4B69FF; //Blue
-            var commonColor:Number = 0x00FF00; //Lime Green
-            var componentColor:Number = 0xFFFFFF; //White
-            var consumableColor:Number = 0xFFFFFF; //White
+           			
+			txFormat.color = itemColor;
 
             trace("[ItemDrop] Colors Ok");
-
-			switch(itemQuality) 
-			{ 
-			    case "component":
-			        txFormat.color = componentColor;
-			        break;
-			    case "consumable": 
-			        txFormat.color = consumableColor;
-			        break;
-			    case "common": 
-			        txFormat.color = commonColor;
-			        break;
-			    case "rare": 
-			        txFormat.color = rareColor;
-			        break;
-			    case "epic": 
-			        txFormat.color = epicColor;
-			        break;
-			    case 'artifact': 
-			        txFormat.color = artifactColor;
-			        break;
-			    default: 
-			        trace("[ItemDrops] "+itemQuality+" is not a recognized ItemQuality!"); 
-			        txFormat.color = componentColor;
-			        break;
-			}
 
 			textBox.setTextFormat(txFormat);
 			dropMC.addChild(textBox);

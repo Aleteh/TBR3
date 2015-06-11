@@ -21,6 +21,7 @@ package {
 		public var scaleRatioY:Number;
 
 		public var itemKV:Object;
+		public var itemDropsInfo:Object;
 
 		// unused constructor
 		public function ItemDrops() : void {
@@ -55,13 +56,16 @@ package {
 				trace("[ItemDrops] Couldn't find an ItemQuality, defaulting to common");
 				itemQuality = "common";
 			}
+			var color_from_string = itemDropsInfo["ItemQualityColors"][itemQuality]
+			var itemColor:Number = Number(color_from_string.replace('#', '0x'));
+			
 			var itemText:String = Globals.instance.GameInterface.Translate("#DOTA_Tooltip_ability_"+itemName); //Full item name
 			if (itemText == null || itemText.length == 0){
 				trace("[ItemDrops] Couldn't find an Item Tooltip, defaulting to the itemName: "+itemName);
 				itemText = itemName;
 			}
 			
-			var itemDrop = new ItemDropPanel(itemName, itemQuality, itemText, dropIndex, gameAPI);
+			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, dropIndex, gameAPI);
 			this.addChild(itemDrop);
 			itemDrop.x = ScreenWidth/2 - itemDrop.width/2;
 			itemDrop.y = ScreenHeight/2;
@@ -70,6 +74,7 @@ package {
 		// Load the item key values to find its quality for coloring
 		private function loadItemKV() {
 			itemKV = Globals.instance.GameInterface.LoadKVFile('scripts/npc/npc_items_custom.txt');
+			itemDropsInfo = Globals.instance.GameInterface.LoadKVFile('scripts/kv/item_drops.kv');
 			trace("[ItemDrops] KV Loaded!");
 		}
 

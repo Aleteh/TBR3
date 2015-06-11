@@ -151,15 +151,6 @@ function GameMode:InitGameMode()
 		["npc_dota_hero_omniknight"] = "Temple Guardian"
 	}
 
-    self.ITEM_COLOR_BY_QUALITY = {
-        ["artifact"] = "#FFA500",
-        ["epic"] = "#8847FF",
-        ["rare"] = "#4B69FF",
-        ["common"] = "#00FF00",
-        ["component"] = "#FFFFFF",
-        ["consumable"] = "#FFFFFF"
-	}
-
 	GameRules.PLAYER_COUNT = 0
 	GameRules.PLAYERS_PICKED_HERO = 0
 
@@ -720,11 +711,14 @@ function RollDrops(unit)
 						local pos_launch = pos+RandomVector(RandomFloat(150,200))
 						item:LaunchLoot(false, 200, 0.75, pos_launch)
 
-						-- Fire the ItemDrops UI
-						FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
-						drop.Rolls = {}
-						drop.players_rolled = 0
-						table.insert(GameRules.RollingItems, drop:GetEntityIndex())
+						local item_quality = GameRules.ItemKV[item_name].ItemQuality or "common"
+						if not GameRules.DropTable["ExcludedQualities"][item_quality] then
+							-- Fire the ItemDrops UI
+							FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
+							drop.Rolls = {}
+							drop.players_rolled = 0
+							table.insert(GameRules.RollingItems, drop:GetEntityIndex())
+						end
 					else
 						print("WARNING: Item couldn't be created, probably doesn't exist an item with the name '"..item_name.."'")
 					end
@@ -1361,7 +1355,7 @@ function GameMode:RollForItem( pID, roll_type, drop_index)
 	end
 
 	local player_color = self.PLAYER_COLOR_BY_ID[pID]
-	local item_color = self.ITEM_COLOR_BY_QUALITY[item_quality]
+	local item_color = GameRules.DropTable["ItemQualityColors"][item_quality]
 	local colored_player_name = "<font color='"..player_color.."'>"..player_name.."</font>"
 	local colored_item_name = "<font color='"..item_color.."'>"..item_string.."</font>"
 
