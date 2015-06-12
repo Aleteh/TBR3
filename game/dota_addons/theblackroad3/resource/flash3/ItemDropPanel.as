@@ -29,12 +29,12 @@ package {
         private var greedBtn:SimpleButton;
 
 		// Constructor takes the item name, text and color
-		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, dropIndex:String, api:Object){
+		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, itemIndex:String, api:Object){
 
 			trace("[ItemDrop] ItemDropPanel Start");
-			trace("[ItemDropPanel] Data: ",itemName,itemColor,itemText,dropIndex)
+			trace("[ItemDropPanel] Data: ",itemName,itemColor,itemText,itemIndex)
 			this.gameAPI = api;
-			this.panelIndex = dropIndex;
+			this.panelIndex = itemIndex;
 
 			var dropMC:MovieClip = new MovieClip;
 

@@ -443,10 +443,17 @@ function GameMode:OnItemPickedUp(keys)
 	print ( '[TBR] OnItemPickedUp' )
 	--DeepPrintTable(keys)
 
-	local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
-	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
+	local hero = EntIndexToHScript(keys.HeroEntityIndex)
+	local item = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
+
+	-- Check for items on the Roll table
+	if tableContains(GameRules.RollingItems, item:GetEntityIndex()) then
+		-- Drop the item and show an error message
+		hero:DropItemAtPositionImmediate(item, hero:GetAbsOrigin())
+		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Can't Pick Up This Item yet" } )
+	end
 end
 
 -- An item was purchased by a player
@@ -714,10 +721,10 @@ function RollDrops(unit)
 						local item_quality = GameRules.ItemKV[item_name].ItemQuality or "common"
 						if not GameRules.DropTable["ExcludedQualities"][item_quality] then
 							-- Fire the ItemDrops UI
-							FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
-							drop.Rolls = {}
-							drop.players_rolled = 0
-							table.insert(GameRules.RollingItems, drop:GetEntityIndex())
+							FireGameEvent("item_drop", { item_name = item_name, item_index = item:GetEntityIndex()} )
+							item.Rolls = {}
+							item.players_rolled = 0
+							table.insert(GameRules.RollingItems, item:GetEntityIndex())
 						end
 					else
 						print("WARNING: Item couldn't be created, probably doesn't exist an item with the name '"..item_name.."'")
@@ -964,9 +971,9 @@ function GameMode:OnPlayerPicked( event )
 	item:LaunchLoot(false, 200, 0.75, pos_launch)
 
 	-- Fire the ItemDrops UI
-    FireGameEvent("item_drop", { item_name = item_name, drop_index = drop:GetEntityIndex()} )
-	drop.Rolls = {} 
-	drop.players_rolled = 0
+    FireGameEvent("item_drop", { item_name = item_name, item_index = item:GetEntityIndex()} )
+	item.Rolls = {} 
+	item.players_rolled = 0
 
 	local item_name2 = "item_charm_of_battle_lust"
     local item2 = CreateItem(item_name2, nil, nil)
@@ -977,13 +984,13 @@ function GameMode:OnPlayerPicked( event )
 	item2:LaunchLoot(false, 200, 0.75, pos_launch2)
 
 	-- Fire the ItemDrops UI
-    FireGameEvent("item_drop", { item_name = item_name2, drop_index = drop2:GetEntityIndex()} )
-	drop2.Rolls = {}
-	drop2.players_rolled = 0
+    FireGameEvent("item_drop", { item_name = item_name2, item_index = item:GetEntityIndex()} )
+	item2.Rolls = {}
+	item2.players_rolled = 0
 
-    -- Add it to the list of items in Roll state (drop has +1 of the real item EntityIndex)
-    table.insert(GameRules.RollingItems, drop:GetEntityIndex())
-    table.insert(GameRules.RollingItems, drop2:GetEntityIndex())
+    -- Add it to the list of items in Roll state
+    table.insert(GameRules.RollingItems, item:GetEntityIndex())
+    table.insert(GameRules.RollingItems, item2:GetEntityIndex())
 end
 
 function GameMode:OnEveryonePicked()
@@ -1324,21 +1331,21 @@ end
 
 
 -- ItemDrop Rolls. roll_type can be need, greed or pass.
-Convars:RegisterCommand( "ItemDropsRoll", function(name, player_ID, roll_type, drop_index)
-	print("ItemDropsRoll command registered: ",player_ID, roll_type, drop_index)
+Convars:RegisterCommand( "ItemDropsRoll", function(name, player_ID, roll_type, item_index)
+	print("ItemDropsRoll command registered: ",player_ID, roll_type, item_index)
     local cmdPlayer = Convars:GetCommandClient()
-    if cmdPlayer --[[and IsCurrentlyRolling(drop_index)]] then
-        return GameMode:RollForItem( tonumber(player_ID), roll_type, tonumber(drop_index))
+    if cmdPlayer --[[and IsCurrentlyRolling(item_index)]] then
+        return GameMode:RollForItem( tonumber(player_ID), roll_type, tonumber(item_index))
     end
 end, "A player uses an ability point", 0 )
 
-function GameMode:RollForItem( pID, roll_type, drop_index)
-	print("RollForItem ", "pID: "..pID, "roll_type: "..roll_type, "drop_index: "..drop_index)
+function GameMode:RollForItem( pID, roll_type, item_index)
+	print("RollForItem ", "pID: "..pID, "roll_type: "..roll_type, "item_index: "..item_index)
 	local player_name = PlayerResource:GetPlayerName(pID)
 	local hero_name = self.HERO_NAMES_BY_INTERNAL_NAME[PlayerResource:GetSelectedHeroName(pID)] --("..hero_name..")
-	local drop = EntIndexToHScript(drop_index)
-	local itemEntity = drop:GetContainedItem()
-	local item_name = itemEntity:GetAbilityName()
+	local item = EntIndexToHScript(item_index)
+	--local item = drop:GetContainedItem()
+	local item_name = item:GetAbilityName()
 	local tooltip_key = "DOTA_Tooltip_ability_"..item_name
 	local item_string = GameRules.Tooltips["Tokens"][tooltip_key]
 	if item_string then
@@ -1372,10 +1379,10 @@ function GameMode:RollForItem( pID, roll_type, drop_index)
 		GameRules:SendCustomMessage("Greed Roll - "..random_roll.." for "..colored_item_name.." by "..colored_player_name, 0, 0)
 	end
 
-	-- Assign the player's random_roll inside the drop container
-	if not drop.Rolls[pID] then
-		drop.Rolls[pID] = random_roll
-		drop.players_rolled = drop.players_rolled + 1
+	-- Assign the player's random_roll
+	if not item.Rolls[pID] then
+		item.Rolls[pID] = random_roll
+		item.players_rolled = item.players_rolled + 1
 	end
 
 	print("Items currently being rolled: ")
@@ -1384,22 +1391,22 @@ function GameMode:RollForItem( pID, roll_type, drop_index)
 	end
 	print("-----------------------------")
 
-	print("Roll Table for drop_index "..drop_index..":")
-	for k,v in pairs(drop.Rolls) do
+	print("Roll Table for item_index "..item_index..":")
+	for k,v in pairs(item.Rolls) do
 		print(k,v)
 	end
 	print("-----------------------------")
 
-	print("("..drop.players_rolled .."/"..GameRules.PLAYER_COUNT..") players rolled")
-	if (drop.players_rolled == GameRules.PLAYER_COUNT) then
-		print("Finished rolling for item "..item_name.." index "..drop_index)
-		table.remove(GameRules.RollingItems, getIndex(GameRules.RollingItems, drop_index))
+	print("("..item.players_rolled .."/"..GameRules.PLAYER_COUNT..") players rolled")
+	if (item.players_rolled == GameRules.PLAYER_COUNT) then
+		print("Finished rolling for item "..item_name.." index "..item_index)
+		table.remove(GameRules.RollingItems, getIndex(GameRules.RollingItems, item_index))
 
 
 		-- Credit the item to the highest roll
 		local max_roll = 0
 		local player_max_roll
-		for k,v in pairs(drop.Rolls) do
+		for k,v in pairs(item.Rolls) do
 			if v > max_roll then
 				max_roll = v
 				player_max_roll = k
@@ -1409,7 +1416,7 @@ function GameMode:RollForItem( pID, roll_type, drop_index)
 		if max_roll > 0 then
 			print(" Max Roll was: "..max_roll.." from player "..player_max_roll)
 			local hero = PlayerResource:GetSelectedHeroEntity(player_max_roll)
-			hero:AddItem(itemEntity)
+			hero:AddItem(item)
 			drop:RemoveSelf()
 			print(" Added "..item_name.." to player "..player_max_roll.." inventory")
 			if max_roll > 100 then

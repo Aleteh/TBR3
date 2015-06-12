@@ -47,10 +47,10 @@ package {
 
 		public function createDropPanel(args:Object) : void {
 			trace("[ItemDrops] Creating Item Drop Panel");
-			trace("[ItemDrops] Name: "+args.item_name+" - Index: "+args.drop_index);
+			trace("[ItemDrops] Name: "+args.item_name+" - Index: "+args.item_index);
 			
 			var itemName:String = args.item_name; //Internal name of the item
-			var dropIndex:String = args.drop_index; //Entity index of the dropped item
+			var itemIndex:String = args.item_index; //Entity index of the dropped item
 			var itemQuality:String = itemKV[itemName].ItemQuality; //"ItemQuality" value
 			if (itemQuality == null || itemQuality.length == 0){
 				trace("[ItemDrops] Couldn't find an ItemQuality, defaulting to common");
@@ -65,7 +65,7 @@ package {
 				itemText = itemName;
 			}
 			
-			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, dropIndex, gameAPI);
+			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, itemIndex, gameAPI);
 			this.addChild(itemDrop);
 			itemDrop.x = ScreenWidth/2 - itemDrop.width/2;
 			itemDrop.y = ScreenHeight/2;

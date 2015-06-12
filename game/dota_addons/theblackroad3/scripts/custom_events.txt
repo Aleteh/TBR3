@@ -77,6 +77,6 @@
 	"item_drop"
 	{
 		"item_name"		"string"
-		"drop_index"	"short"
+		"item_index"	"short"
 	}
 }
