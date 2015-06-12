@@ -64,8 +64,9 @@ package {
 				trace("[ItemDrops] Couldn't find an Item Tooltip, defaulting to the itemName: "+itemName);
 				itemText = itemName;
 			}
+			var timeoutTime:Number = itemDropsInfo["MaxTime"]
 			
-			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, itemIndex, gameAPI);
+			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, itemIndex, timeoutTime, gameAPI);
 			this.addChild(itemDrop);
 			itemDrop.x = ScreenWidth/2 - itemDrop.width/2;
 			itemDrop.y = ScreenHeight/2;

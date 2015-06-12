@@ -29,10 +29,10 @@ package {
         private var greedBtn:SimpleButton;
 
 		// Constructor takes the item name, text and color
-		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, itemIndex:String, api:Object){
+		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, itemIndex:String, timeoutTime:Number, api:Object){
 
-			trace("[ItemDrop] ItemDropPanel Start");
-			trace("[ItemDropPanel] Data: ",itemName,itemColor,itemText,itemIndex)
+			//trace("[ItemDrop] ItemDropPanel Start");
+			//trace("[ItemDropPanel] Data: ",itemName,itemColor,itemText,itemIndex)
 			this.gameAPI = api;
 			this.panelIndex = itemIndex;
 
@@ -40,8 +40,6 @@ package {
 
 			var itemDropMenu:Bitmap = new Bitmap(new ItemDropMenuPNG());
 			dropMC.addChild(itemDropMenu);
-
-			trace("[ItemDrop] BitMap Ok");
 			
 			// Icon
 			var itemIcon:ResourceIcon = new ResourceIcon(itemName.substr(5,itemName.length), true);
@@ -52,8 +50,6 @@ package {
 			itemIcon.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOver);
 			itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOut);
 			dropMC.addChild(itemIcon);
-
-			trace("[ItemDrop] ResourceIcon "+itemName.substr(5,itemName.length)+" Ok");
 
 			// Buttons
 			// Pass
@@ -85,21 +81,18 @@ package {
 			//itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutGreed);
 			dropMC.addChild(this.greedBtn);			
 
-			trace("[ItemDrop] Buttons Ok");
-
 			// Text
 			var txFormat:TextFormat = new TextFormat();
 			txFormat.align = TextFormatAlign.CENTER;
 			txFormat.font = "$TextFont"; //TitleFont
 			txFormat.size = 20;
-
-			trace("[ItemDrop] Format Ok");
+			txFormat.color = itemColor;
 
 			var textBox:TextField = new TextField();
 			textBox.x = 128;
 			textBox.y = 35;
             textBox.width = 263; 
-            textBox.height = 37; 
+            textBox.height = 70; 
             textBox.multiline = true; 
             textBox.wordWrap = true;
             //textBox.border = true;
@@ -107,18 +100,14 @@ package {
 			textBox.alpha = 0.9;
 			textBox.filters = [new GlowFilter(0x000000)];
 
-			trace("[ItemDrop] TextBox Ok");
-           			
-			txFormat.color = itemColor;
-
-            trace("[ItemDrop] Colors Ok");
-
 			textBox.setTextFormat(txFormat);
 			dropMC.addChild(textBox);
 
-			trace("[ItemDrop] addChild textBox Ok");
-
 			// Time Bar
+			var timeBar:TimeBar = new TimeBar(timeoutTime, Timeout);
+			timeBar.x = 42;
+            timeBar.y = 89;
+			dropMC.addChild(timeBar);
 
 
 			// Finally, add the MovieClip to the stage
@@ -130,7 +119,7 @@ package {
 		public function onMouseRollOver(keys:MouseEvent){
        		var s:Object = keys.target;
             var lp:Point = s.localToGlobal(new Point(0, 0));
-			trace("Roll over ",s.getResourceName());
+			//trace("Roll over ",s.getResourceName());
 
 			// This one shows "Not enough gold" but it'll do good for now.
             Globals.instance.Loader_shop.gameAPI.ShowItemTooltip(lp.x, lp.y, s.getResourceName());
@@ -159,6 +148,13 @@ package {
 			trace("[ItemDrops] Greed!");
 			var pID:int = Globals.instance.Players.GetLocalPlayer();
 			this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" greed "+panelIndex);
+			this.visible = false;
+		}
+
+		public function Timeout() {
+			trace("[ItemDrops] Timeout");
+			var pID:int = Globals.instance.Players.GetLocalPlayer();
+			this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" pass "+panelIndex);
 			this.visible = false;
 		}
 	}

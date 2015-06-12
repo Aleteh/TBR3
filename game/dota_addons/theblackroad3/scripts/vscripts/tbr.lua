@@ -452,7 +452,7 @@ function GameMode:OnItemPickedUp(keys)
 	if tableContains(GameRules.RollingItems, item:GetEntityIndex()) then
 		-- Drop the item and show an error message
 		hero:DropItemAtPositionImmediate(item, hero:GetAbsOrigin())
-		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Can't Pick Up This Item yet" } )
+		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Can't Pick Up This Item Yet" } )
 	end
 end
 
@@ -984,7 +984,7 @@ function GameMode:OnPlayerPicked( event )
 	item2:LaunchLoot(false, 200, 0.75, pos_launch2)
 
 	-- Fire the ItemDrops UI
-    FireGameEvent("item_drop", { item_name = item_name2, item_index = item:GetEntityIndex()} )
+    FireGameEvent("item_drop", { item_name = item_name2, item_index = item2:GetEntityIndex()} )
 	item2.Rolls = {}
 	item2.players_rolled = 0
 
@@ -1417,7 +1417,15 @@ function GameMode:RollForItem( pID, roll_type, item_index)
 			print(" Max Roll was: "..max_roll.." from player "..player_max_roll)
 			local hero = PlayerResource:GetSelectedHeroEntity(player_max_roll)
 			hero:AddItem(item)
-			drop:RemoveSelf()
+
+			-- Find the drop associated with the item handle
+			local allDrops = Entities:FindAllByClassname("dota_item_drop")
+			for k,drop in pairs(allDrops) do
+				if drop:GetContainedItem() == item then
+					drop:RemoveSelf()
+				end
+			end
+
 			print(" Added "..item_name.." to player "..player_max_roll.." inventory")
 			if max_roll > 100 then
 				max_roll = max_roll - 100 -- Adjusting Need rolls before showing it on screen
