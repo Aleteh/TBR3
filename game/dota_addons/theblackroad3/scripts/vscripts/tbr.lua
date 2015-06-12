@@ -1334,8 +1334,10 @@ end
 Convars:RegisterCommand( "ItemDropsRoll", function(name, player_ID, roll_type, item_index)
 	print("ItemDropsRoll command registered: ",player_ID, roll_type, item_index)
     local cmdPlayer = Convars:GetCommandClient()
-    if cmdPlayer --[[and IsCurrentlyRolling(item_index)]] then
+    if cmdPlayer and tableContains(GameRules.RollingItems, tonumber(item_index)) then
         return GameMode:RollForItem( tonumber(player_ID), roll_type, tonumber(item_index))
+    else
+    	print("Not a valid RollForItem")
     end
 end, "A player uses an ability point", 0 )
 

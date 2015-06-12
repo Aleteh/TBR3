@@ -152,10 +152,11 @@ package {
 		}
 
 		public function Timeout() {
-			trace("[ItemDrops] Timeout");
-			var pID:int = Globals.instance.Players.GetLocalPlayer();
-			this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" pass "+panelIndex);
-			this.visible = false;
+			if (this.visible) {
+				trace("[ItemDrops] Timeout");
+				var pID:int = Globals.instance.Players.GetLocalPlayer();
+				this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" pass "+panelIndex);
+			}			
 		}
 	}
 }
