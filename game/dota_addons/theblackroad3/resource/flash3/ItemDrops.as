@@ -19,9 +19,12 @@ package {
 		private var ScreenWidth:int;
 		private var ScreenHeight:int;
 		public var scaleRatioY:Number;
+		public var maxDropsOnScreen:Number;
 
 		public var itemKV:Object;
 		public var itemDropsInfo:Object;
+		
+		public var panels:Array = new Array()
 
 		// unused constructor
 		public function ItemDrops() : void {
@@ -65,11 +68,28 @@ package {
 				itemText = itemName;
 			}
 			var timeoutTime:Number = itemDropsInfo["MaxTime"]
-			
-			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, itemIndex, timeoutTime, gameAPI);
-			this.addChild(itemDrop);
-			itemDrop.x = ScreenWidth/2 - itemDrop.width/2;
-			itemDrop.y = ScreenHeight/2;
+			maxDropsOnScreen = itemDropsInfo["MaxDropsOnScreen"]
+
+			// After adding the child, add it to the array of ItemDropPanel
+			var itemDrop = new ItemDropPanel(itemName, itemColor, itemText, itemIndex, timeoutTime, callbackClosePanel, gameAPI);
+			this.addChild(itemDrop)
+			panels.push(itemDrop)
+
+			// Position it above the latest added panel
+			var pos:Number = panels.indexOf(itemDrop) % 3
+			itemDrop.x = ScreenWidth - itemDrop.width
+			itemDrop.y = ScreenHeight * 0.6 - pos * itemDrop.height
+		}
+
+		// After closing a panel (Need/Greed/Pass/Timeout), remove it and reposition the panels
+		private function callbackClosePanel(args:Object){
+			trace("callbackClosePanel");
+			panels.splice(panels.indexOf(args),1)
+			for each (var elem in panels) {
+			    var pos:Number = panels.indexOf(elem) % maxDropsOnScreen
+			    elem.y = ScreenHeight * 0.6 - pos * elem.height
+			    trace("[ItemDrops] Repositioned panel "+panels.indexOf(elem)+" at "+elem.y)
+			}
 		}
 
 		// Load the item key values to find its quality for coloring

@@ -19,6 +19,7 @@ package {
     import passButton;
     import needButton;
     import greedButton;
+	import proTip;
 
 	public class ItemDropPanel extends MovieClip{
 
@@ -27,10 +28,15 @@ package {
 		private var passBtn:SimpleButton;
         private var needBtn:SimpleButton;
         private var greedBtn:SimpleButton;
+		public  var callbackClose:Function; 
+		private var tooltipPass:proTip = new proTip();
+		private var tooltipNeed:proTip = new proTip();
+		private var tooltipGreed:proTip = new proTip();
 
 		// Constructor takes the item name, text and color
-		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, itemIndex:String, timeoutTime:Number, api:Object){
-
+		public function ItemDropPanel(itemName:String, itemColor:Number, itemText:String, itemIndex:String, timeoutTime:Number, callback:Function, api:Object){
+			this.callbackClose = callback;
+			
 			//trace("[ItemDrop] ItemDropPanel Start");
 			//trace("[ItemDropPanel] Data: ",itemName,itemColor,itemText,itemIndex)
 			this.gameAPI = api;
@@ -41,74 +47,77 @@ package {
 			var itemDropMenu:Bitmap = new Bitmap(new ItemDropMenuPNG());
 			dropMC.addChild(itemDropMenu);
 			
-			// Icon
-			var itemIcon:ResourceIcon = new ResourceIcon(itemName.substr(5,itemName.length), true);
-			itemIcon.x = 53;
-			itemIcon.y = 28;
-			itemIcon.width = 70;
-			itemIcon.height = 45;
-			itemIcon.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOver);
-			itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOut);
-			dropMC.addChild(itemIcon);
+			var itemIcon:ResourceIcon = new ResourceIcon(itemName.substr(5,itemName.length), true)
+			itemIcon.x = 43
+			itemIcon.y = 18
+			itemIcon.width = 61
+			itemIcon.height = 46
+			itemIcon.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOver)
+			itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOut)
+			dropMC.addChild(itemIcon)
 
 			// Buttons
 			// Pass
-			this.passBtn = new passButton();
-     		this.passBtn.x = 471;
-			this.passBtn.y = 16;
-			this.passBtn.width = 25;
-			this.passBtn.height = 26;
-			this.passBtn.addEventListener(MouseEvent.CLICK, onClickPass);
-			//itemIcon.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOverPass);
-			//itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutPass);	
-			dropMC.addChild(this.passBtn);
+			this.passBtn = new passButton()
+     		this.passBtn.x = 460
+			this.passBtn.y = 5
+			this.passBtn.width = 26
+			this.passBtn.height = 26
+			this.passBtn.addEventListener(MouseEvent.CLICK, onClickPass)
+			this.passBtn.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOverPass)
+			this.passBtn.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutPass)	
+			dropMC.addChild(this.passBtn)
 			
 			// Need
-			this.needBtn = new needButton();
-     		this.needBtn.x = 410;
-			this.needBtn.y = 18;
-			this.needBtn.addEventListener(MouseEvent.CLICK, onClickNeed);	
-			//itemIcon.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOverNeed);
-			//itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutNeed);
-			dropMC.addChild(this.needBtn);
+			this.needBtn = new needButton()
+     		this.needBtn.x = 397
+			this.needBtn.y = 8
+			this.needBtn.addEventListener(MouseEvent.CLICK, onClickNeed)	
+			this.needBtn.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOverNeed)
+			this.needBtn.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutNeed)
+			dropMC.addChild(this.needBtn)
 
 			// Greed
-			this.greedBtn = new greedButton();
-     		this.greedBtn.x = 410;
-			this.greedBtn.y = 62;
-			this.greedBtn.addEventListener(MouseEvent.CLICK, onClickGreed);
-			//itemIcon.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOverGreed);
-			//itemIcon.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutGreed);
-			dropMC.addChild(this.greedBtn);			
+			this.greedBtn = new greedButton()
+     		this.greedBtn.x = 397
+			this.greedBtn.y = 54
+			this.greedBtn.addEventListener(MouseEvent.CLICK, onClickGreed)
+			this.greedBtn.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOverGreed)
+			this.greedBtn.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOutGreed)
+			dropMC.addChild(this.greedBtn)			
 
 			// Text
-			var txFormat:TextFormat = new TextFormat();
-			txFormat.align = TextFormatAlign.CENTER;
-			txFormat.font = "$TextFont"; //TitleFont
-			txFormat.size = 20;
-			txFormat.color = itemColor;
+			var txFormat:TextFormat = new TextFormat()
+			txFormat.align = TextFormatAlign.CENTER
+			txFormat.font = "$TextFont" //TitleFont
+			txFormat.size = 20
+			txFormat.color = itemColor
 
-			var textBox:TextField = new TextField();
-			textBox.x = 128;
-			textBox.y = 35;
-            textBox.width = 263; 
-            textBox.height = 70; 
-            textBox.multiline = true; 
-            textBox.wordWrap = true;
-            //textBox.border = true;
-            textBox.text = itemText; //String passed by parameter
-			textBox.alpha = 0.9;
-			textBox.filters = [new GlowFilter(0x000000)];
+			var textBox:TextField = new TextField()
+			textBox.x = 110
+			textBox.y = 21
+            textBox.width = 263 
+            textBox.height = 70 
+            textBox.multiline = true 
+            textBox.wordWrap = true
+            //textBox.border = true
+            textBox.text = itemText //String passed by parameter
+			textBox.alpha = 0.9
+			textBox.filters = [new GlowFilter(0x000000)]
 
-			textBox.setTextFormat(txFormat);
-			dropMC.addChild(textBox);
+			textBox.setTextFormat(txFormat)
+			dropMC.addChild(textBox)
 
 			// Time Bar
-			var timeBar:TimeBar = new TimeBar(timeoutTime, Timeout);
-			timeBar.x = 42;
-            timeBar.y = 89;
-			dropMC.addChild(timeBar);
-
+			var timeBar:TimeBar = new TimeBar(timeoutTime, Timeout)
+			timeBar.x = 29
+            timeBar.y = 77
+			dropMC.addChild(timeBar)
+			
+			//Tooltiperinos by zedlenaGomez
+			dropMC.addChild(tooltipPass);
+			dropMC.addChild(tooltipNeed);
+			dropMC.addChild(tooltipGreed);
 
 			// Finally, add the MovieClip to the stage
 			this.addChild(dropMC);
@@ -129,12 +138,44 @@ package {
 			Globals.instance.Loader_shop.gameAPI.HideItemTooltip();
 		}
 
+		public function onMouseRollOverPass(keys:MouseEvent){
+			var s:Object = keys.target;
+            var lp:Point = s.localToGlobal(new Point(0, 0));
+			tooltipPass.kissAndTell(s.x, s.y, 'Pass');
+       	}
+		
+		public function onMouseRollOutPass(keys:MouseEvent){	
+			tooltipPass.pleaseHideMeSenpai();
+		}
+		
+		public function onMouseRollOverNeed(keys:MouseEvent){
+			var s:Object = keys.target;
+            var lp:Point = s.localToGlobal(new Point(0, 0));
+			tooltipNeed.kissAndTell(s.x, s.y, 'Need');
+       	}
+		
+		public function onMouseRollOutNeed(keys:MouseEvent){	
+			tooltipNeed.pleaseHideMeSenpai();
+		}
+		
+		public function onMouseRollOverGreed(keys:MouseEvent){
+       		var s:Object = keys.target;
+            var lp:Point = s.localToGlobal(new Point(0, 0));
+			tooltipNeed.kissAndTell(s.x, s.y, 'Greed');
+       	}
+		
+		public function onMouseRollOutGreed(keys:MouseEvent){
+			tooltipGreed.pleaseHideMeSenpai();
+		}
+
 		public function onClickPass(event:MouseEvent) {
 			trace("[ItemDrops] Pass!");
 			var pID:int = Globals.instance.Players.GetLocalPlayer();
 			this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" pass "+panelIndex);
 			this.visible = false;
 			// How to gameAPI with Globals?
+			
+			callbackClose(this);
 		}
 
 		public function onClickNeed(event:MouseEvent) {
@@ -142,6 +183,8 @@ package {
 			var pID:int = Globals.instance.Players.GetLocalPlayer();
 			this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" need "+panelIndex);
 			this.visible = false;
+			
+			callbackClose(this);
 		}
 
 		public function onClickGreed(event:MouseEvent) {
@@ -149,6 +192,8 @@ package {
 			var pID:int = Globals.instance.Players.GetLocalPlayer();
 			this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" greed "+panelIndex);
 			this.visible = false;
+			
+			callbackClose(this);
 		}
 
 		public function Timeout() {
@@ -156,7 +201,8 @@ package {
 				trace("[ItemDrops] Timeout");
 				var pID:int = Globals.instance.Players.GetLocalPlayer();
 				this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" pass "+panelIndex);
-			}			
+			}
+			callbackClose(this);
 		}
 	}
 }

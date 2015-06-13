@@ -988,9 +988,23 @@ function GameMode:OnPlayerPicked( event )
 	item2.Rolls = {}
 	item2.players_rolled = 0
 
+	local item_name3 = "item_thundering_hammer_of_zeus"
+    local item3 = CreateItem(item_name3, nil, nil)
+    item3:SetPurchaseTime(0)
+    local pos3 = spawnedUnitIndex:GetAbsOrigin()
+	local drop3 = CreateItemOnPositionSync( pos3, item3 )
+	local pos_launch3 = pos3+RandomVector(RandomFloat(150,200))
+	item3:LaunchLoot(false, 200, 0.75, pos_launch3)
+
+	-- Fire the ItemDrops UI
+    FireGameEvent("item_drop", { item_name = item_name3, item_index = item3:GetEntityIndex()} )
+	item3.Rolls = {}
+	item3.players_rolled = 0
+	
     -- Add it to the list of items in Roll state
     table.insert(GameRules.RollingItems, item:GetEntityIndex())
     table.insert(GameRules.RollingItems, item2:GetEntityIndex())
+    table.insert(GameRules.RollingItems, item3:GetEntityIndex())
 end
 
 function GameMode:OnEveryonePicked()
