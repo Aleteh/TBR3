@@ -82,9 +82,10 @@ package {
 		}
 
 		// After closing a panel (Need/Greed/Pass/Timeout), remove it and reposition the panels
-		private function callbackClosePanel(args:Object){
+		private function callbackClosePanel(args:MovieClip){
 			trace("callbackClosePanel");
 			panels.splice(panels.indexOf(args),1)
+			this.removeChild(args);
 			for each (var elem in panels) {
 			    var pos:Number = panels.indexOf(elem) % maxDropsOnScreen
 			    elem.y = ScreenHeight * 0.6 - pos * elem.height

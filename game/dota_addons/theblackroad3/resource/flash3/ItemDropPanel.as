@@ -141,7 +141,7 @@ package {
 		public function onMouseRollOverPass(keys:MouseEvent){
 			var s:Object = keys.target;
             var lp:Point = s.localToGlobal(new Point(0, 0));
-			tooltipPass.kissAndTell(s.x, s.y, 'Pass');
+			tooltipPass.kissAndTell(s.x-55, s.y - 3, 'Pass');
        	}
 		
 		public function onMouseRollOutPass(keys:MouseEvent){	
@@ -151,7 +151,7 @@ package {
 		public function onMouseRollOverNeed(keys:MouseEvent){
 			var s:Object = keys.target;
             var lp:Point = s.localToGlobal(new Point(0, 0));
-			tooltipNeed.kissAndTell(s.x, s.y, 'Need');
+			tooltipNeed.kissAndTell(s.x+40, s.y + needBtn.height/2 - tooltipNeed.height/2, 'Need');
        	}
 		
 		public function onMouseRollOutNeed(keys:MouseEvent){	
@@ -161,7 +161,7 @@ package {
 		public function onMouseRollOverGreed(keys:MouseEvent){
        		var s:Object = keys.target;
             var lp:Point = s.localToGlobal(new Point(0, 0));
-			tooltipNeed.kissAndTell(s.x, s.y, 'Greed');
+			tooltipGreed.kissAndTell(s.x+40, s.y + greedBtn.height/2 - tooltipGreed.height/2, 'Greed');
        	}
 		
 		public function onMouseRollOutGreed(keys:MouseEvent){
@@ -198,6 +198,7 @@ package {
 
 		public function Timeout() {
 			if (this.visible) {
+				this.visible = false
 				trace("[ItemDrops] Timeout");
 				var pID:int = Globals.instance.Players.GetLocalPlayer();
 				this.gameAPI.SendServerCommand("ItemDropsRoll "+pID+" pass "+panelIndex);
