@@ -2,7 +2,7 @@
 {
 	"item_adamantium_helm"
 	{
-		"ID"                            "1355"
+		"ID"                            "2355"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"adamantium_helm"
@@ -53,7 +53,7 @@
 	}
 	"item_adamantium_lance"		// TODO Add With Adamantium Helm, Adamantium Tower: +50 armor, +100 attack damage.
 	{
-		"ID"                            "1351"
+		"ID"                            "2351"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"adamantium_lance"
@@ -144,7 +144,7 @@
 	}
 	"item_adamantium_scythe"
 	{
-		"ID"                            "1220"
+		"ID"                            "2220"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"adamantium_scythe"
@@ -227,7 +227,7 @@
 	}
 	"item_adamantium_tower"
 	{
-		"ID"                            "1354"
+		"ID"                            "2354"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"adamantium_tower"
@@ -273,7 +273,7 @@
 	}
 	"item_amulet_of_protection"
 	{
-		"ID"                            "1153"
+		"ID"                            "2153"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"amulet_of_protection"
@@ -332,7 +332,7 @@
 	}
 	"item_aphrodites_blessed_orb"		// TODO Add  Use: increases spell damage and healing by 2000 for 30 seconds. 60 second cooldown.
 	{
-		"ID"                            "1222"
+		"ID"                            "2222"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"aphrodites_blessed_orb"
@@ -375,7 +375,7 @@
 	}
 	"item_aphrodites_favor"
 	{
-		"ID"                            "1357"
+		"ID"                            "2357"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"aphrodites_favor"
@@ -413,7 +413,7 @@
 	}
 	"item_ares_blade_of_command"
 	{
-		"ID"                            "1342"
+		"ID"                            "2342"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ares_blade_of_command"
@@ -481,7 +481,7 @@
 	//Recipe costs 100 000 Crafting Materials, 100 000 gold. Requires Level 200
 	"item_ares_bloodthirsty_spear"
 	{
-		"ID"                            "1362"
+		"ID"                            "2362"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"ares_bloodthirsty_spear"
@@ -844,7 +844,7 @@
 	}
 	"item_armor_of_the_firstborn"
 	{
-		"ID"                            "1333"
+		"ID"                            "2333"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -910,7 +910,7 @@
 	}
 	"item_armor_of_zeus"
 	{
-		"ID"                            "1204"
+		"ID"                            "2204"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"armor_of_zeus"
@@ -959,7 +959,7 @@
 	}
 	"item_athenian_arrows" // TODO add 15% ranged dmg aura
 	{
-		"ID"                            "1154"
+		"ID"                            "2154"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"athenian_arrows"
@@ -1003,7 +1003,7 @@
 	}
 	"item_athenian_mail"
 	{
-		"ID"                            "1066"
+		"ID"                            "2066"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"athenian_mail"
@@ -1047,7 +1047,7 @@
 	}
 	"item_athenian_shirt_of_fine_steel"
 	{
-		"ID"                            "1168"
+		"ID"                            "2168"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"athenian_shirt_of_fine_steel"
@@ -1092,7 +1092,7 @@
 	}
 	"item_barbaric_helm"
 	{
-		"ID"                            "1169"
+		"ID"                            "2169"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"barbaric_helm"
@@ -1160,7 +1160,7 @@
 	}
 	"item_battleaxe"
 	{
-		"ID"                            "1043"
+		"ID"                            "2043"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battleaxe"
@@ -1206,7 +1206,7 @@
 	}
 	"item_battleforge_blade"
 	{
-		"ID"                            "1108"
+		"ID"                            "2108"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battleforge_blade"
@@ -1259,7 +1259,7 @@
 	
 	"item_battleforge_gemstone"
 	{
-		"ID"                            "1224"
+		"ID"                            "2224"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -1278,7 +1278,7 @@
 	}
 	"item_battleforge_plate"  // TODO Add 0.2 Mana regained OnAttacked
 	{
-		"ID"                            "1088"
+		"ID"                            "2088"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battleforge_plate"
@@ -1367,7 +1367,7 @@
 	}
 	"item_battleforge_regalia"
 	{
-		"ID"                            "1225"
+		"ID"                            "2225"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battleforge_regalia"
@@ -1446,7 +1446,7 @@
 	}
 	"item_battleforge_shield"	// TODO Add block mechanic
 	{
-		"ID"                            "1379"
+		"ID"                            "2379"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battleforge_shield"
@@ -1490,7 +1490,7 @@
 	}
 	"item_battle_wizards_staff"
 	{
-		"ID"                            "1067"
+		"ID"                            "2067"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battle_wizards_staff"
@@ -1528,7 +1528,7 @@
 	}
 	"item_battle_wizards_wand"
 	{
-		"ID"                            "1042"
+		"ID"                            "2042"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"battle_wizards_wand"
@@ -1566,7 +1566,7 @@
 	}
 	"item_biting_blade"
 	{
-		"ID"                            "1295"
+		"ID"                            "2295"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"biting_blade"
@@ -1603,7 +1603,7 @@
 	}
 	"item_biting_blade_of_agility"
 	{
-		"ID"                            "1343"
+		"ID"                            "2343"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"biting_blade_of_agility"
@@ -1648,7 +1648,7 @@
 	}
 	"item_biting_blade_of_strength"
 	{
-		"ID"                            "1344"
+		"ID"                            "2344"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"biting_blade_of_strength"
@@ -1696,7 +1696,7 @@
 	
 	"item_blackfire_staff"
 	{
-		"ID"                            "1363"
+		"ID"                            "2363"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"blackfire_staff"
@@ -1740,7 +1740,7 @@
 	}
 	"item_blade_of_ares"
 	{
-		"ID"                            "1206"
+		"ID"                            "2206"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"blade_of_ares"
@@ -1809,7 +1809,7 @@
 	}
 	"item_blade_of_the_chosen"
 	{
-		"ID"                            "1170"
+		"ID"                            "2170"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"blade_of_the_chosen"
@@ -1866,7 +1866,7 @@
 	//Use: Calls down 5 meteors from the god Helios, each inflicting between 500 and 5000 damage to all enemies in the area. 3 minute cooldown
 	"item_blazing_sword_of_helios"
 	{
-		"ID"                            "1364"
+		"ID"                            "2364"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1996,7 +1996,7 @@
 	}
 	"item_bloodrage_charm"
 	{
-		"ID"                            "1155"
+		"ID"                            "2155"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -2066,7 +2066,7 @@
 	    }
 	"item_bone_wreath"
 	{
-		"ID"                            "1171"
+		"ID"                            "2171"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"bone_wreath"
@@ -2109,7 +2109,7 @@
 	}
 	"item_boots_of_agility_16"
 	{
-		"ID"                            "1068"
+		"ID"                            "2068"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"boots_of_agility_16"
@@ -2152,7 +2152,7 @@
 	}
 	"item_boots_of_agility_24"
 	{
-		"ID"                            "1111"
+		"ID"                            "2111"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"boots_of_agility_24"
@@ -2195,7 +2195,7 @@
 	}
 	"item_boots_of_agility_8"
 	{
-		"ID"                            "1027"
+		"ID"                            "2027"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"boots_of_agility_8"
@@ -2238,7 +2238,7 @@
 	}
 	"item_boots_of_hermes"		// TODO Make item unique equip
 	{
-		"ID"                            "1193"
+		"ID"                            "2193"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"boots_of_hermes"
@@ -2293,7 +2293,7 @@
 	}
 	"item_boots_of_marathon"	// TODO Add Use: returns you to Athens. Cooldown: 3 minutes.
 	{
-		"ID"                            "1307"
+		"ID"                            "2307"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"boots_of_marathon"
@@ -2342,7 +2342,7 @@
 	}
 	"item_breastplate_of_the_chosen"
 	{
-		"ID"                            "1172"
+		"ID"                            "2172"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"breastplate_of_the_chosen"
@@ -2386,7 +2386,7 @@
 	}
 	"item_bright_silver_bracers"
 	{
-		"ID"                            "1309"
+		"ID"                            "2309"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"bright_silver_bracers"
@@ -2442,7 +2442,7 @@
 	}
 	"item_bright_silver_plates"
 	{
-		"ID"                            "1350"
+		"ID"                            "2350"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"bright_silver_plates"
@@ -2498,7 +2498,7 @@
 	}
 	"item_bright_silver_shinguards"
 	{
-		"ID"                            "1310"
+		"ID"                            "2310"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"bright_silver_shinguards"
@@ -2554,7 +2554,7 @@
 	}
 	"item_burning_hand_of_the_war_god"
 	{
-		"ID"                            "1319"
+		"ID"                            "2319"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"burning_hand_of_the_war_god"
@@ -2607,7 +2607,7 @@
 	}
 	"item_champions_blade"
 	{
-		"ID"                            "1112"
+		"ID"                            "2112"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heros_blade"
@@ -2645,7 +2645,7 @@
 	}
 	"item_champions_plate"
 	{
-		"ID"                            "1113"
+		"ID"                            "2113"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heros_hauberk"
@@ -2683,7 +2683,7 @@
 	}
 	"item_charm_of_battle_fury"
 	{
-		"ID"                            "1114"
+		"ID"                            "2114"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"charm_of_battle_fury"
@@ -2734,7 +2734,7 @@
 	
 	"item_charm_of_battle_lust"
 	{
-		"ID"                            "1050"
+		"ID"                            "2050"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"charm_of_battle_lust"
@@ -2779,7 +2779,7 @@
 	}
 	"item_charm_of_speed"
 	{
-		"ID"                            "1089"
+		"ID"                            "2089"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"charm_of_speed"
@@ -2823,7 +2823,7 @@
 	}
 	"item_charm_of_the_war_king"
 	{
-		"ID"                            "1173"
+		"ID"                            "2173"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"charm_of_the_war_king"
@@ -2867,7 +2867,7 @@
 	}
 	"item_chillstone_ring"	
 	{
-		"ID"                            "1207"
+		"ID"                            "2207"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"chillstone_ring"
@@ -2912,7 +2912,7 @@
 	}
 	"item_circlet_of_the_mother_goddess"
 	{
-		"ID"                            "1228"
+		"ID"                            "2228"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"circlet_of_the_mother_goddess"
@@ -2961,7 +2961,7 @@
 	}
 	"item_cloak_of_flames_100"
 	{
-		"ID"                            "1276"
+		"ID"                            "2276"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"cloak_of_flames_100"
@@ -3022,7 +3022,7 @@
 	}
 	"item_cloak_of_flames_25" // TODO KV particles > Lua particles precaching
 	{
-		"ID"                            "1051"
+		"ID"                            "2051"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"cloak_of_flames_25"
@@ -3083,7 +3083,7 @@
 	}
 	"item_cloak_of_flames_50" // TODO KV particles > Lua particles precaching
 	{
-		"ID"                            "1115"
+		"ID"                            "2115"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"cloak_of_flames_50"
@@ -3144,7 +3144,7 @@
 	}
 	"item_cloak_of_flames_75"
 	{
-		"ID"                            "1208"
+		"ID"                            "2208"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"cloak_of_flames_75"
@@ -3205,7 +3205,7 @@
 	}
 	"item_cloak_of_the_chosen"
 	{
-		"ID"                            "1174"
+		"ID"                            "2174"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"cloak_of_the_chosen"
@@ -3250,7 +3250,7 @@
 	}
 	"item_crown_of_kings_10"
 	{
-		"ID"                            "1156"
+		"ID"                            "2156"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"crown_of_kings_10"
@@ -3289,7 +3289,7 @@
 	}
 	"item_crown_of_kings_6"
 	{
-		"ID"                            "1070"
+		"ID"                            "2070"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"crown_of_kings_6"
@@ -3329,7 +3329,7 @@
 	}
 	"item_crown_of_power"
 	{
-		"ID"                            "1386"
+		"ID"                            "2386"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"crown_of_power"
@@ -3372,7 +3372,7 @@
 	}
 	"item_crown_of_the_wild"
 	{
-		"ID"                            "1382"
+		"ID"                            "2382"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"crown_of_the_wild"
@@ -3423,7 +3423,7 @@
 	}
 	"item_crystal_helm"
 	{
-		"ID"                            "1175"
+		"ID"                            "2175"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"crystal_helm"
@@ -3467,7 +3467,7 @@
 	}
 	"item_deathbringers_blade"
 	{
-		"ID"                            "1116"
+		"ID"                            "2116"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"deathbringers_blade"
@@ -3510,7 +3510,7 @@
 	}
 	"item_deathbringers_gauntlets"
 	{
-		"ID"                            "1380"
+		"ID"                            "2380"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"deathbringers_gauntlets"
@@ -3561,7 +3561,7 @@
 	
 	"item_deathbringers_gemstone"
 	{
-		"ID"                            "1230"
+		"ID"                            "2230"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -3580,7 +3580,7 @@
 	}
 	"item_deathbringers_mail"
 	{
-		"ID"                            "1090"
+		"ID"                            "2090"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"deathbringers_mail"
@@ -3629,7 +3629,7 @@
 	}
 	"item_deathbringers_regalia"	// TODO Add Set Bonus: Your Critical Strike ability will now do triple damage instead of double damage.
 	{
-		"ID"                            "1231"
+		"ID"                            "2231"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"deathbringer_regalia"
@@ -3684,7 +3684,7 @@
 	}
 	"item_deathchill_blade"		// TODO Make Lua script that applies 25% of your base damage as AoE damage around the target
 	{
-		"ID"                            "1209"
+		"ID"                            "2209"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"deathchill_blade"
@@ -3726,7 +3726,7 @@
 	}
 	"item_deathchill_greatsword"	// TODO Make Lua script that applies 35% of your base damage as AoE damage around the target. Note that this does not include damage bonuses from items.
 	{
-		"ID"                            "1345"
+		"ID"                            "2345"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"deathchill_greatsword"
@@ -3775,7 +3775,7 @@
 	}
 	"item_divine_blade"	
 	{
-		"ID"                            "1117"
+		"ID"                            "2117"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"divine_blade"
@@ -3834,7 +3834,7 @@
 	
 	"item_divine_gemstone"
 	{
-		"ID"                            "1234"
+		"ID"                            "2234"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -3853,7 +3853,7 @@
 	}
 	"item_divine_helm"
 	{
-		"ID"                            "1381"
+		"ID"                            "2381"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"divine_helm"
@@ -3909,7 +3909,7 @@
 	}
 	"item_divine_plate"
 	{
-		"ID"                            "1091"
+		"ID"                            "2091"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"divine_plate"
@@ -3965,7 +3965,7 @@
 	}
 	"item_divine_regalia"	// TODO Set Bonus: Whenever your physical attacks land there is a 10% chance that a bolt of fire will leap from your sword, causing damage equal to double your Strength to all enemy units in front of you in a line.
 	{
-		"ID"                            "1235"
+		"ID"                            "2235"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"divine_regalia"
@@ -4032,7 +4032,7 @@
 	}
 	"item_enchanted_diamond_dust"	// TODO Make it work
 	{
-		"ID"                            "1001"
+		"ID"                            "2001"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"enchanted_diamond_dust"
@@ -4050,7 +4050,7 @@
 	}
 	"item_eris_golden_apple_of_discord"		// TODO Add Use: 75% chance to receive a random powerful buff and 25% chance for debuff. Cooldown: 1 minute.
 	{
-		"ID"                            "1176"
+		"ID"                            "2176"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"eris_golden_apple_of_discord"
@@ -4088,7 +4088,7 @@
 	}
 	"item_firehand_gauntlets_20"
 	{
-		"ID"                            "1053"
+		"ID"                            "2053"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"firehand_gauntlets_20"
@@ -4127,7 +4127,7 @@
 	}
 	"item_firehand_gauntlets_40"
 	{
-		"ID"                            "1119"
+		"ID"                            "2119"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"firehand_gauntlets_40"
@@ -4166,7 +4166,7 @@
 	}
 	"item_firehand_gauntlets_50"
 	{
-		"ID"                            "1269"
+		"ID"                            "2269"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"firehand_gauntlets_50"
@@ -4205,7 +4205,7 @@
 	}
 	"item_frozen_ring_of_the_ice_queen"
 	{
-		"ID"                            "1210"
+		"ID"                            "2210"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"frozen_ring_of_the_ice_queen"
@@ -4277,7 +4277,7 @@
 	}
 	"item_full_plate"
 	{
-		"ID"                            "1195"
+		"ID"                            "2195"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"full_plate"
@@ -4315,7 +4315,7 @@
 	}
 	"item_gauntlets_of_might_16"
 	{
-		"ID"                            "1076"
+		"ID"                            "2076"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gauntlets_of_might_16"
@@ -4352,7 +4352,7 @@
 	}
 	"item_gauntlets_of_might_24"
 	{
-		"ID"                            "1120"
+		"ID"                            "2120"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gauntlets_of_might_24"
@@ -4389,7 +4389,7 @@
 	}
 	"item_gauntlets_of_might_8"
 	{
-		"ID"                            "1035"
+		"ID"                            "2035"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gauntlets_of_might_8"
@@ -4426,7 +4426,7 @@
 	}
 	"item_gemstone_key"		// TODO Add icon
 	{
-		"ID"                            "1282"
+		"ID"                            "2282"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK" //"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"placeholder"
@@ -4468,7 +4468,7 @@
 	
 	"item_gemstone_of_khaos"
 	{
-		"ID"                            "1241"
+		"ID"                            "2241"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -4489,7 +4489,7 @@
 	
 	"item_gemstone_of_light"
 	{
-		"ID"                            "1242"
+		"ID"                            "2242"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -4510,7 +4510,7 @@
 	
 	"item_gemstone_of_power"
 	{
-		"ID"                            "1243"
+		"ID"                            "2243"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -4531,7 +4531,7 @@
 	
 	"item_gemstone_of_shadows"
 	{
-		"ID"                            "1244"
+		"ID"                            "2244"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -4553,7 +4553,7 @@
 	
 	"item_gemstone_of_the_olympians"
 	{
-		"ID"                            "1358"
+		"ID"                            "2358"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"placeholder"
@@ -4577,7 +4577,7 @@
 	
 	"item_gemstone_of_the_wild"
 	{
-		"ID"                            "1245"
+		"ID"                            "2245"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -4596,7 +4596,7 @@
 	}
 	"item_gem_of_birth"
 	{
-		"ID"                            "1279"
+		"ID"                            "2279"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gem_of_birth"
@@ -4615,7 +4615,7 @@
 	}
 	"item_gem_of_death"
 	{
-		"ID"                            "1280"
+		"ID"                            "2280"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gem_of_death"
@@ -4634,7 +4634,7 @@
 	}
 	"item_gem_of_life"
 	{
-		"ID"                            "1281"
+		"ID"                            "2281"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gem_of_life"
@@ -4653,7 +4653,7 @@
 	}
 	"item_gift_of_hera"	
 	{
-		"ID"                            "1352"
+		"ID"                            "2352"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"gift_of_hera"
@@ -4692,7 +4692,7 @@
 	}
 	"item_great_axe"
 	{
-		"ID"                            "1077"
+		"ID"                            "2077"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"great_axe"
@@ -4737,7 +4737,7 @@
 	}
 	"item_great_axe_of_the_minotaur_cheiftain"
 	{
-		"ID"                            "1378"
+		"ID"                            "2378"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"horn_of_the_hallowed_one"
@@ -4781,7 +4781,7 @@
 	}
 	"item_great_maul"
 	{
-		"ID"                            "1163"
+		"ID"                            "2163"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"great_maul"
@@ -4826,7 +4826,7 @@
 	}
 	"item_green_dragonscale_ring"
 	{
-		"ID"                            "1213"
+		"ID"                            "2213"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"green_dragonscale_ring"
@@ -4871,7 +4871,7 @@
 	}
 	"item_green_dragonscale_ring_of_addiction"
 	{
-		"ID"                            "1336"
+		"ID"                            "2336"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"green_dragonscale_ring_of_addiction"
@@ -5208,7 +5208,7 @@
 	}
 	"item_heartstone_ring_of_agility"
 	{
-		"ID"                            "1296"
+		"ID"                            "2296"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heartstone_ring_of_agility"
@@ -5245,7 +5245,7 @@
 	}
 	"item_heartstone_ring_of_intelligence"
 	{
-		"ID"                            "1297"
+		"ID"                            "2297"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heartstone_ring_of_intelligence"
@@ -5282,7 +5282,7 @@
 	}
 	"item_heartstone_ring_of_strength"
 	{
-		"ID"                            "1298"
+		"ID"                            "2298"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heartstone_ring_of_strength"
@@ -5319,7 +5319,7 @@
 	}
 	"item_heart_blade"
 	{
-		"ID"                            "1177"
+		"ID"                            "2177"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heart_blade"
@@ -5369,7 +5369,7 @@
 	}
 	"item_heart_of_frost"	// TODO Make it work
 	{
-		"ID"                            "1002"
+		"ID"                            "2002"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heart_of_frost"
@@ -5387,7 +5387,7 @@
 	}
 	"item_hephaestus_thundering_axe"
 	{
-		"ID"                            "1353"
+		"ID"                            "2353"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"placeholder"
@@ -5466,7 +5466,7 @@
 	}
 	"item_heras_blessing"
 	{
-		"ID"                            "1313"
+		"ID"                            "2313"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heras_blessing"
@@ -5529,7 +5529,7 @@
 	}
 	"item_heros_blade"
 	{
-		"ID"                            "1079"
+		"ID"                            "2079"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heros_blade"
@@ -5567,7 +5567,7 @@
 	}
 	"item_heros_hauberk"
 	{
-		"ID"                            "1080"
+		"ID"                            "2080"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"heros_hauberk"
@@ -5605,7 +5605,7 @@
 	}
 	"item_hide_of_the_wild"
 	{
-		"ID"                            "1093"
+		"ID"                            "2093"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"hide_of_the_wild"
@@ -5662,7 +5662,7 @@
 	}
 	"item_high_oracles_robes" // TODO Add With High Oracle's Staff: +100 spell damage and healing.
 	{
-		"ID"                            "1121"
+		"ID"                            "2121"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"high_oracles_robes"
@@ -5712,7 +5712,7 @@
 	}
 	"item_high_oracles_staff" // TODO Add With High Oracle's Robes: +100 spell damage and healing.
 	{
-		"ID"                            "1123"
+		"ID"                            "2123"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"high_oracles_staff"
@@ -5750,7 +5750,7 @@
 	}
 	"item_high_shamans_staff"
 	{
-		"ID"                            "1094"
+		"ID"                            "2094"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"high_shamans_staff"
@@ -5794,7 +5794,7 @@
 	}
 	"item_horn_of_the_hallowed_one"
 	{
-		"ID"                            "1377"
+		"ID"                            "2377"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"horn_of_the_hallowed_one"
@@ -5846,7 +5846,7 @@
 	}
 	"item_hunting_spear_of_artemis"
 	{
-		"ID"                            "1196"
+		"ID"                            "2196"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"hunting_spear_of_artemis"
@@ -5907,7 +5907,7 @@
 	//Cannot be used by Warrior classes.
 	"item_immortal_armor_of_hephaestus"
 	{
-		"ID"                            "1365"
+		"ID"                            "2365"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"immortal_armor_of_hephaestus"
@@ -6003,7 +6003,7 @@
 	}
 	"item_ironwood_bow"
 	{
-		"ID"                            "1124"
+		"ID"                            "2124"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ironwood_bow"
@@ -6054,7 +6054,7 @@
 	}
 	"item_ironwood_chestplate"
 	{
-		"ID"                            "1095"
+		"ID"                            "2095"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ironwood_chestplate"
@@ -6111,7 +6111,7 @@
 	
 	"item_ironwood_gemstone"
 	{
-		"ID"                            "1247"
+		"ID"                            "2247"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -6130,7 +6130,7 @@
 	}
 	"item_ironwood_helm"
 	{
-		"ID"                            "1383"
+		"ID"                            "2383"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ironwood_helm"
@@ -6180,7 +6180,7 @@
 	}
 	"item_ironwood_regalia"  	// TODO Add Set Bonus: Your attacks explode on impact, causing damage equal to one third of your agility to enemy units in an area of effect around the target.
 	{
-		"ID"                            "1248"
+		"ID"                            "2248"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ironwood_regalia"
@@ -6247,7 +6247,7 @@
 	}
 	"item_iron_will_of_hephaestus"		// TODO Make the ability absorb 10,000 magic damage instead.
 	{
-		"ID"                            "1314"
+		"ID"                            "2314"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -6341,7 +6341,7 @@
 	}
 	"item_khaos_blade"
 	{
-		"ID"                            "1125"
+		"ID"                            "2125"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"khaos_blade"
@@ -6391,7 +6391,7 @@
 	}
 	"item_khaos_helm"
 	{
-		"ID"                            "1126"
+		"ID"                            "2126"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"khaos_helm"
@@ -6440,7 +6440,7 @@
 	}
 	"item_khaos_regalia"
 	{
-		"ID"                            "1250"
+		"ID"                            "2250"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"khaos_regalia"
@@ -6525,7 +6525,7 @@
 	}
 	"item_khaos_shield"
 	{
-		"ID"                            "1096"
+		"ID"                            "2096"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"khaos_shield"
@@ -6574,7 +6574,7 @@
 	}
 	"item_life_gem"
 	{
-		"ID"                            "1081"
+		"ID"                            "2081"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"life_gem"
@@ -6611,7 +6611,7 @@
 	}
 	"item_light_regalia"
 	{
-		"ID"                            "1251"
+		"ID"                            "2251"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"light_regalia"
@@ -6665,7 +6665,7 @@
 	}
 	"item_liquid_crystal"		// TODO Fix Icon
 	{
-		"ID"                            "1270"
+		"ID"                            "2270"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"liquid_crystal"
@@ -6704,7 +6704,7 @@
 	}
 	"item_magefire_ring"
 	{
-		"ID"                            "1299"
+		"ID"                            "2299"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"magefire_ring"
@@ -6723,7 +6723,7 @@
 	}
 	"item_magefire_ring_of_intelligence"
 	{
-		"ID"                            "1348"
+		"ID"                            "2348"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"magefire_ring_of_intelligence"
@@ -6762,7 +6762,7 @@
 	}
 	"item_magus_rod"
 	{
-		"ID"                            "1128"
+		"ID"                            "2128"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"magus_rod"
@@ -6800,7 +6800,7 @@
 	}
 	"item_mail_shirt"
 	{
-		"ID"                            "1044"
+		"ID"                            "2044"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mail_shirt"
@@ -6996,7 +6996,7 @@
 	}
 	"item_mask_of_death"
 	{
-		"ID"                            "1129"
+		"ID"                            "2129"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mask_of_death"
@@ -7038,7 +7038,7 @@
 	}
 	"item_medallion_of_stamina"
 	{
-		"ID"                            "1057"
+		"ID"                            "2057"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"medallion_of_stamina"
@@ -7076,7 +7076,7 @@
 	}
 	"item_meteoric_iron"	// TODO Make it work
 	{
-		"ID"                            "1003"
+		"ID"                            "2003"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"meteoric_iron"
@@ -7094,7 +7094,7 @@
 	}
 	"item_mighty_axe"
 	{
-		"ID"                            "1197"
+		"ID"                            "2197"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mighty_axe"
@@ -7132,7 +7132,7 @@
 	}
 	"item_mighty_chestguard_of_the_olympians"		// Fix particle not ending
 	{
-		"ID"                            "1283"
+		"ID"                            "2283"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mighty_chestguard_of_the_olympians"
@@ -7224,7 +7224,7 @@
 	}
 	"item_mighty_helm_of_the_olympians"
 	{
-		"ID"                            "1284"
+		"ID"                            "2284"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mighty_helm_of_the_olympians"
@@ -7286,7 +7286,7 @@
 	}
 	"item_mighty_olympian_regalia"
 	{
-		"ID"                            "1359"
+		"ID"                            "2359"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mighty_olympian_regalia"
@@ -7412,7 +7412,7 @@
 	}
 	"item_mighty_sword_of_the_olympians"
 	{
-		"ID"                            "1285"
+		"ID"                            "2285"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mighty_sword_of_the_olympians"
@@ -7502,7 +7502,7 @@
 	}
 	"item_myrmidon_scale"
 	{
-		"ID"                            "1133"
+		"ID"                            "2133"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"myrmidon_scale"
@@ -7559,7 +7559,7 @@
 	}
 	"item_night_blade"		// TODO Fix Valve rounding of numbers. This item gives 0.5 constant mana regen, not 1.
 	{
-		"ID"                            "1134"
+		"ID"                            "2134"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"night_blade"
@@ -7608,7 +7608,7 @@
 	}
 	"item_night_cloak"
 	{
-		"ID"                            "1097"
+		"ID"                            "2097"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"night_cloak"
@@ -7665,7 +7665,7 @@
 	
 	"item_night_gemstone"
 	{
-		"ID"                            "1252"
+		"ID"                            "2252"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -7684,7 +7684,7 @@
 	}
 	"item_night_mask"		// TODO Fix Valve rounding of numbers. This item gives 0.5 constant mana regen, not 1.
 	{
-		"ID"                            "1384"
+		"ID"                            "2384"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"night_mask"
@@ -7745,7 +7745,7 @@
 	}
 	"item_night_regalia"		// TODO Add Set Bonus: Increases the stun duration of your Walk the Shadows ability to 4 seconds and adds a bleed effect that will cause damage equal to five times your Agility plus 1000 over 5 seconds.
 	{
-		"ID"                            "1253"
+		"ID"                            "2253"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"night_regalia"
@@ -7806,7 +7806,7 @@
 	}
 	"item_oracles_robes" // TODO Add With Oracle's Staff: +50 spell damage and healing.
 	{
-		"ID"                            "1058"
+		"ID"                            "2058"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"oracles_robes"
@@ -7856,7 +7856,7 @@
 	}
 	"item_oracles_staff" // TODO Add With Oracle's Robes: +50 spell damage and healing.
 	{
-		"ID"                            "1058"
+		"ID"                            "2058"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"oracles_staff"
@@ -7894,7 +7894,7 @@
 	}
 	"item_orb_of_chill_midnight"
 	{
-		"ID"                            "1214"
+		"ID"                            "2214"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"orb_of_chill_midnight"
@@ -7945,7 +7945,7 @@
 	}
 	"item_orb_of_mana"
 	{
-		"ID"                            "1082"
+		"ID"                            "2082"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"orb_of_mana"
@@ -7983,7 +7983,7 @@
 	}
 	"item_orb_of_the_mind"
 	{
-		"ID"                            "1135"
+		"ID"                            "2135"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"orb_of_the_mind"
@@ -8021,7 +8021,7 @@
 	}
 	"item_orb_of_true_vision"
 	{
-		"ID"                            "1198"
+		"ID"                            "2198"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"orb_of_true_vision"
@@ -8059,7 +8059,7 @@
 	}
 	"item_orb_of_unending_life"
 	{
-		"ID"                            "1036"
+		"ID"                            "2036"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"orb_of_unending_life"
@@ -8100,7 +8100,7 @@
 	}
 	"item_orb_of_wisdom"
 	{
-		"ID"                            "1098"
+		"ID"                            "2098"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"orb_of_wisdom"
@@ -8139,7 +8139,7 @@
 	}
 	"item_peacebringer"
 	{
-		"ID"                            "1136"
+		"ID"                            "2136"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"peacebringer"
@@ -8184,7 +8184,7 @@
 	}
 	"item_pendant_of_shadows"
 	{
-		"ID"                            "1385"
+		"ID"                            "2385"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"pendant_of_shadows"
@@ -8227,7 +8227,7 @@
 	}
 	"item_plates_of_the_ancients"
 	{
-		"ID"                            "1366"
+		"ID"                            "2366"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"plates_of_the_ancients"
@@ -8277,7 +8277,7 @@
 	}
 	"item_power_regalia"	// TODO Add Set Bonus: Your spell damage is increased by 25%.
 	{
-		"ID"                            "1255"
+		"ID"                            "2255"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"power_regalia"
@@ -8328,7 +8328,7 @@
 	}
 	"item_power_stone"	// TODO Make it work
 	{
-		"ID"                            "1004"
+		"ID"                            "2004"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"power_stone"
@@ -8346,7 +8346,7 @@
 	}
 	"item_priams_scepter"
 	{
-		"ID"                            "1199"
+		"ID"                            "2199"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"priams_scepter"
@@ -8395,7 +8395,7 @@
 	}
 	"item_red_dragonscale_ring"
 	{
-		"ID"                            "1215"
+		"ID"                            "2215"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"red_dragonscale_ring"
@@ -8450,7 +8450,7 @@
 	}
 	"item_red_dragonscale_ring_of_addiction"
 	{
-		"ID"                            "1337"
+		"ID"                            "2337"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"red_dragonscale_ring_of_addiction"
@@ -8505,7 +8505,7 @@
 	}
 	"item_regal_crown"
 	{
-		"ID"                            "1178"
+		"ID"                            "2178"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regal_crown"
@@ -8549,7 +8549,7 @@
 	}
 	"item_regal_helm_of_sparkling_crystal"
 	{
-		"ID"                            "1192"
+		"ID"                            "2192"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regal_helm_of_sparkling_crystal"
@@ -8592,7 +8592,7 @@
 	}
 	"item_ring_of_dodging"
 	{
-		"ID"                            "1045"
+		"ID"                            "2045"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_dodging"
@@ -8629,7 +8629,7 @@
 	}
 	"item_ring_of_healing_power"
 	{
-		"ID"                            "1083"
+		"ID"                            "2083"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_healing_power"
@@ -8652,7 +8652,7 @@
 	}
 	"item_ring_of_might"
 	{
-		"ID"                            "1164"
+		"ID"                            "2164"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_might"
@@ -8703,7 +8703,7 @@
 	}
 	"item_ring_of_power"
 	{
-		"ID"                            "1165"
+		"ID"                            "2165"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_power"
@@ -8743,7 +8743,7 @@
 	"item_ring_of_regeneration" 
 	{
 	
-		"ID"                            "1004"
+		"ID"                            "2004"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_regeneration"
@@ -8785,7 +8785,7 @@
 	}
 	"item_ring_of_spell_power"
 	{
-		"ID"                            "1084"
+		"ID"                            "2084"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_spell_power"
@@ -8808,7 +8808,7 @@
 	}
 	"item_ring_of_the_frozen_citadel"
 	{
-		"ID"                            "1330"
+		"ID"                            "2330"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_the_frozen_citadel"
@@ -8897,7 +8897,7 @@
 	}
 	"item_ring_of_vigor"
 	{
-		"ID"                            "1037"
+		"ID"                            "2037"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ring_of_vigor"
@@ -8935,7 +8935,7 @@
 	}
 	"item_robes_of_delphi" // TODO Add With Staff of Delphi: +150 spell damage and healing.
 	{
-		"ID"                            "1179"
+		"ID"                            "2179"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_delphi"
@@ -8985,7 +8985,7 @@
 	}
 	"item_robes_of_enlightenment_16"
 	{
-		"ID"                            "1085"
+		"ID"                            "2085"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_enlightenment_16"
@@ -9023,7 +9023,7 @@
 	}
 	"item_robes_of_enlightenment_24"
 	{
-		"ID"                            "1139"
+		"ID"                            "2139"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_enlightenment_24"
@@ -9061,7 +9061,7 @@
 	}
 	"item_robes_of_enlightenment_8"
 	{
-		"ID"                            "1038"
+		"ID"                            "2038"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_enlightenment_8"
@@ -9099,7 +9099,7 @@
 	}
 	"item_robes_of_light"
 	{
-		"ID"                            "1102"
+		"ID"                            "2102"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_light"
@@ -9149,7 +9149,7 @@
 	}
 	"item_robes_of_power"	
 	{
-		"ID"                            "1103"
+		"ID"                            "2103"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_power"
@@ -9198,7 +9198,7 @@
 	}
 	"item_robes_of_the_chosen"
 	{
-		"ID"                            "1180"
+		"ID"                            "2180"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robes_of_the_chosen"
@@ -9247,7 +9247,7 @@
 	}
 	"item_robe_of_shadows"
 	{
-		"ID"                            "1101"
+		"ID"                            "2101"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"robe_of_shadows"
@@ -9303,7 +9303,7 @@
 	}
 	"item_rod_of_healing_power"	
 	{
-		"ID"                            "1201"
+		"ID"                            "2201"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"rod_of_healing_power"
@@ -9322,7 +9322,7 @@
 	}
 	"item_rod_of_spell_power"
 	{
-		"ID"                            "1200"
+		"ID"                            "2200"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"rod_of_spell_power"
@@ -9341,7 +9341,7 @@
 	}
 	"item_rod_of_the_chosen"
 	{
-		"ID"                            "1181"
+		"ID"                            "2181"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"rod_of_the_chosen"
@@ -9390,7 +9390,7 @@
 	}
 	"item_roundshield"
 	{
-		"ID"                            "1046"
+		"ID"                            "2046"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"roundshield"
@@ -9436,7 +9436,7 @@
 	}
 	"item_ruby_heart"	// TODO Make it work
 	{
-		"ID"                            "1005"
+		"ID"                            "2005"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ruby_heart"
@@ -9454,7 +9454,7 @@
 	}
 	"item_runestone"	// TODO Make it work
 	{
-		"ID"                            "1006"
+		"ID"                            "2006"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"runestone"
@@ -9472,7 +9472,7 @@
 	}
 	"item_sacred_chestguard_of_the_olympians"
 	{
-		"ID"                            "1286"
+		"ID"                            "2286"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sacred_chestguard_of_the_olympians"
@@ -9534,7 +9534,7 @@
 	}
 	"item_sacred_helm_of_the_olympians"	
 	{
-		"ID"                            "1287"
+		"ID"                            "2287"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sacred_helm_of_the_olympians"
@@ -9596,7 +9596,7 @@
 	}
 	"item_sacred_olympian_regalia"	// TODO Add and Set Bonus: +400 Spell Healing, +400 Spell Damage
 	{
-		"ID"                            "1360"
+		"ID"                            "2360"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sacred_olympian_regalia"
@@ -9660,7 +9660,7 @@
 	}
 	"item_sacred_sword_of_the_olympians"
 	{
-		"ID"                            "1288"
+		"ID"                            "2288"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sacred_sword_of_the_olympians"
@@ -9722,7 +9722,7 @@
 	}
 	"item_sapphire"	// TODO Make it work
 	{
-		"ID"                            "1006"
+		"ID"                            "2006"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sapphire"
@@ -9740,7 +9740,7 @@
 	}
 	"item_savage_helm"
 	{
-		"ID"                            "1202"
+		"ID"                            "2202"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"savage_helm"
@@ -9808,7 +9808,7 @@
 	}
 	"item_savage_war_axe_of_hephaestus"
 	{
-		"ID"                            "1203"
+		"ID"                            "2203"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"savage_war_axe_of_hephaestus"
@@ -9880,7 +9880,7 @@
 	}
 	"item_scepter_of_the_chosen_ones"
 	{
-		"ID"                            "1339"
+		"ID"                            "2339"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"scepter_of_the_chosen_ones"
@@ -9931,7 +9931,7 @@
 	}
 	"item_scepter_of_the_ice_queen"	
 	{
-		"ID"                            "1216"
+		"ID"                            "2216"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"scepter_of_the_ice_queen"
@@ -9982,7 +9982,7 @@
 	//Increases your spell damage and healing by 35%. In addition enemy units near you will be set on fire, dealing 250 damage to them per second.
 	"item_searing_flame_of_prometheus"
 	{
-		"ID"                            "1367"
+		"ID"                            "2367"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"searing_flame_of_prometheus"
@@ -10086,7 +10086,7 @@
 	}
 	"item_sea_essence"	// TODO Make it work
 	{
-		"ID"                            "1008"
+		"ID"                            "2008"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sea_essence"
@@ -10104,7 +10104,7 @@
 	}
 	"item_shadows_regalia"		//TODO Add Set Bonus: Gives a 15% chance when you cast a spell to increase your spell damage by 75% for 20 seconds.
 	{
-		"ID"                            "1257"
+		"ID"                            "2257"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shadows_regalia"
@@ -10177,7 +10177,7 @@
 	}
 	"item_shadow_blade"
 	{
-		"ID"                            "1368"
+		"ID"                            "2368"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shadow_blade"
@@ -10231,7 +10231,7 @@
 	}
 	"item_shield_of_living_bone"		// TODO Copy the method of the athena shield for Block
 	{
-		"ID"                            "1315"
+		"ID"                            "2315"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shield_of_living_bone"
@@ -10306,7 +10306,7 @@
 	}
 	"item_shield_of_warding"
 	{
-		"ID"                            "1316"
+		"ID"                            "2316"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shield_of_warding"
@@ -10380,7 +10380,7 @@
 	}
 	"item_shield_of_zeus"
 	{
-		"ID"                            "1258"
+		"ID"                            "2258"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -10474,7 +10474,7 @@
 	}
 	"item_shimmering_lance"
 	{
-		"ID"                            "1331"
+		"ID"                            "2331"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shimmering_lance"
@@ -10551,7 +10551,7 @@
 	}
 	"item_shining_chestguard_of_the_olympians"
 	{
-		"ID"                            "1290"
+		"ID"                            "2290"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shining_chestguard_of_the_olympians"
@@ -10608,7 +10608,7 @@
 	}
 	"item_shining_helm_of_the_olympians"
 	{
-		"ID"                            "1291"
+		"ID"                            "2291"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shining_helm_of_the_olympians"
@@ -10665,7 +10665,7 @@
 	}
 	"item_shining_olympian_regalia"
 	{
-		"ID"                            "1361"
+		"ID"                            "2361"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shining_olympian_regalia"
@@ -10724,7 +10724,7 @@
 	}
 	"item_shining_sword_of_the_olympians"
 	{
-		"ID"                            "1292"
+		"ID"                            "2292"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"shining_sword_of_the_olympians"
@@ -10781,7 +10781,7 @@
 	}
 	"item_soul_blade"		// TODO Adds damage equal to 3% of your current health to each of your attacks.
 	{
-		"ID"                            "1356"
+		"ID"                            "2356"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"soul_blade"
@@ -10803,7 +10803,7 @@
 	}
 	"item_soul_charm"
 	{
-		"ID"                            "1140"
+		"ID"                            "2140"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"soul_charm"
@@ -10853,7 +10853,7 @@
 	}
 	"item_spartan_breastplate" // TODO With Spartan Short Sword: +5 Strength and Agility.
 	{
-		"ID"                            "1063"
+		"ID"                            "2063"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_breastplate"
@@ -10903,7 +10903,7 @@
 	}
 	"item_spartan_chestguard"
 	{
-		"ID"                            "1087"
+		"ID"                            "2087"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_chestguard"
@@ -10947,7 +10947,7 @@
 	}
 	"item_spartan_full_plate"	// TODO Add With Spartan Greatsword: +15 Strength and Agility.
 	{
-		"ID"                            "1183"
+		"ID"                            "2183"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_full_plate"
@@ -10998,7 +10998,7 @@
 	}
 	"item_spartan_greatsword"	// TODO Add With Spartan Full Plate: +15 Strength and Agility.
 	{
-		"ID"                            "1184"
+		"ID"                            "2184"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_greatsword"
@@ -11049,7 +11049,7 @@
 	}
 	"item_spartan_longsword"	// TODO With Spartan Longsword: +10 Strength and Agility.
 	{
-		"ID"                            "1141"
+		"ID"                            "2141"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_longsword"
@@ -11100,7 +11100,7 @@
 	}
 	"item_spartan_plate_mail"  // TODO With Spartan Longsword: +10 Strength and Agility.
 	{
-		"ID"                            "1142"
+		"ID"                            "2142"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_plate_mail"
@@ -11151,7 +11151,7 @@
 	}
 	"item_spartan_short_sword"	 // TODO With Spartan Breastplate: +5 Strength and Agility.
 	{
-		"ID"                            "1064"
+		"ID"                            "2064"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spartan_short_sword"
@@ -11202,7 +11202,7 @@
 	}
 	"item_spirit_charm"
 	{
-		"ID"                            "1065"
+		"ID"                            "2065"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"spirit_charm"
@@ -11246,7 +11246,7 @@
 	}
 	"item_staff_of_delphi"		// TODO Add With Robes of Delphi: +150 spell damage and healing.
 	{
-		"ID"                            "1185"
+		"ID"                            "2185"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_delphi"
@@ -11290,7 +11290,7 @@
 	}
 	"item_staff_of_healing_power"
 	{
-		"ID"                            "1143"
+		"ID"                            "2143"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_healing_power"
@@ -11309,7 +11309,7 @@
 	}
 	"item_staff_of_light"
 	{
-		"ID"                            "1144"
+		"ID"                            "2144"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_light"
@@ -11352,7 +11352,7 @@
 	}
 	"item_staff_of_poseidon"
 	{
-		"ID"                            "1218"
+		"ID"                            "2218"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_poseidon"
@@ -11374,7 +11374,7 @@
 	}
 	"item_staff_of_power"
 	{
-		"ID"                            "1145"
+		"ID"                            "2145"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_power"
@@ -11417,7 +11417,7 @@
 	}
 	"item_staff_of_shadows"
 	{
-		"ID"                            "1146"
+		"ID"                            "2146"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_shadows"
@@ -11467,7 +11467,7 @@
 	}
 	"item_staff_of_spell_power"
 	{
-		"ID"                            "1147"
+		"ID"                            "2147"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_spell_power"
@@ -11486,7 +11486,7 @@
 	}
 	"item_staff_of_the_wild"
 	{
-		"ID"                            "1381"
+		"ID"                            "2381"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"staff_of_the_wild"
@@ -11536,7 +11536,7 @@
 	}
 	"item_starlight_charm"
 	{
-		"ID"                            "1186"
+		"ID"                            "2186"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"starlight_charm"
@@ -11588,7 +11588,7 @@
 	}
 	"item_stone_axe"
 	{
-		"ID"                            "1148"
+		"ID"                            "2148"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"stone_axe"
@@ -11644,7 +11644,7 @@
 	}
 	"item_stone_dial"
 	{
-		"ID"                            "1149"
+		"ID"                            "2149"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"stone_dial"
@@ -11691,7 +11691,7 @@
 	
 	"item_stone_gemstone"
 	{
-		"ID"                            "1259"
+		"ID"                            "2259"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -11707,7 +11707,7 @@
 	}
 	"item_stone_regalia"
 	{
-		"ID"                            "1260"
+		"ID"                            "2260"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"stone_regalia"
@@ -11769,7 +11769,7 @@
 	}
 	"item_stone_shield"
 	{
-		"ID"                            "1104"
+		"ID"                            "2104"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"stone_shield"
@@ -11820,7 +11820,7 @@
 	}
 	"item_sword_of_command"
 	{
-		"ID"                            "1187"
+		"ID"                            "2187"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sword_of_command"
@@ -11886,7 +11886,7 @@
 	}
 	"item_sword_of_destruction"
 	{
-		"ID"                            "1369"
+		"ID"                            "2369"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sword_of_destruction"
@@ -11969,7 +11969,7 @@
 	}
 	"item_sword_of_the_high_commander"
 	{
-		"ID"                            "1370"
+		"ID"                            "2370"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"sword_of_the_high_commander"
@@ -12045,7 +12045,7 @@
 	}
 	"item_talisman_of_addiction"
 	{
-		"ID"                            "1328"
+		"ID"                            "2328"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"talisman_of_addiction"
@@ -12085,7 +12085,7 @@
 	}
 	"item_talisman_of_serious_addiction"
 	{
-		"ID"                            "1371"
+		"ID"                            "2371"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"		"item_talisman_of_serious_addiction"
@@ -12131,7 +12131,7 @@
 	}
 	"item_talisman_of_the_winged_god"
 	{
-		"ID"                            "1262"
+		"ID"                            "2262"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"talisman_of_the_winged_god"
@@ -12206,7 +12206,7 @@
 	}
 	"item_talisman_of_wisdom"
 	{
-		"ID"                            "1166"
+		"ID"                            "2166"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"talisman_of_wisdom"
@@ -12250,7 +12250,7 @@
 	}
 	"item_tbr_broadsword"
 	{
-		"ID"                            "1028"
+		"ID"                            "2028"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"broadsword"
@@ -12289,7 +12289,7 @@
 	}
 	"item_tbr_buckler" // TODO Fix blocking to be like evasion
 	{
-		"ID"                            "1069"
+		"ID"                            "2069"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"buckler"
@@ -12349,7 +12349,7 @@
 	}
 	"item_tbr_circlet_of_nobility"
 	{
-		"ID"                            "1029"
+		"ID"                            "2029"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"circlet_of_nobility"
@@ -12392,7 +12392,7 @@
 	
 	"item_tbr_scroll_of_town_portal" // TODO Make it work
 	{
-		"ID"                            "1007"
+		"ID"                            "2007"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"tbr_scroll_of_town_portal"
@@ -12411,7 +12411,7 @@
 	}
 	"item_tbr_talisman_of_evasion"
 	{
-		"ID"                            "1150"
+		"ID"                            "2150"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"talisman_of_evasion"
@@ -12448,7 +12448,7 @@
 	}
 	"item_tempered_steel"	// TODO Make it work
 	{
-		"ID"                            "1009"
+		"ID"                            "2009"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"tempered_steel"
@@ -12466,7 +12466,7 @@
 	}
 	"item_thespian_boiled_leather"
 	{
-		"ID"                            "1167"
+		"ID"                            "2167"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"thespian_boiled_leather"
@@ -12509,7 +12509,7 @@
 	}
 	"item_thespian_halberd"
 	{
-		"ID"                            "1188"
+		"ID"                            "2188"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"thespian_halberd"
@@ -12560,7 +12560,7 @@
 	}
 	"item_the_winged_gods_blessed_boots"
 	{
-		"ID"                            "1332"
+		"ID"                            "2332"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"the_winged_gods_blessed_boots"
@@ -12619,7 +12619,7 @@
 	//Has a 15% chance on attack to unleash a bolt of lightning that deals 5000 damage to the first target and then jumps to up to 5 other targets, each jump doing 20% less damage. 
 	"item_thundering_hammer_of_zeus"
 	{
-		"ID"                            "1372"
+		"ID"                            "2372"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"thundering_hammer_of_zeus"
@@ -12801,7 +12801,7 @@
 	"item_thunder_lance"	// TODO Complete
 	//Add Increases your Strength and Agility by 35 and damage by 75. Also grants you an 8% chance on attack to cause 1000 additional damage and stun the target for up to 2 seconds.
 	{
-		"ID"                            "1317"
+		"ID"                            "2317"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"thunder_lance"
@@ -12823,7 +12823,7 @@
 	}
 	"item_tooth_of_the_hallowed_one"
 	{
-		"ID"                            "1105"
+		"ID"                            "2105"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"tooth_of_the_hallowed_one"
@@ -12881,7 +12881,7 @@
 	//Use: Completely restores you and your nearby allies to full health and mana. 7 minute cooldown. 
 	"item_towering_shield_of_athena"
 	{
-		"ID"                            "1374"
+		"ID"                            "2374"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"towering_shield_of_athena"
@@ -13075,7 +13075,7 @@
 	}
 	"item_transport_stone"	// TODO Make it work
 	{
-		"ID"                            "1010"
+		"ID"                            "2010"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"transport_stone"
@@ -13093,7 +13093,7 @@
 	}
 	"item_unfinished_gemstone_key"		// TODO Add icon
 	{
-		"ID"                            "1294"
+		"ID"                            "2294"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"placeholder"
@@ -13112,7 +13112,7 @@
 	}
 	"item_unyielding_breastplate"
 	{
-		"ID"                            "1305"
+		"ID"                            "2305"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"unyielding_breastplate"
@@ -13149,7 +13149,7 @@
 	}
 	"item_unyielding_breastplate_of_agility"
 	{
-		"ID"                            "1340"
+		"ID"                            "2340"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"unyielding_breastplate_of_agility"
@@ -13194,7 +13194,7 @@
 	}
 	"item_unyielding_breastplate_of_strength"
 	{
-		"ID"                            "1341"
+		"ID"                            "2341"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"unyielding_breastplate_of_strength"
@@ -13239,7 +13239,7 @@
 	}
 	"item_unyielding_tower"
 	{
-		"ID"                            "1375"
+		"ID"                            "2375"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"unyielding_tower"
@@ -13307,7 +13307,7 @@
 	}
 	"item_veterans_breastplate"	
 	{
-		"ID"                            "1107"
+		"ID"                            "2107"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"veterans_breastplate"
@@ -13358,7 +13358,7 @@
 	}
 	"item_veterans_greatsword"	
 	{
-		"ID"                            "1151"
+		"ID"                            "2151"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"veterans_greatsword"
@@ -13415,7 +13415,7 @@
 	}
 	"item_veterans_regalia"		// TODO Add Set Bonus: Increases the dodge chance and spell damage reduction of your Phalanx skill to 40%.
 	{
-		"ID"                            "1266"
+		"ID"                            "2266"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"veterans_regalia"
@@ -13471,7 +13471,7 @@
 	}
 	"item_veterans_shield"
 	{
-		"ID"                            "1387"
+		"ID"                            "2387"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"veterans_shield"
@@ -13518,7 +13518,7 @@
 	
 	"item_veteran_gemstone"
 	{
-		"ID"                            "1265"
+		"ID"                            "2265"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"regalia_gemstone"
@@ -13534,7 +13534,7 @@
 	}
 	"item_wand_of_healing_power" 
 	{
-		"ID"                            "1040"
+		"ID"                            "2040"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"wand_of_healing_power"
@@ -13553,7 +13553,7 @@
 	}
 	"item_wand_of_light"
 	{
-		"ID"                            "1152"
+		"ID"                            "2152"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"wand_of_light"
@@ -13602,7 +13602,7 @@
 	}
 	"item_wand_of_spell_power"
 	{
-		"ID"                            "1041"
+		"ID"                            "2041"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"wand_of_spell_power"
@@ -13621,7 +13621,7 @@
 	}
 	"item_warriors_talisman_of_addiction"
 	{
-		"ID"                            "1329"
+		"ID"                            "2329"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"warriors_talisman_of_addiction"
@@ -13666,7 +13666,7 @@
 	}
 	"item_warriors_talisman_of_serious_addiction"
 	{
-		"ID"                            "1376"
+		"ID"                            "2376"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"		"item_warriors_talisman_of_serious_addiction"
@@ -13717,7 +13717,7 @@
 	}
 	"item_well_of_souls"
 	{
-		"ID"                            "1190"
+		"ID"                            "2190"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"well_of_souls"
@@ -13766,7 +13766,7 @@
 	}
 	"item_white_dragonscale_ring"
 	{
-		"ID"                            "1219"
+		"ID"                            "2219"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"white_dragonscale_ring"
@@ -13816,7 +13816,7 @@
 	}
 	"item_white_dragonscale_ring_of_addiction"
 	{
-		"ID"                            "1338"
+		"ID"                            "2338"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"white_dragonscale_ring_of_addiction"
@@ -13866,7 +13866,7 @@
 	}
 	"item_wild_regalia"	
 	{
-		"ID"                            "1267"
+		"ID"                            "2267"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"wild_regalia"
@@ -13987,7 +13987,7 @@
 	/////////////////////////////
 	"item_wraithblade"
 	{
-		"ID"                            "1377"
+		"ID"                            "2377"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"wraithblade"
@@ -14176,6 +14176,7 @@
 	// Potion of Minor Healing 			//250 HP
 	"item_potion_of_minor_healing"
 	{
+		"ID"                            "2387"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_minor_healing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14236,6 +14237,7 @@
 	// Potion of Minor Mana 			//200 Mana
 	"item_potion_of_minor_mana"
 	{
+		"ID"                            "2388"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_minor_mana"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14297,6 +14299,7 @@
 	//	Potion of Lesser Healing		//500 HP
 	"item_potion_of_lesser_healing"
 	{
+		"ID"                            "2389"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_lesser_healing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14357,6 +14360,7 @@
 	//	Potion of Lesser Mana			//400 Mana
 	"item_potion_of_lesser_mana"
 	{
+		"ID"                            "2390"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_lesser_mana"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14419,6 +14423,7 @@
 	//	Potion of Lesser Regeneration	//10HPs 10m
 	"item_potion_of_lesser_regeneration"
 	{
+		"ID"                            "2391"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_lesser_healing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14506,6 +14511,7 @@
 	//	Potion of Healing				//1000 HP
 	"item_potion_of_healing"
 	{
+		"ID"                            "2392"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_healing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14566,6 +14572,7 @@
 	//	Potion of Mana					//800 Mana
 	"item_potion_of_mana"
 	{
+		"ID"                            "2393"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_mana"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14628,6 +14635,7 @@
 	//	Potion of Regeneration			//20 HPs 10m
 	"item_potion_of_regeneration"
 	{
+		"ID"                            "2394"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_regeneration"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14715,6 +14723,7 @@
 	//	Potion of Greater Healing		//1750 HP
 	"item_potion_of_greater_healing"
 	{
+		"ID"                            "2395"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_greater_healing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -14775,6 +14784,7 @@
 	//	Potion of Greater Mana			//1400 Mana
 	"item_potion_of_greater_mana"
 	{
+		"ID"                            "2396"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_greater_mana"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
