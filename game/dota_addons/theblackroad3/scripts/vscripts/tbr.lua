@@ -256,8 +256,8 @@ end
 
 -- Read and assign configurable keyvalues if applicable
 function GameMode:ReadGameConfiguration()
-	self.SpawnInfoKV = LoadKeyValues( "scripts/maps/spawn_info.kv" )
-	self.ItemInfoKV = LoadKeyValues( "scripts/maps/item_info.kv" )
+	self.SpawnInfoKV = LoadKeyValues( "scripts/kv/spawn_info.kv" )
+	self.ItemInfoKV = LoadKeyValues( "scripts/kv/item_info.kv" )
 	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
 	GameRules.DemonWaves = LoadKeyValues("scripts/kv/demon_waves.kv")
 
