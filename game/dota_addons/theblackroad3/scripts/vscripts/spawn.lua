@@ -121,6 +121,12 @@ function IsAreaActive( areaName )
 		return GameMode.BlackGoblinAreaActive
 	elseif areaName == "BanditArea" then
 		return GameMode.BanditAreaActive
+	elseif areaName == "SpiderArea" then
+		return GameMode.BanditAreaActive
+	elseif areaName == "SeaServantArea" then
+		return GameMode.BanditAreaActive
+	elseif areaName == "MountainWolfArea" then
+		return GameMode.BanditAreaActive
 	end
 end
 
@@ -134,6 +140,12 @@ function SetAreaActive( areaName, bool )
 		GameMode.BlackGoblinAreaActive = bool
 	elseif areaName == "BanditArea" then
 		GameMode.BanditAreaActive = bool
+	elseif areaName == "SpiderArea" then
+		GameMode.BanditAreaActive = bool
+	elseif areaName == "SeaServantArea" then
+		GameMode.BanditAreaActive = bool
+	elseif areaName == "MountainWolfArea" then
+		GameMode.BanditAreaActive = bool
 	end
 end
 
@@ -145,6 +157,12 @@ function InitializeCreepList( areaName )
 	elseif areaName == "BlackGoblinArea" then
 		GameMode.BlackGoblinAreaCreeps = {}
 	elseif areaName == "BanditArea" then
+		GameMode.BanditAreaCreeps = {}
+	elseif areaName == "SpiderArea" then
+		GameMode.BanditAreaCreeps = {}
+	elseif areaName == "SeaServantArea" then
+		GameMode.BanditAreaCreeps = {}
+	elseif areaName == "MountainWolfArea" then
 		GameMode.BanditAreaCreeps = {}
 	end
 end
@@ -158,6 +176,12 @@ function GetAreaCreepList( areaName )
 	elseif areaName == "BlackGoblinArea" then
 		return GameMode.BlackGoblinAreaCreeps
 	elseif areaName == "BanditArea" then
+		return GameMode.BanditAreaCreeps
+	elseif areaName == "SpiderArea" then
+		return GameMode.BanditAreaCreeps
+	elseif areaName == "SeaServantArea" then
+		return GameMode.BanditAreaCreeps
+	elseif areaName == "MountainWolfArea" then
 		return GameMode.BanditAreaCreeps
 	end
 end
@@ -192,6 +216,24 @@ function GetFreePositionInAreaFor( areaName, unitName )
 	elseif areaName == "BanditArea" then
 		if unitName == "npc_bandit" then
 			return GetEmptyPosition(GameMode.bandit_spawnLocations)
+		end
+	elseif areaName == "SpiderArea" then
+		if unitName == "npc_forest_spider" then
+			return GetEmptyPosition(GameMode.forest_spider_spawnLocations)
+		elseif unitName == "npc_forest_lurker" then
+			return GetEmptyPosition(GameMode.forest_lurker_spawnLocations)
+		elseif unitName == "npc_giant_spider" then
+			return GetEmptyPosition(GameMode.giant_spider_spawnLocations)
+		end
+	elseif areaName == "SeaServantArea" then
+		if unitName == "npc_sea_servant_huntsman" then
+			return GetEmptyPosition(GameMode.sea_servant_huntsman_spawnLocations)
+		elseif unitName == "npc_sea_servant_wavecaller" then
+			return GetEmptyPosition(GameMode.sea_servant_wavecaller_spawnLocations)
+		end
+	elseif areaName == "MountainWolfArea" then
+		if unitName == "npc_mountain_wolf" then
+			return GetEmptyPosition(GameMode.mountain_wolf_spawnLocations)
 		end
 	end
 end
