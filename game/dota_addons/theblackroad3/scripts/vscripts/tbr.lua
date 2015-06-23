@@ -197,6 +197,21 @@ function GameMode:InitGameMode()
 	GameMode.bandit_spawnLocations = Entities:FindAllByName("bandit_spawner")
 	GameMode.BanditAreaCreeps = {}
 
+	-- Spider Area
+	GameMode.forest_spider_spawnLocations = Entities:FindAllByName("forest_spider_spawner")
+	GameMode.forest_lurker_spawnLocations = Entities:FindAllByName("forest_lurker_spawner")
+	GameMode.giant_spider_spawnLocations = Entities:FindAllByName("giant_spider_spawner")
+	GameMode.SpiderAreaCreeps = {}
+
+	-- Sea Servant Area
+	GameMode.sea_servant_huntsman_spawnLocations = Entities:FindAllByName("sea_servant_huntsman_spawner")
+	GameMode.sea_servant_wavecaller_spawnLocations = Entities:FindAllByName("sea_servant_wavecaller_spawner")
+	GameMode.SeaServantAreaCreeps = {}
+
+	-- Mountain Wolf Area
+	GameMode.mountain_wolf_spawnLocations = Entities:FindAllByName("mountain_wolf_spawner")
+	GameMode.MountainWolfAreaCreeps = {}
+
 	
 	print('[TBR] Done loading the gamemode!\n\n')
 end

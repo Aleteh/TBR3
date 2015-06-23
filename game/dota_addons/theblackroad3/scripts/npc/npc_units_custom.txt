@@ -3271,14 +3271,13 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"			"npc_dota_creature"
-		"Model"				"models/heroes/lycan/summon_wolves.vmdl"	 //Needs model data
+		"Model"				"models/items/lycan/wolves/hunter_kings_wolves/hunter_kings_wolves.vmdl"	 //Needs model data
 		"ModelScale"			"1"
 		"Level"				"26"
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: ACct
-		"Ability2"			""	 //Reference: ACro
+		"Ability1"			"phantom_lancer_phantom_edge"	 
 		
 		// Armor
 		//----------------------------------------------------------------

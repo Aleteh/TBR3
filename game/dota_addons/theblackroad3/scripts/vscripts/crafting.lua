@@ -6,8 +6,8 @@ function AssignMaterials( event )
 	local materialsToAssign = 0
 
 	-- This could/should be done with a table, but I'm lazy so I'll use a bunch of ifs
-	if killedUnit:GetUnitName() == "npc_demon_fire" then
-		materialsToAssign = 322 --placeholder, will use the proper values when we port the units
+	if killedUnit:GetUnitName() == "npc_bandit" then
+		materialsToAssign = 1 --placeholder, will use the proper values when we port the units
 	end
 
 	-- Find nearby units
@@ -25,7 +25,7 @@ function AssignMaterials( event )
     end
 
     -- Display the custom popup (could be done for every player instead of the killedUnit)
-    PopupMaterials(killedUnit, 322)
+    PopupMaterials(killedUnit, 1)
     PopupExperience(killedUnit, math.floor(killedUnit:GetLevel()*5))
 end
 
