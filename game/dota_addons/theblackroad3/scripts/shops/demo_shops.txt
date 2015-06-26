@@ -6,17 +6,17 @@
     // Potions etc
     "consumables"
     {
-        //Potion of Lesser Healing
-        //Potion of Healing
-        //Potion of Greater Healing
-        //Ankh of Reincarnation
-        //Potion of Lesser Mana
-        //Potion of Mana
-        //Potion of Greater Mana
-        //Wand of Negation
-        //Potion of Super Healing
-        //Potion of Super Mana
-        //Dust of Appearance
+        "item" "item_potion_of_lesser_healing"
+        "item" "item_potion_of_healing"
+        "item" "item_potion_of_greater_healing"
+        "item" "item_potion_of_lesser_healing" // Does this even exist ?
+        "item" "item_potion_of_lesser_mana"
+        "item" "item_potion_of_mana"
+        "item" "item_potion_of_greater_mana"
+        "item" "item_potion_of_wand_of_negation" // Does this even exist ?
+        "item" "item_potion_of_super_healing"
+        "item" "item_potion_of_super_mana"
+        "item" "item_potion_of_dust_of_appearance" // Does this even exist ?
     }
 
     // Minor Items
@@ -52,16 +52,16 @@
 
     "misc"
     {
-        //Scroll of Lesser Healing
-        //Scroll of Lesser Mana
-        //Scroll of Lesser Regeneration
-        //Scroll of Town Portal
-        //Scroll of Healing
-        //Scroll of Mana
-        //Scroll of Regeneration
-        //Scroll of Protection
-        //Scroll of Speed
-        //Scroll of the Beast
+        "item" "item_scroll_of_lesser_healing"
+        "item" "item_scroll_of_lesser_mana"
+        "item" "item_scroll_of_lesser_regeneration"
+        //"item" "item_scroll_of_town_portal"
+        "item" "item_scroll_of_healing"
+        "item" "item_scroll_of_mana"
+        "item" "item_scroll_of_regeneration"
+        "item" "item_scroll_of_protection"
+        "item" "item_scroll_of_speed"
+        "item" "item_scroll_of_the_beast"
     }   
 
     // Books

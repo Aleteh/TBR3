@@ -73,8 +73,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"264.0"
-		"AttackDamageMax"		"342.0"
+		"AttackDamageMin"		"352"
+		"AttackDamageMax"		"430"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"3.00"
 		"AttackAnimationPoint"		"0.36"
@@ -155,8 +155,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"338.0"
-		"AttackDamageMax"		"416.0"
+		"AttackDamageMin"		"402"
+		"AttackDamageMax"		"480"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"2.50"
 		"AttackAnimationPoint"		"0.4"
@@ -237,8 +237,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"492.0"
-		"AttackDamageMax"		"580.0"
+		"AttackDamageMin"		"557"
+		"AttackDamageMax"		"645"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"3.00"
 		"AttackAnimationPoint"		"0.3"
@@ -2200,8 +2200,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"20.0"
-		"AttackDamageMax"		"25.0"
+		"AttackDamageMin"		"40"
+		"AttackDamageMax"		"50"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.3"
@@ -2273,8 +2273,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"24.0"
-		"AttackDamageMax"		"30.0"
+		"AttackDamageMin"		"48"
+		"AttackDamageMax"		"60"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.65"
 		"AttackAnimationPoint"		"0.43"
@@ -2348,23 +2348,22 @@
 		"BaseClass"			"npc_dota_creature"
 		"Model"				"models/creeps/lane_creeps/creep_good_melee/creep_good_melee.vmdl"
 		"ModelScale"			"1"
-		"Level"				"1"
+		"Level"				"12"
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			"bandit_crit"	 //Reference: Ashm
-		"Ability2"			"creep_respawn"
+		"Ability1"			""	 //Reference: ACct
 		
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"			"0"
+		"ArmorPhysical"			"10"
 		"MagicalResistance"		"0"
 		
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"10.0"
-		"AttackDamageMax"		"11.0"
+		"AttackDamageMin"		"66"
+		"AttackDamageMax"		"80"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.3"
@@ -2373,8 +2372,8 @@
 		
 		// Bounty
 		//----------------------------------------------------------------
-		//"BountyGoldMin"			"4.0"
-		//"BountyGoldMax"			"6.0"
+		"BountyGoldMin"			"13.0"
+		"BountyGoldMax"			"16.0"
 		
 		// Movement
 		//----------------------------------------------------------------
@@ -2384,8 +2383,8 @@
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			"240"
-		"StatusHealthRegen"		"0.5"
+		"StatusHealth"			"1100"
+		"StatusHealthRegen"		"1.50"
 		"StatusMana"			"0"
 		"StatsManaRegen"		"0"
 		
@@ -2406,6 +2405,7 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------
+
 		"vscripts"		"creep_ai.lua"
 	}
 	
@@ -2436,8 +2436,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"62.0"
-		"AttackDamageMax"		"74.0"
+		"AttackDamageMin"		"124"
+		"AttackDamageMax"		"148"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"0.60"
 		"AttackAnimationPoint"		"0.5"
@@ -2530,8 +2530,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"31.0"
-		"AttackDamageMax"		"38.0"
+		"AttackDamageMin"		"62"
+		"AttackDamageMax"		"76"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.3"
@@ -2601,8 +2601,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"24.0"
-		"AttackDamageMax"		"30.0"
+		"AttackDamageMin"		"48"
+		"AttackDamageMax"		"60"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.65"
 		"AttackAnimationPoint"		"0.43"
@@ -2682,8 +2682,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"56.0"
-		"AttackDamageMax"		"67.0"
+		"AttackDamageMin"		"112"
+		"AttackDamageMax"		"134"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.75"
 		"AttackAnimationPoint"		"0.3"
@@ -2754,8 +2754,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"127.0"
-		"AttackDamageMax"		"159.0"
+		"AttackDamageMin"		"254"
+		"AttackDamageMax"		"318"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.3"
@@ -2850,8 +2850,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"31.0"
-		"AttackDamageMax"		"37.0"
+		"AttackDamageMin"		"62"
+		"AttackDamageMax"		"74"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.5"
@@ -2933,8 +2933,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"50.0"
-		"AttackDamageMax"		"58.0"
+		"AttackDamageMin"		"100"
+		"AttackDamageMax"		"116"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.60"
 		"AttackAnimationPoint"		"0.4"
@@ -3020,8 +3020,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"52.0"
-		"AttackDamageMax"		"62.0"
+		"AttackDamageMin"		"104"
+		"AttackDamageMax"		"124"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.5"
@@ -3078,6 +3078,78 @@
 		
 	}
 
+	//=================================================================================
+	// Creature: Forest Terror
+	// Discription: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_forest_terror"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"40"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A05L
+		"Ability2"			""	 //Reference: ACvs
+		"Ability3"			""	 //Reference: ACen
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"1"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"436"
+		"AttackDamageMax"		"530"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"62.0"
+		"BountyGoldMax"			"80.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"300"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"21111"
+		"StatusHealthRegen"		"10.00"
+		"StatusMana"			"450"
+		"StatsManaRegen"		"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+
 	//========================================================================================================================================================================	
 	// Sea Servant Area
 	//========================================================================================================================================================================
@@ -3109,8 +3181,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"43.0"
-		"AttackDamageMax"		"52.0"
+		"AttackDamageMin"		"86"
+		"AttackDamageMax"		"104"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.66"
@@ -3194,8 +3266,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"56.0"
-		"AttackDamageMax"		"66.0"
+		"AttackDamageMin"		"112"
+		"AttackDamageMax"		"126"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.60"
 		"AttackAnimationPoint"		"0.6"
@@ -3287,8 +3359,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"102.0"
-		"AttackDamageMax"		"120.0"
+		"AttackDamageMin"		"204"
+		"AttackDamageMax"		"240"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"			"1.35"
 		"AttackAnimationPoint"		"0.33"
