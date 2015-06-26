@@ -1,0 +1,85 @@
+Warlock
+Primary - Torment
+Effect: Deals damage every second for 9 seconds.
+Benefits From: Spell Damage
+Cooldown: 1 second
+Range: 600
+Cost: Low
+
+Notes:
+• A spammable DoT effective to proccing Blind on multiple enemies
+
+Secondary - Soul Drain (Channeled)
+Effect: You drain the health from an enemy and funnel it into yourself. Lasts 14 seconds. If you drain a target for 14 seconds, they receive the Drained Soul debuff causing the next spell from the Warlock to have a bonus to spell damage and healing. Channeling cannot be interrupted by enemy stuns.
+Benefits From: Spell Healing
+Cooldown: 14 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• Allows the Warlock to recover life from enemies and debuff them to take more damage as well
+
+Tertiary - Death Wave
+Effect: You fire a swarm of bats and dark energy in a targetted direction damaging anything they touch. After a short period the swarm scatters in all directions, damaging all enemies in a large area of effect.
+Benefits From: Spell Damage
+Cooldown: 15 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• The range of the blast wave is slightly reduced, though this remains an effective AoE
+
+Journeyman 1 - Soul Link
+Effect: You master the art of sapping enemies strength. When you Soul Drain an enemy, a portion of the healing you receive will also affect nearby allies.
+Benefits From: N/A
+Cooldown: N/A
+Range: 300
+Cost: N/A
+
+Notes:
+• The only support ability the Warlock has. The only thing the Warlock likes more than sapping an enemies strength and fortifying himself is sapping an enemies strength and fortifying himself and his allies.
+
+Journeyman 2 - Dark Void
+Effect: You release a dark pulse of energy inflicting Blind on all enemies around you, and damaging them.
+Benefits From: Spell Damage
+Cooldown: 20 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• A strong AoE attack that has a guaranteed Blind effect on all enemies.
+
+Ultimate 1 - Haunt
+Effect: You instill fear and paranoia into an enemy, causing them to see phantoms while also dealing damage to them over time. The target will suffer damage every 4 seconds, and everytime they do a Spectre will spawn beside them. The Spectre has no attack, dies after 1 damage and only lasts 3 seconds, but it returns an enormous percentage of received damage back to the attacker. Haunt lasts 16 seconds. Enemies feel very threatened by Spectres.
+Benefits From: Spell Damage
+Cooldown: 32 seconds
+Range: 600
+Cost: High
+
+Notes:
+• An effective way to help mitigate group damage causing the enemy to potentially waste attacks on the Spectres.
+• Can be very effective is used in conjunction with Requiem
+
+Ultimate 2 - Bone Spirit
+Effect: You release dark spirits that track and damage enemies, ignoring magical defenses. Higher ranks create more spirits per cast.
+Benefits From: Spell Damage
+Cooldown: 30 seconds
+Range: 600
+Cost: High
+
+Notes:
+• Releases a large quantity of Spirits that when focusing on a single target can deal massive damage
+
+Class Skill - Blind
+Effect: You have a 5% chance everytime you deal damage of inflicting Blind.
+Benefits From: N/A
+Cooldown: N/A
+Range: N/A
+Cost: N/A
+
+Notes:
+• A very effective way of mitigating physical damage. Blind reduces the enemies chance to hit making it stack nicely with attack speed slow, as well as being effective both in groups and by yourself
+
+Class Notes:
+• Warlocks are primarily damage dealers, but they also have several debuffs they use to debilitate enemies
+• Warlocks are masters of Blinding enemies, and even all by themselves can keep enemies blind a large portion of the time

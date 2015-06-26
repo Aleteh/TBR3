@@ -1,0 +1,96 @@
+Warlord
+Primary - Impale
+Effect: You thrust your weapon into an enemy and attempt to skewer them dealing static plus Strength+Agility damage. Has a 5% chance to deal a very large multiplier in damage.
+Benefits From: N/A
+Cooldown: 12 seconds
+Range: Melee
+Cost: Low
+
+Notes:
+• A decent melee attack that occasionally deals a godly crit
+
+Secondary - Winds of War
+Effect: You rush in a targetted direction while spinning in circles dealing static plus Agility damage. Enemies take damage each second they are near you. Weak enemies are knocked back by the ability, as you push through them. Lasts for 3 seconds. Can inflict Hemorrhage.
+Benefits From: N/A
+Cooldown: 15 seconds
+Range: 500
+Cost: Average
+
+Notes:
+• An effective way into or out of combat. Can deal large damage to units it cannot push through, such as bosses.
+
+Tertiary - Dragon Claw
+Effect: When used the Warlord gains the ability to critically strike for 30 seconds. Finishing skill.
+Benefits From: N/A
+Cooldown: 1 seconds
+Range: Melee
+Cost: Average
+
+Notes:
+• A melee skill that can be potentially devastating depending on the level of Focus the Warlord has
+
+Journeyman 1 - Bear Focus (Autocastable)
+Effect: You increase your focus on the fight at hand, gaining increased ability the longer you focus.
+• Level 1 Focus Effect - You deal static plus Agility+Strength damage as well as an instant crit.
+• Level 2 Focus Effect - You deal static plus Agility+Strength damage as well as increasing your movement speed.
+• Level 3 Focus Effect - You deal static plus Agility+Strength damage as well as increasing your mana regeneration.
+• Level 1 Finisher Effect - You deal static plus Agility+Strength damage as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+• Level 2 Finisher Effect - You deal static plus Agility+Strength damage, slow the enemies movement speed as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+• Level 3 Finisher Effect - You deal static plus Agility+Strength damage, slow the enemies movement and attack speed as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+Benefits From: Agility
+Cooldown: 7 seconds
+Range: Melee
+Cost: Low
+
+Notes:
+• Focuses primarily on single targets and dealing physical damage
+
+Journeyman 2 - Lightning Rush
+Effect: You rush a targetted area, with lightning-like speed, and strike every target within it. The Warlord will deal static plus Agility damage as he bounces from one target to the next, losing momentum as he does, decreasing the damage of successive hits.
+Benefits From: N/A
+Cooldown: 22 seconds
+Range: 450
+Cost: Average
+
+Notes:
+• An effective AoE that makes the Warlord untargetable for the duration
+
+Ultimate 1 - Pheonix Focus (Autocastable)
+Effect: As a lord of war you have even learned to channel the elements to a degree.
+• Level 1 Focus Effect - You create a fire orb effect centered on the enemy you strike.
+• Level 2 Focus Effect - You release a wave of chilling cold air centered on the enemy you strike.
+• Level 3 Focus Effect - You release a crackling lightning from the enemy you strike that bounces to nearby enemies.
+• Level 1 Finisher Effect - The enemy erupts in a small explosion of fire.
+• Level 2 Finisher Effect - The area near the enemy is bombarded from the skies by hail.
+• Level 3 Finisher Effect - The enemy is struck by a powerful bolt of electricity that bounces to nearby enemies, branching into two each bounce. Bounces 3 times.
+Benefits From: N/A
+Cooldown: 8 seconds
+Range: Melee
+Cost: Average
+
+Notes:
+• Focuses primarily on dealing magical damage
+• ALL damage is formulated from a static amount modified by player level. As such, it does the same damage at level 200 for all builds.
+
+Ultimate 2 - Mortal Strike
+Effect: You strike a vital point in the enemy, dealing static plus Agility+Strength damage and reducing it's health regeneration by 40% for 12 seconds.
+Benefits From: N/A
+Cooldown: 25 seconds
+Range: Melee
+Cost: High
+
+Notes:
+• A high damage single target attack that also has the rare ability of reducing the enemies regeneration
+
+Class Skill - Counter
+Effect: You have a 15% chance when struck to negate the physical damage received and counter-attack for static plus Agility damage.
+Benefits From: N/A
+Cooldown: N/A
+Range: N/A
+Cost: N/A
+
+Notes:
+• Functioning as both a damage mitigation ability, as well as a single target attack
+
+Class Notes:
+• The Warlord is largely intended to be an Agility-Based DPS, though it can make a decent tank with Counter helping mitigate incoming damage

@@ -1,0 +1,86 @@
+Harpy Magi
+Primary - Downdraft
+Effect: The Harpy Magi creates a relentless current of air on a target. When cast on an enemy, small high pressure gusts, that carry negative energies and debris, will cut and tear at them dealing damage and slowing them slightly for 20 seconds. When self-cast, the Harpy Magi will receive a boost to health and mana recovery for 10 seconds. When cast on an ally, the caster and the target will receive half of the total health and mana recovery for 10 seconds. When Downdraft is self-cast, the strength of the ability may slow the caster depending on the percentage of maximum health missing.
+Benefits From: Spell Damage, Spell Healing
+Cooldown: 10 seconds
+Range: 800
+Cost: Average
+
+Notes:
+• A decent single target DPS ability with a small slow effect. One of the few abilities that can regenerate mana, but should be used carefully; when self-cast the potency of the ability can slow the movement of the Harpy Magi if she's weakened.
+• The health and mana regeneration is affected by Spell Healing in a similar way Valor is.
+
+Secondary - Wind Shear
+Effect: The Harpy Magi creates a rush of supersonic air downward on an enemy dealing damage and slowing the enemy's movement for 5 seconds. If Downdraft is active on the enemy when Wind Shear is cast, then they suffer increased damage and slowed attack speed as well.
+Benefits From: Spell Damage
+Cooldown: 15 seconds
+Range: 800
+Cost: Average
+
+Notes:
+• An effective single target damage ability with a slow effect
+
+Tertiary - Thunderclap
+Effect: You call a bolt of lightning at a targeted location dealing damage in a 450 radius with heavier damage to units closer to the point of impact. Enemies within 200 units of the impact will be immobilized (if possible without stuns), and will be electrically charged. Electrically charged enemies suffer shock damage, and will create chain lightning feedback against themselves if they attack a hero in melee, for 5 seconds. Enemies between 201 and 450 units will only suffer the shock damage.
+Benefits From: Spell Damage
+Cooldown: 20 seconds
+Range: 800
+Cost: Average
+
+Notes:
+• An AoE-focused damaging ability that has defensive utility immobilizing (or slowing otherwise) enemies.
+
+Journeyman 1 - Voltaic Cyclone
+Effect: The Harpy Magi creates an electrical storm focused on a targeted point. Seven voltaic orbs are created 600 units from the targeted point and, over several seconds, whirlpool centripetally towards it. Enemies struck by the orbs will take damage, while allies struck by the orbs will receive healing. When the orbs reach the center, they'll crash together dealing a large amount of damage at the point of impact. Enemies suffering from shock damage will take increased damage from the orbs.
+Benefits From: Spell Damage, Spell Healing
+Cooldown: 25 seconds
+Range: 800
+Cost: Average-High
+
+Notes:
+• A decent AoE damage/heal ability, with high single target damage. As the spell does not target a specific enemy it can miss easily if not used carefully.
+• While not as easy to use a directed heals, the ability for a player to be struck many times during the spell (runs towards the center as the orbs travel) can make it extremely effective.
+
+Journeyman 2 - Storm Shield (Channeled)
+Effect: The Harpy Magi channels lightning towards all nearby allies creating a blanket of electricity around them. While the spell is channeling (and for an equal amount of time after the channeling has ended) heroes within range will receive reduced physical and magical damage, as well as increased attack damage and spell power. Can be channeled for up to 10 seconds. (Channeling cannot be broken by enemy stuns.)
+Benefits From: Spell Damage
+Cooldown: 30 seconds
+Range: 800
+Cost: High
+
+Notes:
+• If the Harpy Magi channels the ability for 5 seconds and then has to cancel it to move, players receive the buff for the duration of the channeling and then 5 seconds afterwards. This means that it can be channeled a maximum of 10 seconds, and last another 10 seconds for a total of 20 seconds.
+
+Ultimate 1 - Inclemency
+Effect: The Harpy Magi creates a swirling vortex that deals constant damage to all enemies nearby. The storm follows the caster for 30 seconds damaging enemies every second, and slowing their movement speed based on their missing health. Enemies with Downdraft take significantly more damage and slow. Allies with Downdraft receive more health regeneration and receive no movement reduction.
+Benefits From: Spell Damage
+Cooldown: 30 seconds
+Range: 500
+Cost: High
+
+Notes:
+• A very effective AoE that can still be useful on single targets, and can provide some healing bonus, using Downdraft
+
+Ultimate 2 - Ascension
+Effect: The Harpy Magi lifts off of the ground and dives in a targeted direction damaging enemies in her path. While in the air the Harpy Magi is considered a flying unit, and is therefore immune to attacks and abilities that cannot target flying units. When the Harpy Magi reaches her destination she will hover in the air as a flying unit for 5 seconds before landing allowing the use of movement, attacking, and abilities as well as receiving increased Spell Power while in the air.
+Benefits From: Spell Damage
+Cooldown: 30 seconds
+Range: 600
+Cost: High
+
+Notes:
+• A decent damage charge attack with the invaluable movement utility and a nice bonus to spell power
+
+Class Skill - Gift Of The Elements
+Effect: The Harpy Magi also receives 2 Spell Power per Strength, and 1 Spell Power per Agility.
+Benefits From: N/A
+Cooldown: N/A
+Range: N/A
+Cost: N/A
+
+Notes:
+• While Harpy Magi's still lose out on the Mana, Mana Regeneration and Attack Damage from Int, they can get a little more of the other stats without as much detriment to their abilities.
+
+Class Notes:
+• Designed to be an experimental, somewhat difficult to master, Caster DPS/Healer hybrid
+• With proper use of abilities and tactics, the Harpy Magi can balance DPS and Healing very effectively

@@ -1,0 +1,47 @@
+BOSSES
+
+
+Name: The Arachtriarch
+Location: North East in Spider Forest
+Level: 200
+Abilities: Stun Immune, Multishot Poison Attack, Spawns Minions, Massive Stacking AoE Poison Spell, Shriek of the Deep, Single Target Disable. Two Phase Fight.
+
+Phase One: Her attack has a (3) second cooldown, and does static (1000) poison damage a second for 5 seconds. She will often cast "Silk Rush" on her current target, where she charges into melee with them stunning them, dealing damage based on how many stacks of poison they have, wrapping them in a cacoon, and moving on to a new target. While the target is in a cacoon they are untargetable by spells or attacks, stunned and take static damage every second. The effect lasts until the cacoon is destroyed or the player dies. If a player dies to cacoon a small group of spiders will spawn from their corpse. She will occasionally cast "Poison Dispersion" over a very large area that has a long duration, deals 2% max health in damage, and can stack. Both poison effects remain on characters in cacoons. She will also occasionally cast "Shriek of the Deep" slowing the movement speed and attack speed of all players in her area as well as preventing casting for the duration. She will frequently spawn small spiders, stronger than the normal ones in the area, but relatively weak in comparison to her. These spiders will drop items for curing poison effects.
+
+Phase Two: Phase two will begin when Arachtriarch reaches 15% health. She will stop using her main attack and will be immobile, and focus on casting her AoE cloud many times as often, and spawning spiders faster.
+
+Notes:
+• If you defeat Arachtriarch without anyone getting 3 stacks of Inhaled Poison or more, there will be increased drops.
+• A tank is not entirely necessary for this fight, but it could make it easier to keep her attention in a specific direction. Controlling her main attacks poison will help a lot in reducing damage people are taking as it will multishot unlimited players in front of her. Keep her facing away.
+• Her "Poison Dispersion" is her most dangerous ability. One stack will only deal 2% of max health in damage, but several stacks can make this very dangerous. Especially if it's on multiple people at once. Use Antivenom appropriately and work as a group.
+• When phase two starts it is a DPS race. You will need to kill her before the group gets too many stacks of (Inhaled Poison) as she will be spamming the ability constantly. Spiders will spawn at an increased rate, but not quite as fast as her poison is cast... so focus on killing her and not on trying to outlast/cure the poison.
+
+Name: Leviathan
+Location: Locris Coast
+Level: 200
+Abilities: Stun Immune, Massive Regeneration, Alternating Resistances, Ricochet Attack, Gains a buff if an Elemental dies nearby, AoE Spell that disables spells for a short period, Aura that prevents reviving and causes powerful minions to spawn from player corpses, Skyward Mortar
+
+Phase One: Leviathan has 75% evasion.
+
+Phase Two: Leviathan has 75% spell reduction.
+
+Both Phases: Leviathan is immobile for the entire fight and spawns directly between the south west island and the coast of Locris, touching both shores due to his size. His main attack has an unlimited Ricochet (though it can only hit a player once per attack), so players will have to space out from eachother. If an elemental dies within a 600 unit range of him he will get a 100% damage buff for a very short duration. He will have an ability resembling "Healspray" that he will cast primarily on high mana heros. It will disable casting for a short duration and deal static damage. He will occasionally cast a spell called "Skyward Mortar". He will launch a projectile into the air that will target land around him randomly. A marker will appear on the ground signalling where it will land, and players will have a short window of time to move out of the way. It will do a static, and unreducible, 25,000 damage. Should a hero die near Leviathan, any secondary forms of revive are disabled, and a Spawn of Leviathan will be created at their corpse that has a high attack damage.
+
+Notes:
+• If you can accomplish the fight without a single person dying, or the boss being buffed from an elemental dying, there will be increased drops.
+
+Name: Grand Vanquisher of the Underworld
+Location: Undead Area @ Crypt
+Level: 200
+Abilities: Stun Immune. Has mana in the countless millions and Mana Shield. Many different abilities and effects depending on what phase. Three phase fight.
+
+Phase One: When you attack the boss it starts the phase one timer. For this phase he is immobile and has no standard attack. The boss will use 10% of his max mana to summon a very powerful undead randomly in the area. He will summon another add every 25 seconds UNLESS you kill the minion. If his summon dies before the 25 seconds he will immediately summon a minion and start a new 25 second spell timer. The boss will enter Phase two after 180 seconds regaining all of his mana. To force him into phase three you must kill his adds fast enough to make him summon 10 before the 180 second time limit. He will occasionally cast "Despair" to all players in the area stunning them for a short period and dealing DoT damage for a long duration. A secondary effect to "Despair" is it also deals instant damage determined by 150*(% of each characters max health missing). He will "Empower" his summoned minion occasionally increasing it's attack speed and damage significantly for a very brief period. He will often cast "Grasp of the Underworld" which will root one player and deal DoT damage while they are rooted. His main form of attack is "Disintegrate" where he will "Locks on to X" and cast a beam of light that follows them for a short time dealing massive damage to anyone it moves over.
+
+Phase Two: The boss has re-established his connection to the spirits of the underworld and siphons their energy at an extraordinary rate. The boss recovers 5% of maximum mana per second. If you do incredible damage to him, you can cancel the effect, however it will be very difficult. When the boss reaches 100% mana or his channeling is cancelled, Phase One restarts.
+
+Phase Three: Phase three only happens if you get the boss to 0 mana. In phase three he gains a melee attack and movement, as well as new abilities. He will have zero mana, so he cannot use summons, "Empower" or "Disintegrate". He will still use "Despair" and "Grasp of the Underworld". He will start using "Imminent Defeat" on his current target occasionally, dealing large static damage, knocking them back, removing all buffs and slowing movement and attack speed to minimum for 3 seconds. He'll also use "Kinetic Command" often, placing a damage absorbing shield on him, and at the end of the short duration dealing absorbed damage (based off Divine reduction) back to all players in the area. He is unable to perform any actions while channeling "Kinetic Command".
+
+Notes: 
+• The boss is undead, and will summon undead, so all of them will benefit from the Necromancers global aura. While not killing the Necromancer will make the fight harder, the drops will be increased for being able to accomplish this. It is not however recommended people attempt this until they are comfortable killing the boss without any complications.
+• The Grand Vanquisher's summons will give large amounts of gold, mats and experience. Farming the minions endlessly can yield incredible returns. Fighting him before level 200 is not recommended however, so gold and mats will be the primary advantage for most people. For those extremely talented groups, farming minions constantly can provide you with levels, gold, and mats faster than any other way.
+• It will be strongly recommended two healers are brought to this fight. One for spam healing the tank, and one for HoT'ing the entire group. Players must be kept at relatively high max health or Despair will start doing massive burst damage.

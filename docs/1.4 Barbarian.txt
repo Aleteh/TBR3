@@ -1,0 +1,86 @@
+Barbarian
+Primary - Maul (Autocastable)
+Effect: You focus your attacks increasing your attack damage by a percent each successful application. If you miss or delay between cooldowns the momentum is lost. Buff lasts 11 seconds. (Max stack of 3). Stacks with similar effects.
+Benefits From: N/A
+Cooldown: 10 seconds
+Range: Melee
+Cost: Low
+
+Notes:
+• Intended to give the barbarian greater effectiveness in longer battles
+
+Secondary - Cleave
+Effect: You swing your weapon in an 180 degree sweeping arc in front of yourself, striking all targets for static plus Strength damage.
+Benefits From: N/A
+Cooldown: 18 seconds
+Range: 250
+Cost: Average
+
+Notes:
+• Frontal large AoE damage
+• Applies an attack speed decrease to all affected
+
+Tertiary - Charge
+Effect: You charge into your enemy dealing static plus Strength damage, increased depending on the distance you started your charge from. Weak enemies will be pushed out of your way.
+Benefits From: N/A
+Cooldown: 8 seconds
+Range: 650
+Cost: Low
+
+Notes:
+• Intended as a basis of a Barbarian in combat. He is able to very quickly charge around with nothing able to stop him
+• Can be used to very quickly enter combat, or attack a ranged unit when surrounded or blocked by enemies
+
+Journeyman 1 - Taunt
+Effect: You release a taunting roar at an enemy, causing it to attack you for 5 seconds. The targets attack speed is reduced for the duration of the taunt.
+Benefits From: N/A
+Cooldown: 14 seconds
+Range: 400
+Cost: Average
+
+Notes:
+• A staple tank ability. Many bosses will now have stun causing them to periodically wander after others when they stun the tank
+
+Journeyman 2 - Rend
+Effect: You weaken the effectiveness of the enemies armor by a static amount for 7 seconds. Does not stack with simliar effects.
+Benefits From: N/A
+Cooldown: 14 seconds
+Range: Melee
+Cost: Low
+
+Notes:
+• A staple of DPS Barbarians, and stacks with Corrode
+
+Ultimate 1 - Vicious Repel
+Effect: You spin in circles holding your weapon outstretched, dealing static plus Strength+Agility damage to all enemies immediately around you every second for 5 seconds. At the end of your spin you shake off any debuffs.
+Benefits From: N/A
+Cooldown: 35 seconds
+Range: 200
+Cost: High
+
+Notes:
+• The only effective full AoE ability of the Barbarian class
+
+Ultimate 2 - Shieldcrusher
+Effect: You swing your weapon with such barbaric strength, you ignore any mortal defence completely. The swing deals large static plus Strength magical damage.
+Benefits From: N/A
+Cooldown: 30 seconds
+Range: Melee
+Cost: High
+
+Notes:
+• Very effective on high physical resistance enemies
+
+Class Skill - Callused Skin
+Effect: When the Barbarian suffers damage from any effect, physical or magical, it calluses his skin increasing it's toughness. Each time he's damaged he gains ((Character Level/8)+5) armor for 7 seconds. The effect can stack 10 times.
+Benefits From: N/A
+Cooldown: N/A
+Range: N/A
+Cost: N/A
+
+Notes:
+• Barbarians skin is more resilient than most humans. It calluses when injured making them less susceptible to damage for a time.
+
+Class Notes:
+• Designed to be effective tanks, and effective DPS with the option of being a hybrid in between and acting as an offtank
+• Barbarians are intended to be an unstoppable force of destruction. If they want to attack something, nothing will stop them. Thus Charge has a short cooldown, causes very high (temporary) movement and can push enemies aside to reach a target

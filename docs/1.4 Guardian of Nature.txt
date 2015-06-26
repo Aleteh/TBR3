@@ -1,0 +1,88 @@
+Guardian of Nature
+Primary - Earth Shock
+Effect: You have a 10% chance on striking to hit the ground causing a damaging shockwave in a line in front of you for static plus Strength damage. When triggered the Guardian of Nature receives increased Spell Damage and Healing for a short time.
+Benefits From: Spell Damage
+Cooldown: N/A
+Range: 500
+Cost: N/A
+
+Notes:
+• Will benefit from both Strength and Spell Damage encouraging either build
+
+Secondary - Nature's Assistance
+Effect: You command nature's nearby inhabitants to surround and attack an enemy dealing damage each second. They have a 2% chance of spreading to a nearby enemy each time they deal damage. If the target of Nature's Assistance dies, the remaining duration jumps to a nearby enemy. Lasts 14 seconds.
+Benefits From: Spell Damage
+Cooldown: 14 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• Can be an effective AoE when large groups of enemies are present and it's given more opportunity to spread
+
+Tertiary - Victory Roar
+Effect: Increases the armor and damage of all nearby allies. Enemies within melee range are taunted for 5 seconds. Lasts 60 seconds.
+Benefits From: N/A
+Cooldown: 12 seconds
+Range: 700
+Cost: Average
+
+Notes:
+• Similar to the original Roar, with some rebalancing
+
+Journeyman 1 - Living Bark
+Effect: You harden your skin increasing your armor and making you immune to any status changes for the duration. Lasts 30 seconds.
+Benefits From: N/A
+Cooldown: 45 seconds
+Range: N/A
+Cost: Average
+
+Notes:
+• An effective survival ability for any Guardian of Nature
+• Gives armor and immunity to most spell effects, but not the damage from spells
+
+Journeyman 2 - Tempest
+Effect: You swing your weapon with all your strength causing a powerful blast of air so fierce it blows nearby debris and enemies away from yourself and deals static plus Strength damage. Large units immune to knockback will take increased damage.
+Benefits From: Spell Damage
+Cooldown: 8 seconds
+Range: 450
+Cost: Average
+
+Notes:
+• Will benefit from both Strength and Spell Damage encouraging either build
+• A effective frontal AoE that also causes Blind
+
+Ultimate 1 - Cataclysm
+Effect: You request assistance from the wrath of Nature dealing static plus Strength damage in a large area.
+Benefits From: Spell Damage
+Cooldown: 60 seconds
+Range: 450
+Cost: High
+
+Notes:
+• Will benefit from both Strength and Spell Damage encouraging either build
+• A long cooldown, high damage, AoE nuke
+
+Ultimate 2 - Tranquility (Channeled)
+Effect: You request assistance from the harmony of Nature recovering all allies around you every 2 seconds. They're healed for a percentage of your maximum health. Lasts 20 seconds. If Living Bark is active you will taunt nearby enemies once every 10 seconds. Channeling cannot be broken by enemy stuns.
+Benefits From: Spell Healing
+Cooldown: 45 seconds
+Range: 600
+Cost: High
+
+Notes:
+• Tranquility will be effective for either all strength GoN's because of their high health, or caster GoN's
+• It will be more effective when used by caster GoN's
+
+Class Skill - Nature's Defence
+Effect: You have a 15% chance when you cast a spell and an additional 5% chance when struck by an enemy of summoning an AI controlled Treant. Treants will heal a target once every second they're alive, targetting allied heros in a 700 range missing the highest percent of maximum health. Their heal is dependant on the Guardian of Nature's Spell Healing, and their health is dependant on the Guardian of Natures health. When the Treants die or expire, the Guardian of Nature that summoned them is healed based on the Treants health. Treants last 5 seconds.
+Benefits From: N/A
+Cooldown: N/A
+Range: N/A
+Cost: N/A
+
+Notes:
+• Treants for Int GoN's heal allies more, while healing the GoN less when they expire. Treants for Str GoN's heal allies less, while healing the GoN more when they expire.
+
+Class Notes:
+• The design is having all Str and all Int being viable builds
+• With Barkskin, Class Regalia, and Nature's Defense GoN's can make very self sufficient tanks

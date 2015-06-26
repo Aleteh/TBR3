@@ -1,0 +1,87 @@
+Cleric
+Primary - Heavenly Regeneration
+Effect: Heals the targetted friendly unit a small amount every second for 25 seconds.
+Benefits From: Spell Healing
+Cooldown: 1 second
+Range: 600
+Cost: Low
+
+Notes:
+• Long single target regeneration, increased slightly from "Regen"
+
+Secondary - Righteous Burning
+Effect: When cast on an ally it will restore some health instantly based on Spell Healing, and an equal amount over 5 seconds. When cast on an enemy it will deal instant static damage, and an equal amount over 5 seconds. May inflict Burn.
+Benefits From: Spell Damage, Spell Healing
+Cooldown: 15 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• A single target heal that can also function as a single target damage ability
+
+Tertiary - Holy Nova
+Effect: You release a wave of Holy energy that restore allies health based off Spell Healing, and damages enemies based off Spell Damage. Can Inflict Blind.
+Benefits From: Spell Damage, Spell Healing
+Cooldown: 16 seconds
+Range: 500
+Cost: High
+
+Notes:
+• An effective AoE both for healing and damage, depending on what gear you specialize in
+
+Journeyman 1 - Cleansing Flame (Channeled)
+Effect: You create a stream of burning flame at a targetted enemy dealing damage every second based off Spell Damage, and healing allies around the target based off Spell Healing. Any enemies caught in the stream between the target and yourself take equal damage, any allies caught in the stream receive equal healing. The effect increases over the duration of being channeled. Can Inflict Burn. Lasts 12 seconds.Channeling cannot be broken by enemy stuns.
+Benefits From: Spell Damage, Spell Healing
+Cooldown: 1 second
+Range: 600
+Cost: Average
+
+Notes:
+• If the Cleric and Tank position themselves properly, the Tank can receive twice the healing from the spell. Ranged can stand in the beam for free healing as well
+
+Journeyman 2 - Inner Sight
+Effect: Removes any buffs on enemies, any debuffs on allies, and resets the timer of all the Clerics heal over time spells affecting allies.
+Benefits From: N/A
+Cooldown: 20 seconds
+Range: 700
+Cost: High
+
+Notes:
+• An effective dispel, this will also double as an extremely effective way to keep "Heavenly Regeneration" on an entire group with a single cast every 20 seconds
+• The high mana cost will make it only effective for keep HoT's up if there are more than 3 allies around
+
+Ultimate 1 - Meditated Connection (Channeled)
+Effect: You meditate intensely releasing a bolt of holy energy once every 2 seconds for 10 seconds that heals the lowest maximum health target nearby for a large amount plus a percent of their maximum health. Channeling cannot be broken by enemy stuns.
+Benefits From: Spell Healing
+Cooldown: 30 seconds
+Range: 700
+Cost: High
+
+Notes:
+• Has a long cooldown and a high cost, as well as being channeled. Also it cannot be targetted, but chooses it's own. Aside from these specific conditions it is capable of healing an extremely large amount
+• Should generally be used when a vital member of the group is about to die
+
+Ultimate 2 - Shield of Faith
+Effect: You place a buff on a targetted ally. Every 3 seconds they will gain a small damage absorbing shield based on their level. Lasts 15 seconds. While the damage absorbing shield is around the target they receive 100% increased healing from the Cleric.
+Benefits From: N/A
+Cooldown: 30 seconds
+Range: 600
+Cost: High
+
+Notes:
+• Though it creates damage absorbing shields, helping mitigate damage, it's main purpose is to increase the healing the target receives
+
+Class Skill - Rebirth
+Effect: If Heavenly Regeneration is cast on a player’s gravestone, and then Righteous Burning or Holy Nova are also cast on the same gravestone afterwards, that player will revive with Rank-Based health and mana. If the Cleric dies, Rebirth will automatically revive the Cleric with Rank-Based health and mana. Rebirth can only revive the Cleric automatically once every 2 minutes.
+Benefits From: N/A
+Cooldown: 2 minutes
+Range: N/A
+Cost: N/A
+
+Notes:
+• The Cleric has the ability to revive multiple heroes at once by casting Heavenly Regeneration on them all and then Holy Nova , though this will cost a lot of mana reserve
+• Clerics are now able to choose when and who they revive, but they must be within casting range to do so. It also provides them some personal benefit.
+
+Class Notes:
+• Clerics have a lot of heal and damage potential, but which one's more effective will depend largely on gear choices
+• Though they are not the only class that can revive (anymore), they have the ability to revive a single target for average mana, or multiple targets for a large amount of mana. Their ability to do it quickly is their biggest advantage.

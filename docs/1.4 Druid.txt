@@ -1,0 +1,94 @@
+Druid
+Primary - Rejuvenation
+Effect: Places a heal over time on the targetted ally for 15 seconds. Has a 2% chance per second to renew the duration back to 15 seconds.
+Benefits From: Spell Healing
+Cooldown: 1 second
+Range: 600
+Cost: Low
+
+Notes:
+• A basic heal over time
+• When a Rejuvenation renews it will show "Renewed" floating text briefly
+
+Secondary - Nature's Wrath
+Effect: The targetted enemy is attacked from below by plants that tear at and constrict them (the plants manifest directly underneath their current position every second, stationary, for 5 seconds. As the plants become more concentrated the damage and slow effect increase). Skill lasts 10 seconds. 
+Benefits From: Spell Damage
+Cooldown: 15 seconds.
+Range: 600
+Cost: Low
+
+Notes:
+• The only DoT the druid has, and it also acts as a single target slow
+
+Tertiary - Terra Firma
+Effect: You cause the roots of plants, and the earth itself, to burst from the ground at a targetted point dealing damage at the center, and half damage in the surrounding area. Targets standing on Nature's Wrath take increased damage.
+Benefits From: Spell Damage
+Cooldown: 12 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• A good single target spell, with decent mid range damage
+
+Journeyman 1 - Mind Blast
+Effect: You burn the targets mana dealing damage equal to the mana burned plus a static amount. The outflow of energy causes equal damage to units surrounding the target.
+Benefits From: Spell Damage
+Cooldown: 15 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• The best mana burn in the game, and deals decent AoE damage
+
+Journeyman 2 - Tornado
+Effect: You release a tornado in the targetted direction. It will move unpredictably and deal physical damage.
+Benefits From: Spell Damage
+Cooldown: 15 seconds
+Range: 600
+Cost: Average
+
+Notes:
+• Physical based damage allowing for effective use on enemies with high magical resistance
+• Deals very high damage per second, though it moves unpredictably
+
+Ultimate 1 - Spirit Form
+Effect: The Druid communicates with the souls of nearby animals and harnesses their essence.
+• Essence of the Bear - The Druid receives increased armor and Strength.
+• Essence of the Wolf - The Druid receives increased movement and attack speed.
+• Essence of the Eagle - The Druid receives a low percent increase to all stats.
+• Essence of the Ram - The Druid receives a chance to knockback melee attackers when struck.
+Benefits From: N/A
+Cooldown: 15 seconds
+Range: N/A
+Cost: Medium
+
+Notes:
+• A versatile ability allowing the druid to better suit the circumstances and conditions.
+
+Ultimate 2 - Summon Totems
+Effect: You gain the ability to summon several different totems to channel your powers. Totems last 30 seconds. Totems health is based on the casters maximum health.
+• Air - Unbridled Static (Green Chain Lightning dealing damage based off the Druid's Spell Damage)
+• Earth - Tellurian Bond (Can Soul Link to one selected ally and absorb half of the targets incoming damage until it or the target dies)
+• Fire - Funneled Rage (+Static Damage to all allies in range of the totem)
+• Water - Healing Stream (Blue Chain healing based off the Druid's Spell Healing)
+Benefits From: Spell Damage, Spell Healing
+Cooldown: 15 second Global/ 30 second Individual
+Range: N/A
+Cost: Average
+
+Notes:
+• Gives the Druid a wide selection of effects, allowing a lot of versatility
+• Totems are most effective when used in groups, though they can be effective when soloing if used correctly
+
+Class Skill - Innervate
+Effect: You have a 5% chance when you cast a spell to gain Rank-Based increased mana regeneration for 10 seconds.
+Benefits From: N/A
+Cooldown: N/A
+Range: N/A
+Cost: N/A
+
+Notes:
+• Innervate makes Druids the most mana "efficient" casters in the game
+
+Class Notes:
+• Druids can make decent healers with spell healing gear and totems, but they excel at being Hybrid Support being half healer and half DPS
