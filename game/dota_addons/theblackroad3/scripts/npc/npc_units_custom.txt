@@ -43,6 +43,159 @@
 		"HealthBarOffset"			"140"						// height where the unit health bar will be placed, doesn't matter for conversion
 	}
 
+
+
+	//=========================================================================================================================================================================	
+	//	Friendly Units
+	//=========================================================================================================================================================================
+
+
+
+	//=================================================================================
+	// Creature: Mortal Warrior
+	// Discription: "Versatile foot soldier. Can learn the Defend ability. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_mortal_warrior"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/dragon_knight/dragon_knight.vmdl"	 //Needs model data
+		"ModelScale"				"0.7"
+		"Level"						"2"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""	 //Reference: Adef
+		"Ability2"					""	 //Reference: Aihn
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"14"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"122.0"
+		"AttackDamageMax"			"140.0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.50"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"90"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"26.0"
+		"BountyGoldMax"				"38.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2600"
+		"StatusHealthRegen"			"6.00"
+		"StatusMana"				"0"
+		"StatsManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+
+
+	//=================================================================================
+	// Creature: Mortal Archer
+	// Discription: "Basic long-ranged attacker. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_mortal_archer"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/drow/drow.vmdl"	 //Needs model data
+		"ModelScale"				"0.9"
+		"Level"						"2"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"43.0"
+		"AttackDamageMax"			"52.0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.65"
+		"AttackAnimationPoint"		"0.72"
+		"AttackAcquisitionRange"	"700.00"
+		"AttackRange"				"900"
+		"ProjectileModel"			""	 //Add projectile models
+		"ProjectileSpeed"			"1200"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"26.0"
+		"BountyGoldMax"				"38.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"825"
+		"StatusHealthRegen"			"3.00"
+		"StatusMana"				"0"
+		"StatsManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+
+
+
 	//=========================================================================================================================================================================	
 	//	Titans - Bosses
 	//=========================================================================================================================================================================
