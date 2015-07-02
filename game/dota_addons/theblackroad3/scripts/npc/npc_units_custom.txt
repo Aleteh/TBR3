@@ -71,14 +71,14 @@
 		
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"14"
+		"ArmorPhysical"				"9"
 		"MagicalResistance"			"0"
 		
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"122.0"
-		"AttackDamageMax"			"140.0"
+		"AttackDamageMin"			"37.0"
+		"AttackDamageMax"			"45.0"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.50"
 		"AttackAnimationPoint"		"0.5"
@@ -98,8 +98,8 @@
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2600"
-		"StatusHealthRegen"			"6.00"
+		"StatusHealth"				"950"
+		"StatusHealthRegen"			"3.00"
 		"StatusMana"				"0"
 		"StatsManaRegen"			"0"
 		
@@ -120,6 +120,19 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				//"Wearable1"		{	"ItemDef"	"6093"	} // "Fire Tribunal Arms"
+				"Wearable2"		{	"ItemDef"	"63"	} 
+				"Wearable3"		{	"ItemDef"	"66"	} 
+				//"Wearable4"		{	"ItemDef"	"6104"	} // "Fire Tribunal Shoulders"
+				"Wearable5"		{	"ItemDef"	"6105"	} // "Fire Tribunal Tabard"
+				"Wearable6"		{	"ItemDef"	"67"	} 
+			}			
+		}
 	}
 
 
@@ -192,6 +205,20 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"5841"	} // "Death Shadow Bracers"
+				"Wearable2"		{	"ItemDef"	"5842"	} // "Death Shadow Cape"
+				"Wearable3"		{	"ItemDef"	"5843"	} // "Death Shadow Cowl"
+				"Wearable4"		{	"ItemDef"	"5844"	} // "Death Shadow Boots"
+				"Wearable5"		{	"ItemDef"	"5845"	} // "Death Shadow Quiver"
+				"Wearable6"		{	"ItemDef"	"5846"	} // "Death Shadow Mantle"
+				"Wearable7"		{	"ItemDef"	"5847"	} // "Death Shadow Bow"
+			}			
+		}
 	}
 
 
