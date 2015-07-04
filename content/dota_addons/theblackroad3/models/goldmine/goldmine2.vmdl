@@ -11,18 +11,11 @@ CVModel CVModel_0
 				string m_meshFile = "models/goldmine/goldmine2.fbx"
 				string m_materialSearchPath = ""
 				bool m_bSkinParentedObjects = true
+				bool m_bLegacySkinParentedTransforms = false
 				bool m_bExpensiveTangents = false
 				bool m_bExpensiveVertices = false
-				CVmorphInfo* m_pMorphInfo = NULL
-			},
-			CVmesh
-			{
-				string m_meshName = "goldmine2_hitbox"
-				string m_meshFile = "models/goldmine/goldmine2_hitbox.fbx"
-				string m_materialSearchPath = ""
-				bool m_bSkinParentedObjects = true
-				bool m_bExpensiveTangents = false
-				bool m_bExpensiveVertices = false
+				bool m_bIgnoreCloth = false
+				bool m_bGetSkinningFromLod0 = false
 				CVmorphInfo* m_pMorphInfo = NULL
 			}
 		]
@@ -37,7 +30,7 @@ CVModel CVModel_0
 		bool m_bCreateStaticBone = false
 		int m_nMaxBonesPerVertex = 4
 		bool m_bRemoveUnusedBonesEnabled = false
-		bool m_bUseOnlyRealMeshBones = false
+		bool m_bDriveMeshesWithBacksolvedJointsOnly = true
 		float m_flMatchProxiesToMeshes = 1.000000
 		float m_flReservedFloat = 0.000000
 		int m_nReservedInt = 0
@@ -50,23 +43,7 @@ CVModel CVModel_0
 	{
 		CVphysicsMesh[] m_meshList = 
 		[
-			CVphysicsMesh
-			{
-				string m_meshName = "goldmine2"
-				string m_meshFile = "models/goldmine/goldmine2.fbx"
-				bool m_bConvexify = false
-				bool m_bMultiplePieces = false
-				symbol m_collisionType = STATIC
-				bool m_bUseExactGeometry = true
-				bool m_bAutoMass = false
-				float m_flMassOverride = 100.000000
-				bool m_bOneConvexPiece = true
-				bool m_bConcavePerJoint = false
-				bool m_bSelfCollisions = false
-				bool m_bForceKinematic = false
-				bool m_bIgnoreScale = false
-				bool m_bIgnoreSkeleton = false
-			}
+			
 		]
 	}
 	CVmodelInfo* m_pModelInfo = NULL
@@ -77,11 +54,7 @@ CVModel CVModel_0
 	}
 	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
 	[
-		CVhitBoxSetListReference
-		{
-			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
-			string m_sFileName = ""
-		}
+		
 	]
 	CVattachmentListReference[] m_pAttachmentLists = 
 	[
@@ -121,7 +94,13 @@ CVModel CVModel_0
 		
 	]
 	string m_collision = ""
+	string m_softbody = ""
 	string m_sMDLFilename = ""
+	string[] m_sOffsetHitboxSets = 
+	[
+		
+	]
+	float(3) m_vHitboxSetOffset = ( 0.000000, 0.000000, 0.000000 )
 	string[] m_scriptFiles = 
 	[
 		
@@ -129,56 +108,18 @@ CVModel CVModel_0
 	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
 	float m_flFbxScale = 1.000000
 	float m_flQCScale = 1.000000
+	float(3) m_vOrigin = ( 0.000000, 0.000000, 0.000000 )
 	CVPsf* m_pvPsf = NULL
 	string m_keyValueText = ""
 	bool m_bStaticProp = false
 	bool m_bEnableClothProcessing = true
 	float m_flClothEnableThreshold = 0.050000
 	int m_nMaxClothVertsPerMesh = 2048
-}
-
-CVhitBoxSetList CVhitBoxSetList_0
-{
-	CVhitBoxSet[] m_HitBoxSets = 
-	[
-		CVhitBoxSet
-		{
-			string m_name = "default"
-			CVhitBox[] m_HitBoxes = 
-			[
-				CVhitBox
-				{
-					string m_name = "joint1"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "joint2"
-					float(3) m_vMinBounds = ( -0.971783, -0.574207, -21.589149 )
-					float(3) m_vMaxBounds = ( 9.076093, 20.730215, 22.519970 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "joint1"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "joint2"
-					float(3) m_vMinBounds = ( -0.936483, -0.574207, -20.804913 )
-					float(3) m_vMaxBounds = ( 8.746399, 20.730215, 21.701921 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "joint2"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "joint2"
-					float(3) m_vMinBounds = ( -16.456429, -0.310061, -4.006454 )
-					float(3) m_vMaxBounds = ( 17.738602, 16.195480, 32.275002 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				}
-			]
-		}
-	]
+	bool m_bBuildClothBoneHierarchy = false
+	symbol m_nNavType = AUTH_NAV_MESH
+	bool m_bMakeUniqueVMeshes = false
+	bool m_bMakeImplicitBindPoseSequence = false
+	bool m_bAdjustSkeletonFromBoneFlags = false
 }
 
 CVMaterialRemapList CVMaterialRemapList_0
@@ -188,7 +129,7 @@ CVMaterialRemapList CVMaterialRemapList_0
 		CVMaterialRemap
 		{
 			string m_sSearchMaterial = "lambert2.vmat"
-			string m_sReplaceMaterial = "materials/goldmine/goldmine_diffuse.vmat"
+			string m_sReplaceMaterial = "materials/models/goldmine/goldmine_diffuse.vmat"
 		}
 	]
 }

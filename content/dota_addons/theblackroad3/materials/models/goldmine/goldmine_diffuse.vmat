@@ -8,12 +8,12 @@ Layer0
 	F_NORMAL_MAP 1
 
 	//---- Color ----
-	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vColorTint "[0.694118 0.694118 0.694118 1.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/goldmine/goldmine2_diffuse.tga"
+	TextureColor "materials/models/goldmine/goldmine2_diffuse.tga"
 
 	//---- Normal Map ----
 	g_flBumpStrength "1.000"
-	TextureNormal "materials/goldmine/goldmine2_bump.tga"
+	TextureNormal "materials/models/goldmine/goldmine2_bump.tga"
 }

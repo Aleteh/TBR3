@@ -37,6 +37,10 @@
 		{
 			_class = "C_OP_PositionLock"
 		},
+		{
+			_class = "C_OP_SpinYaw"
+			m_nSpinRateDegrees = 15
+		},
 	]
 	m_Renderers =
 	[
@@ -52,12 +56,6 @@
 	]
 	m_Initializers =
 	[
-		{
-			_class = "C_INIT_RandomRotation"
-			m_flDegreesMin = 90.000000
-			m_flDegreesMax = 90.000000
-			m_nFieldOutput = 20
-		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
 		},
@@ -75,5 +73,11 @@
 			_class = "C_OP_ConstrainDistance"
 			m_fMaxDistance = 15.000000
 		},
+	]
+	m_ConstantNormal =
+	[
+		0.000000,
+		-1.000000,
+		0.000000,
 	]
 }

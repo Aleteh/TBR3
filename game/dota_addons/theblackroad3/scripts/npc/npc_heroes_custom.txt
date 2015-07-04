@@ -8,23 +8,23 @@
 	{
 		"override_hero"				"npc_dota_hero_phantom_assassin"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"assassin_walk_the_shadows"
-		//"Ability2"					"assassin_disable"
-		//"Ability3"					"assassin_assassinate"
-		//"Ability4"					"assassin_garrote"
-		//"Ability5"					"assassin_shadow_image"
-		//"Ability6"					"assassin_critical_strike"
+		"Ability1"					"assassin_walk_the_shadows"
+		"Ability2"					"assassin_disable"
+		"Ability3"					"assassin_assassinate"
+		"Ability4"					"assassin_garrote"
+		"Ability5"					"assassin_shadow_image"
+		"Ability6"					"assassin_critical_strike"
 		
-		"Ability1"					"assassin_lacerate"
-		"Ability2"					"assassin_mutilate"
-		"Ability3"					"assassin_mangle"
-		"Ability4"					"assassin_hemorrhage" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"assassin_walk_the_shadows" //Journeyman 1
-		"Ability8"					"assassin_shadow_image" //Journeyman 2
-		"Ability9"					"assassin_foreboding_mask" //Ultimate 1
-		"Ability10"					"assassin_reverbatory_blade" //Ultimate 2
+		//"Ability1"					"assassin_lacerate"
+		//"Ability2"					"assassin_mutilate"
+		//"Ability3"					"assassin_mangle"
+		//"Ability4"					"assassin_hemorrhage" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"assassin_walk_the_shadows" //Journeyman 1
+		//"Ability8"					"assassin_shadow_image" //Journeyman 2
+		//"Ability9"					"assassin_foreboding_mask" //Ultimate 1
+		//"Ability10"					"assassin_reverbatory_blade" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -81,22 +81,22 @@
 	{
 		"override_hero"				"npc_dota_hero_axe"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"barbarian_taunt"
-		//"Ability2"					"barbarian_rend_armor"
-		//"Ability3"					"barbarian_cleave"
-		//"Ability4"					"barbarian_mighty_leap"
-		//"Ability5"					"barbarian_bloodbath"
+		"Ability1"					"barbarian_taunt"
+		"Ability2"					"barbarian_rend_armor"
+		"Ability3"					"barbarian_cleave"
+		"Ability4"					"barbarian_mighty_leap"
+		"Ability5"					"barbarian_bloodbath"
 	
-		"Ability1"					"barbarian_maul"
-		"Ability2"					"barbarian_cleave"
-		"Ability3"					"barbarian_charge"
-		"Ability4"					"barbarian_callused_skin" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"barbarian_taunt" //Journeyman 1
-		"Ability8"					"barbarian_rend_armor" //Journeyman 2
-		"Ability9"					"barbarian_vicious_repel" //Ultimate 1
-		"Ability10"					"barbarian_shieldcrusher" //Ultimate 2
+		//"Ability1"					"barbarian_maul"
+		//"Ability2"					"barbarian_cleave"
+		//"Ability3"					"barbarian_charge"
+		//"Ability4"					"barbarian_callused_skin" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"barbarian_taunt" //Journeyman 1
+		//"Ability8"					"barbarian_rend_armor" //Journeyman 2
+		//"Ability9"					"barbarian_vicious_repel" //Ultimate 1
+		//"Ability10"					"barbarian_shieldcrusher" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -153,22 +153,22 @@
 	{
 		"override_hero"				"npc_dota_hero_crystal_maiden"
 		"AbilityLayout" 			"6" 
-		//"Ability1"					"cleric_holy_light"
-		//"Ability2"					"cleric_regen"
-		//"Ability3"					"cleric_fire_of_heaven"
-		//"Ability4"					"cleric_cleansing_flame"
-		//"Ability5"					"cleric_rebirth"
+		"Ability1"					"cleric_holy_light"
+		"Ability2"					"cleric_regen"
+		"Ability3"					"cleric_fire_of_heaven"
+		"Ability4"					"cleric_cleansing_flame"
+		"Ability5"					"cleric_rebirth"
 		
-		"Ability1"					"cleric_heavenly_regeneration"
-		"Ability2"					"cleric_righteous_burning"
-		"Ability3"					"cleric_holy_nova"
-		"Ability4"					"cleric_rebirth" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"cleric_cleansing_flame" //Journeyman 1
-		"Ability8"					"cleric_inner_sigth" //Journeyman 2
-		"Ability9"					"cleric_meditated_connection" //Ultimate 1
-		"Ability10"					"cleric_shield_of_faith" //Ultimate 2
+		//"Ability1"					"cleric_heavenly_regeneration"
+		//"Ability2"					"cleric_righteous_burning"
+		//"Ability3"					"cleric_holy_nova"
+		//"Ability4"					"cleric_rebirth" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"cleric_cleansing_flame" //Journeyman 1
+		//"Ability8"					"cleric_inner_sigth" //Journeyman 2
+		//"Ability9"					"cleric_meditated_connection" //Ultimate 1
+		//"Ability10"					"cleric_shield_of_faith" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -221,38 +221,7 @@
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"10"
 	}
-	//=================================================================================================================
-	// HERO: Demon Hunter/Master?
-	//=================================================================================================================
-	"npc_tbr_demon"
-	{
-		"override_hero"				"npc_dota_hero_terrorblade"
-		"AbilityLayout"				"6"
-		"Ability1"					"demon_immolation"	//boring toggle, should be an active for a duration.
-		"Ability2"					"demon_warglaives" //cleave, throw weapons around
-		"Ability3"					"demon_dodge"	//+critical on next attack after dodge
-		"Ability4"					"demon_form" //class skill, toggle to lose the melee skills
-		"Ability5"					"demon_flame_crash" //go high and land
-		"Ability6"					"demon_avatar" //ultimate1, illusion with shared HP
-		"Ability7"					"demon_summons" //many demons
-		"Ability8"					"demon_strike" //bouncing projectile
-		"Ability9"					"demon_passive" //dunno what should this be
-		"Ability10"					"demon_shadow_blast" //maybe redundant
-		"Ability11"					"demon_frenzy" //active, synergy with summons
-		"Ability12"					"demon_army" //ultimate2, gives the ability to swap to different summons
-	
-		// Attributes
-	        //-------------------------------------------------------------------------------------------------------------
-	       	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
-	        "AttributeBaseStrength"         "12" 		// Base strength
-	        "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	        "AttributeBaseIntelligence"     "15" 		// Base intelligence
-	        "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	        "AttributeBaseAgility"          "12" 		// Base agility
-	        "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	        "AttackRange"				"500"
-	}
-	
+		
 	
 	//=================================================================================================================
 	// HERO: Druid
@@ -262,22 +231,22 @@
 	{
 		"override_hero"				"npc_dota_hero_furion"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"druid_rejuvenation"
-		//"Ability2"					"druid_natures_wrath"
-		//"Ability3"					"druid_call_lightning"
-		//"Ability4"					"druid_mind_blast"
-		//"Ability5"					"druid_call_storm"
-		
 		"Ability1"					"druid_rejuvenation"
 		"Ability2"					"druid_natures_wrath"
-		"Ability3"					"druid_terra_firma"
-		"Ability4"					"druid_innervate" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"druid_mind_blast" //Journeyman 1
-		"Ability8"					"druid_tornado" //Journeyman 2
-		"Ability9"					"druid_spirit_form" //Ultimate 1
-		"Ability10"					"druid_summon_totems" //Ultimate 2
+		"Ability3"					"druid_call_lightning"
+		"Ability4"					"druid_mind_blast"
+		"Ability5"					"druid_call_storm"
+		
+		//"Ability1"					"druid_rejuvenation"
+		//"Ability2"					"druid_natures_wrath"
+		//"Ability3"					"druid_terra_firma"
+		//"Ability4"					"druid_innervate" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"druid_mind_blast" //Journeyman 1
+		//"Ability8"					"druid_tornado" //Journeyman 2
+		//"Ability9"					"druid_spirit_form" //Ultimate 1
+		//"Ability10"					"druid_summon_totems" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -335,22 +304,22 @@
 	{
 		"override_hero"				"npc_dota_hero_brewmaster"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"guardianofnature_roar"
-		//"Ability2"					"guardianofnature_tremor"
-		//"Ability3"					"guardianofnature_earth_shock"
-		//"Ability4"					"guardianofnature_cataclysm"
-		//"Ability5"					"guardianofnature_natures_fury"
+		"Ability1"					"guardianofnature_roar"
+		"Ability2"					"guardianofnature_tremor"
+		"Ability3"					"guardianofnature_earth_shock"
+		"Ability4"					"guardianofnature_cataclysm"
+		"Ability5"					"guardianofnature_natures_fury"
 		
-		"Ability1"					"guardianofnature_earth_shock"
-		"Ability2"					"guardianofnature_natures_assistance"
-		"Ability3"					"guardianofnature_roar"
-		"Ability4"					"guardianofnature_natures_defense" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"guardianofnature_living_bark" //Journeyman 1
-		"Ability8"					"guardianofnature_tempest" //Journeyman 2
-		"Ability9"					"guardianofnature_cataclysm" //Ultimate 1
-		"Ability10"					"guardianofnature_tranquility" //Ultimate 2
+		//"Ability1"					"guardianofnature_earth_shock"
+		//"Ability2"					"guardianofnature_natures_assistance"
+		//"Ability3"					"guardianofnature_roar"
+		//"Ability4"					"guardianofnature_natures_defense" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"guardianofnature_living_bark" //Journeyman 1
+		//"Ability8"					"guardianofnature_tempest" //Journeyman 2
+		//"Ability9"					"guardianofnature_cataclysm" //Ultimate 1
+		//"Ability10"					"guardianofnature_tranquility" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -406,22 +375,22 @@
 	{
 		"override_hero"				"npc_dota_hero_skeleton_king"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"khaoschampion_grave_blind"
-		//"Ability2"					"khaoschampion_shadow_scythe"
-		//"Ability3"					"khaoschampion_shroud"
-		//"Ability4"					"khaoschampion_terrorize"
-		//"Ability5"					"khaoschampion_requim"
-		
-		"Ability1"					"khaoschampion_grave_bind"
+		"Ability1"					"khaoschampion_grave_blind"
 		"Ability2"					"khaoschampion_shadow_scythe"
-		"Ability3"					"khaoschampion_death_coil"
-		"Ability4"					"khaoschampion_shroud" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"khaoschampion_terrorize" //Journeyman 1
-		"Ability8"					"khaoschampion_unholy_presence" //Journeyman 2
-		"Ability9"					"khaoschampion_requiem" //Ultimate 1
-		"Ability10"					"khaoschampion_shadow_grasp" //Ultimate 2
+		"Ability3"					"khaoschampion_shroud"
+		"Ability4"					"khaoschampion_terrorize"
+		"Ability5"					"khaoschampion_requim"
+		
+		//"Ability1"					"khaoschampion_grave_bind"
+		//"Ability2"					"khaoschampion_shadow_scythe"
+		//"Ability3"					"khaoschampion_death_coil"
+		//"Ability4"					"khaoschampion_shroud" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"khaoschampion_terrorize" //Journeyman 1
+		//"Ability8"					"khaoschampion_unholy_presence" //Journeyman 2
+		//"Ability9"					"khaoschampion_requiem" //Ultimate 1
+		//"Ability10"					"khaoschampion_shadow_grasp" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -477,23 +446,23 @@
 	{
 		"override_hero"				"npc_dota_hero_invoker"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"magician_frost_bolt"
-		//"Ability2"					"magician_flame_spire"
-		//"Ability3"					"magician_flash_point"
-		//"Ability4"					"magician_meteor_shower"
-		//"Ability5"					"magician_freezing_field"
-		//"Ability6"					"magician_preparation"
+		"Ability1"					"magician_frost_bolt"
+		"Ability2"					"magician_flame_spire"
+		"Ability3"					"magician_flash_point"
+		"Ability4"					"magician_meteor_shower"
+		"Ability5"					"magician_freezing_field"
+		"Ability6"					"magician_preparation"
 		
-		"Ability1"					"magician_arcane_missles"
-		"Ability2"					"magician_flux_matrix"
-		"Ability3"					"magician_enchantment"
-		"Ability4"					"magician_preparation" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"magician_hoarfrost" //Journeyman 1
-		"Ability8"					"magician_flash_point" //Journeyman 2
-		"Ability9"					"magician_snow_globe" //Ultimate 1
-		"Ability10"					"magician_meteor_shower" //Ultimate 2
+		//"Ability1"					"magician_arcane_missles"
+		//"Ability2"					"magician_flux_matrix"
+		//"Ability3"					"magician_enchantment"
+		//"Ability4"					"magician_preparation" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"magician_hoarfrost" //Journeyman 1
+		//"Ability8"					"magician_flash_point" //Journeyman 2
+		//"Ability9"					"magician_snow_globe" //Ultimate 1
+		//"Ability10"					"magician_meteor_shower" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -551,23 +520,23 @@
 	{
 		"override_hero"				"npc_dota_hero_windrunner"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"ranger_black_arrow"
-		//"Ability2"					"ranger_stun_shot"
-		//"Ability3"					"ranger_puncture"
-		//"Ability4"					"ranger_star_dust"
-		//"Ability5"					"ranger_soul_piercing_shot"
-		//"Ability6"					"ranger_prevailing_winds"
+		"Ability1"					"ranger_black_arrow"
+		"Ability2"					"ranger_stun_shot"
+		"Ability3"					"ranger_puncture"
+		"Ability4"					"ranger_star_dust"
+		"Ability5"					"ranger_soul_piercing_shot"
+		"Ability6"					"ranger_prevailing_winds"
 		
-		"Ability1"					"ranger_puncture"
-		"Ability2"					"ranger_strafe"
-		"Ability3"					"ranger_prevailing_winds"
-		"Ability4"					"ranger_soul_piercing_shot" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"ranger_black_arrow" //Journeyman 1
-		"Ability8"					"ranger_poisoned_arrow" //Journeyman 2
-		"Ability9"					"ranger_star_dust" //Ultimate 1
-		"Ability10"					"ranger_aimed_shot" //Ultimate 2
+		//"Ability1"					"ranger_puncture"
+		//"Ability2"					"ranger_strafe"
+		//"Ability3"					"ranger_prevailing_winds"
+		//"Ability4"					"ranger_soul_piercing_shot" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"ranger_black_arrow" //Journeyman 1
+		//"Ability8"					"ranger_poisoned_arrow" //Journeyman 2
+		//"Ability9"					"ranger_star_dust" //Ultimate 1
+		//"Ability10"					"ranger_aimed_shot" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -621,22 +590,22 @@
 	{
 		"override_hero"				"npc_dota_hero_dragon_knight"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"spartanwarrior_dispatch"
-		//"Ability2"					"spartanwarrior_valor"
-		//"Ability3"					"spartanwarrior_throw_javelin"
-		//"Ability4"					"spartanwarrior_charge"
-		//"Ability5"					"spartanwarrior_phalanx"
+		"Ability1"					"spartanwarrior_dispatch"
+		"Ability2"					"spartanwarrior_valor"
+		"Ability3"					"spartanwarrior_throw_javelin"
+		"Ability4"					"spartanwarrior_charge"
+		"Ability5"					"spartanwarrior_phalanx"
 		
-		"Ability1"					"spartanwarrior_disrupt"
-		"Ability2"					"spartanwarrior_dispatch"
-		"Ability3"					"spartanwarrior_lunge"
-		"Ability4"					"spartanwarrior_last_stand" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"spartanwarrior_valor" //Journeyman 1
-		"Ability8"					"spartanwarrior_demoralizing_slam" //Journeyman 2
-		"Ability9"					"spartanwarrior_phalanx" //Ultimate 1
-		"Ability10"					"spartanwarrior_testudo" //Ultimate 2
+		//"Ability1"					"spartanwarrior_disrupt"
+		//"Ability2"					"spartanwarrior_dispatch"
+		//"Ability3"					"spartanwarrior_lunge"
+		//"Ability4"					"spartanwarrior_last_stand" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"spartanwarrior_valor" //Journeyman 1
+		//"Ability8"					"spartanwarrior_demoralizing_slam" //Journeyman 2
+		//"Ability9"					"spartanwarrior_phalanx" //Ultimate 1
+		//"Ability10"					"spartanwarrior_testudo" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -692,26 +661,26 @@
 	{
 		"override_hero"				"npc_dota_hero_omniknight"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"templeguardian_gift_of_the_gods"
-		//"Ability2"					"templeguardian_mark_of_artemis"
-		//"Ability3"					"templeguardian_fire_of_apollo"
-		//"Ability4"					"templeguardian_hammer_of_zeus"
-		//"Ability5"					"templeguardian_pray"
-		//"Ability6"					"templeguardian_hestias_touch"
-		//"Ability7"					"pray_ares"
-		//"Ability8"					"pray_athena"
-		//"Ability9"					"pray_zeus"
+		"Ability1"					"templeguardian_gift_of_the_gods"
+		"Ability2"					"templeguardian_mark_of_artemis"
+		"Ability3"					"templeguardian_fire_of_apollo"
+		"Ability4"					"templeguardian_hammer_of_zeus"
+		"Ability5"					"templeguardian_pray"
+		"Ability6"					"templeguardian_hestias_touch"
+		"Ability7"					"pray_ares"
+		"Ability8"					"pray_athena"
+		"Ability9"					"pray_zeus"
 		
-		"Ability1"					"templar_conviction"
-		"Ability2"					"templar_hallowed_ground"
-		"Ability3"					"templar_sanction"
-		"Ability4"					"templar_withdrawal_from_the_dark" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"templar_sanctimonious_shield" //Journeyman 1
-		"Ability8"					"templar_graceful_light" //Journeyman 2
-		"Ability9"					"templar_hopes_envoy" //Ultimate 1
-		"Ability10"					"templar_benediction" //Ultimate 2
+		//"Ability1"					"templar_conviction"
+		//"Ability2"					"templar_hallowed_ground"
+		//"Ability3"					"templar_sanction"
+		//"Ability4"					"templar_withdrawal_from_the_dark" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"templar_sanctimonious_shield" //Journeyman 1
+		//"Ability8"					"templar_graceful_light" //Journeyman 2
+		//"Ability9"					"templar_hopes_envoy" //Ultimate 1
+		//"Ability10"					"templar_benediction" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -767,22 +736,22 @@
 	{
 		"override_hero"				"npc_dota_hero_warlock"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"warlock_torment"
-		//"Ability2"					"warlock_soul_drain"
-		//"Ability3"					"warlock_deathwave"
-		//"Ability4"					"warlock_vengeance"
-		//"Ability5"					"warlock_blind"
-	
 		"Ability1"					"warlock_torment"
 		"Ability2"					"warlock_soul_drain"
 		"Ability3"					"warlock_deathwave"
-		"Ability4"					"warlock_blind" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"warlock_soul_link" //Journeyman 1
-		"Ability8"					"warlock_dark_void" //Journeyman 2
-		"Ability9"					"warlock_haunt" //Ultimate 1
-		"Ability10"					"warlock_bone_spirit" //Ultimate 2
+		"Ability4"					"warlock_vengeance"
+		"Ability5"					"warlock_blind"
+	
+		//"Ability1"					"warlock_torment"
+		//"Ability2"					"warlock_soul_drain"
+		//"Ability3"					"warlock_deathwave"
+		//"Ability4"					"warlock_blind" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"warlock_soul_link" //Journeyman 1
+		//"Ability8"					"warlock_dark_void" //Journeyman 2
+		//"Ability9"					"warlock_haunt" //Ultimate 1
+		//"Ability10"					"warlock_bone_spirit" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
@@ -839,23 +808,23 @@
 	{
 		"override_hero"				"npc_dota_hero_juggernaut"
 		"AbilityLayout" 			"6"
-		//"Ability1"					"warlord_counter"
-		//"Ability2"					"warlord_impale"
-		//"Ability3"					"warlord_winds_of_war"
-		//"Ability4"					"warlord_bum_rush"
-		//"Ability5"					"warlord_bleed"
-		//"Ability6"					"warlord_critical_strike"
+		"Ability1"					"warlord_counter"
+		"Ability2"					"warlord_impale"
+		"Ability3"					"warlord_winds_of_war"
+		"Ability4"					"warlord_bum_rush"
+		"Ability5"					"warlord_bleed"
+		"Ability6"					"warlord_critical_strike"
 		
-		"Ability1"					"warlord_impale"
-		"Ability2"					"warlord_winds_of_war"
-		"Ability3"					"warlord_dragon_claw"
-		"Ability4"					"warlord_counter" //Class Skill
-		"Ability5"					"ability_journeyman" //Journeyman Choice
-		"Ability6"					"ability_ultimate" //Ultimate Choice
-		"Ability7"					"warlord_bear_focus" //Journeyman 1
-		"Ability8"					"warlord_lightning_rush" //Journeyman 2
-		"Ability9"					"warlord_phoenix_focus" //Ultimate 1
-		"Ability10"					"warlord_mortal_strike" //Ultimate 2
+		//"Ability1"					"warlord_impale"
+		//"Ability2"					"warlord_winds_of_war"
+		//"Ability3"					"warlord_dragon_claw"
+		//"Ability4"					"warlord_counter" //Class Skill
+		//"Ability5"					"ability_journeyman" //Journeyman Choice
+		//"Ability6"					"ability_ultimate" //Ultimate Choice
+		//"Ability7"					"warlord_bear_focus" //Journeyman 1
+		//"Ability8"					"warlord_lightning_rush" //Journeyman 2
+		//"Ability9"					"warlord_phoenix_focus" //Ultimate 1
+		//"Ability10"					"warlord_mortal_strike" //Ultimate 2
 		"Ability11"					""
 		"Ability12"					""
 		"Ability13"					""
