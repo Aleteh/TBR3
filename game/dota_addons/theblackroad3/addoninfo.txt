@@ -1,11 +1,11 @@
 "AddonInfo"
 {
-	"TeamCount" "10"
+	"TeamCount" "1"
 	maps			demo"
 	"IsPlayable"	"1"
 	"demo"
 	{
-					"MaxPlayers"                    "8"
+					"MaxPlayers"                    "10"
 	}
 }
 
