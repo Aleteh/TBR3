@@ -636,7 +636,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"assassin_skill1"
+		"AbilityTextureName"			"assassin_walk_the_shadows"
 		"MaxLevel" "7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
