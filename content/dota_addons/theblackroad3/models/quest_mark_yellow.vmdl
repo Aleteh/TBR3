@@ -129,7 +129,7 @@ CVMaterialRemapList CVMaterialRemapList_0
 		CVMaterialRemap
 		{
 			string m_sSearchMaterial = "material.vmat"
-			string m_sReplaceMaterial = "materials/colors/quest_yellow.vmat"
+			string m_sReplaceMaterial = "materials/models/quest_markers/quest_yellow.vmat"
 		}
 	]
 }

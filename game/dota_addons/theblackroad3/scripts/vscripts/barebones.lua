@@ -104,7 +104,21 @@ end
 
   The hero parameter is the hero entity that just spawned in
 ]]
+local init = false
 function GameMode:OnHeroInGame(hero)
+  if not init then
+    init = true
+    Timers:CreateTimer(5, function()
+      Interact.init()
+      Quest.init()
+      print("SETUP QUESTS?")
+      SetupQuests()
+    end)
+  else
+    Times:CreateTimer(5, function()
+      Quest.updateAll()
+      end)
+  end
   print("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
   -- This line for example will set the starting gold of every hero to 500 unreliable gold

@@ -9,6 +9,8 @@ require('items')
 require('crafting')
 require('rpg')
 require('demon_wave')
+require('quest/interact')
+require('quest/quest')
 
 function Precache( context )
 		print("Performing pre-load precache")
