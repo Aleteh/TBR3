@@ -50,7 +50,7 @@
 	{
 		"flag"
 		{
-			"type" "interact"
+			"type" "interactType"
 			"target" "npc_dota_flying_courier"
 		}
 		"roshan"
@@ -239,6 +239,7 @@
 		}
 		"Turnin"
 		{
+			"type" "interactType"
 			"target" "npc_dota_flying_courier"
 			"text" "Talk to <b>The Flying Courier</b>"
 			"thanksText" "Those fucking shrimp are dead? Great!"

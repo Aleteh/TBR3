@@ -326,11 +326,11 @@ end
 
 AddPendingQuest = function(target, questName, player, tag)
 	for k,v in pairs(INTERACT_NPCs) do
-		if v.unit:GetUnitName() == target then
+		if v.unit== target then
 			if not player then
 			--	v.hasNew.global = true
 			else
-				print("Add Pending : " .. target .. ":" .. v.unit:GetUnitName())
+				print("Add Pending : " .. target:GetUnitName() .. ":" .. v.unit:GetUnitName())
 				INTERACT_marks[v.unit.__self] = INTERACT_marks[v.unit.__self] or {types={}}
 				v.hasNew[player] = (v.hasNew[player] or 0) + 1
 				print("Has New : " .. v.hasNew[player])
@@ -349,7 +349,7 @@ end
 
 AddPendingComplete = function(target, questName, player)
 	for k,v in pairs(INTERACT_NPCs) do
-		if v.unit:GetUnitName() == target then
+		if v.unit == target then
 			if not player then
 			--	v.hasComplete.global = true
 			else
@@ -369,7 +369,7 @@ AddPendingComplete = function(target, questName, player)
 end
 RemovePendingQuest = function(target, questName, player)
 	for k,v in pairs(INTERACT_NPCs) do
-		if v.unit:GetUnitName() == target then
+		if v.unit == target then
 			if not player then
 			--	v.hasNew.global = false
 			else
@@ -390,7 +390,7 @@ RemovePendingQuest = function(target, questName, player)
 end
 RemovePendingComplete = function(target, questName, player)
 	for k,v in pairs(INTERACT_NPCs) do
-		if v.unit:GetUnitName() == target then
+		if v.unit == target then
 			if not player then
 			--	v.hasComplete.global = false
 			else
@@ -453,8 +453,15 @@ function NPC:applyType(npcClassName)
 		table.insert(INTERACT_NPCs, {unit=npc, table=tbl, hasNew={}, hasComplete={}, lastId=-1})
 end
 
-function NPC.named(name)
-	return Entities:FindByTarget(nil, name) 
+NPC.named = function(name)
+	local unit = nil
+	
+	local b = FindUnitsInRadius(1, Vector(0,0,0), nil, 999999999.0,DOTA_UNIT_TARGET_TEAM_BOTH,DOTA_UNIT_TARGET_ALL,0,-1,false);
+	for k,v in pairs(b) do
+		if v:GetName() == name then
+			return v
+		end
+	end
 end
 
 NPC.firstOf = function(name)

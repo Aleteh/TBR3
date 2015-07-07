@@ -154,12 +154,20 @@ function QuestGenerator:startNextStage(player)
         self.activeStage[player] = stage
         self.pendingComplete[player] = true
         self.active[player] = false
-        AddPendingComplete(stage.target, self.name, player)
+        if stage.type == "interactType" then
+          AddPendingComplete(NPC.firstOf(stage.target), self.name, player)
+        else
+          AddPendingComplete(NPC.named(stage.target), self.name, player)
+        end
         CustomGameEventManager:Send_ServerToAllClients("quest_flag", {flag="pendingComplete",id=self.id, player=player})  
         CustomGameEventManager:Send_ServerToAllClients("quest_set_line", {id=self.id, lineIndex=0, lineText=self.activeStage[player].text, player=player, flashLine="true", completed="false"});
       else
         if self.activeStage[player].target then
-          RemovePendingComplete(self.activeStage[player].target, self.name, player)
+          if self.activeStage[player].type == "interactType" then
+            RemovePendingComplete(NPC.firstOf(self.activeStage[player].target), self.name, player)
+          else
+            RemovePendingComplete(NPC.named(self.activeStage[player].target), self.name, player)
+          end
         end
         local stg = self.stages.onFinish
         self.activeStage[player] = {}
@@ -316,7 +324,7 @@ function Quest.OnInteractGetOptions(npc, i)
     if not v.started[i] and v.shouldRunAgain[i] and v.enabled[i] and v.reqsFilled[i] then
       if v.starters then
         for kk,vv in pairs(v.starters) do
-          if vv.type == "interact" and vv.target == npc:GetUnitName() then
+          if (vv.type == "interactType" and vv.target == npc:GetUnitName()) or (vv.type == "interact" and vv.target == npc:GetName()) then
             tblUsed = true
             local bb = {
               type="starter",
@@ -569,8 +577,10 @@ end
 function QuestGenerator:enableStarters(player)
   for k,v in pairs(self.starters) do
     if v.type == "interact" then
-        AddPendingQuest(v.target, o.name,player)
+        AddPendingQuest(NPC.named(v.target), o.name,player)
  --     InteractAddQuestStarter(v.target, o.name, o.desc, o.minLevel)
+    elseif v.type == "interactType" then
+        AddPendingQuest(NPC.firstOf(v.target), o.name,player)
     end
   end
 end
@@ -581,8 +591,10 @@ function QuestGenerator:disableStarters(player)
     for k,v in pairs(self.starters) do
       if v.type == "interact" then
               print("2 ME : " .. self.name .. " REMOVING " .. v.target)
-          RemovePendingQuest(v.target, o.name,player)
+          RemovePendingQuest(NPC.named(v.target), o.name,player)
    --     InteractAddQuestStarter(v.target, o.name, o.desc, o.minLevel)
+      elseif v.type == "interactType" then
+          RemovePendingQuest(NPC.firstOf(v.target), o.name,player)
       end
     end
 end

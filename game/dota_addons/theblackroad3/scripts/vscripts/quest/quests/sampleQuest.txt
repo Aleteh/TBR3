@@ -18,7 +18,7 @@
 		"flag"
 		{
 			"type" "interact"
-			"target" "npc_dota_dire_eidolon"
+			"target" "eid"
 		}
 		"roshan"
 		{
