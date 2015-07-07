@@ -7,13 +7,17 @@
 	"tbr_hero_assassin"
 	{
 		"override_hero"				"npc_dota_hero_phantom_assassin"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"assassin_walk_the_shadows"
 		"Ability2"					"assassin_disable"
 		"Ability3"					"assassin_assassinate"
-		"Ability4"					"assassin_garrote"
-		"Ability5"					"assassin_shadow_image"
+		"Ability4"					""
+		"Ability5"					""
 		"Ability6"					"assassin_critical_strike"
+		
+		//"Ability6"					"assassin_shadow_image"
+		//"Ability5"					"assassin_garrote"
+
 		
 		//"Ability1"					"assassin_lacerate"
 		//"Ability2"					"assassin_mutilate"
@@ -25,12 +29,12 @@
 		//"Ability8"					"assassin_shadow_image" //Journeyman 2
 		//"Ability9"					"assassin_foreboding_mask" //Ultimate 1
 		//"Ability10"					"assassin_reverbatory_blade" //Ultimate 2
-		"Ability11"					""
-		"Ability12"					""
-		"Ability13"					""
-		"Ability14"					""
-		"Ability15"					""
-		"Ability16"					""
+		//"Ability11"					""
+		//"Ability12"					""
+		//"Ability13"					""
+		//"Ability14"					""
+		//"Ability15"					""
+		//"Ability16"					""
 	
 		// Attributes
 	    //-------------------------------------------------------------------------------------------------------------
@@ -375,11 +379,11 @@
 	{
 		"override_hero"				"npc_dota_hero_skeleton_king"
 		"AbilityLayout" 			"6"
-		"Ability1"					"khaoschampion_grave_blind"
+		"Ability1"					"khaoschampion_grave_bind"
 		"Ability2"					"khaoschampion_shadow_scythe"
 		"Ability3"					"khaoschampion_shroud"
 		"Ability4"					"khaoschampion_terrorize"
-		"Ability5"					"khaoschampion_requim"
+		"Ability5"					"khaoschampion_requiem"
 		
 		//"Ability1"					"khaoschampion_grave_bind"
 		//"Ability2"					"khaoschampion_shadow_scythe"
