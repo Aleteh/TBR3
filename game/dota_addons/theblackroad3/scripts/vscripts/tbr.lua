@@ -957,9 +957,22 @@ function GameMode:OnPlayerTakeTowerDamage(keys)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local damage = keys.damage
 end
-
+local init = false
 -- A player picked a hero and pressed Play
 function GameMode:OnPlayerPicked( event )
+  if not init then
+    init = true
+    Timers:CreateTimer(5, function()
+      Interact.init()
+      Quest.init()
+      print("SETUP QUESTS?")
+      SetupQuests()
+    end)
+  else
+    Times:CreateTimer(5, function()
+      Quest.updateAll()
+      end)
+  end
 	local player = EntIndexToHScript(event.player)
 	local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
 	-- Apply timer to update stats

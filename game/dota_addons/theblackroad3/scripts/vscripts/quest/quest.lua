@@ -668,7 +668,33 @@ function QuestGenerator:activate(activate, player)
   self.active[player] = activate
   self:updatePrereqs()
 end
+
+function QuestGenerator:setGoldReward(amount)
+  self.stages.onFinish.goldReward = amount
+end
+
+function QuestGenerator:setExpReward(exp)
+  self.stages.onFinish.expReward = exp
+end
+
+function QuestGenerator:addItemReward(itemType, charges)
+  if type(self.stages.onFinish.itemReward) == "string" then
+    local prev = self.onStages.onFinish.itemReward
+    self.onStages.onFinish.itemReward = {}
+    if string.find(prev, " ") then 
+      local charges = string.sub(prev, 0, string.find(prev, " "))
+      local item = string.sub(prev,string.find(pre," ")+1, string.len(prev))
+      self.stages.onFinish.itemReward[item] = charges
+    else
+      self.stages.onFinish.itemReward[prev] = 1
+    end
+  end
+  self.stages.onFinish.itemReward[itemType] = charges or 1
+end
+
+
 HasQuestInit = HasQuestInit or {has = false}
+
 function Quest.initScripts()
   for i in range(0,9) do
     CustomGameEventManager:Send_ServerToAllClients("quest_flag", {flag="clearAll",id=0, player=i})  

@@ -1,4 +1,4 @@
-require("libraries/timers")
+require("timers")
 
 local ResetEventListeners
 if not Interact then
@@ -326,7 +326,7 @@ end
 
 AddPendingQuest = function(target, questName, player, tag)
 	for k,v in pairs(INTERACT_NPCs) do
-		if v.unit== target then
+		if v.unit == target then
 			if not player then
 			--	v.hasNew.global = true
 			else

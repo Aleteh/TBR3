@@ -11,6 +11,7 @@ require('rpg')
 require('demon_wave')
 require('quest/interact')
 require('quest/quest')
+require('questUserScripts')
 
 function Precache( context )
 		print("Performing pre-load precache")

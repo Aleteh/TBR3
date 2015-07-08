@@ -1,0 +1,38 @@
+Therin - 
+
+Charge the Frontlines
+  - ml0
+  - demon imp 0/10
+
+Kill the Steeds
+  - demon hound - 0/3
+
+Field Terrors
+  - demon imp 0/10
+  - demon hound - 0/3
+  - demon commander 0/1
+
+Invade their Base
+  - demon imp 0/10
+  - demon hound 0/5
+  - demon fire 0/5
+
+Nukacha the Cursed
+  - nukacha the cursed 0/1
+
+Blacksmith -
+
+Chaos forged Steel - requires Charge the Frontlines
+  - dagger - 0/5
+  - ring mail - 0/3
+  - rewards something
+
+Commander's Wife-
+Symbol of Eternity- requires Kill the Steeds
+  - lost ring 0/1 (demon imps 5%)
+  - bonus : demon fire 0/10
+
+Veteran Soldier
+Long-sought Revenge - requires Invade their Base
+  - Horn of Nukacha - 0/1 (gives +3 stats) (maybe have the soldier come too?)
+  - reward - polished elven telo

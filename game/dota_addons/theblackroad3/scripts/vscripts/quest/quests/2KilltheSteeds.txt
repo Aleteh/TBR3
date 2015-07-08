@@ -1,0 +1,56 @@
+"Quest"
+{
+	"name" "Kill the Steeds"
+	"identifier" "kill_steeds"
+	"desc" "Our soldiers are having the most trouble not with the enemy themselves but with the hounds that are by their sides. Slay their hounds so that our troops may combat the enemy with greater efficiency."
+	"minLevel" "0"
+	"defaultActive" "true"
+	"renotify" "false"
+
+	"starters"
+	{
+		"flag"
+		{
+			"type" "interact"
+			"target" "therin"
+		}
+	}
+
+	"stages"
+	{
+		"Stage1"
+		{
+
+			"1"
+			{
+				"text" "Demon Imps Killed: %c/%m"
+				"type" "killType"
+				"target" "npc_demon_imp"
+				"count" "10"
+			}
+
+			"2"
+			{
+				"text" "Demon Hounds Killed: %c/%m"
+				"type" "killType"
+				"target" "npc_demon_hound"
+				"count" "3"
+			}
+		}
+		"Turnin"
+		{
+			"type" "interact"
+			"target" "therin"
+			"text" "Talk to <b>Therin, Field Commander of the Noble Army</b>"
+			"thanksText" "You've done a mighty deed, young warrior. I see a bright future for you. Please enjoy whatever I have to offer."
+		}
+		"onFinish"
+		{
+			"expReward" "1200"
+			"goldReward" "1000"
+			"itemReward" "item_helm_of_the_dominator"
+			"questEnable" "Field Terrors"
+		}
+
+	}
+}
