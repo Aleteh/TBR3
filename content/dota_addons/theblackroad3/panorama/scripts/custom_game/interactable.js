@@ -58,6 +58,7 @@ var OnWindowHide = function(){
 	}
 };
 var waitingForLeak = false;
+var waitingForLeakTextOverride = false;
 var addOption = function(textt, image, id){
 	optionsPanel = $('#Options');
 	count = optionsPanel.GetAttributeInt('count', 0);
@@ -134,6 +135,7 @@ var addOption = function(textt, image, id){
 					generateOptions(id.goto.options);
 				}
 				if(id.goto.text){
+					waitingForLeakTextOverride = waitingForLeak;
 					$('#DialogueText').html = true;
 					$('#DialogueText').text = id.goto.text;
 					if(id.goto.text.length < 30){
@@ -195,6 +197,20 @@ var onInteractSetFlags = function(data){
 		currentSubOptions = null;
 		generateOptions(data.options);
 		currentSubOptions = null;
+		if(!waitingForLeakTextOverride){
+			$('#DialogueText').text = data.text;
+			if(data.text.length < 30){
+				$('#DialogueText').RemoveClass('DialogueTextSmall');
+				$('#DialogueText').AddClass('DialogueTextBig');
+			}else if(data.text.length > 100){
+				$('#DialogueText').AddClass('DialogueTextSmall');
+				$('#DialogueText').RemoveClass('DialogueTextBig');
+			}else{
+				$('#DialogueText').AddClass('DialogueTextSmall');
+				$('#DialogueText').RemoveClass('DialogueTextBig');
+			}
+		}
+		waitingForLeakTextOverride = false;
 		return;
 	}
 		$('#HeaderName').text = data.name;

@@ -101,16 +101,16 @@ var addQuest = function(questId, name){
 	
 	questHeader.AddClass('QuestHeaderDefault');
 	questHeaderPanel.AddClass('QuestHeaderPanel');
-	if(questId == 1){
-		questHeader.AddClass('QuestHeaderOrange');
-	}else if(questId == 2){
-		questHeader.AddClass('QuestHeaderGreen');
-	}else if(questId == 3){
-		questHeader.AddClass('QuestHeaderRed');
-	}else if(questId == 5){
-		$.Msg('1 : ' + name);
-		questHeader.AddClass('QuestHeaderViolet');
-	}
+	//if(questId == 1){
+	//	questHeader.AddClass('QuestHeaderOrange');
+	//}else if(questId == 2){
+	//	questHeader.AddClass('QuestHeaderGreen');
+	//}else if(questId == 3){
+	//	questHeader.AddClass('QuestHeaderRed');
+	//}else if(questId == 5){
+	//	$.Msg('1 : ' + name); 
+	//	questHeader.AddClass('QuestHeaderViolet');
+	//}
 	questHeader.text = name;
 	
 	quest.AddClass('QuestPanel'); 
@@ -283,7 +283,10 @@ var onQuestFlag = function(dat){
 		if($('#Quest'+dat.id+'#LineContainer')) $('#Quest'+dat.id+'#LineContainer').RemoveAndDeleteChildren();
 	}else if(dat.flag == "clearAll"){
 		$('#ContainerPanel').RemoveAndDeleteChildren();
-	}
+	}else if(dat.flag == "setRed"){
+		$('#Quest'+dat.id+'#Text').AddClass('QuestHeaderRed');
+	}	
+	
 }
 
 var onQuestShow = function(table, key, data){

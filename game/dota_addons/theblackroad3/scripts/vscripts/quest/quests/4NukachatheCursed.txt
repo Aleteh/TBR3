@@ -5,6 +5,7 @@
 	"desc" "Our scouts have finally located their leader. He is due south of our encampment. You are the bravest soldiers we have seen in this squad. Please go and defeat him in combat, we can only withstand so much more"
 	"minLevel" "0"
 	"defaultActive" "true"
+	"colorFlag" "red"
 	"renotify" "false"
 
 	"starters"
