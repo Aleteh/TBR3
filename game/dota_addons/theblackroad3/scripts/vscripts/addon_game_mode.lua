@@ -25,6 +25,8 @@ function Precache( context )
 		PrecacheResource("model_folder", "particles/heroes/antimage", context)
 		PrecacheResource( "particle_folder", "particles/units/heroes/hero_ember_spirit", context)
 		PrecacheResource( "particle_folder", "particles/econ/items", context)
+		  PrecacheResource("particle", "particles/quest_handin_green.vpcf", context)
+		  PrecacheResource("particle", "particles/quest_mark_yellow.vpcf", context)
 		PrecacheResource("model", "particles/heroes/viper/viper.vmdl", context)
 		PrecacheModel("models/heroes/viper/viper.vmdl", context)
 
