@@ -254,7 +254,7 @@ function Quest.OnInventoryChanged()
       for k,v in pairs(Quest.activeQuests) do
         if v.started[i] then
           for kk,vv in pairs(v.activeStage[i]) do
-            if not vv.c_completed[i] and (vv.type == "item" or vv.type == "itemType") then
+            if (vv.type == "item" or vv.type == "itemType") and not vv.c_completed[i]  then
               tblUsed = true
               table.insert(tbl, {quest=v, stg=vv, type=vv.target})
             end
@@ -289,7 +289,7 @@ function Quest.OnInventoryChanged()
   end
 end
 
-function Quest.OnInteract(player, npcName, id)
+function Quest.OnInteract(player, npc, id)
   for k,v in pairs(Quest.activeQuests) do
     if v.id == id then
       if not v.started[player] then
@@ -301,15 +301,13 @@ function Quest.OnInteract(player, npcName, id)
          break
       elseif v.active[player] then
         for kk,vv in pairs(v.activeStage[player]) do
-          if vv.type == "interact" or vv.type == "interactType" then
-            if vv.target == npcName then -- TODO: WAIT For game engine fixs
-              vv.c_completed[player] = true
-              print("ME : " .. v.name .. " REMOVING " .. npcName)
-              RemovePendingQuest(npcName, v.name, player)
-              CustomGameEventManager:Send_ServerToAllClients("quest_set_line", {player=player,id=v.id, lineIndex=vv.c_line[player], lineText=vv.text, flashLine="true", completed="true"})
-              v:updateState(player)
-            end 
-          end
+          if (vv.type == "interact" and npc:GetName() == vv.target) or (vv.type == "interactType" and npc:GetUnitName() == vv.target) then
+            vv.c_completed[player] = true
+
+            RemovePendingQuest(npcName, v.name, player)
+            CustomGameEventManager:Send_ServerToAllClients("quest_set_line", {player=player,id=v.id, lineIndex=vv.c_line[player], lineText=vv.text, flashLine="true", completed="true"})
+            v:updateState(player)
+          end 
         end
       end
     end
@@ -338,12 +336,12 @@ function Quest.OnInteractGetOptions(npc, i)
         end
       end
     elseif v.pendingComplete[i] then
-     if v.activeStage[i].target == npc:GetUnitName() then
+     if (v.activeStage[i].type == "interactType" and v.activeStage[i].target == npc:GetUnitName()) or (v.activeStage[i].type == "interact" and v.activeStage[i].target == npc:GetName()) then
         tblUsed = true
         local bb = {
           type="complete",
           name=v.name,
-          desc=v.activeStage.thanksText,
+          desc=v.activeStage[i].thanksText,
           player=i,
           id=100000+v.id
         }
@@ -352,7 +350,7 @@ function Quest.OnInteractGetOptions(npc, i)
     elseif v.activeStage[i] then
       for kk,vv in pairs(v.activeStage[i]) do
         if vv.type == "interact" or vv.type == "interactType" then
-          if vv.target == npc:GetUnitName() then
+          if (vv.type == "interactType" and vv.target == npc:GetUnitName()) or (vv.type == "interact" and vv.target == npc:GetName()) then
             tblUsed = true
             local bb = {
               type="interact",
@@ -486,6 +484,12 @@ function QuestGenerator:updateState(player)
     self:startNextStage(player)
     self.started[player] = true  
      CustomGameEventManager:Send_ServerToAllClients("quest_create", {id=self.id, name=self.name, player=player})
+     if self.colorFlag then
+      --print
+      if self.colorFlag == "red" then
+        CustomGameEventManager:Send_ServerToAllClients("quest_flag", {id=self.id, flag="setRed", player=player})
+      end
+     end
           
     return
   end
@@ -668,7 +672,33 @@ function QuestGenerator:activate(activate, player)
   self.active[player] = activate
   self:updatePrereqs()
 end
+
+function QuestGenerator:setGoldReward(amount)
+  self.stages.onFinish.goldReward = amount
+end
+
+function QuestGenerator:setExpReward(exp)
+  self.stages.onFinish.expReward = exp
+end
+
+function QuestGenerator:addItemReward(itemType, charges)
+  if type(self.stages.onFinish.itemReward) == "string" then
+    local prev = self.onStages.onFinish.itemReward
+    self.onStages.onFinish.itemReward = {}
+    if string.find(prev, " ") then 
+      local charges = string.sub(prev, 0, string.find(prev, " "))
+      local item = string.sub(prev,string.find(pre," ")+1, string.len(prev))
+      self.stages.onFinish.itemReward[item] = charges
+    else
+      self.stages.onFinish.itemReward[prev] = 1
+    end
+  end
+  self.stages.onFinish.itemReward[itemType] = charges or 1
+end
+
+
 HasQuestInit = HasQuestInit or {has = false}
+
 function Quest.initScripts()
   for i in range(0,9) do
     CustomGameEventManager:Send_ServerToAllClients("quest_flag", {flag="clearAll",id=0, player=i})  

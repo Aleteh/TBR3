@@ -1,0 +1,41 @@
+"Quest:SampleQuest"
+{
+	"name" "Fall of Ankhar"
+	"identifier" "quest_what_is_happening"
+	"minLevel" "0"
+	"defaultActive" "false"
+
+	"prereqs"
+	{
+		"type" "trigger"
+		"target" "hasCompletedRequiemTrials"
+		"hint" "Complete the Requiem Trials before advancing to Ankhar"
+	}
+
+	"starters"
+	{
+		"thisnamedoesntreallymatter"
+		{
+			"type" "interact"
+			"target" "therin"
+		}
+
+	"stages"
+	{
+		"Turnin"
+		{
+			"type" "interactType"
+			"target" "npc_dota_flying_courier"
+			"text" "Talk to <b>The Flying Courier</b>"
+			"thanksText" "Those fucking shrimp are dead? Great!"
+		}
+		
+		"onFinish"
+		{
+			"expReward" "1200"
+			"goldReward" "1000"
+			"woodReward" "500" 
+		}
+
+	}
+}

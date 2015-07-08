@@ -40,7 +40,7 @@ function QuestListener:onInteractFire(keys)
 	if keys.id >= 100000 then
 		--TODO : when volvo fixes sending CustomGameEvent strings
 		--Quest.OnInteract(0, keys.name, keys.id - 100000)
-		Quest.OnInteract(keys.player, INTERACT_LastInteractUnit[keys.player]:GetUnitName(), keys.id - 100000)
+		Quest.OnInteract(keys.player, INTERACT_LastInteractUnit[keys.player], keys.id - 100000)
 	end
 end
 
