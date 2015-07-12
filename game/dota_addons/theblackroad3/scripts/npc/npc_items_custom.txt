@@ -8783,6 +8783,52 @@
 				}
 			}
 	}
+
+	"item_tbr_ring_of_health" 
+	{
+	
+		"ID"                            "2397"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"tbr_ring_of_health"
+		"ItemStockMax"					"2"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"30"
+	
+		"ItemQuality"					"component"
+		"ItemCost"                      "900" 	
+		"ItemShopTags"					"caster"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+	
+		"Modifiers"
+		{
+			"modifiers_tbr_ring_of_health"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+	
+					"MODIFIER_PROPERTY_HEALTH_BONUS"		"%hp_bonus"
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_bonus"				"200"
+			}
+		}
+	}
+	
+	
+
 	"item_ring_of_spell_power"
 	{
 		"ID"                            "2084"
