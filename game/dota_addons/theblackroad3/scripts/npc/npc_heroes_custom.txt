@@ -88,9 +88,10 @@
 		"Ability1"					"barbarian_taunt"
 		"Ability2"					"barbarian_rend_armor"
 		"Ability3"					"barbarian_cleave"
-		"Ability4"					""
-		"Ability5"					"barbarian_mighty_leap"
-		"Ability6"					"barbarian_bloodbath"
+		"Ability4"					"ability_journeyman"
+
+		//"Ability5"					"barbarian_mighty_leap"
+		//"Ability6"					"barbarian_bloodbath"
 	
 		//"Ability1"					"barbarian_maul"
 		//"Ability2"					"barbarian_cleave"
@@ -157,12 +158,14 @@
 	"tbr_hero_cleric" 
 	{
 		"override_hero"				"npc_dota_hero_crystal_maiden"
-		"AbilityLayout" 			"6" 
+		"AbilityLayout" 			"4" 
 		"Ability1"					"cleric_holy_light"
 		"Ability2"					"cleric_regen"
 		"Ability3"					"cleric_fire_of_heaven"
-		"Ability4"					"cleric_cleansing_flame"
-		"Ability5"					"cleric_rebirth"
+		"Ability4"					"ability_journeyman"
+
+		//"Ability5"					"cleric_cleansing_flame"
+		//"Ability6"					"cleric_rebirth"
 		
 		//"Ability1"					"cleric_heavenly_regeneration"
 		//"Ability2"					"cleric_righteous_burning"
@@ -235,12 +238,14 @@
 	"tbr_hero_druid"
 	{
 		"override_hero"				"npc_dota_hero_furion"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"druid_rejuvenation"
 		"Ability2"					"druid_natures_wrath"
 		"Ability3"					"druid_call_lightning"
-		"Ability4"					"druid_mind_blast"
-		"Ability5"					"druid_call_storm"
+		"Ability4"					"ability_journeyman"
+		
+		//"Ability5"					"druid_mind_blast"
+		//"Ability6"					"druid_call_storm"
 		
 		//"Ability1"					"druid_rejuvenation"
 		//"Ability2"					"druid_natures_wrath"
@@ -308,12 +313,16 @@
 	"tbr_hero_guardianofnature"
 	{
 		"override_hero"				"npc_dota_hero_brewmaster"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"guardianofnature_roar"
-		"Ability2"					"guardianofnature_tremor"
-		"Ability3"					"guardianofnature_earth_shock"
-		"Ability4"					"guardianofnature_cataclysm"
-		"Ability5"					"guardianofnature_natures_fury"
+		"Ability2"					"guardianofnature_earth_shock"
+		"Ability3"					"ability_journeyman"
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					"guardianofnature_tremor"
+
+		//"Ability5"					"guardianofnature_cataclysm"
+		//"Ability6"					"guardianofnature_natures_fury"
 		
 		//"Ability1"					"guardianofnature_earth_shock"
 		//"Ability2"					"guardianofnature_natures_assistance"
@@ -379,12 +388,17 @@
 	"tbr_hero_khaoschampion"
 	{
 		"override_hero"				"npc_dota_hero_skeleton_king"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"khaoschampion_grave_bind"
 		"Ability2"					"khaoschampion_shadow_scythe"
-		"Ability3"					"khaoschampion_shroud"
-		"Ability4"					"khaoschampion_terrorize"
-		"Ability5"					"khaoschampion_requiem"
+		"Ability3"					"ability_journeyman"
+		"Ability4"					""
+		"Ability5"					""
+
+		"Ability6"					"khaoschampion_shroud"
+
+		//"Ability5"					"khaoschampion_terrorize"
+		//"Ability6"					"khaoschampion_requiem"
 		
 		//"Ability1"					"khaoschampion_grave_bind"
 		//"Ability2"					"khaoschampion_shadow_scythe"
@@ -450,13 +464,14 @@
 	"tbr_hero_magician"
 	{
 		"override_hero"				"npc_dota_hero_invoker"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"magician_frost_bolt"
 		"Ability2"					"magician_flame_spire"
 		"Ability3"					"magician_flash_point"
 		"Ability4"					"magician_meteor_shower"
-		"Ability5"					"magician_freezing_field"
-		"Ability6"					"magician_preparation"
+		
+		//"Ability5"					"magician_freezing_field"
+		//"Ability6"					"magician_preparation"
 		
 		//"Ability1"					"magician_arcane_missles"
 		//"Ability2"					"magician_flux_matrix"
@@ -524,13 +539,16 @@
 	"tbr_hero_ranger"
 	{
 		"override_hero"				"npc_dota_hero_windrunner"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"ranger_black_arrow"
 		"Ability2"					"ranger_stun_shot"
-		"Ability3"					"ranger_puncture"
-		"Ability4"					"ranger_star_dust"
+		"Ability3"					""
+		"Ability4"					""
 		"Ability5"					"ranger_soul_piercing_shot"
 		"Ability6"					"ranger_prevailing_winds"
+
+		//"Ability3"					"ranger_puncture"
+		//"Ability4"					"ranger_star_dust"
 		
 		//"Ability1"					"ranger_puncture"
 		//"Ability2"					"ranger_strafe"
@@ -594,12 +612,13 @@
 	"tbr_hero_spartanwarrior"
 	{
 		"override_hero"				"npc_dota_hero_dragon_knight"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"spartanwarrior_dispatch"
 		"Ability2"					"spartanwarrior_valor"
 		"Ability3"					"spartanwarrior_throw_javelin"
-		"Ability4"					"spartanwarrior_charge"
-		"Ability5"					"spartanwarrior_phalanx"
+		"Ability4"					"ability_journeyman"
+		"Ability5"					"spartanwarrior_charge"
+		"Ability6"					"spartanwarrior_phalanx"
 		
 		//"Ability1"					"spartanwarrior_disrupt"
 		//"Ability2"					"spartanwarrior_dispatch"
@@ -665,16 +684,21 @@
 	"tbr_hero_templar"
 	{
 		"override_hero"				"npc_dota_hero_omniknight"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"templeguardian_gift_of_the_gods"
 		"Ability2"					"templeguardian_mark_of_artemis"
 		"Ability3"					"templeguardian_fire_of_apollo"
-		"Ability4"					"templeguardian_hammer_of_zeus"
-		"Ability5"					"templeguardian_pray"
-		"Ability6"					"templeguardian_hestias_touch"
+		"Ability4"					"templeguardian_pray"
+		
+		//"Ability5"					"templeguardian_hammer_of_zeus"
+		//"Ability6"					"templeguardian_hestias_touch"
+		
 		"Ability7"					"pray_ares"
 		"Ability8"					"pray_athena"
 		"Ability9"					"pray_zeus"
+
+
+		
 		
 		//"Ability1"					"templar_conviction"
 		//"Ability2"					"templar_hallowed_ground"
@@ -740,12 +764,14 @@
 	"npc_dota_hero_warlock"
 	{
 		"override_hero"				"npc_dota_hero_warlock"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"warlock_torment"
 		"Ability2"					"warlock_soul_drain"
 		"Ability3"					"warlock_deathwave"
-		"Ability4"					"warlock_vengeance"
-		"Ability5"					"warlock_blind"
+		"Ability4"					"ability_journeyman"
+
+		//"Ability5"					"warlock_vengeance"
+		//"Ability6"					"warlock_blind"
 	
 		//"Ability1"					"warlock_torment"
 		//"Ability2"					"warlock_soul_drain"
@@ -812,13 +838,16 @@
 	"tbr_hero_warlord"
 	{
 		"override_hero"				"npc_dota_hero_juggernaut"
-		"AbilityLayout" 			"6"
+		"AbilityLayout" 			"4"
 		"Ability1"					"warlord_counter"
 		"Ability2"					"warlord_impale"
 		"Ability3"					"warlord_winds_of_war"
-		"Ability4"					"warlord_bum_rush"
-		"Ability5"					"warlord_bleed"
+		"Ability4"					""
+		"Ability5"					""
 		"Ability6"					"warlord_critical_strike"
+
+		//"Ability5"					"warlord_bum_rush"
+		//"Ability6"					"warlord_bleed"
 		
 		//"Ability1"					"warlord_impale"
 		//"Ability2"					"warlord_winds_of_war"
