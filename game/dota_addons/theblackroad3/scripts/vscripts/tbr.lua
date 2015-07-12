@@ -387,12 +387,12 @@ function GameMode:OnHeroInGame(hero)
 	local heroName = hero:GetUnitName()
 
 	-- Set Class
-	if heroName == "npc_dota_hero_beastmaster" then
+	if heroName == "npc_dota_hero_axe" then
 		print("BARBARIAN IN GAME")
 		hero.class = "barbarian"
 		hero:AddAbility("barbarian_rage")
 		hero:FindAbilityByName("barbarian_rage"):SetLevel(1)
-	elseif heroName == "npc_dota_hero_axe" then
+	elseif heroName == "npc_dota_hero_juggernaut" then
 		print("WARLORD IN GAME")
 		hero.class = "warlord"
 		hero:AddAbility("warlord_focus")
@@ -976,7 +976,7 @@ function GameMode:OnPlayerPicked( event )
       SetupQuests()
     end)
   else
-    Times:CreateTimer(5, function()
+    Timers:CreateTimer(5, function()
       Quest.updateAll()
       end)
   end
