@@ -10210,4 +10210,75 @@
 			}
 		}
 	}
+
+"rockthul_command_aura"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ranger_prevailing_winds"
+			// General
+	//-------------------------------------------------------------------------------------------------------------
+	"MaxLevel"						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"	"35"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"900"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/dire_fx/bad_ancient_flow_test.vpcf"
+		"particle"	"particles/addons_gameplay/lamp_flame_tintable_a.vpcf"
+	}
+
+	"Modifiers"    				
+	{  						
+		"prevailing_winds_modifier"   	
+		{
+			"IsBuff"					"1"
+			"IsPurgable"				"0"
+			"IsHidden"					"1"
+			"Passive"					"1"
+			"EffectName"				"particles/dire_fx/bad_ancient_flow_test.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"Aura"						"rockthul_command_aura_modifier"
+			"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Radius"				"%radius"
+			"Aura_Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		}
+
+		"rockthul_command_aura_modifier"
+		{
+			"IsHidden"					"0"
+			"IsBuff"					"1"
+			"IsPurgable"				"0"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
+			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/addons_gameplay/lamp_flame_tintable_a.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"TARGET"
+				}
+			}
+		}
+	}
+}
 }

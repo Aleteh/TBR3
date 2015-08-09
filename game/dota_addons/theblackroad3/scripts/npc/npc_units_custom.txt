@@ -3260,7 +3260,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: A05N
+		"Ability1"			"rockthul_command_aura"	 //Reference: A05N
 		"Ability2"			""	 //Reference: A05M
 		
 		// Armor
