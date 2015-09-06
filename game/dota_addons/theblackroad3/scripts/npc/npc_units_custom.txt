@@ -2615,7 +2615,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: A087
+		"Ability1"			"nukacha_chain_lightning"	 //Reference: A087
 		
 		// Armor
 		//----------------------------------------------------------------
@@ -3261,7 +3261,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"			"rockthul_command_aura"	 //Reference: A05N
-		"Ability2"			""	 //Reference: A05M
+		"Ability2"			"rockthul_chain_lightning"	 //Reference: A05M
 		
 		// Armor
 		//----------------------------------------------------------------
