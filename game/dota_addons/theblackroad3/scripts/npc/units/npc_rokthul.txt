@@ -15,7 +15,7 @@
 	// Abilities
 	//----------------------------------------------------------------
 	"Ability1"			"rockthul_command_aura"	 //Reference: A05N
-	"Ability2"			""	 //Reference: A05M
+	"Ability2"			"rockthul_chain_lightning"	 //Reference: A05M
 	
 	// Armor
 	//----------------------------------------------------------------
