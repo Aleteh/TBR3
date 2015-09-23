@@ -4458,4 +4458,145 @@
 		// Creature Data
 		//----------------------------------------------------------------
 	}
+	
+	//=================================================================================
+	// Creature: Tuskarr Barbarian
+	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_tuskarr_barbarian"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"27"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"7"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"97.0"
+		"AttackDamageMax"		"113.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.36"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"28.0"
+		"BountyGoldMax"			"36.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"300"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"3200"
+		"StatusHealthRegen"		"3.00"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Tuskarr Shaman
+	// Discription: "Light ranged unit with Heal and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_tuskarr_shaman"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"24"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: Anhe
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"95.0"
+		"AttackDamageMax"		"113.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.8"
+		"AttackAnimationPoint"		"0.36"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"500"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"1200"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"25.0"
+		"BountyGoldMax"			"32.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"2500"
+		"StatusHealthRegen"		"3.00"
+		"StatusMana"			"350"
+		"StatsManaRegen"		"1.75"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
 }
