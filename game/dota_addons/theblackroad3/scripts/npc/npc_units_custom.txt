@@ -6234,4 +6234,1152 @@
 		// Creature Data
 		//----------------------------------------------------------------
 	}
+	
+	//=================================================================================
+	// Creature: Ice Behemoth
+	// Discription: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_ice_behemoth"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"52"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09G
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"5"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"322.0"
+		"AttackDamageMax"		"370.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"128"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"53.0"
+		"BountyGoldMax"			"69.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"320"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"15111"
+		"StatusHealthRegen"		"8.00"
+		"StatusMana"			"600"
+		"StatsManaRegen"		"1.5"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Hulking Ice Beast
+	// Discription: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_hulking_ice_beast"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"63"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09G
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"5"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"902.0"
+		"AttackDamageMax"		"1080.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"128"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"177.0"
+		"BountyGoldMax"			"225.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"320"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"61111"
+		"StatusHealthRegen"		"50.00"
+		"StatusMana"			"600"
+		"StatsManaRegen"		"1.5"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Champion of Frost
+	// Discription: "Heavy melee unit with Howl of Terror, Cleaving Attack and Vampiric Aura. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_champion_of_frost"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"57"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09M
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"20"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"752.0"
+		"AttackDamageMax"		"850.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.60"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"58.0"
+		"BountyGoldMax"			"76.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"21111"
+		"StatusHealthRegen"		"12.00"
+		"StatusMana"			"300"
+		"StatsManaRegen"		"0.75"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Handmaiden of Persephone
+	// Discription: "Heavy ranged unit that can cast Curse and Possession. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_handmaiden_of_persephone"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"56"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09O
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"747.0"
+		"AttackDamageMax"		"835.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.60"
+		"AttackAnimationPoint"		"0.56"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"500"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"57.0"
+		"BountyGoldMax"			"75.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"17311"
+		"StatusHealthRegen"		"9.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"5.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Spirit of Chill
+	// Discription: "Light ranged unit with Cold Arrows. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_spirit_of_chill"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"54"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09N
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"952.0"
+		"AttackDamageMax"		"1100.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.80"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"450"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"55.0"
+		"BountyGoldMax"			"72.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"15111"
+		"StatusHealthRegen"		"8.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"2.50"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Ice Giant
+	// Discription: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_ice_giant"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"62"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09P
+		"Ability2"			""	 //Reference: A045
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"4"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"3506.0"
+		"AttackDamageMax"		"4100.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"3.00"
+		"AttackAnimationPoint"		"0.49"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"165"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"63.0"
+		"BountyGoldMax"			"83.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"101111"
+		"StatusHealthRegen"		"50.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"5.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Demon Seer
+	// Discription: "Medium ranged unit with Bloodlust and Cast Ray of Disruption. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_demon_seer"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"39"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACbb
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"77.0"
+		"AttackDamageMax"		"97.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.60"
+		"AttackAnimationPoint"		"0.59"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"1200"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"40.0"
+		"BountyGoldMax"			"52.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"5500"
+		"StatusHealthRegen"		"6.00"
+		"StatusMana"			"400"
+		"StatsManaRegen"		"2.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Greater Demon
+	// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_greater_demon"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"43"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"20"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"114.0"
+		"AttackDamageMax"		"138.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.33"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"44.0"
+		"BountyGoldMax"			"58.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"320"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"7500"
+		"StatusHealthRegen"		"7.00"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Destroyer
+	// Discription: "Heavy ranged unit can cast Dispel Magic, War Stomp, Cripple and Rain of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_destroyer"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"49"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACcr
+		"Ability2"			""	 //Reference: Awrs
+		"Ability3"			""	 //Reference: ACrf
+		"Ability4"			""	 //Reference: ACsk
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"20"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"192.0"
+		"AttackDamageMax"		"222.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.8"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"150"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"50.0"
+		"BountyGoldMax"			"66.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"12111"
+		"StatusHealthRegen"		"10.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"1.25"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Engine of Destruction
+	// Discription: "Heavy ranged unit that hurls fiery missiles. Can cast Breath of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_engine_of_destruction"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"34"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACbc
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"25"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"92.0"
+		"AttackDamageMax"		"114.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.6"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"700"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"35.0"
+		"BountyGoldMax"			"46.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"4500"
+		"StatusMana"			"350"
+		"StatsManaRegen"		"0.875"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Nether Demon
+	// Discription: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_nether_demon"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"31"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACf2
+		"Ability2"			""	 //Reference: ACcl
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"69.0"
+		"AttackDamageMax"		"81.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.6"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"450"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"32.0"
+		"BountyGoldMax"			"42.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"3000"
+		"StatusHealthRegen"		"3.50"
+		"StatusMana"			"400"
+		"StatsManaRegen"		"1"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Champion of Hades
+	// Discription: "Cunning Hero, adept at maneuvering through battles. Can learn Immolation, Evasion, Mana Burn, and Metamorphosis. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_champion_of_hades"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"5"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A00U
+		"Ability2"			""	 //Reference: AInv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"8"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"52.0"
+		"AttackDamageMax"		"74.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.00"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"650"
+		"AttackRange"			"100"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"100.0"
+		"BountyGoldMax"			"100.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.40"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"540"
+		"StatusHealthRegen"		"0.5"
+		"StatusMana"			"350"
+		"StatsManaRegen"		"0.01"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Pit Fiend
+	// Discription: "Light ranged unit. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_pit_fiend"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"36.0"
+		"AttackDamageMax"		"42.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.6"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"450"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"11.0"
+		"BountyGoldMax"			"14.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"1300"
+		"StatusHealthRegen"		"3.00"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Corrupter
+	// Discription: "Light ranged unit with Cold Arrows. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_corrupter"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"20"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACcw
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"82.0"
+		"AttackDamageMax"		"96.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.6"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"450"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"21.0"
+		"BountyGoldMax"			"27.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"2250"
+		"StatusHealthRegen"		"4.00"
+		"StatusMana"			"200"
+		"StatsManaRegen"		"0.5"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Tormenter
+	// Discription: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_tormenter"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"30"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACf2
+		"Ability2"			""	 //Reference: ACcl
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"172.0"
+		"AttackDamageMax"		"200.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.6"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"450"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"31.0"
+		"BountyGoldMax"			"40.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"3500"
+		"StatusHealthRegen"		"5.00"
+		"StatusMana"			"400"
+		"StatsManaRegen"		"1"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Creature: Hellspawn
+	// Discription: "Heavy ranged unit that can cast Devour Magic and Forked Lightning. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_hellspawn"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"40"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACfl
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"262.0"
+		"AttackDamageMax"		"304.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"450"
+		"ProjectileModel"		""	 //Add projectile models
+		"ProjectileSpeed"		"900"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"41.0"
+		"BountyGoldMax"			"54.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.6"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"5000"
+		"StatusHealthRegen"		"7.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"1.25"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
 }
