@@ -78,7 +78,7 @@ function GameMode:InitGameMode()
 	GameRules:SetCustomGameSetupTimeout( 10 ) -- set the custom game setup phase to last 60 seconds, set to 0 skip the custom game setup, or -1 to disable the timeout
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 10 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
-	GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled( true )
+	GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled( false )
 
 
 	print('[TBR] GameRules set')
