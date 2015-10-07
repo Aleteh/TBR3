@@ -1,0 +1,60 @@
+TBR 3 (1.36)
+
+This will be the first version of The Black Road for Dota 2
+
+It will be a close copy of the 1.36b version of the Wc3 game. (Quality of life improvements are of course necessary)
+
+This will serve as a base game while work on the 1.4 concepts are being done.
+
+
+Art
+
+Materials are still in high demand
+	- Plaster'ish walls
+	- Stone walls
+	- Wood beams
+	- Old cement
+	- Windows
+	- and more
+
+Map is taking shape and is playable
+Map needs spawners and waypoints
+Titan gates need implementation
+Detailing detailing detailing polish detailing and more polish
+
+Code
+
+Boss and Titan abilities are missing
+Bosses and Titans should not be able to be stun locked or mana drained unless its part of the boss fight mechanics for a specific encounter
+Stats-RPG for saving and loading characters
+
+UI
+
+Bank or Expanded player inventory
+	- Finally getting the level and currency to get the bank in the original was a nice acheivement, so if we go for more player inventory, we should try and replicate that feeling
+
+Quest Log UI (arhowk) needs to be more minimalistic. Right now it takes up a third of the screenspace. 
+It also needs to be changed to be toggleable by clicking on the quest NPCs and not be vicinity based as quest NPCs move and fight with you, causing the Quest Log window to pop in and out when you are near.
+
+	- Quests needs to be added (there are examples vscripts/quest)
+
+
+Crafting system and UI
+
+Custom Itemshop UI
+
+Clean up Dota2 UI clutter.
+
+__________________________________________________________________________________________________________________________________
+
+TBR 3 (1.4)
+
+Complete redesign of Hero abilities
+
+Complete redesign of Items
+
+Make Bosses and Titans more unique with more behavior and abilities
+
+Create more bosses for content lvl 150 and above
+
+Create the conceptualized lvl 200 raid style bosses
