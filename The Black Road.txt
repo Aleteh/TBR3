@@ -41,9 +41,21 @@ It also needs to be changed to be toggleable by clicking on the quest NPCs and n
 
 Crafting system and UI
 
+	- Looks a little like the quest log just on the right side of the screen.
+	- Main window is toggled by a "Crafting" button
+	- Main window should either be 3-4 tabs at the top being the different levels of proffeciency IE; Novice, Apprentice, Journeyman and Master
+	- Click a tab and a list of items shows up underneath like this " [ ICON ] Spartan Longsword - [CRAFT] "
+	- You can then click either the [CRAFT] button to craft it or just the window to expand it and show the information about the item and what is required to craft it
+
+
 Custom Itemshop UI
 
+	- Should or can be quite simple, have an npc_dota_base with a model that is clickable. When you click the NPC a window pops up with a grid. Hover for tooltip and right click to buy.
+
 Clean up Dota2 UI clutter.
+
+	- Clearing up the bottom right corner of the UI to create more space for TBR related things.
+	- Top part of the UI is made for Dota 2 and shouldn't be necessary to have and take up screenspace.
 
 __________________________________________________________________________________________________________________________________
 
