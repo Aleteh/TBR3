@@ -14,8 +14,7 @@
 			<Panel id="Background" />
 			<Panel id="Stuff">
 				<Panel id="Title">   
-					<Image id="QuestLog" src="file://{images}/custom_game/ItemIcon058.png" />
-					<Label id="QuestTitle" text="Quest log"/> 
+					<Label id="QuestTitle" text="Quests"/> 
 					<Button id="MiniPanel" onactivate="OnQuestHide()" >
 						<Label id="MiniLabel" text=" --- " onclick="javascript:$.msg('HI');" />
 					</Button>

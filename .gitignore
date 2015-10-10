@@ -18,3 +18,4 @@ game/dota_addons/theblackroad3/resource/overviews/*
 
 # Map Files
 *.vpk
+*.vxml_c

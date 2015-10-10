@@ -1,7 +1,7 @@
 .QuestRoot{
 	width: 300px;
-	height: 700px;
-	position: 3px 70px;
+	height: 730px;
+	position: 3px 50px 0px;
 	border: 3px solid #111111FF;
 	border-radius: 5px;
 }  
@@ -13,7 +13,6 @@
     margin-left: 10px;
 	margin-top: -3px;
 	margin-bottom: -10px;
-    text-transform: uppercase;
     vertical-align: center; 
 }
 
@@ -34,9 +33,9 @@
 
 #Background{
 	width: 300px;
-	height: 700px;
-	opacity: 0.65; 
-	background-color: gray;
+	height: 730px;
+	opacity: 0.9; 
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(51,54,49,250) ), to( #000000fa ) );
 	background-repeat: round;
 }
 #Compiling{
@@ -55,8 +54,8 @@
 #MiniPanel{
 	background-color: rgba(37,41,47,200);
 	box-shadow: -8px -8px 30px 15px;
-	margin-left: 18px;
-	margin-top: 13px;
+	margin-left: 70px;
+	margin-top: 20px;
 }
 
 #MiniPanel:hover{
