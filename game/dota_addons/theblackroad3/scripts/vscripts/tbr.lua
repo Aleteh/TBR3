@@ -181,12 +181,12 @@ function GameMode:InitGameMode()
 	SPAWNS = {}	-- The array that holds all the names of areas and spawns
 
 	-- Spawner entities in map should be named: creepName_spawner
-    for areaName,areaTable in pairs(GameRules.SPAWNS) do
-        SPAWNS[areaName] = {}
-        for unitName,v in pairs(areaTable) do
-            SPAWNS[areaName][unitName.."_spawnLocations"] = Entities:FindAllByName(unitName.."_spawner")
-        end
-    end
+	for areaName,areaTable in pairs(GameRules.SPAWNS) do
+		SPAWNS[areaName] = {}
+		for unitName,v in pairs(areaTable) do
+			SPAWNS[areaName][unitName.."_spawnLocations"] = Entities:FindAllByName(unitName.."_spawner")
+		end
+	end
 
 	-- Spawn Locations and Area Activations
 
@@ -349,8 +349,8 @@ function GameMode:OnNPCSpawned(keys)
     end
 
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
-			npc.bFirstSpawned = true
-			GameMode:OnHeroInGame(npc)
+		npc.bFirstSpawned = true
+		GameMode:OnHeroInGame(npc)
 	elseif npc:IsRealHero() and npc.grave then
 		-- remove the player grave
 		UTIL_Remove(npc.grave)
