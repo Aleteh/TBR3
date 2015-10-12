@@ -113,25 +113,25 @@ end
 
 -- returns whether the area is activate or not, that is, there are still players inside the area
 function IsAreaActive( areaName )
-		print("Checking if ",areaName," is active")
+	print("Checking if ",areaName," is active")
         return SPAWNS[areaName]['Active']
 end
  
 -- sets the area active or inactive
 function SetAreaActive( areaName, bool )
-		print("Setting ",areaName," as active area")
+	print("Setting ",areaName," as active area")
         SPAWNS[areaName]['Active'] = bool
 end
  
 function InitializeCreepList( areaName )
-		print("Initializing creep list for ",areaName)
+	print("Initializing creep list for ",areaName)
         SPAWNS[areaName] = {}
         SPAWNS[areaName]['Creeps'] = {}
 end
  
 -- returns the list in which the creeps of the area are stored
 function GetAreaCreepList( areaName )
-		print("Getting creep list for ",areaName)
+	print("Getting creep list for ",areaName)
         return SPAWNS[areaName]['Creeps']
 end
  

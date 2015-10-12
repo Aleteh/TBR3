@@ -349,8 +349,8 @@ function GameMode:OnNPCSpawned(keys)
     end
 
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
-			npc.bFirstSpawned = true
-			GameMode:OnHeroInGame(npc)
+		npc.bFirstSpawned = true
+		GameMode:OnHeroInGame(npc)
 	elseif npc:IsRealHero() and npc.grave then
 		-- remove the player grave
 		UTIL_Remove(npc.grave)
