@@ -45,7 +45,7 @@ USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to lev
 
 AUTOSAVE_INTERVAL = 60 				-- The time between RPGSave() commands. OnPlayerLevelUp and OnPlayerDisconnect also sends a save
 
-SPAWNS = {}								-- The array that holds all the names of areas and spawns
+
 
 if GameMode == nil then
 	GameMode = class({})
@@ -176,8 +176,12 @@ function GameMode:InitGameMode()
 
 	-- Spawn Locations and Area Names Generation
 	
+	GameRules.SPAWNS = {} -- Initializing SPAWNS
+
+	SPAWNS = {}	-- The array that holds all the names of areas and spawns
+
 	-- Spawner entities in map should be named: creepName_spawner
-    for areaName,areaTable in pairs(GameRules.Spawns) do
+    for areaName,areaTable in pairs(GameRules.SPAWNS) do
         SPAWNS[areaName] = {}
         for unitName,v in pairs(areaTable) do
             SPAWNS[areaName][unitName.."_spawnLocations"] = Entities:FindAllByName(unitName.."_spawner")
