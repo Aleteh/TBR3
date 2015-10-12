@@ -5,6 +5,7 @@
 	// Hallowed One
 	// Manslayer
 	// Lightsbane
+	// Fallen Skeleton
 	//
 	
 	//=================================================================================	
@@ -4051,7 +4052,6 @@
 	// Creature: Minotaur Grunt
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"npc_minotaur_grunt"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -4259,7 +4259,6 @@
 	//=================================================================================
 	// Creature: Mammoth
 	// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
-	//=================================================================================
 	"npc_mammoth"
 	{
 		// General
