@@ -1,7 +1,70 @@
+<<<<<<< HEAD
 "DOTAUnits"
 {
 	//=================================================================================	
 	// Boss: Cronus, Avatar of Death
+=======
+"DOTAUnits"
+{
+	// MISSING Units
+	//
+	// Hallowed One
+	// Manslayer
+	// Lightsbane
+	// Fallen Skeleton
+	//
+	
+	//=================================================================================	
+	// Creature: TBD
+	//=================================================================================
+	"npc_name"
+	{
+		"BaseClass"			"npc_dota_creature"	// All units will use this
+		"Model"				"models/items/invoker/forge_spirit/grievous_ingots/grievous_ingots.vmdl"			
+		"ModelScale"		"2"
+		"Level"						"100"
+		"Ability1"					""			// Ability 1-16, as many as needed
+		"ArmorPhysical"				"10"			
+		"MagicalResistance"			"0"			
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"	// This should take just the "main" attack of the wc3 unit, in case theres 2.
+		"AttackDamageMin"			"0"		// This next two values have to be calculated with the dice system
+		"AttackDamageMax"			"1"		// 
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical" //I think this is useless, the actual damage type goes on CombatClassAttack
+		"AttackRate"				"1"			// Speed of attack.
+		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"400"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			""			// Speed of projectile.
+		"BountyXP"					"8"		// Experience earn.
+		"BountyGoldMin"				"4"		// Gold earned min.
+		"BountyGoldMax"				"6"		// Gold earned max.
+		"StatusHealth"				"100000"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// This isn't really used when you spawn units with lua or hammer, can be removed
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"		// Attack damage type, I have a list to get the equivalents
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"		// Armor type
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"	// default
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"375"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.	
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"	
+		"HealthBarOffset"			"140"						// height where the unit health bar will be placed, doesn't matter for conversion
+	}
+
+
+
+	//=========================================================================================================================================================================	
+	//	Friendly Units
+	//=========================================================================================================================================================================
+	//=================================================================================
+	// Creature: Blacksmith
+	// Description: "Warrior Hero, exceptional at defence and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"Avatar_of_Death"
 	{
@@ -82,6 +145,7 @@
 				"Wearable5"		{	"ItemDef"	"5349"	} // "Storm-Stealer's Bracers"
 			}			
 		}
+<<<<<<< HEAD
 	}
 	//=========================================================================================================================================================================	
 	//	Titans - Bosses
@@ -89,6 +153,11 @@
 	
 	//=================================================================================	
 	// Boss: Atlas, Avatar of Earth
+=======
+	}//=================================================================================
+	// Creature: Joseph
+	// Description: "Warrior Hero, exceptional at defence and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"Avatar_of_Earth"
 	{
@@ -172,7 +241,14 @@
 	//=================================================================================	
 	// Boss: Themis, Avatar of Justice
 	//=================================================================================
+<<<<<<< HEAD
 	"Avatar_of_Justice"
+=======
+	// Creature: Serius
+	// Description: "Warrior Hero, exceptional at defence and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_serius"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -252,8 +328,16 @@
 			}			
 		}
 	}
+<<<<<<< HEAD
 	//=================================================================================	
 	// Boss: Thea, Avatar of Nature
+=======
+
+
+	//=================================================================================
+	// Creature: Therin
+	// Description: "Warrior Hero, exceptional at defence and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"Avatar_of_Nature"
 	{
@@ -334,8 +418,15 @@
 			}			
 		}
 	}
+<<<<<<< HEAD
 	//=================================================================================	
 	// Boss: Rhea, Avatar of Sacrifice
+=======
+
+	//=================================================================================
+	// Creature: Mortal Warrior
+	// Description: "Versatile foot soldier. Can learn the Defend ability. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"Avatar_of_Sacrifice"
 	{
@@ -417,8 +508,16 @@
 			}			
 		}
 	}
+<<<<<<< HEAD
 	//=================================================================================	
 	// Boss: Oceanus, Avatar of the Sea
+=======
+
+
+	//=================================================================================
+	// Creature: Mortal Archer
+	// Description: "Basic long-ranged attacker. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"Avatar_of_the_Sea"
 	{
@@ -1107,8 +1206,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Demon Warrior
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Champion of Hades
+	// Description: "Cunning Hero, adept at maneuvering through battles. Can learn Immolation, Evasion, Mana Burn, and Metamorphosis."
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"demon_warrior"
 	{
@@ -1175,8 +1279,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Destroyer
 	// Discription: "Heavy ranged unit can cast Dispel Magic, War Stomp, Cripple and Rain of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Demonic Carrion
+	// Description: "Demonic beast that casts Mana Burn. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"destroyer"
 	{
@@ -1262,8 +1371,13 @@
 		"Ability1"					"dummy_passive"
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Engine of Destruction
 	// Discription: "Heavy ranged unit that hurls fiery missiles. Can cast Breath of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Demonic Pillager
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"engine_of_destruction"
 	{
@@ -1334,8 +1448,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Greater Demon
 	// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Demon Ogre
+	// Description: "Standard warrior of the Ogre Legion. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"greater_demon"
 	{
@@ -1406,8 +1525,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Lesser Demon
 	// Discription: "Light ranged unit with Shadowmeld. Can cast Curse. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Demon Seer
+	// Description: "Medium ranged unit with Bloodlust and Cast Ray of Disruption. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"lesser_demon"
 	{
@@ -1479,8 +1603,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Minor Demon
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Demon Slave
+	// Description: "Light ranged unit that casts Slow and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"minor_demon"
 	{
@@ -1551,7 +1680,14 @@
 	//=================================================================================	
 	// Boss: Gaea, Mother of Earth
 	//=================================================================================
+<<<<<<< HEAD
 	"Mother_of_Earth"
+=======
+	// Creature: Demon Thrall
+	// Description: "Light melee unit that can Bash opponents. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"demon_thrall"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -1631,8 +1767,13 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Nether Demon
 	// Discription: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Demon Warrior
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"nether_demon"
 	{
@@ -1705,8 +1846,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Aris' Ghost
 	// Discription: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Destroyer
+	// Description: "Heavy ranged unit can cast Dispel Magic, War Stomp, Cripple and Rain of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_aris'_ghost"
 	{
@@ -1784,7 +1930,12 @@
 	//=================================================================================
 	
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Bandit
+=======
+	// Creature: Engine of Destruction
+	// Description: "Heavy ranged unit that hurls fiery missiles. Can cast Breath of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_bandit"
 	{
@@ -1856,6 +2007,7 @@
 	//=================================================================================	
 	// Building: Bank
 	//=================================================================================
+<<<<<<< HEAD
 	"npc_bank"
 	{
 		// General
@@ -1915,6 +2067,10 @@
 	//=========================================================================================================================================================================	
 	//	Friendly Units
 	//=========================================================================================================================================================================
+=======
+	// Creature: Greater Demon
+	// Description: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	// Creature: Blacksmith
 	// Discription: "Warrior Hero, exceptional at defense and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
@@ -2007,7 +2163,12 @@
 	//		Ogre 
 	//		Mini-Boss Rokthul
 	//=================================================================================
+<<<<<<< HEAD
 	
+=======
+	// Creature: Lesser Demon
+	// Description: "Light ranged unit with Shadowmeld. Can cast Curse. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	// Creature: Black Goblin
 	// TODO: Same as the Goblin, needs a better model or a name change.
@@ -2078,9 +2239,14 @@
 		"vscripts"		"creep_ai.lua"	
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Black Shaman TODO: Make it stronker
 	// Description: "Primary spellcaster. Can initially cast Purge, which dispels magical buffs and can immobilize enemies. 
 	// *Unused*			 Can also learn Lightning Shield and Bloodlust.
+=======
+	// Creature: Minor Demon
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_black_shaman"
 	{
@@ -2162,8 +2328,13 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Bullroarer the Twisted
 	// Discription: "Heavy ranged unit that hurls bolts of lightning. Can cast Silence and Animate Dead. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Nether Demon
+	// Description: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_bullroarer_the_twisted"
 	{
@@ -3138,8 +3309,15 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Demon Seer
 	// Discription: "Medium ranged unit with Bloodlust and Cast Ray of Disruption. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+
+	//=================================================================================
+	// Creature: Forest Spider
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_demon_seer"
 	{
@@ -3209,8 +3387,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Destroyer
 	// Discription: "Heavy ranged unit can cast Dispel Magic, War Stomp, Cripple and Rain of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Forest Lurker
+	// Description: "Light ranged unit that spits poison at opponents. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_destroyer"
 	{
@@ -3283,8 +3466,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Engine of Destruction
 	// Discription: "Heavy ranged unit that hurls fiery missiles. Can cast Breath of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Giant Spider
+	// Description: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_engine_of_destruction"
 	{
@@ -3353,8 +3541,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Fallen One
 	// Discription: "Essential spellcaster. Can initially cast Raise Dead on corpses. Can also learn Unholy Frenzy and Cripple. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Forest Terror
+	// Description: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_fallen_one"
 	{
@@ -3424,7 +3617,12 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Forest Bear
+=======
+	// Creature: Sea Servant Huntsman
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_forest_bear"
 	{
@@ -3494,8 +3692,13 @@
 		"vscripts"		"creep_ai.lua"
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Forest Lurker
 	// Discription: "Light ranged unit that spits poison at opponents. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Sea Servant Wavecaller
+	// Description: "Medium ranged amphibious unit with Abolish Magic and Slow. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_forest_lurker"
 	{
@@ -3588,8 +3791,13 @@
 	//=================================================================================
 	
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Forest Spider
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Mountain Wolf
+	// Description: "Medium melee unit with Critical Strike. Can cast Roar. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_forest_spider"
 	{
@@ -3669,10 +3877,17 @@
 		
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Forest Terror
 	// Discription: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
 	"npc_forest_terror"
+=======
+	// Creature: Minotaur Grunt
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_minotaur_grunt"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -3740,10 +3955,17 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Gethos the Mighty
 	// Discription: "Heavy melee amphibious unit with Hurl Boulder, War Stomp, and Pulverize. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
 	"npc_gethos_the_mighty"
+=======
+	// Creature: Minotaur Warlock
+	// Description: "Medium melee unit that can cast Healing Ward and Feral Spirit. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_minotaur_warlock"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -3811,10 +4033,17 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Ghost
 	// Discription: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
 	"npc_ghost"
+=======
+	// Creature: Minotaur Beastman
+	// Description: "Heavy melee unit. Immune to spells. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_minotaur_beastman"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -3884,10 +4113,17 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Giant Sea Turtle
 	// Discription: "Medium ranged amphibious unit whose spiked shell harms enemy melee attackers. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
 	"npc_giant_sea_turtle"
+=======
+	// Creature: Mammoth
+	// Description: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"npc_mammoth"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -3955,10 +4191,16 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Giant Spider
 	// Discription: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
 	"npc_giant_spider"
+=======
+	// Creature: Minotaur Elite
+	//=================================================================================
+	"npc_minotaur_elite"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -4045,10 +4287,17 @@
 	//=================================================================================
 	
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Goblin
 	// TODO: Recolor or find a better model, maybe Riki?
 	//=================================================================================
 	"npc_goblin"
+=======
+	// Creature: Minotaur Shaman
+	// Description: "Light ranged unit that casts Slow and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
+	//=================================================================================
+	"npc_minotaur_shaman"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	{
 		// General
 		//----------------------------------------------------------------
@@ -4116,8 +4365,13 @@
 		"vscripts"		"creep_ai.lua"
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Greater Demon
 	// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Tuskarr Barbarian
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_greater_demon"
 	{
@@ -4186,8 +4440,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Handmaiden of Persephone
 	// Discription: "Heavy ranged unit that can cast Curse and Possession. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Tuskarr Shaman
+	// Description: "Light ranged unit with Heal and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_handmaiden_of_persephone"
 	{
@@ -4257,8 +4516,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Heiros Darkfriend
 	// Discription: "Essential spellcaster. Can initially cast Raise Dead on corpses. Can also learn Unholy Frenzy and Cripple. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Hill Beast
+	// Description: "Medium melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_heiros_darkfriend"
 	{
@@ -4330,8 +4594,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Hellspawn
 	// Discription: "Heavy ranged unit that can cast Devour Magic and Forked Lightning. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Hill Roarer
+	// Description: "Heavy melee unit with Roar. Can also cast Rejuvenation. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_hellspawn"
 	{
@@ -4401,8 +4670,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Highland Beast
 	// Discription: "Demonic beast that casts Mana Burn. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Soulless
+	// Description: "Heavy melee unit that can Slam opponents and hurl bolts of frost. Immune to spells. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_highland_beast"
 	{
@@ -4470,8 +4744,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Hillcrusher
 	// Discription: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Ravager
+	// Description: "Basic attack unit and lumber harvester. Can learn Cannibalize and Ghoul Frenzy. |n|n|cffffcc00Attacks land units and trees.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_hillcrusher"
 	{
@@ -4608,8 +4887,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Hill Roarer
 	// Discription: "Heavy melee unit with Roar. Can also cast Rejuvenation. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Wandering Spirit
+	// Description: "Supporting caster. Can initially cast Curse, which causes enemy units to occasionally miss in combat. Can also learn Anti-magic Shell and Possession. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_hill_roarer"
 	{
@@ -4678,8 +4962,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Hulking Centaur Berzerker
 	// Discription: "Heavy melee unit with Endurance Aura. Has the abilities War Stomp and Reincarnation. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Sludge Beast
+	// Description: "Light ranged unit that can Slow opponents. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_hulking_centaur_berzerker"
 	{
@@ -4748,8 +5037,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Hulking Ice Beast
 	// Discription: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Myr Warrior
+	// Description: "Powerful melee unit. Has the Submerge ability, which allows this unit to hide in water. Can learn the Ensnare ability.  |n|n|cffffcc00Attacks land units."
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_hulking_ice_beast"
 	{
@@ -4817,7 +5111,12 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Hulking Sea Monster
+=======
+	// Creature: Myr Reaver
+	// Description: "Powerful spellcaster. Can initially cast Parasite, which damages an enemy unit over time and can spawn a Watery Minion from their corpse. Can also learn Frost Armor, and Cyclone. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_hulking_sea_monster"
 	{
@@ -4886,8 +5185,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Ice Behemoth
 	// Discription: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Mountain Wolf
+	// Description: "Medium melee unit with Critical Strike. Can cast Roar. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_ice_behemoth"
 	{
@@ -4955,8 +5259,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Ice Giant
 	// Discription: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Highland Beast
+	// Description: "Demonic beast that casts Mana Burn. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_ice_giant"
 	{
@@ -5024,8 +5333,15 @@
 		// Creature Data
 		//----------------------------------------------------------------
 	}
+<<<<<<< HEAD
 	// Creature: Joseph
 	// Discription: "Warrior Hero, exceptional at defense and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+=======
+	
+	//=================================================================================
+	// Creature: Rock Giant
+	// Description: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_joseph"
 	{
@@ -5108,8 +5424,13 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Lucus Farblaze
 	// Discription: "Heavy ranged unit with Brilliance Aura. Can also cast Raise Dead and Polymorph. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Cutthroat
+	// Description: "Light melee unit with Shadowmeld. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_lucus_farblaze"
 	{
@@ -5181,8 +5502,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Mammoth
 	// Discription: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Restless Dead
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_mammoth"
 	{
@@ -5249,10 +5575,15 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Mance Swiftsword
 	// Description: "Heavy melee unit with Shadowmeld and Devotion Aura. Can cast Divine Shield."
 	// * Unused *
 	// TODO: Proper model, item/mats drop
+=======
+	// Creature: Ghost
+	// Description: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_mance_swiftsword"
 	{
@@ -5336,8 +5667,13 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Minotaur Beastman
 	// Discription: "Heavy melee unit. Immune to spells. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Fallen One
+	// Description: "Essential spellcaster. Can initially cast Raise Dead on corpses. Can also learn Unholy Frenzy and Cripple. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_minotaur_beastman"
 	{
@@ -5405,7 +5741,12 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Minotaur Elite
+=======
+	// Creature: Centaur Warlord
+	// Description: "Heavy melee unit with Endurance Aura. Has the abilities War Stomp and Reincarnation. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_minotaur_elite"
 	{
@@ -5472,8 +5813,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Minotaur Grunt
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Centaur Pillager
+	// Description: "Medium ranged unit with Searing Arrows. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_minotaur_grunt"
 	{
@@ -5540,8 +5886,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Minotaur Shaman
 	// Discription: "Light ranged unit that casts Slow and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Centaur Raider
+	// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_minotaur_shaman"
 	{
@@ -5611,8 +5962,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Minotaur Warlock
 	// Discription: "Medium melee unit that can cast Healing Ward and Feral Spirit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Hulking Centaur Berzerker
+	// Description: "Heavy melee unit with Endurance Aura. Has the abilities War Stomp and Reincarnation. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_minotaur_warlock"
 	{
@@ -5680,8 +6036,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Mortal Archer
 	// Discription: "Basic long-ranged attacker. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Giant Sea Turtle
+	// Description: "Medium ranged amphibious unit whose spiked shell harms enemy melee attackers. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_mortal_archer"
 	{
@@ -5917,8 +6278,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Myr Reaver
 	// Discription: "Powerful spellcaster. Can initially cast Parasite, which damages an enemy unit over time and can spawn a Watery Minion from their corpse. Can also learn Frost Armor, and Cyclone. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Ice Behemoth
+	// Description: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_myr_reaver"
 	{
@@ -5988,8 +6354,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Myr Warrior
 	// Discription: "Powerful melee unit. Has the Submerge ability, which allows this unit to hide in water. Can learn the Ensnare ability.  |n|n|cffffcc00Attacks land units."
+=======
+	// Creature: Hulking Ice Beast
+	// Description: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_myr_warrior"
 	{
@@ -6106,8 +6477,13 @@
 		"HealthBarOffset"			"140"						// height where the unit health bar will be placed, doesn't matter for conversion
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Nasty Big Pointy Teeth!!
 	// Discription: "Medium melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Champion of Frost
+	// Description: "Heavy melee unit with Howl of Terror, Cleaving Attack and Vampiric Aura. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_nasty_big_pointy_teeth!!"
 	{
@@ -6174,8 +6550,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Nether Demon
 	// Discription: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Handmaiden of Persephone
+	// Description: "Heavy ranged unit that can cast Curse and Possession. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_nether_demon"
 	{
@@ -6246,8 +6627,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Nukacha
 	// TODO: Lightning spell of 200 damage
+=======
+	// Creature: Spirit of Chill
+	// Description: "Light ranged unit with Cold Arrows. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_nukacha"
 	{
@@ -6331,7 +6717,12 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Ogre
+=======
+	// Creature: Ice Giant
+	// Description: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_ogre"
 	{
@@ -6399,8 +6790,13 @@
 		"vscripts"		"creep_ai.lua"
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Pit Fiend
 	// Discription: "Light ranged unit. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Demon Seer
+	// Description: "Medium ranged unit with Bloodlust and Cast Ray of Disruption. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_pit_fiend"
 	{
@@ -6469,8 +6865,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Ravager
 	// Discription: "Basic attack unit and lumber harvester. Can learn Cannibalize and Ghoul Frenzy. |n|n|cffffcc00Attacks land units and trees.|r"
+=======
+	// Creature: Greater Demon
+	// Description: "Heavy melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_ravager"
 	{
@@ -6540,8 +6941,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Restless Dead
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Destroyer
+	// Description: "Heavy ranged unit can cast Dispel Magic, War Stomp, Cripple and Rain of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_restless_dead"
 	{
@@ -6608,7 +7014,12 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Risen Sorcerer
+=======
+	// Creature: Engine of Destruction
+	// Description: "Heavy ranged unit that hurls fiery missiles. Can cast Breath of Fire. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_risen_sorcerer"
 	{
@@ -6678,8 +7089,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Rockwatcher Felblade
 	// Discription: "Heavy melee unit with Command Aura. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Nether Demon
+	// Description: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_rockwatcher_felblade"
 	{
@@ -6747,8 +7163,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Rock Giant
 	// Discription: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Champion of Hades
+	// Description: "Cunning Hero, adept at maneuvering through battles. Can learn Immolation, Evasion, Mana Burn, and Metamorphosis. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_rock_giant"
 	{
@@ -6817,9 +7238,14 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Rokthul
 	// TODO: Chain? lightning spell of 200 damage
 	//		 Has a 15% command aura
+=======
+	// Creature: Pit Fiend
+	// Description: "Light ranged unit. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_rokthul"
 	{
@@ -6905,7 +7331,12 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Sea Elemental
+=======
+	// Creature: Corrupter
+	// Description: "Light ranged unit with Cold Arrows. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_sea_elemental"
 	{
@@ -6974,8 +7405,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Sea Giant
 	// Discription: "Light melee amphibious unit with Pulverize. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Tormenter
+	// Description: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_sea_giant"
 	{
@@ -7050,8 +7486,13 @@
 	//=================================================================================
 	
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Sea Servant Huntsman
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Hellspawn
+	// Description: "Heavy ranged unit that can cast Devour Magic and Forked Lightning. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_sea_servant_huntsman"
 	{
@@ -7133,8 +7574,13 @@
 		
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Sea Servant Wavecaller
 	// Discription: "Medium ranged amphibious unit with Abolish Magic and Slow. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Sea Giant
+	// Description: "Light melee amphibious unit with Pulverize. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_sea_servant_wavecaller"
 	{
@@ -7219,8 +7665,13 @@
 		
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Serius
 	// Discription: "Warrior Hero, exceptional at defense and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Rockwatcher Felblade
+	// Description: "Heavy melee unit with Command Aura. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_serius"
 	{
@@ -7303,9 +7754,14 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Shaman
 	// Description: "Primary spellcaster. Can initially cast Purge, which dispels magical buffs and can immobilize enemies. 
 	// *Unused*			 Can also learn Lightning Shield and Bloodlust.
+=======
+	// Creature: Nasty Big Pointy Teeth!!
+	// Description: "Medium melee unit. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_shaman"
 	{
@@ -7387,8 +7843,13 @@
 		}
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Sludge Beast
 	// Discription: "Light ranged unit that can Slow opponents. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Bullroarer the Twisted
+	// Description: "Heavy ranged unit that hurls bolts of lightning. Can cast Silence and Animate Dead. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_sludge_beast"
 	{
@@ -7458,8 +7919,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Soulless
 	// Discription: "Heavy melee unit that can Slam opponents and hurl bolts of frost. Immune to spells. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Gethos the Mighty
+	// Description: "Heavy melee amphibious unit with Hurl Boulder, War Stomp, and Pulverize. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_soulless"
 	{
@@ -7530,8 +7996,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Spirit of Chill
 	// Discription: "Light ranged unit with Cold Arrows. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Heiros Darkfriend
+	// Description: "Essential spellcaster. Can initially cast Raise Dead on corpses. Can also learn Unholy Frenzy and Cripple. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_spirit_of_chill"
 	{
@@ -7601,8 +8072,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Therin
 	// Discription: "Warrior Hero, exceptional at defense and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Lucus Farblaze
+	// Description: "Heavy ranged unit with Brilliance Aura. Can also cast Raise Dead and Polymorph. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_therin"
 	{
@@ -7688,7 +8164,7 @@
 	}
 	//=================================================================================
 	// Creature: The Black Knight
-	// Discription: "Heavy melee unit that casts Raise Dead, Death Coil, and Animate Dead. |n|n|cffffcc00Attacks land units.|r"
+	// Description: "Heavy melee unit that casts Raise Dead, Death Coil, and Animate Dead. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
 	"npc_the_black_knight"
 	{
@@ -7759,7 +8235,7 @@
 	}
 	//=================================================================================
 	// Creature: The Dark Knight
-	// Discription: "Heavy melee unit that casts Raise Dead, Death Coil, and Animate Dead. |n|n|cffffcc00Attacks land units.|r"
+	// Description: "Heavy melee unit that casts Raise Dead, Death Coil, and Animate Dead. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
 	"npc_the_dark_knight"
 	{
@@ -7829,8 +8305,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Tormenter
 	// Discription: "Heavy ranged unit that casts Chain Lightning and Frost Armor. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Aris' Ghost
+	// Description: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_tormenter"
 	{
@@ -7901,8 +8382,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Tuskarr Barbarian
 	// Discription: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+=======
+	// Creature: Hillcrusher
+	// Description: "Massive melee unit that can disrupt enemy attackers and take incredible amounts of punishment. Has the Taunt and War Club abilities. Can learn Hardened Skin, and Resistant Skin. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_tuskarr_barbarian"
 	{
@@ -7969,8 +8455,13 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+<<<<<<< HEAD
 	// Creature: Tuskarr Shaman
 	// Discription: "Light ranged unit with Heal and Abolish Magic. |n|n|cffffcc00Attacks land and air units.|r"
+=======
+	// Creature: Cyclops
+	// Description: "Cunning Hero, adept at maneuvering through battles. Can learn Immolation, Evasion, Mana Burn, and Metamorphosis. |n|n|cffffcc00Attacks land units.|r"
+>>>>>>> c192dab1195f5a526282bedbf620a72b7875ff6b
 	//=================================================================================
 	"npc_tuskarr_shaman"
 	{
