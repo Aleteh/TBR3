@@ -113,129 +113,32 @@ end
 
 -- returns whether the area is activate or not, that is, there are still players inside the area
 function IsAreaActive( areaName )
-	if areaName == "DemonArea" then
-		return GameMode.DemonAreaActive
-	elseif areaName == "GoblinArea" then
-		return GameMode.GoblinAreaActive
-	elseif areaName == "BlackGoblinArea" then
-		return GameMode.BlackGoblinAreaActive
-	elseif areaName == "BanditArea" then
-		return GameMode.BanditAreaActive
-	elseif areaName == "SpiderArea" then
-		return GameMode.BanditAreaActive
-	elseif areaName == "SeaServantArea" then
-		return GameMode.BanditAreaActive
-	elseif areaName == "MountainWolfArea" then
-		return GameMode.BanditAreaActive
-	end
+		print("Checking if ",areaName," is active")
+        return SPAWNS[areaName]['Active']
 end
-
+ 
 -- sets the area active or inactive
 function SetAreaActive( areaName, bool )
-	if areaName == "DemonArea" then
-		GameMode.DemonAreaActive = bool
-	elseif areaName == "GoblinArea" then
-		GameMode.GoblinAreaActive = bool
-	elseif areaName == "BlackGoblinArea" then
-		GameMode.BlackGoblinAreaActive = bool
-	elseif areaName == "BanditArea" then
-		GameMode.BanditAreaActive = bool
-	elseif areaName == "SpiderArea" then
-		GameMode.BanditAreaActive = bool
-	elseif areaName == "SeaServantArea" then
-		GameMode.BanditAreaActive = bool
-	elseif areaName == "MountainWolfArea" then
-		GameMode.BanditAreaActive = bool
-	end
+		print("Setting ",areaName," as active area")
+        SPAWNS[areaName]['Active'] = bool
 end
-
+ 
 function InitializeCreepList( areaName )
-	if areaName == "DemonArea" then
-		GameMode.DemonAreaCreeps = {}
-	elseif areaName == "GoblinArea" then
-		GameMode.GoblinAreaCreeps = {}
-	elseif areaName == "BlackGoblinArea" then
-		GameMode.BlackGoblinAreaCreeps = {}
-	elseif areaName == "BanditArea" then
-		GameMode.BanditAreaCreeps = {}
-	elseif areaName == "SpiderArea" then
-		GameMode.BanditAreaCreeps = {}
-	elseif areaName == "SeaServantArea" then
-		GameMode.BanditAreaCreeps = {}
-	elseif areaName == "MountainWolfArea" then
-		GameMode.BanditAreaCreeps = {}
-	end
+		print("Initializing creep list for ",areaName)
+        SPAWNS[areaName] = {}
+        SPAWNS[areaName]['Creeps'] = {}
 end
-
+ 
 -- returns the list in which the creeps of the area are stored
 function GetAreaCreepList( areaName )
-	if areaName == "DemonArea" then
-		return GameMode.DemonAreaCreeps
-	elseif areaName == "GoblinArea" then
-		return GameMode.GoblinAreaCreeps
-	elseif areaName == "BlackGoblinArea" then
-		return GameMode.BlackGoblinAreaCreeps
-	elseif areaName == "BanditArea" then
-		return GameMode.BanditAreaCreeps
-	elseif areaName == "SpiderArea" then
-		return GameMode.BanditAreaCreeps
-	elseif areaName == "SeaServantArea" then
-		return GameMode.BanditAreaCreeps
-	elseif areaName == "MountainWolfArea" then
-		return GameMode.BanditAreaCreeps
-	end
+		print("Getting creep list for ",areaName)
+        return SPAWNS[areaName]['Creeps']
 end
-
+ 
 -- Gives a new position from the available for that type of creature
 function GetFreePositionInAreaFor( areaName, unitName )
-	print("Finding free position in ",areaName," for ",unitName)
-	if areaName == "DemonArea" then
-		if unitName == "npc_demon_imp" then
-			return GetEmptyPosition(GameMode.demon_imp_spawnLocations)
-		elseif unitName == "npc_demon_hound" then
-			return GetEmptyPosition(GameMode.demon_hound_spawnLocations)
-		elseif unitName == "npc_demon_fire" then
-			return GetEmptyPosition(GameMode.demon_fire_spawnLocations)
-		elseif unitName == "npc_forest_bear" then
-			return GetEmptyPosition(GameMode.forest_bear_spawnLocations)
-		end
-	elseif areaName == "GoblinArea" then
-		if unitName == "npc_goblin" then
-			return GetEmptyPosition(GameMode.goblin_spawnLocations)
-		elseif unitName == "npc_shaman" then
-			return GetEmptyPosition(GameMode.shaman_spawnLocations)
-		end
-	elseif areaName == "BlackGoblinArea" then
-		if unitName == "npc_black_goblin" then
-			return GetEmptyPosition(GameMode.black_goblin_spawnLocations)
-		elseif unitName == "npc_black_shaman" then
-			return GetEmptyPosition(GameMode.black_shaman_spawnLocations)
-		elseif unitName == "npc_ogre" then
-			return GetEmptyPosition(GameMode.ogre_spawnLocations)
-		end
-	elseif areaName == "BanditArea" then
-		if unitName == "npc_bandit" then
-			return GetEmptyPosition(GameMode.bandit_spawnLocations)
-		end
-	elseif areaName == "SpiderArea" then
-		if unitName == "npc_forest_spider" then
-			return GetEmptyPosition(GameMode.forest_spider_spawnLocations)
-		elseif unitName == "npc_forest_lurker" then
-			return GetEmptyPosition(GameMode.forest_lurker_spawnLocations)
-		elseif unitName == "npc_giant_spider" then
-			return GetEmptyPosition(GameMode.giant_spider_spawnLocations)
-		end
-	elseif areaName == "SeaServantArea" then
-		if unitName == "npc_sea_servant_huntsman" then
-			return GetEmptyPosition(GameMode.sea_servant_huntsman_spawnLocations)
-		elseif unitName == "npc_sea_servant_wavecaller" then
-			return GetEmptyPosition(GameMode.sea_servant_wavecaller_spawnLocations)
-		end
-	elseif areaName == "MountainWolfArea" then
-		if unitName == "npc_mountain_wolf" then
-			return GetEmptyPosition(GameMode.mountain_wolf_spawnLocations)
-		end
-	end
+        print("Finding free position in ",areaName," for ",unitName)
+        return GetEmptyPosition(SPAWNS[areaName][unitName.."_spawnLocations"])
 end
 
 function GetEmptyPosition( list )
