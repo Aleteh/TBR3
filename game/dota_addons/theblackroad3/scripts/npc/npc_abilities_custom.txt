@@ -6,40 +6,6 @@
 		"AbilityTextureName"			"rubick_empty1"
 		"MaxLevel" 						"1"
 	}
-	"hero_ability_name"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"hero_ability_name"
-		"MaxLevel" 						"7"
-	
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-	
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"8.0"
-	
-		"AbilityManaCost"				"100"
-		"AbilityDamage"					"75 130 200"
-	
-		"precache"
-		{
-			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"value"			"900"
-			}
-		}
-	}
 	"ability_ultimate"
 	{
 		"BaseClass"             		"ability_datadriven"
@@ -4105,6 +4071,40 @@
 			}
 		}
 	}
+	"hero_ability_name"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"hero_ability_name"
+		"MaxLevel" 						"7"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8.0"
+	
+		"AbilityManaCost"				"100"
+		"AbilityDamage"					"75 130 200"
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"900"
+			}
+		}
+	}
 	//}End Spartan Warrior
 	
 	//Khaos Champion
@@ -5566,6 +5566,68 @@
 			}	
 		}
 	}
+	"nukacha_chain_lightning" //ultimate1, illusion with shared HP
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"zuus_arc_lightning"
+		"MaxLevel" 						"1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"11"	
+		"AbilityManaCost"				"75"
+		"AbilityCastRange"				"500"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"ability_Damage"	"125"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"decay_per_jump"	"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bounces_count"			"12"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bounce_range"		"500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bounce_time"		"0.22"	
+			}
+		}
+	
+		"precache"
+		{
+			"particle"	"particles/items_fx/chain_lightning.vpcf"
+			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+			"Soundfile"	"sounds/weapons/hero/zuus/arc_lightning.vsnd"
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/CommonLightningSpells.lua"
+				"Function"		"SimpleLightning"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Temple Guardian: Pray - Ares
 	//=================================================================================================================
@@ -6543,6 +6605,139 @@
 				"Duration"	"%duration"
 				}
 			}
+	}
+	"rockthul_chain_lightning" //ultimate1, illusion with shared HP
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"zuus_arc_lightning"
+		"MaxLevel" 						"1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"11"	
+		"AbilityManaCost"				"120"
+		"AbilityCastRange"				"500"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"ability_Damage"	"500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"decay_per_jump"	"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bounces_count"			"12"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bounce_range"		"500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bounce_time"		"0.22"	
+			}
+		}
+	
+		"precache"
+		{
+			"particle"	"particles/items_fx/chain_lightning.vpcf"
+			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+			"Soundfile"	"sounds/weapons/hero/zuus/arc_lightning.vsnd"
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/CommonLightningSpells.lua"
+				"Function"		"SimpleLightning"
+			}
+		}
+	}
+	
+	"rockthul_command_aura"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ranger_prevailing_winds"
+			// General
+	//-------------------------------------------------------------------------------------------------------------
+	"MaxLevel"						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"	"35"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"900"
+		}
+	}
+	
+	"precache"
+	{
+		"particle"	"particles/dire_fx/bad_ancient_flow_test.vpcf"
+		"particle"	"particles/addons_gameplay/lamp_flame_tintable_a.vpcf"
+	}
+	
+	"Modifiers"    				
+	{  						
+		"prevailing_winds_modifier"   	
+		{
+			"IsBuff"					"1"
+			"IsPurgable"				"0"
+			"IsHidden"					"1"
+			"Passive"					"1"
+			"EffectName"				"particles/dire_fx/bad_ancient_flow_test.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"Aura"						"rockthul_command_aura_modifier"
+			"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Radius"				"%radius"
+			"Aura_Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		}
+	
+		"rockthul_command_aura_modifier"
+		{
+			"IsHidden"					"0"
+			"IsBuff"					"1"
+			"IsPurgable"				"0"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
+			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/addons_gameplay/lamp_flame_tintable_a.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"TARGET"
+				}
+			}
+		}
+	}
 	}
 	//=================================================================================================================
 	// Spartan Warrior: Charge
@@ -7538,9 +7733,6 @@
 	
 	    	}
 	  	}
-	
-	
-	
 	// Ultimate 2 - Benediction
 	// Effect: The Templar sacrifices 25% of his max health to place a shield on all nearby allies for an amount equal to the health lost. Lasts 20 seconds.
 	// Benefits From: N/A
@@ -10147,202 +10339,4 @@
 			//}
 		}
 	}
-
-	"nukacha_chain_lightning" //ultimate1, illusion with shared HP
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zuus_arc_lightning"
-		"MaxLevel" 						"1"
-	
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"11"	
-		"AbilityManaCost"				"75"
-		"AbilityCastRange"				"500"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ability_Damage"	"125"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"decay_per_jump"	"20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bounces_count"			"12"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bounce_range"		"500"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bounce_time"		"0.22"	
-			}
-		}
-
-		"precache"
-		{
-			"particle"	"particles/items_fx/chain_lightning.vpcf"
-			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
-			"Soundfile"	"sounds/weapons/hero/zuus/arc_lightning.vsnd"
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"abilities/CommonLightningSpells.lua"
-				"Function"		"SimpleLightning"
-			}
-		}
-	}
-
-"rockthul_command_aura"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"ranger_prevailing_winds"
-			// General
-	//-------------------------------------------------------------------------------------------------------------
-	"MaxLevel"						"1"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"bonus_damage"	"35"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"radius"			"900"
-		}
-	}
-
-	"precache"
-	{
-		"particle"	"particles/dire_fx/bad_ancient_flow_test.vpcf"
-		"particle"	"particles/addons_gameplay/lamp_flame_tintable_a.vpcf"
-	}
-
-	"Modifiers"    				
-	{  						
-		"prevailing_winds_modifier"   	
-		{
-			"IsBuff"					"1"
-			"IsPurgable"				"0"
-			"IsHidden"					"1"
-			"Passive"					"1"
-			"EffectName"				"particles/dire_fx/bad_ancient_flow_test.vpcf"
-			"EffectAttachType"			"follow_origin"
-			"Aura"						"rockthul_command_aura_modifier"
-			"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-			"Aura_Radius"				"%radius"
-			"Aura_Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		}
-
-		"rockthul_command_aura_modifier"
-		{
-			"IsHidden"					"0"
-			"IsBuff"					"1"
-			"IsPurgable"				"0"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
-			}
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"		"particles/addons_gameplay/lamp_flame_tintable_a.vpcf"
-					"EffectAttachType" 	"follow_origin"
-					"Target" 			"TARGET"
-				}
-			}
-		}
-	}
-}
-
-"rockthul_chain_lightning" //ultimate1, illusion with shared HP
-{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"zuus_arc_lightning"
-		"MaxLevel" 						"1"
-	
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"11"	
-		"AbilityManaCost"				"120"
-		"AbilityCastRange"				"500"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ability_Damage"	"500"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"decay_per_jump"	"20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bounces_count"			"12"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bounce_range"		"500"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bounce_time"		"0.22"	
-			}
-		}
-
-		"precache"
-		{
-			"particle"	"particles/items_fx/chain_lightning.vpcf"
-			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
-			"Soundfile"	"sounds/weapons/hero/zuus/arc_lightning.vsnd"
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"abilities/CommonLightningSpells.lua"
-				"Function"		"SimpleLightning"
-			}
-		}
-	}
-
 }
