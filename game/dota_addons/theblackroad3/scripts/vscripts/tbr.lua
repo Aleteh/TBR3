@@ -164,77 +164,26 @@ function GameMode:InitGameMode()
 	GameRules.PLAYERS_PICKED_HERO = 0
 
 	-- SaveRPG Thinker
-	Timers:CreateTimer("SaveRPGThink", { 
+	--[[Timers:CreateTimer("SaveRPGThink", { 
 		endTime = AUTOSAVE_INTERVAL,
 		callback = function()
 			RPGSave()
 			return AUTOSAVE_INTERVAL		
-		end })
+		end })]]
 
 	-- ItemDrops Table of items currently being rolled
 	GameRules.RollingItems = {}
 
 	-- Spawn Locations and Area Names Generation
-	
-	GameRules.SPAWNS = {} -- Initializing SPAWNS
-
-	SPAWNS = {}	-- The array that holds all the names of areas and spawns
+	SPAWNS = {}	-- The array that holds all the spawned creatures for each area
 
 	-- Spawner entities in map should be named: creepName_spawner
-	for areaName,areaTable in pairs(GameRules.SPAWNS) do
-		SPAWNS[areaName] = {}
+	for areaName,areaTable in pairs(GameRules.SpawnInfoKV) do
+		SPAWNS[areaName] = {} --Holds the spawned creatures for this area name
 		for unitName,v in pairs(areaTable) do
 			SPAWNS[areaName][unitName.."_spawnLocations"] = Entities:FindAllByName(unitName.."_spawner")
 		end
 	end
-
-	-- Spawn Locations and Area Activations
-
-	-- Make separate lists based on creepName to randomize spawn locations later
-	-- These lists store the entity handles of every spawn location on the map (actual location is accessed via :GetOrigin())
-	-- Spawn name entity format guide: creepName_spawner
-	-- Dont repeat creepNames, just make new copies of the unit if thats the case
-
-	-- Spawner entities named: creepName_spawner
-	-- Also, they are fricking Satyrs, not golins, what the hell :D
-
-	 -- Demon Area
-	GameMode.demon_imp_spawnLocations = Entities:FindAllByName("demon_imp_spawner")
-	GameMode.demon_hound_spawnLocations = Entities:FindAllByName("demon_hound_spawner")
-	GameMode.demon_fire_spawnLocations = Entities:FindAllByName("demon_fire_spawner")
-	GameMode.forest_bear_spawnLocations = Entities:FindAllByName("forest_bear_spawner")
-	GameMode.DemonAreaCreeps = {} -- Keep a list of all creeps in the area
-
-	-- Goblin Area
-	GameMode.goblin_spawnLocations = Entities:FindAllByName("goblin_spawner")
-	GameMode.shaman_spawnLocations = Entities:FindAllByName("shaman_spawner")
-	GameMode.GoblinAreaActive = false
-
-	-- Black Goblin Area
-	GameMode.black_goblin_spawnLocations = Entities:FindAllByName("black_goblin_spawner")
-	GameMode.ogre_spawnLocations = Entities:FindAllByName("ogre_spawner")
-	GameMode.black_shaman_spawnLocations = Entities:FindAllByName("black_shaman_spawner")
-	GameMode.BlackGoblinAreaCreeps = {}
-
-	-- Bandit Area
-	GameMode.bandit_spawnLocations = Entities:FindAllByName("bandit_spawner")
-	GameMode.BanditAreaCreeps = {}
-
-	-- Spider Area
-	GameMode.forest_spider_spawnLocations = Entities:FindAllByName("forest_spider_spawner")
-	GameMode.forest_lurker_spawnLocations = Entities:FindAllByName("forest_lurker_spawner")
-	GameMode.giant_spider_spawnLocations = Entities:FindAllByName("giant_spider_spawner")
-	GameMode.SpiderAreaCreeps = {}
-
-	-- Sea Servant Area
-	GameMode.sea_servant_huntsman_spawnLocations = Entities:FindAllByName("sea_servant_huntsman_spawner")
-	GameMode.sea_servant_wavecaller_spawnLocations = Entities:FindAllByName("sea_servant_wavecaller_spawner")
-	GameMode.SeaServantAreaCreeps = {}
-
-	-- Mountain Wolf Area
-	GameMode.mountain_wolf_spawnLocations = Entities:FindAllByName("mountain_wolf_spawner")
-	GameMode.MountainWolfAreaCreeps = {}
-
 	
 	print('[TBR] Done loading the gamemode!\n\n')
 end
@@ -294,41 +243,14 @@ end
 
 -- Read and assign configurable keyvalues if applicable
 function GameMode:ReadGameConfiguration()
-	self.SpawnInfoKV = LoadKeyValues( "scripts/kv/spawn_info.kv" )
+	GameRules.SpawnInfoKV = LoadKeyValues( "scripts/kv/spawn_info.kv" )
 	self.ItemInfoKV = LoadKeyValues( "scripts/kv/item_info.kv" )
 	GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
 	GameRules.DemonWaves = LoadKeyValues("scripts/kv/demon_waves.kv")
 
 	GameRules.ItemKV = LoadKeyValues("scripts/npc/npc_items_custom.txt")
 	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt") --VOLVO WHY
-
-	--DeepPrintTable(GameRules.DropTable)
-
-	-- separate in different lists to make it more manageable (not needed)
-	--[[self:ReadGoblinAreaSpawnConfiguration( self.SpawnInfoKV["GoblinArea"] )]]
 end
-
---[[function GameMode:ReadGoblinAreaSpawnConfiguration( kvSpawns )
-	
-	self.GoblinAreaInfoList = {}
-	if type( kvSpawns ) ~= "table" then
-		print("NO TABLE")
-		return
-	end
-
-	for _,unit in pairs( kvSpawns ) do
-		DeepPrintTable(unit)	
-		table.insert( self.GoblinAreaInfoList, {
-			RespawnTime = tonumber( unit.RespawnTime or 0 ),
-			MaxSpawn = tonumber( unit.MaxSpawn or 0 ),
-			GoldBounty = tonumber( unit.GoldBounty or 0 ),
-			MatBounty = tonumber( unit.MatBounty or 0 )
-		})
-	end
-
-	DeepPrintTable(self.GoblinAreaInfoList)
-
-end]]
 
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
@@ -435,7 +357,7 @@ function GameMode:OnHeroInGame(hero)
 	hero.profession = "None"
 
 	-- Stat RPG Load
-	RPGLoad(hero)
+	--RPGLoad(hero)
 
 end
 
@@ -641,7 +563,7 @@ function GameMode:OnPlayerLevelUp(keys)
 	end
 
 	-- Save all players
-	RPGSave()
+	--RPGSave()
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -775,8 +697,8 @@ end
 
 -- go through the self.SpawnInfoKV and return the bounty
 function GameMode:GetBountyFor( unitName )
-	for k,v in pairs(self.SpawnInfoKV) do
-		for key,value in pairs(self.SpawnInfoKV[k]) do
+	for k,v in pairs(GameRules.SpawnInfoKV) do
+		for key,value in pairs(GameRules.SpawnInfoKV[k]) do
 			if key == unitName then 
 				return RandomInt(value.BountyGoldMin, value.BountyGoldMax)
 			end
@@ -888,7 +810,7 @@ function GameMode:OnDisconnect(keys)
 	end
 	GameRules.PLAYER_COUNT = playercounter
 
-	RPGSave()
+	--RPGSave()
 end
 
 -- A player has reconnected to the game.  
