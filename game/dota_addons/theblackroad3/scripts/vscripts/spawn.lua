@@ -8,15 +8,16 @@ function SpawnArea( trigger )
 
 	Timers:CreateTimer(1, function() 
 		if caller:IsTouching(activator) and not IsAreaActive( areaName ) then
-			SetAreaActive( areaName, true )
 			
 			print("\n Spawning units of "..areaName.. "\n")
 			
 			-- initialize the table to store all the creeps in the area
 			InitializeCreepList( areaName )
 
+			SetAreaActive( areaName, true )
+
 			-- Spawn Initial Units
-			local AreaInfoList = GameMode.SpawnInfoKV[ areaName ]
+			local AreaInfoList = GameRules.SpawnInfoKV[ areaName ]
 			DeepPrintTable(AreaInfoList)
 			for k,v in pairs( AreaInfoList ) do
 				--v.Name is the unit to spawn
@@ -73,7 +74,7 @@ function RespawnCreep( event )
 
 	-- get the area the unit belongs to
 	local unit_area = unit.area
-	local area_table = GameMode.SpawnInfoKV[unit_area]
+	local area_table = GameRules.SpawnInfoKV[unit_area]
 
 	-- get the unit respawn time from the spawn_info table
 	local unitTableIndex = getUnitIndex(area_table,unit_name)
@@ -114,31 +115,30 @@ end
 -- returns whether the area is activate or not, that is, there are still players inside the area
 function IsAreaActive( areaName )
 	print("Checking if ",areaName," is active")
-        return SPAWNS[areaName]['Active']
+	return SPAWNS[areaName]['Active']
 end
  
 -- sets the area active or inactive
 function SetAreaActive( areaName, bool )
 	print("Setting ",areaName," as active area")
-        SPAWNS[areaName]['Active'] = bool
+    SPAWNS[areaName]['Active'] = bool
 end
  
 function InitializeCreepList( areaName )
 	print("Initializing creep list for ",areaName)
-        SPAWNS[areaName] = {}
-        SPAWNS[areaName]['Creeps'] = {}
+    SPAWNS[areaName]['Creeps'] = {}
 end
  
 -- returns the list in which the creeps of the area are stored
 function GetAreaCreepList( areaName )
 	print("Getting creep list for ",areaName)
-        return SPAWNS[areaName]['Creeps']
+    return SPAWNS[areaName]['Creeps']
 end
  
 -- Gives a new position from the available for that type of creature
 function GetFreePositionInAreaFor( areaName, unitName )
-        print("Finding free position in ",areaName," for ",unitName)
-        return GetEmptyPosition(SPAWNS[areaName][unitName.."_spawnLocations"])
+    print("Finding free position in ",areaName," for ",unitName)
+    return GetEmptyPosition(SPAWNS[areaName][unitName.."_spawnLocations"])
 end
 
 function GetEmptyPosition( list )
