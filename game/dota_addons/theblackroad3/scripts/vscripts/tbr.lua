@@ -13,7 +13,7 @@ GOLD_PER_TICK = 0                    	-- How much gold should players get per ti
 GOLD_TICK_TIME = 0                     	-- How long should we wait in seconds between gold ticks?
 
 RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes (Note: this is not working currently I believe)
-CAMERA_DISTANCE_OVERRIDE = 1200         -- How far out should we allow the camera to go?  1134 is the default in Dota
+CAMERA_DISTANCE_OVERRIDE = 1300         -- How far out should we allow the camera to go?  1134 is the default in Dota
 
 MINIMAP_ICON_SIZE = 1                 	-- What icon size should we use for our heroes?
 MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
@@ -231,13 +231,15 @@ end
 	]]
 function GameMode:PostLoadPrecache()
 	print("[TBR] Performing Post-Load precache")    
-	PrecacheItemByNameAsync("item_wraithblade", function(...) end)
-	--PrecacheItemByNameAsync("example_ability", function(...) end)
-	--PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
-	PrecacheUnitByNameAsync("npc_bank", function(...) end)
 	PrecacheUnitByNameAsync("player_gravestone", function(...) end)
 	PrecacheUnitByNameAsync("player_teleporter",function(...) end)
-	PrecacheUnitByNameAsync("npc_demon_fire", function(...) end)
+
+	for areaName,areaTable in pairs(GameRules.SpawnInfoKV) do
+    	for unitName,_ in pairs(areaTable) do
+        	PrecacheUnitByNameAsync(unitName,function(...) end)
+    	end
+	end
+
 end
 
 
