@@ -65,7 +65,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/kunkka/kunkka.vmdl"	 
-		"ModelScale"				"0.9"
+		"ModelScale"				"0.7"
 		"Level"						"5"
 		
 		// Abilities
@@ -150,7 +150,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/kunkka/kunkka.vmdl"	 
-		"ModelScale"				"0.9"
+		"ModelScale"				"0.7"
 		"Level"						"5"
 		
 		// Abilities
@@ -236,7 +236,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/kunkka/kunkka.vmdl"	 
-		"ModelScale"				"0.9"
+		"ModelScale"				"0.7"
 		"Level"						"5"
 		
 		// Abilities
@@ -324,7 +324,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/kunkka/kunkka.vmdl"
-		"ModelScale"				"0.9"
+		"ModelScale"				"0.7"
 		"Level"						"5"
 		
 		// Abilities
@@ -413,7 +413,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/dragon_knight/dragon_knight.vmdl"	 //Needs model data
-		"ModelScale"				"0.7"
+		"ModelScale"				"0.6"
 		"Level"						"2"
 		
 		// Abilities
@@ -500,7 +500,7 @@
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/heroes/drow/drow.vmdl"	 //Needs model data
-		"ModelScale"				"0.9"
+		"ModelScale"				"0.7"
 		"Level"						"2"
 		
 		// Abilities
@@ -2446,8 +2446,6 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"material_assign"			// Ability 1
-		"Ability2"					"material_drop"
 	
 		"Ability10"				"creep_respawn"
 
@@ -4177,14 +4175,12 @@
 		"BaseClass"			"npc_dota_creature"
 		"Model"				""	 //Needs model data
 		"ModelScale"			"1"
-		"Level"				"3"
+		"Level"				"29"
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"			""	 //Reference: ACpv
 		
-		
-
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"			"0"
@@ -4193,18 +4189,18 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"12.0"
-		"AttackDamageMax"		"13.0"
+		"AttackDamageMin"		"387.0"
+		"AttackDamageMax"		"445.0"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.5"
+		"AttackRate"			"2.25"
 		"AttackAnimationPoint"		"0.6"
 		"AttackAcquisitionRange"	"500"
 		"AttackRange"			"100"
 		
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"			"8.0"
-		"BountyGoldMax"			"10.0"
+		"BountyGoldMin"			"37.0"
+		"BountyGoldMax"			"51.0"
 		
 		// Movement
 		//----------------------------------------------------------------
@@ -4214,8 +4210,8 @@
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			"350"
-		"StatusHealthRegen"		"0.5"
+		"StatusHealth"			"5600"
+		"StatusHealthRegen"		"4.00"
 		"StatusMana"			"0"
 		"StatsManaRegen"		"0"
 		
@@ -7217,7 +7213,7 @@
 	// Creature: Nasty Big Pointy Teeth!!
 	// Description: "Medium melee unit. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
-	"nasty_big_pointy_teeth!!"
+	"nasty_big_pointy_teeth"
 	{
 		// General
 		//----------------------------------------------------------------
