@@ -5,6 +5,7 @@
  
 	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/interactable.xml" />
 	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/quest_log.xml" />
+	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/shop_test.xml" />
    
   </Panel> 
 </root>

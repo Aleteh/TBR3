@@ -1,0 +1,18 @@
+<root>
+  <script>
+    var x = 50
+    var y = 50
+    var w = 50
+    var h = 50
+    var color = "FF0000"
+
+    $.GetContextPanel().style.position = x + "px " + y + "px 0px";
+    $.GetContextPanel().style.width = w + "px";
+    $.GetContextPanel().style.height = h + "px";
+	$.GetContextPanel().style.backgroundColor = "#" + color + "ff";
+
+  </script>
+  <Panel>
+
+  </Panel>
+</root>
