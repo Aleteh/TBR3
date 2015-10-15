@@ -1,0 +1,85 @@
+//=================================================================================
+// Creature: Sea Servant Huntsman
+// Description: "Light melee unit. |n|n|cffffcc00Attacks land units.|r"
+//=================================================================================
+"sea_servant_huntsman"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/slark/slark.vmdl"	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"15"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"4"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"86"
+	"AttackDamageMax"		"104"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.35"
+	"AttackAnimationPoint"		"0.66"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"16.0"
+	"BountyGoldMax"			"20.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"1850"
+	"StatusHealthRegen"		"2.50"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	
+	"vscripts"		"creep_ai.lua"
+
+	"Creature"
+	{
+		"AttachWearables"
+		{
+    			"Wearable1" { "ItemDef" "5261" }
+    			"Wearable2" { "ItemDef" "5262" }
+    			"Wearable3" { "ItemDef" "5263" }
+    			"Wearable4" { "ItemDef" "5264" }
+    			"Wearable5" { "ItemDef" "5265" }
+		}
+	}
+	
+}

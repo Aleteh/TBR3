@@ -1,0 +1,43 @@
+//Journeyman 2 - Poisoned Arrow (Autocastable)
+//Effect: You coat your arrow in a concentrated poison and fire it deep into the enemy. They initially take static plus Agility damage and then poison damage over time based on the level of the enemy. The poison reacts more violently the stronger the immune system, thus dealing increased damage to stronger enemies.
+//Benefits From: N/A
+//Cooldown: 16 seconds
+//Range: 600
+//Cost: Average
+
+//Notes:
+//• Effective single target ability with a chance to debuff the enemy, as well as dealing poison damage based off the enemies level
+"ranger_poisoned_arrow"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ranger_poisoned_arrow"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

@@ -1,0 +1,73 @@
+//=================================================================================
+// Creature: The Dark Knight
+// Description: "Heavy melee unit that casts Raise Dead, Death Coil, and Animate Dead. |n|n|cffffcc00Attacks land units.|r"
+//=================================================================================
+"the_dark_knight"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				""	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"46"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: ACrd
+	"Ability2"			""	 //Reference: ACdc
+	"Ability3"			""	 //Reference: ACad
+	
+	
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"5"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"542.0"
+	"AttackDamageMax"		"620.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.00"
+	"AttackAnimationPoint"		"0.6"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"128"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"58.0"
+	"BountyGoldMax"			"70.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"16111"
+	"StatusHealthRegen"		"12.00"
+	"StatusMana"			"600"
+	"StatsManaRegen"		"2.50"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

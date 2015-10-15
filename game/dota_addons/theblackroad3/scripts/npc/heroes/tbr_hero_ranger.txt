@@ -1,0 +1,72 @@
+//=================================================================================================================
+// HERO: Ranger
+// • Rangers are first and foremost a DPS class, with minor hybrid capabilities. They are not intended to be entire group healers. 
+// With some specialization however they can be quite effective DPS and quite effective tank/melee healers.
+// • Agility Rangers will deal higher damage than Intelligence Rangers but will not have the ability to assist in healing
+//=================================================================================================================
+"tbr_hero_ranger"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------
+	
+	"ModelScale"				"0.7"
+
+	// Abilities
+	//------------------------------------------------------------------------------------------------------------
+
+	"override_hero"				"npc_dota_hero_windrunner"
+	
+	"Ability1"					"ranger_black_arrow"
+	"Ability2"					"ranger_stun_shot"
+	"Ability3"					""
+	"Ability4"					""
+	"Ability5"					"ranger_soul_piercing_shot"
+	"Ability6"					"ranger_prevailing_winds"
+	"Ability7"					""
+	"Ability8"					""
+	"Ability9"					""
+	"Ability10"					""
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
+
+
+	// Attributes
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"         "12" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "13" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "13" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"2.0"
+	"AttackDamageMax"		"12.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.46"
+	"AttackAnimationPoint"		"0.7"
+	"AttackAcquisitionRange"	"650"
+	"AttackRange"			"600"
+	//"ProjectileModel"		""	 //Add projectile models
+	//"ProjectileSpeed"		"900"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"100"
+	"StatusHealthRegen"		"0.25"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0.01"
+}

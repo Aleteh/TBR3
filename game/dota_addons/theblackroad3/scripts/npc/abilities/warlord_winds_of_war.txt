@@ -1,0 +1,215 @@
+//=================================================================================================================
+// Warlord: Winds of war
+//=================================================================================================================
+"warlord_winds_of_war"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlord_winds_of_war"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8"
+	"AbilityManaCost"				"15 22 30 39 49 69 72 85"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+    	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"                 "125 250 435 700 1050 1600 2400 4000"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_blade_fury_ground.vpcf"
+		"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_blade_fury.vpcf"
+		"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_cyclone.vpcf"
+		"particle"	"particles/units/heroes/hero_invoker/invoker_tornado_trail.vpcf"
+		"particle"	"particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf"
+		"particle"	"particles/units/heroes/hero_earth_spirit/espirit_boouldersmash_groundsmoketrail.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"350"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"speed"				"600"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"tick_interval"		"0.2"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"CASTER"
+			"ModifierName"		"modifier_whirlwind"
+		}
+		"ApplyModifier"
+		{
+			"Target" 			"CASTER"
+			"ModifierName"		"modifier_whirlwind_spin"
+		}
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/warlord.lua"
+			"Function"			"WhirlwindMoveToPoint"
+			"Target"			"POINT"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_whirlwind"
+		{
+			"States"
+			{
+				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_juggernaut/juggernaut_blade_fury.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "CASTER"
+					"ControlPoints"
+					{
+						"05"	"%radius 0 0"
+					}					
+				}
+
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_invoker/invoker_tornado_child.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"CASTER"
+				}
+				"AttachEffect"
+				{
+					"EffectName"		"particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"CASTER"
+				}
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_earth_spirit/espirit_boouldersmash_groundsmoketrail.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"Target" 			"CASTER"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Juggernaut.BladeFuryStart"
+					"Target" 		"CASTER"
+				}			
+			}
+
+			"ThinkInterval"  "%tick_interval"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"CASTER"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"Damage"
+						{
+							"Target"		"TARGET"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
+							"Damage"		"%AbilityDamage * %tick_interval"
+						}
+
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_whirlwind_knockback"
+							"Target" 		"TARGET"
+						}
+
+						"FireSound"
+						{
+							"EffectName"	"Hero_Juggernaut.BladeFury.Impact"
+							"Target" 		"TARGET"
+						}
+					}
+				}		
+			}
+
+			"OnDestroy"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Juggernaut.BladeFuryStop"
+					"Target" 		"CASTER"
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/warlord.lua"
+					"Function"		"WhirlwindStop"
+				}
+			}
+		}
+
+		"modifier_whirlwind_spin"
+		{
+			"IsHidden"				"1"
+			"OverrideAnimation"     "ACT_DOTA_OVERRIDE_ABILITY_1"
+		}
+
+		"modifier_whirlwind_knockback"
+		{
+			"IsHidden"				"0"
+			"Duration"				"0.5"
+			"OnCreated"
+			{
+				"Knockback"
+				{
+					"Target"            "TARGET"
+					"Center" 	        "CASTER"
+					"Distance"	        "400"
+					"Duration"	        "0.2"
+					"Height"	        "0"
+					"IsFixedDistance"	"1"
+					"ShouldStun"        "0"	
+				}
+			}
+		}
+
+	
+ 		//"modifier_whirlwind_spin"
+		//{
+		// 	"IsHidden"				"1"
+		// 	"ThinkInterval"  		"0.03"
+		// 	"OnIntervalThink"
+		// 	{
+		// 		"Rotate"
+	 	//  	{
+	 	// 			"Target"       "CASTER"
+	 	//          "PitchYawRoll"  "0 45 0"
+	 	//      }
+		// 	}			
+		//}
+	}
+}

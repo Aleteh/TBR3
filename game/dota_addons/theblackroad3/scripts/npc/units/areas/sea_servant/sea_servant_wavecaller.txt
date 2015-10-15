@@ -1,0 +1,88 @@
+//=================================================================================
+// Creature: Sea Servant Wavecaller
+// Description: "Medium ranged amphibious unit with Abolish Magic and Slow. |n|n|cffffcc00Attacks land and air units.|r"
+//=================================================================================
+"sea_servant_wavecaller"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/slark/slark.vmdl"	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"18"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: 
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"2"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"112"
+	"AttackDamageMax"		"126"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.60"
+	"AttackAnimationPoint"		"0.6"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"500"
+	"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"900"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"19.0"
+	"BountyGoldMax"			"24.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"1800"
+	"StatusHealthRegen"		"3.00"
+	"StatusMana"			"300"
+	"StatsManaRegen"		"0.75"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+
+	"vscripts"		"creep_ai.lua"
+
+	"Creature"
+	{
+		"AttachWearables"
+		{
+    			"Wearable1" { "ItemDef" "6383" }
+    			"Wearable2" { "ItemDef" "6392" }
+    			"Wearable3" { "ItemDef" "6405" }
+    			"Wearable4" { "ItemDef" "6406" }
+    			"Wearable5" { "ItemDef" "6407" }
+		}
+	}
+	
+}

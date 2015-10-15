@@ -1,0 +1,83 @@
+//=================================================================================================================
+// Warlock: Blind
+//Class Skill - Blind
+//Effect: You have a 5% chance everytime you deal damage of inflicting Blind.
+//Benefits From: N/A
+//Cooldown: N/A
+//Range: N/A
+//Cost: N/A
+
+//Notes:
+//• A very effective way of mitigating physical damage. Blind reduces the enemies chance to hit making it stack nicely with attack speed slow, as well as being effective both in groups and by yourself
+
+//=================================================================================================================
+//Blinds a target enemy unit for up to 10 seconds for 600 mana. While it is blinded, the affected unit will move randomly
+// and will not attack. This skill cannot be improved. Cooldown 8 seconds, 700 range. 
+"warlock_blind"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlock_blind"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityCastRange"				"700"
+	"AbilityDuration"				"10"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"8"
+	"AbilityManaCost"				"600"
+
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"blind_max_duration"	"10"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/warlock.lua"
+			"Function"			"blind"
+		}
+	}
+	"Modifiers"
+	{
+		"blind_modifier"
+		{
+			"IsDebuff"	"1"
+			"EffectName"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/warlock.lua"
+					"Function"		"blind_desorient"
+				}
+			}
+			"ThinkInterval"	"0.5"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/warlock.lua"
+					"Function"		"blind_desorient"
+				}
+			}
+		}
+	}
+}

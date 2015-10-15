@@ -1,0 +1,107 @@
+//========================================================================================================================================================================	
+// Demon Waves
+//========================================================================================================================================================================
+//	Champion of Hades
+//	Demonic Carrion
+//	Demonic Pillager
+//	Demon Thrall
+//	Demon Slave
+//	Minor Demon
+//  Lesser Demon
+//  Demon Ogre 
+// 	Demon Warrior
+//	Nether Demon 
+//	Engine of Destruction
+//	Demon Seer
+//	Greater Demon 
+//	Destroyer
+//=================================================================================
+
+//=================================================================================
+// Creature: Champion of Hades
+// Description: "Cunning Hero, adept at maneuvering through battles. Can learn Immolation, Evasion, Mana Burn, and Metamorphosis."
+//=================================================================================
+"wave_champion_of_hades"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/lycan/lycan.vmdl"	 //Needs model data
+	"ModelScale"		"1"
+	"Level"				"5"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: A00U
+	"Ability2"			""	 //Reference: AInv
+	
+
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"8"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"52.0"
+	"AttackDamageMax"		"74.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.00"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"650"
+	"AttackRange"			"100"
+	"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"900"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"100.0"
+	"BountyGoldMax"			"100.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.40"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"540"
+	"StatusHealthRegen"		"0.5"
+	"StatusMana"			"350"
+	"StatsManaRegen"		"0.01"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+
+	"vscripts"		"demon_wave_ai.lua"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+	{
+		"AttachWearables" //Sanguine Set
+		{
+			"Wearable1"		{	"ItemDef"		"4859"		}
+			"Wearable2"		{	"ItemDef"		"4860"		}
+			"Wearable3" 	{	"ItemDef"		"4861"		}
+			"Wearable4"		{	"ItemDef"		"4862"		}
+			"Wearable5"		{	"ItemDef"		"4863"		}
+			"Wearable5"		{	"ItemDef"		"207"		}
+		}
+	}
+}

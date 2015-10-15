@@ -1,0 +1,17 @@
+"player_teleporter"
+{
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/props_teams/logo_radiant_small.vmdl"
+	"IsAncient"					"1"
+	"IsInvulnerable"			"1"
+	"ModelScale"				"1"
+	"HasInventory"				"0"
+	"Level"						"1"
+	"AbilityLayout"				"4"
+	"Ability1"					"teleporter"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"VisionDaytimeRange"		"0"	
+	"VisionNighttimeRange"		"0"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+}

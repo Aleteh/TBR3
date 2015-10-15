@@ -1,0 +1,25 @@
+//}End Spartan Warrior
+
+//Khaos Champion
+//{
+//=================================================================================================================
+// Khaos Champion: Custom Mana System
+//=================================================================================================================
+//	Khaos Champion every 0.99 seconds he gets 0.01 * level + 0.15 mana
+"kc_hatred"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"kc_hatred"
+	"MaxLevel" 						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers"
+	{
+		"hatred_modifier"
+		{
+			"Passive"			"1"
+			"IsBuff"			"1"
+			"IsHidden"			"0"
+		}
+	}
+}

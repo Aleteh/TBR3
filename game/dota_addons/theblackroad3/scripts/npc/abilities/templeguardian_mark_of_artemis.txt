@@ -1,0 +1,148 @@
+//=================================================================================================================
+// Temple Guardian: Mark of Artemis
+//=================================================================================================================
+//Artemis marks you as her own, causing each of your attacks to weaken the target so that it becomes more vulnerable. 
+//When you attack an enemy unit and you are marked by Artemis, all attacks against the target, including those made by 
+//	other heroes or units, will cause xx additional damage for xxx mana.
+   	//In addition, for each successive attack you make against the target, this additional damage increases by x. 
+   	//This bonus damage will slowly degenerate over time (it is decreased every 2.5 seconds by bonus damage / 40). 
+   	//As long as Mark of Artemis is active the caster will receive a 15% chance to do triple damage on each physical attack. 
+   	//Artemis' mark lasts 45 seconds.
+"templeguardian_mark_of_artemis"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"templeguardian_mark_of_artemis"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"20 35 55 80 115 160 220 300"
+	"AbilityDuration"               "45"
+    	
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+	}
+
+	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"			
+    			"dmg_per_hit"			"5 10 15 20 25 30 35 40"
+    		}
+    		"02"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"crit_chance" 			"15"
+    		}
+    		"03"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"crit_bonus" 			"300" //or 200?
+    		}
+    	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"CASTER"
+			"ModifierName"		"modifier_mark_of_artemis"
+		}
+		"AttachEffect"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"EffectRadius"				"800"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Omniknight.GuardianAngel.Cast"
+			"Target"		"CASTER"
+		}
+
+		//"RunScript"
+		//{
+		//	"ScriptFile"		"abilities/tg.lua"
+		//	"Function"			"mark_of_artemis"
+		//}
+	}
+
+	"Modifiers"
+	{
+		"modifier_mark_of_artemis"
+		{
+			"Passive"	 "0"
+			"IsHidden"	 "0"
+			"OnAttackStart"
+			{
+				"ApplyModifier"
+				{
+					"Target" 			"TARGET"
+					"ModifierName"		"mark_of_artemis_debuff"
+				}
+				"Random"
+				{
+					"Chance" "%crit_chance"
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName" "mark_of_artemis_crit"
+							"Target"	   "CASTER"	
+						}				
+					}
+				}
+			}
+		}
+		
+		"mark_of_artemis_debuff"	
+		{
+			"IsDebuff"	"1"
+			"Duration"	"5"	//I made this up
+			"OnAttacked"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Damage"	"%dmg_per_hit"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+				}
+				//TODO: Apply the stacking damage:
+				//In addition, for each successive attack you make against the target, this additional damage increases by x. 
+   					//This bonus damage will slowly degenerate over time (it is decreased every 2.5 seconds by bonus damage / 40). 
+			}
+		}
+			
+		"mark_of_artemis_crit"
+		{
+			"Duration"	"1"
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "%crit_bonus"
+			}
+			
+			"OnAttackLanded"
+			{
+				"FireEffect"
+				{
+					"EffectName"		 "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+					"EffectAttachType"	 "follow_origin"
+					"Target"			 "TARGET"
+				}	
+				"RemoveModifier"
+				{
+					"ModifierName"		"mark_of_artemis_crit"
+					"Target"			"CASTER"	
+				}
+			}
+		}
+	}
+
+}

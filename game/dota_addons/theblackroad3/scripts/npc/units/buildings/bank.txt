@@ -1,0 +1,59 @@
+//=================================================================================	
+// Building: Bank
+//=================================================================================
+"bank"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/elven_farm.vmdl"	// Model.
+	"SoundSet"					""					// Name of sound set.
+	"Level"						"0"
+	"IsAncient"					"1"
+	"ModelScale"				"1"
+	"HasInventory"				"1"
+	"Level"						"85"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"				"4"
+	"Ability1"					"drop_all_items"
+	"Ability2"					"drop_itemslot_1"
+	"Ability3"					"transfer_itemslot_1"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+	"HealthBarOffset"			"3000"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+	"MovementSpeed"				"0"		// Speed
+	"MovementTurnRate"			"0"		// Turning rate.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"			// Experience earn.
+	"BountyGoldMin"				"150"		// Gold earned min.
+	"BountyGoldMax"				"150"		// Gold earned max.
+
+		// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"75"		// Base health.
+	"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"350"		// Range of vision during day light.
+	"VisionNighttimeRange"		"350"		// Range of vision at night time.
+}

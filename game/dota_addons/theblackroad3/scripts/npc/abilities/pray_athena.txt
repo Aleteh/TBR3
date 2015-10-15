@@ -1,0 +1,100 @@
+//=================================================================================================================
+// Temple Guardian: Pray - Athena
+//=================================================================================================================
+"pray_athena"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"mirana_invis"
+	"MaxLevel" 						"7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"15 25 40 50 85 125 170 225"		
+
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+		"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"pray_athena_modifier"
+		}
+		"AttachEffect"
+		{
+			"Target"		"TARGET"
+			"EffectName"	"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"AttachEffect"
+		{
+			"Target"		"TARGET"
+			"EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Omniknight.Repel"
+			"Target"		"TARGET"	
+		}
+	}
+
+	"Modifiers"
+	{
+		"pray_athena_modifier" //TODOL Disallow its use on Warrior Classes
+		{
+			"Duration"		"300"
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+			"Properties"	//+ xx mana/sec; Spell damage and healing bonus: 25% + xxxx
+			{
+				"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%mana_bonus_static"
+			}
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/tg.lua"
+					"Function"		"GiveAthenaBuff"
+				}
+			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/tg.lua"
+					"Function"		"RemoveAthenaBuff"
+				}
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_bonus_static" 	"10 20 35 55 85 125 200 300"
+    		}
+    		"02"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"power_bonus_static" 	"50 100 175 280 400 900 1500"
+    		}
+    		"03"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"power_bonus_percent" 	"25"
+    		}
+    	}
+}

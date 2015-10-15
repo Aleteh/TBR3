@@ -6668,7 +6668,6 @@
 			}
 		}
 	}
-	
 	"rockthul_command_aura"
 	{
 	// General

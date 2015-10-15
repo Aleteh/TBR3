@@ -1,0 +1,101 @@
+//=================================================================================================================
+// Ranger: Puncture
+//=================================================================================================================
+"ranger_puncture"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ranger_puncture"
+	"MaxLevel" "7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"10"
+	"AbilityManaCost"				"25 50 85 140 210 300 425 600"
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "40 80 140 225 340 510 750 1150"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
+    		"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
+    	}
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    		{
+    		"01"
+    			{
+    			"var_type"	"FIELD_INTEGER"
+    			"duration"	"10"
+    			}
+    		}
+    	
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"			"TARGET"
+			"Dodgeable"			"1"
+			"ProvidesVision"	"0"
+			"EffectName"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
+			"MoveSpeed"			"1000"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+		"FireSound"
+		{
+			"EffectName"		"Ability.Powershot"
+			"Target" 			"CASTER"
+		}
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/ranger.lua"
+			"Function"			"puncture"
+		}		
+	}
+	"Modifiers"
+		{
+		"ranger_puncture_bleed_modifier"
+			{
+			"Duration"	"10"
+			"IsDebuff"	"1"
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+				{
+				"RunScript"
+					{
+					"ScriptFile"		"abilities/ranger.lua"
+					"Function"			"puncture_bleed"
+					}
+				}
+			}
+		}
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"			"1"
+		"FireEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target" 			"TARGET"
+		}
+		"FireSound"
+		{
+			"EffectName"		"Hero_Riki.Backstab"
+			"Target" 			"TARGET"
+		}
+	}
+
+
+}

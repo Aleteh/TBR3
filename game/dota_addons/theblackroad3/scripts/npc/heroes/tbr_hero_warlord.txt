@@ -1,0 +1,50 @@
+//=================================================================================================================
+// HERO: Warlord
+// • The Warlord is largely intended to be an Agility-Based DPS, though it can make a decent tank with Counter helping mitigate incoming damage
+//=================================================================================================================
+"tbr_hero_warlord"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------
+	
+	"ModelScale"				"0.7"
+
+	// Abilities
+	//------------------------------------------------------------------------------------------------------------
+
+	"override_hero"				"npc_dota_hero_juggernaut"
+
+	"Ability1"					"warlord_counter"
+	"Ability2"					"warlord_impale"
+	"Ability3"					"warlord_winds_of_war"
+	"Ability4"					""
+	"Ability5"					""
+	"Ability6"					"warlord_critical_strike"
+	"Ability7"					""
+	"Ability8"					""
+	"Ability9"					""
+	"Ability10"					""
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
+
+	// Attributes
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"         "14" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "1" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "14" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+    // Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"100"									// Base health.
+	"StatusHealthRegen"			"0.25"									// Health regeneration rate.
+	"StatusMana"				"35"									// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+}

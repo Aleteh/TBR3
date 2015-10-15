@@ -1,0 +1,43 @@
+// Journeyman 1 - Hoarfrost
+// Effect: You surround a targetted enemy in a snap of frozen air, freezing their skin as well as any moisture in their body. The target takes cold damage over time, decreasing as they thaw, and suffer from Chilled. Lasts 10 seconds.
+// Benefits From: Spell Damage
+// Cooldown: 15 seconds
+// Range: 600
+// Cost: Average
+
+// Notes:
+// • When cast on a unit inside your own Flux Matrix, HoarFrost will spread to all enemies within the radius of Flux Matrix
+"magician_hoarfrost"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"magician_hoarfrost"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}
