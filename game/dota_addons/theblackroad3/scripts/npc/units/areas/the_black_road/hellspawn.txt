@@ -1,0 +1,73 @@
+//=================================================================================
+// Creature: Hellspawn
+// Description: "Heavy ranged unit that can cast Devour Magic and Forked Lightning. |n|n|cffffcc00Attacks land and air units.|r"
+//=================================================================================
+"hellspawn"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				""	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"40"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: ACfl
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"262.0"
+	"AttackDamageMax"		"304.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.35"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"450"
+	"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"900"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"41.0"
+	"BountyGoldMax"			"54.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"5000"
+	"StatusHealthRegen"		"7.00"
+	"StatusMana"			"500"
+	"StatsManaRegen"		"1.25"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

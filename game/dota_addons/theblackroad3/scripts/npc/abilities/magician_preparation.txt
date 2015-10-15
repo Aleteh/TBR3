@@ -1,0 +1,67 @@
+// Class Skill - Preparation
+// Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
+// Benefits From: N/A
+// Cooldown: N/A
+// Range: N/A
+// Cost: N/A
+
+// Notes:
+// • Will give the Magician very good occasional burst damage
+"magician_preparation"
+//Effect: The Magician has a 5% chance after each spell is cast to reset all spell cooldowns.
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"magician_preparation"
+	"MaxLevel" 						"1"
+
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"precache"
+	{
+		"particle"	"particles/items2_fx/refresher.vpcf"
+	}
+
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"				"FIELD_INTEGER"
+    			"refresh_chance"		"5"
+    		}
+    	}
+
+	"Modifiers"
+	{
+		//TODO: Restrict items from procing this buff (maybe not needed, just a balance issue)
+		"preparation_modifier"
+		{
+			"Passive"			"1"
+			"IsBuff"			"1"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+			"OnAbilityExecuted"
+			{
+				"Random"
+				{
+					"Chance"	"%refresh_chance"
+					"OnSuccess"
+					{
+						"RunScript"
+						{
+							"ScriptFile"		"abilities/magician.lua"
+							"Function"			"refresh_cooldowns"
+						}
+						"FireSound"
+						{
+							"EffectName"		"DOTA_Item.Refresher.Activate"
+							"Target"      		"CASTER"
+						}
+					}
+				}
+			}
+		}	
+	}
+
+}

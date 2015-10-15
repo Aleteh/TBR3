@@ -1,0 +1,88 @@
+//=================================================================================
+// Creature: Therin
+// Description: "Warrior Hero, exceptional at defence and augmenting nearby friendly troops. Can learn Holy Light, Divine Shield, Devotion Aura and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+//=================================================================================
+"npc_therin"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/kunkka/kunkka.vmdl"
+	"ModelScale"				"0.7"
+	"Level"						"5"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""	 //Reference: A088
+	"Ability2"					""	 //Reference: A089
+	"Ability3"					""	 //Reference: AInv
+	"Ability4"					""	 //Reference: AHhb
+	"Ability5"					""	 //Reference: AHds
+	"Ability6"					""	 //Reference: AHre
+	"Ability7"					""	 //Reference: AHad
+	
+	
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"7.2"
+	"MagicalResistance"			"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"48"
+	"AttackDamageMax"			"58"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"2.2"
+	"AttackAnimationPoint"		"0.433"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"				"100"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"				"38.0"
+	"BountyGoldMax"				"54.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"
+	"MovementTurnRate"			"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1020"
+	"StatusHealthRegen"			"11.75"
+	"StatusMana"				"495"
+	"StatsManaRegen"			"0.34"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"			"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"	"10"	} 
+			"Wearable2"		{	"ItemDef"	"11"	} 
+			"Wearable3"		{	"ItemDef"	"12"	} 
+			"Wearable4"		{	"ItemDef"	"14"	} 
+		}			
+	}
+}

@@ -1,0 +1,103 @@
+//  Scroll of Protection 			//20 Armor
+"item_scroll_of_protection"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_scroll_of_protection"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityCooldown"               "60"
+
+	"Model"							"models/props_gameplay/tpscroll01.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+	
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	"ItemCost"						"600"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemStackable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"2"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"20"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"600"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"600"
+		}
+		"04"	//Tooltip
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration_minutes"		"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"Target" 			"CASTER"
+			"EffectName"		"particles/items2_fx/mekanism.vpcf"
+			"EffectAttachType" 	"follow_origin"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center" 	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+		
+			"Action"    
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_scroll_of_protection"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}
+			
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.Mekansm.Activate"
+			"Target" 		"CASTER"
+		}
+
+		"SpendCharge"
+		{}
+	}
+
+	"Modifiers"
+	{
+		"modifier_scroll_of_protection"
+		{
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+			}
+		}
+	}
+}

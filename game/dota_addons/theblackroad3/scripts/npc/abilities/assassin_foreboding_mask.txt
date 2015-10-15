@@ -1,0 +1,44 @@
+//Ultimate 1 - Foreboding Mark
+//Effect: Places a percent damage buff on the targetted friendly unit of this spell, as well as the caster, for a short time. Any attacks made by the caster during this time will place a short taunt debuff on the enemy, forcing it to attack the targetted unit of the spell. Lasts 5 seconds. If this ability is used on a Shadow Image it loses the increased damage taken for the duration as well as taking 50% less damage.
+//Benefits From: N/A
+//Cooldown: 30 seconds
+//Range: 300
+//Cost: High
+
+//Notes:
+//• Mixture of offensive and defensive, the damage buff is exceptionally nice offensively
+//• Can be used to help keep threat on a tank if they are stunned, knocked back, or there's an extra add running around.
+"assassin_foreboding_mask"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"assassin_foreboding_mask"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

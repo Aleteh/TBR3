@@ -1,0 +1,48 @@
+//Ultimate 2 - Summon Totems
+//Effect: You gain the ability to summon several different totems to channel your powers. Totems last 30 seconds. Totems health is based on the casters maximum health.
+//• Air - Unbridled Static (Green Chain Lightning dealing damage based off the Druid's Spell Damage)
+//• Earth - Tellurian Bond (Can Soul Link to one selected ally and absorb half of the targets incoming damage until it or the target dies)
+//• Fire - Funneled Rage (+Static Damage to all allies in range of the totem)
+//• Water - Healing Stream (Blue Chain healing based off the Druid's Spell Healing)
+//Benefits From: Spell Damage, Spell Healing
+//Cooldown: 15 second Global/ 30 second Individual
+//Range: N/A
+//Cost: Average
+
+//Notes:
+//• Gives the Druid a wide selection of effects, allowing a lot of versatility
+//• Totems are most effective when used in groups, though they can be effective when soloing if used correctly
+"druid_summon_totems"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"druid_summon_totems"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

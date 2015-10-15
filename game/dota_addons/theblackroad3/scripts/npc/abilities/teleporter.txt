@@ -1,0 +1,52 @@
+"teleporter"
+  	{
+  
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"   
+    "BaseClass"             "ability_datadriven" 
+
+    "precache"
+    {
+    	"particle"	"particles/econ/events/ti4/teleport_end_ti4.vpcf"
+    }
+    "Modifiers"
+    	{
+      		"modifier_invulnerable"
+      		{
+        	"Passive" "1"
+			"IsHidden" "1"
+        	"States"
+        	{
+          		"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+          		"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+          		"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+        		"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+          		"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+          		"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+          		"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+        	}
+    	}
+    	"modifier_teleporter"
+    	{
+    		"Passive"			"1"
+			"IsHidden" 			"1"
+			"EffectName"		"particles/econ/events/ti4/teleport_end_ti4.vpcf"	//TODO: Do proper attachment
+    		"EffectAttachType"	"follow_origin"
+			"Aura" 				"teleport_aura"
+			"Aura_Radius" 		"50"
+			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+    	}
+    	"teleport_aura"
+    	{
+    		"OnCreated"
+    		{
+				"RunScript"
+				{
+					"ScriptFile"	"teleports/teleporter.lua"
+					"Function"		"Teleport"
+				}
+    		}
+    	}
+
+    	}
+  	}

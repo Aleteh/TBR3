@@ -1,0 +1,71 @@
+//=================================================================================
+// Creature: Minotaur Beastman
+// Description: "Heavy melee unit. Immune to spells. |n|n|cffffcc00Attacks land units.|r"
+//=================================================================================
+"minotaur_beastman"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				""	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"23"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: ACct
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"2"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"107.0"
+	"AttackDamageMax"		"125.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.00"
+	"AttackAnimationPoint"		"0.66"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"24.0"
+	"BountyGoldMax"			"31.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"300"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"3400"
+	"StatusHealthRegen"		"3.00"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

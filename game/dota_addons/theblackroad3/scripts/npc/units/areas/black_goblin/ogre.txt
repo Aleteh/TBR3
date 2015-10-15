@@ -1,0 +1,70 @@
+//=================================================================================
+// Creature: Ogre
+//=================================================================================
+"ogre"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
+	"ModelScale"			"1"
+	"Level"				"17"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"112"
+	"AttackDamageMax"		"134"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.75"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"18.0"
+	"BountyGoldMax"			"23.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"2000"
+	"StatusHealthRegen"		"0.5"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	"vscripts"		"creep_ai.lua"
+}

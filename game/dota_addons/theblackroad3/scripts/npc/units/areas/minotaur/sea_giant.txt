@@ -1,0 +1,69 @@
+//=================================================================================
+// Creature: Sea Giant
+// Description: "Light melee amphibious unit with Pulverize. |n|n|cffffcc00Attacks land units.|r"
+//=================================================================================
+"sea_giant"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				""	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"29"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: ACpv
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"387.0"
+	"AttackDamageMax"		"445.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.25"
+	"AttackAnimationPoint"		"0.6"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"100"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"37.0"
+	"BountyGoldMax"			"51.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"200"
+	"MovementTurnRate"		"0.4"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"5600"
+	"StatusHealthRegen"		"4.00"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1200"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

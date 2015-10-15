@@ -1,0 +1,72 @@
+//=================================================================================
+// Creature: Myr Warrior
+// Description: "Powerful melee unit. Has the Submerge ability, which allows this unit to hide in water. Can learn the Ensnare ability.  |n|n|cffffcc00Attacks land units."
+//=================================================================================
+"myr_warrior"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				""	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"38"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: ANen
+	"Ability2"			""	 //Reference: Asb1
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"15"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"212.0"
+	"AttackDamageMax"		"246.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.75"
+	"AttackAnimationPoint"		"0.36"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"			"128"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"39.0"
+	"BountyGoldMax"			"51.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"6500"
+	"StatusHealthRegen"		"5.00"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

@@ -1,0 +1,43 @@
+// Journeyman 1 - Graceful Light
+// Effect: The Templar focuses his energy into a single heal that has a 10% chance of healing for 50% more. If the Templar has Sanction of Wit or Sanction of Bestowment active, the chance is increased to 20%.
+// Benefits From: Spell Healing
+// Cooldown: 12 seconds
+// Range: 600
+// Cost: Average
+
+// Notes:
+// • An average heal with a chance to heal for above average results
+"templar_graceful_light"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"templar_graceful_light"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

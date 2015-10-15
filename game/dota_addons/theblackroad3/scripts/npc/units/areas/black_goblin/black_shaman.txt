@@ -1,0 +1,86 @@
+//=================================================================================
+// Creature: Black Shaman TODO: Make it stronker
+// Description: "Primary spellcaster. Can initially cast Purge, which dispels magical buffs and can immobilize enemies. 
+// *Unused*			 Can also learn Lightning Shield and Bloodlust.
+//=================================================================================
+"black_shaman"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/blood_seeker/blood_seeker.vmdl"
+	"ModelScale"			"0.5"
+	"Level"				"10"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: Aion
+	
+	"Ability10"				"creep_respawn"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"48"
+	"AttackDamageMax"		"60"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.65"
+	"AttackAnimationPoint"		"0.43"
+	"AttackAcquisitionRange"	"600"
+	"AttackRange"			"600"
+	"ProjectileModel"		"particles/units/heroes/hero_disruptor/disruptor_base_attack.vpcf"
+	"ProjectileSpeed"		"1200"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	//"BountyGoldMin"			"11.0"
+	//"BountyGoldMax"			"14.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"1035"
+	"StatusHealthRegen"		"1.50"
+	"StatusMana"			"250"
+	"StatsManaRegen"		"1.00"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"NONE"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	"vscripts"		"creep_ai.lua"
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"	"5608"	} // "Bloodstone Blade"
+			"Wearable2"		{	"ItemDef"	"5609"	} // "Bloodstone Blade - Off-Hand"
+			"Wearable3"		{	"ItemDef"	"5511"	} // "Hood of the Scarlet Raven"
+			"Wearable4"		{	"ItemDef"	"5510"	} // "Coat of the Scarlet Raven"
+			"Wearable5"		{	"ItemDef"	"5508"	} // "Necklace of Scarlet Raven"
+		}			
+	}
+}

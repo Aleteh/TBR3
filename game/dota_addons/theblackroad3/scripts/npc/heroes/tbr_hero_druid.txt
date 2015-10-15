@@ -1,0 +1,74 @@
+//=================================================================================================================
+// HERO: Druid
+// • Druids can make decent healers with spell healing gear and totems, but they excel at being Hybrid Support being half healer and half DPS
+//=================================================================================================================
+"tbr_hero_druid"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------
+	
+	"ModelScale"				"0.7"
+
+	// Abilities
+	//------------------------------------------------------------------------------------------------------------
+
+	"override_hero"				"npc_dota_hero_furion"
+	
+	"Ability1"					"druid_rejuvenation"
+	"Ability2"					"druid_natures_wrath"
+	"Ability3"					"druid_call_lightning"
+	"Ability4"					""
+	"Ability5"					""
+	"Ability6"					""
+	"Ability7"					""
+	"Ability8"					""
+	"Ability9"					""
+	"Ability10"					""
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
+
+	// Attributes
+    //-------------------------------------------------------------------------------------------------------------
+   	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+    "AttributeBaseStrength"         "12" 		// Base strength
+    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeBaseIntelligence"     "15" 		// Base intelligence
+    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+    "AttributeBaseAgility"          "12" 		// Base agility
+    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+
+    // Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"2"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"2.0"
+	"AttackDamageMax"		"24.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"2.25"
+	"AttackAnimationPoint"		"0.4"
+	"AttackAcquisitionRange"	"600"
+	"AttackRange"			"600"
+	//"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"1200"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.4"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"100"
+	"StatusHealthRegen"		"0.25"
+	"StatusMana"			"0"
+	"StatsManaRegen"		"0.01"
+}

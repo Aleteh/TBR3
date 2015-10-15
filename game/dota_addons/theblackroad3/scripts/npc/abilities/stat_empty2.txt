@@ -1,0 +1,12 @@
+//=================================================================================================================
+// stat_empty2
+//=================================================================================================================
+"stat_empty2"
+{
+	// General
+	// -------------------------------------------------------------------------------------------------------------
+	"BaseClass"								"ability_datadriven"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"MaxLevel" 								"0"
+
+}

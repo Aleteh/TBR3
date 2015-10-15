@@ -1,0 +1,40 @@
+//Secondary - Righteous Burning
+//Effect: When cast on an ally it will restore some health instantly based on Spell Healing, and an equal amount over 5 seconds. When cast on an enemy it will deal instant static damage, and an equal amount over 5 seconds. May inflict Burn.
+//Benefits From: Spell Damage, Spell Healing
+//Cooldown: 15 seconds
+//Range: 600
+//Cost: Average
+"cleric_righteous_burning"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"cleric_righteous_burning"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

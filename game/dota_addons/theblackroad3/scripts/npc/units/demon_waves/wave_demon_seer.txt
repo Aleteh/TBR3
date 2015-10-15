@@ -1,0 +1,74 @@
+//=================================================================================
+// Creature: Demon Seer
+// Description: "Medium ranged unit with Bloodlust and Cast Ray of Disruption. |n|n|cffffcc00Attacks land and air units.|r"
+//=================================================================================
+"wave_demon_seer"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"			"npc_dota_creature"
+	"Model"				"models/heroes/dark_seer/dark_seer.vmdl"	 //Needs model data
+	"ModelScale"			"1"
+	"Level"				"39"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"			""	 //Reference: ACbb
+	
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"		"77.0"
+	"AttackDamageMax"		"97.0"
+	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"			"1.60"
+	"AttackAnimationPoint"		"0.59"
+	"AttackAcquisitionRange"	"600"
+	"AttackRange"			"600"
+	"ProjectileModel"		""	 //Add projectile models
+	"ProjectileSpeed"		"1200"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"			"40.0"
+	"BountyGoldMax"			"52.0"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"			"270"
+	"MovementTurnRate"		"0.6"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"			"5500"
+	"StatusHealthRegen"		"6.00"
+	"StatusMana"			"400"
+	"StatsManaRegen"		"2.00"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"
+	"VisionNighttimeRange"		"10"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"			"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"		"140"
+
+	"vscripts"		"demon_wave_ai.lua"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+}

@@ -1,0 +1,49 @@
+//Journeyman 1 - Bear Focus (Autocastable)
+//Effect: You increase your focus on the fight at hand, gaining increased ability the longer you focus.
+//• Level 1 Focus Effect - You deal static plus Agility+Strength damage as well as an instant crit.
+//• Level 2 Focus Effect - You deal static plus Agility+Strength damage as well as increasing your movement speed.
+//• Level 3 Focus Effect - You deal static plus Agility+Strength damage as well as increasing your mana regeneration.
+//• Level 1 Finisher Effect - You deal static plus Agility+Strength damage as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+//• Level 2 Finisher Effect - You deal static plus Agility+Strength damage, slow the enemies movement speed as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+//• Level 3 Finisher Effect - You deal static plus Agility+Strength damage, slow the enemies movement and attack speed as well as knocking the enemy back. Strong enemies that cannot be pushed back take extra damage.
+//Benefits From: Agility
+//Cooldown: 7 seconds
+//Range: Melee
+//Cost: Low
+
+//Notes:
+//• Focuses primarily on single targets and dealing physical damage
+"warlord_bear_focus"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlord_bear_focus"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"8.0"
+
+	"AbilityManaCost"				"100"
+	"AbilityDamage"					"75 130 200"
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"value"			"900"
+		}
+	}
+}

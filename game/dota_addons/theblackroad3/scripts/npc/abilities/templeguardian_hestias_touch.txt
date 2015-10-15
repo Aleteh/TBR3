@@ -1,0 +1,103 @@
+//=================================================================================================================
+// Temple Guardian: Hestia's Touch
+//=================================================================================================================
+//As long as Hestia's Touch is active all attacks against the target will drain up to xx mana, which is then added to the attacker's mana pool for xxx mana. 
+//Warrior classes will drain x mana on each attack. Cooldown 1 second. Lasts up to 30 seconds
+"templeguardian_hestias_touch"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"templeguardian_hestias_touch"
+	"MaxLevel" 						"7"
+		
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	      
+	"AbilityCastRange"				"600"	//made this up
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"30 60 95 135 180 230 285 350"
+	"AbilityDuration"               "30"
+
+	"AbilitySpecial"
+    	{	
+    		"01"
+    		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_stolen_per_hit" 	"8.0 16.0 24.0 32.0 40.0 48.0 56.0 64.0"
+    		}
+		"02"
+    		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_warrior" 			"0.5 1 1.5 2 2.5 3 3 3"
+    		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/generic_gameplay/generic_manaburn.vpcf"
+		"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_mana_leak.vpcf"
+		"particle"	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"hestias_touch_modifier"
+		}
+		"AttachEffect"
+		{
+			"Target"		"TARGET"
+			"EffectName"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_n.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"EffectRadius"	"300"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_KeeperOfTheLight.ManaLeak.Cast"
+			"Target"		"TARGET"	
+		}
+	}
+
+	"Modifiers"
+	{
+		"hestias_touch_modifier"
+		{
+			"IsDebuff"		"1"
+			"IsHidden"		"0"
+			"Duration"		"%AbilityDuration"
+			"EffectName"	"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_mana_leak.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"		"TARGET"
+					"EffectName"	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+			"OnAttacked"
+			{
+				"AttachEffect"
+				{
+					"Target"		"TARGET"
+					"EffectName"	"particles/generic_gameplay/generic_manaburn.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/tg.lua"
+					"Function"			"hestias_touch"
+					"ManaTransfer"		"%mana_stolen_per_hit"
+					"ManaWarrior"		"%mana_warrior"
+				}
+			}
+		}
+	}
+}

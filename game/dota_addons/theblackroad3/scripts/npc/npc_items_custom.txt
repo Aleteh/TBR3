@@ -12793,8 +12793,6 @@
 			{}
 		}
 	}
-	
-	
 	// Rare 
 	//	Ankh of Reincarnation
 	//	Draught of Hermes

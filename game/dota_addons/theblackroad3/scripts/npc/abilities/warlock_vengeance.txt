@@ -1,0 +1,73 @@
+//=================================================================================================================
+// Warlock: Vengeance
+//=================================================================================================================
+//Costs xxx hit points to cast for no mana cost. Instantly deals xxxx damage to a target enemy unit. 
+//The target will also have its attack damage reduced by 25% for up to 10 seconds. 3,5 Seconds cooldown.
+"warlock_vengeance"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlock_vengeance"
+	"MaxLevel" "1"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityCastRange"				"700"
+	"AbilityDuration"				"12"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"3.5"
+	"AbilityManaCost"				"0"
+    	"AbilityDamage"                 "250 500 800 1200 1800 2700 4000 6000"
+
+    	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"self_damage"		"50 100 160 225 310 400 525 700"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"attack_dmg_reduction"	"-25"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/warlock.lua"
+			"Function"			"vengeance"
+		}
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"vengeance_modifier"
+		}
+	}
+
+	"Modifiers"
+	{
+		"vengeance_modifier"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%AbilityDuration"
+			"EffectName"	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_core_realcore.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%attack_dmg_reduction"
+			}
+		}
+	}
+}
