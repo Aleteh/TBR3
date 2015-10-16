@@ -24,21 +24,21 @@
 			{
 				"text" "Demon Imps Killed: %c/%m"
 				"type" "killType"
-				"target" "npc_demon_imp"
+				"target" "demon_imp"
 				"count" "10"
 			}
 			"2"
 			{
 				"text" "Demon Hounds Killed: %c/%m"
 				"type" "killType"
-				"target" "npc_demon_hound"
+				"target" "demon_hound"
 				"count" "5"
 			}
 			"3"
 			{
 				"text" "Demon Fires Killed: %c/%m"
 				"type" "killType"
-				"target" "npc_demon_fire"
+				"target" "demon_fire"
 				"count" "5"
 			}
 		}
