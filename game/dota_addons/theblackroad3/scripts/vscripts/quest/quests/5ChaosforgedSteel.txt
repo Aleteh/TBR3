@@ -26,7 +26,7 @@
 				"text" "Demon Imps Killed: %c/%m"
 				"type" "killType"
 				"hint" "Demon imps have been raiding the southern front for days!"
-				"target" "npc_demon_imps"
+				"target" "demon_imps"
 				"count" "10"
 			}
 		}
