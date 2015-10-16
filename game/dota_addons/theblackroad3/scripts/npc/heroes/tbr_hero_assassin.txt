@@ -49,24 +49,24 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"2.0"
-	"AttackDamageMax"		"24.0"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackRate"			"1.60"
+	"AttackDamageMin"			"2.0"
+	"AttackDamageMax"			"24.0"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.60"
 	"AttackAnimationPoint"		"0.40"
 	"AttackAcquisitionRange"	"650"
-	"AttackRange"			"100"
+	"AttackRange"				"100"
 	
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"			"270"
-	"MovementTurnRate"		"0.5"
+	"MovementSpeed"				"270"
+	"MovementTurnRate"			"0.5"
 	
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"			"100"
-	"StatusHealthRegen"		"0.25"
-	"StatusMana"			"25"	//10 with 1 int
-	"StatsManaRegen"		"0"	//0.75, set in lua
+	"StatusHealth"				"100"
+	"StatusHealthRegen"			"0.25"
+	"StatusMana"				"25"	//10 with 1 int
+	"StatusManaRegen"			"0"	//0.75, set in lua
 }
