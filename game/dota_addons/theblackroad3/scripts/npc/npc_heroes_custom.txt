@@ -1,81 +1,6 @@
 "DOTAHeroes"
 {
 	//=================================================================================================================
-	// HERO: Warlock
-	// • Warlocks are primarily damage dealers, but they also have several debuffs they use to debilitate enemies
-	// • Warlocks are masters of Blinding enemies, and even all by themselves can keep enemies blind a large portion of the time
-	//=================================================================================================================
-	"npc_dota_hero_warlock"
-	{
-		// General
-		//------------------------------------------------------------------------------------------------------------
-		
-		"ModelScale"				"0.7"
-	
-		// Abilities
-		//------------------------------------------------------------------------------------------------------------
-	
-		"override_hero"				"npc_dota_hero_warlock"
-		
-		"Ability1"					"warlock_torment"
-		"Ability2"					"warlock_soul_drain"
-		"Ability3"					"warlock_deathwave"
-		"Ability4"					""
-		"Ability5"					""
-		"Ability6"					""
-		"Ability7"					""
-		"Ability8"					""
-		"Ability9"					""
-		"Ability10"					""
-		"Ability11"					""
-		"Ability12"					""
-		"Ability13"					""
-		"Ability14"					""
-		"Ability15"					""
-		"Ability16"					""
-	
-		// Attributes
-	    //-------------------------------------------------------------------------------------------------------------
-	   	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
-	    "AttributeBaseStrength"         "13" 		// Base strength
-	    "AttributeStrengthGain"         "1"		// Strength bonus per level.
-	    "AttributeBaseIntelligence"     "14" 		// Base intelligence
-	    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
-	    "AttributeBaseAgility"          "12" 		// Base agility
-	    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
-	
-	    // Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"0"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"2.0"
-		"AttackDamageMax"		"24.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.25"
-		"AttackAnimationPoint"		"0.3"
-		"AttackAcquisitionRange"	"600"
-		"AttackRange"			"600"
-		//"ProjectileModel"		""	 //Add projectile models
-		//"ProjectileSpeed"		"900"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.4"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"100"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"0"
-		"StatsManaRegen"		"0.01"
-	}
-	//=================================================================================================================
 	// HERO: Assassin
 	// • Assassin's are intended to be exceptional boss killers. Able to deal massive melee damage, while also being able to effectively hit and run with long DoT's
 	//=================================================================================================================
@@ -126,26 +51,26 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"2.0"
-		"AttackDamageMax"		"24.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.60"
+		"AttackDamageMin"			"2.0"
+		"AttackDamageMax"			"24.0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.60"
 		"AttackAnimationPoint"		"0.40"
 		"AttackAcquisitionRange"	"650"
-		"AttackRange"			"100"
+		"AttackRange"				"100"
 		
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.5"
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.5"
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			"100"
-		"StatusHealthRegen"		"0.25"
-		"StatusMana"			"25"	//10 with 1 int
-		"StatsManaRegen"		"0"	//0.75, set in lua
+		"StatusHealth"				"100"
+		"StatusHealthRegen"			"0.25"
+		"StatusMana"				"25"	//10 with 1 int
+		"StatusManaRegen"			"0"	//0.75, set in lua
 	}
 	//=================================================================================================================
 	// HERO: Barbarian
@@ -815,6 +740,81 @@
 		"StatsManaRegen"		"0.01"
 	}
 	//=================================================================================================================
+	// HERO: Warlock
+	// • Warlocks are primarily damage dealers, but they also have several debuffs they use to debilitate enemies
+	// • Warlocks are masters of Blinding enemies, and even all by themselves can keep enemies blind a large portion of the time
+	//=================================================================================================================
+	"npc_dota_hero_warlock"
+	{
+		// General
+		//------------------------------------------------------------------------------------------------------------
+		
+		"ModelScale"				"0.7"
+	
+		// Abilities
+		//------------------------------------------------------------------------------------------------------------
+	
+		"override_hero"				"npc_dota_hero_warlock"
+		
+		"Ability1"					"warlock_torment"
+		"Ability2"					"warlock_soul_drain"
+		"Ability3"					"warlock_deathwave"
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
+	
+		// Attributes
+	    //-------------------------------------------------------------------------------------------------------------
+	   	"AttributePrimary"              "DOTA_ATTRIBUTE_INTELLECT"
+	    "AttributeBaseStrength"         "13" 		// Base strength
+	    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	    "AttributeBaseIntelligence"     "14" 		// Base intelligence
+	    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
+	    "AttributeBaseAgility"          "12" 		// Base agility
+	    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
+	
+	    // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"2.0"
+		"AttackDamageMax"		"24.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"			"600"
+		//"ProjectileModel"		""	 //Add projectile models
+		//"ProjectileSpeed"		"900"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"100"
+		"StatusHealthRegen"		"0.25"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.01"
+	}
+	//=================================================================================================================
 	// HERO: Warlord
 	// • The Warlord is largely intended to be an Agility-Based DPS, though it can make a decent tank with Counter helping mitigate incoming damage
 	//=================================================================================================================
@@ -851,17 +851,39 @@
 	    //-------------------------------------------------------------------------------------------------------------
 	   	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
 	    "AttributeBaseStrength"         "14" 		// Base strength
-	    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+	    "AttributeStrengthGain"         "1"			// Strength bonus per level.
 	    "AttributeBaseIntelligence"     "1" 		// Base intelligence
 	    "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
 	    "AttributeBaseAgility"          "14" 		// Base agility
 	    "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 	
+	    // Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"2.0"
+		"AttackDamageMax"			"24.0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.60"
+		"AttackAnimationPoint"		"0.33"
+		"AttackAcquisitionRange"	"650"
+		"AttackRange"				"100"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.5"
+	
 	    // Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"100"									// Base health.
+		"StatusHealth"				"101"									// Base health.
 		"StatusHealthRegen"			"0.25"									// Health regeneration rate.
 		"StatusMana"				"35"									// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"0"										// Mana regeneration rate.
 	}
 }

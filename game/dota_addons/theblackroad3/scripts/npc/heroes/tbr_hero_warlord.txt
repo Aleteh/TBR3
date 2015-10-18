@@ -35,16 +35,38 @@
     //-------------------------------------------------------------------------------------------------------------
    	"AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
     "AttributeBaseStrength"         "14" 		// Base strength
-    "AttributeStrengthGain"         "1"		// Strength bonus per level.
+    "AttributeStrengthGain"         "1"			// Strength bonus per level.
     "AttributeBaseIntelligence"     "1" 		// Base intelligence
     "AttributeIntelligenceGain"     "0"  		// Intelligence bonus per level.
     "AttributeBaseAgility"          "14" 		// Base agility
     "AttributeAgilityGain"          "0" 		// Agility bonus per level.
 
+    // Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"			"0"
+	"MagicalResistance"		"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"2.0"
+	"AttackDamageMax"			"24.0"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.60"
+	"AttackAnimationPoint"		"0.33"
+	"AttackAcquisitionRange"	"650"
+	"AttackRange"				"100"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"
+	"MovementTurnRate"			"0.5"
+
     // Status
 	//-------------------------------------------------------------------------------------------------------------
-	"StatusHealth"				"100"									// Base health.
+	"StatusHealth"				"101"									// Base health.
 	"StatusHealthRegen"			"0.25"									// Health regeneration rate.
 	"StatusMana"				"35"									// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"0"										// Mana regeneration rate.
 }
