@@ -1,0 +1,86 @@
+//	Elixir of Greater Strength 		//85 STR
+"item_elixir_of_greater_strength"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_elixir"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	
+	"Model"							"models/props_gameplay/salve_red.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+	
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	"ItemCost"						"600"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemStackable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"2"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"85"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"600"
+		}
+		"03"	//Tooltip
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration_minutes"		"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"items/potions.lua"
+			"Function"		"RemoveElixir"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_elixir_of_greater_strength"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+		"FireEffect"
+		{
+			"Target"			"CASTER"
+			"EffectName"		"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"FireSound"
+		{
+			"Target" 			"CASTER"
+			"EffectName" 		"DOTA_Item.HealingSalve.Activate"
+		}
+		"SpendCharge"
+		{}		
+	}
+
+	"Modifiers"
+	{
+		"modifier_elixir_of_greater_strength"
+		{
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_strength"
+			}
+		}
+	}
+}
