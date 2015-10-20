@@ -655,6 +655,7 @@ function RollDrops(unit)
             -- If its an ItemSet entry, decide which item to drop
             local item_name
             if ItemTable.ItemSets then
+            	print("Counting items in item set")
             	-- Count how many there are to choose from
             	local count = 0
             	for i,v in pairs(ItemTable.ItemSets) do

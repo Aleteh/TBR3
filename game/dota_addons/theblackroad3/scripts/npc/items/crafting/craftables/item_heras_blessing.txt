@@ -42,10 +42,8 @@
 		}
 		"heras_blessing_aura"
    		{
-    	
 	    	"IsBuff" 				"1"
 	    	"IsPurgable" 			"0"
-	    	
 	    	"Properties"
 	    	{
 	     		"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "10"
