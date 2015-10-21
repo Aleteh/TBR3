@@ -3,16 +3,14 @@
 
 	- Hero Abilities - Polishing left
 		Find and fix all occurrences of TODO in npc_abilities_custom
-		Review every tooltip to use AbilitySpecials, might need to change some spells that don't have them:
-		  	We need to rewrite every "damages by xxx" WC3 style tooltip to a Dota style of tooltip (only static values go in the _Description, while the variable values each go in a separate line, which is taken from AbilitySpecials). This way to change ability values like damage or debuff duration we only need to change the AbilitySpecial var, instead of Code & Tooltips.
-	
+		
 	- Item Functionality
 		Most permanent stat boosting items are implemented, need to find and fix all ocurrences of TODO in npc_items_custom
 		Most consumables are implemented, ID's are missing and will need to be fetched from docs/item_list.txt
 
 	- Item Restrictions
 		Add OnEquip RunScript ItemCheck (as detailed in the beginning of npc_items_custom) which looks for the item name inside maps/item_info.kv table file to eject it from the hero inventory if any restriction isn't met
-		Level Restriction is implemented but the table is incomplete, we need to go through every item adding the proper level number to the levelRequired table. Check the item database sorted by name in Resources.txt 
+		
 		Class Restriction is implemented through the warRestricted value in the table, which is binary true/false check. 
 			The same concept needs to be extended for items that are only usable by a particular class (instead of warRestricted which means "cannot be used by this 4 Warrior Classes"). 
 			This is similar to how the "professionRequired" value works, so you just need to add something like "classRequired" "Druid" for each item and add the appropiate check inside the ItemCheck function in items.lua
@@ -42,16 +40,10 @@
 		
 
 	- Units
-		Inside the WC3 units folder, you will find a huge parsed.txt file, which contains each unit with its base stats found in the Warcraft map in a Key Value format ready to copy to the npc_units_custom
-		There is also a Creeps file that has all the basic creeps, split by area.
-		For bosses, minibosses and other special units, check Data.txt which contains links with all the units found in the map, and open TBRmap.w3x in a World Editor.
-		With this file and info, you can implement every unit by just copying it to the txt and adding: Model, ModelScale, Projectile and if needed, the Creature AttachWearables block. Check "npc_shaman" for an example. 
-		Item numbers to attach wearables can be found in the items_game.txt which contains all the cosmetic codes (some might not be available in workshop tools yet). Models can be seen through Asset Browser.
 		Identify and add the Unit Abilities to code them later.
 		Unit Stat Gains per level is missing, this only applies for Boss-Hero units, check the stat gain in World Editor or just the Bestiary link in Data.txt to adjust the boss stats properly.
 
 	- Unit AI
-		For creeps to roam, add "vscripts" "creep_ai.lua", add the proper entities in the map, which contains the AI. In the lua, new areas need to be added just by copying the structure and adding the proper names.
 		Special Unit AI needs to be done after the unit spells and everything starts coming together.
 
 	- Backpack
