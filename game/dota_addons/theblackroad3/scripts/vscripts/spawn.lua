@@ -163,3 +163,19 @@ function GetEmptyPosition( list )
 
 	return position
 end
+
+------------------
+-- Boss Methods --
+------------------
+
+
+function SpawnBoss( trigger )
+    local unitName = trigger.caller:GetName() --The trigger should be named the same as the unit to spawn
+
+    local ent = Entities:FindByName(nil, unitName+"_spawner") --Such as titan_whatever_spawner or any name format
+    local position = ent:GetAbsOrigin()
+
+    print("Attempting to spawn ",unitName,"at",position)
+    local unit = CreateUnitByName(unitName, position, true, nil, nil, DOTA_TEAM_BADGUYS) --Or team neutrals, depends if you want to have colored ability icons :D
+    -- The unit should be stored somewhere probably, such as BOSSES[unitName] = unit, and the trigger should disallow spawning it more than once if it's still valid and alive
+end
