@@ -172,7 +172,7 @@ end
 function SpawnBoss( trigger )
     local unitName = trigger.caller:GetName() --The trigger should be named the same as the unit to spawn
 
-    local ent = Entities:FindByName(nil, unitName+"_spawner") --Such as titan_whatever_spawner or any name format
+    local ent = Entities:FindByName(nil, unitName.."_spawner") --Such as titan_whatever_spawner or any name format
     local position = ent:GetAbsOrigin()
 
     print("Attempting to spawn ",unitName,"at",position)

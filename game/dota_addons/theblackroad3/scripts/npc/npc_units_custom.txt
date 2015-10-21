@@ -73,94 +73,6 @@
 		"vscripts"		"creep_ai.lua"
 	}
 	//=================================================================================
-	// Creature: Mance Swiftsword
-	// Description: "Heavy melee unit with Shadowmeld and Devotion Aura. Can cast Divine Shield."
-	// * Unused *
-	// TODO: Proper model, item/mats drop
-	//=================================================================================
-	"mance_swiftsword"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				"models/heroes/chaos_knight/chaos_knight.vmdl"
-		"ModelScale"			"1"
-		"Level"				"35"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: 
-		
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"15"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"124"
-		"AttackDamageMax"		"148"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"0.60"
-		"AttackAnimationPoint"		"0.5"
-		"AttackAcquisitionRange"	"400.00"
-		"AttackRange"			"100"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"37.0"
-		"BountyGoldMax"			"47.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"320"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"6700"
-		"StatusHealthRegen"		"5.00"
-		"StatusMana"			"0"
-		"StatsManaRegen"		"0.00"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"250"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-		"Creature"
-		{
-			"AttachWearables"	
-			{
-				"Wearable1"		{	"ItemDef"	"5828"	} // "Atramentos the Apocalyptic"
-				"Wearable2"		{	"ItemDef"	"6266"	} // "Pauldrons of the Chaos Hound"
-				"Wearable3"		{	"ItemDef"	"5173"	} // "Entropic Helmet"
-				"Wearable4"		{	"ItemDef"	"5925"	} // "Shield of Screaming Souls"
-				"Wearable5"		{	"ItemDef"	"5233"	} // "Blade of Endless Havoc"
-			}
-		}
-	
-		"precache"
-		{
-			"particle_folder"	"particles/units/heroes/hero_chaos_knight"
-		}
-	}
-	//=================================================================================
 	// Creature: Black Goblin
 	// TODO: Same as the Goblin, needs a better model or a name change.
 	//=================================================================================
@@ -386,96 +298,6 @@
 		// Creature Data
 		//----------------------------------------------------------------
 		"vscripts"		"creep_ai.lua"
-	}
-	//=================================================================================
-	// Creature: Rokthul
-	// TODO: Chain? lightning spell of 200 damage
-	//		 Has a 15% command aura
-	//=================================================================================
-	"rokthul"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				"models/heroes/rikimaru/rikimaru.vmdl"
-		"ModelScale"		"2"
-		"Level"				"39"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			"rockthul_command_aura"	 //Reference: A05N
-		"Ability2"			"rockthul_chain_lightning"	 //Reference: A05M
-		
-		
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"3"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"254"
-		"AttackDamageMax"		"318"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.35"
-		"AttackAnimationPoint"		"0.3"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"100"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"72.0"
-		"BountyGoldMax"			"90.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"12111"
-		"StatusHealthRegen"		"8.00"
-		"StatusMana"			"500"
-		"StatsManaRegen"		"4.00"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"250"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-		"Creature"
-		{
-			"AttachWearables"	
-			{
-				"Wearable1"		{	"ItemDef"	"6368"	} // "Horns of the Frozen Blood"
-				"Wearable2"		{	"ItemDef"	"6365"	} // "Bracers of the Frozen Blood"
-				"Wearable3"		{	"ItemDef"	"5524"	} // "Wrath of the Highborn"
-				"Wearable4"		{	"ItemDef"	"5525"	} // "Temper of the Highborn - Off-Hand"
-				"Wearable5"		{	"ItemDef"	"6369"	} // "Armor of the Frozen Blood"
-				"Wearable6"		{	"ItemDef"	"6370"	} // "Tail of the Frozen Blood"
-			}
-		}
-	
-		"precache"
-		{
-			"particle_folder"	"particles/units/heroes/hero_riki"
-		}
 	}
 	//=================================================================================
 	// Creature: Centaur Pillager
@@ -1463,92 +1285,6 @@
 		//----------------------------------------------------------------
 	
 		"vscripts"		"creep_ai.lua"
-	}
-	//=================================================================================
-	// Creature: Nukacha
-	// TODO: Lightning spell of 200 damage
-	//=================================================================================
-	"nukacha"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				"models/heroes/shadow_demon/shadow_demon.vmdl"
-		"ModelScale"			"1"
-		"Level"				"23"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			"nukacha_chain_lightning"	 //Reference: A087
-		
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"5"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"96"
-		"AttackDamageMax"		"122"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.35"
-		"AttackAnimationPoint"		"0.3"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"100"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"26.0"
-		"BountyGoldMax"			"35.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"270"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"2700"
-		"StatusHealthRegen"		"4.00"
-		"StatusMana"			"250"
-		"StatsManaRegen"		"2.50"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"250"
-		
-		// Creature Data attacherino
-		//----------------------------------------------------------------
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"	"6574"	} // "Diabolical Appendages"
-				"Wearable2"		{	"ItemDef"	"4379"	} // "Sigil of the Summoned Lord"
-				"Wearable3"		{	"ItemDef"	"4377"	} // "Lash of the Summoned Lord"
-				"Wearable4"		{	"ItemDef"	"4380"	} // "Plate of the Summoned Lord"
-				"Wearable5"		{	"ItemDef"	"545"	} // "Shadow Demon's Ambient Effects" TODO: Fix not showing
-			}			
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient.vpcf"
-		}
 	}
 	//=================================================================================
 	// Creature: Sludge Beast
@@ -2715,76 +2451,6 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
-	// Creature: Hulking Ice Beast
-	// Description: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
-	//=================================================================================
-	"hulking_ice_beast"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
-		"ModelScale"			"1"
-		"Level"				"63"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: A09G
-		
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"5"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"902.0"
-		"AttackDamageMax"		"1080.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.35"
-		"AttackAnimationPoint"		"0.3"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"128"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"177.0"
-		"BountyGoldMax"			"225.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"320"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"61111"
-		"StatusHealthRegen"		"50.00"
-		"StatusMana"			"600"
-		"StatsManaRegen"		"1.5"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"140"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-	}
-	//=================================================================================
 	// Creature: Ice Behemoth
 	// Description: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
@@ -3059,75 +2725,6 @@
 		"TeamName"			"DOTA_TEAM_BADGUYS"
 		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"140"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-	}
-	//=================================================================================
-	// Creature: Sea Giant
-	// Description: "Light melee amphibious unit with Pulverize. |n|n|cffffcc00Attacks land units.|r"
-	//=================================================================================
-	"sea_giant"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
-		"ModelScale"			"1"
-		"Level"				"29"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: ACpv
-		
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"0"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"387.0"
-		"AttackDamageMax"		"445.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"2.25"
-		"AttackAnimationPoint"		"0.6"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"100"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"37.0"
-		"BountyGoldMax"			"51.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"200"
-		"MovementTurnRate"		"0.4"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"5600"
-		"StatusHealthRegen"		"4.00"
-		"StatusMana"			"0"
-		"StatsManaRegen"		"0"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
@@ -3767,79 +3364,6 @@
 		
 	}
 	//=================================================================================
-	// Creature: Forest Terror
-	// Description: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
-	//=================================================================================
-	"forest_terror"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
-		"ModelScale"			"1"
-		"Level"				"40"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: A05L
-		"Ability2"			""	 //Reference: ACvs
-		"Ability3"			""	 //Reference: ACen
-		
-		
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"1"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"436"
-		"AttackDamageMax"		"530"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.35"
-		"AttackAnimationPoint"		"0.5"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"100"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"62.0"
-		"BountyGoldMax"			"80.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"300"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"21111"
-		"StatusHealthRegen"		"10.00"
-		"StatusMana"			"450"
-		"StatsManaRegen"		"0"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"140"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-	}
-	//=================================================================================
 	// Creature: Giant Spider
 	// Description: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
@@ -4197,77 +3721,6 @@
 		"StatusHealthRegen"		"5.00"
 		"StatusMana"			"400"
 		"StatsManaRegen"		"1"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"
-		"VisionNighttimeRange"		"10"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"			"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"		"140"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-	}
-	//=================================================================================
-	// Creature: Rockwatcher Felblade
-	// Description: "Heavy melee unit with Command Aura. |n|n|cffffcc00Attacks land units.|r"
-	//=================================================================================
-	"rockwatcher_felblade"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"			"npc_dota_creature"
-		"Model"				""	 //Needs model data
-		"ModelScale"			"1"
-		"Level"				"52"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"			""	 //Reference: Aroa
-		
-		
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"			"4"
-		"MagicalResistance"		"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"327.0"
-		"AttackDamageMax"		"375.0"
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"			"1.75"
-		"AttackAnimationPoint"		"0.36"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"			"100"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"			"67.0"
-		"BountyGoldMax"			"95.0"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"			"320"
-		"MovementTurnRate"		"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"			"23111"
-		"StatusHealthRegen"		"15.00"
-		"StatusMana"			"300"
-		"StatsManaRegen"		"1.50"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -4652,7 +4105,7 @@
 	// Creature: Aris' Ghost
 	// Description: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
-	"aris'_ghost"
+	"aris_ghost"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -4942,6 +4395,79 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+	// Creature: Forest Terror
+	// Description: "Medium melee unit that poisons opponents. Can cast Ensnare. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"forest_terror"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"40"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A05L
+		"Ability2"			""	 //Reference: ACvs
+		"Ability3"			""	 //Reference: ACen
+		
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"1"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"436"
+		"AttackDamageMax"		"530"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"62.0"
+		"BountyGoldMax"			"80.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"300"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"21111"
+		"StatusHealthRegen"		"10.00"
+		"StatusMana"			"450"
+		"StatsManaRegen"		"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	//=================================================================================
 	// Creature: Gethos the Mighty
 	// Description: "Heavy melee amphibious unit with Hurl Boulder, War Stomp, and Pulverize. |n|n|cffffcc00Attacks land units.|r"
 	//=================================================================================
@@ -5162,6 +4688,76 @@
 		//----------------------------------------------------------------
 	}
 	//=================================================================================
+	// Creature: Hulking Ice Beast
+	// Description: "Heavy melee unit with Bash, War Stomp, and Reincarnation. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"hulking_ice_beast"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"63"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: A09G
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"5"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"902.0"
+		"AttackDamageMax"		"1080.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"128"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"177.0"
+		"BountyGoldMax"			"225.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"320"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"61111"
+		"StatusHealthRegen"		"50.00"
+		"StatusMana"			"600"
+		"StatsManaRegen"		"1.5"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	//=================================================================================
 	// Creature: Lucus Farblaze
 	// Description: "Heavy ranged unit with Brilliance Aura. Can also cast Raise Dead and Polymorph. |n|n|cffffcc00Attacks land and air units.|r"
 	//=================================================================================
@@ -5236,6 +4832,94 @@
 		// Creature Data
 		//----------------------------------------------------------------
 	}
+	//=================================================================================
+	// Creature: Mance Swiftsword
+	// Description: "Heavy melee unit with Shadowmeld and Devotion Aura. Can cast Divine Shield."
+	// * Unused *
+	// TODO: Proper model, item/mats drop
+	//=================================================================================
+	"mance_swiftsword"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/chaos_knight/chaos_knight.vmdl"
+		"ModelScale"			"1"
+		"Level"				"35"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: 
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"15"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"124"
+		"AttackDamageMax"		"148"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"0.60"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"400.00"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"37.0"
+		"BountyGoldMax"			"47.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"320"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"6700"
+		"StatusHealthRegen"		"5.00"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"250"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"	
+			{
+				"Wearable1"		{	"ItemDef"	"5828"	} // "Atramentos the Apocalyptic"
+				"Wearable2"		{	"ItemDef"	"6266"	} // "Pauldrons of the Chaos Hound"
+				"Wearable3"		{	"ItemDef"	"5173"	} // "Entropic Helmet"
+				"Wearable4"		{	"ItemDef"	"5925"	} // "Shield of Screaming Souls"
+				"Wearable5"		{	"ItemDef"	"5233"	} // "Blade of Endless Havoc"
+			}
+		}
+	
+		"precache"
+		{
+			"particle_folder"	"particles/units/heroes/hero_chaos_knight"
+		}
+	}
 	//========================================================================================================================================================================	
 	// Bosses
 	//========================================================================================================================================================================
@@ -5309,6 +4993,324 @@
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	//=================================================================================
+	// Creature: Nukacha
+	// TODO: Lightning spell of 200 damage
+	//=================================================================================
+	"nukacha"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/shadow_demon/shadow_demon.vmdl"
+		"ModelScale"					"1"
+		"Level"							"23"
+		"UseNeutralCreepBehavior"   	"1"
+	
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"						"nukacha_chain_lightning"	 //Reference: A087
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"96"
+		"AttackDamageMax"				"122"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"1.35"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"500"
+		"AttackRange"					"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"					"26.0"
+		"BountyGoldMax"					"35.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"270"
+		"MovementTurnRate"				"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"					"2700"
+		"StatusHealthRegen"				"4.00"
+		"StatusMana"					"250"
+		"StatsManaRegen"				"2.50"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"			"1400"
+		"VisionNighttimeRange"			"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"				"250"
+		
+		// Creature Data attacherino
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"6574"	} // "Diabolical Appendages"
+				"Wearable2"		{	"ItemDef"	"4379"	} // "Sigil of the Summoned Lord"
+				"Wearable3"		{	"ItemDef"	"4377"	} // "Lash of the Summoned Lord"
+				"Wearable4"		{	"ItemDef"	"4380"	} // "Plate of the Summoned Lord"
+				"Wearable5"		{	"ItemDef"	"545"	} // "Shadow Demon's Ambient Effects" TODO: Fix not showing
+			}			
+		}
+	
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient.vpcf"
+		}
+	}
+	//=================================================================================
+	// Creature: Rockwatcher Felblade
+	// Description: "Heavy melee unit with Command Aura. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"rockwatcher_felblade"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"52"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: Aroa
+		
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"4"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"327.0"
+		"AttackDamageMax"		"375.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.75"
+		"AttackAnimationPoint"		"0.36"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"67.0"
+		"BountyGoldMax"			"95.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"320"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"23111"
+		"StatusHealthRegen"		"15.00"
+		"StatusMana"			"300"
+		"StatsManaRegen"		"1.50"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+	}
+	//=================================================================================
+	// Creature: Rokthul
+	// TODO: Chain? lightning spell of 200 damage
+	//		 Has a 15% command aura
+	//=================================================================================
+	"rokthul"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				"models/heroes/rikimaru/rikimaru.vmdl"
+		"ModelScale"		"2"
+		"Level"				"39"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			"rockthul_command_aura"	 //Reference: A05N
+		"Ability2"			"rockthul_chain_lightning"	 //Reference: A05M
+		
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"3"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"254"
+		"AttackDamageMax"		"318"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"72.0"
+		"BountyGoldMax"			"90.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"270"
+		"MovementTurnRate"		"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"12111"
+		"StatusHealthRegen"		"8.00"
+		"StatusMana"			"500"
+		"StatsManaRegen"		"4.00"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"10"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"			"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"250"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"	
+			{
+				"Wearable1"		{	"ItemDef"	"6368"	} // "Horns of the Frozen Blood"
+				"Wearable2"		{	"ItemDef"	"6365"	} // "Bracers of the Frozen Blood"
+				"Wearable3"		{	"ItemDef"	"5524"	} // "Wrath of the Highborn"
+				"Wearable4"		{	"ItemDef"	"5525"	} // "Temper of the Highborn - Off-Hand"
+				"Wearable5"		{	"ItemDef"	"6369"	} // "Armor of the Frozen Blood"
+				"Wearable6"		{	"ItemDef"	"6370"	} // "Tail of the Frozen Blood"
+			}
+		}
+	
+		"precache"
+		{
+			"particle_folder"	"particles/units/heroes/hero_riki"
+		}
+	}
+	//=================================================================================
+	// Creature: Sea Giant
+	// Description: "Light melee amphibious unit with Pulverize. |n|n|cffffcc00Attacks land units.|r"
+	//=================================================================================
+	"sea_giant"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"			"npc_dota_creature"
+		"Model"				""	 //Needs model data
+		"ModelScale"			"1"
+		"Level"				"29"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"			""	 //Reference: ACpv
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"			"0"
+		"MagicalResistance"		"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"387.0"
+		"AttackDamageMax"		"445.0"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"			"2.25"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"			"100"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"			"37.0"
+		"BountyGoldMax"			"51.0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"			"200"
+		"MovementTurnRate"		"0.4"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"			"5600"
+		"StatusHealthRegen"		"4.00"
+		"StatusMana"			"0"
+		"StatsManaRegen"		"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"10"
 		
 		// Team

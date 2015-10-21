@@ -233,6 +233,7 @@ function GameMode:PostLoadPrecache()
 	print("[TBR] Performing Post-Load precache")    
 	PrecacheUnitByNameAsync("player_gravestone", function(...) end)
 	PrecacheUnitByNameAsync("player_teleporter",function(...) end)
+	PrecacheUnitByNameAsync("nukacha",function(...) end)
 
 	for areaName,areaTable in pairs(GameRules.SpawnInfoKV) do
     	for unitName,_ in pairs(areaTable) do

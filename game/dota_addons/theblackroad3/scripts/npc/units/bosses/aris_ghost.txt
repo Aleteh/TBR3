@@ -2,7 +2,7 @@
 // Creature: Aris' Ghost
 // Description: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
 //=================================================================================
-"aris'_ghost"
+"aris_ghost"
 {
 	// General
 	//----------------------------------------------------------------

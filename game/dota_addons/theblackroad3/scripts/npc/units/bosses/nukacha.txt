@@ -6,64 +6,66 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"BaseClass"			"npc_dota_creature"
-	"Model"				"models/heroes/shadow_demon/shadow_demon.vmdl"
-	"ModelScale"			"1"
-	"Level"				"23"
+	"BaseClass"						"npc_dota_creature"
+	"Model"							"models/heroes/shadow_demon/shadow_demon.vmdl"
+	"ModelScale"					"1"
+	"Level"							"23"
+	"UseNeutralCreepBehavior"   	"1"
+
 	
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"			"nukacha_chain_lightning"	 //Reference: A087
+	"Ability1"						"nukacha_chain_lightning"	 //Reference: A087
 	
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"			"5"
-	"MagicalResistance"		"0"
+	"ArmorPhysical"					"5"
+	"MagicalResistance"				"0"
 	
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"96"
-	"AttackDamageMax"		"122"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackRate"			"1.35"
-	"AttackAnimationPoint"		"0.3"
-	"AttackAcquisitionRange"	"500"
-	"AttackRange"			"100"
+	"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"				"96"
+	"AttackDamageMax"				"122"
+	"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"					"1.35"
+	"AttackAnimationPoint"			"0.3"
+	"AttackAcquisitionRange"		"500"
+	"AttackRange"					"100"
 	
 	// Bounty
 	//----------------------------------------------------------------
-	"BountyGoldMin"			"26.0"
-	"BountyGoldMax"			"35.0"
+	"BountyGoldMin"					"26.0"
+	"BountyGoldMax"					"35.0"
 	
 	// Movement
 	//----------------------------------------------------------------
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"			"270"
-	"MovementTurnRate"		"0.5"
+	"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"					"270"
+	"MovementTurnRate"				"0.5"
 	
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"			"2700"
-	"StatusHealthRegen"		"4.00"
-	"StatusMana"			"250"
-	"StatsManaRegen"		"2.50"
+	"StatusHealth"					"2700"
+	"StatusHealthRegen"				"4.00"
+	"StatusMana"					"250"
+	"StatsManaRegen"				"2.50"
 	
 	// Vision
 	//----------------------------------------------------------------
-	"VisionDaytimeRange"		"1400"
-	"VisionNighttimeRange"		"10"
+	"VisionDaytimeRange"			"1400"
+	"VisionNighttimeRange"			"10"
 	
 	// Team
 	//----------------------------------------------------------------
-	"TeamName"			"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"TeamName"						"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
-	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-	"HealthBarOffset"		"250"
+	"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"				"250"
 	
 	// Creature Data attacherino
 	//----------------------------------------------------------------
