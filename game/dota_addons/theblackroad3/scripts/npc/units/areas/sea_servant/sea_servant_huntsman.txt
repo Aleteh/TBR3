@@ -8,7 +8,7 @@
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
 	"Model"				"models/heroes/slark/slark.vmdl"	 //Needs model data
-	"ModelScale"			"1"
+	"ModelScale"			"0.6"
 	"Level"				"15"
 	
 	// Abilities
