@@ -1644,10 +1644,15 @@
 	
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%dmg_bonus"
 				}
-				//"OnAttackLanded"
-				//{
-				//	"RunScript"			"items/deathchill_blade"
-				//}
+				"OnAttackLanded"
+			    {
+			        "CleaveAttack"
+			        {
+			            "CleavePercent" "%cleave_percent"
+			            "CleaveRadius"  "%cleave_radius"
+			            "CleaveEffect"  "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+			        }
+			    }
 			}
 		}
 	
@@ -1658,6 +1663,16 @@
 				"var_type"			"FIELD_INTEGER"
 				"dmg_bonus"			"90"
 			}
+			"02"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "cleave_percent"         "25"
+	        }
+	        "03"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "cleave_radius"         "150"
+	        }
 		}
 	}
 	"item_eris_golden_apple_of_discord"		// TODO Add Use: 75% chance to receive a random powerful buff and 25% chance for debuff. Cooldown: 1 minute.
