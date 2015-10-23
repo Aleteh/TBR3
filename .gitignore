@@ -17,7 +17,7 @@ game/dota_addons/theblackroad3/resource/overviews/*
 *.vsndevts_c
 
 # Map Files
-#*.vpk
+*.vpk
 *.vxml_c
 game/dota_addons/theblackroad3/maps/scene_02.vpk
 game/dota_addons/theblackroad3/maps/scene_01.vpk
