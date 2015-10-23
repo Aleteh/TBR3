@@ -19,9 +19,3 @@ game/dota_addons/theblackroad3/resource/overviews/*
 # Map Files
 *.vpk
 *.vxml_c
-game/dota_addons/theblackroad3/maps/scene_02.vpk
-game/dota_addons/theblackroad3/maps/scene_01.vpk
-game/dota_addons/theblackroad3/maps/buildingproductionfacility.vpk
-game/dota_addons/theblackroad3/maps/demo.vpk
-content/dota_addons/theblackroad3/maps/dota.vmap
-game/dota_addons/theblackroad3/maps/somegamez_test.vpk
