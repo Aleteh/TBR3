@@ -7,7 +7,7 @@
 	// General
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
-	"Model"				""	 //Needs model data
+	"Model"				"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"	 //Needs model data
 	"ModelScale"			"1"
 	"Level"				"37"
 	

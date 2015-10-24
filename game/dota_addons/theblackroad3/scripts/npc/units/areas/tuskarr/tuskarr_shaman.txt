@@ -7,7 +7,7 @@
 	// General
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
-	"Model"				""	 //Needs model data
+	"Model"				"models/heroes/tuskarr/tuskarr.vmdl"	 //Needs model data
 	"ModelScale"			"1"
 	"Level"				"24"
 	

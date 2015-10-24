@@ -24,8 +24,8 @@
 	// General
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
-	"Model"				""	 //Needs model data
-	"ModelScale"			"1"
+	"Model"				"models/props_wildlife/wildlife_varmint001.vmdl"	 //Needs model data
+	"ModelScale"			"2"
 	"Level"				"75"
 	
 	// Abilities

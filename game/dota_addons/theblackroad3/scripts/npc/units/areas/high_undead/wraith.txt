@@ -2,23 +2,19 @@
 // Creature: Ghost
 // Description: "Light ranged unit that can cast Possession. |n|n|cffffcc00Attacks land and air units.|r"
 //=================================================================================
-"ghost"
+"wraith"
 {
 	// General
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
-	"Model"				""	 //Needs model data
+	"Model"				"models/creeps/lane_creeps/creep_radiant_ranged_diretide/creep_radiant_ranged_diretide.vmdl"	 //Needs model data
 	"ModelScale"			"1"
-	"Level"				"10"
+	"Level"				"44"
 	
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"			""	 //Reference: A0GR
-	"Ability2"			""	 //Reference: A07M
-	"Ability3"			""	 //Reference: A0GY
+	"Ability1"			""	 //Reference: 
 	
-	"Ability10"				"creep_respawn"
-
 	// Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			"0"
@@ -27,20 +23,20 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"		"25.0"
-	"AttackDamageMax"		"32.0"
+	"AttackDamageMin"		"577.0"
+	"AttackDamageMax"		"665.0"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"			"1.8"
 	"AttackAnimationPoint"		"0.56"
 	"AttackAcquisitionRange"	"500"
-	"AttackRange"			"100"
+	"AttackRange"			"500"
 	"ProjectileModel"		""	 //Add projectile models
 	"ProjectileSpeed"		"900"
 	
 	// Bounty
 	//----------------------------------------------------------------
-	"BountyGoldMin"			"8.0"
-	"BountyGoldMax"			"10.0"
+	"BountyGoldMin"			"45.0"
+	"BountyGoldMax"			"59.0"
 	
 	// Movement
 	//----------------------------------------------------------------
@@ -50,10 +46,10 @@
 	
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"			"750"
-	"StatusHealthRegen"		"0.5"
-	"StatusMana"			"100"
-	"StatsManaRegen"		"1.00"
+	"StatusHealth"			"7000"
+	"StatusHealthRegen"		"7.00"
+	"StatusMana"			"400"
+	"StatsManaRegen"		"1"
 	
 	// Vision
 	//----------------------------------------------------------------
@@ -63,8 +59,8 @@
 	// Team
 	//----------------------------------------------------------------
 	"TeamName"			"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		"MAGIC_MAN"
-	"CombatClassDefened"		"NONE"
+	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefened"		"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"BoundsHullName"		"DOTA_HULL_SIZE_HERO"

@@ -7,7 +7,7 @@
 	// General
 	//----------------------------------------------------------------
 	"BaseClass"			"npc_dota_creature"
-	"Model"				""	 //Needs model data
+	"Model"				"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_red.vmdl"	 //Needs model data
 	"ModelScale"			"1"
 	"Level"				"41"
 	
