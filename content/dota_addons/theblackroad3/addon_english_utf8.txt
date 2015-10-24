@@ -1,0 +1,2134 @@
+﻿"lang"
+{
+	"Language"		"English"
+	"Tokens"
+	{		
+		"addon_game_name"			"The Black Road 3"
+		"game_mode_15_desc" 		"RPG"
+	
+	
+		// Custom UI
+		"ItemDrops_Time_Remaining"	"Time Remaining: "
+		
+	
+	
+		//Custom Hero Names
+
+   		"npc_dota_hero_juggernaut"                 "Warlord"
+   		"npc_dota_hero_axe"         "Barbarian"
+   		"npc_dota_hero_phantom_assassin"       "Assassin"
+   		"npc_dota_hero_crystal_maiden"      "Cleric"
+   		"npc_dota_hero_dragon_knight"       "Spartan Warrior"
+   		"npc_dota_hero_windrunner"         "Ranger"
+   		"npc_dota_hero_invoker"             "Magician"
+   		"npc_dota_hero_furion"          "Druid"
+   		"npc_dota_hero_skeleton_king"       "Khaos Champion"
+   		"npc_dota_hero_brewmaster"          "Guardian of Nature"
+   		"npc_dota_hero_warlock"             "Warlock"
+   		"npc_dota_hero_omniknight"          "Temple Guardian"
+
+		// Chat
+		"DOTA_Chat_PlayerKilledGeneric" "<font color='#386BE8'>%s1</font> is dead! Respawn in 45 seconds"
+		"DOTA_Chat_PickedUpAegis"		""
+		
+		"DOTA_MiniKillcam_KilledByNeutral"	"KILLED BY\n TEST MOB"
+		
+		//Team strings
+		"DOTA_GoodGuys"			"ATHENS"
+		"DOTA_BadGuys"			"UNDERWORLD"
+		"DOTA_GoodGuysCaps"			"ATHENS"
+		"DOTA_BadGuysCaps"			"UNDERWORLD"
+
+		//Winner strings
+		"DOTA_Winner_GoodGuys"			"Athenians Victory"
+		"DOTA_Winner_BadGuys"			"Underworld Victory"
+		"DOTA_Winner_Teamname"			"%s1 Victory"
+		
+   		// Stat Tooltip
+		"DOTA_StatTooltip_Header"	"Hero Attributes:\n\n"
+		"DOTA_StatTooltip_Strength"		"Strength:"
+		"DOTA_StatTooltip_Agility"		"Agility:"
+		"DOTA_StatTooltip_Intelligence"	"Intelligence:"
+		"DOTA_StatTooltip_PrimaryAttrib"	" Primary Attribute\n"
+
+		"DOTA_StatTooltip_StrengthBonus"	"- Each point increases hit points by 20\n- Each point increases hit point regen by 0.25\n"
+		"DOTA_StatTooltip_AgilityBonus"		"- Every 5 points increase armor by 1\n- Each point increases attack speed by 1\n"
+		"DOTA_StatTooltip_IntelligenceBonus"	"- Each point increases mana by 15\n- Each point increases mana regen by 0.01\n-Each point increases Spell & Healing power by 3\n"
+		"DOTA_StatTooltip_TotalAttributesSkilled"	"Attributes Level: "
+		"DOTA_StatTooltip_GainPerLevel"		"- Points gained per Hero level: %s1\n"
+
+   		//  Shop Tab Names
+   		// Fullscreen shop
+		"DOTA_SHOP_CATEGORY_CONSUMABLES"		"Consumables"
+		"DOTA_SHOP_CATEGORY_ATTACK"				"Attack"
+		"DOTA_SHOP_CATEGORY_DEFENSE"			"Defense"
+		"DOTA_SHOP_CATEGORY_ABILITIES"			"Abilities"
+		"DOTA_SHOP_CATEGORY_MOVEMENT"			"Movement"
+		"DOTA_SHOP_CATEGORY_ATTRIBUTES"			"Attributes"
+		"DOTA_SHOP_CATEGORY_UNIQUES"			"Uniques"
+		"DOTA_SHOP_FILTERS"						"FILTERS"
+		"DOTA_SHOP_FILTER_BY"					"FILTER BY:"
+		"DOTA_SHOP_ITEMS"						"ITEMS"
+		"DOTA_SHOP_CLOSE"						"X CLOSE"
+		"DOTA_SHOP_DETAILS_ADD_TO_QUICK"		"ADD TO QUICK BUY"
+		"DOTA_SHOP_DETAILS_UPGRADE"				"UPGRADE ITEM"
+		"DOTA_SHOP_DETAILS_PURCHASE"			"PURCHASE ITEM"
+		"DOTA_SHOP_DETAILS_COMPLETE"			"COMPLETE"
+		"DOTA_SHOP_QUICK_BUY"					"QUICK BUY:"
+		"DOTA_SHOP_STASH"						"ITEMS IN STASH:"
+		
+		"DOTA_Shop_Search_Results_Title"		"SEARCH RESULTS"
+		"DOTA_Shop_Search_Results_Partial"		"'%s1' of '%s2' items that match your search:"
+		"DOTA_Shop_Search_Results"				"Items that match your search:"
+		"DOTA_Shop_Search_No_Results"			"No items were found that match your search."
+
+		"DOTA_Shop_Category_Basics"				"VOLVO"
+		"DOTA_Shop_Category_Upgrades"			"PLS"
+		"Dota_Shop_view"						"View"
+		"Dota_Shop_Save_Success"				"Save Successful"
+		"Dota_Shop_Save_Title"					"Save Build"
+		"Dota_Shop_Load"						"Load Build"
+		"Dota_Shop_Edit"						"Edit Mode"
+
+   		"DOTA_Shop_Category_0"		"POTIONS"
+		"DOTA_Shop_Category_1"		"MINOR ITEMS"
+		"DOTA_Shop_Category_2"		"WEAPONS AND ARMORS"
+		"DOTA_Shop_Category_3"		"SCROLLS"
+
+		"DOTA_Shop_Category_4"		"BOOKS"
+		"DOTA_Shop_Category_5"		"TRINKETS"
+		"DOTA_Shop_Category_6"		"ARTIFACTS"
+		"DOTA_Shop_Category_7"		"GREATER ITEMS"
+		"DOTA_Shop_Category_8"		"CHAMPIONS ARMORY"
+		"DOTA_Shop_Category_9"		"STUFF"
+
+		"DOTA_Shop_Category_10"		"CRAFTING SUPPLIES"
+		"DOTA_Shop_Category_11"		"CRAFTING SUPPLIES 2"
+
+		"DOTA_Shop_Category_12"		"SECRET SHOP"
+				
+		// Fullscreen shop
+		"DOTA_SHOP_CATEGORY_CONSUMABLES"		"Consumables"
+		"DOTA_SHOP_CATEGORY_ATTACK"				"Attack"
+		"DOTA_SHOP_CATEGORY_DEFENSE"			"Defense"
+		"DOTA_SHOP_CATEGORY_ABILITIES"			"Abilities"
+		"DOTA_SHOP_CATEGORY_MOVEMENT"			"Movement"
+		"DOTA_SHOP_CATEGORY_ATTRIBUTES"			"Attributes"
+		"DOTA_SHOP_CATEGORY_UNIQUES"			"Uniques"
+		"DOTA_SHOP_FILTERS"						"FILTERS"
+		"DOTA_SHOP_FILTER_BY"					"FILTER BY:"
+		"DOTA_SHOP_ITEMS"						"ITEMS"
+		"DOTA_SHOP_CLOSE"						"X CLOSE"
+		"DOTA_SHOP_DETAILS_ADD_TO_QUICK"		"ADD TO QUICK BUY"
+		"DOTA_SHOP_DETAILS_UPGRADE"				"UPGRADE ITEM"
+		"DOTA_SHOP_DETAILS_PURCHASE"			"PURCHASE ITEM"
+		"DOTA_SHOP_DETAILS_COMPLETE"			"COMPLETE"
+		"DOTA_SHOP_QUICK_BUY"					"QUICK BUY:"
+		"DOTA_SHOP_STASH"						"ITEMS IN STASH:"
+
+		"DOTA_SelectCourier"	"Select Courier"
+		"DOTA_CourierDeliver"	"Courier Deliver Items"
+		"DOTA_CourierHaste"		"Courier Speed Burst"
+		"DOTA_PurchaseQuickbuy"	"Purchase Quickbuy"
+		"DOTA_PurchaseSticky"	"Purchase Sticky"
+		"DOTA_GrabStashItems"	"Take Bank Items"
+		"DOTA_No_Courier"		"NO BANK"	// A courier does not exist
+
+		//Custom Ability Names
+
+		// substitution for modifier tooltips
+		// %MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% - 'd' prints the value returned by the function as an integer
+		// 'd' for integer
+		// 'f' for float
+		// optional '-' to not abs() the values
+		// optional number to specify the number of decimals to print after a float
+		// eg: %-2fMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE% 
+		// use %% to draw a percentage sign
+
+		// ******************** ABILITIES ********************
+		
+
+		// Assassin
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+
+		"DOTA_Tooltip_ability_assassin_assassinate"                                       "Assassinate"
+		"DOTA_Tooltip_ability_assassin_assassinate_Description"                           "A single flash of a blade that causes an immense amount of damage. The pain is amplified if the target is dazed."
+		"DOTA_Tooltip_ability_assassin_assassinate_bonus_disabled_target"                 "BONUS DISABLED TARGET:"
+
+		"DOTA_Tooltip_ability_assassin_critical_strike"                                   "Critical Strike"
+		"DOTA_Tooltip_ability_assassin_critical_strike_Description"                       "Deadly skills learnt over the years in your trade grants you the ability to occasionally strike an enemies weak point."
+		"DOTA_Tooltip_ability_assassin_critical_strike_blade_dance_crit_mult"             "BLADE DANCE CRIT MULT:"
+		"DOTA_Tooltip_ability_assassin_critical_strike_blade_dance_crit_chance"           "BLADE DANCE CRIT CHANCE:"
+
+		"DOTA_Tooltip_ability_assassin_disable"                                           "Disable"
+		"DOTA_Tooltip_ability_assassin_disable_Description"                               "A swift and precise strike that weakens and dazes the target giving you an advantage in combat"
+
+		"DOTA_Tooltip_ability_assassin_energy"                                            "Energy"
+		"DOTA_Tooltip_ability_assassin_energy_Description"                                "The stamina that you have remaining."
+
+		"DOTA_Tooltip_ability_assassin_garrote"                                           "Garrote"
+		"DOTA_Tooltip_ability_assassin_garrote_Description"                               "Using a thin metal wire, you cause the target to bleed profusely and lose accuracy in its strikes."
+		"DOTA_Tooltip_ability_assassin_garrote_creep_duration"                            "CREEP DURATION:"
+
+		"DOTA_Tooltip_ability_assassin_shadow_image"                                      "Shadow Image"
+		"DOTA_Tooltip_ability_assassin_shadow_image_Description"                          "A secret art that creates splitting images of yourself from thin air to strike and confuse enemies."
+		"DOTA_Tooltip_ability_assassin_shadow_image_illusion_duration"                    "ILLUSION DURATION:"
+		"DOTA_Tooltip_ability_assassin_shadow_image_outgoing_damage"                      "OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_assassin_shadow_image_incoming_damage"                      "INCOMING DAMAGE:"
+		"DOTA_Tooltip_ability_assassin_shadow_image_images_count"                         "IMAGES COUNT:"
+		"DOTA_Tooltip_ability_assassin_shadow_image_invuln_duration"                      "INVULN DURATION:"
+		"DOTA_Tooltip_ability_assassin_shadow_image_outgoing_damage_tooltip"              "OUTGOING DAMAGE TOOLTIP:"
+
+		"DOTA_Tooltip_ability_assassin_walk_the_shadows"                                  "Walk The Shadows"
+		"DOTA_Tooltip_ability_assassin_walk_the_shadows_Description"                      "Fade into the shadows moving unseen from untrained eyes, granting you stunning advantages over any unsuspecting prey."
+		"DOTA_Tooltip_ability_assassin_walk_the_shadows_duration"                         "DURATION:"
+		"DOTA_Tooltip_ability_assassin_walk_the_shadows_bonus_movespeed"                  "BONUS MOVESPEED:"
+		"DOTA_Tooltip_ability_assassin_walk_the_shadows_bonus_damage"                     "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_assassin_walk_the_shadows_stun_duration"                    "STUN DURATION:"
+
+		"DOTA_Tooltip_assassin_assassinate_orb_modifier"                                  "Vulnerable"
+		"DOTA_Tooltip_assassin_assassinate_orb_modifier_Description"                      "Your slow reactions cause you to suffer even more damage."
+
+		"DOTA_Tooltip_assassin_disable_debuff"                                            "Dazed"
+		"DOTA_Tooltip_assassin_disable_debuff_Description"                                "The assassin has struck you in a vital point, leaving you dazed."
+		
+		// Barbarian
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_barbarian_bloodbath"                                        "Bloodbath"
+		"DOTA_Tooltip_ability_barbarian_bloodbath_Description"                            "Strike your target so fiercely your axe sinks deep into your targets flesh drenching you in blood regenerating your health"
+		"DOTA_Tooltip_ability_barbarian_callused_skin"                                    "Barbarian Callused Skin"
+		"DOTA_Tooltip_ability_barbarian_callused_skin_Description"                        ""
+		"DOTA_Tooltip_ability_barbarian_callused_skin_value"                              "VALUE:"
+
+		"DOTA_Tooltip_ability_barbarian_cleave"                                           "Cleave"
+		"DOTA_Tooltip_ability_barbarian_cleave_Description"                               "With great force swing your weapon in a arc in front of your hero performing a powerful cleave"
+		"DOTA_Tooltip_ability_barbarian_cleave_damage"                                    "DAMAGE:"
+		"DOTA_Tooltip_ability_barbarian_cleave_radius"                                    "RADIUS:"
+		"DOTA_Tooltip_ability_barbarian_cleave_aoe_damage"                                "AOE DAMAGE:"
+		"DOTA_Tooltip_ability_barbarian_cleave_cooldown"                                  "COOLDOWN:"
+
+		"DOTA_Tooltip_ability_barbarian_mighty_leap"                                      "Mighty Leap"
+		"DOTA_Tooltip_ability_barbarian_mighty_leap_Description"                          "Furiously leap into your enemies and hit the ground with such immense power the ground starts to shake dealing area of effect damage and stunning all enemies in its range."
+		"DOTA_Tooltip_ability_barbarian_mighty_leap_mana_gain"                            "MANA GAIN:"
+
+		"DOTA_Tooltip_ability_barbarian_rage"                                             "Rage"
+		"DOTA_Tooltip_ability_barbarian_rage_Description"                                 "When the barbarian enters combat he builds up momentum for every act of combat. Degenerates over time."
+
+		"DOTA_Tooltip_ability_barbarian_rend_armor"                                       "Rend Armor"
+		"DOTA_Tooltip_ability_barbarian_rend_armor_Description"                           "A swift attack that tears your targets armor to shreds"
+		"DOTA_Tooltip_ability_barbarian_rend_armor_duration"                              "DURATION:"
+		"DOTA_Tooltip_ability_barbarian_rend_armor_armor_reduction"                       "ARMOR REDUCTION:"
+
+		"DOTA_Tooltip_ability_barbarian_taunt"                                            "Taunt"
+		"DOTA_Tooltip_ability_barbarian_taunt_Description"                                "Perform a taunting motion towards your enemy, forcing him to attack you with less confidence"
+		"DOTA_Tooltip_ability_barbarian_taunt_duration"                                   "DURATION:"
+		"DOTA_Tooltip_ability_barbarian_taunt_attackspeed_reduction"                      "ATTACKSPEED REDUCTION:"
+
+		// Cleric
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_cleric_cleansing_flame"                                     "Cleansing Flame"
+		"DOTA_Tooltip_ability_cleric_cleansing_flame_Description"                         "Channels a holy fire into the enemies ethereal body causing damage for the duration. The holy flame converts the damage into healing energy for allies near the target."
+		"DOTA_Tooltip_ability_cleric_cleansing_flame_damage"                              "DAMAGE:"
+		"DOTA_Tooltip_ability_cleric_cleansing_flame_aoe"                                 "AOE:"
+
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven"                                      "Fire Of Heaven"
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven_Description"                          "A swirling ball of holy light strikes down causing damage and slowing all enemies struck."
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven_aoe_damage"                           "AOE DAMAGE:"
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven_radius"                               "RADIUS:"
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven_slow_duration"                        "SLOW DURATION:"
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven_slow_speed"                           "SLOW SPEED:"
+		"DOTA_Tooltip_ability_cleric_fire_of_heaven_hero_slow_duration"                   "HERO SLOW DURATION:"
+
+		"DOTA_Tooltip_ability_cleric_holy_light"                                          "Holy Light"
+		"DOTA_Tooltip_ability_cleric_holy_light_Description"                              "Blesses a target with life energies healing it instantly."
+		"DOTA_Tooltip_ability_cleric_holy_light_heal_amount"                              "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_cleric_rebirth"                                             "Rebirth"
+		"DOTA_Tooltip_ability_cleric_rebirth_Description"                                 "Prays to the heavens for the return of a mortal soul, causing a target to be instantly reborn by your side."
+		"DOTA_Tooltip_ability_cleric_rebirth_hp"                                          "HP:"
+		"DOTA_Tooltip_ability_cleric_rebirth_mana"                                        "MANA:"
+
+		"DOTA_Tooltip_ability_cleric_regen"                                               "Regen"
+		"DOTA_Tooltip_ability_cleric_regen_Description"                                   "Blesses a target with life energies healing for a large amount over time."
+		"DOTA_Tooltip_ability_cleric_regen_heal_amount"                                   "HEAL AMOUNT:"
+		"DOTA_Tooltip_ability_cleric_regen_duration"                                      "DURATION:"
+		
+		
+
+		
+		
+		// Druid
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_druid_call_lightning"                                       "Call Lightning"
+		"DOTA_Tooltip_ability_druid_call_lightning_Description"                           "Summon nature's fury, striking an area instantly with a large bolt of lightning shocking those hit for a large amount of damage."
+		"DOTA_Tooltip_ability_druid_call_lightning_slow_duration"                         "SLOW DURATION:"
+		"DOTA_Tooltip_ability_druid_call_lightning_slow_percentage"                       "SLOW PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_druid_call_storm"                                           "Call Storm"
+		"DOTA_Tooltip_ability_druid_call_storm_Description"                               "Strikes down a bolt of thunder onto yourself causing damage and creating a shockwave so large that it slows and pushes away all enemies struck."
+		"DOTA_Tooltip_ability_druid_call_storm_slow_percentage"                           "SLOW PERCENTAGE:"
+		"DOTA_Tooltip_ability_druid_call_storm_radius"                                    "RADIUS:"
+		"DOTA_Tooltip_ability_druid_call_storm_dmg"                                       "DMG:"
+
+		"DOTA_Tooltip_ability_druid_mind_blast"                                           "Mind Blast"
+		"DOTA_Tooltip_ability_druid_mind_blast_Description"                               "Blasts the targets ethereal body draining their magical energies."
+		"DOTA_Tooltip_ability_druid_mind_blast_mana_drain"                                "MANA DRAIN:"
+		"DOTA_Tooltip_ability_druid_mind_blast_daze_duration"                             "DAZE DURATION:"
+		"DOTA_Tooltip_ability_druid_mind_blast_slow_percentage"                           "SLOW PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_druid_natures_wrath"                                        "Natures Wrath"
+		"DOTA_Tooltip_ability_druid_natures_wrath_Description"                            "Calls forth roots from the Earth, to grab and immobilize  a target enemy unit, exposing its weak points."
+		"DOTA_Tooltip_ability_druid_natures_wrath_damage_per_second"                      "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_druid_natures_wrath_armor_reduction"                        "ARMOR REDUCTION:"
+		"DOTA_Tooltip_ability_druid_natures_wrath_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_druid_rejuvenation"                                         "Rejuvenation"
+		"DOTA_Tooltip_ability_druid_rejuvenation_Description"                             "Recite the arts for healing, regenerating an allied targets life energies over time."
+		"DOTA_Tooltip_ability_druid_rejuvenation_heal_amount"                             "HEAL AMOUNT:"
+		"DOTA_Tooltip_ability_druid_rejuvenation_duration"                                "DURATION:"
+		
+		
+		
+		// Guardian of Nature
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_guardianofnature_cataclysm"                                 "Cataclysm"
+		"DOTA_Tooltip_ability_guardianofnature_cataclysm_Description"                     "Changes the foundation of the Earth, causing boulders and magma to fly out from the targeted point."
+		"DOTA_Tooltip_ability_guardianofnature_cataclysm_damage"                          "DAMAGE:"
+		"DOTA_Tooltip_ability_guardianofnature_cataclysm_damage_over_time"                "DAMAGE OVER TIME:"
+		"DOTA_Tooltip_ability_guardianofnature_cataclysm_duration"                        "DURATION:"
+		"DOTA_Tooltip_ability_guardianofnature_cataclysm_radius"                          "RADIUS:"
+
+		"DOTA_Tooltip_ability_guardianofnature_earth_shock"                               "Earth Shock"
+		"DOTA_Tooltip_ability_guardianofnature_earth_shock_Description"                   "Strikes the Earth with force that unleashes a shockwave, damaging all enemies caught in the blast."
+		"DOTA_Tooltip_ability_guardianofnature_earth_shock_shock_speed"                   "SHOCK SPEED:"
+		"DOTA_Tooltip_ability_guardianofnature_earth_shock_shock_width"                   "SHOCK WIDTH:"
+		"DOTA_Tooltip_ability_guardianofnature_earth_shock_shock_distance"                "SHOCK DISTANCE:"
+		"DOTA_Tooltip_ability_guardianofnature_earth_shock_shock_damage"                  "SHOCK DAMAGE:"
+
+		"DOTA_Tooltip_ability_guardianofnature_natures_fury"                              "Natures Fury"
+		"DOTA_Tooltip_ability_guardianofnature_natures_fury_Description"                  "Enchants your strikes causing some blows to hit with the weight of the world, stunning a target and causing extra damage."
+		"DOTA_Tooltip_ability_guardianofnature_natures_fury_chance"                       "CHANCE:"
+		"DOTA_Tooltip_ability_guardianofnature_natures_fury_radius"                       "RADIUS:"
+		"DOTA_Tooltip_ability_guardianofnature_natures_fury_damage"                       "DAMAGE:"
+		"DOTA_Tooltip_ability_guardianofnature_natures_fury_stun_duration"                "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_guardianofnature_roar"                                      "Roar"
+		"DOTA_Tooltip_ability_guardianofnature_roar_Description"                          "Unleashes a primal roar that inspires friendly units to fight harder."
+		"DOTA_Tooltip_ability_guardianofnature_roar_damage_bonus"                         "DAMAGE BONUS:"
+		"DOTA_Tooltip_ability_guardianofnature_roar_armor_bonus"                          "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_guardianofnature_roar_duration"                             "DURATION:"
+		"DOTA_Tooltip_ability_guardianofnature_roar_radius"                               "RADIUS:"
+
+		"DOTA_Tooltip_ability_guardianofnature_tremor"                                    "Tremor"
+		"DOTA_Tooltip_ability_guardianofnature_tremor_Description"                        "Enchants your strikes causing some blows to be so powerful that it's effects are felt by nearby enemies."
+		"DOTA_Tooltip_ability_guardianofnature_tremor_chance"                             "CHANCE:"
+		"DOTA_Tooltip_ability_guardianofnature_tremor_full_radius"                        "FULL RADIUS:"
+		"DOTA_Tooltip_ability_guardianofnature_tremor_half_radius"                        "HALF RADIUS:"
+		"DOTA_Tooltip_ability_guardianofnature_tremor_dmg"                                "DMG:"
+
+		
+		
+		// Khaos Champion
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_kc_hatred"                                                  "Hatred"
+		"DOTA_Tooltip_ability_kc_hatred_Description"                                      "Khaos Champion's connection with the spirit world allows him to regenerate mana at a quicker rate."
+
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind"                                   "Grave Bind"
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_Description"                       "Khaos Champion shows his target a vision of his death petrifying him."
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_blast_speed"                       "BLAST SPEED:"
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_blast_stun_duration"               "BLAST STUN DURATION:"
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_blast_slow"                        "BLAST SLOW:"
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_blast_dot_duration"                "BLAST DOT DURATION:"
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_blast_dot_damage"                  "BLAST DOT DAMAGE:"
+		"DOTA_Tooltip_ability_khaoschampion_grave_bind_tooltip_slow_duration"             "TOOLTIP SLOW DURATION:"
+
+		"DOTA_Tooltip_ability_khaoschampion_requiem"                                      "Requiem"
+		"DOTA_Tooltip_ability_khaoschampion_requiem_Description"                          "Khaos Champion calls forth fallen souls from the spirit world to form a boundary around Khaos Champion striking at anyone who dare to attack the Champion."
+		"DOTA_Tooltip_ability_khaoschampion_requiem_damage_attacker"                      "DAMAGE ATTACKER:"
+		"DOTA_Tooltip_ability_khaoschampion_requiem_aoe"                                  "AOE:"
+		"DOTA_Tooltip_ability_khaoschampion_requiem_duration"                             "DURATION:"
+
+		"DOTA_Tooltip_ability_khaoschampion_shadow_scythe"                                "Shadow Scythe"
+		"DOTA_Tooltip_ability_khaoschampion_shadow_scythe_Description"                    "Khaos Champion conjures shadow versions of his schyte which seeks out and attacks the life essence of nearby enemies."
+		"DOTA_Tooltip_ability_khaoschampion_shadow_scythe_damage"                         "DAMAGE:"
+
+		"DOTA_Tooltip_ability_khaoschampion_shroud"                                       "Shroud"
+		"DOTA_Tooltip_ability_khaoschampion_shroud_Description"                           "Khaos Champion is shrouded with darkness that absorbs damage taken and redirect a small portion of it to his foes"
+		"DOTA_Tooltip_ability_khaoschampion_shroud_armor_bonus"                           "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_khaoschampion_shroud_damage_reduction"                      "DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_khaoschampion_shroud_reflect_aoe"                           "REFLECT AOE:"
+		"DOTA_Tooltip_ability_khaoschampion_shroud_damage_return_percentage"              "DAMAGE RETURN PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_khaoschampion_terrorize"                                    "Terrorize"
+		"DOTA_Tooltip_ability_khaoschampion_terrorize_Description"                        "Khaos Champion's aura gives his enemies doubt making them slower in their actions"
+		"DOTA_Tooltip_ability_khaoschampion_terrorize_move_speed_reduction"               "MOVE SPEED REDUCTION:"
+		"DOTA_Tooltip_ability_khaoschampion_terrorize_attack_speed_reduction"             "ATTACK SPEED REDUCTION:"
+		"DOTA_Tooltip_ability_khaoschampion_terrorize_Range"                              "RANGE:"
+		
+		// Magician
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_magician_flame_spire"                                       "Flame Spire"
+		"DOTA_Tooltip_ability_magician_flame_spire_Description"                           "Sparks a large area causing an inferno of flames to burn enemies that stay inside it."
+		"DOTA_Tooltip_ability_magician_flame_spire_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_magician_flame_spire_duration"                              "DURATION:"
+		"DOTA_Tooltip_ability_magician_flame_spire_damage"                                "DAMAGE:"
+		"DOTA_Tooltip_ability_magician_flame_spire_tick_interval"                         "TICK INTERVAL:"
+
+		"DOTA_Tooltip_ability_magician_flash_point"                                       "Flash Point"
+		"DOTA_Tooltip_ability_magician_flash_point_Description"                           "Combusts the air around the Magician, causing it to explode dealing damage to all enemies."
+		"DOTA_Tooltip_ability_magician_flash_point_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_magician_flash_point_dmg"                                   "DMG:"
+
+		"DOTA_Tooltip_ability_magician_freezing_field"                                    "Freezing Field"
+		"DOTA_Tooltip_ability_magician_freezing_field_Description"                        "Freezes all the moisture in the air, dropping temperatures to below sub-zero levels. This causes large amounts of ice to form and instantly explode, dealing damage and slowing all targets hit."
+		"DOTA_Tooltip_ability_magician_freezing_field_dmg"                                "DMG:"
+		"DOTA_Tooltip_ability_magician_freezing_field_slow"                               "SLOW:"
+		"DOTA_Tooltip_ability_magician_freezing_field_blast_radius"                       "BLAST RADIUS:"
+
+		"DOTA_Tooltip_ability_magician_frost_bolt"                                        "Frost Bolt"
+		"DOTA_Tooltip_ability_magician_frost_bolt_Description"                            "Fires off magical bolts into the Earth, freezing it and causing large amounts of ice to form in the area, instantly freezing targets and dealing damage."
+		"DOTA_Tooltip_ability_magician_frost_bolt_dmg"                                    "DMG:"
+
+		"DOTA_Tooltip_ability_magician_meteor_shower"                                     "Meteor Shower"
+		"DOTA_Tooltip_ability_magician_meteor_shower_Description"                         "Accelerates the flow of time in space, causing meteors to bombard enemies in front of you dealing damage and stunning them"
+		"DOTA_Tooltip_ability_magician_meteor_shower_radius"                              "RADIUS:"
+
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy"                               "Meteor Shower Proxy"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_Description"                   ""
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_land_time"                     "LAND TIME:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_area_of_effect"                "AREA OF EFFECT:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_travel_distance"               "TRAVEL DISTANCE:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_levelkey"                      "LEVELKEY:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_travel_speed"                  "TRAVEL SPEED:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_damage_interval"               "DAMAGE INTERVAL:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_vision_distance"               "VISION DISTANCE:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_end_vision_duration"           "END VISION DURATION:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_main_damage"                   "MAIN DAMAGE:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_levelkey"                      "LEVELKEY:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_burn_duration"                 "BURN DURATION:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_burn_dps"                      "BURN DPS:"
+		"DOTA_Tooltip_ability_magician_meteor_shower_proxy_levelkey"                      "LEVELKEY:"
+
+		
+		
+		// Ranger
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_ranger_black_arrow"                                         "Black Arrow"
+		"DOTA_Tooltip_ability_ranger_black_arrow_Description"                             "Fires off a deadly poisonhead arrow, that deals extra damage and also causes the target to explode on death."
+		"DOTA_Tooltip_ability_ranger_black_arrow_explosion_radius"                        "EXPLOSION RADIUS:"
+
+		"DOTA_Tooltip_ability_ranger_prevailing_winds"                                    "Prevailing Winds"
+		"DOTA_Tooltip_ability_ranger_prevailing_winds_Description"                        "Your mastery of the bow encourages nearby allies, granting them better focus at their ranged strikes."
+		"DOTA_Tooltip_ability_ranger_prevailing_winds_bonus_damage"                       "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_ranger_prevailing_winds_radius"                             "RADIUS:"
+
+		"DOTA_Tooltip_ability_ranger_puncture"                                            "Puncture"
+		"DOTA_Tooltip_ability_ranger_puncture_Description"                                "Fires off a glasshead arrow that has shrapnel inside, causing large amounts of internal bleeding in the target."
+		"DOTA_Tooltip_ability_ranger_puncture_duration"                                   "DURATION:"
+
+		"DOTA_Tooltip_ability_ranger_soul_piercing_shot"                                  "Soul Piercing Shot"
+		"DOTA_Tooltip_ability_ranger_soul_piercing_shot_Description"                      "Enchants your arrows granting them the ability to pierce into the targets soul, draining their magical ability. This sometimes allows you to greatly damage their ethereal body causing extra damage on a shot."
+		"DOTA_Tooltip_ability_ranger_soul_piercing_shot_manaburn"                         "MANABURN:"
+
+		"DOTA_Tooltip_ability_ranger_star_dust"                                           "Star Dust"
+		"DOTA_Tooltip_ability_ranger_star_dust_Description"                               "Fires off a magical starhead arrow that causes extra damage to enemies. The arrow then explodes showering stardust on any nearby friendly unit healing them in the process."
+		"DOTA_Tooltip_ability_ranger_star_dust_heal_radius"                               "HEAL RADIUS:"
+
+		"DOTA_Tooltip_ability_ranger_stun_shot"                                           "Stun Shot"
+		"DOTA_Tooltip_ability_ranger_stun_shot_Description"                               "Fires off a forcehead arrow, striking enemies with such force that it leaves the target stunned."
+		"DOTA_Tooltip_ability_ranger_stun_shot_duration"                                  "DURATION:"
+
+		
+		
+		// Spartan Warrior
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_spartanwarrior_charge"                                      "Charge"
+		"DOTA_Tooltip_ability_spartanwarrior_charge_Description"                          "You charge at a distant target, striking the target with a blow that causes the effects to be felt by nearby enemies. All enemies struck will also be dazed and weakened. If the target is close you will additionally taunt the target."
+		"DOTA_Tooltip_ability_spartanwarrior_charge_aoe_damage"                           "AOE DAMAGE:"
+		"DOTA_Tooltip_ability_spartanwarrior_charge_radius"                               "RADIUS:"
+		"DOTA_Tooltip_ability_spartanwarrior_charge_move_attack_speed_slow_percentage"    "MOVE ATTACK SPEED SLOW PERCENTAGE:"
+		"DOTA_Tooltip_ability_spartanwarrior_charge_daze_duration"                        "DAZE DURATION:"
+		"DOTA_Tooltip_ability_spartanwarrior_charge_taunt_duration"                       "TAUNT DURATION:"
+
+		"DOTA_Tooltip_ability_spartanwarrior_dispatch"                                    "Dispatch"
+		"DOTA_Tooltip_ability_spartanwarrior_dispatch_Description"                        "Strike deep into an enemy causing a large amount of damage and also causing the target to bleed profusely. This effect can stack multiple times. The Spartan Warrior has mastered this skill granting him additional power with this skill."
+		"DOTA_Tooltip_ability_spartanwarrior_dispatch_bleed_damage"                       "BLEED DAMAGE:"
+		"DOTA_Tooltip_ability_spartanwarrior_dispatch_duration"                           "DURATION:"
+
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx"                                     "Phalanx"
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx_Description"                         "Command all nearby allies to assume the phalanx formation, granting additional defense bonuses. You being the center of the formation have decreased movement speed while phalanx formation is active."
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx_mana_cost_per_second"                "MANA COST PER SECOND:"
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx_Range"                               "RANGE:"
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx_dodge"                               "DODGE:"
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx_magic_resistance"                    "MAGIC RESISTANCE:"
+		"DOTA_Tooltip_ability_spartanwarrior_phalanx_move_speed_reduction"                "MOVE SPEED REDUCTION:"
+
+		"DOTA_Tooltip_ability_spartanwarrior_throw_javelin"                               "Throw Javelin"
+		"DOTA_Tooltip_ability_spartanwarrior_throw_javelin_Description"                   "Throws a javelin with all your strength causing damage to all targets hit by the javelin. The Spartan Warrior has mastered this skill granting him additional power with this skill."
+		"DOTA_Tooltip_ability_spartanwarrior_throw_javelin_throw_speed"                   "THROW SPEED:"
+		"DOTA_Tooltip_ability_spartanwarrior_throw_javelin_throw_width"                   "THROW WIDTH:"
+		"DOTA_Tooltip_ability_spartanwarrior_throw_javelin_throw_distance"                "THROW DISTANCE:"
+		"DOTA_Tooltip_ability_spartanwarrior_throw_javelin_throw_damage"                  "THROW DAMAGE:"
+
+		"DOTA_Tooltip_ability_spartanwarrior_valor"                                       "Valor"
+		"DOTA_Tooltip_ability_spartanwarrior_valor_Description"                           "Chants a war shout, inspiring nearby allies causing them to tighten their guard. The Spartan Warrior has mastered this skill granting him additional power with this skill."
+		"DOTA_Tooltip_ability_spartanwarrior_valor_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_spartanwarrior_valor_duration"                              "DURATION:"
+		"DOTA_Tooltip_ability_spartanwarrior_valor_health_regen"                          "HEALTH REGEN:"
+
+		
+		
+		// Temple Guardian
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_templeguardian_fire_of_apollo"                              "Fire Of Apollo"
+		"DOTA_Tooltip_ability_templeguardian_fire_of_apollo_Description"                  "Summon a holy flame that burns all enemies that stay in its sacred grounds. This is a blessed skill granting the Temple Guardian additional power with this skill."
+		"DOTA_Tooltip_ability_templeguardian_fire_of_apollo_damage_base"                  "DAMAGE BASE:"
+		"DOTA_Tooltip_ability_templeguardian_fire_of_apollo_damage_over_time"             "DAMAGE OVER TIME:"
+		"DOTA_Tooltip_ability_templeguardian_fire_of_apollo_spell_power_multipler"        "SPELL POWER MULTIPLER:"
+		"DOTA_Tooltip_ability_templeguardian_fire_of_apollo_radius"                       "RADIUS:"
+
+		"DOTA_Tooltip_ability_templeguardian_gift_of_the_gods"                            "Gift Of The Gods"
+		"DOTA_Tooltip_ability_templeguardian_gift_of_the_gods_Description"                "Recite a prayer that instantly restores a targets life energies."
+		"DOTA_Tooltip_ability_templeguardian_gift_of_the_gods_heal_amount"                "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_templeguardian_hammer_of_zeus"                              "Hammer Of Zeus"
+		"DOTA_Tooltip_ability_templeguardian_hammer_of_zeus_Description"                  "Summon a divine hammer blessed by Zeus, God of Thunder. The hammer strikes with such force that the target takes extra damage and gets knocked away from you."
+		"DOTA_Tooltip_ability_templeguardian_hammer_of_zeus_dmg"                          "DMG:"
+
+		"DOTA_Tooltip_ability_templeguardian_hestias_touch"                               "Hestias Touch"
+		"DOTA_Tooltip_ability_templeguardian_hestias_touch_Description"                   "Recite a prayer that causes Hestia, Virgin Goddess of Hearth to mark a target for a short duration. All strikes against the marked target will cause additional ethereal damage draining the targets magical energies. Warrior Classes receive a smaller bonus."
+		"DOTA_Tooltip_ability_templeguardian_hestias_touch_mana_stolen_per_hit"           "MANA STOLEN PER HIT:"
+		"DOTA_Tooltip_ability_templeguardian_hestias_touch_mana_warrior"                  "MANA WARRIOR:"
+
+		"DOTA_Tooltip_ability_templeguardian_mark_of_artemis"                             "Mark Of Artemis"
+		"DOTA_Tooltip_ability_templeguardian_mark_of_artemis_Description"                 "Recite a prayer that causes Artemis, Goddess of the hunt to bless you with her fury. While you are blessed, each strike marks a target for "The Hunt" and each strike has a chance of striking with Artemis's power dealing critical damage. Anytime you or an ally strikes a target debuffed with "The Hunt" each strike will deepen Artemis's fury causing additional damage that stacks on itself. This damage will degrade over time."
+		"DOTA_Tooltip_ability_templeguardian_mark_of_artemis_dmg_per_hit"                 "DMG PER HIT:"
+		"DOTA_Tooltip_ability_templeguardian_mark_of_artemis_crit_chance"                 "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_templeguardian_mark_of_artemis_crit_bonus"                  "CRIT BONUS:"
+
+		"DOTA_Tooltip_ability_templeguardian_pray"                                        "Pray"
+		"DOTA_Tooltip_ability_templeguardian_pray_Description"                            "Recite a prayer to an Olympian God for a target, granting them their blessings."
+
+		"DOTA_Tooltip_ability_pray_ares"                                                  "Pray Ares"
+		"DOTA_Tooltip_ability_pray_ares_Description"                                      "Pray to Ares, God of War causing you to fight with his anger and savagery."
+		"DOTA_Tooltip_ability_pray_ares_damage_bonus_static"                              "DAMAGE BONUS STATIC:"
+		"DOTA_Tooltip_ability_pray_ares_damage_bonus_percent"                             "DAMAGE BONUS PERCENT:"
+
+		"DOTA_Tooltip_ability_pray_athena"                                                "Pray Athena"
+		"DOTA_Tooltip_ability_pray_athena_Description"                                    "Pray to Athena, Goddess of War causing you to fight with her intelligence and will."
+		"DOTA_Tooltip_ability_pray_athena_mana_bonus_static"                              "MANA BONUS STATIC:"
+		"DOTA_Tooltip_ability_pray_athena_power_bonus_static"                             "POWER BONUS STATIC:"
+		"DOTA_Tooltip_ability_pray_athena_power_bonus_percent"                            "POWER BONUS PERCENT:"
+
+		"DOTA_Tooltip_ability_pray_zeus"                                                  "Pray Zeus"
+		"DOTA_Tooltip_ability_pray_zeus_Description"                                      "Pray to Zeus, God of Thunder causing you to fight with his fortitude and endurance"
+		"DOTA_Tooltip_ability_pray_zeus_magic_resistance"                                 "MAGIC RESISTANCE:"
+		"DOTA_Tooltip_ability_pray_zeus_armor_bonus"                                      "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_pray_zeus_regen_bonus"                                      "REGEN BONUS:"
+		
+		// Warlock
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_warlock_blind"                                              "Blind"
+		"DOTA_Tooltip_ability_warlock_blind_Description"                                  "Curses a target causing it to be blind and disoriented."
+		"DOTA_Tooltip_ability_warlock_blind_blind_max_duration"                           "BLIND MAX DURATION:"
+
+		"DOTA_Tooltip_ability_warlock_deathwave"                                          "Deathwave"
+		"DOTA_Tooltip_ability_warlock_deathwave_Description"                              "Fires off a skull that summons the wail of a banshee, damaging all targets in the area."
+		"DOTA_Tooltip_ability_warlock_deathwave_self_damage"                              "SELF DAMAGE:"
+		"DOTA_Tooltip_ability_warlock_deathwave_blast_aoe"                                "BLAST AOE:"
+
+		"DOTA_Tooltip_ability_warlock_soul_drain"                                         "Soul Drain"
+		"DOTA_Tooltip_ability_warlock_soul_drain_Description"                             "Drains the life energies of a target giving it to the Warlock. The Warlocks black grimoire grants him extra power with this skill."
+		"DOTA_Tooltip_ability_warlock_soul_drain_health_transfered"                       "HEALTH TRANSFERED:"
+		"DOTA_Tooltip_ability_warlock_soul_drain_bonus_spell_dmg"                         "BONUS SPELL DMG:"
+		"DOTA_Tooltip_ability_warlock_soul_drain_aoe"                                     "AOE:"
+
+		"DOTA_Tooltip_ability_warlock_torment"                                            "Torment"
+		"DOTA_Tooltip_ability_warlock_torment_Description"                                "Curses a target causing them to take a large amount of damage over time. The Warlocks black grimoire grants him extra power with this skill."
+		"DOTA_Tooltip_ability_warlock_torment_self_damage"                                "SELF DAMAGE:"
+		"DOTA_Tooltip_ability_warlock_torment_bonus_spell_dmg"                            "BONUS SPELL DMG:"
+
+		"DOTA_Tooltip_ability_warlock_vengeance"                                          "Vengeance"
+		"DOTA_Tooltip_ability_warlock_vengeance_Description"                              "Recites a forbidden spell, striking an enemy with dark magic dealing damage and crippling its power."
+		"DOTA_Tooltip_ability_warlock_vengeance_self_damage"                              "SELF DAMAGE:"
+		"DOTA_Tooltip_ability_warlock_vengeance_attack_dmg_reduction"                     "ATTACK DMG REDUCTION:"
+		
+		// Warlord
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_warlord_bleed"                                              "Bleed"
+		"DOTA_Tooltip_ability_warlord_bleed_Description"                                  "A slash that causes an immense amount of internal damage to the target making them bleed profusely."
+		"DOTA_Tooltip_ability_warlord_bleed_duration"                                     "DURATION:"
+
+		"DOTA_Tooltip_ability_warlord_bum_rush"                                           "Bum Rush"
+		"DOTA_Tooltip_ability_warlord_bum_rush_Description"                               "Brutally throws all your weight onto a target causing damage and disorientating the primary target."
+
+		"DOTA_Tooltip_ability_warlord_counter"                                            "Counter"
+		"DOTA_Tooltip_ability_warlord_counter_Description"                                "Your years of combat knowledge allows you to cause a whirlwind of steel around you when any dare strike you."
+
+		"DOTA_Tooltip_ability_warlord_critical_strike"                                    "Critical Strike"
+		"DOTA_Tooltip_ability_warlord_critical_strike_Description"                        "The mastery of the blade causes you to seek enemy weak points in the heat of battle."
+		"DOTA_Tooltip_ability_warlord_critical_strike_blade_dance_crit_mult"              "BLADE DANCE CRIT MULT:"
+		"DOTA_Tooltip_ability_warlord_critical_strike_blade_dance_crit_chance"            "BLADE DANCE CRIT CHANCE:"
+
+		"DOTA_Tooltip_ability_warlord_focus"                                              "Focus"
+		"DOTA_Tooltip_ability_warlord_focus_Description"                                  "Your remaining focus."
+
+		"DOTA_Tooltip_ability_warlord_impale"                                             "Impale"
+		"DOTA_Tooltip_ability_warlord_impale_Description"                                 "Impales your blade into the targets weak points causing large amounts of damage. (Autocastable)"
+
+		"DOTA_Tooltip_ability_warlord_winds_of_war"                                       "Winds Of War"
+		"DOTA_Tooltip_ability_warlord_winds_of_war_Description"                           "Becoming a tornado of steel and destruction knocking away all magic, enemies, and allies from your path. Enemies will also take a large amount of damage."
+		"DOTA_Tooltip_ability_warlord_winds_of_war_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_warlord_winds_of_war_speed"                                 "SPEED:"
+		"DOTA_Tooltip_ability_warlord_winds_of_war_tick_interval"                         "TICK INTERVAL:"
+
+		
+		
+		
+		// Misc
+		//---------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		"DOTA_Tooltip_ability_ability_journeyman"                                         "Ability Journeyman"
+		"DOTA_Tooltip_ability_ability_journeyman_Description"                             ""
+		
+		"DOTA_Tooltip_ability_ability_ultimate"                                           "Ability Ultimate"
+		"DOTA_Tooltip_ability_ability_ultimate_Description"                               ""
+		
+		"DOTA_Tooltip_ability_bandit_crit"                                                "Bandit Crit"
+		"DOTA_Tooltip_ability_bandit_crit_Description"                                    ""
+		"DOTA_Tooltip_ability_bandit_crit_crit_bonus"                                     "CRIT BONUS:"
+		"DOTA_Tooltip_ability_bandit_crit_crit_chance"                                    "CRIT CHANCE:"
+		
+		"DOTA_Tooltip_ability_dummy_passive"                                              "Dummy Passive"
+		"DOTA_Tooltip_ability_dummy_passive_Description"                                  ""
+
+		"DOTA_Tooltip_ability_gravestone"                                                 "Gravestone"
+		"DOTA_Tooltip_ability_gravestone_Description"                                     ""
+
+		"DOTA_Tooltip_ability_hero_ability_name"                                          "Hero Ability Name"
+		"DOTA_Tooltip_ability_hero_ability_name_Description"                              ""
+		"DOTA_Tooltip_ability_hero_ability_name_value"                                    "VALUE:"
+		
+		"DOTA_Tooltip_ability_material_assign"                                            "Material Assign"
+		"DOTA_Tooltip_ability_material_assign_Description"                                ""
+
+		"DOTA_Tooltip_ability_material_drop"                                              "Material Drop"
+		"DOTA_Tooltip_ability_material_drop_Description"                                  ""
+
+		"DOTA_Tooltip_ability_nukacha_chain_lightning"                                    "Nukacha Chain Lightning"
+		"DOTA_Tooltip_ability_nukacha_chain_lightning_Description"                        ""
+		"DOTA_Tooltip_ability_nukacha_chain_lightning_ability_Damage"                     "ABILITY DAMAGE:"
+		"DOTA_Tooltip_ability_nukacha_chain_lightning_decay_per_jump"                     "DECAY PER JUMP:"
+		"DOTA_Tooltip_ability_nukacha_chain_lightning_bounces_count"                      "BOUNCES COUNT:"
+		"DOTA_Tooltip_ability_nukacha_chain_lightning_bounce_range"                       "BOUNCE RANGE:"
+		"DOTA_Tooltip_ability_nukacha_chain_lightning_bounce_time"                        "BOUNCE TIME:"
+		
+		"DOTA_Tooltip_ability_rockthul_chain_lightning"                                   "Rockthul Chain Lightning"
+		"DOTA_Tooltip_ability_rockthul_chain_lightning_Description"                       ""
+		"DOTA_Tooltip_ability_rockthul_chain_lightning_ability_Damage"                    "ABILITY DAMAGE:"
+		"DOTA_Tooltip_ability_rockthul_chain_lightning_decay_per_jump"                    "DECAY PER JUMP:"
+		"DOTA_Tooltip_ability_rockthul_chain_lightning_bounces_count"                     "BOUNCES COUNT:"
+		"DOTA_Tooltip_ability_rockthul_chain_lightning_bounce_range"                      "BOUNCE RANGE:"
+		"DOTA_Tooltip_ability_rockthul_chain_lightning_bounce_time"                       "BOUNCE TIME:"
+
+		"DOTA_Tooltip_ability_rockthul_command_aura"                                      "Rockthul Command Aura"
+		"DOTA_Tooltip_ability_rockthul_command_aura_Description"                          ""
+		"DOTA_Tooltip_ability_rockthul_command_aura_bonus_damage"                         "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_rockthul_command_aura_radius"                               "RADIUS:"
+		
+		"DOTA_Tooltip_ability_stat_allocation"                                            "Stat Allocation"
+		"DOTA_Tooltip_ability_stat_allocation_Description"                                ""
+
+		"DOTA_Tooltip_ability_stat_allocation_agi"                                        "Stat Allocation Agi"
+		"DOTA_Tooltip_ability_stat_allocation_agi_Description"                            ""
+
+		"DOTA_Tooltip_ability_stat_allocation_cancel"                                     "Stat Allocation Cancel"
+		"DOTA_Tooltip_ability_stat_allocation_cancel_Description"                         ""
+
+		"DOTA_Tooltip_ability_stat_allocation_int"                                        "Stat Allocation Int"
+		"DOTA_Tooltip_ability_stat_allocation_int_Description"                            ""
+
+		"DOTA_Tooltip_ability_stat_allocation_str"                                        "Stat Allocation Str"
+		"DOTA_Tooltip_ability_stat_allocation_str_Description"                            ""
+
+		"DOTA_Tooltip_ability_stat_empty1"                                                "Stat Empty1"
+		"DOTA_Tooltip_ability_stat_empty1_Description"                                    ""
+
+		"DOTA_Tooltip_ability_stat_empty2"                                                "Stat Empty2"
+		"DOTA_Tooltip_ability_stat_empty2_Description"                                    ""
+
+		"DOTA_Tooltip_ability_teleporter"                                                 "Teleporter"
+		"DOTA_Tooltip_ability_teleporter_Description"                                     ""
+		
+		"DOTA_Tooltip_ability_transfer_itemslot_1"                                        "Transfer Itemslot 1"
+		"DOTA_Tooltip_ability_transfer_itemslot_1_Description"                            ""
+		"DOTA_Tooltip_ability_transfer_itemslot_1_item_slot"                              "ITEM SLOT:"
+		
+		"DOTA_Tooltip_ability_creep_respawn"                                              "Creep Respawn"
+		"DOTA_Tooltip_ability_creep_respawn_Description"                                  ""
+
+		"DOTA_Tooltip_ability_demon_army"                                                 "Demon Army"
+		"DOTA_Tooltip_ability_demon_army_Description"                                     ""
+
+		"DOTA_Tooltip_ability_demon_avatar"                                               "Demon Avatar"
+		"DOTA_Tooltip_ability_demon_avatar_Description"                                   ""
+
+		"DOTA_Tooltip_ability_demon_dodge"                                                "Demon Dodge"
+		"DOTA_Tooltip_ability_demon_dodge_Description"                                    ""
+
+		"DOTA_Tooltip_ability_demon_flame_crash"                                          "Demon Flame Crash"
+		"DOTA_Tooltip_ability_demon_flame_crash_Description"                              ""
+
+		"DOTA_Tooltip_ability_demon_form"                                                 "Demon Form"
+		"DOTA_Tooltip_ability_demon_form_Description"                                     ""
+
+		"DOTA_Tooltip_ability_demon_frenzy"                                               "Demon Frenzy"
+		"DOTA_Tooltip_ability_demon_frenzy_Description"                                   ""
+
+		"DOTA_Tooltip_ability_demon_immolation"                                           "Demon Immolation"
+		"DOTA_Tooltip_ability_demon_immolation_Description"                               ""
+
+		"DOTA_Tooltip_ability_demon_passive"                                              "Demon Passive"
+		"DOTA_Tooltip_ability_demon_passive_Description"                                  ""
+
+		"DOTA_Tooltip_ability_demon_shadow_blast"                                         "Demon Shadow Blast"
+		"DOTA_Tooltip_ability_demon_shadow_blast_Description"                             ""
+
+		"DOTA_Tooltip_ability_demon_strike"                                               "Demon Strike"
+		"DOTA_Tooltip_ability_demon_strike_Description"                                   ""
+
+		"DOTA_Tooltip_ability_demon_summons"                                              "Demon Summons"
+		"DOTA_Tooltip_ability_demon_summons_Description"                                  ""
+
+		"DOTA_Tooltip_ability_demon_warglaives"                                           "Demon Warglaives"
+		"DOTA_Tooltip_ability_demon_warglaives_Description"                               ""
+
+		"DOTA_Tooltip_ability_drop_all_items"                                             "Drop All Items"
+		"DOTA_Tooltip_ability_drop_all_items_Description"                                 ""
+
+		"DOTA_Tooltip_ability_drop_itemslot_1"                                            "Drop Itemslot 1"
+		"DOTA_Tooltip_ability_drop_itemslot_1_Description"                                ""
+		"DOTA_Tooltip_ability_drop_itemslot_1_item_slot"                                  "ITEM SLOT:"
+	
+
+		// To create a new key ( like $health ) just add the entry here
+		"dota_ability_variable_health"			"Health"					// $health
+		"dota_ability_variable_mana"			"Mana"						// $mana
+		"dota_ability_variable_armor"			"Armor"						// $armor
+		"dota_ability_variable_damage"			"Damage"					// $damage
+		"dota_ability_variable_str"				"Strength"					// $str
+		"dota_ability_variable_int"				"Intelligence"					// $int
+		"dota_ability_variable_agi"				"Agility"					// $agi
+		"dota_ability_variable_all"				"All Attributes"			// $all
+		"dota_ability_variable_attack"			"Attack Speed"				// $attack
+		"dota_ability_variable_hp_regen"		"HP Regeneration"			// $hp_regen
+		"dota_ability_variable_mana_regen"		"Mana Regeneration"			// $mana_regen
+		"dota_ability_variable_move_speed"		"Movement Speed"			// $move_speed	
+		"dota_ability_variable_evasion"			"Evasion"					// $evasion
+		"dota_ability_variable_spell_resist"	"Spell Resistance"			// $spell_resist
+		"dota_ability_variable_selected_attrib"	"Selected Attribute"		// $selected_attribute
+
+
+		////// OLYMPIC RELICS ///////
+		/////////////////////////////
+
+		"DOTA_Tooltip_ability_item_ares_bloodthirsty_spear"							"Ares Bloodthirsty Spear"
+		"DOTA_Tooltip_ability_item_ares_bloodthirsty_spear_Description"				"Increases your Strength and Agility by 150 and your intelligence by 5. Adds 125 to your movement speed and gives you 25% evasion. In addition, each time you attack you will regenerate .33% of your maximum life total.\n \n Use: Fills you with the spirit of the war god Ares, giving you an additional 25% damage for 45 seconds. 2 minute cooldown."
+
+		"DOTA_Tooltip_ability_item_blazing_sword_of_helios"							"Blazing Sword of Helios"
+		"DOTA_Tooltip_ability_item_blazing_sword_of_helios_Description"				"Increases your Strength and Agility by 150 and your intelligence by 5. Increases your attack damage by 20% and gives you a 10% chance to do 4.5 time normal damage on an attack.\n \n Use: Calls down 5 meteors from the god Helios, each inflicting between 500 and 5000 damage to all enemies in the area."
+
+		"DOTA_Tooltip_ability_item_immortal_armor_of_hephaestus"					"Immortal Armor of Hephaestus"
+		"DOTA_Tooltip_ability_item_immortal_armor_of_hephaestus_Description"		"Increases all your stats by 100. Adds 250 to your Armor Class and increases your spell damage and healing by 3000. Regenerates .66% of your maximum life total each second and 65 mana per second. In addition, when you die you will be revived with full hit points and mana. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_searing_flame_of_prometheus"						"Searing Flame of Prometheus"
+		"DOTA_Tooltip_ability_item_searing_flame_of_prometheus_Description"			"Increases all your stats by 100. Increases your attack damage by 25% and adds splash damage to your attack. Increases your spell damage and healing by 35%. In addition enemy units near you will be set on fire, dealing 250 damage to them per second. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_thundering_hammer_of_zeus"						"Thundering Hammer of Zeus"
+		"DOTA_Tooltip_ability_item_thundering_hammer_of_zeus_Description"			"Increases Strength and Agility by 150, intelligence by 5, attack damage of you and your nearby allies by 33% and gives you an 8% chance to bash for up to 2 seconds and deal an additional 2000 damage. Has a 15% chance on attack to unleash a bolt of lightning that deals 5000 damage to the first target and then jumps to up to 5 other targets, each jump doing 20% less damage."
+
+		"DOTA_Tooltip_ability_item_towering_shield_of_athena"						"Towering Shield of Athena"
+		"DOTA_Tooltip_ability_item_towering_shield_of_athena_Description"			"Grants you 35% Magic Resistance and creates an aura around you that increases the Armor Class of nearby allies by 100. Also gives you a 60% chance to block 10,000 damage from physical attacks. Any enemy that strikes you will have its attack speed reduced by 25% and movement speed reduced 50% for up to 6 seconds.\n \n Use: Completely restores you and your nearby allies to full health and mana."
+
+
+		///////// RELICS ////////////
+		/////////////////////////////
+
+		"DOTA_Tooltip_ability_item_blackfire_staff"							"Blackfire Staff"
+		"DOTA_Tooltip_ability_item_blackfire_staff_Description"				"Increases all stats by 50, damage by 15%, and spell damage and healing by 25%.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_plates_of_the_ancients"					"Plates of the Ancients"
+		"DOTA_Tooltip_ability_item_plates_of_the_ancients_Description"		"Increases armor by 75, all stats by 60, mana regen by 25 per second, and spell damage and healing by 1000.\n \n Revives you when Slain. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_shadow_blade"							"Shadow Blade"
+		"DOTA_Tooltip_ability_item_shadow_blade_Description"				"Increases your Agility by 150, damage by 25%, movement speed by 100, and grants you 25% dodge."
+
+		"DOTA_Tooltip_ability_item_sword_of_destruction"					"Sword of Destruction"
+		"DOTA_Tooltip_ability_item_sword_of_destruction_Description"		"Increases your Strength and Agility by 100, damage by 200, and grants you a 10% chance to cause quadruple damage on each attack."
+
+		"DOTA_Tooltip_ability_item_sword_of_the_high_commander"				"Sword of the High Commander"
+		"DOTA_Tooltip_ability_item_sword_of_the_high_commander_Description"	"Increases your attack damage by 100, Strength and Agility by 50, and armor by 30. Also increases the attack damage of nearby friendly units by 20%."
+
+		"DOTA_Tooltip_ability_item_unyielding_tower"						"Unyielding Tower"
+		"DOTA_Tooltip_ability_item_unyielding_tower_Description"			"Increases your armor by 100, health by 6000, and grants you 30% dodge. Attacking enemies will also be slowed for up to 6 seconds."
+
+
+
+
+		///////// ARTIFACTS /////////
+		/////////////////////////////
+
+		"DOTA_Tooltip_ability_item_wraithblade"								"Wraithblade"
+		"DOTA_Tooltip_ability_item_wraithblade_Description"					"Increases your armor by 40, all stats by 25, mana regeneration by 35&#37;, and spell damage and healing by 600. Also gives you a 10&#37; chance to cause triple damage on attacks.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+		//"DOTA_Tooltip_ability_item_wraithblade_armor"						"ARMOR:"
+		//"DOTA_Tooltip_ability_item_wraithblade_all_stats"					"ALL STATS:"
+		//"DOTA_Tooltip_ability_item_wraithblade_mana_regen"					"&#37;MANA REGEN:"
+		//"DOTA_Tooltip_ability_item_wraithblade_crit_chance"					"&#37;CRIT CHANCE:"
+		//"DOTA_Tooltip_ability_item_wraithblade_crit_bonus"					"&#37;CRIT DAMAGE:"
+		
+		"DOTA_Tooltip_ability_item_regal_helm_of_sparkling_crystal"					"Regal Helm of Sparkling Crystal"
+		"DOTA_Tooltip_ability_item_regal_helm_of_sparkling_crystal_Description"		"Increases your Intelligence by 40, mana regeneration by 30&#37;, and spell damage and healing by 400. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_savage_helm"								"Savage Helm"
+		"DOTA_Tooltip_ability_item_savage_helm_Description"					"Increases your Strength and Agility by 40 and armor by 35. In addition, each enemy who attacks you will suffer 125 damage."
+
+		"DOTA_Tooltip_ability_item_mighty_chestguard_of_the_olympians"				"Mighty Chestguard of the Olympians"
+		"DOTA_Tooltip_ability_item_mighty_chestguard_of_the_olympians_Description"	"Increases Strength and Agility by 30, Intelligence by 1, armor by 40, and health by 900. In addition, when you are struck in combat there is a 10&#37; chance that the enemy will be stunned for up to 3 seconds."
+
+		"DOTA_Tooltip_ability_item_mighty_helm_of_the_olympians"					"Mighty Helm of the Olympians"
+		"DOTA_Tooltip_ability_item_mighty_helm_of_the_olympians_Description"		"Increases Strength and Agility by 40, Intelligence by 1, armor by 25, health by 600, and health regeneration by 30 per second."
+
+		"DOTA_Tooltip_ability_item_mighty_sword_of_the_olympians"					"Mighty Sword of the Olympians"
+		"DOTA_Tooltip_ability_item_mighty_sword_of_the_olympians_Description"		"Increases Strength and Agility by 30, Intelligence by 1, damage by 80, and attack speed by 40&#37;. In addition, it has a 10&#37; chance to call a bolt of lightning to blast the target for 400 damage when struck."
+
+		"DOTA_Tooltip_ability_item_sacred_chestguard_of_the_olympians"				"Sacred Chestguard of the Olympians"
+		"DOTA_Tooltip_ability_item_sacred_chestguard_of_the_olympians_Description"	"Increases Strength and Agility by 10, Intelligence by 40, mana regeneration by 30&#37;, armor by 20, health by 600, and spell damage and healing by 450."
+
+		"DOTA_Tooltip_ability_item_sacred_helm_of_the_olympians"					"Sacred Helm of the Olympians"
+		"DOTA_Tooltip_ability_item_sacred_helm_of_the_olympians_Description"		"Increases Strength and Agility by 10, Intelligence by 50, mana regeneration by 40&#37;, armor by 10, health by 300, and spell damage and healing by 450."
+
+		"DOTA_Tooltip_ability_item_sacred_sword_of_the_olympians"					"Sacred Sword of the Olympians"
+		"DOTA_Tooltip_ability_item_sacred_sword_of_the_olympians_Description"		"Increases Strength and Agility by 10, attack speed by 15&#37;, damage by 25, Intelligence by 25, mana regeneration by 25&#37;, and spell damage and healing by 600."
+
+		"DOTA_Tooltip_ability_item_shining_chestguard_of_the_olympians"				"Shining Chestguard of the Olympians"
+		"DOTA_Tooltip_ability_item_shining_chestguard_of_the_olympians_Description"	"Increases all stats by 25, armor by 30, health by 550, mana regeneration by 25&#37;, and spell damage and healing by 300."
+
+		"DOTA_Tooltip_ability_item_shining_helm_of_the_olympians"					"Shining Helm of the Olympians"
+		"DOTA_Tooltip_ability_item_shining_helm_of_the_olympians_Description"		"Increases all stats by 15, armor by 20, health by 800, mana regeneration by 30&#37;, and spell damage and healing by 375."
+
+		"DOTA_Tooltip_ability_item_shining_sword_of_the_olympians"					"Shining Sword of the Olympians"
+		"DOTA_Tooltip_ability_item_shining_sword_of_the_olympians_Description"		"Increases all stats by 15, damage by 50, attack speed by 30&#37;, mana regeneration by 25&#37;, and spell damage and healing by 500."
+
+		"DOTA_Tooltip_ability_item_biting_blade"									"Biting Blade"
+		"DOTA_Tooltip_ability_item_biting_blade_Description"						"Increases your attack damage by 200."
+
+		"DOTA_Tooltip_ability_item_heartstone_ring_of_agility"						"Heartstone Ring of Agility"
+		"DOTA_Tooltip_ability_item_heartstone_ring_of_agility_Description"			"Increases your Agility by 130."
+
+		"DOTA_Tooltip_ability_item_heartstone_ring_of_intelligence"					"Heartstone Ring of Intelligence"
+		"DOTA_Tooltip_ability_item_heartstone_ring_of_intelligence_Description"		"Increases your Intelligence by 130.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_heartstone_ring_of_strength"						"Heartstone Ring of Strength"
+		"DOTA_Tooltip_ability_item_heartstone_ring_of_strength_Description"			"Increases your Strength by 130."
+
+		"DOTA_Tooltip_ability_item_magefire_ring"							"Magefire Ring"
+		"DOTA_Tooltip_ability_item_magefire_ring_Description"				"Increases spell damage and healing by 1100.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+		
+		"DOTA_Tooltip_ability_item_unyielding_breastplate"					"Unyielding Breastplate"
+		"DOTA_Tooltip_ability_item_unyielding_breastplate_Description"		"Increases your armor by 90."
+
+		"DOTA_Tooltip_ability_item_boots_of_marathon"						"Boots of Marathon"
+		"DOTA_Tooltip_ability_item_boots_of_marathon_Description"			"Increases your Strength by 50 and movement speed by 100. Also grants you a 25&#37; chance to dodge enemy attacks. \n \n Use: returns you to Athens."
+
+		"DOTA_Tooltip_ability_item_bright_silver_bracers"					"Bright Silver Bracers"
+		"DOTA_Tooltip_ability_item_bright_silver_bracers_Description"		"Increases your Strength and Agility by 50, armor by 15, and attack damage by 60. Also reduces the damage you take from spells by 20%."
+
+		"DOTA_Tooltip_ability_item_bright_silver_shinguards"				"Bright Silver Shinguards"
+		"DOTA_Tooltip_ability_item_bright_silver_shinguards_Description"	"Increases your Strength and Agility by 40, armor by 25, and health by 1000. Also reduces the damage you take from spells by 20%."
+
+		"DOTA_Tooltip_ability_item_heras_blessing"							"Hera's Blessing"
+		"DOTA_Tooltip_ability_item_heras_blessing_Description"				"Increases your Intelligence by 75 and spell damage and healing by 500. Also increases the mana regeneration of nearby friendly units by 10 mana per second. Warriors will only regenerate an additional 1 mana per second.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_iron_will_of_hephaestus"					"Iron Will of Hephaestus"
+		"DOTA_Tooltip_ability_item_iron_will_of_hephaestus_Description"		"Increases your armor by 25, health by 900, and life regeneration by 25 per second.\n \n Use: creates a shield around you that absorbs 10000 spell damage. Lasts 90 seconds."
+		
+		"DOTA_Tooltip_ability_item_shield_of_living_bone"					"Shield of Living Bone"
+		"DOTA_Tooltip_ability_item_shield_of_living_bone_Description"		"Increases your Strength and Agility by 50 and armor by 30. Also grants you a 50&#37; chance to block up to 1000 damage on each physical attack."
+
+		"DOTA_Tooltip_ability_item_shield_of_warding"						"Shield of Warding"
+		"DOTA_Tooltip_ability_item_shield_of_warding_Description"			"Increases your Strength and Agility by 50 and armor by 30. Also increases the armor of nearby friendly units by 15."
+
+		"DOTA_Tooltip_ability_item_burning_hand_of_the_war_god"				"Burning Hand of the War God"
+		"DOTA_Tooltip_ability_item_burning_hand_of_the_war_god_Description"	"Increases your attack speed by 35&#37; and your Strength and Agility by 25. Also grants you 5&#37; life steal and causes 100 damage to to nearby enemy units when your attacks land."
+
+		"DOTA_Tooltip_ability_item_talisman_of_addiction"								"Talisman of Addiction"
+		"DOTA_Tooltip_ability_item_talisman_of_addiction_Description"					"Increases all stats by 60. Because you've earned it... "
+
+		"DOTA_Tooltip_ability_item_warriors_talisman_of_addiction"						"Warrior's Talisman of Addiction"
+		"DOTA_Tooltip_ability_item_warriors_talisman_of_addiction_Description"			"Increases your Strength and Agility by 80 and your Intelligence by 2. Because you've earned it..."
+
+		"DOTA_Tooltip_ability_item_ring_of_the_frozen_citadel"							"Ring of the Frozen Citadel"
+		"DOTA_Tooltip_ability_item_ring_of_the_frozen_citadel_Description"				"Increases all stats by 25, health regeneration by 30 health per second, mana regeneration by 45&#37;, armor by 40, and spell damage and healing by 300. Attacking enemies will also be slowed for up to 6 seconds."
+
+		"DOTA_Tooltip_ability_item_shimmering_lance"									"Shimmering Lance"
+		"DOTA_Tooltip_ability_item_shimmering_lance_Description"						"Increases your attack damage by 250. In addition, your attacks will slow the target's attack speed by 25&#37; for up to 8 seconds. Your attacks also have a 10&#37; chance to cause 300 additional damage."
+
+		"DOTA_Tooltip_ability_item_the_winged_gods_blessed_boots"						"The Winged God's Blessed Boots"
+		"DOTA_Tooltip_ability_item_the_winged_gods_blessed_boots_Description"			"Increases your Strength and Agility by 40, movement speed by 100, and grants you a 25&#37; chance to dodge an enemy attack."
+
+		"DOTA_Tooltip_ability_item_armor_of_the_firstborn"								"Armor of the Firstborn"
+		"DOTA_Tooltip_ability_item_armor_of_the_firstborn_Description"					"Increases your armor by 80, health by 2000, and health regeneration by 35 health per second.\n \n  Use: Instantly heals you for 3000 health. Cooldown: 30 seconds."
+
+		"DOTA_Tooltip_ability_item_green_dragonscale_ring_of_addiction"					"Green Dragonscale Ring of Addiction"
+		"DOTA_Tooltip_ability_item_green_dragonscale_ring_of_addiction_Description"		"Increases all stats by 90. Also reduces damage taken from spells by 25&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_red_dragonscale_ring_of_addiction"					"Red Dragonscale Ring of Addiction"
+		"DOTA_Tooltip_ability_item_red_dragonscale_ring_of_addiction_Description"		"Increases Strength by 130, Agility by 105, and Intelligence by 3. Also reduces damage taken from spells by 25&#37;."
+
+		"DOTA_Tooltip_ability_item_white_dragonscale_ring_of_addiction"					"White Dragonscale Ring of Addiction"
+		"DOTA_Tooltip_ability_item_white_dragonscale_ring_of_addiction_Description"		"Increases Intelligence by 100 and Strength and Agility by 85. Also reduces damage taken from spells by 25&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_scepter_of_the_chosen_ones"							"Scepter of the Chosen Ones"
+		"DOTA_Tooltip_ability_item_scepter_of_the_chosen_ones_Description"				"Increases your attack damage by 40, attack speed by 40&#37;, Intelligence by 40, and damage and healing done by your spells by 800. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_unyielding_breastplate_of_agility"					"Unyielding Breastplate of Agility"
+		"DOTA_Tooltip_ability_item_unyielding_breastplate_of_agility_Description"		"Increases your armor by 90 and your Agility by 130."
+
+		"DOTA_Tooltip_ability_item_unyielding_breastplate_of_strength"					"Unyielding Breastplate of Strength"
+		"DOTA_Tooltip_ability_item_unyielding_breastplate_of_strength_Description"		"Increases your armor by 90 and your Strength by 130."
+
+		"DOTA_Tooltip_ability_item_ares_blade_of_command"								"Ares' Blade of Command"
+		"DOTA_Tooltip_ability_item_ares_blade_of_command_Description"					"Increases your attack damage by 90, attack speed by 30&#37;, and your attacks will steal 35 life from the target. Also increases the attack damage of nearby friendly units by 15&#37;."
+
+		"DOTA_Tooltip_ability_item_biting_blade_of_agility"								"Biting Blade of Agility"
+		"DOTA_Tooltip_ability_item_biting_blade_of_agility_Description"					"Increases your attack damage by 200 and your Agility by 130."
+
+		"DOTA_Tooltip_ability_item_biting_blade_of_strength"							"Biting Blade of Strength"
+		"DOTA_Tooltip_ability_item_biting_blade_of_strength_Description"				"Increases your attack damage by 200 and your Strength by 130."
+
+		"DOTA_Tooltip_ability_item_deathchill_greatsword"								"Deathchill Greatsword"
+		"DOTA_Tooltip_ability_item_deathchill_greatsword_Description"					"Increases your attack damage by 150 and Strength and Agility by 50. In addition, 35&#37; of your melee base damage is taken by nearby enemies. Note that this does not include damage bonuses from items."
+
+		"DOTA_Tooltip_ability_item_magefire_ring_of_intelligence"						"Magefire Ring of Intelligence"
+		"DOTA_Tooltip_ability_item_magefire_ring_of_intelligence_Description"			"Increases your Intelligence by 130 and spell damage and healing by 1100. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_bright_silver_plates"								"Bright Silver Plates"
+		"DOTA_Tooltip_ability_item_bright_silver_plates_Description"					"Increases your Strength and Agility by 90, armor by 40, and health by 1200. Also reduces the damage you take from spells by 30&#37;."
+
+		"DOTA_Tooltip_ability_item_adamantium_lance"									"Adamantium Lance"
+		"DOTA_Tooltip_ability_item_adamantium_lance_Description"						"Increases your Strength and Agility by 50, damage by 125, and armor by 25. Also grants you a 10&#37; chance to cause triple damage on each attack.\n \n  With <font color='#008643'>Adamantium Helm</font>, <font color='#00C060'>Adamantium Tower</font>: +50 armor, +100 attack damage."
+
+		"DOTA_Tooltip_ability_item_gift_of_hera"										"Gift of Hera"
+		"DOTA_Tooltip_ability_item_gift_of_hera_Description"							"Increases your Intelligence by 50 and healing done by your spells by 3000. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_hephaestus_thundering_axe"							"Hephaestus' Thundering Axe"
+		"DOTA_Tooltip_ability_item_hephaestus_thundering_axe_Description"				"Increases your Strength and Agility by 50 and damage by 100. Also grants you an 8% chance to cause 1500 additional damage on an attack and stun the target for up to 2.5 seconds."
+
+		"DOTA_Tooltip_ability_item_adamantium_tower"									"Adamantium Tower"
+		"DOTA_Tooltip_ability_item_adamantium_tower_Description"						"Increases your Strength and Agility by 50, armor by 50, and grants you a 25% chance to block physical attacks. Also gives you a 50% chance to block 5000 damage whenever you suffer a physical attack.\n \nWith <font color='#008643'>Adamantium Lance</font>, <font color='#00C060'>Adamantium Helm</font>: +50 armor, +100 attack damage."
+
+		"DOTA_Tooltip_ability_item_adamantium_helm"										"Adamantium Helm"
+		"DOTA_Tooltip_ability_item_adamantium_helm_Description"							"Increases your Strength by 50, armor by 50, and reduces damage you take from spells by 30%. Also reduces all physical damage taken by 500.\n \n With <font color='#008643'>Adamantium Lance</font>, <font color='#00C060'>Adamantium Tower</font>: +50 armor, +100 attack damage."
+
+		"DOTA_Tooltip_ability_item_soul_blade"											"Soul Blade"
+		"DOTA_Tooltip_ability_item_soul_blade_Description"								"Adds damage equal to 3% of your current health to each of your attacks."
+
+		"DOTA_Tooltip_ability_item_aphrodites_favor"									"Aphrodite's Favor"
+		"DOTA_Tooltip_ability_item_aphrodites_favor_Description"						"Increases your Strength by 100. Also restores 2%, 1% or 0.5% of your maximum health every second."
+
+		"DOTA_Tooltip_ability_item_mighty_olympian_regalia"								"Mighty Olympian Regalia"
+		"DOTA_Tooltip_ability_item_mighty_olympian_regalia_Description"					"Increases Strength and Agility by 100, Intelligence by 3, armor by 65, damage by 150, and health by 2000. The procs on the chestguard and sword also apply.\n \n When you are struck in combat there is a 10&#37; chance that the enemy will be stunned for up to 3 seconds.\n \n Your attacks have a 10&#37; chance to call a bolt of lightning to blast the target for 400 damage when struck. \n \n Set Bonus: +75 damage"
+
+		"DOTA_Tooltip_ability_item_sacred_olympian_regalia"								"Sacred Olympian Regalia"
+		"DOTA_Tooltip_ability_item_sacred_olympian_regalia_Description"					"Increases Strength and Agility by 30, Intelligence by 115, armor by 30, mana regeneration by 60%, health by 1000, and spell damage and healing by 1500.\n \n Set Bonus: +400 Spell Healing, +400 Spell Damage"
+
+		"DOTA_Tooltip_ability_item_shining_olympian_regalia"							"Sacred Olympian Regalia"
+		"DOTA_Tooltip_ability_item_shining_olympian_regalia_Description"				"Increases all stats by 75, armor by 50, health by 1500, mana regeneration by 50%, and spell damage and healing by 1000.\n \n Set Bonus: +25 to all stats"
+
+		"DOTA_Tooltip_ability_item_talisman_of_serious_addiction"						"Talisman of Serious Addiction"
+		"DOTA_Tooltip_ability_item_talisman_of_serious_addiction_Description"			"Increases all stats by 120 and reduces the damage you take from spells by 25%. Because it's serious now... \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_warriors_talisman_of_serious_addiction"				"Warrior's Talisman of Serious Addiction"
+		"DOTA_Tooltip_ability_item_warriors_talisman_of_serious_addiction_Description"	"Increases your Strength and Agility by 160 and your Intelligence by 4, and reduces the damage you take from spells by 25%. Because it's serious now... "
+
+		/////// CLASS ITEMS /////////
+		/////////////////////////////
+
+		"DOTA_Tooltip_ability_item_battleforge_gemstone"					"Battleforge Gemstone"
+		"DOTA_Tooltip_ability_item_battleforge_gemstone_Description"		"Power radiates from this gem. \n Barbarian only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_battleforge_regalia"						"Battleforge Regalia"
+		"DOTA_Tooltip_ability_item_battleforge_regalia_Description"			"Increases your Strength by 80, Agility by 25, armor by 60, and causes 60 damage per second to all nearby enemy units. In addition, attacks against you have a 25&#37; chance to miss. \n \n <b>Set Bonus:</b> Gives a 7&#37; chance on each of your attacks to increase your armor by 250 for 10 seconds. \n \n Barbarian only."
+
+		"DOTA_Tooltip_ability_item_battleforge_plate"						"Battleforge Plate"
+		"DOTA_Tooltip_ability_item_battleforge_plate_Description"			"Increases your Strength by 20 and armor by 35. Also causes 40 damage per second to nearby enemy units and gives you .2 additional mana when struck. \n \n Barbarian only."
+
+		"DOTA_Tooltip_ability_item_battleforge_blade"						"Battleforge Blade"
+		"DOTA_Tooltip_ability_item_battleforge_blade_Description"			"Increases your Strength by 24, damage by 30, and attack speed by 25&#37;. \n \n Barbarian only."
+
+		"DOTA_Tooltip_ability_item_battleforge_shield"						"Battleforge Shield"
+		"DOTA_Tooltip_ability_item_battleforge_shield_Description"			"Increases your strength by 24 and armor by 25. Also gives you a 25&#37; chance to block an attack when struck. \n \n Barbarian only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_deathbringers_gemstone"					"Deathbringer's Gemstone"
+		"DOTA_Tooltip_ability_item_deathbringers_gemstone_Description"		"Power radiates from this gem. \n Warlord only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_deathbringers_regalia"					"Deathbringer's Regalia"
+		"DOTA_Tooltip_ability_item_deathbringers_regalia_Description"		"Increases your Agility by 100, damage by 50, health by 500, and armor by 30. Warlord only \n \n <b>Set Bonus:</b> Your Critical Strike ability will now do triple damage instead of double damage. \n \n Warlord only."
+
+		"DOTA_Tooltip_ability_item_deathbringers_mail"						"Deathbringer's Mail"
+		"DOTA_Tooltip_ability_item_deathbringers_mail_Description"			"Increases your Agility by 24, armor by 20, and health by 500. \n \n Warlord only."
+
+		"DOTA_Tooltip_ability_item_deathbringers_blade"						"Deathbringer's Blade"
+		"DOTA_Tooltip_ability_item_deathbringers_blade_Description"			"Increases your Agility by 30 and damage by 50. \n \n Warlord only."
+
+		"DOTA_Tooltip_ability_item_deathbringers_gauntlets"					"Deathbringer's Gauntlets"
+		"DOTA_Tooltip_ability_item_deathbringers_gauntlets_Description"		"Increases your Agility by 30, Armor by 10 and grants you 25&#37; Attack Speed. \n \n Warlord only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_divine_gemstone"							"Divine Gemstone"
+		"DOTA_Tooltip_ability_item_divine_gemstone_Description"				"Power radiates from this gem. \n Temple Guardian only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_divine_regalia"							"Divine Regalia"
+		"DOTA_Tooltip_ability_item_divine_regalia_Description"				"Increases your Strength by 50, Intelligence by 40, Agility by 15, armor by 45, attack speed by 25&#37;, mana regeneration by 50&#37;, and spell damage and healing by 500. \n \n <b>Set Bonus:</b> Whenever your physical attacks land there is a 10&#37; chance that a bolt of fire will leap from your sword, causing damage equal to double your Strength to all enemy units in front of you in a line. \n \n Temple Guardian only."
+
+		"DOTA_Tooltip_ability_item_divine_plate"							"Divine Plate"
+		"DOTA_Tooltip_ability_item_divine_plate_Description"				"Increases your Strength by 16, Intelligence by 8, armor by 35, mana regeneration by 25&#37;, and spell damage and healing by 150. \n \n Temple Guardian only."
+
+		"DOTA_Tooltip_ability_item_divine_blade"							"Divine Blade"
+		"DOTA_Tooltip_ability_item_divine_blade_Description"				"Increases your Strength and Intelligence by 12, Agility by 8, damage by 40, attack speed by 25&#37;, and spell damage and healing by 150. \n \n Temple Guardian only."
+
+		"DOTA_Tooltip_ability_item_divine_helm"								"Divine Helm"
+		"DOTA_Tooltip_ability_item_divine_helm_Description"					"Increases your Strength by 8, Intelligence by 20, armor by 20, Mana Regeneration by 25&#37; and Spell Damage and Healing by 150. \n \n Temple Guardian only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_gemstone_of_the_wild"					"Gemstone of the Wild"
+		"DOTA_Tooltip_ability_item_gemstone_of_the_wild_Description"		"Power radiates from this gem. \n Druid only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_wild_regalia"							"Wild Regalia"
+		"DOTA_Tooltip_ability_item_wild_regalia_Description"				"Increases your Intelligence by 45, Strength and Agility by 25, mana regeneration by 45&#37;, armor by 30, attack speed by 20&#37;, and spell damage and healing by 600. \n \n <b>Set Bonus:</b> Gives an 8&#37; chance when your attacks land to entangle the target for up to 6 seconds. While entangled, the target will suffer 75 damage per second and may not attack. \n \n Druid only."
+
+		"DOTA_Tooltip_ability_item_hide_of_the_wild"						"Hide of the Wild"
+		"DOTA_Tooltip_ability_item_hide_of_the_wild_Description"			"Increases all stats by 12, health by 400, mana regeneration by 25&#37;, and armor by 20. \n \n Druid only."
+
+		"DOTA_Tooltip_ability_item_staff_of_the_wild"						"Staff of the Wild"
+		"DOTA_Tooltip_ability_item_staff_of_the_wild_Description"			"Increases your Intelligence and Damage by 20, Attack Speed by 15, and Spell Damage and Healing by 270.\n \n Druid only."
+
+		"DOTA_Tooltip_ability_item_crown_of_the_wild"						"Crown of the Wild"
+		"DOTA_Tooltip_ability_item_crown_of_the_wild_Description"			"Increases all stats by 8, Armoy by 12, Mana Regeneration by 25&#37; and Spell Damage and Healing by 180. \n \n Druid only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_ironwood_gemstone"						"Ironwood Gemstone"
+		"DOTA_Tooltip_ability_item_ironwood_gemstone_Description"			"Power radiates from this gem. \n Ranger only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_ironwood_regalia"						"Ironwood Regalia"
+		"DOTA_Tooltip_ability_item_ironwood_regalia_Description"			"Increases your Strength by 50, Intelligence by 40, Agility by 15, armor by 45, attack speed by 25&#37;, mana regeneration by 50&#37;, and spell damage and healing by 500. \n \n <b>Set Bonus:</b> Whenever your physical attacks land there is a 10&#37; chance that a bolt of fire will leap from your sword, causing damage equal to double your Strength to all enemy units in front of you in a line. \n \n Ranger only."
+
+		"DOTA_Tooltip_ability_item_ironwood_chestplate"						"Ironwood Chestplate"
+		"DOTA_Tooltip_ability_item_ironwood_chestplate_Description"			"Increases Agilty by 25, Intelligence by 15, armor by 15, and health by 500. \n \n Ranger only."
+
+		"DOTA_Tooltip_ability_item_ironwood_bow"							"Ironwood Bow"
+		"DOTA_Tooltip_ability_item_ironwood_bow_Description"				"Increases Agilty and Intelligence by 15, Strength by 9, and attack damage by 50, and spell damage and healing by 200. \n \n Ranger only."
+
+		"DOTA_Tooltip_ability_item_ironwood_helm"							"Ironwood Helm"
+		"DOTA_Tooltip_ability_item_ironwood_helm_Description"				"Increases your Strength and Agility by 8, Armor by 12, Mana Regeneration by 25&#37; and Spell Damage and Healing by 300. \n \n Ranger only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_gemstone_of_khaos"						"Gemstone of Khaos"
+		"DOTA_Tooltip_ability_item_gemstone_of_khaos_Description"			"Power radiates from this gem. \n Khaos Champion only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_khaos_regalia"							"Khaos Regalia"
+		"DOTA_Tooltip_ability_item_khaos_regalia_Description"				"Increases your Strength by 125, Intelligence by 5, Attack Speed by 25&#37; and Armor by 35. Also provides 25&#37; Magic Resistance. \n \n <b>Set Bonus:</b> Your attacks will steal 125 life. \n \n Khaos Champion only."
+
+		"DOTA_Tooltip_ability_item_khaos_shield"							"Khaos Shield"
+		"DOTA_Tooltip_ability_item_khaos_shield_Description"				"Increases Strength by 30 and armor by 25. Also grants you 20&#37; Magic Resistance. \n \n Khaos Champion only."
+
+		"DOTA_Tooltip_ability_item_khaos_blade"								"Khaos Blade"
+		"DOTA_Tooltip_ability_item_khaos_blade_Description"					"Increases Strength by 25, your Damage by 50 and your Intelligence by 1. \n \n Khaos Champion only."
+
+		"DOTA_Tooltip_ability_item_khaos_helm"								"Khaos Helm"
+		"DOTA_Tooltip_ability_item_khaos_helm_Description"					"Increases your Strength by 30, Intelligence by 1, and your Attack Speed by 25&#37;. \n \n Khaos Champion only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_divine_gemstone"							"Divine Gemstone"
+		"DOTA_Tooltip_ability_item_divine_gemstone_Description"				"Power radiates from this gem. \n Temple Guardian only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_divine_regalia"							"Divine Regalia"
+		"DOTA_Tooltip_ability_item_divine_regalia_Description"				"Increases your Strength by 50, Intelligence by 40, Agility by 15, armor by 45, attack speed by 25&#37;, mana regeneration by 50&#37;, and spell damage and healing by 500. \n \n <b>Set Bonus:</b> Whenever your physical attacks land there is a 10&#37; chance that a bolt of fire will leap from your sword, causing damage equal to double your Strength to all enemy units in front of you in a line. \n \n Temple Guardian only."
+
+		"DOTA_Tooltip_ability_item_divine_plate"							"Divine Plate"
+		"DOTA_Tooltip_ability_item_divine_plate_Description"				"Increases your Strength by 16, Intelligence by 8, armor by 35, mana regeneration by 25&#37;, and spell damage and healing by 150. \n \n Temple Guardian only."
+
+		"DOTA_Tooltip_ability_item_divine_blade"							"Divine Blade"
+		"DOTA_Tooltip_ability_item_divine_blade_Description"				"Increases your Strength and Intelligence by 12, Agility by 8, damage by 40, attack speed by 25&#37;, and spell damage and healing by 150. \n \n Temple Guardian only."
+
+		"DOTA_Tooltip_ability_item_divine_helm"								"Divine Helm"
+		"DOTA_Tooltip_ability_item_divine_helm_Description"					"Increases your Strength by 8, Intelligence by 20, armor by 20, Mana Regeneration by 25&#37; and Spell Damage and Healing by 150. \n \n Temple Guardian only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_night_gemstone"							"Night Gemstone"
+		"DOTA_Tooltip_ability_item_night_gemstone_Description"				"Power radiates from this gem. \n Assassin only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_night_regalia"							"Night Regalia"
+		"DOTA_Tooltip_ability_item_night_regalia_Description"				"Increases your Agility by 90, damage by 50, armor by 25, health by 900, and increases your mana regeneration by 1.5 mana per second. \n \n <b>Set Bonus:</b> Increases the stun duration of your Walk the Shadows ability to 4 seconds and adds a bleed effect that will cause damage equal to five times your Agility plus 1000 over 5 seconds. \n \n Assassin only."
+
+		"DOTA_Tooltip_ability_item_night_cloak"								"Night Cloak"
+		"DOTA_Tooltip_ability_item_night_cloak_Description"					"Increases Agility by 30 and armor by 12. Also grants you 500 to your max health and 5 to your max mana.\n \n Assassin only."
+
+		"DOTA_Tooltip_ability_item_night_blade"								"Night Blade"
+		"DOTA_Tooltip_ability_item_night_blade_Description"					"Increases Agility by 25, damage by 50, and mana regeneration by .5 per second. \n \n Assassin only."
+
+		"DOTA_Tooltip_ability_item_night_mask"								"Night Mask"
+		"DOTA_Tooltip_ability_item_night_maskDescription"					"Increases your Agility by 35, Armor by 10 and Mana Regeneration by 0.5 per second. Also grants you 400 to your max health and 5 to your max mana. \n \n Assassin only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_gemstone_of_shadows"						"Gemstone of Shadows"
+		"DOTA_Tooltip_ability_item_gemstone_of_shadows_Description"			"Power radiates from this gem. \n Warlock only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_shadows_regalia"							"Shadows Regalia"
+		"DOTA_Tooltip_ability_item_shadows_regalia_Description"				"Increases your Intelligence by 40, Strength by 20, armor by 15, health regeneration by 30 health per second, mana regeneration by 50&#37;, and spell damage by 750. \n \n <b>Set Bonus:</b> Gives a 15&#37; chance when you cast a spell to increase your spell damage by 75&#37; for 20 seconds. \n \n Warlock only."
+
+		"DOTA_Tooltip_ability_item_robe_of_shadows"							"Robe of Shadows"
+		"DOTA_Tooltip_ability_item_robe_of_shadows_Description"				"Increases your Intelligence and Strength by 15, armor by 8, mana regeneration by 25&#37;, health regeneration by 15 per second, and spell damage by 200. \n \n Warlock only."
+
+		"DOTA_Tooltip_ability_item_staff_of_shadows"						"Staff of Shadows"
+		"DOTA_Tooltip_ability_item_staff_of_shadows_Description"			"Increases your Intelligence by 18, damage by 15, mana regeneration by 25&#37;, and spell damage by 300. \n \n Warlock only."
+
+		"DOTA_Tooltip_ability_item_pendant_of_shadows"						"Pendant of Shadows"
+		"DOTA_Tooltip_ability_item_pendant_of_shadows_Description"			"Increases your HP regeneration by 15, Mana Regeneration by 25&#37; and grants you 300 Spell Damage. \n \n Warlock only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_gemstone_of_light"						"Gemstone of Light"
+		"DOTA_Tooltip_ability_item_gemstone_of_light_gemstone_Description"	"Power radiates from this gem. \n Cleric only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_light_regalia"							"Light Regalia"
+		"DOTA_Tooltip_ability_item_light_regalia_Description"				"Increases your Intelligence by 55, armor by 12, mana regeneration by 50&#37;, and spell damage and healing by 700.  \n \n <b>Set Bonus:</b> Your attacks heal friendly units in an area of effect around the target for an amount equal to one third of your Intelligence. \n \n Cleric only."
+
+		"DOTA_Tooltip_ability_item_robes_of_light"							"Robes of Light"
+		"DOTA_Tooltip_ability_item_robes_of_light_Description"				"Increases your Intelligence by 15, mana regeneration by 25&#37;, armor by 8, and spell damage and healing by 180.\n \n Cleric only."
+
+		"DOTA_Tooltip_ability_item_staff_of_light"							"Staff of Light"
+		"DOTA_Tooltip_ability_item_staff_of_light_Description"				"Increases your Intelligence by 15, mana regeneration by 25&#37;, and spell damage and healing by 300. \n \n Cleric only."
+
+		"DOTA_Tooltip_ability_item_wand_of_light"							"Wand of Light"
+		"DOTA_Tooltip_ability_item_wand_of_light_Description"				"Increases your Intelligence by 18, Damage by 15, Mana Regeneration by 25&#37; and Spell Damage and Healing by 180. \n \n Cleric only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_gemstone_of_power"						"Gemstone of Power"
+		"DOTA_Tooltip_ability_item_gemstone_of_power_Description"			"Power radiates from this gem. \n Magician only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_power_regalia"							"Power Regalia"
+		"DOTA_Tooltip_ability_item_power_regalia_Description"				"Increases your Intelligence by 65, mana regeneration by 45&#37;, armor by 12, and spell damage by 800. \n \n <b>Set Bonus:</b> Your spell damage is increased by 25&#37;. \n \n Magician only."
+
+		"DOTA_Tooltip_ability_item_robes_of_power"							"Robes of Power"
+		"DOTA_Tooltip_ability_item_robes_of_power_Description"				"Increases your Intelligence by 15, mana regeneration by 30&#37;, armor by 8, and spell damage by 225.\n \n Magician only."
+
+		"DOTA_Tooltip_ability_item_staff_of_power"							"Staff of Power"
+		"DOTA_Tooltip_ability_item_staff_of_power_Description"				"Increases your Intelligence by 15, damage by a further 15, and spell damage by 375. \n \n Magician only."
+
+		"DOTA_Tooltip_ability_item_crown_of_power"							"Crown of Power"
+		"DOTA_Tooltip_ability_item_crown_of_power_Description"				"Increases your intelligence by 24, Mana Regeneration by 25&#37; and Spell Damage by 225. \n \n Magician only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_stone_gemstone"							"Gemstone of Stone"
+		"DOTA_Tooltip_ability_item_stone_gemstone_Description"				"Power radiates from this gem. \n Guardian of Nature only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_stone_regalia"							"Stone Regalia"
+		"DOTA_Tooltip_ability_item_stone_regalia_Description"				"Increases your Strength by 75, Agility by 35, Intelligence by 35, damage by 100, mana regeneration by 30&#37;, and spell damage by 1000. \n \n <b>Set Bonus:</b> Grants you 45&#37; Magic Resistance. \n \n Guardian of Nature."
+
+		"DOTA_Tooltip_ability_item_stone_shield"							"Stone Shield"
+		"DOTA_Tooltip_ability_item_stone_shield_Description"				"Increases all stats by 10, damage by 30, mana regeneration by 25&#37;, and spell damage by 300.\n \n Guardian of Nature only."
+
+		"DOTA_Tooltip_ability_item_stone_axe"								"Stone Axe"
+		"DOTA_Tooltip_ability_item_stone_axe_Description"					"Increases your Strength by 20, Agility and Intelligence by 10, damage by 20, attack speed by 20&#37;, and spell damage by 250. \n \n Guardian of Nature only."
+
+		"DOTA_Tooltip_ability_item_stone_dial"								"Stone Dial"
+		"DOTA_Tooltip_ability_item_stone_dial_Description"					"Increases all stats by 15, damage by 35, and spell damage by 450. \n \n Guardian of Nature only."
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		"DOTA_Tooltip_ability_item_veteran_gemstone"						"Veteran's Gemstone"
+		"DOTA_Tooltip_ability_item_veteran_gemstone_Description"			"Power radiates from this gem. \n Spartan Warrior only. \n This item WILL be saved"
+
+		"DOTA_Tooltip_ability_item_veterans_regalia"						"Veteran's Regalia"
+		"DOTA_Tooltip_ability_item_veterans_regalia_Description"			"Increases your Strength by 60, Agility by 40, Intelligence by 40, armor by 45, mana regeneration by 30&#37;, and spell healing by 900. \n \n <b>Set Bonus:</b>  Increases the dodge chance and spell damage reduction of your Phalanx skill to 40&#37;. \n \n Spartan Warrior only."
+
+		"DOTA_Tooltip_ability_item_veterans_breastplate"					"Veteran's Breastplate"
+		"DOTA_Tooltip_ability_item_veterans_breastplate_Description"		"Increases all stats by 10, armor by 25, mana regeneration by 25&#37;, and spell healing by 250.\n \n Spartan Warrior only."
+
+		"DOTA_Tooltip_ability_item_veterans_greatsword"						"Veteran's Greatsword"
+		"DOTA_Tooltip_ability_item_veterans_greatsword_Description"			"Increases your Strength by 16, Agility and Intelligence by 8, damage by 15, attack speed by 20&#37;, and spell healing by 250. \n \n Spartan Warrior only."
+
+		"DOTA_Tooltip_ability_item_veterans_shield"							"Veteran's Shield"
+		"DOTA_Tooltip_ability_item_veterans_shield_Description"				"Increases all stats by 15, armor by 20 and spell healing by 400 \n \n Spartan Warrior only."
+
+		///////// UNIQUES ///////////
+		/////////////////////////////
+
+		"DOTA_Tooltip_ability_item_charm_of_battle_lust"					"Charm of Battle Lust"
+		"DOTA_Tooltip_ability_item_charm_of_battle_lust_Description"		"Increases your Strength and Agility by 6 and attack speed by 20&#37;"
+
+		"DOTA_Tooltip_ability_item_oracles_robes"							"Oracle's Robes"
+		"DOTA_Tooltip_ability_item_oracles_robes_Description"				"Increases your armor by 8, Intelligence by 6, mana regeneration by 20&#37;, and spell damage and healing by 75. \n \n With <font color='#FF9933'>Oracle's Staff</font>: +50 spell damage and healing.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_oracles_staff"							"Oracle's Staff"
+		"DOTA_Tooltip_ability_item_oracles_staff_Description"				"Increases your Intelligence by 8 and spell damage and healing by 180. \n \n With <font color='#FF9933'>Oracle's Robes</font>: +50 spell damage and healing.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_spartan_breastplate"						"Spartan Breastplate"
+		"DOTA_Tooltip_ability_item_spartan_breastplate_Description"			"Increases your armor by 20, Strength by 8, and recovers 5 health per second. \n \n With <font color='#FF9933'>Spartan Short Sword</font>: +5 Strength and Agility."
+
+		"DOTA_Tooltip_ability_item_spartan_short_sword"						"Spartan Short Sword"
+		"DOTA_Tooltip_ability_item_spartan_short_sword_Description"			"Increases your attack damage by 25, your Strength and Agility by 5, and attack speed by 15&#37;. \n \n With <font color='#FF9933'>Spartan Breastplate</font>: +5 Strength and Agility."
+
+		"DOTA_Tooltip_ability_item_spartan_longsword"						"Spartan Longsword"
+		"DOTA_Tooltip_ability_item_spartan_longsword_Description"			"Increases your attack damage by 40, your Strength and Agility by 10, and attack speed by 15&#37;. \n \n With <font color='#FF9933'>Spartan Plate Mail</font>: +10 Strength and Agility."
+
+		"DOTA_Tooltip_ability_item_spartan_plate_mail"						"Spartan Plate Mail"
+		"DOTA_Tooltip_ability_item_spartan_plate_mail_Description"			"Increases your armor by 25, Strength and Agility by 8, and recovers 10 health per second. \n \n With <font color='#FF9933'>Spartan Longsword</font>: +10 Strength and Agility."
+
+		"DOTA_Tooltip_ability_item_spartan_greatsword"						"Spartan Greatsword"
+		"DOTA_Tooltip_ability_item_spartan_greatsword_Description"			"Increases your attack damage by 60, your Strength and Agility by 15, and attack speed by 15&#37;. \n \n With <font color='#FF9933'>Spartan Plate Mail</font>: +15 Strength and Agility."
+
+		"DOTA_Tooltip_ability_item_spartan_full_plate"						"Spartan Full Plate"
+		"DOTA_Tooltip_ability_item_spartan_full_plate_Description"			"Increases your armor by 35, Strength and Agility by 12, and recovers 15 health per second. \n \n With <font color='#FF9933'>Spartan Greatsword</font>: +15 Strength and Agility."
+
+		"DOTA_Tooltip_ability_item_spirit_charm"							"Spirit Charm"
+		"DOTA_Tooltip_ability_item_spirit_charm_Description"				"Increases your Intelligence by 20 and your mana regeneration by 60&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_soul_charm"								"Soul Charm"
+		"DOTA_Tooltip_ability_item_soul_charm_Description"					"Increases your Intelligence by 30, health by 300 and your mana regeneration by 70&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_horn_of_the_hallowed_one"				"Horn of the Hallowed One"
+		"DOTA_Tooltip_ability_item_horn_of_the_hallowed_one_Description"	"Increases all stats by 10, attack damage by 30 and your attack speed by 15&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "	
+
+		"DOTA_Tooltip_ability_item_high_shamans_staff"						"High Shaman's Staff"
+		"DOTA_Tooltip_ability_item_high_shamans_staff_Description"			"Increases your Intelligence by 15, mana regeneration by 25&#37; and your spell and healing power by 250. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "	
+
+		"DOTA_Tooltip_ability_item_great_axe_of_the_minotaur_cheiftain"					"Great Axe of the Minotaur Chieftain"
+		"DOTA_Tooltip_ability_item_great_axe_of_the_minotaur_cheiftain_Description"		"Increases your Strength by 15 and your damage by 60."
+
+		"DOTA_Tooltip_ability_item_tooth_of_the_hallowed_one"				"Tooth of the Hallowed One"
+		"DOTA_Tooltip_ability_item_tooth_of_the_hallowed_one_Description"	"Increases your agility by 15, damage by 25 and attack speed by 15&#37;."
+
+		"DOTA_Tooltip_ability_item_charm_of_battle_fury"					"Charm of Battle Fury"
+		"DOTA_Tooltip_ability_item_charm_of_battle_fury_Description"		"Increases your Strength and Agility by 15 and your attack speed by 30&#37;"
+		
+		"DOTA_Tooltip_ability_item_high_oracles_robes"						"High Oracle's Robes"
+		"DOTA_Tooltip_ability_item_high_oracles_robes_Description"			"Increases your armor by 12, Intelligence by 12, mana regeneration by 25&#37;, and spell damage and healing by 120. \n \n With <font color='#FF9933'>High Oracle's Staff</font>: +100 spell damage and healing.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_high_oracles_staff"						"High Oracle's Staff"
+		"DOTA_Tooltip_ability_item_high_oracles_staff_Description"			"Increases your Intelligence by 16 and spell damage and healing by 270. \n \n With <font color='#FF9933'>High Oracle's Robes</font>: +100 spell damage and healing.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_myrmidon_scale"							"Myrmidon Scale"
+		"DOTA_Tooltip_ability_item_myrmidon_scale_Description"				"Increases your Strength and Agility by 15, armor by 25, health regeneration by 15 health per second, and movement speed by 25."
+
+		"DOTA_Tooltip_ability_item_amulet_of_protection"					"Amulet of Protection"
+		"DOTA_Tooltip_ability_item_amulet_of_protection_Description"		"Increases your health by 600 and armor by 25. Also provides a 20&#37; chance to dodge an enemy's attack."
+
+		"DOTA_Tooltip_ability_item_ring_of_might"							"Ring of Might"
+		"DOTA_Tooltip_ability_item_ring_of_might_Description"				"Increases your Strength and Agility by 10, damage by 25, and attack speed by 25&#37;."
+
+		"DOTA_Tooltip_ability_item_ring_of_power"							"Ring of Power"
+		"DOTA_Tooltip_ability_item_ring_of_power_Description"				"Increases your Intelligence by 6. Also increases spell damage and healing by 375. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_talisman_of_wisdom"						"Talisman of Wisdom"
+		"DOTA_Tooltip_ability_item_talisman_of_wisdom_Description"			"Increases your Intelligence by 30 and mana regeneration by 40&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_athenian_shirt_of_fine_steel"				"Athenian Shirt of Fine Steel"
+		"DOTA_Tooltip_ability_item_athenian_shirt_of_fine_steel_Description"	"Increases your armor by 25 and all stats by 12.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_barbaric_helm"							"Barbaric Helm"
+		"DOTA_Tooltip_ability_item_barbaric_helm_Description"				"Increases your Strength by 25 and armor by 25. In addition, any enemies who attack you will take 75 damage."
+
+		"DOTA_Tooltip_ability_item_bone_wreath"								"Bone Wreath"
+		"DOTA_Tooltip_ability_item_bone_wreath_Description"					"Increases your Intelligence by 20, spell damage and healing by 200, and health by 500.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_charm_of_the_war_king"					"Charm of the War King"
+		"DOTA_Tooltip_ability_item_charm_of_the_war_king_Description"		"Increases your Strength and Agility by 25 and attack speed by 40&#37;."
+
+		"DOTA_Tooltip_ability_item_crystal_helm"							"Crystal Helm"
+		"DOTA_Tooltip_ability_item_crystal_helm_Description"				"Increases your Intelligence by 20, mana regeneration by 25&#37;, and spell healing by 450.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_eris_golden_apple_of_discord"				"Eris' Golden Apple of Discord"
+		"DOTA_Tooltip_ability_item_eris_golden_apple_of_discord_Description"	"Increases your mana regeneration by 40&#37; and spell damage and healing by 300. Use: 75&#37; chance to receive a random powerful buff and 25&#37; chance for debuff. Cooldown: 1 minute.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_heart_blade"								"Heart Blade"
+		"DOTA_Tooltip_ability_item_heart_blade_Description"					"Increases your attack damage by 60, attack speed by 25&#37;, and armor by 15."
+
+		"DOTA_Tooltip_ability_item_regal_crown"								"Regal Crown"
+		"DOTA_Tooltip_ability_item_regal_crown_Description"					"Increases your Intelligence by 20, mana regeneration by 25&#37;, and spell damage by 450.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_robes_of_delphi"							"Robes of Delphi"
+		"DOTA_Tooltip_ability_item_robes_of_delphi_Description"				"Increases your armor by 15, Intelligence by 20, mana regeneration by 30&#37;, spell damage by 120, and spell healing by 180.\n \n With <font color='#FF9933'>Staff of Delphi</font>: +150 spell damage and healing.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_staff_of_delphi"							"Staff of Delphi"
+		"DOTA_Tooltip_ability_item_staff_of_delphi_Description"				"Increases your Intelligence by 24 and mana regeneration by 20&#37;. Also increases spell damage and healing by 360. With Robes of Delphi: +150 spell damage and healing.\n \n With <font color='#FF9933'>Robes of Delphi</font>: +150 spell damage and healing\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_starlight_charm"							"Starlight Charm"
+		"DOTA_Tooltip_ability_item_starlight_charm_Description"				"Increases all stats by 15, attack speed by 25&#37;, and mana regenerations by 40&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_sword_of_command"						"Sword of Command"
+		"DOTA_Tooltip_ability_item_sword_of_command_Description"			"Increases your attack damage by 40 and your Strength and Agility by 10. In addition, all nearby friendly units will receive a 10&#37; bonus to attack damage."
+
+		"DOTA_Tooltip_ability_item_thespian_halberd"						"Thespian Halberd"
+		"DOTA_Tooltip_ability_item_thespian_halberd_Description"			"Increases all stats by 10, damage by 45, and attack speed by 20&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_well_of_souls"							"Well of Souls"
+		"DOTA_Tooltip_ability_item_well_of_souls_Description"				"Increases your Intelligence by 40, your health by 500, and your mana regeneration by 80&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_boots_of_hermes"							"Boots of Hermes"
+		"DOTA_Tooltip_ability_item_boots_of_hermes_Description"				"Increases your agility by 25, your movement speed by 50, health by 400, and grants you a 20&#37; chance to dodge physical attacks against you"
+
+		"DOTA_Tooltip_ability_item_hunting_spear_of_artemis"				"Hunting Spear of Artemis"
+		"DOTA_Tooltip_ability_item_hunting_spear_of_artemis_Description"	"Increases all stats by 15, damage by 45, and attack speed by 25&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_priams_scepter"							"Priam's Scepter"
+		"DOTA_Tooltip_ability_item_priams_scepter_Description"				"Increases your Intelligence by 15, damage by 30, attack speed by 25&#37;, and spell damage and healing by 225. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_savage_war_axe_of_hephaestus"			"Savage War Axe of Hephaestus"
+		"DOTA_Tooltip_ability_item_savage_war_axe_of_hephaestus_Description" "Increases your attack damage by 60. In addition, your attacks have a 5&#37; chance to cause 350 additional damage and stun the target for up to 2.5 seconds."
+
+		"DOTA_Tooltip_ability_item_armor_of_zeus"							"Armor of Zeus"
+		"DOTA_Tooltip_ability_item_armor_of_zeus_Description"				"Increases your armor by 45, Strength by 10, and health by 800."
+
+		"DOTA_Tooltip_ability_item_blade_of_ares"							"Blade of Ares"
+		"DOTA_Tooltip_ability_item_blade_of_ares_Description"				"Increases your attack damage by 50 and your attack speed by 30&#37;. In addition, your attacks will steal 35 life from the target."
+
+		"DOTA_Tooltip_ability_item_staff_of_poseidon"						"Staff of Poseidon"
+		"DOTA_Tooltip_ability_item_staff_of_poseidon_Description"			"Increases damage done by your spells by 700. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_chillstone_ring"							"Chillstone Ring"
+		"DOTA_Tooltip_ability_item_chillstone_ring_Description"				"Increases all stats by 15, spell damage and healing by 300, and health by 500.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_deathchill_blade"						"Deathchill Blade"
+		"DOTA_Tooltip_ability_item_deathchill_blade_Description"			"Increases your attack damage by 90. In addition, 25% of your melee base damage is taken by nearby enemies. Note that this does not include damage bonuses from items."
+
+		"DOTA_Tooltip_ability_item_frozen_ring_of_the_ice_queen"				"Frozen Ring of the Ice Queen"
+		"DOTA_Tooltip_ability_item_frozen_ring_of_the_ice_queen_Description"	"Increases your armor by 35 and health by 500. In addition, any enemy that strikes you will have its attack speed reduced by 25&#37; and its movement speed reduced by 50&#37; for up to 6 seconds."
+
+		"DOTA_Tooltip_ability_item_orb_of_chill_midnight"					"Orb of Chill Midnight"
+		"DOTA_Tooltip_ability_item_orb_of_chill_midnight_Description"		"Increases all stats by 10, regenerates 30 health per second, and increases your mana regeneration by 50&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_scepter_of_the_ice_queen"				"Scepter of the Ice Queen"
+		"DOTA_Tooltip_ability_item_scepter_of_the_ice_queen_Description"	"Increases your damage by 25, attack speed by 25&#37;, and increases healing done by your spells by 600. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_green_dragonscale_ring"					"Green Dragonscale Ring"
+		"DOTA_Tooltip_ability_item_green_dragonscale_ring_Description"		"Increases all stats by 30. Also reduces damage taken from spells by 25&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_red_dragonscale_ring"					"Red Dragonscale Ring"
+		"DOTA_Tooltip_ability_item_red_dragonscale_ring_Description"		"Increases Strength by 50, Agility by 25, and Intelligence by 1. Also reduces damage taken from spells by 25&#37;."
+
+		"DOTA_Tooltip_ability_item_white_dragonscale_ring"					"White Dragonscale Ring"
+		"DOTA_Tooltip_ability_item_white_dragonscale_ring_Description"		"Increases Intelligence by 40 and Strength and Agility by 25. Also reduces damage taken from spells by 25&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_adamantium_scythe"						"Adamantium Scythe"
+		"DOTA_Tooltip_ability_item_adamantium_scythe_Description"			"Increases your attack damage by 60, attack speed by 30&#37;, and grants you a 10&#37; chance to do triple damage on an attack. In addition, your attacks cause 150 additional damage against Uranus."
+
+		"DOTA_Tooltip_ability_item_aphrodites_blessed_orb"					"Aphrodite's Blessed Orb"
+		"DOTA_Tooltip_ability_item_aphrodites_blessed_orb_Description"		"Increases your Intelligence by 20 and mana regeneration by 30&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font> \n \n Use: increases spell damage and healing by 2000 for 30 seconds. 60 second cooldown."
+
+		"DOTA_Tooltip_ability_item_circlet_of_the_mother_goddess"				"Circlet of the Mother Goddess"
+		"DOTA_Tooltip_ability_item_circlet_of_the_mother_goddess_Description"	"Increases your armor by 5, Intelligence by 30, and mana regeneration by 55&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_shield_of_zeus"							"Shield of Zeus"
+		"DOTA_Tooltip_ability_item_shield_of_zeus_Description"				"Increases your armor by 15, your health by 900, and reduces all attacks against you by 50. \n \n Use: Renders you immune to harmful spells for 20 seconds. Cooldown: 3 minutes."
+
+		"DOTA_Tooltip_ability_item_talisman_of_the_winged_god"				"Talisman of the Winged God"
+		"DOTA_Tooltip_ability_item_talisman_of_the_winged_god_Description"	"Increases your attack speed by 35&#37;, your health by 600, and your life regeneration by 20 health per second. Also increases the movement and attack speed of all nearby friendly units by 10&#37;."
+		///////// COMMON ///////////
+		/////////////////////////////
+
+		"DOTA_Tooltip_ability_item_ring_of_regeneration"					"Ring of Regeneration"
+		"DOTA_Tooltip_ability_item_ring_of_regeneration_Description"		"Increases your health regeneration by 3 hit points per second."
+
+		"DOTA_Tooltip_ability_item_boots_of_agility_8"						"Boots of Agility +8"
+		"DOTA_Tooltip_ability_item_boots_of_agility_8_Description"			"Increases your Agility by 8."
+
+		"DOTA_Tooltip_ability_item_boots_of_agility_16"						"Boots of Agility +16"
+		"DOTA_Tooltip_ability_item_boots_of_agility_16_Description"			"Increases your Agility by 16."
+
+		"DOTA_Tooltip_ability_item_boots_of_agility_24"						"Boots of Agility +24"
+		"DOTA_Tooltip_ability_item_boots_of_agility_24_Description"			"Increases your Agility by 24."
+
+		"DOTA_Tooltip_ability_item_tbr_broadsword"							"Broadsword"
+		"DOTA_Tooltip_ability_item_tbr_broadsword_Description"				"Increases your attack damage by 15."
+
+		"DOTA_Tooltip_ability_item_tbr_circlet_of_nobility"					"Circlet of Nobility"
+		"DOTA_Tooltip_ability_item_tbr_circlet_of_nobility_Description"		"Increases all stats by 3. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_gauntlets_of_might_8"					"Gauntlets of Might +8"
+		"DOTA_Tooltip_ability_item_gauntlets_of_might_8_Description"		"Increases your strength by 8."
+
+		"DOTA_Tooltip_ability_item_gauntlets_of_might_16"					"Gauntlets of Might +16"
+		"DOTA_Tooltip_ability_item_gauntlets_of_might_16_Description"		"Increases your strength by 16."
+
+		"DOTA_Tooltip_ability_item_gauntlets_of_might_24"					"Gauntlets of Might +24"
+		"DOTA_Tooltip_ability_item_gauntlets_of_might_24_Description"		"Increases your strength by 24."
+
+		"DOTA_Tooltip_ability_item_orb_of_unending_life"					"Orb of Unending Life"
+		"DOTA_Tooltip_ability_item_orb_of_unending_life_Description"		"Increases your health regeneration by 6 hit points per second."
+
+		"DOTA_Tooltip_ability_item_ring_of_vigor"							"Ring of Vigor"
+		"DOTA_Tooltip_ability_item_ring_of_vigor_Description"				"Increases your mana regeneration by 30&#37;. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_robes_of_enlightenment_8"				"Robes of Enlightenment +8"
+		"DOTA_Tooltip_ability_item_robes_of_enlightenment_8_Description"	"Increases your Intelligence by 8. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_robes_of_enlightenment_16"				"Robes of Enlightenment +16"
+		"DOTA_Tooltip_ability_item_robes_of_enlightenment_16_Description"	"Increases your Intelligence by 16. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_robes_of_enlightenment_24"				"Robes of Enlightenment +24"
+		"DOTA_Tooltip_ability_item_robes_of_enlightenment_24_Description"	"Increases your Intelligence by 24. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_wand_of_healing_power"					"Wand of Healing Power"
+		"DOTA_Tooltip_ability_item_wand_of_healing_power_Description"		"Increases your spell healing by 75. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_wand_of_spell_power"						"Wand of Spell Power"
+		"DOTA_Tooltip_ability_item_wand_of_spell_power_Description"			"Increases your spell damage by 50. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_battle_wizards_wand"						"Battle Wizard's Wand"
+		"DOTA_Tooltip_ability_item_battle_wizards_wand_Description"			"Increases your Intelligence by 6, spell damage and healing by 75.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_battleaxe"								"Battleaxe"
+		"DOTA_Tooltip_ability_item_battleaxe_Description"					"Increases your attack damage by 15 and your Strength and Agility by 4"
+
+		"DOTA_Tooltip_ability_item_mail_shirt"								"Mail Shirt"
+		"DOTA_Tooltip_ability_item_mail_shirt_Description"					"Increases your armor by 10."
+
+		"DOTA_Tooltip_ability_item_ring_of_dodging"							"Ring of Dodging"
+		"DOTA_Tooltip_ability_item_ring_of_dodging_Description"				"Attacks against you have a 15 &#37; chance to miss."
+
+		"DOTA_Tooltip_ability_item_roundshield"								"Roundshield"
+		"DOTA_Tooltip_ability_item_roundshield_Description"					"Increases your armor by 6 and all stats by 3. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes."
+
+		"DOTA_Tooltip_ability_item_cloak_of_flames_25"						"Cloak Of Flames"
+		"DOTA_Tooltip_ability_item_cloak_of_flames_25_Description"			"Surrounds you in flames, causing 25 damage per second to all enemy units in melee range"
+
+		"DOTA_Tooltip_ability_item_cloak_of_flames_50"						"Cloak Of Flames"
+		"DOTA_Tooltip_ability_item_cloak_of_flames_50_Description"			"Surrounds you in flames, causing 50 damage per second to all enemy units in melee range"
+
+		"DOTA_Tooltip_ability_item_cloak_of_flames_75"						"Cloak Of Flames"
+		"DOTA_Tooltip_ability_item_cloak_of_flames_75_Description"			"Surrounds you in flames, causing 75 damage per second to all enemy units in melee range"
+
+		"DOTA_Tooltip_ability_item_cloak_of_flames_100"						"Cloak Of Flames"
+		"DOTA_Tooltip_ability_item_cloak_of_flames_100_Description"			"Surrounds you in flames, causing 100 damage per second to all enemy units in melee range"
+
+		"DOTA_Tooltip_ability_item_firehand_gauntlets_20"					"Firehand Gauntlets 20&#37;"
+		"DOTA_Tooltip_ability_item_firehand_gauntlets_20_Description"		"Increases your attack speed by 20&#37;."
+
+		"DOTA_Tooltip_ability_item_firehand_gauntlets_40"					"Firehand Gauntlets 40&#37;"
+		"DOTA_Tooltip_ability_item_firehand_gauntlets_40_Description"		"Increases your attack speed by 40&#37;."
+
+		"DOTA_Tooltip_ability_item_firehand_gauntlets_50"					"Firehand Gauntlets 50&#37;"
+		"DOTA_Tooltip_ability_item_firehand_gauntlets_50_Description"		"Increases your attack speed by 50&#37;."
+
+		"DOTA_Tooltip_ability_item_medallion_of_stamina"					"Medallion of Stamina"
+		"DOTA_Tooltip_ability_item_medallion_of_stamina_Description"		"Increases your health by 400."
+
+		"DOTA_Tooltip_ability_item_athenian_mail"							"Athenian Mail"
+		"DOTA_Tooltip_ability_item_athenian_mail_Description"				"Increases your armor by 15 and your health regeneration by 6 per second."
+
+		"DOTA_Tooltip_ability_item_battle_wizards_staff"					"Battle Wizard's Staff"
+		"DOTA_Tooltip_ability_item_battle_wizards_staff_Description"		"Increases your Intelligence by 9, spell damage and healing by 120.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_tbr_buckler"								"Buckler"
+		"DOTA_Tooltip_ability_item_tbr_buckler_Description"					"Increases your armor by 5 and gives you a 20&#37; chance to block attacks"
+
+		"DOTA_Tooltip_ability_item_crown_of_kings_6"						"Crown of Kings +6"
+		"DOTA_Tooltip_ability_item_crown_of_kings_6_Description"			"Increases all stats by 6. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_great_axe"								"Great Axe"
+		"DOTA_Tooltip_ability_item_great_axe_Description"					"Increases your attack damage by 20 and your Strength and Agility by 6."
+
+		"DOTA_Tooltip_ability_item_heros_blade"								"Hero's Blade"
+		"DOTA_Tooltip_ability_item_heros_blade_Description"					"Increases your attack damage by 30."
+
+		"DOTA_Tooltip_ability_item_heros_hauberk"							"Hero's Hauberk"
+		"DOTA_Tooltip_ability_item_heros_hauberk_Description"				"Increases your armor by 20."
+
+		"DOTA_Tooltip_ability_item_life_gem"								"Life Gem"
+		"DOTA_Tooltip_ability_item_life_gem_Description"					"increases your health regeneration by 9 hit points per second"
+
+		"DOTA_Tooltip_ability_item_orb_of_mana"								"Orb of Mana"
+		"DOTA_Tooltip_ability_item_orb_of_mana_Description"					"Increases your mana regeneration by 60&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_ring_of_healing_power"					"Ring of Healing Power"
+		"DOTA_Tooltip_ability_item_ring_of_healing_power"					"Increases your spell healing by 150. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_ring_of_spell_power"						"Ring of Spell Power"
+		"DOTA_Tooltip_ability_item_ring_of_spell_power"						"Increases your spell damage by 150. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_spartan_chestguard"						"Spartan Chestguard"
+		"DOTA_Tooltip_ability_item_spartan_chestguard_Description"			"Increases your armor by 15 and Strength by 10"
+
+		"DOTA_Tooltip_ability_item_charm_of_speed"							"Charm of Speed"
+		"DOTA_Tooltip_ability_item_charm_of_speed_Description"				"Increases your attack speed by 25&#37; and your movement speed by 25."
+
+		"DOTA_Tooltip_ability_item_orb_of_wisdom"							"Orb of Wisdom"
+		"DOTA_Tooltip_ability_item_orb_of_wisdom_Description"				"Increases your mana by 600. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_champions_blade"							"Champion's Blade"
+		"DOTA_Tooltip_ability_item_champions_blade_Description"				"Increases your attack damage by 45."
+
+		"DOTA_Tooltip_ability_item_champions_plate"							"Champion's Plate"
+		"DOTA_Tooltip_ability_item_champions_plate_Description"				"Increases your armor by 30."		
+
+		"DOTA_Tooltip_ability_item_mask_of_death"							"Mask of Death"
+		"DOTA_Tooltip_ability_item_mask_of_death_Description"				"Your attacks steal 20 health from your target."
+
+		"DOTA_Tooltip_abilitY_item_magus_rod"								"Magus Rod"
+		"DOTA_Tooltip_abilitY_item_magus_rod_Description"					"Increases your Intelligence by 12, spell damage and healing by 200. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_orb_of_the_mind"							"Orb of the Mind"
+		"DOTA_Tooltip_ability_item_orb_of_the_mind_Description"				"Increases your mana regeneration by 90&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_peacebringer"							"Peacebringer"
+		"DOTA_Tooltip_ability_item_peacebringer_Description"				"Increases your attack damage by 38 and your Strength and Agility by 8."
+
+		"DOTA_Tooltip_ability_item_staff_of_healing_power"					"Staff of Healing Power"
+		"DOTA_Tooltip_ability_item_staff_of_healing_power_Description"		"Increases your spell healing by 225. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_staff_of_spell_power"					"Staff of Spell Power"
+		"DOTA_Tooltip_ability_item_staff_of_spell_power_Description"		"Increases your spell damage by 225. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_tbr_talisman_of_evasion"					"Talisman of Evasion"
+		"DOTA_Tooltip_ability_item_tbr_talisman_of_evasion_Description"		"Attacks against you have a 30&#37; chance to miss."
+
+		"DOTA_Tooltip_ability_item_athenian_arrows"							"Athenian Arrows"
+		"DOTA_Tooltip_ability_item_athenian_arrows_Description"				"Increases your attack damage by 30 and Agility by 15. Also increases the damage of nearby friendly ranged units by 15&#37;."
+
+		"DOTA_Tooltip_ability_item_bloodrage_charm"							"Bloodrage Charm"
+		"DOTA_Tooltip_ability_item_bloodrage_charm_Description"				"Use: Increases your attack speed by 100&#37; for 30 seconds. Cooldown: 3 minutes."
+
+		"DOTA_Tooltip_ability_item_crown_of_kings_10"						"Crown of Kings +10"
+		"DOTA_Tooltip_ability_item_crown_of_kings_10_Description"			"Increases all stats by 10. \n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_great_maul"								"Great Maul"
+		"DOTA_Tooltip_ability_item_great_maul_Description"					"Increases your attack damage by 40 and your Strength and Agility by 10."
+
+		"DOTA_Tooltip_ability_item_thespian_boiled_leather"					"Thespian Boiled Leather"
+		"DOTA_Tooltip_ability_item_thespian_boiled_leather_Description"		"Increases your armor by 12 and your Agility by 25."
+
+		"DOTA_Tooltip_ability_item_blade_of_the_chosen"						"Blade of the Chosen"
+		"DOTA_Tooltip_ability_item_blade_of_the_chosen_Description"			"Increases your attack damage by 50 and attack speed by 20&#37;."
+
+		"DOTA_Tooltip_ability_item_breastplate_of_the_chosen"				"Breastplate of the Chosen"
+		"DOTA_Tooltip_ability_item_breastplate_of_the_chosen_Description"	"Increases your armor by 25 and your Strength and Agility by 12."
+
+		"DOTA_Tooltip_ability_item_cloak_of_the_chosen"				"Cloak of the Chosen"
+		"DOTA_Tooltip_ability_item_cloak_of_the_chosen_Description"	"Increases your armor by 5 and all stats by 15.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_robes_of_the_chosen"						"Robes of the Chosen"
+		"DOTA_Tooltip_ability_item_robes_of_the_chosen_Description"			"Increases your armor by 8, Intelligence by 25, and mana regeneration by 30&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_rod_of_the_chosen"						"Rod of the Chosen"
+		"DOTA_Tooltip_ability_item_rod_of_the_chosen_Description"			"Increases your Intelligence by 20, attack damage by 15, mana regeneration by 40&#37;, spell damage and healing by 100.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		"DOTA_Tooltip_ability_item_full_plate"								"Full Plate"
+		"DOTA_Tooltip_ability_item_full_plate_Description"					"Increases your armor by 40."
+
+		"DOTA_Tooltip_ability_item_mighty_axe"								"Mighty Axe"
+		"DOTA_Tooltip_ability_item_mighty_axe_Description"					"Increases your attack damage by 70."
+
+		"DOTA_Tooltip_ability_item_orb_of_true_vision"						"Orb of True Vision"
+		"DOTA_Tooltip_ability_item_orb_of_true_vision_Description"			"Increases your mana regeneration by 50&#37;.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes. "
+
+		"DOTA_Tooltip_ability_item_liquid_crystal"							"Liquid Crystal"
+		"DOTA_Tooltip_ability_item_liquid_crystal_Description"				"Increases your health regeneration by 35 hit points per second."
+
+		"DOTA_Tooltip_ability_item_rod_of_spell_power"						"Rod of Spell Power"
+		"DOTA_Tooltip_ability_item_rod_of_spell_power_Description"			"Increases the damage done by spells, by 300."
+
+		"DOTA_Tooltip_ability_item_rod_of_healing_power"					"Rod of Healing Power"
+		"DOTA_Tooltip_ability_item_rod_of_healing_power_Description"		"Increases your healing power by 300.\n <font size='8' color='#ff0000'>Cannot be used by Warrior classes.</font>"
+
+		///////// CONSUMABLES ///////
+		/////////////////////////////
+
+		///////// CRAFTING /////////
+		/////////////////////////////
+
+		"DOTA_Tooltip_Ability_item_unfinished_gemstone_key"					"Name name"
+		"DOTA_Tooltip_Ability_item_unfinished_gemstone_key_Description"		"Name name"
+
+		"DOTA_Tooltip_Ability_item_gemstone_key"							"Gemstone"
+		"DOTA_Tooltip_Ability_item_gemstone_key_Description"				"Name name"
+
+		"DOTA_Tooltip_Ability_item_gem_of_birth"							"Name name"
+		"DOTA_Tooltip_Ability_item_gem_of_birth_Description"				"Name name"
+
+		"DOTA_Tooltip_Ability_item_gem_of_death"							"Name name"
+		"DOTA_Tooltip_Ability_item_gem_of_death_Description"				"Name name"
+
+		"DOTA_Tooltip_Ability_item_gem_of_life"								"Name name"
+		"DOTA_Tooltip_Ability_item_gem_of_life_Description"					"Name name"
+
+		"DOTA_Tooltip_Ability_item_enchanted_diamond_dust"					"Name name"
+		"DOTA_Tooltip_Ability_item_enchanted_diamond_dust_Description"		"Name name"
+
+		"DOTA_Tooltip_Ability_item_heart_of_frost"							"Name name"
+		"DOTA_Tooltip_Ability_item_heart_of_frost_Description"				"Name name"
+
+		"DOTA_Tooltip_Ability_item_meteoric_iron"							"Name name"
+		"DOTA_Tooltip_Ability_item_meteoric_iron_Description"				"Name name"
+
+		"DOTA_Tooltip_Ability_item_power_stone"								"Name name"
+		"DOTA_Tooltip_Ability_item_power_stone_Description"					"Name name"
+
+		"DOTA_Tooltip_Ability_item_ruby_heart"								"Name name"
+		"DOTA_Tooltip_Ability_item_ruby_heart_Description"					"Name name"
+
+		"DOTA_Tooltip_Ability_item_runestone"								"Name name"
+		"DOTA_Tooltip_Ability_item_runestone_Description"					"Name name"
+
+		"DOTA_Tooltip_Ability_item_sapphire"								"Name name"
+		"DOTA_Tooltip_Ability_item_sapphire_Description"					"Name name"
+
+		"DOTA_Tooltip_Ability_item_sea_essence"								"Name name"
+		"DOTA_Tooltip_Ability_item_sea_essence_Description"					"Name name"
+
+		"DOTA_Tooltip_Ability_item_tempered_steel"							"Name name"
+		"DOTA_Tooltip_Ability_item_tempered_steel_Description"				"Name name"
+
+		"DOTA_Tooltip_Ability_item_transport_stone"							"Name name"
+		"DOTA_Tooltip_Ability_item_transport_stone_Description"				"Name name"
+		
+				// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: theblackroad3
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+		"bandit"                                                                          "Bandit"
+		"mance_swiftsword"                                                                "Mance Swiftsword"
+		"black_goblin"                                                                    "Black Goblin"
+		"black_shaman"                                                                    "Black Shaman"
+		"ogre"                                                                            "Ogre"
+		"rokthul"                                                                         "Rokthul"
+		"centaur_pillager"                                                                "Centaur Pillager"
+		"centaur_raider"                                                                  "Centaur Raider"
+		"centaur_warlord"                                                                 "Centaur Warlord"
+		"giant_sea_turtle"                                                                "Giant Sea Turtle"
+		"hulking_centaur_berzerker"                                                       "Hulking Centaur Berzerker"
+		"champion_of_frost"                                                               "Champion Of Frost"
+		"handmaiden_of_persephone"                                                        "Handmaiden Of Persephone"
+		"ice_giant"                                                                       "Ice Giant"
+		"spirit_of_chill"                                                                 "Spirit Of Chill"
+		"demon_fire"                                                                      "Demon Fire"
+		"demon_hound"                                                                     "Demon Hound"
+		"demon_imp"                                                                       "Demon Imp"
+		"forest_bear"                                                                     "Forest Bear"
+		"nukacha"                                                                         "Nukacha"
+		"sludge_beast"                                                                    "Sludge Beast"
+		"goblin"                                                                          "Goblin"
+		"shaman"                                                                          "Shaman"
+		"cutthroat"                                                                       "Cutthroat"
+		"highland_beast"                                                                  "Highland Beast"
+		"mountain_wolf"                                                                   "Mountain Wolf"
+		"rock_giant"                                                                      "Rock Giant"
+		"mammoth"                                                                         "Mammoth"
+		"minotaur_elite"                                                                  "Minotaur Elite"
+		"minotaur_shaman"                                                                 "Minotaur Shaman"
+		"fallen_one"                                                                      "Fallen One"
+		"ghost"                                                                           "Ghost"
+		"restless_dead"                                                                   "Restless Dead"
+		"hill_beast"                                                                      "Hill Beast"
+		"hill_roarer"                                                                     "Hill Roarer"
+		"soulless"                                                                        "Soulless"
+		"hulking_ice_beast"                                                               "Hulking Ice Beast"
+		"ice_behemoth"                                                                    "Ice Behemoth"
+		"minotaur_beastman"                                                               "Minotaur Beastman"
+		"minotaur_grunt"                                                                  "Minotaur Grunt"
+		"minotaur_warlock"                                                                "Minotaur Warlock"
+		"sea_giant"                                                                       "Sea Giant"
+		"myr_reaver"                                                                      "Myr Reaver"
+		"myr_warrior"                                                                     "Myr Warrior"
+		"hulking_sea_monster"                                                             "Hulking Sea Monster"
+		"sea_elemental"                                                                   "Sea Elemental"
+		"sea_servant_huntsman"                                                            "Sea Servant Huntsman"
+		"sea_servant_wavecaller"                                                          "Sea Servant Wavecaller"
+		"forest_lurker"                                                                   "Forest Lurker"
+		"forest_spider"                                                                   "Forest Spider"
+		"forest_terror"                                                                   "Forest Terror"
+		"giant_spider"                                                                    "Giant Spider"
+		"corrupter"                                                                       "Corrupter"
+		"hellspawn"                                                                       "Hellspawn"
+		"pit_fiend"                                                                       "Pit Fiend"
+		"tormenter"                                                                       "Tormenter"
+		"rockwatcher_felblade"                                                            "Rockwatcher Felblade"
+		"tuskarr_barbarian"                                                               "Tuskarr Barbarian"
+		"tuskarr_shaman"                                                                  "Tuskarr Shaman"
+		"ravager"                                                                         "Ravager"
+		"risen_sorcerer"                                                                  "Risen Sorcerer"
+		"wandering_spirit"                                                                "Wandering Spirit"
+		"aris'_ghost"                                                                     "Aris' Ghost"
+		"bullroarer_the_twisted"                                                          "Bullroarer The Twisted"
+		"cyclops"                                                                         "Cyclops"
+		"darnek_the_wanderer"                                                             "Darnek The Wanderer"
+		"gethos_the_mighty"                                                               "Gethos The Mighty"
+		"heiros_darkfriend"                                                               "Heiros Darkfriend"
+		"hillcrusher"                                                                     "Hillcrusher"
+		"lucus_farblaze"                                                                  "Lucus Farblaze"
+		"nasty_big_pointy_teeth"                                                          "Nasty Big Pointy Teeth"
+		"the_black_knight"                                                                "The Black Knight"
+		"the_dark_knight"                                                                 "The Dark Knight"
+		"bank"                                                                            "Bank"
+		"wave_champion_of_hades"                                                          "Champion Of Hades"
+		"wave_demonic_carrion"                                                            "Demonic Carrion"
+		"wave_demonic_pillager"                                                           "Demonic Pillager"
+		"wave_demon_ogre"                                                                 "Demon Ogre"
+		"wave_demon_seer"                                                                 "Demon Seer"
+		"wave_demon_slave"                                                                "Demon Slave"
+		"wave_demon_thrall"                                                               "Demon Thrall"
+		"wave_demon_warrior"                                                              "Demon Warrior"
+		"wave_destroyer"                                                                  "Destroyer"
+		"wave_engine_of_destruction"                                                      "Engine Of Destruction"
+		"wave_greater_demon"                                                              "Greater Demon"
+		"wave_lesser_demon"                                                               "Lesser Demon"
+		"wave_minor_demon"                                                                "Minor Demon"
+		"wave_nether_demon"                                                               "Nether Demon"
+		"city_mortal_archer"                                                              "Mortal Archer"
+		"city_mortal_warrior"                                                             "Mortal Warrior"
+		"npc_blacksmith"                                                                  "Blacksmith"
+		"npc_joseph"                                                                      "Joseph"
+		"npc_serius"                                                                      "Serius"
+		"npc_therin"                                                                      "Therin"
+		"dummy_unit"                                                                      "Dummy Unit"
+		"player_gravestone"                                                               "Player Gravestone"
+		"player_teleporter"                                                               "Player Teleporter"
+		"name"                                                                            "Name"
+		"titan_Avatar_of_Death"                                                           "Avatar Of Death"
+		"titan_Avatar_of_Earth"                                                           "Avatar Of Earth"
+		"titan_Avatar_of_Justice"                                                         "Avatar Of Justice"
+		"titan_Avatar_of_Nature"                                                          "Avatar Of Nature"
+		"titan_Avatar_of_Sacrifice"                                                       "Avatar Of Sacrifice"
+		"titan_Avatar_of_the_Sea"                                                         "Avatar Of The Sea"
+		"titan_Avatar_of_the_Sky"                                                         "Avatar Of The Sky"
+		"titan_Mother_of_Earth"                                                           "Mother Of Earth"
+		"tbr_hero_assassin"                                                               "Assassin"
+		"tbr_hero_barbarian"                                                              "Barbarian"
+		"tbr_hero_cleric"                                                                 "Cleric"
+		"tbr_hero_druid"                                                                  "Druid"
+		"tbr_hero_guardianofnature"                                                       "Guardian of Nature"
+		"tbr_hero_khaoschampion"                                                          "Khaos Champion"
+		"tbr_hero_magician"                                                               "Magician"
+		"tbr_hero_ranger"                                                                 "Ranger"
+		"tbr_hero_spartanwarrior"                                                         "Spartan Warrior"
+		"tbr_hero_templar"                                                                "Templar"
+		"tbr_hero_warlord"                                                                "Warlord"
+
+		// ******************** ABILITY MODIFIERS ********************
+		
+
+		"DOTA_Tooltip_energy_modifier"                                                    "Energy Modifier"
+		"DOTA_Tooltip_energy_modifier_Description"                                        ""
+
+		"DOTA_Tooltip_assassin_garrote_bleed_modifier"                                    "Assassin Garrote Bleed Modifier"
+		"DOTA_Tooltip_assassin_garrote_bleed_modifier_Description"                        ""
+
+		"DOTA_Tooltip_assassin_walk_the_shadows_buff"                                     "Assassin Walk The Shadows Buff"
+		"DOTA_Tooltip_assassin_walk_the_shadows_buff_Description"                         ""
+
+		"DOTA_Tooltip_modifier_mighty_leap_stun"                                          "Mighty Leap Stun"
+		"DOTA_Tooltip_modifier_mighty_leap_stun_Description"                              ""
+
+		"DOTA_Tooltip_rage_modifier"                                                      "Rage Modifier"
+		"DOTA_Tooltip_rage_modifier_Description"                                          ""
+
+		"DOTA_Tooltip_modifier_barbarian_rend_armor"                                      "Barbarian Rend Armor"
+		"DOTA_Tooltip_modifier_barbarian_rend_armor_Description"                          ""
+
+		"DOTA_Tooltip_modifier_barbarian_taunt"                                           "Barbarian Taunt"
+		"DOTA_Tooltip_modifier_barbarian_taunt_Description"                               ""
+
+		"DOTA_Tooltip_cleanser_modifier"                                                  "Cleanser Modifier"
+		"DOTA_Tooltip_cleanser_modifier_Description"                                      ""
+
+		"DOTA_Tooltip_fire_of_heaven_slow"                                                "Fire Of Heaven Slow"
+		"DOTA_Tooltip_fire_of_heaven_slow_Description"                                    ""
+
+		"DOTA_Tooltip_regeneration_modifier"                                              "Regeneration Modifier"
+		"DOTA_Tooltip_regeneration_modifier_Description"                                  ""
+
+		"DOTA_Tooltip_call_lightning_modifier"                                            "Call Lightning Modifier"
+		"DOTA_Tooltip_call_lightning_modifier_Description"                                ""
+
+		"DOTA_Tooltip_call_storm_modifier"                                                "Call Storm Modifier"
+		"DOTA_Tooltip_call_storm_modifier_Description"                                    ""
+
+		"DOTA_Tooltip_storm_thinker"                                                      "Storm Thinker"
+		"DOTA_Tooltip_storm_thinker_Description"                                          ""
+
+		"DOTA_Tooltip_mind_blast_modifier"                                                "Mind Blast Modifier"
+		"DOTA_Tooltip_mind_blast_modifier_Description"                                    ""
+
+		"DOTA_Tooltip_entangle_modifier"                                                  "Entangle Modifier"
+		"DOTA_Tooltip_entangle_modifier_Description"                                      ""
+
+		"DOTA_Tooltip_dummy_modifier"                                                     "Dummy Modifier"
+		"DOTA_Tooltip_dummy_modifier_Description"                                         ""
+
+		"DOTA_Tooltip_guardianofnature_cataclysm_area_damage"                             "Guardianofnature Cataclysm Area Damage"
+		"DOTA_Tooltip_guardianofnature_cataclysm_area_damage_Description"                 ""
+
+		"DOTA_Tooltip_modifier_guardianofnature_cataclysm"                                "Guardianofnature Cataclysm"
+		"DOTA_Tooltip_modifier_guardianofnature_cataclysm_Description"                    ""
+
+		"DOTA_Tooltip_modifier_guardianofnature_roar"                                     "Guardianofnature Roar"
+		"DOTA_Tooltip_modifier_guardianofnature_roar_Description"                         ""
+
+		"DOTA_Tooltip_hatred_modifier"                                                    "Hatred Modifier"
+		"DOTA_Tooltip_hatred_modifier_Description"                                        ""
+
+		"DOTA_Tooltip_modifier_khaoschampion_requim"                                      "Khaoschampion Requim"
+		"DOTA_Tooltip_modifier_khaoschampion_requim_Description"                          ""
+
+		"DOTA_Tooltip_shroud_helper"                                                      "Shroud Helper"
+		"DOTA_Tooltip_shroud_helper_Description"                                          ""
+
+		"DOTA_Tooltip_modifier_khaoschampion_terrorize"                                   "Khaoschampion Terrorize"
+		"DOTA_Tooltip_modifier_khaoschampion_terrorize_Description"                       ""
+
+		"DOTA_Tooltip_flame_spire_modifier"                                               "Flame Spire Modifier"
+		"DOTA_Tooltip_flame_spire_modifier_Description"                                   ""
+
+		"DOTA_Tooltip_freezing_field_thinker"                                             "Freezing Field Thinker"
+		"DOTA_Tooltip_freezing_field_thinker_Description"                                 ""
+
+		"DOTA_Tooltip_freezing_field_modifier"                                            "Freezing Field Modifier"
+		"DOTA_Tooltip_freezing_field_modifier_Description"                                ""
+
+		"DOTA_Tooltip_frost_bolt_modifier"                                                "Frost Bolt Modifier"
+		"DOTA_Tooltip_frost_bolt_modifier_Description"                                    ""
+
+		"DOTA_Tooltip_pray_ares_modifier"                                                 "Pray Ares Modifier"
+		"DOTA_Tooltip_pray_ares_modifier_Description"                                     ""
+
+		"DOTA_Tooltip_pray_athena_modifier"                                               "Pray Athena Modifier"
+		"DOTA_Tooltip_pray_athena_modifier_Description"                                   ""
+
+		"DOTA_Tooltip_pray_zeus_modifier"                                                 "Pray Zeus Modifier"
+		"DOTA_Tooltip_pray_zeus_modifier_Description"                                     ""
+
+		"DOTA_Tooltip_ranger_black_arrow_post_damage"                                     "Ranger Black Arrow Post Damage"
+		"DOTA_Tooltip_ranger_black_arrow_post_damage_Description"                         ""
+
+		"DOTA_Tooltip_black_arrow_rework_modifier"                                        "Black Arrow Rework Modifier"
+		"DOTA_Tooltip_black_arrow_rework_modifier_Description"                            ""
+
+		"DOTA_Tooltip_prevailing_winds_aura"                                              "Prevailing Winds Aura"
+		"DOTA_Tooltip_prevailing_winds_aura_Description"                                  ""
+
+		"DOTA_Tooltip_ranger_puncture_bleed_modifier"                                     "Ranger Puncture Bleed Modifier"
+		"DOTA_Tooltip_ranger_puncture_bleed_modifier_Description"                         ""
+
+		"DOTA_Tooltip_ranger_soul_piercing_shot_modifier"                                 "Ranger Soul Piercing Shot Modifier"
+		"DOTA_Tooltip_ranger_soul_piercing_shot_modifier_Description"                     ""
+
+		"DOTA_Tooltip_ranger_crit"                                                        "Ranger Crit"
+		"DOTA_Tooltip_ranger_crit_Description"                                            ""
+
+		"DOTA_Tooltip_ranger_star_dust_modifier"                                          "Ranger Star Dust Modifier"
+		"DOTA_Tooltip_ranger_star_dust_modifier_Description"                              ""
+
+		"DOTA_Tooltip_rockthul_command_aura_modifier"                                     "Rockthul Command Aura Modifier"
+		"DOTA_Tooltip_rockthul_command_aura_modifier_Description"                         ""
+
+		"DOTA_Tooltip_modifier_start_charge"                                              "Start Charge"
+		"DOTA_Tooltip_modifier_start_charge_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_charge_daze"                                               "Charge Daze"
+		"DOTA_Tooltip_modifier_charge_daze_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_spartan_taunt"                                             "Spartan Taunt"
+		"DOTA_Tooltip_modifier_spartan_taunt_Description"                                 ""
+
+		"DOTA_Tooltip_phalanx_aura"                                                       "Phalanx Aura"
+		"DOTA_Tooltip_phalanx_aura_Description"                                           ""
+
+		"DOTA_Tooltip_javelin_fx"                                                         "Javelin Fx"
+		"DOTA_Tooltip_javelin_fx_Description"                                             ""
+
+		"DOTA_Tooltip_modifier_valor"                                                     "Valor"
+		"DOTA_Tooltip_modifier_valor_Description"                                         ""
+
+		"DOTA_Tooltip_teleport_aura"                                                      "Teleport Aura"
+		"DOTA_Tooltip_teleport_aura_Description"                                          ""
+
+		"DOTA_Tooltip_fire_of_apollo_thinker"                                             "Fire Of Apollo Thinker"
+		"DOTA_Tooltip_fire_of_apollo_thinker_Description"                                 ""
+
+		"DOTA_Tooltip_fire_of_apollo_dot"                                                 "Fire Of Apollo Dot"
+		"DOTA_Tooltip_fire_of_apollo_dot_Description"                                     ""
+
+		"DOTA_Tooltip_zeus_stun"                                                          "Zeus Stun"
+		"DOTA_Tooltip_zeus_stun_Description"                                              ""
+
+		"DOTA_Tooltip_hestias_touch_modifier"                                             "Hestias Touch Modifier"
+		"DOTA_Tooltip_hestias_touch_modifier_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_mark_of_artemis"                                           "Mark Of Artemis"
+		"DOTA_Tooltip_modifier_mark_of_artemis_Description"                               ""
+
+		"DOTA_Tooltip_mark_of_artemis_debuff"                                             "Mark Of Artemis Debuff"
+		"DOTA_Tooltip_mark_of_artemis_debuff_Description"                                 ""
+
+		"DOTA_Tooltip_blind_modifier"                                                     "Blind Modifier"
+		"DOTA_Tooltip_blind_modifier_Description"                                         ""
+
+		"DOTA_Tooltip_deathwave_modifier"                                                 "Deathwave Modifier"
+		"DOTA_Tooltip_deathwave_modifier_Description"                                     ""
+
+		"DOTA_Tooltip_soul_drain_modifier"                                                "Soul Drain Modifier"
+		"DOTA_Tooltip_soul_drain_modifier_Description"                                    ""
+
+		"DOTA_Tooltip_soul_drain_aoe_modifier"                                            "Soul Drain Aoe Modifier"
+		"DOTA_Tooltip_soul_drain_aoe_modifier_Description"                                ""
+
+		"DOTA_Tooltip_torment_modifier"                                                   "Torment Modifier"
+		"DOTA_Tooltip_torment_modifier_Description"                                       ""
+
+		"DOTA_Tooltip_vengeance_modifier"                                                 "Vengeance Modifier"
+		"DOTA_Tooltip_vengeance_modifier_Description"                                     ""
+
+		"DOTA_Tooltip_warlord_bleed_bleed_modifier"                                       "Warlord Bleed Bleed Modifier"
+		"DOTA_Tooltip_warlord_bleed_bleed_modifier_Description"                           ""
+
+		"DOTA_Tooltip_warlord_bum_rush_haze"                                              "Warlord Bum Rush Haze"
+		"DOTA_Tooltip_warlord_bum_rush_haze_Description"                                  ""
+
+		"DOTA_Tooltip_warlord_bum_rush_disarm"                                            "Warlord Bum Rush Disarm"
+		"DOTA_Tooltip_warlord_bum_rush_disarm_Description"                                ""
+
+		"DOTA_Tooltip_warlord_counter_modifier"                                           "Warlord Counter Modifier"
+		"DOTA_Tooltip_warlord_counter_modifier_Description"                               ""
+
+		"DOTA_Tooltip_focus_modifier"                                                     "Focus Modifier"
+		"DOTA_Tooltip_focus_modifier_Description"                                         ""
+
+		"DOTA_Tooltip_warlord_impale_modifier"                                            "Warlord Impale Modifier"
+		"DOTA_Tooltip_warlord_impale_modifier_Description"                                ""
+
+		"DOTA_Tooltip_warlord_impale_animation"                                           "Warlord Impale Animation"
+		"DOTA_Tooltip_warlord_impale_animation_Description"                               ""
+
+		"DOTA_Tooltip_modifier_whirlwind"                                                 "Whirlwind"
+		"DOTA_Tooltip_modifier_whirlwind_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_whirlwind_knockback"                                       "Whirlwind Knockback"
+		"DOTA_Tooltip_modifier_whirlwind_knockback_Description"                           ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_adamantium_scythe_crit"                                             "Adamantium Scythe Crit"
+		"DOTA_Tooltip_adamantium_scythe_crit_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_bloodrage_charm"                                           "Bloodrage Charm"
+		"DOTA_Tooltip_modifier_bloodrage_charm_Description"                               ""
+
+		"DOTA_Tooltip_modifiers_cloak_of_flames_100"                                      "Modifiers Cloak Of Flames 100"
+		"DOTA_Tooltip_modifiers_cloak_of_flames_100_Description"                          ""
+
+		"DOTA_Tooltip_modifiers_cloak_of_flames_75"                                       "Modifiers Cloak Of Flames 75"
+		"DOTA_Tooltip_modifiers_cloak_of_flames_75_Description"                           ""
+
+		"DOTA_Tooltip_modifier_frozen_ring_of_the_ice_queen_debuff"                       "Frozen Ring Of The Ice Queen Debuff"
+		"DOTA_Tooltip_modifier_frozen_ring_of_the_ice_queen_debuff_Description"           ""
+
+		"DOTA_Tooltip_modifier_staff_of_poseidon"                                         "Staff Of Poseidon"
+		"DOTA_Tooltip_modifier_staff_of_poseidon_Description"                             ""
+
+		"DOTA_Tooltip_command_aura"                                                       "Command Aura"
+		"DOTA_Tooltip_command_aura_Description"                                           ""
+
+		"DOTA_Tooltip_Random"                                                             "Random"
+		"DOTA_Tooltip_Random_Description"                                                 ""
+
+		"DOTA_Tooltip_sword_of_destruction_crit"                                          "Sword Of Destruction Crit"
+		"DOTA_Tooltip_sword_of_destruction_crit_Description"                              ""
+
+		"DOTA_Tooltip_sword_of_the_high_commander_aura"                                   "Sword Of The High Commander Aura"
+		"DOTA_Tooltip_sword_of_the_high_commander_aura_Description"                       ""
+
+		"DOTA_Tooltip_modifier_unyielding_tower_slow"                                     "Unyielding Tower Slow"
+		"DOTA_Tooltip_modifier_unyielding_tower_slow_Description"                         ""
+
+		"DOTA_Tooltip_wraithblade_crit"                                                   "Wraithblade Crit"
+		"DOTA_Tooltip_wraithblade_crit_Description"                                       ""
+
+		"DOTA_Tooltip_heras_blessing_aura"                                                "Heras Blessing Aura"
+		"DOTA_Tooltip_heras_blessing_aura_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_iron_will_of_hephaestus_absorb"                            "Iron Will Of Hephaestus Absorb"
+		"DOTA_Tooltip_modifier_iron_will_of_hephaestus_absorb_Description"                ""
+
+		"DOTA_Tooltip_modifier_shield_of_living_bone_block"                               "Shield Of Living Bone Block"
+		"DOTA_Tooltip_modifier_shield_of_living_bone_block_Description"                   ""
+
+		"DOTA_Tooltip_shield_of_warding_aura"                                             "Shield Of Warding Aura"
+		"DOTA_Tooltip_shield_of_warding_aura_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_shield_of_zeus_ability"                                    "Shield Of Zeus Ability"
+		"DOTA_Tooltip_modifier_shield_of_zeus_ability_Description"                        ""
+
+		"DOTA_Tooltip_talisman_of_the_winged_god_aura_aura"                               "Talisman Of The Winged God Aura Aura"
+		"DOTA_Tooltip_talisman_of_the_winged_god_aura_aura_Description"                   ""
+
+		"DOTA_Tooltip_modifier_elixir_of_agility"                                         "Elixir Of Agility"
+		"DOTA_Tooltip_modifier_elixir_of_agility_Description"                             ""
+
+		"DOTA_Tooltip_modifier_elixir_of_greater_agility"                                 "Elixir Of Greater Agility"
+		"DOTA_Tooltip_modifier_elixir_of_greater_agility_Description"                     ""
+
+		"DOTA_Tooltip_modifier_elixir_of_greater_intelligence"                            "Elixir Of Greater Intelligence"
+		"DOTA_Tooltip_modifier_elixir_of_greater_intelligence_Description"                ""
+
+		"DOTA_Tooltip_modifier_elixir_of_greater_strength"                                "Elixir Of Greater Strength"
+		"DOTA_Tooltip_modifier_elixir_of_greater_strength_Description"                    ""
+
+		"DOTA_Tooltip_modifier_elixir_of_intelligence"                                    "Elixir Of Intelligence"
+		"DOTA_Tooltip_modifier_elixir_of_intelligence_Description"                        ""
+
+		"DOTA_Tooltip_modifier_elixir_of_lesser_agility"                                  "Elixir Of Lesser Agility"
+		"DOTA_Tooltip_modifier_elixir_of_lesser_agility_Description"                      ""
+
+		"DOTA_Tooltip_modifier_elixir_of_lesser_intelligence"                             "Elixir Of Lesser Intelligence"
+		"DOTA_Tooltip_modifier_elixir_of_lesser_intelligence_Description"                 ""
+
+		"DOTA_Tooltip_modifier_elixir_of_lesser_strength"                                 "Elixir Of Lesser Strength"
+		"DOTA_Tooltip_modifier_elixir_of_lesser_strength_Description"                     ""
+
+		"DOTA_Tooltip_modifier_elixir_of_mega_agility"                                    "Elixir Of Mega Agility"
+		"DOTA_Tooltip_modifier_elixir_of_mega_agility_Description"                        ""
+
+		"DOTA_Tooltip_modifier_elixir_of_mega_intelligence"                               "Elixir Of Mega Intelligence"
+		"DOTA_Tooltip_modifier_elixir_of_mega_intelligence_Description"                   ""
+
+		"DOTA_Tooltip_modifier_elixir_of_mega_strength"                                   "Elixir Of Mega Strength"
+		"DOTA_Tooltip_modifier_elixir_of_mega_strength_Description"                       ""
+
+		"DOTA_Tooltip_modifier_elixir_of_strength"                                        "Elixir Of Strength"
+		"DOTA_Tooltip_modifier_elixir_of_strength_Description"                            ""
+
+		"DOTA_Tooltip_modifier_elixir_of_super_agility"                                   "Elixir Of Super Agility"
+		"DOTA_Tooltip_modifier_elixir_of_super_agility_Description"                       ""
+
+		"DOTA_Tooltip_modifier_elixir_of_super_intelligence"                              "Elixir Of Super Intelligence"
+		"DOTA_Tooltip_modifier_elixir_of_super_intelligence_Description"                  ""
+
+		"DOTA_Tooltip_modifier_elixir_of_super_strength"                                  "Elixir Of Super Strength"
+		"DOTA_Tooltip_modifier_elixir_of_super_strength_Description"                      ""
+
+		"DOTA_Tooltip_adamantium_lance_crit"                                              "Adamantium Lance Crit"
+		"DOTA_Tooltip_adamantium_lance_crit_Description"                                  ""
+
+		"DOTA_Tooltip_ares_command_aura"                                                  "Ares Command Aura"
+		"DOTA_Tooltip_ares_command_aura_Description"                                      ""
+
+		"DOTA_Tooltip_ares_spear_active"                                                  "Ares Spear Active"
+		"DOTA_Tooltip_ares_spear_active_Description"                                      ""
+
+		"DOTA_Tooltip_modifier_ring_of_the_frozen_citadel_slow"                           "Ring Of The Frozen Citadel Slow"
+		"DOTA_Tooltip_modifier_ring_of_the_frozen_citadel_slow_Description"               ""
+
+		"DOTA_Tooltip_modifier_shimmering_lance_slow"                                     "Shimmering Lance Slow"
+		"DOTA_Tooltip_modifier_shimmering_lance_slow_Description"                         ""
+
+		"DOTA_Tooltip_hammer_of_zeus_bash"                                                "Hammer Of Zeus Bash"
+		"DOTA_Tooltip_hammer_of_zeus_bash_Description"                                    ""
+
+		"DOTA_Tooltip_hammer_of_zeus_aura"                                                "Hammer Of Zeus Aura"
+		"DOTA_Tooltip_hammer_of_zeus_aura_Description"                                    ""
+
+		"DOTA_Tooltip_shield_of_athena_slow"                                              "Shield Of Athena Slow"
+		"DOTA_Tooltip_shield_of_athena_slow_Description"                                  ""
+
+		"DOTA_Tooltip_shield_of_athena_aura"                                              "Shield Of Athena Aura"
+		"DOTA_Tooltip_shield_of_athena_aura_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_potion_of_greater_regeneration"                            "Potion Of Greater Regeneration"
+		"DOTA_Tooltip_modifier_potion_of_greater_regeneration_Description"                ""
+
+		"DOTA_Tooltip_modifier_potion_of_lesser_regeneration"                             "Potion Of Lesser Regeneration"
+		"DOTA_Tooltip_modifier_potion_of_lesser_regeneration_Description"                 ""
+
+		"DOTA_Tooltip_modifier_potion_of_mega_regeneration"                               "Potion Of Mega Regeneration"
+		"DOTA_Tooltip_modifier_potion_of_mega_regeneration_Description"                   ""
+
+		"DOTA_Tooltip_modifier_potion_of_regeneration"                                    "Potion Of Regeneration"
+		"DOTA_Tooltip_modifier_potion_of_regeneration_Description"                        ""
+
+		"DOTA_Tooltip_modifier_potion_of_super_regeneration"                              "Potion Of Super Regeneration"
+		"DOTA_Tooltip_modifier_potion_of_super_regeneration_Description"                  ""
+
+		"DOTA_Tooltip_modifier_battleforge_plate_mana_regen"                              "Battleforge Plate Mana Regen"
+		"DOTA_Tooltip_modifier_battleforge_plate_mana_regen_Description"                  ""
+
+		"DOTA_Tooltip_modifier_battleforge_regalia_armor_buff"                            "Battleforge Regalia Armor Buff"
+		"DOTA_Tooltip_modifier_battleforge_regalia_armor_buff_Description"                ""
+
+		"DOTA_Tooltip_mighty_chestguard_of_the_olympians_stun"                            "Mighty Chestguard Of The Olympians Stun"
+		"DOTA_Tooltip_mighty_chestguard_of_the_olympians_stun_Description"                ""
+
+		"DOTA_Tooltip_OnSpellStart"                                                       "OnSpellStart"
+		"DOTA_Tooltip_OnSpellStart_Description"                                           ""
+
+		"DOTA_Tooltip_modifier_wild_regalia_entangle"                                     "Wild Regalia Entangle"
+		"DOTA_Tooltip_modifier_wild_regalia_entangle_Description"                         ""
+
+		"DOTA_Tooltip_modifier_scroll_of_greater_regeneration"                            "Scroll Of Greater Regeneration"
+		"DOTA_Tooltip_modifier_scroll_of_greater_regeneration_Description"                ""
+
+		"DOTA_Tooltip_modifier_scroll_of_lesser_regeneration"                             "Scroll Of Lesser Regeneration"
+		"DOTA_Tooltip_modifier_scroll_of_lesser_regeneration_Description"                 ""
+
+		"DOTA_Tooltip_modifier_scroll_of_protection"                                      "Scroll Of Protection"
+		"DOTA_Tooltip_modifier_scroll_of_protection_Description"                          ""
+
+		"DOTA_Tooltip_modifier_scroll_of_regeneration"                                    "Scroll Of Regeneration"
+		"DOTA_Tooltip_modifier_scroll_of_regeneration_Description"                        ""
+
+		"DOTA_Tooltip_modifier_scroll_of_speed"                                           "Scroll Of Speed"
+		"DOTA_Tooltip_modifier_scroll_of_speed_Description"                               ""
+
+		"DOTA_Tooltip_modifier_scroll_of_super_regeneration"                              "Scroll Of Super Regeneration"
+		"DOTA_Tooltip_modifier_scroll_of_super_regeneration_Description"                  ""
+
+		"DOTA_Tooltip_modifier_scroll_of_the_beast"                                       "Scroll Of The Beast"
+		"DOTA_Tooltip_modifier_scroll_of_the_beast_Description"                           ""
+
+		"DOTA_Tooltip_modifiers_cloak_of_flames_25"                                       "Modifiers Cloak Of Flames 25"
+		"DOTA_Tooltip_modifiers_cloak_of_flames_25_Description"                           ""
+
+		"DOTA_Tooltip_modifiers_evasion"                                                  "Modifiers Evasion"
+		"DOTA_Tooltip_modifiers_evasion_Description"                                      ""
+
+		"DOTA_Tooltip_modifiers_cloak_of_flames_50"                                       "Modifiers Cloak Of Flames 50"
+		"DOTA_Tooltip_modifiers_cloak_of_flames_50_Description"                           ""
+
+
+	}
+}
