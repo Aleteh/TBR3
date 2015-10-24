@@ -3192,6 +3192,72 @@
 			}
 		}
 	}
+	"item_pendant_of_energy" 
+	{
+	    "ID"                            "2399"
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            pendant_of_energy"
+	    //"ItemStockMax"                "2"
+	    //"ItemStockInitial"            "2"
+	    //"ItemStockTime"               "48.0"
+	
+	    "ItemQuality"                   "common"
+	    "ItemCost"                      "9000" 	
+	    "ItemShopTags"                  "caster"
+	    "ItemShareability"              "ITEM_PARTIALLY_SHAREABLE"
+	
+	    "Modifiers"
+	    {
+	        "modifier_pendant_of_energy"
+	        {
+	            "Passive"  "1"
+	            "IsHidden" "1" 
+	            "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MANA_BONUS" "%bonus_stat"
+	            }
+	        } 
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "bonus_stat"    "150"
+	        }
+	    }
+	} 
+	"item_pendant_of_mana" 
+	{
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	
+	    "Modifiers"
+	    {
+	        "modifier_pendant_of_energy"
+	        {
+	            "Passive"  "1"
+	            "IsHidden" "1" 
+	            "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MANA_BONUS" "%bonus_stat"
+	            }
+	        } 
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "bonus_stat"    "250"
+	        }
+	    }
+	} 
 	"item_priams_scepter"
 	{
 		"ID"                            "2199"
