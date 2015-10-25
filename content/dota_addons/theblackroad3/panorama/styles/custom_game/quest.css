@@ -109,7 +109,7 @@
 
 .QuestHeaderDefault{
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 16px;
 	text-transform: uppercase;
 	margin-left: 5px;
 	margin-top: 2px;
@@ -144,28 +144,29 @@
 }
 
 .QuestLineContainer{
-	margin: 4px, 4px, 4px, 4px;
+	margin: -2px, 4px, 4px, 4px;
 	width: 500px;
 	flow-children: down;
 }
 
 .QuestLine{
-	font-size: 24px;
+	font-size: 12px;
 	color: #cccccc;
 	margin-left: 15px;
     vertical-align: center;
 }
 .QuestLineSlashed{
 	color: #777777;
-	font-size: 24px;
+	font-size: 12px;
 	text-decoration: line-through;
 }
 
 .MinierPanel{
-	background-color: rgba(37,41,43,200);
+	background-color: rgba(0,0,0,255);
 	box-shadow: -8px -8px 30px 15px;
-	margin-left: 50px;
+	margin-right: 2px;
 	margin-top: 2px;
+	margin-bottom: -200px;
 	horizontal-align: right; 
 }
 
@@ -178,7 +179,7 @@
 }
 
 .MinierPanelLabel{
-	font-size: 24px;
+	font-size: 12px;
 	color: #ffffff;
 }
 
@@ -186,12 +187,14 @@
 	background-color: rgba(24,28,33,100);
 	flow-children: down; 
 	width: 100%;
+	height: fit-children;
 }  
 
  
 .QuestSubLine{
-	font-size: 16px;
-	margin-left: 48px;
+	font-size: 12px;
+	margin-left: 12px;
+	height: fit-children;
 	color: #999999;
     vertical-align: center;
 }
