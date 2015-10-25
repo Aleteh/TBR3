@@ -1,8 +1,8 @@
 "Quest"
 {
-	"name" "Field Terrors"
+	"name" "Bounty on Demons"
 	"identifier" "questgg"
-	"desc" "You're fighting prowess is something of great admiration, young soldier. Would you ire to stay with our soldiers for another battle as we try to weaken their strength?"
+	"desc" "South of Athens the countryside has been overrun by demonic raiders. Kill 20 demons of any type and report back to Therin at the camp south of Athens."
 	"minLevel" "0"
 	"defaultActive" "true"
 	"renotify" "false"
@@ -16,6 +16,26 @@
 		}
 	}
 
+	"groups"
+	{
+		"demons"
+		{
+			"demon_imp"
+			{
+				"weight" "1"
+			}
+
+			"demon_hound"
+			{
+				"weight" "1"
+			}
+			"demon_fire"
+			{
+				"weight" "1"
+			}
+		}
+	}
+
 	"stages"
 	{
 		"Stage1"
@@ -23,24 +43,10 @@
 
 			"1"
 			{
-				"text" "Demon Imps Killed: %c/%m"
-				"type" "killType"
-				"target" "demon_imp"
-				"count" "10"
-			}
-			"2"
-			{
-				"text" "Demon Hounds Killed: %c/%m"
-				"type" "killType"
-				"target" "demon_hound"
-				"count" "10"
-			}
-			"3"
-			{
-				"text" "Kill a DemonCommander"
-				"type" "killType"
-				"target" "demon_imp"
-				"count" "1"
+				"text" "Demons Killed: %c/%m"
+				"type" "killGroup"
+				"target" "demons"
+				"count" "20"
 			}
 		}
 		"Turnin"
@@ -52,10 +58,10 @@
 		}
 		"onFinish"
 		{
-			"expReward" "1200"
-			"goldReward" "1000"
-			"itemReward" "item_helm_of_the_dominator"
-			"questEnable" "Invade their Base"
+			"expReward" "330"
+			"goldReward" "150"
+			
+			"questEnable" "Bounty on Demons"
 		}
 
 	}
