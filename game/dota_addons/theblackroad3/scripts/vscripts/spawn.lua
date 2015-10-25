@@ -144,19 +144,22 @@ end
 function GetEmptyPosition( list )
 	print("Finding empty location")
 	local counter = 0
-	position = list[RandomInt(1, #list)]
-	local nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetOrigin(),nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,	DOTA_UNIT_TARGET_FLAG_NONE,	FIND_ANY_ORDER,false)
+	local position = list[RandomInt(1, #list)]
+	if not position then
+		print("ERROR: Failed to find a position on the list of spawn locations")
+		return
+	end
+	local nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetAbsOrigin(), nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC, 0, 0,false)
 	
 	-- find until theres an empty position
-	while #nearbyUnits > 0 do
-		-- care of infinite loop
+	while nearbyUnits and #nearbyUnits > 0 do
 		if counter <= #list then
 			counter = counter+1
 			position = list[RandomInt(1, #list)]
-			nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetOrigin(),nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER,false)
+			nearbyUnits = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, position:GetAbsOrigin(), nil, 100, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC, 0, 0,false)
 			--print(nearbyUnits)
 		else
-			nearbyUnits = 0
+			nearbyUnits = nil
 			print("Couldn't find empty position, returning random instead")
 		end
 	end
