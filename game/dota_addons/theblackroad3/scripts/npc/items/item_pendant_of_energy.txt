@@ -3,7 +3,7 @@
     "ID"                            "2399"
     "BaseClass"                     "item_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityTextureName"            pendant_of_energy"
+    "AbilityTextureName"            "pendant_of_energy"
     //"ItemStockMax"                "2"
     //"ItemStockInitial"            "2"
     //"ItemStockTime"               "48.0"
