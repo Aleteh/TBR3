@@ -1,0 +1,108 @@
+//=================================================================================================================
+// Khaos Champion: Requiem
+//=================================================================================================================
+//Calls forth fallen souls to form a boundary around the Khaos Champion.
+//Theses Souls do xxxx to anyone who physically attacks him during 60 seconds for xx mana.
+//Cooldown 1 second. 160 AOE.
+
+"khaoschampion_requiem"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"khaoschampion_requiem"
+	"MaxLevel" "7"
+
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  			
+	"AbilityCastPoint"    "0.0"
+	"AbilityCooldown"    	"1"
+	"AbilityManaCost"    	"15 22 30 39 49 60 72 85"    	
+    	"AbilityDamage"      	"35 50 150 350 750 1250 1850 2500"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"damage_attacker"	"35 50 150 350 750 1250 1850 2500"
+		}
+		"02"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"aoe"		"160"
+		}
+		"03"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"duration"		"60"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/econ/courier/courier_trail_hw_2012/courier_trail_hw_2012_ghosts.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"%aoe"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"Target" 			"TARGET"
+					"ModifierName"		"modifier_khaoschampion_requim"
+				}
+			}
+		}
+		"FireSound"
+		{
+			"EffectName" "Hero_DeathProphet.Exorcism.Cast"
+			"Target"	"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_khaoschampion_requim"
+		{
+			"Duration"			"%duration"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"OnCreated"
+			{
+				"AttachEffect"
+                {
+                    "Target" "TARGET"
+                    "EffectName"		"particles/econ/courier/courier_trail_hw_2012/courier_trail_hw_2012_ghosts.vpcf"
+                    "EffectAttachType" "follow_overhead"
+                }
+			} 
+			"OnAttackLanded"
+			{
+				"Damage"
+				{
+					"Target"		 "ATTACKER" //caster?
+					"Type"			 "DAMAGE_TYPE_PHYSICAL"
+					"Damage"		 "%damage_attacker"
+				}
+				"FireSound"
+				{
+					"EffectName"	"Hero_DeathProphet.Exorcism.Damage"
+					"Target" 		"ATTACKER"
+				}
+			}
+		}
+	}
+}

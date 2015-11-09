@@ -1,0 +1,92 @@
+//=================================================================================================================
+// Warlord: Bum Rush
+//=================================================================================================================
+"warlord_bum_rush"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"warlord_bum_rush"
+	"MaxLevel" 						"7"
+	"AbilityCastAnimation"			"run_chase"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"20"
+	"AbilityManaCost"				"35 40 46 53 61 70 81 95"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    	
+    	// Damage.
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityDamage"                 "150 300 600 1200 2400 4500 6750 11250"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+
+    	"precache"
+    	{
+    		"particle"	"particles/frostivus_herofx/juggernaut_omnislash_ascension.vpcf"
+    	}
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/warlord.lua"
+			"Function"			"bum_rush"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Radius"	"300"
+				"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		}
+		"FireSound"
+		{
+			"EffectName"		"Hero_Axe.BerserkersCall.Item.Shoutmask"
+			"Target" 			"CASTER"
+		}
+		"AttachEffect"
+		{
+			"EffectName"		"particles/frostivus_herofx/juggernaut_omnislash_ascension_sparks.vpcf"
+			"EffectAttachType" 	"follow_origin"
+			"Target" 			"CASTER"
+		}
+		
+	}
+	"Modifiers"
+	{
+		"warlord_bum_rush_haze"
+		{
+			"IsDebuff"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"35"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-50"
+			}
+		}
+		"warlord_bum_rush_disarm"
+		{
+			"IsDebuff"	"1"
+			"ThinkInterval"	"0.5"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/warlord.lua"
+					"Function"			"bum_rush_deosoriantation"
+				}
+			}
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+//=================================================================================================================
+// Khaos Champion: Terrorize
+//=================================================================================================================
+//Lowers nearby enemies Attack Speed by xx% and their Movement Speed by 25%. 400 AOE.
+
+"khaoschampion_terrorize"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"khaoschampion_terrorize"
+	"MaxLevel" 			"7"
+	
+	"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  		
+	"AbilityCastPoint"    "0.0"
+	"AbilityCastRange"    "400"
+	"AbilityCooldown"    "0"
+	"AbilityManaCost"    "0"
+
+	"precache"
+	{
+		"particle"	"particles/channel_field_3.vpcf"
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"move_speed_reduction"	"-20"
+		}
+		"02"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"attack_speed_reduction"	"-5.0 -8.0 -12.0 -15.0 -18.0 -21.0 -25.0 -30.0"
+		}
+		"03"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"Range"		"400"
+		}
+	}
+	"Modifiers"
+	{
+		"aura_khaoschampion_terrorize"
+		{
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" "CASTER"
+					"EffectName"		"particles/channel_field_3.vpcf"
+					"EffectAttachType" "follow_origin"
+				}
+			}
+			"Passive" 			"1"
+			"IsHidden" 			"1"
+			"IsBuff"			"1"
+			"Aura" 				"modifier_khaoschampion_terrorize"
+			"Aura_Radius" 		"%Range"
+			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+		}
+		"modifier_khaoschampion_terrorize"
+		{
+			"IsHidden"				"0"
+			"IsBuff"				"0"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%move_speed_reduction"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%attack_speed_reduction"
+			}
+		}
+	}
+}

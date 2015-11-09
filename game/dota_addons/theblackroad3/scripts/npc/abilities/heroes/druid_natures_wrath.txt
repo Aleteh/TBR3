@@ -1,0 +1,115 @@
+//=================================================================================================================
+// Druid: Nature's Wrath
+//=================================================================================================================
+//Causes roots to burst from the ground, immobilizing and disarming a target enemy unit for up to 8 seconds and dealing
+//xxx damage per second for xxx mana. While entangled, the unit's armor will be reduced by xx. 7 seconds cooldown, 700 range. 
+// TODO: Apply the buff through lua with a random {duration = } between 1 and 8
+"druid_natures_wrath"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"druid_natures_wrath"
+	"MaxLevel" 						"7"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+	"AbilityCastRange"				"700"
+	"AbilityCooldown"				"7"
+	"AbilityManaCost"				"35 79 115 185 275 400 600 900"
+
+	"precache"
+	{
+		"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
+		"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+		"particle"				"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"damage_per_second"	"15 30 50 80 120 180 270 400"
+		}
+		"02"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"armor_reduction"	"-8 -12 -16 -20 -24 -28 -32 -36"	
+		}
+		"03"
+		{
+			"var_type"	"FIELD_FLOAT"
+			"duration"	"8"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_Treant.Overgrowth.Cast"
+			"Target" 			"TARGET"
+		}	
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"entangle_modifier"
+		}	
+	}
+
+	"Modifiers"
+	{
+		"entangle_modifier"
+		{
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+					"EffectAttachType" "attach_hitloc"
+				}
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
+					"EffectAttachType" "attach_hitloc"
+				}
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+					"EffectAttachType" "attach_hitloc"
+				}			
+			}
+
+			"Duration"	"%duration"
+			"IsDebuff"	"1"
+			"IsPurgable"	"1"
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+			 	{
+				    "ScriptFile"	"abilities/druid.lua"
+				    "Function"		"natures_wrath_dot"
+			  	}
+			}
+			"States"
+			{
+				"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
+			}
+		}
+	}
+
+}

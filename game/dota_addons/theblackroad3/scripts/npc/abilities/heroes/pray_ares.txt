@@ -1,0 +1,72 @@
+//=================================================================================================================
+// Temple Guardian: Pray - Ares
+//=================================================================================================================
+"pray_ares"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"dragon_knight_dragon_blood"
+	"MaxLevel" 						"7"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"15 25 40 50 85 125 170 225"		
+
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"TARGET"
+			"ModifierName"		"pray_ares_modifier"
+		}
+		"AttachEffect"
+		{
+			"Target"		"TARGET"
+			"EffectName"	"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_LegionCommander.PressTheAttack"
+			"Target"		"TARGET"	
+		}
+	}
+
+	"Modifiers"
+	{
+		"pray_ares_modifier"
+		{
+			"Duration"		"300"
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+			"Properties"	// Attack damage bonus: 35% + xxx Damage
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%damage_bonus_static"
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_bonus_percent"
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_bonus_static" 	"10 20 35 55 85 125 200 300"
+    		}
+    		"02"
+    		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_bonus_percent" 	"35"
+    		}
+    	}
+}

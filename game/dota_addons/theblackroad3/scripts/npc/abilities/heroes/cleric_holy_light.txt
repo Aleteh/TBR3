@@ -1,0 +1,53 @@
+//}End Warlock
+
+//Cleric
+//{
+//=================================================================================================================
+// Cleric: Holy Light
+//Heals a target friendly unit for xxxx for xxx mana. 5 Seconds cooldown.
+//=================================================================================================================
+"cleric_holy_light"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"             		"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityTextureName"			"cleric_holy_light"
+	"MaxLevel" 						"7"
+
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"5"
+	"AbilityManaCost"				"35 65 115 190 280 380 570 850"
+	
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+	}
+
+    	// Special
+    		//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"heal_amount"		"250 500 900 1500 3000 4500 7500"
+		}
+	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"abilities/cleric.lua"
+			"Function"			"holy_light"
+		}
+	}
+}
