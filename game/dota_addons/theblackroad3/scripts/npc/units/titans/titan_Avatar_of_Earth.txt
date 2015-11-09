@@ -18,7 +18,8 @@
 
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"			""	 //Reference: AInv
+	"Ability1"			"tbr_avatar_of_earth_meteor"	 //Reference: AInv
+	"Ability2"			"tbr_avatar_of_earth_AI"
 	
 
 

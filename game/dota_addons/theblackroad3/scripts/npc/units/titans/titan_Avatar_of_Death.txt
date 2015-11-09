@@ -14,9 +14,9 @@
 
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"			""	 //Reference: Acri
-	"Ability2"			""	 //Reference: AInv
-	"Ability3"			""	 //Reference: AUdc
+	"Ability1"			"tbr_avatar_of_death_cripple"	 // -? //Reference: Acri
+	"Ability2"			"tbr_avatar_of_death_summon"	// -? //Reference: AInv
+	"Ability3"			"tbr_avatar_of_death_AI"	// -? //Reference: AUdc
 	
 
 

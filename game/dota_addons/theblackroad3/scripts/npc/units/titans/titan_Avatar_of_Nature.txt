@@ -13,7 +13,9 @@
 	
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"			""	 //Reference: AInv
+	"Ability1"			"tbr_avatar_of_nature_root"	 //Reference: AInv
+	"Ability2"			"tbr_avatar_of_nature_treant"
+	"Ability3"			"tbr_avatar_of_nature_AI"
 	
 	
 
