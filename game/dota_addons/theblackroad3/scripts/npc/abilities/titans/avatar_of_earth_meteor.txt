@@ -1,0 +1,51 @@
+"tbr_avatar_of_earth_meteor"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"BaseClass"								"ability_datadriven"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT"
+	"MaxLevel"								"1"
+	//"HotKeyOverride"						""
+	"AbilityCastAnimation"					""
+	"AbilityTextureName"					"furion_sprout"
+	
+	// Casting
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"						"5000"
+	"AbilityCastPoint"						"0"
+	"AbilityManaCost"						"0"
+	//"AbilityChannelTime"					""
+	
+	// Time
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"						"0"
+	"AbilityDuration"						"0"
+	
+	// Ability Special
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"damage"						"700"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"radius"						"200"
+		}
+	}
+	
+	// Events!
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"scripts/vscripts/avatars/avatar_of_earth"
+			"Function"							"avatar_of_earth_meteor_effect"				// Now includes damage logic (Find enemy units in rad from point target)
+			"Target"							"POINT"
+		}
+	}
+}

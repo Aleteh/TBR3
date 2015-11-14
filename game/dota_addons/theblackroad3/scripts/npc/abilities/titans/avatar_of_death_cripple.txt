@@ -1,0 +1,77 @@
+"avatar_of_death_cripple"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"BaseClass"								"ability_datadriven"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
+	"MaxLevel"								"1"
+	//"AbilityCastAnimation"					""
+	"AbilityTextureName"					"bane_enfeeble"
+	
+	// Unit Target
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO"
+	
+	// Casting
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"						"2000"
+	"AbilityCastPoint"						"0.5"
+	"AbilityManaCost"						"0"
+	
+	// Time
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"						"0"
+	"AbilityDuration"						"5"
+	
+	// Ability Special
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"duration"						"5"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"attack_slow"					"-100"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"move_slow"						"-70"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_avatar_of_death_cripple"
+		{
+			"Duration"						"%duration"
+			"IsBuff"						"0"
+			"IsDebuff"						"1"
+			"IsPurgeable"					"0"
+			"IsHidden"						"0"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%attack_slow"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"				"%move_slow"
+			}
+		}
+	}
+	
+	// Events!
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"						"TARGET"
+			"Modifier"						"modifier_avatar_of_death_cripple"
+		}
+	}
+}

@@ -1,0 +1,101 @@
+"avatar_of_justice_shield"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"BaseClass"								"ability_datadriven"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"						"SPELL_IMMUNITY_ALLIES_YES"
+	"MaxLevel"								"1"
+	//"AbilityCastAnimation"					""
+	"AbilityTextureName"					"lich_frost_armor"
+	
+	// Casting
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"						"0.3"
+	"AbilityManaCost"						"0"
+	//"AbilityChannelTime"					""
+	
+	// Time
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"						"0"
+	"AbilityDuration"						"30"
+	
+	// Ability Special
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"duration"						"30"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"armor"							"5"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"attack_slow"					"-30"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER" // INTEGER or FLOAT
+			"debuff_duration"				"5"
+		}
+	}
+	
+	// Modifiers
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"Modifiers"
+	{
+		"modifier_avatar_of_justice_shield_debuff"
+		{
+			"IsBuff"						"0"
+			"IsPurgeable"					"1"
+			"IsHidden"						"0"
+			"Duration"						"%debuff_duration"
+			"TextureName"					"modifier_lich_frostarmor_slow"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_slow"
+			}
+		}
+		
+		"modifier_avatar_of_justice_shield_buff"
+		{
+			"IsBuff"						"1"
+			"IsPurgeable"					"1"
+			"IsHidden"						"0"
+			"Duration"						"%duration"
+			"TextureName"					"lich_frost_armor"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%armor"
+			}
+			
+			"OnAttacked"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"			"modifier_avatar_of_justice_shield_debuff"
+					"Target"				"ATTACKER"
+				}
+			}
+		}
+	}
+	
+	// Events!
+	//------------------------------------------------------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"					"modifier_avatar_of_justice_shield_buff"
+			"Target"						"CASTER"
+		}
+	}
+}

@@ -1,0 +1,40 @@
+1) Files split and placed into vscript (lua) and abilities (KV)
+ - Removed tbr_ prefix from titans abilities
+2) Updated Atlas
+ - Removed DelayedAction and replaced with timers in avatar_of_earth.lua
+ - That function is currently not checking IsAlive as I assume the meteor is still to fall if he dies
+ - Anyone know exactly how to tell how long it takes for the meteor to fall?
+3) Removed scripts/vscript/.. from *all* of the files, hopefully.
+
+
+Also I don't know if my last documentation file uploaded so here is some general information
+
+titan_Avatar_of_Earth
+	'-> avatar_of_earth_meteor					(Point Target, some effects implemented)
+	'-> avatar_of_earth_AI						(Thinker on 10 second delay to drop the bomb)
+titan_Avatar_of_Nature
+	'-> avatar_of_nature_root					(Unit target root, disables dodge)
+	'-> avatar_of_nature_treant					(No-target summon treant)
+		'-> npc_avatar_of_nature_treant
+	'-> avatar_of_nature_AI						(Thinker on 10 second delay to check, and summon treants)
+titan_Avatar_of_Justice
+  ' '-> avatar_of_justice_shield				(Self cast frost armor similar to lich's
+  '	'-> avatar_of_justice_heal					(Unit target HoT)
+  '	'-> avatar_of_justice_AI					(Thinker on 0.03 second delay with inbuilt last cast time check)
+  '-> npc_avatar_of_justice_bringer
+  '-> npc_avatar_of_justice_defender
+titan_Avatar_of_Death
+	'-> avatar_of_death_cripple					(Unit target attack speed slow and damage reduction)
+	'-> avatar_of_death_summon					(Summons 2 ranged and 4 mele on cast) -- Looking into changing this to be RNG app.
+	'	'-> npc_avatar_of_death_mele
+	'	'-> npc_avatar_of_death_ranged
+	'-> avatar_of_death_AI						(Thinker on 1 second delay, inbuilt 10 second check on cripple. Summon -- mele == 0 & ranged == 0 or ranged == 0 & mele < 3 )
+	
+	
+	
+Hopefully everthing above is sort of clear. The systems implemented in the later two titans are probably better so let me know if you want me to redo the first two. Also, if anyone has any suggestions for keeping them in their "pens"
+let me know otherwise I will just issue a move command or teleport them to the center and I am assuming that they should be given increased regen when you leave them?
+
+Thanks
+
+ps. Titans can be summoned using their corresponding _AI.lua files and calling EnterArena from a trigger.

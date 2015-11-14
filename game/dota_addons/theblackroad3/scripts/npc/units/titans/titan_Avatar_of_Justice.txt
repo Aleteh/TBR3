@@ -12,9 +12,9 @@
 	
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"			"tbr_avatar_of_justice_shield"	 //Reference: AInv
-	"Ability2"			"tbr_avatar_of_justice_heal"
-	"Ability3"			"tbr_avatar_of_justice_AI"
+	"Ability1"			"avatar_of_justice_shield"	 //Reference: AInv
+	"Ability2"			"avatar_of_justice_heal"
+	"Ability3"			"avatar_of_justice_AI"
 	
 	"ConsideredHero"	"1"
 
