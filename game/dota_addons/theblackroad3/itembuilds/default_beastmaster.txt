@@ -1,3 +1,0 @@
-"itembuilds/test_earthshaker.txt"
-{
-}

@@ -1,4 +1,0 @@
-"itembuilds/test_sven.txt"
-{
-
-}

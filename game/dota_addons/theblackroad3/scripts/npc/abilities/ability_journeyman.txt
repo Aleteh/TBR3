@@ -1,6 +1,0 @@
-"ability_journeyman"
-{
-	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"rubick_empty1"
-	"MaxLevel" 						"1"
-}
